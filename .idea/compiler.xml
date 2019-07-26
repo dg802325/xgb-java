@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="send-mail" />
+        <module name="xgb-common" />
+        <module name="xgb-mybatis" />
+        <module name="xgb-spider" />
+        <module name="xgb-test" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8">
+      <module name="send-mail" target="1.8" />
+      <module name="xgb-common" target="1.8" />
+      <module name="xgb-java" target="1.5" />
+      <module name="xgb-mail" target="1.5" />
+      <module name="xgb-mybatis" target="8" />
+      <module name="xgb-spider" target="1.8" />
+      <module name="xgb-test" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="send-mail" options="-parameters" />
+      <module name="xgb-common" options="" />
+      <module name="xgb-spider" options="-parameters" />
+      <module name="xgb-test" options="" />
+    </option>
+  </component>
+</project>
