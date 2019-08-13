@@ -43,8 +43,11 @@ public class R extends HashMap<String, Object> {
         return r;
     }
 
-    public R put(String key, Object value) {
-        super.put(key, value);
-        return this;
+    public static R ok(String key,Object value,String message) {
+        R r = new R();
+        r.put("code","200");
+        r.put("message", message);
+        r.put(key,value);
+        return r;
     }
 }

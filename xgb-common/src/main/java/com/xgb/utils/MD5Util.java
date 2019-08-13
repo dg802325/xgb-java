@@ -11,7 +11,7 @@ import java.security.NoSuchAlgorithmException;
  */
 public class MD5Util {
 
-    public static String encrypt(String source) {
+    public static String toMd5(String source) {
         try {
             return encodeMd5(source.getBytes("UTF-8"));
         } catch (UnsupportedEncodingException e) {

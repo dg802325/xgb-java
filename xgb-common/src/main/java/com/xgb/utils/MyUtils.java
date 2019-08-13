@@ -84,4 +84,31 @@ public class MyUtils {
     public static boolean isNotEmpty(Object o) {
         return !isEmpty(o);
     }
+
+    /**
+     * 对象组中是否存在 Empty Object
+     *
+     * @param os 对象组
+     * @return
+     */
+    public static boolean isOneEmpty(Object... os) {
+        for (Object o : os) {
+            if (isEmpty(o)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 2018-11-20
+     * 获取文件后缀名 不包含点
+     */
+    public static String getFileSuffix(String fileWholeName) {
+        if (isEmpty(fileWholeName)) {
+            return "none";
+        }
+        int lastIndexOf = fileWholeName.lastIndexOf(".");
+        return fileWholeName.substring(lastIndexOf + 1);
+    }
 }

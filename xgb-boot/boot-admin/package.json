@@ -12,7 +12,7 @@
     "echarts": "^4.2.1",
     "element-ui": "^2.4.5",
     "js-cookie": "^2.2.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "vue": "^2.6.10",
     "vue-quill-editor-upload": "^1.1.0",
     "vue-router": "^3.0.3",
