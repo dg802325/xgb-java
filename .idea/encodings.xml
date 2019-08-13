@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/mybatis-x" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/xgb-blog" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/xgb-blog/blog-backend" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/xgb-blog/blog-dao" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/xgb-blog/blog-model" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/xgb-blog/blog-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-boot" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-boot/boot-backend" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-boot/boot-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-boot/boot-model" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-boot/boot-oss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-boot/boot-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-cloud" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-cloud/cloud-eureka" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-mail" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-mail/send-mail" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-mybatis" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/xgb-mybatis-plus" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-spider" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-test" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />

@@ -1,0 +1,15 @@
+###设置服务器启动Ip
+server:
+  port: 8765
+eureka:
+  ###设置服务器别名
+  instance:
+    hostname: server
+  client:
+    serviceUrl:
+      ###设置服务器映射地址
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    ###注册到注册中心
+    register-with-eureka: false
+    ###是否从注册中心获取地址
+    fetch-registry: false

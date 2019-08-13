@@ -21,6 +21,8 @@
         <module>xgb-spider</module>
         <module>xgb-common</module>
         <module>xgb-mybatis</module>
+        <module>xgb-boot</module>
+        <module>xgb-cloud</module>
     </modules>
     <dependencies>
         <!-- 引入依赖-->
