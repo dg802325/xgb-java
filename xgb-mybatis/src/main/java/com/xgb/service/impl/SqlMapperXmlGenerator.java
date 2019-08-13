@@ -108,9 +108,9 @@ public class SqlMapperXmlGenerator extends CodeGeneratorManager implements CodeG
             while (iterator.hasNext()){
                 String actualColumnName = iterator.next().getActualColumnName();
                 if(!iterator.hasNext()){
-                    allColumnsList.add("tn."+ actualColumnName+" AS "+StringUtils.tableNameConvertLowerCamel(actualColumnName)+"");
+                    allColumnsList.add(tn+"."+ actualColumnName+" AS "+StringUtils.tableNameConvertLowerCamel(actualColumnName)+"");
                 }else {
-                    allColumnsList.add("tn."+ actualColumnName+" AS "+StringUtils.tableNameConvertLowerCamel(actualColumnName)+",");
+                    allColumnsList.add(tn+"."+ actualColumnName+" AS "+StringUtils.tableNameConvertLowerCamel(actualColumnName)+",");
                 }
             }
             return allColumnsList;
