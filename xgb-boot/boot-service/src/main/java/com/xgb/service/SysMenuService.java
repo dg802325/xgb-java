@@ -2,8 +2,11 @@ package com.xgb.service;
 
 import com.xgb.dao.SysMenuMapper;
 import com.xgb.dao.SysMenuSqlMapper;
+import com.xgb.dao.SysRoleMapper;
+import com.xgb.dao.SysRoleSqlMapper;
 import com.xgb.model.SysMenu;
 import com.xgb.model.SysMenuExample;
+import com.xgb.model.SysRole;
 import com.xgb.model.vo.SysMenuVO;
 import com.xgb.model.vo.SysPermissionVO;
 import org.apache.ibatis.annotations.Param;
@@ -23,6 +26,10 @@ public class SysMenuService {
     private SysMenuMapper sysMenuMapper;
 	@Autowired
     private SysMenuSqlMapper sysMenuSqlMapper;
+	@Autowired
+    private SysRoleMapper sysRoleMapper;
+	@Autowired
+    private SysRoleSqlMapper sysRoleSqlMapper;
     
         public long countByExample(SysMenuExample example){
             return sysMenuMapper.countByExample(example);
@@ -86,4 +93,20 @@ public class SysMenuService {
             }
             return zhuMenus;
         }
+
+    //获得当前登录人拥有的菜单权限
+    public List<SysMenuVO> getMenuByUserId(String sysUserId) {
+        //获得当前登录人拥有的角色
+        SysRole sysRole = sysRoleSqlMapper.selectRoleByUserId(sysUserId);
+        List<SysMenuVO> sysMenuVOS = sysMenuSqlMapper.selectMenuByRoleId(sysRole.getId());
+        for (SysMenuVO sysMenuVO : sysMenuVOS) {
+            List<SysMenuVO> menusTwoList = sysMenuSqlMapper.selectByParentId(sysMenuVO.getId());
+            sysMenuVO.setMenuItemTwo(menusTwoList);
+            for (SysMenuVO menuTwo : menusTwoList) {
+                List<SysMenuVO> menuThreeList = sysMenuSqlMapper.selectByParentId(menuTwo.getId());
+                menuTwo.setMenuItemThree(menuThreeList);
+            }
+        }
+        return sysMenuVOS;
+    }
 }

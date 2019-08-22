@@ -3,9 +3,12 @@ package com.xgb.controller;
 import com.xgb.common.SessionUtil;
 import com.xgb.lang.R;
 import com.xgb.model.SysMenu;
+import com.xgb.model.SysUser;
 import com.xgb.model.vo.SysMenuVO;
 import com.xgb.model.vo.SysPermissionVO;
 import com.xgb.service.SysMenuService;
+import com.xgb.service.SysUserRoleService;
+import com.xgb.service.SysUserService;
 import com.xgb.utils.MyUtils;
 import com.xgb.utils.UUIDUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -33,6 +36,10 @@ public class SysMenuController {
 
     @Autowired
     private SysMenuService sysMenuService;
+    @Autowired
+    private SysUserService sysUserService;
+    @Autowired
+    private SysUserRoleService sysUserRoleService;
 
 
     /**
@@ -96,6 +103,17 @@ public class SysMenuController {
         }else{
             return R.error(996,"删除失败");
         }
+    }
+
+    @ResponseBody
+    @GetMapping("getUserMenuList")
+    public R getUserMenuList() {
+        logger.info("------request-address-----------------：/admin/getUserMenuList");
+        //获得当前登录人id
+        String sysUserId = SessionUtil.getSysUserId();
+        //根据当前登录人查询拥有的角色
+        List<SysMenuVO> menuList = sysMenuService.getMenuByUserId(sysUserId);
+        return R.ok("menuList",menuList,"成功");
     }
 
 }

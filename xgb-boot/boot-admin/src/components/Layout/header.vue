@@ -107,10 +107,6 @@
 <style>
     .s-user-info {
         padding: 20px ;
-        /*position: absolute;*/
-        /*right: 0;*/
-        /*top: 51px;*/
-        /*z-index: 10;*/
         width: 350px;
     }
 

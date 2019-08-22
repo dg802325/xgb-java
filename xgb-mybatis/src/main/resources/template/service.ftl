@@ -21,7 +21,7 @@ public class ${modelNameUpperCamel}Service {
 	@Autowired
     private ${modelNameUpperCamel}Mapper ${modelNameLowerCamel}Mapper;
     
-	<#list serviceMethodsList as serviceMethod>
-        ${serviceMethod!''}
-	</#list>
+<#list serviceMethodsList as serviceMethod>
+    ${serviceMethod!''}
+</#list>
 }

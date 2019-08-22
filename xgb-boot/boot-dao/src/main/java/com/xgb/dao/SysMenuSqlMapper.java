@@ -20,4 +20,6 @@ public interface SysMenuSqlMapper {
     public SysMenu selectOne(Map<String, Object> paramMap);
 
     public List<SysMenuVO> selectByParentId(String parentId);
+
+    public List<SysMenuVO> selectMenuByRoleId(String id);
 }

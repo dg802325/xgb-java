@@ -153,8 +153,9 @@ public class SqlMapperXmlGenerator extends CodeGeneratorManager implements CodeG
             String tn = StringUtils.tableNameTotn(tableName);
             StringBuilder isModelNull = new StringBuilder();
             while (iterator.hasNext()){//<if test="status!=null and status!=''">
-                if(!"CREATE_TIME".equals(iterator.next().getActualColumnName())||!"UPDATE_TIME".equals(iterator.next().getActualColumnName())){
-                    String actualColumnName = iterator.next().getActualColumnName();
+                IntrospectedColumn next = iterator.next();
+                if(!"CREATE_TIME".equals(next.getActualColumnName())||!"UPDATE_TIME".equals(next.getActualColumnName())){
+                    String actualColumnName = next.getActualColumnName();
                     isModelNull.append("\n");
                     isModelNull.append(StringUtils.FOUR_SPACES).append(StringUtils.FOUR_SPACES).append("<if test=\""+StringUtils.tableNameConvertLowerCamel(actualColumnName)+"!=null and "+StringUtils.tableNameConvertLowerCamel(actualColumnName)+"!=''\">\n");
                     isModelNull.append(StringUtils.FOUR_SPACES).append(StringUtils.FOUR_SPACES).append(StringUtils.FOUR_SPACES).append("AND "+ tn + "." + actualColumnName + " = #{" + StringUtils.tableNameConvertLowerCamel(actualColumnName) + "}\n");
@@ -164,7 +165,7 @@ public class SqlMapperXmlGenerator extends CodeGeneratorManager implements CodeG
             isModelNull.append(StringUtils.FOUR_SPACES).append(StringUtils.FOUR_SPACES).append("order by "+ tn +".ID" +" asc");
             return isModelNull.toString();
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
         return null;
     }

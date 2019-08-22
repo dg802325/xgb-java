@@ -51,4 +51,15 @@
         where sm.PARENT_ID = #{parentId}
     </select>
 
+    <select id="selectMenuByRoleId" resultType="com.xgb.model.vo.SysMenuVO" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from SYS_MENU sm
+        left join SYS_PERMISSION sp on sp.ID = sm.PERMISSION_ID
+        left join SYS_ROLE_PERMISSION srp on srp.PERMISSION_ID = sp.ID
+        where srp.ROLE_ID = #{roleId}
+        AND sm.MENU_TYPE = '0'
+        ORDER BY SORT ASC
+    </select>
+
 </mapper>

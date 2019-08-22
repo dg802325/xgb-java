@@ -17,4 +17,6 @@ public interface SysRoleSqlMapper {
     public List<SysRole> getSysRoleList(Map<String, Object> paramMap);
 
     public SysRole selectOne(Map<String, Object> paramMap);
+
+    public SysRole selectRoleByUserId(String sysUserId);
 }

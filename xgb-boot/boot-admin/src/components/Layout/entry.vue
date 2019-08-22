@@ -1,18 +1,17 @@
 <template>
     <div>
         <Header :menu="menuList" :currentIndex="index" @change="indexChange"/>
-       <div>
-           <div class="main-nav">
-               <ul class="menu-wrapper">
-                   <li v-for="(item,_index) in menuList" @click="handleClick(_index)" :class="{'active':_index==index}">
-                       <span><img src="./images/u102.png" /></span>
-                       {{item.title}}
-                   </li>
-               </ul>
-           </div>
-           <Sider :list="list"/>
-           <mainView />
-       </div>
+        <div class="main-nav">
+            <ul class="menu-wrapper">
+                <li v-for="(item,_index) in menuList" @click="handleClick(_index)" :class="{'active':_index==index}">
+                    <span><img src="./images/u102.png" /></span>
+                    {{item.menuName}}
+                </li>
+            </ul>
+        </div>
+        <Sider :list="list"/>
+        <mainView/>
+
     </div>
 </template>
 
@@ -21,7 +20,6 @@
     import Header from './header';
     import Sider from './sider';
     import mainView from './main';
-    import {menus} from './menu';
     export default {
         data(){
             return {
@@ -35,47 +33,70 @@
             Sider,
             mainView
         } ,
-        created(){
-            this.menuList = menus;
+        async created(){
+            await this.getMenu()
             this.findRouterIndex();
-            this.list = this.menuList[this.index].children;
+            this.list = this.menuList[this.index].menuItemTwo;
 
         },
+        watch: {
+            $route(){
+                this.findRouterIndex();
+                this.indexChange(this.index)
+            }
+        },
         methods: {
+            async getMenu() {
+                let res = await this.$get("/admin/getUserMenuList")
+                console.log(res)
+                this.menuList = res.menuList
+            },
             handleClick(index){
                 this.index = index;
-                this.list = this.menuList[this.index].children;
+                this.list = this.menuList[this.index].menuItemTwo;
             },
-            findRouterIndex(){
+            findRouterIndex() {
                 let fullPath = this.$route.fullPath;
-                let _fullPath = fullPath.split('/');
-                fullPath = _fullPath.length<=2 ? fullPath : '/'+_fullPath[1]+'/'+_fullPath[2]
+                let menus = fullPath.split('/')
+                let leave = menus.length-1;
                 let index = 0;
                 let menuList = JSON.parse(JSON.stringify(this.menuList));
-                for(let i=0;i<menuList.length;i++){
-                    let menu = menuList[i];
-                    let childRouter = this.deepRouters(menu.children);
-                    childRouter = _.flattenDeep(childRouter);
-                    let  _index = _.findIndex(childRouter, function(o) {
-                        return o.url === fullPath;
-                    });
-                    if(_index!==-1){
-                        index = i;
+                if(leave>=3){
+                    for (let i = 0; i < menuList.length; i++) {
+                        let menu = menuList[i];
+                        if('/'+menus[1]===menu.menuUrl){
+                            index = i;
+                        }
+                    }
+                }else{
+                    for (let i = 0; i < menuList.length; i++) {
+                        let menu = menuList[i];
+                        let childRouter = this.deepRouters(menu.menuItemTwo);
+                        childRouter = _.flattenDeep(childRouter);
+                        let _index = _.findIndex(childRouter, function (o) {
+                            return o.menuUrl === fullPath;
+                        });
+                        if (_index !== -1) {
+                            index = i;
+                        }
                     }
                 }
+
                 this.index = index;
             },
-            deepRouters(items=[],arr=[]){
+            deepRouters(items = [], arr = []) {
                 arr.push(items)
-                for(let i=0;i<items.length;i++){
+
+                for (let i = 0; i < items.length; i++) {
                     let item = items[i];
-                    if(item.children) this.deepRouters(item.children,arr)
+                    if (item.menuItemTwo) this.deepRouters(item.menuItemTwo, arr)
+                    if (item.menuItemThree) this.deepRouters(item.menuItemThree, arr)
                 }
                 return arr
             },
-            indexChange(index){
+            indexChange(index) {
                 this.index = index;
-                this.list  = this.menuList[index].children
+                this.list = this.menuList[index].menuItemTwo
             }
         }
     }
@@ -121,7 +142,7 @@
     .header-container {
         height: 50px;
         box-sizing: border-box;
-        background-color: rgba(171, 167, 188, 0.9);
+        background-color: rgba(26, 188, 156, 0.898039215686275);
         border-bottom: 2px rgba(0, 0, 0, 0.2) solid;
     }
 

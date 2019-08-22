@@ -55,7 +55,6 @@ public class SysUserController {
      * @return
      */
     @ResponseBody
-//    @RequiresPermissions("SYS:USER:SAVE")
     @PostMapping("saveSysUserPassword")
     public R saveSysUserPassword(SysUser sysUser){
         String sysUserId = SessionUtil.getSysUserId();
@@ -79,7 +78,6 @@ public class SysUserController {
     * @return
     */
     @ResponseBody
-//    @RequiresPermissions("SYS:USER:SAVE")
     @PostMapping("saveSysUser")
     public R saveSysUser(SysUser sysUser){
         logger.info("------request-address----------------：/admin/saveSysUser");
@@ -103,7 +101,6 @@ public class SysUserController {
     * 删除
     * @return
     */
-    @RequiresPermissions("SYS:USER:DELETE")
     @ResponseBody
     @PostMapping("delete_sysUser")
     public R deleteSysUser(SysUser sysUser) {
