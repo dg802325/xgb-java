@@ -78,7 +78,7 @@ public class LoginController {
 
     @ResponseBody
     @RequestMapping(value = "/getUserInfo", method = RequestMethod.GET)
-    public R getUser() {
+    public R getUser(HttpServletRequest request) {
         Map<String, Object> map = new HashMap<>();
         String id  = SessionUtil.getSysUserId();
         if(MyUtils.isEmpty(id)){
@@ -92,6 +92,8 @@ public class LoginController {
         map.put("nickName",user.getNickName());
         map.put("email",user.getEmail());
         map.put("headerUrl",user.getUserHeaderUrl());
+        map.put("loginThisTime",new Date());
+        map.put("loginArea",RequestUtils.getIpAddr(request));
         return R.ok(map, "获取用户信息");
     }
 
