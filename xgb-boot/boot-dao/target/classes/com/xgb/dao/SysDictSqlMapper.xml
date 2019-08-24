@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.SysDictSqlMapper">
+
+    <sql id="Base_Column_List">
+            tn.ID AS id,
+            tn.PARAM_KEY AS paramKey,
+            tn.PARAM_VALUE AS paramValue,
+            tn.STATUS AS status,
+            tn.REMARK AS remark,
+            tn.CREATE_TIME AS createTime,
+            tn.UPDATE_TIME AS updateTime,
+            tn.CREATE_ID AS createId,
+            tn.UPDATE_ID AS updateId
+            tn.ID AS id,
+            tn.PARENT_ID AS parentId,
+            tn.DEPT_NAME AS deptName,
+            tn.SORT AS sort,
+            tn.STATUS AS status,
+            tn.CREATE_TIME AS createTime,
+            tn.UPDATE_TIME AS updateTime,
+            tn.CREATE_ID AS createId,
+            tn.UPDATE_ID AS updateId
+            tn.ID AS id,
+            tn.DICT_NAME AS dictName,
+            tn.DICT_TYP AS dictTyp,
+            tn.DICT_CODE AS dictCode,
+            tn.DICT_VALUE AS dictValue,
+            tn.SORT AS sort,
+            tn.REMARK AS remark,
+            tn.STATUS AS status,
+            tn.CREATE_TIME AS createTime,
+            tn.UPDATE_TIME AS updateTime,
+            tn.CREATE_ID AS createId,
+            tn.UPDATE_ID AS updateId
+    </sql>
+
+    <select id="getSysDictCount" resultType="java.lang.Integer" parameterType="Map">
+        select count(*) from SYS_DICT sd
+        where 1=1
+       
+        <if test="dictName!=null and dictName!=''">
+            AND sd.DICT_NAME = #{dictName}
+        </if>
+
+        <if test="dictCode!=null and dictCode!=''">
+            AND sd.DICT_CODE = #{dictCode}
+        </if>
+
+        <if test="sort!=null and sort!=''">
+            AND sd.SORT = #{sort}
+        </if>
+
+        <if test="status!=null and status!=''">
+            AND sd.STATUS = #{status}
+        </if>
+
+        <if test="updateId!=null and updateId!=''">
+            AND sd.UPDATE_ID = #{updateId}
+        </if>
+        order by sd.ID asc
+    </select>
+
+
+    <select id="getSysDictList" resultType="com.xgb.model.SysDict" parameterType="Map">
+        select
+        <include refid="Base_Column_List"/>
+        from SYS_DICT sd
+        where 1=1
+        
+        <if test="dictName!=null and dictName!=''">
+            AND sd.DICT_NAME = #{dictName}
+        </if>
+
+        <if test="dictCode!=null and dictCode!=''">
+            AND sd.DICT_CODE = #{dictCode}
+        </if>
+
+        <if test="sort!=null and sort!=''">
+            AND sd.SORT = #{sort}
+        </if>
+
+        <if test="status!=null and status!=''">
+            AND sd.STATUS = #{status}
+        </if>
+
+        <if test="updateId!=null and updateId!=''">
+            AND sd.UPDATE_ID = #{updateId}
+        </if>
+        order by sd.ID asc
+        <if test="begin!=null and end != null">
+            limit #{begin},#{end}
+        </if>
+    </select>
+    <select id="selectOne" resultType="com.xgb.model.SysDict" parameterType="Map">
+        select
+        <include refid="Base_Column_List"/>
+        from SYS_DICT sd
+        where 1=1
+        
+        <if test="dictName!=null and dictName!=''">
+            AND sd.DICT_NAME = #{dictName}
+        </if>
+
+        <if test="dictCode!=null and dictCode!=''">
+            AND sd.DICT_CODE = #{dictCode}
+        </if>
+
+        <if test="sort!=null and sort!=''">
+            AND sd.SORT = #{sort}
+        </if>
+
+        <if test="status!=null and status!=''">
+            AND sd.STATUS = #{status}
+        </if>
+
+        <if test="updateId!=null and updateId!=''">
+            AND sd.UPDATE_ID = #{updateId}
+        </if>
+        order by sd.ID asc
+        limit 0,1
+    </select>
+
+</mapper>

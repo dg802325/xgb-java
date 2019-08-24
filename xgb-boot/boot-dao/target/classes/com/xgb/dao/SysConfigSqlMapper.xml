@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.SysConfigSqlMapper">
+
+    <sql id="Base_Column_List">
+            tn.ID AS id,
+            tn.PARAM_KEY AS paramKey,
+            tn.PARAM_VALUE AS paramValue,
+            tn.STATUS AS status,
+            tn.REMARK AS remark,
+            tn.CREATE_TIME AS createTime,
+            tn.UPDATE_TIME AS updateTime,
+            tn.CREATE_ID AS createId,
+            tn.UPDATE_ID AS updateId
+    </sql>
+
+    <select id="getSysConfigCount" resultType="java.lang.Integer" parameterType="Map">
+        select count(*) from SYS_CONFIG sc
+        where 1=1
+       
+    </select>
+
+
+    <select id="getSysConfigList" resultType="com.xgb.model.SysConfig" parameterType="Map">
+        select
+        <include refid="Base_Column_List"/>
+        from SYS_CONFIG sc
+        where 1=1
+        
+        <if test="begin!=null and end != null">
+            limit #{begin},#{end}
+        </if>
+    </select>
+    <select id="selectOne" resultType="com.xgb.model.SysConfig" parameterType="Map">
+        select
+        <include refid="Base_Column_List"/>
+        from SYS_CONFIG sc
+        where 1=1
+        
+        limit 0,1
+    </select>
+
+</mapper>

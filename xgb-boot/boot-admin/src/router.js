@@ -42,6 +42,11 @@ const PublicHome = [
                 component: () => import('./views/Home/updateUser.vue'),
                 meta: {title: '修改基本信息'}
             },
+            {
+                path: '/userInfo',
+                component: () => import('./views/UserInfo/userInfo.vue'),
+                meta: {title: '修改基本信息'}
+            },
         ]
     }
 ]

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.SysUserSqlMapper">
+
+    <sql id="Base_Column_List">
+            tn.ID AS id,
+            tn.PARAM_KEY AS paramKey,
+            tn.PARAM_VALUE AS paramValue,
+            tn.STATUS AS status,
+            tn.REMARK AS remark,
+            tn.CREATE_TIME AS createTime,
+            tn.UPDATE_TIME AS updateTime,
+            tn.CREATE_ID AS createId,
+            tn.UPDATE_ID AS updateId
+            tn.ID AS id,
+            tn.PARENT_ID AS parentId,
+            tn.DEPT_NAME AS deptName,
+            tn.SORT AS sort,
+            tn.STATUS AS status,
+            tn.CREATE_TIME AS createTime,
+            tn.UPDATE_TIME AS updateTime,
+            tn.CREATE_ID AS createId,
+            tn.UPDATE_ID AS updateId
+            tn.ID AS id,
+            tn.DICT_NAME AS dictName,
+            tn.DICT_TYP AS dictTyp,
+            tn.DICT_CODE AS dictCode,
+            tn.DICT_VALUE AS dictValue,
+            tn.SORT AS sort,
+            tn.REMARK AS remark,
+            tn.STATUS AS status,
+            tn.CREATE_TIME AS createTime,
+            tn.UPDATE_TIME AS updateTime,
+            tn.CREATE_ID AS createId,
+            tn.UPDATE_ID AS updateId
+            tn.ID AS id,
+            tn.USER_NAME AS userName,
+            tn.OPERATION AS operation,
+            tn.METHOD AS method,
+            tn.PARAMS AS params,
+            tn.LOG_TIME AS logTime,
+            tn.IP AS ip,
+            tn.CREATE_TIME AS createTime
+            tn.ID AS id,
+            tn.PARENT_ID AS parentId,
+            tn.MENU_NAME AS menuName,
+            tn.MENU_URL AS menuUrl,
+            tn.PERMISSION_ID AS permissionId,
+            tn.MENU_TYPE AS menuType,
+            tn.MENU_ICON AS menuIcon,
+            tn.SORT AS sort,
+            tn.CREATE_TIME AS createTime,
+            tn.UPDATE_TIME AS updateTime,
+            tn.CREATE_ID AS createId,
+            tn.UPDATE_ID AS updateId,
+            tn.STATUS AS status
+            tn.ID AS id,
+            tn.OOS_URL AS oosUrl,
+            tn.CREATE_TIME AS createTime,
+            tn.UPDATE_TIME AS updateTime,
+            tn.CREATE_ID AS createId,
+            tn.UPDATE_ID AS updateId,
+            tn.STATUS AS status
+            tn.ID AS id,
+            tn.PERMISSION_NAME AS permissionName,
+            tn.PERMISSION_KEY AS permissionKey,
+            tn.PARENT_ID AS parentId,
+            tn.PERMISSION_CODE AS permissionCode,
+            tn.STATUS AS status,
+            tn.REMARK AS remark,
+            tn.CREATE_TIME AS createTime,
+            tn.CREATE_ID AS createId,
+            tn.UPDATE_TIME AS updateTime,
+            tn.UPDATE_ID AS updateId,
+            tn.PERMISSION_TYPE AS permissionType,
+            tn.SORT AS sort
+            tn.ID AS id,
+            tn.ROLE_NAME AS roleName,
+            tn.REMARK AS remark,
+            tn.CREATE_TIME AS createTime,
+            tn.UPDATE_TIME AS updateTime,
+            tn.CREATE_ID AS createId,
+            tn.UPDATE_ID AS updateId,
+            tn.STATUS AS status
+            tn.ID AS id,
+            tn.ROLE_ID AS roleId,
+            tn.PERMISSION_ID AS permissionId,
+            tn.CREATE_TIME AS createTime,
+            tn.UPDATE_TIME AS updateTime,
+            tn.CREATE_ID AS createId,
+            tn.UPDATE_ID AS updateId,
+            tn.STATUS AS status
+            tn.ID AS id,
+            tn.USER_NAME AS userName,
+            tn.PASSWORD AS password,
+            tn.SALT AS salt,
+            tn.EMAIL AS email,
+            tn.MOBILE AS mobile,
+            tn.SEX AS sex,
+            tn.STATUS AS status,
+            tn.DEPT_ID AS deptId,
+            tn.CREATE_TIME AS createTime,
+            tn.UPDATE_TIME AS updateTime,
+            tn.CREATE_ID AS createId,
+            tn.UPDATE_ID AS updateId,
+            tn.NICK_NAME AS nickName
+    </sql>
+
+    <select id="getSysUserCount" resultType="java.lang.Integer" parameterType="Map">
+        select count(*) from SYS_USER su
+        where 1=1
+       
+        <if test="userName!=null and userName!=''">
+            AND su.USER_NAME = #{userName}
+        </if>
+
+        <if test="salt!=null and salt!=''">
+            AND su.SALT = #{salt}
+        </if>
+
+        <if test="mobile!=null and mobile!=''">
+            AND su.MOBILE = #{mobile}
+        </if>
+
+        <if test="status!=null and status!=''">
+            AND su.STATUS = #{status}
+        </if>
+
+        <if test="createTime!=null and createTime!=''">
+            AND su.CREATE_TIME = #{createTime}
+        </if>
+
+        <if test="createId!=null and createId!=''">
+            AND su.CREATE_ID = #{createId}
+        </if>
+
+        <if test="nickName!=null and nickName!=''">
+            AND su.NICK_NAME = #{nickName}
+        </if>
+        order by su.ID asc
+    </select>
+
+
+    <select id="getSysUserList" resultType="com.xgb.model.SysUser" parameterType="Map">
+        select
+        <include refid="Base_Column_List"/>
+        from SYS_USER su
+        where 1=1
+        
+        <if test="userName!=null and userName!=''">
+            AND su.USER_NAME = #{userName}
+        </if>
+
+        <if test="salt!=null and salt!=''">
+            AND su.SALT = #{salt}
+        </if>
+
+        <if test="mobile!=null and mobile!=''">
+            AND su.MOBILE = #{mobile}
+        </if>
+
+        <if test="status!=null and status!=''">
+            AND su.STATUS = #{status}
+        </if>
+
+        <if test="createTime!=null and createTime!=''">
+            AND su.CREATE_TIME = #{createTime}
+        </if>
+
+        <if test="createId!=null and createId!=''">
+            AND su.CREATE_ID = #{createId}
+        </if>
+
+        <if test="nickName!=null and nickName!=''">
+            AND su.NICK_NAME = #{nickName}
+        </if>
+        order by su.ID asc
+        <if test="begin!=null and end != null">
+            limit #{begin},#{end}
+        </if>
+    </select>
+    <select id="selectOne" resultType="com.xgb.model.SysUser" parameterType="Map">
+        select
+        <include refid="Base_Column_List"/>
+        from SYS_USER su
+        where 1=1
+        
+        <if test="userName!=null and userName!=''">
+            AND su.USER_NAME = #{userName}
+        </if>
+
+        <if test="salt!=null and salt!=''">
+            AND su.SALT = #{salt}
+        </if>
+
+        <if test="mobile!=null and mobile!=''">
+            AND su.MOBILE = #{mobile}
+        </if>
+
+        <if test="status!=null and status!=''">
+            AND su.STATUS = #{status}
+        </if>
+
+        <if test="createTime!=null and createTime!=''">
+            AND su.CREATE_TIME = #{createTime}
+        </if>
+
+        <if test="createId!=null and createId!=''">
+            AND su.CREATE_ID = #{createId}
+        </if>
+
+        <if test="nickName!=null and nickName!=''">
+            AND su.NICK_NAME = #{nickName}
+        </if>
+        order by su.ID asc
+        limit 0,1
+    </select>
+
+    <select id="getPermissionListByUserName" resultType="java.lang.String" parameterType="map">
+        SELECT sp.PERMISSION_KEY
+        FROM SYS_PERMISSION sp
+        LEFT JOIN SYS_ROLE_PERMISSION srp ON srp.PERMISSION_ID=sp.ID
+        LEFT JOIN SYS_ROLE sr ON sr.ID=srp.ROLE_ID
+        LEFT JOIN SYS_USER_ROLE sur ON sur.ROLE_ID=sr.ID
+        WHERE 1=1
+        and sp.PERMISSION_KEY is not null
+        and sp.PERMISSION_KEY <![CDATA[!= ]]>""
+        <if test="userId != null and userId != ''">
+            and sur.USER_ID=#{userId}
+        </if>
+    </select>
+
+</mapper>

@@ -18,7 +18,7 @@
                 <div class="s-user-info" >
                     <div slot="header" class="clearfix">
                         <span style="margin-top: 15px">账户信息</span>
-                        <el-button style="float: right; padding: 0px" type="text" @click="toUserInfo">账户设置</el-button>
+                        <el-button style="float: right; padding: 0px" type="text" @click="toUserInfo">查看詳細信息</el-button>
                     </div>
                     <hr style="margin-top: 15px"/>
                     <!--<div class="user-item" style="margin-top: 15px">-->
@@ -97,7 +97,7 @@
                 }
             },
             async toUserInfo() {
-                this.$router.push({path:'/updatePassword'});
+                this.$router.push({path:'/userInfo'});
             }
         }
 
