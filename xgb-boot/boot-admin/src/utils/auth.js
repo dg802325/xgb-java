@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie'
 
-const TokenKey = 'admin-token'
+const TokenKey = 'efarm-dealer'
 
 export function getToken() {
   return Cookies.get(TokenKey)

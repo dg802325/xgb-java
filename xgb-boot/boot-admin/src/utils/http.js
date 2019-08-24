@@ -38,3 +38,20 @@ export function get(url, params) {
     })
 });}
 
+
+export function fileUpload(url,file){
+    return new Promise(resolve => {
+        axios({
+            method: 'post',
+            url: Base_url+url,
+            headers: {
+                Accept: '*/*'
+            },
+            data: file,
+            processData: false,
+            contentType: false,
+        }).then((res)=>{
+            resolve(res.data)
+        })
+    })
+}
