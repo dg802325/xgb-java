@@ -4,7 +4,7 @@ server:
 logging:
   level.root: info
   level.com.hatchet: trace
-  path: efarm/efarm-fastdfs/logs/efarm-fastdfs.log
+  path: boot/boot-oss/logs/boot-oss.log
 spring:
   profiles:
     active: dev

@@ -2,6 +2,7 @@ package com.xgb.controller;
 
 import com.xgb.common.SessionUtil;
 import com.xgb.jwt.JWTToken;
+import com.xgb.lang.HttpKit;
 import com.xgb.lang.R;
 import com.xgb.lang.RequestUtils;
 import com.xgb.model.SysUser;
@@ -45,20 +46,24 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public R login(SysUser sysUser, HttpServletResponse response, HttpServletRequest request){
+    public R login(SysUser sysUser, HttpServletResponse response,String code, HttpServletRequest request){
+        Object str = HttpKit.getRequest().getSession().getAttribute("verifyCode");
+        if (MyUtils.isNotEmpty(str)&&str.toString().equals(code)) {
+            return R.error(999,"验证码错误");
+        }
         String pwd = MD5Util.toMd5(sysUser.getPassword());
         JWTToken jToken = new JWTToken(null);
         jToken.setPassword(pwd.toCharArray());
         jToken.setUsername(sysUser.getUserName());
-        jToken.setUserType("admin-token");
+        jToken.setUserType("boot-admin");
         try {
             Subject subject = org.apache.shiro.SecurityUtils.getSubject();
             subject.login(jToken);
             Object adminToken = org.apache.shiro.SecurityUtils.getSubject().getPrincipal();
-            response.addHeader("admin-token", adminToken.toString());
-            CookieUtils.setCookie(response, "admin-token", adminToken.toString(), tokenTime);
+            response.addHeader("boot-admin", adminToken.toString());
+            CookieUtils.setCookie(response, "boot-admin", adminToken.toString(), tokenTime);
             Map map = new HashMap();
-            map.put("admin-token", adminToken);
+            map.put("boot-admin", adminToken);
             map.put("uerName", sysUser.getUserName());
 
             //更新登录地址 ip 登录时间  插入操作日志
@@ -77,7 +82,7 @@ public class LoginController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/getUserInfo", method = RequestMethod.GET)
+    @GetMapping("/getUserInfo")
     public R getUser(HttpServletRequest request) {
         Map<String, Object> map = new HashMap<>();
         String id  = SessionUtil.getSysUserId();
@@ -85,20 +90,23 @@ public class LoginController {
             return R.error(666,"token失效");
         }
         SysUser user = sysUserService.selectByPrimaryKey(id);
-        map.put("userName", user.getUserName());
-        map.put("id", user.getId());
-        map.put("sex",user.getSex());
-        map.put("password",user.getPassword());
-        map.put("nickName",user.getNickName());
-        map.put("email",user.getEmail());
-        map.put("headerUrl",user.getUserHeaderUrl());
-        map.put("loginThisTime",new Date());
-        map.put("loginArea",RequestUtils.getIpAddr(request));
+        map.put("userName", user.getUserName());//登录名
+        map.put("id", user.getId());//id
+        map.put("sex",user.getSex());//性别
+        map.put("password",user.getPassword());//密码
+        map.put("nickName",user.getNickName());//昵称
+        map.put("email",user.getEmail());//邮箱
+        map.put("headerUrl",user.getUserHeaderUrl());//头像
+        map.put("loginThisTime",new Date());//登录时间
+        map.put("loginArea",RequestUtils.getIpAddr(request));//本次登录
+        map.put("departmentName","测试岗位");//岗位
+        map.put("roleName","顶级管理员");//职位名称
+        map.put("lastLogin",user.getLastLogin());//上次登录
         return R.ok(map, "获取用户信息");
     }
 
     @ResponseBody
-    @RequestMapping(value = "/toUserOut", method = RequestMethod.POST)
+    @PostMapping("/toUserOut")
     public R signOut() {
         String id  = SessionUtil.getSysUserId();
         SysUser sysUser = sysUserService.selectByPrimaryKey(id);
@@ -118,7 +126,7 @@ public class LoginController {
      * @param token
      * @return
      */
-    @RequestMapping(value = "/admin/vrifyToken", method = RequestMethod.GET)
+    @GetMapping("/vrifyToken")
     @ResponseBody
     public boolean vrifyToken(String token) {
         if (MyUtils.isEmpty(token)) {

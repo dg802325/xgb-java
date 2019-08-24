@@ -7,8 +7,6 @@ public class SysPermission {
 
     private String permissionName;
 
-    private String permissionKey;
-
     private String parentId;
 
     private String permissionCode;
@@ -27,10 +25,9 @@ public class SysPermission {
 
     private String permissionType;
 
-    public SysPermission(String id, String permissionName, String permissionKey, String parentId, String permissionCode, String status, String remark, Date createTime, String createId, Date updateTime, String updateId, String permissionType) {
+    public SysPermission(String id, String permissionName, String parentId, String permissionCode, String status, String remark, Date createTime, String createId, Date updateTime, String updateId, String permissionType) {
         this.id = id;
         this.permissionName = permissionName;
-        this.permissionKey = permissionKey;
         this.parentId = parentId;
         this.permissionCode = permissionCode;
         this.status = status;
@@ -60,14 +57,6 @@ public class SysPermission {
 
     public void setPermissionName(String permissionName) {
         this.permissionName = permissionName == null ? null : permissionName.trim();
-    }
-
-    public String getPermissionKey() {
-        return permissionKey;
-    }
-
-    public void setPermissionKey(String permissionKey) {
-        this.permissionKey = permissionKey == null ? null : permissionKey.trim();
     }
 
     public String getParentId() {

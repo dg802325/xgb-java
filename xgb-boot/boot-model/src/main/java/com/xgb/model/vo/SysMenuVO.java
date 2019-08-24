@@ -5,10 +5,18 @@ import com.xgb.model.SysMenu;
 import java.util.List;
 
 public class SysMenuVO extends SysMenu {
-
+    private String permissionName;
     private List<SysMenuVO> children;
     private List<SysMenuVO> menuItemTwo;
     private List<SysMenuVO> menuItemThree;
+
+    public String getPermissionName() {
+        return permissionName;
+    }
+
+    public void setPermissionName(String permissionName) {
+        this.permissionName = permissionName;
+    }
 
     public List<SysMenuVO> getChildren() {
         return children;

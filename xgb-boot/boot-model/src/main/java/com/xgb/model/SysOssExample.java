@@ -574,6 +574,216 @@ public class SysOssExample {
             addCriterion("STATUS not between", value1, value2, "status");
             return (Criteria) this;
         }
+
+        public Criteria andOosNameIsNull() {
+            addCriterion("OOS_NAME is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosNameIsNotNull() {
+            addCriterion("OOS_NAME is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosNameEqualTo(String value) {
+            addCriterion("OOS_NAME =", value, "oosName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosNameNotEqualTo(String value) {
+            addCriterion("OOS_NAME <>", value, "oosName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosNameGreaterThan(String value) {
+            addCriterion("OOS_NAME >", value, "oosName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosNameGreaterThanOrEqualTo(String value) {
+            addCriterion("OOS_NAME >=", value, "oosName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosNameLessThan(String value) {
+            addCriterion("OOS_NAME <", value, "oosName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosNameLessThanOrEqualTo(String value) {
+            addCriterion("OOS_NAME <=", value, "oosName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosNameLike(String value) {
+            addCriterion("OOS_NAME like", value, "oosName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosNameNotLike(String value) {
+            addCriterion("OOS_NAME not like", value, "oosName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosNameIn(List<String> values) {
+            addCriterion("OOS_NAME in", values, "oosName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosNameNotIn(List<String> values) {
+            addCriterion("OOS_NAME not in", values, "oosName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosNameBetween(String value1, String value2) {
+            addCriterion("OOS_NAME between", value1, value2, "oosName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosNameNotBetween(String value1, String value2) {
+            addCriterion("OOS_NAME not between", value1, value2, "oosName");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosSuffixIsNull() {
+            addCriterion("OOS_SUFFIX is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosSuffixIsNotNull() {
+            addCriterion("OOS_SUFFIX is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosSuffixEqualTo(String value) {
+            addCriterion("OOS_SUFFIX =", value, "oosSuffix");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosSuffixNotEqualTo(String value) {
+            addCriterion("OOS_SUFFIX <>", value, "oosSuffix");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosSuffixGreaterThan(String value) {
+            addCriterion("OOS_SUFFIX >", value, "oosSuffix");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosSuffixGreaterThanOrEqualTo(String value) {
+            addCriterion("OOS_SUFFIX >=", value, "oosSuffix");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosSuffixLessThan(String value) {
+            addCriterion("OOS_SUFFIX <", value, "oosSuffix");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosSuffixLessThanOrEqualTo(String value) {
+            addCriterion("OOS_SUFFIX <=", value, "oosSuffix");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosSuffixLike(String value) {
+            addCriterion("OOS_SUFFIX like", value, "oosSuffix");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosSuffixNotLike(String value) {
+            addCriterion("OOS_SUFFIX not like", value, "oosSuffix");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosSuffixIn(List<String> values) {
+            addCriterion("OOS_SUFFIX in", values, "oosSuffix");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosSuffixNotIn(List<String> values) {
+            addCriterion("OOS_SUFFIX not in", values, "oosSuffix");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosSuffixBetween(String value1, String value2) {
+            addCriterion("OOS_SUFFIX between", value1, value2, "oosSuffix");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosSuffixNotBetween(String value1, String value2) {
+            addCriterion("OOS_SUFFIX not between", value1, value2, "oosSuffix");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosTypeIsNull() {
+            addCriterion("OOS_TYPE is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosTypeIsNotNull() {
+            addCriterion("OOS_TYPE is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosTypeEqualTo(String value) {
+            addCriterion("OOS_TYPE =", value, "oosType");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosTypeNotEqualTo(String value) {
+            addCriterion("OOS_TYPE <>", value, "oosType");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosTypeGreaterThan(String value) {
+            addCriterion("OOS_TYPE >", value, "oosType");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosTypeGreaterThanOrEqualTo(String value) {
+            addCriterion("OOS_TYPE >=", value, "oosType");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosTypeLessThan(String value) {
+            addCriterion("OOS_TYPE <", value, "oosType");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosTypeLessThanOrEqualTo(String value) {
+            addCriterion("OOS_TYPE <=", value, "oosType");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosTypeLike(String value) {
+            addCriterion("OOS_TYPE like", value, "oosType");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosTypeNotLike(String value) {
+            addCriterion("OOS_TYPE not like", value, "oosType");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosTypeIn(List<String> values) {
+            addCriterion("OOS_TYPE in", values, "oosType");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosTypeNotIn(List<String> values) {
+            addCriterion("OOS_TYPE not in", values, "oosType");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosTypeBetween(String value1, String value2) {
+            addCriterion("OOS_TYPE between", value1, value2, "oosType");
+            return (Criteria) this;
+        }
+
+        public Criteria andOosTypeNotBetween(String value1, String value2) {
+            addCriterion("OOS_TYPE not between", value1, value2, "oosType");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

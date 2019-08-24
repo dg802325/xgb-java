@@ -38,7 +38,6 @@ export function get(url, params) {
     })
 });}
 
-
 export function fileUpload(url,file){
     return new Promise(resolve => {
         axios({

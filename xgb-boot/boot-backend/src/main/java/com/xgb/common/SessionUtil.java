@@ -11,7 +11,7 @@ public class SessionUtil {
     //获取后台登陆用户
     public static String getSysUserId() {
 
-        String token = CookieUtils.getCookie(HttpKit.getRequest(), "admin-token");
+        String token = CookieUtils.getCookie(HttpKit.getRequest(), "boot-admin");
         if (MyUtils.isEmpty(token)||"undefined".equals(token)) {
             return null;
         }

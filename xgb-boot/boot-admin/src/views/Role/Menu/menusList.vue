@@ -36,7 +36,7 @@
                                 width="160">
                         </el-table-column>
                         <el-table-column
-                                prop="permissionId"
+                                prop="permissionName"
                                 label="所属权限"
                                 width="160">
                         </el-table-column>
@@ -50,8 +50,9 @@
                                 label="标签"
                                 width="100">
                             <template slot-scope="scope">
-                                 <el-tag v-if="scope.row.menuType==='0'">主菜单</el-tag>
-                                 <el-tag v-if="scope.row.menuType==='1'">子菜单</el-tag>
+                                 <el-tag v-if="scope.row.menuType==='0'">目录</el-tag>
+                                 <el-tag v-if="scope.row.menuType==='1'">主菜单</el-tag>
+                                 <el-tag v-if="scope.row.menuType==='2'">子菜单</el-tag>
                             </template>
                         </el-table-column>
                         <el-table-column
@@ -87,7 +88,14 @@
                     <el-input v-model="addMenuUrl" size="1" style="width: 200px;"></el-input>
                 </el-form-item>
                 <el-form-item label="所属权限:" required>
-                    <el-input v-model="addPermissionId" size="1" style="width: 200px;"></el-input>
+                    <el-select ref="addPermissionId"  v-model="addPermissionId" size="1" style="width: 200px;" placeholder="所属权限" >
+                        <el-option
+                                v-for="item in permissionList"
+                                :key="item.label"
+                                :label="item.permissionName"
+                                :value="item.id"
+                        ></el-option>
+                    </el-select>
                 </el-form-item>
                 <el-form-item label="排序:" required>
                     <el-input v-model="addSort" size="1" style="width: 200px;"></el-input>
@@ -105,15 +113,15 @@
                 <el-form-item label="菜单名称:" required>
                     <el-input v-model="editMenuName" size="1" style="width: 200px;"></el-input>
                 </el-form-item>
-                <el-form-item label="菜单地址:" required>
+                <el-form-item v-if="!editMenuType==1" label="菜单地址:" required>
                     <el-input v-model="editMenuUrl" size="1" style="width: 200px;"></el-input>
                 </el-form-item>
                 <el-form-item label="所属权限:" required>
                     <el-select ref="editPermissionId"  v-model="editPermissionId" size="1" style="width: 200px;" placeholder="所属权限" >
                         <el-option
-                                v-for="item in areaList"
+                                v-for="item in permissionList"
                                 :key="item.label"
-                                :label="item.divisionName"
+                                :label="item.permissionName"
                                 :value="item.id"
                         ></el-option>
                     </el-select>
@@ -145,9 +153,10 @@
                 addPermissionId:'',
                 addMenuType:'',
                 addSort:'',
-
+                permissionList:[],
                 editMenuId:'',
                 editParentId:'',
+                editMenuType:'',
                 editMenuName:'',
                 editMenuUrl:'',
                 editPermissionId:'',
@@ -158,6 +167,12 @@
             this.selectRole();
         },
         methods: {
+            //查询一级权限列表
+            async getInsPermission(){
+                let res = await this.$post('/admin/getSysPermissionByMenuId', {parentId:this.addParentId})
+                console.log(res)
+                this.permissionList = res;
+            },
             async handleAdd(index, row) {
                 if(!row.menuType){
                     this.addMenuType = '0'
@@ -165,21 +180,46 @@
                 }else if(row.menuType=='0'){
                     this.addMenuType = '1'
                     this.addParentId=row.id;
+                }else if(row.menuType=='1') {
+                    this.addMenuType = '2'
+                    this.addParentId=row.id;
                 }else{
                     this.$message({
                         type: 'warning',
-                        message: '不能添加3级目录!'
+                        message: '不能添加4级目录!'
                     });
                     return
                 }
+                this.getInsPermission();
+                this.addMenuName = '';
+                this.addMenuUrl = '';
+                this.addPermissionId = '';
+                this.addSort = '';
                 this.isShowAdd = true;
             },
+            async getEditPermission(){
+                let res = await this.$post('/admin/getSysPermissionByMenuId', {parentId:this.editParentId})
+                console.log(res)
+                this.permissionList = res;
+            },
             async handleEdit(index, row) {
+                if(!row.menuType){
+                    this.editMenuType = '0'
+                    this.editParentId='0';
+                }else if(row.menuType=='0'){
+                    this.editMenuType = '1'
+                    this.editParentId=row.id;
+                }else if(row.menuType=='1') {
+                    this.editMenuType = '2'
+                    this.editParentId=row.id;
+                }
                 this.editMenuId=row.id
                 this.editMenuName = row.menuName
+                this.editParentId = row.parentId
                 this.editPermissionId = row.permissionId
                 this.editMenuUrl = row.menuUrl
                 this.editSort = row.sort
+                this.getEditPermission();
                 this.isShowEdit = true;
             },
             //删除权限
@@ -245,6 +285,7 @@
                     id:this.editMenuId,
                     menuName: this.editMenuName,
                     menuUrl: this.editMenuUrl,
+                    menuType:this.editMenuType,
                     permissionId: this.editPermissionId,
                     sort:this.editSort,
                 }
@@ -256,7 +297,7 @@
                         type: 'success',
                         message: '编辑成功!'
                     });
-                    this.selectRole()
+                    this.closeEdit()
                 }else {
                     this.$message({
                         type: 'error',

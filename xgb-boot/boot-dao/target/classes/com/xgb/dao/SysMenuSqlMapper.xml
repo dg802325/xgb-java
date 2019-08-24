@@ -47,7 +47,9 @@
     <select id="selectByParentId" resultType="com.xgb.model.vo.SysMenuVO" parameterType="java.lang.String">
         select
         <include refid="Base_Column_List"/>
+        ,sp.PERMISSION_NAME AS permissionName
         from SYS_MENU sm
+        left join SYS_PERMISSION sp on sp.ID = sm.PERMISSION_ID
         where sm.PARENT_ID = #{parentId}
     </select>
 

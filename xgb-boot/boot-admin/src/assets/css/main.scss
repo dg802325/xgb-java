@@ -60,7 +60,31 @@ body {
         outline: none;
     }
 }
+.upload-bottom {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    background: rgb(249, 250, 252);
+    border-top: 1px rgb(228, 228, 228) solid;
 
+    p {
+        flex: 1;
+        text-align: center;
+
+        span {
+            cursor: pointer;
+            color: #17a98c
+        }
+
+        .red {
+            color: rgb(240, 72, 68)
+        }
+    }
+}
 
 .v-cart-title{
     display: flex;
@@ -215,7 +239,7 @@ body {
 }
 
 .v-transfer-wrapper{
-    width: 248px;
+    width: 200px;
     height: 323px;
     border:1px #e4e4e4 solid;
     border-radius: 4px;

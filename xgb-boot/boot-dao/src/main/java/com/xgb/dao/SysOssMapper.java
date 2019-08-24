@@ -2,12 +2,11 @@ package com.xgb.dao;
 
 import com.xgb.model.SysOss;
 import com.xgb.model.SysOssExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-import java.util.List;
-
 public interface SysOssMapper {
-    long countByExample(SysOssExample example);
+    int countByExample(SysOssExample example);
 
     int deleteByExample(SysOssExample example);
 

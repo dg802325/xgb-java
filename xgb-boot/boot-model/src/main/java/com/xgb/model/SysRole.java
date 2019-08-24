@@ -17,14 +17,32 @@ public class SysRole {
 
     private String updateId;
 
-    private Integer status;
+    private String status;
+
+    private String deptId;
+
+    public SysRole(String id, String roleName, String remark, Date createTime, Date updateTime, String createId, String updateId, String status, String deptId) {
+        this.id = id;
+        this.roleName = roleName;
+        this.remark = remark;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+        this.createId = createId;
+        this.updateId = updateId;
+        this.status = status;
+        this.deptId = deptId;
+    }
+
+    public SysRole() {
+        super();
+    }
 
     public String getId() {
         return id;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.id = id == null ? null : id.trim();
     }
 
     public String getRoleName() {
@@ -32,7 +50,7 @@ public class SysRole {
     }
 
     public void setRoleName(String roleName) {
-        this.roleName = roleName;
+        this.roleName = roleName == null ? null : roleName.trim();
     }
 
     public String getRemark() {
@@ -40,7 +58,7 @@ public class SysRole {
     }
 
     public void setRemark(String remark) {
-        this.remark = remark;
+        this.remark = remark == null ? null : remark.trim();
     }
 
     public Date getCreateTime() {
@@ -64,7 +82,7 @@ public class SysRole {
     }
 
     public void setCreateId(String createId) {
-        this.createId = createId;
+        this.createId = createId == null ? null : createId.trim();
     }
 
     public String getUpdateId() {
@@ -72,14 +90,22 @@ public class SysRole {
     }
 
     public void setUpdateId(String updateId) {
-        this.updateId = updateId;
+        this.updateId = updateId == null ? null : updateId.trim();
     }
 
-    public Integer getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setStatus(String status) {
+        this.status = status == null ? null : status.trim();
+    }
+
+    public String getDeptId() {
+        return deptId;
+    }
+
+    public void setDeptId(String deptId) {
+        this.deptId = deptId == null ? null : deptId.trim();
     }
 }

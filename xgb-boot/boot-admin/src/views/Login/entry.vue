@@ -7,7 +7,7 @@
             <el-form ref="ruleForm" label-width="0px" class="ms-content" onsubmit="return false">
                 <div class="login-form" >
                     <br>
-                    <h2 class="title">X-G-B后台管理</h2>
+                    <h2 class="title">供应商业务管理系统</h2>
                     <p class="en">&nbsp;</p>
                     <div class="login-form-wrapper">
                         <div class="login-form-item">
@@ -22,10 +22,19 @@
                                    @blur="handleInputBlur" placeholder="请输入登录密码">
                             <span class="close el-icon-error" @click="removeValue('password')"></span>
                         </div>
+                        <div class="login-form-item">
+                            <span class="icon code"></span>
+                            <input type="text" v-model="verifyCode" placeholder="请输入验证码" style="width: 75px">
+                            <img style="width:110px;height:50px;margin-left: 10px;height: 43px;margin-top: 3px" @click="handleChange" :src="url"/>
+                        </div>
                         <div class="button-wrapper">
                             <button @click="handleSubmit">登录</button>
                         </div>
-                        <div class="error-wrapper" v-show="msg">
+                        <div style="float: left">
+                            <br>
+                            <router-link to="/registUser" style="font-size: 14px">申请入驻</router-link>
+                        </div>
+                        <div class="error-wrapper" v-show="msg" style="margin-left: 120px">
                             <span class="icon el-icon-info"></span>
                             <span class="tips">
                              {{msg}}
@@ -40,13 +49,16 @@
 
 <script>
     import {setToken} from "../../utils/auth";
+    import {Base_url} from "../../config/index";
 
     export default {
         data() {
             return {
                 msg: '',
+                url:'',
                 userName: '',
-                password: ''
+                password: '',
+                verifyCode: '',
             }
         },
         directives: {
@@ -56,7 +68,16 @@
                 }
             }
         },
+        created(){
+            this.Base_url = Base_url
+            this.handleChange();
+        },
         methods: {
+
+            handleChange() {
+                this.url = this.Base_url + '/admin/kaptcha?m=' + Math.random()
+            },
+
             handleKeyUp(e) {
                 if (e.target.value) e.target.nextElementSibling.style.display = 'block';
             },
@@ -80,16 +101,20 @@
                     this.msg = ' 请填写登录密码';
                     return;
                 }
-
+                if (!this.verifyCode) {
+                    this.msg = ' 请填写验证码';
+                    return;
+                }
                 let data = {
                     userName: this.userName,
                     password: this.password,
+                    code: this.verifyCode,
                 };
                 let res = await this.$post("/admin/login", data)
                 if (res.code == 200) {
-                    setToken(res['admin-token'])
+                    setToken(res['boot-admin'])
                     localStorage.ms_userName = this.userName;
-                    this.$router.push("/dashboard");
+                    this.$router.push("/home/dashboard");
                 } else {
                     this.msg = res.message
                 }
@@ -121,7 +146,7 @@
             .login-form {
                 padding: 0 60px;
                 width: 300px;
-                height: 400px;
+                height: 450px;
                 background: #fff;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
                 border-radius: 8px;
@@ -159,6 +184,10 @@
                         }
                         .lock {
                             background-image: url(./images/lock.png);
+                        }
+                        .code{
+                            background: url(./images/code.png) center 10px no-repeat;
+                            background-size:30px ;
                         }
                         input {
                             flex: 1;
@@ -213,6 +242,7 @@
             .error-wrapper {
                 display: flex;
                 align-items: center;
+                width: 180px;
                 height: 40px;
                 border-radius: 5px;
                 background: #808080;
@@ -222,7 +252,6 @@
                     margin: 0 3px 0 18px;
                 }
             }
-
         }
     }
 </style>

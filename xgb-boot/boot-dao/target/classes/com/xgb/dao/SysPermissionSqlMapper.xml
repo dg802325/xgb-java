@@ -5,7 +5,6 @@
     <sql id="Base_Column_List">
             sp.ID AS id,
             sp.PERMISSION_NAME AS permissionName,
-            sp.PERMISSION_KEY AS permissionKey,
             sp.PARENT_ID AS parentId,
             sp.PERMISSION_CODE AS permissionCode,
             sp.STATUS AS status,

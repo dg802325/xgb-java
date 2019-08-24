@@ -31,11 +31,6 @@
                                 width="220">
                         </el-table-column>
                         <el-table-column
-                                prop="permissionKey"
-                                label="权限值"
-                                width="240">
-                        </el-table-column>
-                        <el-table-column
                                 prop="remark"
                                 label="备注"
                                 width="315">
@@ -79,9 +74,6 @@
                 <el-form-item label="权限名称:" required>
                     <el-input v-model="addPermissionName" size="1" style="width: 200px;"></el-input>
                 </el-form-item>
-                <el-form-item label="权限值:" required>
-                    <el-input v-model="addPermissionKey" size="1" style="width: 200px;"></el-input>
-                </el-form-item>
                 <el-form-item label="备注:" required>
                     <el-input v-model="addRemark" size="1" style="width: 200px;"></el-input>
                 </el-form-item>
@@ -97,9 +89,6 @@
                 <el-input v-if="notShow" v-model="editPermissionId"></el-input>
                 <el-form-item label="权限名称:" required>
                     <el-input v-model="editPermissionName" size="1" style="width: 200px;"></el-input>
-                </el-form-item>
-                <el-form-item label="权限值:" required>
-                    <el-input v-model="editPermissionKey" size="1" style="width: 200px;"></el-input>
                 </el-form-item>
                 <el-form-item label="备注:" required>
                     <el-input v-model="editRemark" size="1" style="width: 200px;"></el-input>
@@ -124,12 +113,10 @@
                 isShowDelete:false,
                 addParentId:'',
                 addPermissionName:'',
-                addPermissionKey:'',
                 addRemark:'',
                 addPermissionType:'',
                 editPermissionId:'',
                 editPermissionName:'',
-                editPermissionKey:'',
                 editRemark:'',
             }
         },
@@ -138,7 +125,6 @@
         },
         methods: {
             async handleAdd(index, row) {
-
                 if(!row.permissionType){
                     this.addPermissionType = '0'
                     this.addParentId='0';
@@ -155,12 +141,13 @@
                     });
                     return
                 }
+                this.addPermissionName = '',
+                this.addRemark = '',
                 this.isShowAdd = true;
             },
             async handleEdit(index, row) {
                 this.editPermissionId=row.id
                 this.editPermissionName = row.permissionName
-                this.editPermissionKey = row.permissionKey
                 this.editRemark = row.remark
                 this.isShowEdit = true;
             },
@@ -199,7 +186,6 @@
                 let data = {
                     addParentId:this.addParentId,
                     addPermissionName: this.addPermissionName,
-                    addPermissionKey: this.addPermissionKey,
                     addRemark: this.addRemark,
                     addPermissionType: this.addPermissionType,
                 }
@@ -225,7 +211,6 @@
                 let data = {
                     editPermissionId:this.editPermissionId,
                     editPermissionName: this.editPermissionName,
-                    editPermissionKey: this.editPermissionKey,
                     editRemark: this.editRemark
                 }
                 console.log(data)

@@ -38,7 +38,7 @@ public class MyRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authcToken) throws AuthenticationException {
         JWTToken token = (JWTToken) authcToken;
         String userType = token.getUserType();
-        if ("admin-token".equals(userType)) {
+        if ("boot-admin".equals(userType)) {
             SysUser user = sysUserService.selectUserByPassword(token.getUsername(), new String(token.getPassword()));
             if (MyUtils.isNotEmpty(user)) {
                 SysUser idUser = new SysUser();

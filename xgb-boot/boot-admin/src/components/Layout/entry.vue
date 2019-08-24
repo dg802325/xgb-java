@@ -1,3 +1,5 @@
+
+
 <template>
     <div>
         <Header :menu="menuList" :currentIndex="index" @change="indexChange"/>
@@ -20,6 +22,7 @@
     import Header from './header';
     import Sider from './sider';
     import mainView from './main';
+    // import {menus} from './menu';
     export default {
         data(){
             return {
@@ -86,7 +89,6 @@
             },
             deepRouters(items = [], arr = []) {
                 arr.push(items)
-
                 for (let i = 0; i < items.length; i++) {
                     let item = items[i];
                     if (item.menuItemTwo) this.deepRouters(item.menuItemTwo, arr)
@@ -277,3 +279,5 @@
     }
 
 </style>
+
+

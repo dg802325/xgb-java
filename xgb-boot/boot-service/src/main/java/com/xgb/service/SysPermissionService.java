@@ -89,4 +89,11 @@ public class SysPermissionService {
         }
         return zhuPermissions;
     }
+    //根据父级id查询权限列表
+    public List<SysPermission> selectPermissionByParentId(String parentId) {
+        SysPermissionExample example = new SysPermissionExample();
+        example.createCriteria().andParentIdEqualTo(parentId);
+        return sysPermissionMapper.selectByExample(example);
+    }
+
 }

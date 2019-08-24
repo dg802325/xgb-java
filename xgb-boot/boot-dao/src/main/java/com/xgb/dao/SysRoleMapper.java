@@ -2,12 +2,11 @@ package com.xgb.dao;
 
 import com.xgb.model.SysRole;
 import com.xgb.model.SysRoleExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-import java.util.List;
-
 public interface SysRoleMapper {
-    long countByExample(SysRoleExample example);
+    int countByExample(SysRoleExample example);
 
     int deleteByExample(SysRoleExample example);
 

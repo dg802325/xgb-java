@@ -17,12 +17,35 @@ public class SysOss {
 
     private String status;
 
+    private String oosName;
+
+    private String oosSuffix;
+
+    private String oosType;
+
+    public SysOss(String id, String oosUrl, Date createTime, Date updateTime, String createId, String updateId, String status, String oosName, String oosSuffix, String oosType) {
+        this.id = id;
+        this.oosUrl = oosUrl;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+        this.createId = createId;
+        this.updateId = updateId;
+        this.status = status;
+        this.oosName = oosName;
+        this.oosSuffix = oosSuffix;
+        this.oosType = oosType;
+    }
+
+    public SysOss() {
+        super();
+    }
+
     public String getId() {
         return id;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.id = id == null ? null : id.trim();
     }
 
     public String getOosUrl() {
@@ -30,7 +53,7 @@ public class SysOss {
     }
 
     public void setOosUrl(String oosUrl) {
-        this.oosUrl = oosUrl;
+        this.oosUrl = oosUrl == null ? null : oosUrl.trim();
     }
 
     public Date getCreateTime() {
@@ -54,7 +77,7 @@ public class SysOss {
     }
 
     public void setCreateId(String createId) {
-        this.createId = createId;
+        this.createId = createId == null ? null : createId.trim();
     }
 
     public String getUpdateId() {
@@ -62,7 +85,7 @@ public class SysOss {
     }
 
     public void setUpdateId(String updateId) {
-        this.updateId = updateId;
+        this.updateId = updateId == null ? null : updateId.trim();
     }
 
     public String getStatus() {
@@ -70,6 +93,30 @@ public class SysOss {
     }
 
     public void setStatus(String status) {
-        this.status = status;
+        this.status = status == null ? null : status.trim();
+    }
+
+    public String getOosName() {
+        return oosName;
+    }
+
+    public void setOosName(String oosName) {
+        this.oosName = oosName == null ? null : oosName.trim();
+    }
+
+    public String getOosSuffix() {
+        return oosSuffix;
+    }
+
+    public void setOosSuffix(String oosSuffix) {
+        this.oosSuffix = oosSuffix == null ? null : oosSuffix.trim();
+    }
+
+    public String getOosType() {
+        return oosType;
+    }
+
+    public void setOosType(String oosType) {
+        this.oosType = oosType == null ? null : oosType.trim();
     }
 }

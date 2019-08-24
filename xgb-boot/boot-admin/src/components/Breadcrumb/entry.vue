@@ -4,12 +4,11 @@
             <div class="title">
                 <span class="line"></span>{{title}}
             </div>
-            <div class="return">
-                <el-button @click="backCategory">返回</el-button>
+            <slot>
+            <div>
+                <el-button @click="ruturn" size="mini">返回</el-button>
             </div>
-            <!--<div>-->
-                <!--<el-button size="mini" @click="flushEvent" icon="el-icon-refresh">刷新</el-button>-->
-            <!--</div>-->
+            </slot>
         </div>
     </div>
 </template>
@@ -17,32 +16,24 @@
 <script>
     export default {
         props: {
-            title: String,
+            title: String
         },
-        methods:{
-            flushEvent(){
-                location.reload()
-            },
-            backCategory(){
+
+        methods: {
+            ruturn(){
                 this.$router.go(-1)
-                // this.$router.push('/categoryTwoList/'+this.parentIdtwo)
-            },
-        },
+            }
+        }
     }
+
+
 </script>
+
 
 <style lang="scss" scoped>
 @import "../../assets/scss/common";
-.return{
-    .el-button{
-        width: 70px;
-        height: 29px;
-        line-height: 0px;
-    }
 
-}
 .glob-breadcrumb {
-
     height: 48px;
     background: #f3f3f3;
     border-bottom: 1px #e4e4e4 solid;

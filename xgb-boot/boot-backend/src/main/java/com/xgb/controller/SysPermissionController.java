@@ -2,8 +2,10 @@ package com.xgb.controller;
 
 import com.xgb.common.SessionUtil;
 import com.xgb.lang.R;
+import com.xgb.model.SysMenu;
 import com.xgb.model.SysPermission;
 import com.xgb.model.vo.SysPermissionVO;
+import com.xgb.service.SysMenuService;
 import com.xgb.service.SysPermissionService;
 import com.xgb.utils.MyUtils;
 import com.xgb.utils.UUIDUtils;
@@ -29,7 +31,8 @@ public class SysPermissionController {
 
     @Autowired
     private SysPermissionService sysPermissionService;
-
+    @Autowired
+    private SysMenuService sysMenuService;
 
     /**
      * 查询权限列表
@@ -61,7 +64,6 @@ public class SysPermissionController {
         sysPermission.setCreateTime(new Date());
         sysPermission.setUpdateTime(new Date());
         sysPermission.setPermissionType(addPermissionType);
-        sysPermission.setPermissionKey(addPermissionKey);
         sysPermission.setRemark(addRemark);
         if (sysPermissionService.insert(sysPermission)>0) {
             return R.ok("添加成功");
@@ -78,7 +80,6 @@ public class SysPermissionController {
         SysPermission sysPermission = sysPermissionService.selectByPrimaryKey(editPermissionId);
         sysPermission.setUpdateId(sysUserId);
         sysPermission.setPermissionName(editPermissionName);
-        sysPermission.setPermissionKey(editPermissionKey);
         sysPermission.setRemark(editRemark);
         if (sysPermissionService.updateByPrimaryKeySelective(sysPermission)>0) {
             return R.ok("编辑成功");
@@ -103,5 +104,38 @@ public class SysPermissionController {
             return R.error(996,"删除失败");
         }
     }
+
+    /**
+     * 根据父级id查询权限列表
+     * @return
+     */
+    @ResponseBody
+    @PostMapping(value = "getSysPermissionByparentId")
+    public List<SysPermission> getSysPermissionByparentId(String parentId) {
+        logger.info("------request-address----------------：/admin/getSysPermission");
+        //查询代码
+        List<SysPermission> sysPermission = sysPermissionService.selectPermissionByParentId(parentId);
+        return sysPermission;
+    }
+
+    /**
+     * 根据父级菜单id查询权限列表
+     * @return
+     */
+    @ResponseBody
+    @PostMapping(value = "getSysPermissionByMenuId")
+    public List<SysPermission> getSysPermissionByMenuId(String parentId) {
+        logger.info("------request-address----------------：/admin/getSysPermission");
+        //查询代码
+        List<SysPermission> sysPermission = null;
+        if("0".equals(parentId)){
+            sysPermission = sysPermissionService.selectPermissionByParentId("0");
+        }else {
+            SysMenu sysMenu = sysMenuService.selectByPrimaryKey(parentId);
+            sysPermission = sysPermissionService.selectPermissionByParentId(sysMenu.getPermissionId());
+        }
+        return sysPermission;
+    }
+
 
 }
