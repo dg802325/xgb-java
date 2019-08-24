@@ -9,4 +9,5 @@ import com.xgb.model.SysRole;
  */
 public class SysRoleVO extends SysRole {
 
+
 }

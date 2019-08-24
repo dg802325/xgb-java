@@ -116,14 +116,14 @@
             async requestSearch(page) {
                 let currentPage = page || 1;
                 let data = {
-
+                    begin:currentPage
                 }
                 let res = await this.$get("/admin/getSysRoleForPage", data)
-                this.list = res.dataSet.list
+                console.log(res)
                 if (res.code == 200) {
-                    let dataSet = res.dataSet
+                    console.log("成功")
                     let list = dataSet.list;
-                    this.list = list;
+                    this.list = res.roles
                     this.pagination = {
                         count: dataSet.count,
                         pageNumber: dataSet.pageNumber,

@@ -3,6 +3,7 @@ package com.xgb.controller;
 import com.xgb.lang.R;
 import com.xgb.model.SysRole;
 import com.xgb.service.SysRoleService;
+import com.xgb.service.SysUserService;
 import com.xgb.utils.MyUtils;
 import com.xgb.utils.UUIDUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -13,9 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  *
@@ -41,11 +40,14 @@ public class SysRoleController {
         logger.info("------request-address----------------：/admin/getSysRoleForPage");
         Map<String,Object> map = new HashMap<String,Object>();
         int begin = Integer.valueOf(mapParam.get("begin").toString());
-        int end = Integer.valueOf(mapParam.get("end").toString());
+        int end = 10;
         //查询代码
-        List<SysRole> sysRoles = sysRoleService.selectAllRole();
-        if(sysRoles.size()>0){
-            map.put("roles",sysRoles);
+        List<Map<String, Object>> maps = sysRoleService.selectRoleMapByDeptId(null,begin,end);
+        Integer roleMapByDeptId = sysRoleService.getRoleMapByDeptId(null);
+        sysRoleService
+        if(maps.size()>0){
+            map.put("roles",maps);
+            map.put("count",roleMapByDeptId);
             return R.ok(map,"查询成功");
         }
         //默认返回查询结果
