@@ -108,9 +108,7 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.xgb.model.SysDict">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.String">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
+
     insert into SYS_DICT (DICT_NAME, DICT_TYP, DICT_CODE, 
       DICT_VALUE, SORT, REMARK, 
       STATUS, CREATE_TIME, UPDATE_TIME, 
@@ -121,9 +119,7 @@
       #{createId,jdbcType=VARCHAR}, #{updateId,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.xgb.model.SysDict">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.String">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
+
     insert into SYS_DICT
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="dictName != null">

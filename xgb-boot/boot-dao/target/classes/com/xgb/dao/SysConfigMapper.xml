@@ -105,9 +105,7 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.xgb.model.SysConfig">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.String">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
+
     insert into SYS_CONFIG (PARAM_KEY, PARAM_VALUE, STATUS, 
       REMARK, CREATE_TIME, UPDATE_TIME, 
       CREATE_ID, UPDATE_ID)
@@ -116,9 +114,7 @@
       #{createId,jdbcType=VARCHAR}, #{updateId,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.xgb.model.SysConfig">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.String">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
+
     insert into SYS_CONFIG
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="paramKey != null">

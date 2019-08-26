@@ -21,12 +21,31 @@ public class SysDept {
 
     private Integer updateId;
 
+    private String remark;
+
+    public SysDept(String id, String parentId, String deptName, Integer sort, Integer status, Date createTime, Date updateTime, Integer createId, Integer updateId, String remark) {
+        this.id = id;
+        this.parentId = parentId;
+        this.deptName = deptName;
+        this.sort = sort;
+        this.status = status;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+        this.createId = createId;
+        this.updateId = updateId;
+        this.remark = remark;
+    }
+
+    public SysDept() {
+        super();
+    }
+
     public String getId() {
         return id;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.id = id == null ? null : id.trim();
     }
 
     public String getParentId() {
@@ -34,7 +53,7 @@ public class SysDept {
     }
 
     public void setParentId(String parentId) {
-        this.parentId = parentId;
+        this.parentId = parentId == null ? null : parentId.trim();
     }
 
     public String getDeptName() {
@@ -42,7 +61,7 @@ public class SysDept {
     }
 
     public void setDeptName(String deptName) {
-        this.deptName = deptName;
+        this.deptName = deptName == null ? null : deptName.trim();
     }
 
     public Integer getSort() {
@@ -91,5 +110,13 @@ public class SysDept {
 
     public void setUpdateId(Integer updateId) {
         this.updateId = updateId;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
     }
 }

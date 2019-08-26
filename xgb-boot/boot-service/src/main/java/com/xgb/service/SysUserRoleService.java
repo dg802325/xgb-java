@@ -1,13 +1,16 @@
 package com.xgb.service;
 
+import com.xgb.dao.SysDeptMapper;
+import com.xgb.dao.SysRoleMapper;
+import com.xgb.dao.SysUserMapper;
 import com.xgb.dao.SysUserRoleMapper;
-import com.xgb.model.SysUserRole;
-import com.xgb.model.SysUserRoleExample;
+import com.xgb.model.*;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import java.util.*;
 
 /**
  *
@@ -16,51 +19,62 @@ import java.util.List;
 @Service
 public class SysUserRoleService {
 
-	@Autowired
+    @Autowired
+    private SysRoleMapper sysRoleMapper;
+    @Autowired
+    private SysUserMapper sysUserMapper;
+    @Autowired
     private SysUserRoleMapper sysUserRoleMapper;
-    
-            public long countByExample(SysUserRoleExample example){
-                return sysUserRoleMapper.countByExample(example);
-            }
+    @Autowired
+    private SysDeptMapper sysDeptMapper;
 
-            public int deleteByExample(SysUserRoleExample example){
-                return sysUserRoleMapper.deleteByExample(example);
-            }
+    public List<Map<String,Object>> selectRoleMapByDeptId(String deptId, Integer begin, Integer end) {
+        SysUserExample sysRoleExample = new SysUserExample();
+        sysRoleExample.createCriteria();
+        sysRoleExample.setOrderByClause("CREATE_TIME DESC LIMIT "+begin+","+end);
+        List<SysUser> sysUsers = sysUserMapper.selectByExample(sysRoleExample);
+        List<Map<String,Object>> lists = new ArrayList<>();
+        Iterator<SysUser> iterator = sysUsers.iterator();
+        while (iterator.hasNext()) {
+            SysUser next = iterator.next();
+            SysUserRoleExample example = new SysUserRoleExample();
+            example.createCriteria().andUserIdEqualTo(next.getId());
+            SysUserRole sysUserRole = sysUserRoleMapper.selectByExample(example).get(0);
+            SysRole sysRole = sysRoleMapper.selectByPrimaryKey(sysUserRole.getRoleId());
+            //获得部门
+            SysDept sysDept = sysDeptMapper.selectByPrimaryKey(sysRole.getDeptId());
+            Map<String,Object> parentMap = new HashMap<String,Object>();
+            parentMap.put("id",next.getId());
+            parentMap.put("userName",next.getUserName());
+            parentMap.put("nickName",next.getNickName());
+            parentMap.put("roleName",sysRole.getRoleName());
+            parentMap.put("roleId",sysRole.getId());
+            parentMap.put("deptName",sysDept.getDeptName());
+            parentMap.put("deptId",sysDept.getId());
+            parentMap.put("createTime",next.getCreateTime());
+            parentMap.put("lastLogin",next.getUpdateTime());
+            lists.add(parentMap);
+        }
+        return lists;
+    }
 
-            public int deleteByPrimaryKey(String id){
-                return sysUserRoleMapper.deleteByPrimaryKey(id);
-            }
+    public int getRoleMapByDeptId(String deptId) {
+        return sysRoleMapper.countByExample(new SysRoleExample());
+    }
 
-            public int insert(SysUserRole record){
-                return sysUserRoleMapper.insert(record);
-            }
 
-            public int insertSelective(SysUserRole record){
-                return sysUserRoleMapper.insertSelective(record);
-            }
+    public int insert(SysUserRole sysUserRole) {
+        return sysUserRoleMapper.insert(sysUserRole);
+    }
 
-            public List<SysUserRole> selectByExample(SysUserRoleExample example){
-                return sysUserRoleMapper.selectByExample(example);
-            }
+    public SysUserRole selectRoleIdByUserId(String userId) {
+        SysUserRoleExample sysUserRoleExample = new SysUserRoleExample();
+        sysUserRoleExample.createCriteria().andUserIdEqualTo(userId);
+        return sysUserRoleMapper.selectByExample(sysUserRoleExample).get(0);
+    }
 
-            public SysUserRole selectByPrimaryKey(String id){
-                return sysUserRoleMapper.selectByPrimaryKey(id);
-            }
-
-            public int updateByExampleSelective(@Param("record") SysUserRole record, @Param("example") SysUserRoleExample example){
-                return sysUserRoleMapper.updateByExampleSelective(record,example);
-            }
-
-            public int updateByExample(@Param("record") SysUserRole record, @Param("example") SysUserRoleExample example){
-                return sysUserRoleMapper.updateByExample(record,example);
-            }
-
-            public int updateByPrimaryKeySelective(SysUserRole record){
-                return sysUserRoleMapper.updateByPrimaryKeySelective(record);
-            }
-
-            public int updateByPrimaryKey(SysUserRole record){
-                return sysUserRoleMapper.updateByPrimaryKey(record);
-            }
-
+    @Transactional
+    public int update(SysUserRole sysUserRole) {
+        return sysUserRoleMapper.updateByPrimaryKey(sysUserRole);
+    }
 }

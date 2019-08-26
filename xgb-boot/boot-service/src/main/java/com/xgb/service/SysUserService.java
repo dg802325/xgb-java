@@ -34,10 +34,6 @@ public class SysUserService {
         return null;
     }
     
-    public long countByExample(SysUserExample example){
-        return sysUserMapper.countByExample(example);
-    }
-
     public int deleteByExample(SysUserExample example){
         return sysUserMapper.deleteByExample(example);
     }
@@ -86,5 +82,9 @@ public class SysUserService {
     public List<String> getPermissionListByUserName(Map map) {
         List permissionListByUserName = sysUserSqlMapper.getPermissionListByUserName(map);
         return permissionListByUserName;
+    }
+
+    public int getUserCount(){
+	    return sysUserMapper.countByExample(new SysUserExample());
     }
 }

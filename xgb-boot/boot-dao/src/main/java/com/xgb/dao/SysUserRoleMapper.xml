@@ -104,20 +104,14 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.xgb.model.SysUserRole">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.String">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into SYS_USER_ROLE (USER_ID, ROLE_ID, CREATE_TIME, 
+    insert into SYS_USER_ROLE (ID,USER_ID, ROLE_ID, CREATE_TIME,
       UPDATE_TIME, CREATE_ID, UPDATE_ID, 
       STATUS, SORT)
-    values (#{userId,jdbcType=VARCHAR}, #{roleId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+    values (#{id,jdbcType=VARCHAR},#{userId,jdbcType=VARCHAR}, #{roleId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
       #{updateTime,jdbcType=TIMESTAMP}, #{createId,jdbcType=VARCHAR}, #{updateId,jdbcType=VARCHAR}, 
       #{status,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.xgb.model.SysUserRole">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.String">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
     insert into SYS_USER_ROLE
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="userId != null">

@@ -121,9 +121,7 @@
       )
   </insert>
   <insert id="insertSelective" parameterType="com.xgb.model.SysMenu">
-    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.String">
-      SELECT LAST_INSERT_ID()
-    </selectKey>
+
     insert into SYS_MENU
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="parentId != null">

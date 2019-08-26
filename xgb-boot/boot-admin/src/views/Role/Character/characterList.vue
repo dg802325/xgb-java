@@ -1,6 +1,6 @@
 <template>
     <div>
-        <glob-breadcrumb title="成员管理"/>
+        <glob-breadcrumb title="角色管理"/>
         <br><br>
         <glob-base-search>
             <div slot="button">
@@ -30,21 +30,37 @@
                     数据列表
                 </div>
             </div>
-            <div class="table_border">
+
+
+
                 <el-table
-                        :data="list"
+                        :data="tableData"
+                        style="width: 100%;margin-bottom: 20px;"
+                        row-key="id"
                         border
-                        style="width: 100%">
-                    <el-table-column prop="userName" align="center" label="成员账号" width="135px;"></el-table-column>
-                    <el-table-column prop="nickName" align="center" label="姓名" width="135px"></el-table-column>
-                    <el-table-column prop="roleName" align="center" label="所属岗位" width="135px;"></el-table-column>
+                        default-expand-all
+                        :tree-props="{children: 'children', hasChildren: 'hasChildren'}">
+                    <el-table-column prop="userName" align="center" label="角色名称" width="135px;"></el-table-column>
                     <el-table-column prop="deptName" align="center" label="所属部门" width="135px;"></el-table-column>
-                    <el-table-column prop="createTime" align="center" label="添加时间" width="160px"></el-table-column>
-                    <el-table-column prop="lastLogin" align="center" label="最后登录" width="160px"></el-table-column>
-                    <el-table-column label="操作" align="center">
+                    <el-table-column prop="remark" align="center" label="备注" width="135px;"></el-table-column>
+                    <el-table-column prop="createTime" align="center" label="创建时间" width="160px"></el-table-column>
+                    <el-table-column prop="updateTime" align="center" label="更新时间" width="160px"></el-table-column>
+                    <el-table-column
+                            label="操作"
+                            align="right">
                         <template slot-scope="scope">
-                            <el-button type="text" @click="editUser(scope.$index)">编辑</el-button>
-                            <el-button type="text" @click="toDelUser(scope.$index)">删除</el-button>
+                            <el-button
+                                    size="mini"
+                                    type="success"
+                                    @click="handleAdd(scope.$index, scope.row)">Add</el-button>
+                            <el-button
+                                    size="mini"
+                                    type="primary"
+                                    @click="handleEdit(scope.$index, scope.row)">Edit</el-button>
+                            <el-button
+                                    size="mini"
+                                    type="danger"
+                                    @click="handleDelete(scope.$index, scope.row)">Delete</el-button>
                         </template>
                     </el-table-column>
                 </el-table>
@@ -66,7 +82,7 @@
                 <div class="del-dialog-cnt">删除不可恢复，是否确定删除？</div>
                 <span slot="footer" class="dialog-footer">
                 <el-button class="el-button_1" @click="delVisible = false">取 消</el-button>
-                <el-button class="el-button_1" type="primary" @click="delUser">确 定</el-button>
+                <el-button class="el-button_1" type="primary" @click="delRole">确 定</el-button>
                 </span>
             </el-dialog>
 
@@ -114,7 +130,7 @@
         name: 'dashboard',
         data() {
             return {
-                queryUser:'',
+                queryName:'',
                 pagination:{},
                 list: [],
                 userInfo:{},
@@ -130,31 +146,15 @@
                 isShowEdit:false,
             }
         },
-        watch:{
-            editDeptId(val){
-                this.getRoleBydeptId(val)
-            }
-        },
         created() {
             this.requestSearch()
             this.getDeptInfo()
-            this.getRole()
         },
         methods: {
             //获得全部部门
             async getDeptInfo(){
                 let res = await this.$get("/admin/getAllDept", {})
                 this.deptList = res;
-            },
-            //获得全部岗位
-            async getRole(){
-                let res = await this.$get("/admin/getAllRole", {})
-                this.roleList = res;
-            },
-            //根据部门id获取岗位
-            async getRoleBydeptId(deptId){
-                let res = await this.$get("/admin/getAllRole", {deptId:deptId})
-                this.roleList = res;
             },
             //分页查询
             handleCurrentChange(page) {
@@ -167,8 +167,8 @@
                     begin:currentPage,
                     end:10
                 }
-                let res = await this.$get("/admin/getSysUserRoleForPage", data)
-                console.log(res)
+                let res = await this.$get("/admin/getSysRoleForPage", data)
+                this.tableData = res;
                 if (res.code == 200) {
                     console.log("成功")
                     let list = res.roles
@@ -192,7 +192,7 @@
                     id:this.userInfo.id,
                     roleId:this.editRoleId,
                 }
-                let res = await this.$post("/admin/saveSysUserRole", data)
+                let res = await this.$post("/admin/saveSysRole", data)
                 if (res.code == 200) {
                     this.$message.success(res.message);
                     this.isShowEdit = false
@@ -202,7 +202,7 @@
                 }
             },
             //删除
-            async delUser() {
+            async delRole() {
                 let res = await this.$post("/admin/delSysUserRole", {userRoleId: this.item.userRoleId})
                 if (res.code == 200) {
                     this.$message.success(res.message);
@@ -213,7 +213,7 @@
                 }
             },
             //修改
-            editUser(index) {
+            editRole(index) {
                 this.userInfo = this.list[index]
                 this.editDeptId = this.userInfo.deptId
                 this.editRoleId = this.userInfo.roleId
