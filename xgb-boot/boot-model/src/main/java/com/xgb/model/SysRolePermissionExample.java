@@ -644,6 +644,76 @@ public class SysRolePermissionExample {
             addCriterion("STATUS not between", value1, value2, "status");
             return (Criteria) this;
         }
+
+        public Criteria andPermissionTypeIsNull() {
+            addCriterion("PERMISSION_TYPE is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPermissionTypeIsNotNull() {
+            addCriterion("PERMISSION_TYPE is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPermissionTypeEqualTo(String value) {
+            addCriterion("PERMISSION_TYPE =", value, "permissionType");
+            return (Criteria) this;
+        }
+
+        public Criteria andPermissionTypeNotEqualTo(String value) {
+            addCriterion("PERMISSION_TYPE <>", value, "permissionType");
+            return (Criteria) this;
+        }
+
+        public Criteria andPermissionTypeGreaterThan(String value) {
+            addCriterion("PERMISSION_TYPE >", value, "permissionType");
+            return (Criteria) this;
+        }
+
+        public Criteria andPermissionTypeGreaterThanOrEqualTo(String value) {
+            addCriterion("PERMISSION_TYPE >=", value, "permissionType");
+            return (Criteria) this;
+        }
+
+        public Criteria andPermissionTypeLessThan(String value) {
+            addCriterion("PERMISSION_TYPE <", value, "permissionType");
+            return (Criteria) this;
+        }
+
+        public Criteria andPermissionTypeLessThanOrEqualTo(String value) {
+            addCriterion("PERMISSION_TYPE <=", value, "permissionType");
+            return (Criteria) this;
+        }
+
+        public Criteria andPermissionTypeLike(String value) {
+            addCriterion("PERMISSION_TYPE like", value, "permissionType");
+            return (Criteria) this;
+        }
+
+        public Criteria andPermissionTypeNotLike(String value) {
+            addCriterion("PERMISSION_TYPE not like", value, "permissionType");
+            return (Criteria) this;
+        }
+
+        public Criteria andPermissionTypeIn(List<String> values) {
+            addCriterion("PERMISSION_TYPE in", values, "permissionType");
+            return (Criteria) this;
+        }
+
+        public Criteria andPermissionTypeNotIn(List<String> values) {
+            addCriterion("PERMISSION_TYPE not in", values, "permissionType");
+            return (Criteria) this;
+        }
+
+        public Criteria andPermissionTypeBetween(String value1, String value2) {
+            addCriterion("PERMISSION_TYPE between", value1, value2, "permissionType");
+            return (Criteria) this;
+        }
+
+        public Criteria andPermissionTypeNotBetween(String value1, String value2) {
+            addCriterion("PERMISSION_TYPE not between", value1, value2, "permissionType");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

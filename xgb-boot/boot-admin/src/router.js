@@ -313,88 +313,21 @@ const systemRouter = [
             component: () => import('./views/Role/Menu/menusList.vue'),
             meta: {title: '菜单列表'}
         },
-      {
-        path: 'partList',
-        component: () => import('./views/Role/Part/partList.vue'),
-        meta: {title: '岗位管理'}
-      },
         {
-            path: 'department',
-            component: () => import('./views/departmentAll/entry.vue'),
+            path: 'partList',
+            component: () => import('./views/Role/Part/partList.vue'),
+            meta: {title: '岗位管理'}
+        },
+        {
+            path: 'deptList',
+            component: () => import('./views/Role/Dept/deptList.vue'),
             meta: {title: '部门管理'}
         },
-      {
-        path: 'userManagement',
-        component: () => import('./views/UserManagement/entry.vue'),
-        meta: {title: '成员管理'}
-      },
-      {
-        path: 'userManagement/userInsert',
-        component: () => import('./views/UserManagement/insert.vue'),
-        meta: {title: '成员新增'}
-      },
-      {
-        path: 'userManagement/userEdit/:userRoleId',
-        component: () => import('./views/UserManagement/edit.vue'),
-        meta: {title: '成员编辑'}
-      },
-      {
-        path: 'userManagement/permissions',
-        component: () => import('./views/UserManagement/permissions.vue'),
-        meta: {title: '权限设置'}
-      },
-
-      {
-        path: 'erpExpert',
-            component: () => import('./views/ErpExpert/entry.vue'),
-          meta: {title: '专家管理'}
-      },
-      {
-        path: 'erpExpert/addExpert',
-            component: () => import('./views/ErpExpert/insert.vue'),
-          meta: {title: '添加'}
-      },
-      {
-        path: 'erpExpert/editExpert/:id',
-            component: () => import('./views/ErpExpert/edit.vue'),
-          meta: {title: '修改'}
-      },
-      {
-        path: 'erpWorkflow',
-        component: () => import('./views/ErpWorkflow/entry.vue'),
-        meta: {title: '工作流管理'}
-      },
-      {
-        path: 'erpWorkflow/addWorkflow',
-        component: () => import('./views/ErpWorkflow/insert.vue'),
-        meta: {title: '添加工作流'}
-      },
         {
-            path: '/addmessage',
-                component: () => import('./views/ErpWorkflow/authenStore.vue'),
-            meta: {title: '添加工作流'}
+            path: 'characterList',
+            component: () => import('./views/Role/Character/characterList.vue'),
+            meta: {title: '权限管理'}
         },
-      {
-        path: 'erpWorkflow/editWorkflow/:id',
-        component: () => import('./views/ErpWorkflow/edit.vue'),
-        meta: {title: '编辑工作流'}
-      },
-      {
-        path: 'template',
-        component: () => import('./views/freightTemplate/entry.vue'),
-        meta: {title: '运费模板'}
-      },
-{
-    path: 'template/addFreight',
-        component: () => import('./views/freightTemplate/insert.vue'),
-    meta: {title: '添加运费'}
-},
-{
-    path: 'template/editFreight/:id',
-        component: () => import('./views/freightTemplate/edit.vue'),
-    meta: {title: '编辑运费'}
-},
-
     ]
   },
 ];

@@ -67,8 +67,9 @@ public class MyRealm extends AuthorizingRealm {
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
         Map conditions = new HashMap();
         conditions.put("userId", sysUser.getId());
-        List permissionList = sysUserService.getPermissionListByUserName(conditions);
-        info.addStringPermissions(permissionList);
+        //根据userId查询用户权限
+        List<String> strings = sysUserService.selectPermissionByUserId(sysUser.getId());
+        info.addStringPermissions(strings);
         return info;
     }
 

@@ -48,11 +48,11 @@ public class SysMenuController {
      */
     @ResponseBody
     @PostMapping(value = "getSysMenuList")
-    public List<SysMenuVO> getSysMenuList(String id) {
+    public List<Map<String,Object>> getSysMenuList(String id) {
         logger.info("------request-address----------------：/admin/getSysMenuList");
         //查询代码
-        List<SysMenuVO> sysMenuVOS = sysMenuService.selectAllMenuList(id);
-        return sysMenuVOS;
+        List<Map<String,Object>> list = sysMenuService.selectAllMenuList(id);
+        return list;
     }
 
 
@@ -112,7 +112,7 @@ public class SysMenuController {
         //获得当前登录人id
         String sysUserId = SessionUtil.getSysUserId();
         //根据当前登录人查询拥有的角色
-        List<SysMenuVO> menuList = sysMenuService.getMenuByUserId(sysUserId);
+        List<Map<String,Object>> menuList = sysMenuService.getMenuByUserId(sysUserId);
         return R.ok("menuList",menuList,"成功");
     }
 

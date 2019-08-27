@@ -565,52 +565,62 @@ public class SysDeptExample {
             return (Criteria) this;
         }
 
-        public Criteria andCreateIdEqualTo(Integer value) {
+        public Criteria andCreateIdEqualTo(String value) {
             addCriterion("CREATE_ID =", value, "createId");
             return (Criteria) this;
         }
 
-        public Criteria andCreateIdNotEqualTo(Integer value) {
+        public Criteria andCreateIdNotEqualTo(String value) {
             addCriterion("CREATE_ID <>", value, "createId");
             return (Criteria) this;
         }
 
-        public Criteria andCreateIdGreaterThan(Integer value) {
+        public Criteria andCreateIdGreaterThan(String value) {
             addCriterion("CREATE_ID >", value, "createId");
             return (Criteria) this;
         }
 
-        public Criteria andCreateIdGreaterThanOrEqualTo(Integer value) {
+        public Criteria andCreateIdGreaterThanOrEqualTo(String value) {
             addCriterion("CREATE_ID >=", value, "createId");
             return (Criteria) this;
         }
 
-        public Criteria andCreateIdLessThan(Integer value) {
+        public Criteria andCreateIdLessThan(String value) {
             addCriterion("CREATE_ID <", value, "createId");
             return (Criteria) this;
         }
 
-        public Criteria andCreateIdLessThanOrEqualTo(Integer value) {
+        public Criteria andCreateIdLessThanOrEqualTo(String value) {
             addCriterion("CREATE_ID <=", value, "createId");
             return (Criteria) this;
         }
 
-        public Criteria andCreateIdIn(List<Integer> values) {
+        public Criteria andCreateIdLike(String value) {
+            addCriterion("CREATE_ID like", value, "createId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateIdNotLike(String value) {
+            addCriterion("CREATE_ID not like", value, "createId");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateIdIn(List<String> values) {
             addCriterion("CREATE_ID in", values, "createId");
             return (Criteria) this;
         }
 
-        public Criteria andCreateIdNotIn(List<Integer> values) {
+        public Criteria andCreateIdNotIn(List<String> values) {
             addCriterion("CREATE_ID not in", values, "createId");
             return (Criteria) this;
         }
 
-        public Criteria andCreateIdBetween(Integer value1, Integer value2) {
+        public Criteria andCreateIdBetween(String value1, String value2) {
             addCriterion("CREATE_ID between", value1, value2, "createId");
             return (Criteria) this;
         }
 
-        public Criteria andCreateIdNotBetween(Integer value1, Integer value2) {
+        public Criteria andCreateIdNotBetween(String value1, String value2) {
             addCriterion("CREATE_ID not between", value1, value2, "createId");
             return (Criteria) this;
         }
@@ -625,52 +635,62 @@ public class SysDeptExample {
             return (Criteria) this;
         }
 
-        public Criteria andUpdateIdEqualTo(Integer value) {
+        public Criteria andUpdateIdEqualTo(String value) {
             addCriterion("UPDATE_ID =", value, "updateId");
             return (Criteria) this;
         }
 
-        public Criteria andUpdateIdNotEqualTo(Integer value) {
+        public Criteria andUpdateIdNotEqualTo(String value) {
             addCriterion("UPDATE_ID <>", value, "updateId");
             return (Criteria) this;
         }
 
-        public Criteria andUpdateIdGreaterThan(Integer value) {
+        public Criteria andUpdateIdGreaterThan(String value) {
             addCriterion("UPDATE_ID >", value, "updateId");
             return (Criteria) this;
         }
 
-        public Criteria andUpdateIdGreaterThanOrEqualTo(Integer value) {
+        public Criteria andUpdateIdGreaterThanOrEqualTo(String value) {
             addCriterion("UPDATE_ID >=", value, "updateId");
             return (Criteria) this;
         }
 
-        public Criteria andUpdateIdLessThan(Integer value) {
+        public Criteria andUpdateIdLessThan(String value) {
             addCriterion("UPDATE_ID <", value, "updateId");
             return (Criteria) this;
         }
 
-        public Criteria andUpdateIdLessThanOrEqualTo(Integer value) {
+        public Criteria andUpdateIdLessThanOrEqualTo(String value) {
             addCriterion("UPDATE_ID <=", value, "updateId");
             return (Criteria) this;
         }
 
-        public Criteria andUpdateIdIn(List<Integer> values) {
+        public Criteria andUpdateIdLike(String value) {
+            addCriterion("UPDATE_ID like", value, "updateId");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpdateIdNotLike(String value) {
+            addCriterion("UPDATE_ID not like", value, "updateId");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpdateIdIn(List<String> values) {
             addCriterion("UPDATE_ID in", values, "updateId");
             return (Criteria) this;
         }
 
-        public Criteria andUpdateIdNotIn(List<Integer> values) {
+        public Criteria andUpdateIdNotIn(List<String> values) {
             addCriterion("UPDATE_ID not in", values, "updateId");
             return (Criteria) this;
         }
 
-        public Criteria andUpdateIdBetween(Integer value1, Integer value2) {
+        public Criteria andUpdateIdBetween(String value1, String value2) {
             addCriterion("UPDATE_ID between", value1, value2, "updateId");
             return (Criteria) this;
         }
 
-        public Criteria andUpdateIdNotBetween(Integer value1, Integer value2) {
+        public Criteria andUpdateIdNotBetween(String value1, String value2) {
             addCriterion("UPDATE_ID not between", value1, value2, "updateId");
             return (Criteria) this;
         }

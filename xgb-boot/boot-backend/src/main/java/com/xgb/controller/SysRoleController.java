@@ -6,6 +6,7 @@ import com.xgb.model.SysDept;
 import com.xgb.model.SysDeptExample;
 import com.xgb.model.SysRole;
 import com.xgb.model.SysRoleExample;
+import com.xgb.service.SysDeptService;
 import com.xgb.service.SysRoleService;
 import com.xgb.service.SysUserService;
 import com.xgb.utils.MyUtils;
@@ -32,6 +33,8 @@ public class SysRoleController {
 
     @Autowired
     private SysRoleService sysRoleService;
+    @Autowired
+    private SysDeptService sysDeptService;
 
 
     @GetMapping("getAllRole")
@@ -53,15 +56,40 @@ public class SysRoleController {
      * @return
      */
     @GetMapping("getSysRoleForPage")
-    public List<Map<String, Object>> getSysRoleForPage(@RequestParam Map mapParam) {
+    public R getSysRoleForPage(@RequestParam Map mapParam) {
         logger.info("------request-address----------------：/admin/getSysRoleForPage");
-        Map<String,Object> map = new HashMap<String,Object>();
         int begin = Integer.valueOf(mapParam.get("begin").toString());
         int end = Integer.valueOf(mapParam.get("end").toString());
         begin = IntegerUtils.getBegin(begin,end);//根据第几页查询数据
         //查询代码
+        SysRoleExample sysRoleExample = new SysRoleExample();
+        if(MyUtils.isEmpty(mapParam.get("deptId"))){
+            sysRoleExample.createCriteria();
+            sysRoleExample.setOrderByClause("CREATE_TIME DESC LIMIT "+begin+", "+end);
+        }else {
+            sysRoleExample.createCriteria().andDeptIdEqualTo(mapParam.get("deptId").toString());
+            sysRoleExample.setOrderByClause("CREATE_TIME DESC LIMIT "+begin+", "+end);
+        }
+        List<SysRole> sysRoles = sysRoleService.selectByExample(sysRoleExample);
         List<Map<String, Object>> maps = sysRoleService.selectAllRoleList();
+        sysRoles.forEach(item->{
+           Map<String,Object> map = new HashMap<String,Object>();
+           map.put("id",item.getId());
+           map.put("roleName",item.getRoleName());
+           map.put("deptId",item.getDeptId());
+           map.put("deptName",sysDeptService.selectByPrimaryKey(item.getDeptId()).getDeptName());
+           map.put("remark",item.getRemark());
+           map.put("createTime",item.getCreateTime());
+           maps.add(map);
+        });
+        int roleCount = sysRoleService.getRoleCount();
         //默认返回查询结果
-        return maps;
+        if(sysRoles.size()>0){
+            Map<String,Object> parentMap = new HashMap<String,Object>();
+            parentMap.put("roles",maps);
+            parentMap.put("count",roleCount);
+            return R.ok(parentMap,"成功");
+        }
+        return R.error(999,"查询失败");
     }
 }

@@ -19,12 +19,30 @@ public class SysRolePermission {
 
     private String status;
 
+    private String permissionType;
+
+    public SysRolePermission(String id, String roleId, String permissionId, Date createTime, Date updateTime, String createId, String updateId, String status, String permissionType) {
+        this.id = id;
+        this.roleId = roleId;
+        this.permissionId = permissionId;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+        this.createId = createId;
+        this.updateId = updateId;
+        this.status = status;
+        this.permissionType = permissionType;
+    }
+
+    public SysRolePermission() {
+        super();
+    }
+
     public String getId() {
         return id;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.id = id == null ? null : id.trim();
     }
 
     public String getRoleId() {
@@ -32,7 +50,7 @@ public class SysRolePermission {
     }
 
     public void setRoleId(String roleId) {
-        this.roleId = roleId;
+        this.roleId = roleId == null ? null : roleId.trim();
     }
 
     public String getPermissionId() {
@@ -40,7 +58,7 @@ public class SysRolePermission {
     }
 
     public void setPermissionId(String permissionId) {
-        this.permissionId = permissionId;
+        this.permissionId = permissionId == null ? null : permissionId.trim();
     }
 
     public Date getCreateTime() {
@@ -64,7 +82,7 @@ public class SysRolePermission {
     }
 
     public void setCreateId(String createId) {
-        this.createId = createId;
+        this.createId = createId == null ? null : createId.trim();
     }
 
     public String getUpdateId() {
@@ -72,7 +90,7 @@ public class SysRolePermission {
     }
 
     public void setUpdateId(String updateId) {
-        this.updateId = updateId;
+        this.updateId = updateId == null ? null : updateId.trim();
     }
 
     public String getStatus() {
@@ -80,6 +98,14 @@ public class SysRolePermission {
     }
 
     public void setStatus(String status) {
-        this.status = status;
+        this.status = status == null ? null : status.trim();
+    }
+
+    public String getPermissionType() {
+        return permissionType;
+    }
+
+    public void setPermissionType(String permissionType) {
+        this.permissionType = permissionType == null ? null : permissionType.trim();
     }
 }

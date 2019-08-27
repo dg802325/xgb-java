@@ -51,6 +51,7 @@
         from SYS_MENU sm
         left join SYS_PERMISSION sp on sp.ID = sm.PERMISSION_ID
         where sm.PARENT_ID = #{parentId}
+        ORDER BY sm.SORT ASC
     </select>
 
     <select id="selectMenuByRoleId" resultType="com.xgb.model.vo.SysMenuVO" parameterType="java.lang.String">

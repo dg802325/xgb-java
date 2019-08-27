@@ -2,12 +2,11 @@ package com.xgb.dao;
 
 import com.xgb.model.SysRolePermission;
 import com.xgb.model.SysRolePermissionExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-import java.util.List;
-
 public interface SysRolePermissionMapper {
-    long countByExample(SysRolePermissionExample example);
+    int countByExample(SysRolePermissionExample example);
 
     int deleteByExample(SysRolePermissionExample example);
 

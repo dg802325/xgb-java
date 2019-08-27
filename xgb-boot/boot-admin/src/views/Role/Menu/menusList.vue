@@ -46,7 +46,7 @@
                                 width="50">
                         </el-table-column>
                         <el-table-column
-                                prop="permissionType"
+                                prop="menuType"
                                 label="标签"
                                 width="100">
                             <template slot-scope="scope">

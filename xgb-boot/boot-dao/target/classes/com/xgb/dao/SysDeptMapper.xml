@@ -10,8 +10,8 @@
       <arg column="STATUS" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="CREATE_TIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
       <arg column="UPDATE_TIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
-      <arg column="CREATE_ID" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="UPDATE_ID" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="CREATE_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="UPDATE_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="REMARK" jdbcType="VARCHAR" javaType="java.lang.String" />
     </constructor>
   </resultMap>
@@ -114,7 +114,7 @@
       REMARK)
     values (#{id,jdbcType=VARCHAR}, #{parentId,jdbcType=VARCHAR}, #{deptName,jdbcType=VARCHAR}, 
       #{sort,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{createId,jdbcType=INTEGER}, #{updateId,jdbcType=INTEGER}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{createId,jdbcType=VARCHAR}, #{updateId,jdbcType=VARCHAR}, 
       #{remark,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.xgb.model.SysDept" >
@@ -174,10 +174,10 @@
         #{updateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="createId != null" >
-        #{createId,jdbcType=INTEGER},
+        #{createId,jdbcType=VARCHAR},
       </if>
       <if test="updateId != null" >
-        #{updateId,jdbcType=INTEGER},
+        #{updateId,jdbcType=VARCHAR},
       </if>
       <if test="remark != null" >
         #{remark,jdbcType=VARCHAR},
@@ -215,10 +215,10 @@
         UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.createId != null" >
-        CREATE_ID = #{record.createId,jdbcType=INTEGER},
+        CREATE_ID = #{record.createId,jdbcType=VARCHAR},
       </if>
       <if test="record.updateId != null" >
-        UPDATE_ID = #{record.updateId,jdbcType=INTEGER},
+        UPDATE_ID = #{record.updateId,jdbcType=VARCHAR},
       </if>
       <if test="record.remark != null" >
         REMARK = #{record.remark,jdbcType=VARCHAR},
@@ -237,8 +237,8 @@
       STATUS = #{record.status,jdbcType=INTEGER},
       CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
       UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
-      CREATE_ID = #{record.createId,jdbcType=INTEGER},
-      UPDATE_ID = #{record.updateId,jdbcType=INTEGER},
+      CREATE_ID = #{record.createId,jdbcType=VARCHAR},
+      UPDATE_ID = #{record.updateId,jdbcType=VARCHAR},
       REMARK = #{record.remark,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -266,10 +266,10 @@
         UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="createId != null" >
-        CREATE_ID = #{createId,jdbcType=INTEGER},
+        CREATE_ID = #{createId,jdbcType=VARCHAR},
       </if>
       <if test="updateId != null" >
-        UPDATE_ID = #{updateId,jdbcType=INTEGER},
+        UPDATE_ID = #{updateId,jdbcType=VARCHAR},
       </if>
       <if test="remark != null" >
         REMARK = #{remark,jdbcType=VARCHAR},
@@ -285,8 +285,8 @@
       STATUS = #{status,jdbcType=INTEGER},
       CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
       UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
-      CREATE_ID = #{createId,jdbcType=INTEGER},
-      UPDATE_ID = #{updateId,jdbcType=INTEGER},
+      CREATE_ID = #{createId,jdbcType=VARCHAR},
+      UPDATE_ID = #{updateId,jdbcType=VARCHAR},
       REMARK = #{remark,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=VARCHAR}
   </update>

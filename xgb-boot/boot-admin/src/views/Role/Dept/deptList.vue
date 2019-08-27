@@ -1,6 +1,6 @@
 <template>
     <div>
-        <glob-breadcrumb title="成员管理"/>
+        <glob-breadcrumb title="部门管理"/>
         <br><br>
         <glob-base-search>
             <div slot="button">
@@ -10,7 +10,7 @@
                 <el-form-item label="输入搜索：">
                     <el-input v-model="queryUser" placeholder="成员账号/姓名" clearable></el-input>
                 </el-form-item>
-                <el-form-item label="所属部门：">
+                <el-form-item label="部门名称：">
                     <el-select v-model="deptId" clearable placeholder="全部">
                         <el-option
                                 v-for="item in deptList"
@@ -35,12 +35,10 @@
                         :data="list"
                         border
                         style="width: 100%">
-                    <el-table-column prop="userName" align="center" label="成员账号" width="135px;"></el-table-column>
-                    <el-table-column prop="nickName" align="center" label="姓名" width="135px"></el-table-column>
-                    <el-table-column prop="roleName" align="center" label="所属岗位" width="135px;"></el-table-column>
-                    <el-table-column prop="deptName" align="center" label="所属部门" width="135px;"></el-table-column>
-                    <el-table-column prop="createTime" align="center" label="添加时间" width="160px"></el-table-column>
-                    <el-table-column prop="lastLogin" align="center" label="最后登录" width="160px"></el-table-column>
+                    <el-table-column prop="deptName" align="center" label="部门名称" width="135px;"></el-table-column>
+                    <el-table-column prop="deptCount" align="center" label="部门人数" width="135px;"></el-table-column>
+                    <el-table-column prop="remark" align="center" label="部门说明" width="135px;"></el-table-column>
+                    <el-table-column prop="createTime" align="center" label="创建时间" width="160px"></el-table-column>
                     <el-table-column label="操作" align="center">
                         <template slot-scope="scope">
                             <el-button size="mini" type="primary" @click="editUser(scope.$index)">编辑</el-button>
@@ -71,33 +69,13 @@
             </el-dialog>
 
             <!-- 角色编辑框 -->
-            <el-dialog title="修改角色" :visible.sync="isShowEdit" width="20%" :before-close="closeEdit">
+            <el-dialog title="修改部门" :visible.sync="isShowEdit" width="20%" :before-close="closeEdit">
                 <el-form ref="form"  label-width="100px">
-                    <el-form-item label="昵称:" required>
-                        <el-input v-model="userInfo.nickName" size="1" style="width: 200px;"></el-input>
+                    <el-form-item label="部门名称:" required>
+                        <el-input v-model="deptInfo.deptName" size="1" style="width: 200px;"></el-input>
                     </el-form-item>
-                    <el-form-item label="账号:" required>
-                        <el-input v-model="userInfo.userName" size="1" style="width: 200px;"></el-input>
-                    </el-form-item>
-                    <el-form-item label="部门:" required>
-                        <el-select  v-model="editDeptId" size="1" style="width: 200px;" placeholder="所属权限" >
-                            <el-option
-                                    v-for="item in deptList"
-                                    :key="item.label"
-                                    :label="item.deptName"
-                                    :value="item.id"
-                            ></el-option>
-                        </el-select>
-                    </el-form-item>
-                    <el-form-item label="岗位:" required>
-                        <el-select  v-model="editRoleId" size="1" style="width: 200px;" placeholder="所属权限" >
-                            <el-option
-                                    v-for="item in roleList"
-                                    :key="item.label"
-                                    :label="item.roleName"
-                                    :value="item.id"
-                            ></el-option>
-                        </el-select>
+                    <el-form-item label="说明:" required>
+                        <el-input type="textarea" v-model="deptInfo.remark"></el-input>
                     </el-form-item>
                 </el-form>
                 <span slot="footer" class="dialog-footer">
@@ -117,44 +95,24 @@
                 queryUser:'',
                 pagination:{},
                 list: [],
-                userInfo:{},
+                deptInfo:{},
                 deptId: '',
                 deptList: [],
-                editRoleId:'',
-                editDeptId:'',
-                roleId:'',
-                roleList:[],
-                nickName:'',
-                userName:'',
+                editDeptName:'',
+                editRemark:'',
                 delVisible:false,
                 isShowEdit:false,
-            }
-        },
-        watch:{
-            editDeptId(val){
-                this.getRoleBydeptId(val)
             }
         },
         created() {
             this.requestSearch()
             this.getDeptInfo()
-            this.getRole()
         },
         methods: {
             //获得全部部门
             async getDeptInfo(){
                 let res = await this.$get("/admin/getAllDept", {})
                 this.deptList = res;
-            },
-            //获得全部岗位
-            async getRole(){
-                let res = await this.$get("/admin/getAllRole", {})
-                this.roleList = res;
-            },
-            //根据部门id获取岗位
-            async getRoleBydeptId(deptId){
-                let res = await this.$get("/admin/getAllRole", {deptId:deptId})
-                this.roleList = res;
             },
             //分页查询
             handleCurrentChange(page) {
@@ -167,7 +125,7 @@
                     begin:currentPage,
                     end:10
                 }
-                let res = await this.$get("/admin/getSysUserRoleForPage", data)
+                let res = await this.$get("/admin/getSysDeptForPage", data)
                 console.log(res)
                 if (res.code == 200) {
                     console.log("成功")
@@ -189,10 +147,11 @@
             //修改
             async saveEdit(){
                 let data= {
-                    id:this.userInfo.id,
-                    roleId:this.editRoleId,
+                    id:this.deptInfo.id,
+                    deptName:this.deptInfo.deptName,
+                    remark:this.deptInfo.remark,
                 }
-                let res = await this.$post("/admin/saveSysUserRole", data)
+                let res = await this.$post("/admin/saveSysDept", data)
                 if (res.code == 200) {
                     this.$message.success(res.message);
                     this.isShowEdit = false
@@ -203,7 +162,7 @@
             },
             //删除
             async delUser() {
-                let res = await this.$post("/admin/delSysUserRole", {userRoleId: this.item.userRoleId})
+                let res = await this.$post("/admin/delSysDept", {userRoleId: this.item.id})
                 if (res.code == 200) {
                     this.$message.success(res.message);
                     this.delVisible = false
@@ -214,9 +173,7 @@
             },
             //修改
             editUser(index) {
-                this.userInfo = this.list[index]
-                this.editDeptId = this.userInfo.deptId
-                this.editRoleId = this.userInfo.roleId
+                this.deptInfo = this.list[index]
                 this.isShowEdit = true
             },
             closeEdit(){

@@ -59,4 +59,8 @@ public class SysRoleService {
         });
         return lists;
     }
+
+    public int getRoleCount(){
+        return sysRoleMapper.countByExample(new SysRoleExample());
+    }
 }

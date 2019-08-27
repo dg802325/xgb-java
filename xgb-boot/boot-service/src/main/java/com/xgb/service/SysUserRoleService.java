@@ -77,4 +77,10 @@ public class SysUserRoleService {
     public int update(SysUserRole sysUserRole) {
         return sysUserRoleMapper.updateByPrimaryKey(sysUserRole);
     }
+
+    public List<SysUserRole> selectUserRoleByRoleId(String roleId) {
+        SysUserRoleExample example = new SysUserRoleExample();
+        example.createCriteria().andRoleIdEqualTo(roleId);
+        return sysUserRoleMapper.selectByExample(example);
+    }
 }

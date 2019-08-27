@@ -17,13 +17,13 @@ public class SysDept {
 
     private Date updateTime;
 
-    private Integer createId;
+    private String createId;
 
-    private Integer updateId;
+    private String updateId;
 
     private String remark;
 
-    public SysDept(String id, String parentId, String deptName, Integer sort, Integer status, Date createTime, Date updateTime, Integer createId, Integer updateId, String remark) {
+    public SysDept(String id, String parentId, String deptName, Integer sort, Integer status, Date createTime, Date updateTime, String createId, String updateId, String remark) {
         this.id = id;
         this.parentId = parentId;
         this.deptName = deptName;
@@ -96,20 +96,20 @@ public class SysDept {
         this.updateTime = updateTime;
     }
 
-    public Integer getCreateId() {
+    public String getCreateId() {
         return createId;
     }
 
-    public void setCreateId(Integer createId) {
-        this.createId = createId;
+    public void setCreateId(String createId) {
+        this.createId = createId == null ? null : createId.trim();
     }
 
-    public Integer getUpdateId() {
+    public String getUpdateId() {
         return updateId;
     }
 
-    public void setUpdateId(Integer updateId) {
-        this.updateId = updateId;
+    public void setUpdateId(String updateId) {
+        this.updateId = updateId == null ? null : updateId.trim();
     }
 
     public String getRemark() {

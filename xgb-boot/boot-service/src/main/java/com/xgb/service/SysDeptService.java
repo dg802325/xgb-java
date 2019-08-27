@@ -1,11 +1,13 @@
 package com.xgb.service;
 
 import com.xgb.dao.SysDeptMapper;
-import com.xgb.model.SysDept;
-import com.xgb.model.SysDeptExample;
+import com.xgb.dao.SysRoleMapper;
+import com.xgb.dao.SysUserRoleMapper;
+import com.xgb.model.*;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -18,49 +20,52 @@ public class SysDeptService {
 
 	@Autowired
     private SysDeptMapper sysDeptMapper;
+	@Autowired
+    private SysRoleMapper sysRoleMapper;
+	@Autowired
+    private SysUserRoleMapper sysUserRoleMapper;
     
-            public long countByExample(SysDeptExample example){
-                return sysDeptMapper.countByExample(example);
-            }
+    public List<SysDept> selectByExample(SysDeptExample example){
+        return sysDeptMapper.selectByExample(example);
+    }
 
-            public int deleteByExample(SysDeptExample example){
-                return sysDeptMapper.deleteByExample(example);
-            }
-
-            public int deleteByPrimaryKey(String id){
-                return sysDeptMapper.deleteByPrimaryKey(id);
-            }
-
-            public int insert(SysDept record){
-                return sysDeptMapper.insert(record);
-            }
-
-            public int insertSelective(SysDept record){
-                return sysDeptMapper.insertSelective(record);
-            }
-
-            public List<SysDept> selectByExample(SysDeptExample example){
-                return sysDeptMapper.selectByExample(example);
-            }
-
-            public SysDept selectByPrimaryKey(String id){
+    public SysDept selectByPrimaryKey(String id){
                 return sysDeptMapper.selectByPrimaryKey(id);
             }
 
-            public int updateByExampleSelective(@Param("record") SysDept record, @Param("example") SysDeptExample example){
-                return sysDeptMapper.updateByExampleSelective(record,example);
-            }
 
-            public int updateByExample(@Param("record") SysDept record, @Param("example") SysDeptExample example){
-                return sysDeptMapper.updateByExample(record,example);
-            }
+    public int getDeptCount() {
+        return sysDeptMapper.countByExample(new SysDeptExample());
+    }
 
-            public int updateByPrimaryKeySelective(SysDept record){
-                return sysDeptMapper.updateByPrimaryKeySelective(record);
-            }
+    public int getDeptCountById(String id){
+        SysRoleExample example = new SysRoleExample();
+        example.createCriteria().andDeptIdEqualTo(id);
+        return sysRoleMapper.countByExample(example);
+    }
 
-            public int updateByPrimaryKey(SysDept record){
-                return sysDeptMapper.updateByPrimaryKey(record);
-            }
+    @Transactional
+    public int insert(SysDept sysDept) {
+        return sysDeptMapper.insertSelective(sysDept);
+    }
 
+    @Transactional
+    public int update(SysDept sysDept){
+        return sysDeptMapper.updateByPrimaryKeySelective(sysDept);
+    }
+
+    @Transactional
+    public int delete(SysDept sysDept, List<SysRole> sysRoles, List<SysUserRole> sysUserRoles) {
+        if(sysUserRoles.size()>0){
+            sysUserRoles.forEach(item->{
+                sysUserRoleMapper.deleteByPrimaryKey(item.getId());
+            });
+        }
+        if(sysRoles.size()>0){
+            sysRoles.forEach(item->{
+                sysRoleMapper.deleteByPrimaryKey(item.getId());
+            });
+        }
+        return sysDeptMapper.deleteByPrimaryKey(sysDept.getId());
+    }
 }
