@@ -137,10 +137,6 @@ public class SysMenuService {
             SysRolePermissionExample allRole = new SysRolePermissionExample();
             allRole.createCriteria().andRoleIdEqualTo(item.getRoleId());
             List<SysRolePermission> allPermission = sysRolePermissionMapper.selectByExample(allRole);
-            List<String> strings = new ArrayList<>();
-            allPermission.forEach(i->{
-                strings.add(i.getPermissionId());
-            });
             //根据角色查询用户所有的1级权限
             SysRolePermissionExample sysRolePermissionExample = new SysRolePermissionExample();
             sysRolePermissionExample.createCriteria().andRoleIdEqualTo(item.getRoleId()).andPermissionTypeEqualTo("0");
@@ -183,25 +179,16 @@ public class SysMenuService {
                         threeMenu.put("permissionName",threeMenus.getPermissionId());
                         threeMenu.put("sort",threeMenus.getSort());
                         threeMenu.put("menuType",threeMenus.getMenuType());
-                        String s = strings.stream().filter(o -> o == threeMenus.getPermissionId()).findAny().orElse(null);
-                        if (MyUtils.isNotEmpty(s)) {
+                        SysRolePermission sysRolePermission = allPermission.stream().filter(o -> o.getPermissionId().equals(threeMenus.getPermissionId())).findAny().orElse(null);
+                        if (MyUtils.isNotEmpty(sysRolePermission)) {
                             threeMenulist.add(threeMenu);
                         }
                         twoMenu.put("menuItemThree",threeMenulist);
                     });
-//                    twoMenu.put("menuItemThree",threeMenulist);
-//                    if (strings.contains(towMenus.getPermissionId())) {
-//                        threeMenulist.add(twoMenu);
-//                    }
-                    for(String e:strings){
-                        if(e.equals(towMenus.getPermissionId())){
-                            twoMenulist.add(twoMenu);
-                        }
+                    SysRolePermission sysRolePermission = allPermission.stream().filter(o -> o.getPermissionId().equals(towMenus.getPermissionId())).findAny().orElse(null);
+                    if (MyUtils.isNotEmpty(sysRolePermission)) {
+                        twoMenulist.add(twoMenu);
                     }
-                    //String s = strings.stream().filter(o -> o == towMenus.getPermissionId()).findAny().orElse(null);
-//                    if (MyUtils.isNotEmpty(s)) {
-//                        twoMenulist.add(twoMenu);
-//                    }
                 });
                 oneMenu.put("menuItemTwo",twoMenulist);
                 lists.add(oneMenu);
