@@ -4,12 +4,9 @@ import com.xgb.common.SessionUtil;
 import com.xgb.lang.R;
 import com.xgb.model.SysMenu;
 import com.xgb.model.SysPermission;
-import com.xgb.model.vo.SysPermissionVO;
 import com.xgb.service.SysMenuService;
 import com.xgb.service.SysPermissionService;
-import com.xgb.utils.MyUtils;
 import com.xgb.utils.UUIDUtils;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,11 +37,11 @@ public class SysPermissionController {
      */
     @ResponseBody
     @PostMapping(value = "getSysPermission")
-    public List<SysPermissionVO> getSysPermission(String id) {
+    public List<Map<String,Object>> getSysPermission() {
         logger.info("------request-address----------------：/admin/getSysPermission");
         //查询代码
-        List<SysPermissionVO> sysPermissionVOS = sysPermissionService.selectAllPermissionList(id);
-       return sysPermissionVOS;
+        List<Map<String, Object>> list = sysPermissionService.selectAllPermissionList("0");
+        return list;
     }
 
 
