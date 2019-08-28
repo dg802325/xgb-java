@@ -17,6 +17,7 @@
         <module>boot-model</module>
         <module>boot-dao</module>
         <module>boot-oss</module>
+        <module>boot-mybatisplus</module>
     </modules>
 
 

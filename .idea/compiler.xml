@@ -7,37 +7,40 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="boot-backend" />
-        <module name="xgb-spider" />
+        <module name="boot-dao" />
+        <module name="boot-model" />
+        <module name="boot-mybatisplus" />
+        <module name="boot-oss" />
+        <module name="boot-service" />
+        <module name="cloud-eureka" />
         <module name="send-mail" />
         <module name="xgb-common" />
-        <module name="xgb-test" />
-        <module name="boot-model" />
-        <module name="cloud-eureka" />
         <module name="xgb-mybatis" />
-        <module name="boot-dao" />
-        <module name="boot-service" />
-        <module name="boot-oss" />
+        <module name="xgb-spider" />
+        <module name="xgb-test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="boot-backend" target="1.8" />
       <module name="boot-dao" target="1.8" />
-      <module name="boot-model" target="8" />
+      <module name="boot-model" target="1.8" />
+      <module name="boot-mybatisplus" target="1.8" />
       <module name="boot-oss" target="1.8" />
-      <module name="boot-service" target="8" />
+      <module name="boot-service" target="1.8" />
       <module name="cloud-eureka" target="1.8" />
-      <module name="xgb-boot" target="8" />
-      <module name="xgb-cloud" target="8" />
+      <module name="xgb-boot" target="1.8" />
+      <module name="xgb-cloud" target="1.8" />
       <module name="xgb-common" target="1.8" />
-      <module name="xgb-java" target="8" />
+      <module name="xgb-java" target="1.8" />
       <module name="xgb-mybatis" target="8" />
       <module name="xgb-spider" target="1.8" />
-      <module name="xgb-test" target="8" />
+      <module name="xgb-test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="boot-backend" options="-parameters" />
+      <module name="boot-mybatisplus" options="" />
       <module name="boot-oss" options="-parameters" />
       <module name="cloud-eureka" options="-parameters" />
       <module name="xgb-common" options="" />

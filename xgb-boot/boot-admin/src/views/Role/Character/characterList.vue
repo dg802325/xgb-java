@@ -41,6 +41,7 @@
                     <el-table-column prop="createTime" align="center" label="创建时间" width="160px"></el-table-column>
                     <el-table-column label="操作" align="center">
                         <template slot-scope="scope">
+                            <el-button size="mini" type="primary" @click="roleEdit(scope.$index)">权限编辑</el-button>
                             <el-button size="mini" type="primary" @click="editUser(scope.$index)">编辑</el-button>
                             <el-button size="mini" type="danger" @click="toDelUser(scope.$index)">删除</el-button>
                         </template>
@@ -219,7 +220,11 @@
             },
             closeEdit(){
                 this.isShowEdit = false
-            }
+            },
+            //修改权限
+            async roleEdit(){
+                this.$router.push({path:'/system/editPermissions'})
+            },
         },
     }
 </script>

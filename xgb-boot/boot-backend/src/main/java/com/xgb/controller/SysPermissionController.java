@@ -4,6 +4,7 @@ import com.xgb.common.SessionUtil;
 import com.xgb.lang.R;
 import com.xgb.model.SysMenu;
 import com.xgb.model.SysPermission;
+import com.xgb.model.SysPermissionExample;
 import com.xgb.service.SysMenuService;
 import com.xgb.service.SysPermissionService;
 import com.xgb.utils.UUIDUtils;
@@ -12,7 +13,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.*;
 
@@ -103,15 +103,15 @@ public class SysPermissionController {
     }
 
     /**
-     * 根据父级id查询权限列表
+     * 查询权限列表
      * @return
      */
     @ResponseBody
-    @PostMapping(value = "getSysPermissionByparentId")
-    public List<SysPermission> getSysPermissionByparentId(String parentId) {
-        logger.info("------request-address----------------：/admin/getSysPermission");
+    @GetMapping(value = "getAllSysPermission")
+    public List<SysPermission> getAllSysPermission(String parentId) {
+        logger.info("------request-address----------------：/admin/getAllSysPermission");
         //查询代码
-        List<SysPermission> sysPermission = sysPermissionService.selectPermissionByParentId(parentId);
+        List<SysPermission> sysPermission = sysPermissionService.selectByExample(new SysPermissionExample());
         return sysPermission;
     }
 
@@ -133,6 +133,5 @@ public class SysPermissionController {
         }
         return sysPermission;
     }
-
 
 }

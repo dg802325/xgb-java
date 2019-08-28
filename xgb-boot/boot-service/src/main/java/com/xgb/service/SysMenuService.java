@@ -142,7 +142,7 @@ public class SysMenuService {
             sysRolePermissions.forEach(permissions->{
                 //根据权限查询用户关联的菜单1级菜单
                 SysMenuExample oneSysMenuExample = new SysMenuExample();
-                oneSysMenuExample.createCriteria().andPermissionIdEqualTo(permissions.getPermissionId());
+                oneSysMenuExample.createCriteria().andPermissionIdEqualTo(permissions.getPermissionId()).andParentIdEqualTo("0");
                 SysMenu oneSysMenu = sysMenuMapper.selectByExample(oneSysMenuExample).get(0);
                 Map<String,Object> oneMenu = new HashMap<>();
                 oneMenu.put("id",oneSysMenu.getId());

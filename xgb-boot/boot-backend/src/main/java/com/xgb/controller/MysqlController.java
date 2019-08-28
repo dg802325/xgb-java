@@ -1,14 +1,20 @@
 package com.xgb.controller;
 
+import com.xgb.lang.R;
+import com.xgb.model.SysMabtaisPlus;
+import com.xgb.mybatisplus.MybatisUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RequestMapping("/admin/")
 @RestController
@@ -16,31 +22,28 @@ public class MysqlController {
 
     protected Logger logger = LoggerFactory.getLogger(getClass());
 
+    @Autowired
+    private MybatisUtils mybatisUtils;
+
+
     /**
      * 连接mysql
      */
     @GetMapping("connectionMysql")
-    public String connectionMysql() {
+    public R connectionMysql() {
         logger.info("------request-address----------------：/admin/connectionMysql");
+        Map<String,Object> parentMap = new HashMap<String,Object>();
         String username = "root";
         String password = "root";
-        String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-        String DB_URL = "jdbc:mysql://localhost:3306/xgb?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai";
-        Connection conn = null;
-        try {
-            // 注册 JDBC 驱动
-            Class.forName(JDBC_DRIVER);
-            // 打开链接
-            System.out.println("连接数据库...");
-            conn = DriverManager.getConnection(DB_URL, username, password);
-            System.out.println(conn);
-            return "success";
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
+        String jdbcDriver = "com.mysql.jdbc.Driver";
+        String dbUrl = "jdbc:mysql://localhost:3306/xgb?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai";
+        Connection connection = mybatisUtils.getConnection(jdbcDriver, dbUrl, username, password);
+        List<SysMabtaisPlus> tables = mybatisUtils.getTables(connection);
+        if(tables.size()>0){
+            parentMap.put("tables",tables);
+            return R.ok(parentMap,"查询成功");
         }
-        return "success";
+        return R.error(999,"查询失败");
     }
 
     public static void main(String[] args) {

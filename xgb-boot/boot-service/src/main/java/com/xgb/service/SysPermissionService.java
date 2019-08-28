@@ -119,4 +119,7 @@ public class SysPermissionService {
         return sysPermissionMapper.selectByExample(example);
     }
 
+    public List<SysPermission> selectByExample(SysPermissionExample sysPermissionExample){
+        return sysPermissionMapper.selectByExample(sysPermissionExample);
+    }
 }
