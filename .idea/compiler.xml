@@ -7,34 +7,34 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="boot-backend" />
-        <module name="boot-dao" />
-        <module name="boot-model" />
-        <module name="boot-mybatisplus" />
-        <module name="boot-oss" />
-        <module name="boot-service" />
-        <module name="cloud-eureka" />
+        <module name="xgb-spider" />
         <module name="send-mail" />
         <module name="xgb-common" />
-        <module name="xgb-mybatis" />
-        <module name="xgb-spider" />
         <module name="xgb-test" />
+        <module name="boot-model" />
+        <module name="boot-mybatisplus" />
+        <module name="xgb-mybatis" />
+        <module name="boot-dao" />
+        <module name="boot-service" />
+        <module name="boot-oss" />
+        <module name="cloud-eureka" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="boot-backend" target="1.8" />
       <module name="boot-dao" target="1.8" />
-      <module name="boot-model" target="1.8" />
-      <module name="boot-mybatisplus" target="1.8" />
+      <module name="boot-model" target="1.5" />
+      <module name="boot-mybatisplus" target="1.5" />
       <module name="boot-oss" target="1.8" />
-      <module name="boot-service" target="1.8" />
+      <module name="boot-service" target="1.5" />
       <module name="cloud-eureka" target="1.8" />
-      <module name="xgb-boot" target="1.8" />
-      <module name="xgb-cloud" target="1.8" />
+      <module name="xgb-boot" target="1.5" />
+      <module name="xgb-cloud" target="1.5" />
       <module name="xgb-common" target="1.8" />
-      <module name="xgb-java" target="1.8" />
+      <module name="xgb-java" target="1.5" />
       <module name="xgb-mybatis" target="8" />
       <module name="xgb-spider" target="1.8" />
-      <module name="xgb-test" target="1.8" />
+      <module name="xgb-test" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

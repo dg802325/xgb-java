@@ -1,4 +1,10 @@
 # Created by .ignore support plugin (hsz.mobi)
+*.idea
+*.class
+*.gz
+*.log
+*.gitignore
+xgb-boot/boot-backend/logs/boot-backend.log
 将删除 xgb-boot/boot-backend/target/classes/com/
 将删除 xgb-boot/boot-backend/target/generated-sources/
 将删除 xgb-boot/boot-dao/target/classes/META-INF/
@@ -27,3 +33,5 @@
 将删除 xgb-boot/boot-service/target/
 将删除 xgb-common/target/classes/com/xgb/lang/IntegerUtils.class
 将删除 xgb-common/target/generated-sources/
+将删除 xgb-boot/boot-model/target/generated-sources/
+将删除 xgb-boot/boot-service/target/generated-sources/
