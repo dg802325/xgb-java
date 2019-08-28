@@ -2,7 +2,6 @@ package com.xgb.service;
 
 import com.xgb.dao.*;
 import com.xgb.model.*;
-import com.xgb.model.vo.SysMenuVO;
 import com.xgb.utils.MyUtils;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Stream;
 
 /**
  *
@@ -144,7 +142,7 @@ public class SysMenuService {
             sysRolePermissions.forEach(permissions->{
                 //根据权限查询用户关联的菜单1级菜单
                 SysMenuExample oneSysMenuExample = new SysMenuExample();
-                oneSysMenuExample.createCriteria().andPermissionIdEqualTo(permissions.getPermissionId());
+                oneSysMenuExample.createCriteria().andPermissionIdEqualTo(permissions.getPermissionId()).andParentIdEqualTo("0");
                 SysMenu oneSysMenu = sysMenuMapper.selectByExample(oneSysMenuExample).get(0);
                 Map<String,Object> oneMenu = new HashMap<>();
                 oneMenu.put("id",oneSysMenu.getId());
