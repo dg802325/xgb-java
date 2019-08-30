@@ -1,6 +1,5 @@
 package com.xgb.model;
 
-import com.oracle.webservices.internal.api.databinding.DatabindingMode;
 import lombok.Data;
 
 /**
