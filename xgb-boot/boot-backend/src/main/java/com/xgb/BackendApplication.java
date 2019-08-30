@@ -18,7 +18,7 @@ import javax.sql.DataSource;
 @ComponentScan(basePackages = {"com.xgb.controller","com.xgb.config","com.xgb.service","com.xgb.mybatisplus"})
 @MapperScan(basePackages = "com.xgb.dao")
 @SpringBootApplication
-@EnableScheduling
+//@EnableScheduling//定时任务注解
 @EnableCaching
 public class BackendApplication {
 

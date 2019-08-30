@@ -86,6 +86,7 @@
                     userId: this.userId,
                     // userId:name,
                     ids: JSON.stringify(this.allCheckedId)
+                    
                 }
                 let res = await this.$post("/admin/saveErpUserPermissions", data)
                 if (res.code == 200) {
@@ -153,7 +154,9 @@
                 res.forEach(item => {
                     map[item.id] = item;
                 })
+                console.log(map)
                 for (let key in map) {
+                    console.log(map[key].parentId)
                     if (map[key].parentId!='0') {
                         map[key]['checked'] = this.defaultCkeckId.includes(map[key].id);
                         if (!map[map[key].parentId].children) map[map[key].parentId].children = [];
