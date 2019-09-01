@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.SysDatabasesMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.SysDatabases" >
+    <constructor >
+      <idArg column="ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DATABASE_URL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DATABASE_PORT_NUMBER" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DATABASE_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DATABASE_TYPE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DATABASE_LOGIN_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DATABASE_LOGIN_PASSWORD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CREATE_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CREATE_TIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="UPDATE_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="UPDATE_TIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="IS_DEL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATUS" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="OPERATION_IP" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DIRECTORY_PREFIX" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PACKET_TYPE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PACKET_ADDRESS" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, DATABASE_URL, DATABASE_PORT_NUMBER, DATABASE_NAME, DATABASE_TYPE, DATABASE_LOGIN_NAME, 
+    DATABASE_LOGIN_PASSWORD, CREATE_ID, CREATE_TIME, UPDATE_ID, UPDATE_TIME, IS_DEL, 
+    STATUS, OPERATION_IP, DIRECTORY_PREFIX, PACKET_TYPE, PACKET_ADDRESS
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.SysDatabasesExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from SYS_DATABASES
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from SYS_DATABASES
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from SYS_DATABASES
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xgb.model.SysDatabasesExample" >
+    delete from SYS_DATABASES
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.SysDatabases" >
+    insert into SYS_DATABASES (ID, DATABASE_URL, DATABASE_PORT_NUMBER, 
+      DATABASE_NAME, DATABASE_TYPE, DATABASE_LOGIN_NAME, 
+      DATABASE_LOGIN_PASSWORD, CREATE_ID, CREATE_TIME, 
+      UPDATE_ID, UPDATE_TIME, IS_DEL, 
+      STATUS, OPERATION_IP, DIRECTORY_PREFIX, 
+      PACKET_TYPE, PACKET_ADDRESS)
+    values (#{id,jdbcType=VARCHAR}, #{databaseUrl,jdbcType=VARCHAR}, #{databasePortNumber,jdbcType=VARCHAR}, 
+      #{databaseName,jdbcType=VARCHAR}, #{databaseType,jdbcType=VARCHAR}, #{databaseLoginName,jdbcType=VARCHAR}, 
+      #{databaseLoginPassword,jdbcType=VARCHAR}, #{createId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateId,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{isDel,jdbcType=VARCHAR}, 
+      #{status,jdbcType=VARCHAR}, #{operationIp,jdbcType=VARCHAR}, #{directoryPrefix,jdbcType=VARCHAR}, 
+      #{packetType,jdbcType=VARCHAR}, #{packetAddress,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.SysDatabases" >
+    insert into SYS_DATABASES
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="databaseUrl != null" >
+        DATABASE_URL,
+      </if>
+      <if test="databasePortNumber != null" >
+        DATABASE_PORT_NUMBER,
+      </if>
+      <if test="databaseName != null" >
+        DATABASE_NAME,
+      </if>
+      <if test="databaseType != null" >
+        DATABASE_TYPE,
+      </if>
+      <if test="databaseLoginName != null" >
+        DATABASE_LOGIN_NAME,
+      </if>
+      <if test="databaseLoginPassword != null" >
+        DATABASE_LOGIN_PASSWORD,
+      </if>
+      <if test="createId != null" >
+        CREATE_ID,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="updateId != null" >
+        UPDATE_ID,
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME,
+      </if>
+      <if test="isDel != null" >
+        IS_DEL,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="operationIp != null" >
+        OPERATION_IP,
+      </if>
+      <if test="directoryPrefix != null" >
+        DIRECTORY_PREFIX,
+      </if>
+      <if test="packetType != null" >
+        PACKET_TYPE,
+      </if>
+      <if test="packetAddress != null" >
+        PACKET_ADDRESS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="databaseUrl != null" >
+        #{databaseUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="databasePortNumber != null" >
+        #{databasePortNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="databaseName != null" >
+        #{databaseName,jdbcType=VARCHAR},
+      </if>
+      <if test="databaseType != null" >
+        #{databaseType,jdbcType=VARCHAR},
+      </if>
+      <if test="databaseLoginName != null" >
+        #{databaseLoginName,jdbcType=VARCHAR},
+      </if>
+      <if test="databaseLoginPassword != null" >
+        #{databaseLoginPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="createId != null" >
+        #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateId != null" >
+        #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDel != null" >
+        #{isDel,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="operationIp != null" >
+        #{operationIp,jdbcType=VARCHAR},
+      </if>
+      <if test="directoryPrefix != null" >
+        #{directoryPrefix,jdbcType=VARCHAR},
+      </if>
+      <if test="packetType != null" >
+        #{packetType,jdbcType=VARCHAR},
+      </if>
+      <if test="packetAddress != null" >
+        #{packetAddress,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.SysDatabasesExample" resultType="java.lang.Integer" >
+    select count(*) from SYS_DATABASES
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update SYS_DATABASES
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.databaseUrl != null" >
+        DATABASE_URL = #{record.databaseUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.databasePortNumber != null" >
+        DATABASE_PORT_NUMBER = #{record.databasePortNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.databaseName != null" >
+        DATABASE_NAME = #{record.databaseName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.databaseType != null" >
+        DATABASE_TYPE = #{record.databaseType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.databaseLoginName != null" >
+        DATABASE_LOGIN_NAME = #{record.databaseLoginName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.databaseLoginPassword != null" >
+        DATABASE_LOGIN_PASSWORD = #{record.databaseLoginPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createId != null" >
+        CREATE_ID = #{record.createId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateId != null" >
+        UPDATE_ID = #{record.updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateTime != null" >
+        UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.isDel != null" >
+        IS_DEL = #{record.isDel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.operationIp != null" >
+        OPERATION_IP = #{record.operationIp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.directoryPrefix != null" >
+        DIRECTORY_PREFIX = #{record.directoryPrefix,jdbcType=VARCHAR},
+      </if>
+      <if test="record.packetType != null" >
+        PACKET_TYPE = #{record.packetType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.packetAddress != null" >
+        PACKET_ADDRESS = #{record.packetAddress,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update SYS_DATABASES
+    set ID = #{record.id,jdbcType=VARCHAR},
+      DATABASE_URL = #{record.databaseUrl,jdbcType=VARCHAR},
+      DATABASE_PORT_NUMBER = #{record.databasePortNumber,jdbcType=VARCHAR},
+      DATABASE_NAME = #{record.databaseName,jdbcType=VARCHAR},
+      DATABASE_TYPE = #{record.databaseType,jdbcType=VARCHAR},
+      DATABASE_LOGIN_NAME = #{record.databaseLoginName,jdbcType=VARCHAR},
+      DATABASE_LOGIN_PASSWORD = #{record.databaseLoginPassword,jdbcType=VARCHAR},
+      CREATE_ID = #{record.createId,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      UPDATE_ID = #{record.updateId,jdbcType=VARCHAR},
+      UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      IS_DEL = #{record.isDel,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=VARCHAR},
+      OPERATION_IP = #{record.operationIp,jdbcType=VARCHAR},
+      DIRECTORY_PREFIX = #{record.directoryPrefix,jdbcType=VARCHAR},
+      PACKET_TYPE = #{record.packetType,jdbcType=VARCHAR},
+      PACKET_ADDRESS = #{record.packetAddress,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.SysDatabases" >
+    update SYS_DATABASES
+    <set >
+      <if test="databaseUrl != null" >
+        DATABASE_URL = #{databaseUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="databasePortNumber != null" >
+        DATABASE_PORT_NUMBER = #{databasePortNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="databaseName != null" >
+        DATABASE_NAME = #{databaseName,jdbcType=VARCHAR},
+      </if>
+      <if test="databaseType != null" >
+        DATABASE_TYPE = #{databaseType,jdbcType=VARCHAR},
+      </if>
+      <if test="databaseLoginName != null" >
+        DATABASE_LOGIN_NAME = #{databaseLoginName,jdbcType=VARCHAR},
+      </if>
+      <if test="databaseLoginPassword != null" >
+        DATABASE_LOGIN_PASSWORD = #{databaseLoginPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="createId != null" >
+        CREATE_ID = #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateId != null" >
+        UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDel != null" >
+        IS_DEL = #{isDel,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="operationIp != null" >
+        OPERATION_IP = #{operationIp,jdbcType=VARCHAR},
+      </if>
+      <if test="directoryPrefix != null" >
+        DIRECTORY_PREFIX = #{directoryPrefix,jdbcType=VARCHAR},
+      </if>
+      <if test="packetType != null" >
+        PACKET_TYPE = #{packetType,jdbcType=VARCHAR},
+      </if>
+      <if test="packetAddress != null" >
+        PACKET_ADDRESS = #{packetAddress,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xgb.model.SysDatabases" >
+    update SYS_DATABASES
+    set DATABASE_URL = #{databaseUrl,jdbcType=VARCHAR},
+      DATABASE_PORT_NUMBER = #{databasePortNumber,jdbcType=VARCHAR},
+      DATABASE_NAME = #{databaseName,jdbcType=VARCHAR},
+      DATABASE_TYPE = #{databaseType,jdbcType=VARCHAR},
+      DATABASE_LOGIN_NAME = #{databaseLoginName,jdbcType=VARCHAR},
+      DATABASE_LOGIN_PASSWORD = #{databaseLoginPassword,jdbcType=VARCHAR},
+      CREATE_ID = #{createId,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      IS_DEL = #{isDel,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=VARCHAR},
+      OPERATION_IP = #{operationIp,jdbcType=VARCHAR},
+      DIRECTORY_PREFIX = #{directoryPrefix,jdbcType=VARCHAR},
+      PACKET_TYPE = #{packetType,jdbcType=VARCHAR},
+      PACKET_ADDRESS = #{packetAddress,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -72,7 +72,7 @@ public class SysDeptController {
         //默认返回查询结果
         if(sysDepts.size()>0){
             Map<String,Object> parentMap = new HashMap<String,Object>();
-            parentMap.put("roles",lists);
+            parentMap.put("databases",lists);
             parentMap.put("count",deptCount);
             return R.ok(parentMap,"成功");
         }

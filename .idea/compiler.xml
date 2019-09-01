@@ -24,18 +24,18 @@
     <bytecodeTargetLevel target="8">
       <module name="boot-backend" target="1.8" />
       <module name="boot-dao" target="1.8" />
-      <module name="boot-model" target="1.5" />
-      <module name="boot-mybatisplus" target="1.5" />
+      <module name="boot-model" target="1.8" />
+      <module name="boot-mybatisplus" target="1.8" />
       <module name="boot-oss" target="1.8" />
-      <module name="boot-service" target="1.5" />
+      <module name="boot-service" target="1.8" />
       <module name="cloud-eureka" target="1.8" />
-      <module name="xgb-boot" target="1.5" />
-      <module name="xgb-cloud" target="1.5" />
+      <module name="xgb-boot" target="1.8" />
+      <module name="xgb-cloud" target="1.8" />
       <module name="xgb-common" target="1.8" />
-      <module name="xgb-java" target="1.5" />
+      <module name="xgb-java" target="1.8" />
       <module name="xgb-mybatis" target="8" />
       <module name="xgb-spider" target="1.8" />
-      <module name="xgb-test" target="1.5" />
+      <module name="xgb-test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

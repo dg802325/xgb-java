@@ -91,7 +91,28 @@ const systemRouter = [
   },
 ];
 
-const routes = [...publicRouter,...systemRouter,...homeRouter,];
+//首页
+const mybatisRouter = [
+    {
+        path: '/mybatis',
+        component: Layout,
+        redirect: '/login',
+        children: [
+            {
+                path: 'mybatisPlus',
+                component: () => import('./views/mybatis/mybatisPlus.vue'),
+                meta: {title: '代码生成'}
+            },
+            {
+                path: 'databaseList',
+                component: () => import('./views/mybatis/databaseList.vue'),
+                meta: {title: '代码生成'}
+            },
+        ]
+    },
+];
+
+const routes = [...publicRouter,...systemRouter,...homeRouter,...mybatisRouter,];
 
 export default new Router({
   base: process.env.BASE_URL,

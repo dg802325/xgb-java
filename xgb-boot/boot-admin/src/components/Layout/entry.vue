@@ -51,7 +51,6 @@
         methods: {
             async getMenu() {
                 let res = await this.$get("/admin/getUserMenuList")
-                console.log(res)
                 this.menuList = res.menuList
             },
             handleClick(index){

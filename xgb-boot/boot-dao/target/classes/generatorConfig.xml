@@ -78,5 +78,6 @@
         <!--<table tableName="SYS_ROLE_PERMISSION"></table>-->
         <!--<table tableName="SYS_USER"></table>-->
         <!--<table tableName="SYS_USER_ROLE"></table>-->
+<!--        <table tableName="SYS_DATABASES"></table>-->
     </context>
 </generatorConfiguration>

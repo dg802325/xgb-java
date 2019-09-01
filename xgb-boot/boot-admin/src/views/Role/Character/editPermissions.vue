@@ -157,11 +157,11 @@
                 console.log(map)
                 for (let key in map) {
                     console.log(map[key].parentId)
-                    if (map[key].parentId!='0') {
+                    if (map[key].parentId!='0'&&map[key].permissionType!='1') {
                         map[key]['checked'] = this.defaultCkeckId.includes(map[key].id);
-                        if (!map[map[key].parentId].children) map[map[key].parentId].children = [];
-                        map[map[key].parentId].children.push(map[key])
-                    } else {
+                        if (!map[map[map[key].parentId].parentId].children) map[map[map[key].parentId].parentId].children = [];
+                        map[map[map[key].parentId].parentId].children.push(map[key])
+                    } else if(map[key].parentId=='0') {
                         map[key]['checkAll'] = this.defaultCkeckId.includes(map[key].id);
                         permission.push(map[key])
                     }

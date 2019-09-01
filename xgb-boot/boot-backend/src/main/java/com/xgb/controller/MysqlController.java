@@ -1,8 +1,13 @@
 package com.xgb.controller;
 
+import com.xgb.common.SessionUtil;
+import com.xgb.lang.HttpKit;
 import com.xgb.lang.R;
+import com.xgb.model.SysDatabases;
 import com.xgb.model.SysMabtaisPlus;
 import com.xgb.mybatisplus.MybatisUtils;
+import com.xgb.service.SysDatabasesService;
+import com.xgb.service.SysUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,6 +30,19 @@ public class MysqlController {
 
     @Autowired
     private MybatisUtils mybatisUtils;
+    @Autowired
+    private SysUserService sysUserService;
+    @Autowired
+    private SysDatabasesService sysDatabasesService;
+
+    @GetMapping("databaseList")
+    public R getDatabaseList(){
+        String sysUserId = SessionUtil.getSysUserId();
+        List<SysDatabases> sysDatabasesByCreateId = sysDatabasesService.getSysDatabasesByCreateId(sysUserId);
+        Map<String,Object> map = new HashMap<>();
+        map.put("databases",sysDatabasesByCreateId);
+        return R.ok(map,"查询成功");
+    }
 
 
     /**

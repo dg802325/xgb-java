@@ -86,7 +86,6 @@
             },
             async getUserInfo() {
                 let res = await this.$get("/admin/getUserInfo")
-                console.log(res)
                 if (res.code == 200) {
                     this.userInfo = res
                 }

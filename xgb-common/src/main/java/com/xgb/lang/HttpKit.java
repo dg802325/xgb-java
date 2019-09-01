@@ -21,7 +21,7 @@ import java.util.Map;
 public class HttpKit {
     private final static Logger logger = LoggerFactory.getLogger(HttpKit.class);
 
-    public static String getIp() {
+    public static String getIp(HttpServletRequest request) {
         return HttpKit.getRequest().getRemoteHost();
     }
 
