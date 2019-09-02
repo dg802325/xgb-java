@@ -1,5 +1,7 @@
 package com.xgb.mybatisplus.service.impl;
 
+import com.xgb.model.Generator;
+import com.xgb.model.SysDatabases;
 import com.xgb.model.TableInformation;
 import com.xgb.mybatisplus.service.CodeGenerator;
 import com.xgb.mybatisplus.service.CodeGeneratorManager;
@@ -9,6 +11,7 @@ import freemarker.template.Configuration;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
@@ -18,28 +21,47 @@ import java.util.Map;
 public class ModelGenerator extends CodeGeneratorManager implements CodeGenerator {
 
     @Override
-    public void genCode(List<TableInformation> tableInformation, String tableName) {
+    public void genCode(List<TableInformation> tableInformation, Generator generator, SysDatabases sysDatabases) {
+        String tableName = generator.getTableName();
         String modelName = StringUtils.tableNameConvertUpperCamel(tableName);
         Configuration cfg = getFreemarkerConfiguration();
         String customMapping = "/";
-        String modelNameUpperCamel = modelName;
-        Map<String, Object> data = DataUtil.getDataMapInit(tableName, modelName, modelNameUpperCamel);
+        Map<String, Object> data = DataUtil.getDataMapInit(tableName, modelName,tableInformation);
+        data.put("modelPackage",sysDatabases.getDirectoryPrefix()+".model");
+        data.put("codeEntity",codeEntity(tableInformation));
         try {
-            String permissions = StringUtils.createPermissions(tableName);
-            data.put("permissions",permissions);
-            data.put("modelName",StringUtils.tableNameConvertLowerCamel(tableName));
-            data.put("lowerCaseTableName",tableName.toLowerCase());
-            data.put("myCommonPath",MY_COMMON_PATH);
-            File controllerFile = new File(PROJECT_PATH + JAVA_PATH + PACKAGE_PATH_CONTROLLER + customMapping
-                                           + modelNameUpperCamel + "Controller.java");
+            System.out.println(PROJECT_PATH + customMapping + "boot-model" + customMapping + sysDatabases.getDirectoryPrefix()
+                    + customMapping + "model" + customMapping + modelName + ".java");
+            File controllerFile = new File(PROJECT_PATH +customMapping+"page"+customMapping+ modelName + ".java");
             if (!controllerFile.getParentFile().exists()) {
                 controllerFile.getParentFile().mkdirs();
             }
-            cfg.getTemplate("main.ftl").process(data, new FileWriter(controllerFile));
-            logger.info(modelNameUpperCamel + "Controller.java 生成成功!");
+            cfg.getTemplate("model.ftl").process(data, new FileWriter(controllerFile));
+            logger.info(modelName + "Model.java 生成成功!");
         } catch (Exception e) {
-            throw new RuntimeException("Controller 生成失败!", e);
+            throw new RuntimeException("Model 生成失败!", e);
         }
+    }
+
+    public String codeEntity(List<TableInformation> tableInformation){
+        StringBuilder stringBuilder = new StringBuilder();
+        String space = "    ";
+        int i = 0;
+        for(TableInformation ti : tableInformation){
+            if(i==0){
+                stringBuilder.append("private ");
+                if("VARCHAR".equals(ti.getTypeName())){
+                    stringBuilder.append("String ").append(StringUtils.lineToHump(ti.getColumnName())).append(";\n");
+                }else if("DATETIME".equals(ti.getTypeName())||"DATE".equals(ti.getTypeName())){
+                    stringBuilder.append("Date ").append(StringUtils.lineToHump(ti.getColumnName())).append(";\n");
+                }else if("DECIMAL".equals(ti.getTypeName())){
+                    stringBuilder.append("BigDecimal ").append(StringUtils.lineToHump(ti.getColumnName())).append(";\n");
+                }else if("INT".equals(ti.getTypeName())){
+                    stringBuilder.append("int ").append(StringUtils.lineToHump(ti.getColumnName())).append(";\n");
+                }
+            }
+        }
+        return stringBuilder.toString();
     }
 
 

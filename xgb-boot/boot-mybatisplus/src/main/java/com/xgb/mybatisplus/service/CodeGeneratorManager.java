@@ -44,11 +44,11 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
      * 
      * @param lists 表数组
      */
-    public void genCode(List<TableInformation> lists, Generator generator) {
+    public void genCode(List<TableInformation> lists, Generator generator,SysDatabases sysDatabases) {
         //根据generator判断要生成的东西
             //生成Model
 //            if("1".equals(generator.getIsModel())){
-                new ModelGenerator().genCode(lists,generator.getTableName());
+                new ModelGenerator().genCode(lists,generator,sysDatabases);
 //            }
             //生成Mapper
 //            if ("1".equals(generator.getIsMapper())){
@@ -77,27 +77,6 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
     }
 
     /**
-     * 通过数据库表名, 和自定义 modelName 生成代码 如表名为 gen_test_demo, 自定义 modelName 为 IDemo 将生成 IDemo & IDemoMapper & IDemoService &
-     * IDemoServiceImpl & IDemoController
-     * 
-     * @param tableInformation 表信息
-     */
-    private void genCodeByTableName(TableInformation tableInformation) {
-
-
-
-
-//        //进阶功能
-//        new SqlMapperGenerator().genCode(tableInformation);
-//        new SqlMapperXmlGenerator().genCode(tableInformation);
-//        //前端页面
-//        new SqlMapperGenerator().genCode(tableInformation);
-//        new SqlMapperXmlGenerator().genCode(tableInformation);
-//        new SqlMapperGenerator().genCode(tableInformation);
-//        new SqlMapperXmlGenerator().genCode(tableInformation);
-    }
-
-    /**
      * Freemarker 模板环境配置
      * 
      * @return
@@ -107,9 +86,8 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
         Configuration cfg = null;
         try {
             cfg = new Configuration(Configuration.VERSION_2_3_23);
-            System.out.println(System.getProperty("user.dir"));
-            System.out.println(System.getProperty("user.dir")+"/xgb-boot/boot-mybatisplus/src/main/resources/template");
-            cfg.setDirectoryForTemplateLoading(new File(System.getProperty("user.dir")+"/xgb-boot/boot-mybatisplus/src/main/resources/template"));
+            System.out.println(PROJECT_PATH);
+            cfg.setDirectoryForTemplateLoading(new File(PROJECT_PATH+"/xgb-boot/boot-mybatisplus/src/main/resources/template"));
             cfg.setDefaultEncoding("UTF-8");
             cfg.setTemplateExceptionHandler(TemplateExceptionHandler.IGNORE_HANDLER);
         } catch (IOException e) {

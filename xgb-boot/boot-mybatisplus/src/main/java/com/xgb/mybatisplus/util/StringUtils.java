@@ -2,6 +2,9 @@ package com.xgb.mybatisplus.util;
 
 import com.google.common.base.CaseFormat;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * 字符串操作常用方法集 Created by zhh on 2017/08/16.
  */
@@ -131,5 +134,22 @@ public class StringUtils {
             permission.append(toUpperCaseFirstOne(s1));
         }
         return permission.toString();
+    }
+
+    /**
+     * 下划线转驼峰
+     * @param str
+     * @return
+     */
+    public static String lineToHump(String str) {
+        Pattern linePattern = Pattern.compile("_(\\w)");
+        str = str.toLowerCase();
+        Matcher matcher = linePattern.matcher(str);
+        StringBuffer sb = new StringBuffer();
+        while (matcher.find()) {
+            matcher.appendReplacement(sb, matcher.group(1).toUpperCase());
+        }
+        matcher.appendTail(sb);
+        return sb.toString();
     }
 }

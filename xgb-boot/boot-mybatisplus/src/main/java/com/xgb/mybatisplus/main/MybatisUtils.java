@@ -108,7 +108,7 @@ public class MybatisUtils {
             lists.add(tableInformation);
         }
         CodeGeneratorManager cgm = new CodeGeneratorManager();
-        cgm.genCode(lists,generator);
+        cgm.genCode(lists,generator,sysDatabases);
         return "";
     }
 }

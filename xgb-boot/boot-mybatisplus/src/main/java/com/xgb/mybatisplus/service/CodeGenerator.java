@@ -1,5 +1,7 @@
 package com.xgb.mybatisplus.service;
 
+import com.xgb.model.Generator;
+import com.xgb.model.SysDatabases;
 import com.xgb.model.TableInformation;
 
 import java.util.List;
@@ -12,7 +14,6 @@ public interface CodeGenerator {
 	
 	/**
 	 * 代码生成主要逻辑
-	 * @param tableName 表名
 	 */
-	void genCode(List<TableInformation> tableInformation, String tableName);
+	void genCode(List<TableInformation> tableInformation, Generator generator,SysDatabases sysDatabases);
 }
