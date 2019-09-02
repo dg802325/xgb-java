@@ -37,7 +37,9 @@ public class SysDatabases {
 
     private String packetAddress;
 
-    public SysDatabases(String id, String databaseUrl, String databasePortNumber, String databaseName, String databaseType, String databaseLoginName, String databaseLoginPassword, String createId, Date createTime, String updateId, Date updateTime, String isDel, String status, String operationIp, String directoryPrefix, String packetType, String packetAddress) {
+    private String updateOperationIp;
+
+    public SysDatabases(String id, String databaseUrl, String databasePortNumber, String databaseName, String databaseType, String databaseLoginName, String databaseLoginPassword, String createId, Date createTime, String updateId, Date updateTime, String isDel, String status, String operationIp, String directoryPrefix, String packetType, String packetAddress, String updateOperationIp) {
         this.id = id;
         this.databaseUrl = databaseUrl;
         this.databasePortNumber = databasePortNumber;
@@ -55,6 +57,7 @@ public class SysDatabases {
         this.directoryPrefix = directoryPrefix;
         this.packetType = packetType;
         this.packetAddress = packetAddress;
+        this.updateOperationIp = updateOperationIp;
     }
 
     public SysDatabases() {
@@ -195,5 +198,13 @@ public class SysDatabases {
 
     public void setPacketAddress(String packetAddress) {
         this.packetAddress = packetAddress == null ? null : packetAddress.trim();
+    }
+
+    public String getUpdateOperationIp() {
+        return updateOperationIp;
+    }
+
+    public void setUpdateOperationIp(String updateOperationIp) {
+        this.updateOperationIp = updateOperationIp == null ? null : updateOperationIp.trim();
     }
 }

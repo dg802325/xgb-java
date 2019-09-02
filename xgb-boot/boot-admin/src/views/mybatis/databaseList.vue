@@ -20,6 +20,9 @@
                     数据列表
                 </div>
             </div>
+            <div class="v-cart-title">
+                <el-button type="success" size="mini" @click="handleAdd()">添加数据库连接</el-button>
+            </div>
             <div class="table_border">
                 <el-table
                         :data="list"
@@ -60,6 +63,55 @@
                 </span>
             </el-dialog>
 
+            <!-- 数据库连接新增框 -->
+            <el-dialog title="新增数据库连接" :visible.sync="isShowAdd" width="20%" :before-close="closeAdd">
+                <el-form ref="form"  label-width="100px">
+                    <el-form-item label="地址:" required>
+                        <el-input v-model="addDatabaseUrl" size="1" style="width: 200px;"></el-input>
+                    </el-form-item>
+                    <el-form-item label="端口号:" required>
+                        <el-input v-model="addDatabasePortNumber" size="1" style="width: 200px;"></el-input>
+                    </el-form-item>
+                    <el-form-item label="类型:" required>
+                        <el-select  v-model="addDatabaseType" size="1" style="width: 200px;" placeholder="数据库类型" >
+                            <el-option
+                                    v-for="item in databaseTypeList"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value">
+                            </el-option>
+                        </el-select>
+                    </el-form-item>
+                    <el-form-item label="名称:" required>
+                        <el-input v-model="addDatabaseName" size="1" style="width: 200px;"></el-input>
+                    </el-form-item>
+                    <el-form-item label="账号:" required>
+                        <el-input v-model="addDatabaseLoginName" size="1" style="width: 200px;"></el-input>
+                    </el-form-item>
+                    <el-form-item label="密码:" required>
+                        <el-input v-model="addDatabaseLoginPassword" size="1" style="width: 200px;"></el-input>
+                    </el-form-item>
+                    <el-form-item label="生成包类型:" required>
+                        <el-select  v-model="addPackageType" size="1" style="width: 200px;" placeholder="生成包类型" >
+                            <el-option
+                                    v-for="item in packageTypeList"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value">
+                            </el-option>
+                        </el-select>
+                    </el-form-item>
+                    <el-form-item label="目录路径:" required>
+                        <el-input v-model="addDirectoryPrefix" size="1" style="width: 200px;"></el-input>
+                    </el-form-item>
+                </el-form>
+                <span slot="footer" class="dialog-footer">
+                <el-button @click="closeAdd">取 消</el-button>
+                <el-button type="primary" @click="saveAdd">确 定</el-button>
+            </span>
+            </el-dialog>
+
+
             <!-- 数据库编辑框 -->
             <el-dialog title="修改角色" :visible.sync="isShowEdit" width="20%" :before-close="closeEdit">
                 <el-form ref="form"  label-width="100px">
@@ -70,8 +122,13 @@
                         <el-input v-model="databaseInfo.databasePortNumber" size="1" style="width: 200px;"></el-input>
                     </el-form-item>
                     <el-form-item label="类型:" required>
-                        <el-select  v-model="databaseInfo.databaseType" size="1" style="width: 200px;" placeholder="所属权限" >
-
+                        <el-select  v-model="databaseInfo.databaseType" size="1" style="width: 200px;" placeholder="数据库类型" >
+                            <el-option
+                                    v-for="item in databaseTypeList"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value">
+                            </el-option>
                         </el-select>
                     </el-form-item>
                     <el-form-item label="名称:" required>
@@ -82,6 +139,12 @@
                     </el-form-item>
                     <el-form-item label="密码:" required>
                         <el-input v-model="databaseInfo.databaseLoginPassword" size="1" style="width: 200px;"></el-input>
+                    </el-form-item>
+                    <el-form-item label="生成包类型:" required>
+                        <el-input v-model="databaseInfo.packageType" size="1" style="width: 200px;"></el-input>
+                    </el-form-item>
+                    <el-form-item label="目录路径:" required>
+                        <el-input v-model="databaseInfo.directoryPrefix" size="1" style="width: 200px;"></el-input>
                     </el-form-item>
                 </el-form>
                 <span slot="footer" class="dialog-footer">
@@ -98,12 +161,41 @@
         name: 'dashboard',
         data() {
             return {
+                databaseTypeList:[
+                    {
+                        value: 'MYSQL',
+                        label: 'Mysql'
+                    },
+                    {
+                        value:'ORACLE',
+                        label:'Oracle',
+                    },
+                ],
+                packageTypeList:[
+                    {
+                        value: '原文件',
+                        label: 'Original'
+                    },
+                    {
+                        value:'ZIP',
+                        label:'Zip',
+                    },
+                ],
+                addDatabaseUrl:'',
+                addDatabasePortNumber:'',
+                addDatabaseType:'',
+                addDatabaseName:'',
+                addDatabaseLoginName:'',
+                addDatabaseLoginPassword:'',
+                addPackageType:'',
+                addDirectoryPrefix:'',
                 queryUser:'',
                 pagination:{},
                 list: [],
                 databaseInfo:{},
                 delVisible:false,
                 isShowEdit:false,
+                isShowAdd:false,
             }
         },
 
@@ -141,11 +233,39 @@
                 this.item = this.list[index]
                 this.delVisible = true
             },
+            async handleAdd() {
+                this.isShowAdd = true;
+            },
+            async saveAdd(){
+                let data= {
+                    databaseUrl:this.addDatabaseUrl,
+                    databasePortNumber:this.addDatabasePortNumber,
+                    databaseType:this.addDatabaseType,
+                    databaseName:this.addDatabaseName,
+                    databaseLoginName:this.addDatabaseLoginName,
+                    databaseLoginPassword:this.addDatabaseLoginPassword,
+                    packageType:this.addPackageType,
+                    directoryPrefix:this.addDirectoryPrefix,
+                }
+                let res = await this.$post("/admin/saveSysDatabase", data)
+                if (res.code == 200) {
+                    this.$message.success(res.message);
+                    this.isShowAdd = false
+                    this.requestSearch()
+                } else {
+                    this.$message.error(res.message);
+                }
+            },
             //修改
             async saveEdit(){
                 let data= {
                     id:this.userInfo.id,
-                    roleId:this.editRoleId,
+                    databaseUrl:this.databaseInfo.databaseUrl,
+                    databasePortNumber:this.databaseInfo.databasePortNumber,
+                    databaseType:this.databaseInfo.databaseType,
+                    databaseName:this.databaseInfo.databaseName,
+                    databaseLoginName:this.databaseInfo.databaseLoginName,
+                    databaseLoginPassword:this.databaseInfo.databaseLoginPassword,
                 }
                 let res = await this.$post("/admin/saveSysDatabase", data)
                 if (res.code == 200) {
@@ -172,9 +292,12 @@
                 this.databaseInfo = this.list[index]
                 this.isShowEdit = true
             },
+            closeAdd(){
+              this.isShowAdd = false
+            },
             closeEdit(){
                 this.isShowEdit = false
-            }
+            },
         },
     }
 </script>

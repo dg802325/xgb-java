@@ -25,12 +25,12 @@
                                     </el-select>
                                 </el-form-item>
                                 <el-form-item label="选择表：">
-                                    <el-select v-model="tableId" clearable placeholder="请选择">
+                                    <el-select v-model="tableName" clearable placeholder="请选择">
                                         <el-option
                                                 v-for="item in tableList"
-                                                :key="item.id"
+                                                :key="item.tableName"
                                                 :label="item.tableName"
-                                                :value="item.id">
+                                                :value="item.tableName">
                                         </el-option>
                                     </el-select>
                                 </el-form-item>
@@ -55,26 +55,40 @@
                 databaseList: [],
                 databaseId: '',
                 tableList:[],
-                tableId:'',
+                tableName:'',
+                dataId:'',
             }
         },
         created() {
             this.getDatabases()
         },
         watch:{
-            editDeptId(val){
-                this.getRoleBydeptId(val)
+            databaseId(val){
+                this.getTablesList(val)
             }
         },
         methods: {
             async getDatabases() {
-                let res = await this.$get("/admin/databaseList")
+                let res = await this.$get("/admin/getDatabaseList")
                 if(res.code=='200'){
                     this.databaseList = res.databases;
                 }
             },
+            async getTablesList(val){
+                this.dataId= val;
+                let res = await this.$get("/admin/getTableList",{dataId:val})
+                console.log(res)
+                if(res.code=='200'){
+                    this.tableList = res.tables;
+                }
+            },
             async submission() {
-
+                let data = {
+                    dataId:this.dataId,
+                    tableName:this.tableName,
+                }
+                let res = await this.$post("/admin/runGenerator",data)
+                console.log(res);
             },
         }
     }

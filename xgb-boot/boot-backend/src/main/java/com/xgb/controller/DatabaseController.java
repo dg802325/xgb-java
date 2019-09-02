@@ -1,22 +1,21 @@
 package com.xgb.controller;
 
+import com.xgb.common.SessionUtil;
+import com.xgb.lang.HttpKit;
 import com.xgb.lang.IntegerUtils;
 import com.xgb.lang.R;
 import com.xgb.model.SysDatabases;
 import com.xgb.model.SysDatabasesExample;
 import com.xgb.service.SysDatabasesService;
+import com.xgb.utils.MyUtils;
+import com.xgb.utils.UUIDUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
+import java.util.*;
 
 @RequestMapping("/admin/")
 @RestController
@@ -57,5 +56,38 @@ public class DatabaseController {
             return R.ok(parentMap,"成功");
         }
         return R.error(999,"没有数据");
+    }
+
+    @PostMapping("saveSysDatabase")
+    public R saveDatabase(SysDatabases sysDatabases, HttpServletRequest request){
+        String sysUserId = SessionUtil.getSysUserId();
+        if (MyUtils.isEmpty(sysDatabases.getId())) {
+            sysDatabases.setId(UUIDUtils.getUUID());
+            sysDatabases.setCreateId(sysUserId);
+            sysDatabases.setCreateTime(new Date());
+            sysDatabases.setOperationIp(HttpKit.getIp(request));
+            sysDatabases.setStatus("0");
+            sysDatabases.setIsDel("0");
+            sysDatabases.setUpdateId(sysUserId);
+            sysDatabases.setUpdateTime(new Date());
+            int insert = sysDatabasesService.insert(sysDatabases);
+            if (insert>0) {
+                return R.ok("保存成功");
+            }else {
+                return R.error(999,"保存失败");
+            }
+        }else {
+            sysDatabases.setCreateId(sysUserId);
+            sysDatabases.setCreateTime(new Date());
+            sysDatabases.setOperationIp(HttpKit.getIp(request));
+            sysDatabases.setUpdateId(sysUserId);
+            sysDatabases.setUpdateTime(new Date());
+            int insert = sysDatabasesService.insert(sysDatabases);
+            if (insert>0) {
+                return R.ok("保存成功");
+            }else {
+                return R.error(999,"保存失败");
+            }
+        }
     }
 }

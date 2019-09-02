@@ -85,7 +85,7 @@ public class SysMenuService {
                 oneMu.put("id",oneMenu.getId());
                 oneMu.put("menuName",oneMenu.getMenuName());
                 oneMu.put("menuUrl",oneMenu.getMenuUrl());
-                oneMu.put("permissionName",oneMenu.getPermissionId());
+                oneMu.put("permissionName",sysPermissionMapper.selectByPrimaryKey(oneMenu.getPermissionId()).getPermissionName());
                 oneMu.put("sort",oneMenu.getSort());
                 oneMu.put("menuType",oneMenu.getMenuType());
                 SysMenuExample twoSysMenu = new SysMenuExample();
@@ -97,7 +97,7 @@ public class SysMenuService {
                     twoMu.put("id",twoMenu.getId());
                     twoMu.put("menuName",twoMenu.getMenuName());
                     twoMu.put("menuUrl",twoMenu.getMenuUrl());
-                    twoMu.put("permissionName",twoMenu.getPermissionId());
+                    twoMu.put("permissionName",sysPermissionMapper.selectByPrimaryKey(twoMenu.getPermissionId()).getPermissionName());
                     twoMu.put("sort",twoMenu.getSort());
                     twoMu.put("menuType",twoMenu.getMenuType());
                     SysMenuExample threeSysMenu = new SysMenuExample();
@@ -109,15 +109,15 @@ public class SysMenuService {
                         threeMu.put("id",threeMenu.getId());
                         threeMu.put("menuName",threeMenu.getMenuName());
                         threeMu.put("menuUrl",threeMenu.getMenuUrl());
-                        threeMu.put("permissionName",threeMenu.getPermissionId());
+                        threeMu.put("permissionName",sysPermissionMapper.selectByPrimaryKey(threeMenu.getPermissionId()).getPermissionName());
                         threeMu.put("sort",threeMenu.getSort());
                         threeMu.put("menuType",threeMenu.getMenuType());
                         threelists.add(threeMu);
                     });
-                    twoMu.put("childre",threelists);
+                    twoMu.put("children",threelists);
                     twolists.add(twoMu);
                 });
-                oneMu.put("childre",twolists);
+                oneMu.put("children",twolists);
                 lists.add(oneMu);
             });
             return lists;
@@ -148,7 +148,7 @@ public class SysMenuService {
                 oneMenu.put("id",oneSysMenu.getId());
                 oneMenu.put("menuName",oneSysMenu.getMenuName());
                 oneMenu.put("menuUrl",oneSysMenu.getMenuUrl());
-                oneMenu.put("permissionName",oneSysMenu.getPermissionId());
+                oneMenu.put("permissionName",sysPermissionMapper.selectByPrimaryKey(oneSysMenu.getPermissionId()).getPermissionName());
                 oneMenu.put("sort",oneSysMenu.getSort());
                 oneMenu.put("menuType",oneSysMenu.getMenuType());
                 //根据一级菜单查询二级菜单
@@ -162,7 +162,7 @@ public class SysMenuService {
                     twoMenu.put("id",towMenus.getId());
                     twoMenu.put("menuName",towMenus.getMenuName());
                     twoMenu.put("menuUrl",towMenus.getMenuUrl());
-                    twoMenu.put("permissionName",towMenus.getPermissionId());
+                    twoMenu.put("permissionName",sysPermissionMapper.selectByPrimaryKey(towMenus.getPermissionId()).getPermissionName());
                     twoMenu.put("sort",towMenus.getSort());
                     twoMenu.put("menuType",towMenus.getMenuType());
                     SysMenuExample threeSysMenuExample = new SysMenuExample();
@@ -174,7 +174,7 @@ public class SysMenuService {
                         threeMenu.put("id",threeMenus.getId());
                         threeMenu.put("menuName",threeMenus.getMenuName());
                         threeMenu.put("menuUrl",threeMenus.getMenuUrl());
-                        threeMenu.put("permissionName",threeMenus.getPermissionId());
+                        threeMenu.put("permissionName",sysPermissionMapper.selectByPrimaryKey(threeMenus.getPermissionId()).getPermissionName());
                         threeMenu.put("sort",threeMenus.getSort());
                         threeMenu.put("menuType",threeMenus.getMenuType());
                         SysRolePermission sysRolePermission = allPermission.stream().filter(o -> o.getPermissionId().equals(threeMenus.getPermissionId())).findAny().orElse(null);

@@ -1,27 +1,28 @@
-package com.xgb.service.impl;
+package com.xgb.mybatisplus.service.impl;
 
-import com.xgb.service.CodeGenerator;
-import com.xgb.service.CodeGeneratorManager;
-import com.xgb.util.DataUtil;
-import com.xgb.util.StringUtils;
+import com.xgb.model.TableInformation;
+import com.xgb.mybatisplus.service.CodeGenerator;
+import com.xgb.mybatisplus.service.CodeGeneratorManager;
+import com.xgb.mybatisplus.util.DataUtil;
+import com.xgb.mybatisplus.util.StringUtils;
 import freemarker.template.Configuration;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.util.List;
 import java.util.Map;
 
 /**
  * Controller层 代码生成器 Created by xgb on 2019/07/26.
  */
-public class ControllerGenerator extends CodeGeneratorManager implements CodeGenerator {
+public class ModelGenerator extends CodeGeneratorManager implements CodeGenerator {
 
     @Override
-    public void genCode(String tableName) {
+    public void genCode(List<TableInformation> tableInformation, String tableName) {
         String modelName = StringUtils.tableNameConvertUpperCamel(tableName);
         Configuration cfg = getFreemarkerConfiguration();
         String customMapping = "/";
         String modelNameUpperCamel = modelName;
-
         Map<String, Object> data = DataUtil.getDataMapInit(tableName, modelName, modelNameUpperCamel);
         try {
             String permissions = StringUtils.createPermissions(tableName);

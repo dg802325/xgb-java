@@ -2,34 +2,18 @@ package com.xgb.controller;
 
 import com.xgb.common.SessionUtil;
 import com.xgb.lang.R;
-import com.xgb.model.FastDFSVO;
 import com.xgb.model.SysUser;
 import com.xgb.service.SysUserService;
 import com.xgb.utils.MD5Util;
-import com.xgb.utils.MasterKeyID;
 import com.xgb.utils.MyUtils;
 import com.xgb.utils.UUIDUtils;
-import org.apache.commons.io.FileUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.FileSystemResource;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 

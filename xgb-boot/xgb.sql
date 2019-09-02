@@ -5079,7 +5079,7 @@ CREATE TABLE `SYS_LOG`  (
 -- ----------------------------
 -- Records of SYS_LOG
 -- ----------------------------
-INSERT INTO `SYS_LOG` VALUES ('1', 'admin', '保存用户', 'io.renren.modules.sys.controller.SysUserController.save()', '{\"userId\":2,\"username\":\"denggen\",\"password\":\"7650268401fedd671971a91ebb7922dab7ff3cc1ca7da05ad19982af624c4283\",\"salt\":\"OGKuRQsKBpCBjbPuGcyJ\",\"email\":\"295841112@qq.com\",\"mobile\":\"15835760177\",\"status\":1,\"roleIdList\":[],\"createTime\":\"Jun 2, 2019 3:51:02 PM\",\"deptId\":3,\"deptName\":\"上海分公司\"}', 91, '0:0:0:0:0:0:0:1', '2019-06-02 15:51:02');
+INSERT INTO `SYS_LOG` VALUES ('1', 'admin', '保存用户', 'io.renren.modules.sys.main.SysUserController.save()', '{\"userId\":2,\"username\":\"denggen\",\"password\":\"7650268401fedd671971a91ebb7922dab7ff3cc1ca7da05ad19982af624c4283\",\"salt\":\"OGKuRQsKBpCBjbPuGcyJ\",\"email\":\"295841112@qq.com\",\"mobile\":\"15835760177\",\"status\":1,\"roleIdList\":[],\"createTime\":\"Jun 2, 2019 3:51:02 PM\",\"deptId\":3,\"deptName\":\"上海分公司\"}', 91, '0:0:0:0:0:0:0:1', '2019-06-02 15:51:02');
 
 -- ----------------------------
 -- Table structure for SYS_MENU

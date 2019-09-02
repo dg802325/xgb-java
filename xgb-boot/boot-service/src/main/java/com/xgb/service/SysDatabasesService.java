@@ -39,4 +39,8 @@ public class SysDatabasesService {
 	public int getDatabaseCount() {
 		return sysDatabasesMapper.countByExample(new SysDatabasesExample());
 	}
+
+	public SysDatabases selectByPrimaryKey(String id){
+		return sysDatabasesMapper.selectByPrimaryKey(id);
+	}
 }

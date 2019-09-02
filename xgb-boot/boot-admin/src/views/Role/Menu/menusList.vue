@@ -232,7 +232,6 @@
                 }).then(async () => {
                     //删除逻辑
                     let res = await this.$post('/admin/deleteSysMenu', {id: row.id});
-                    console.log(res)
                     if (res.code == '200') {
                         this.$message({
                             type: 'success',
@@ -262,9 +261,7 @@
                     permissionId: this.addPermissionId,
                     sort:this.addSort,
                 }
-                console.log(data);
                 let res = await this.$post('/admin/addSysMenu', data);
-                console.log(res);
                 if(res.code=='200'){
                     this.$message({
                         type: 'success',
@@ -289,15 +286,14 @@
                     permissionId: this.editPermissionId,
                     sort:this.editSort,
                 }
-                console.log(data)
                 let res = await this.$post('/admin/editSysMenu', data)
-                console.log(res);
                 if(res.code=='200'){
                     this.$message({
                         type: 'success',
                         message: '编辑成功!'
                     });
                     this.closeEdit()
+                    this.selectRole()
                 }else {
                     this.$message({
                         type: 'error',

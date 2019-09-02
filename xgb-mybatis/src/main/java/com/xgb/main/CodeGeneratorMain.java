@@ -14,7 +14,7 @@ public class CodeGeneratorMain {
      * table name support singer string table name with or without underline such "table","my_table" etc.<br>
      * other style not tested
      */
-    private static final String TABLE = "SYS_ROLE";
+    private static final String TABLE = "SHP_PRICE_TERMS";
 
     public static void main(String[] args) {
         CodeGeneratorManager cgm = new CodeGeneratorManager();

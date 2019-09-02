@@ -111,4 +111,5 @@ public class MyUtils {
         int lastIndexOf = fileWholeName.lastIndexOf(".");
         return fileWholeName.substring(lastIndexOf + 1);
     }
+
 }

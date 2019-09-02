@@ -1274,6 +1274,76 @@ public class SysDatabasesExample {
             addCriterion("PACKET_ADDRESS not between", value1, value2, "packetAddress");
             return (Criteria) this;
         }
+
+        public Criteria andUpdateOperationIpIsNull() {
+            addCriterion("UPDATE_OPERATION_IP is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpdateOperationIpIsNotNull() {
+            addCriterion("UPDATE_OPERATION_IP is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpdateOperationIpEqualTo(String value) {
+            addCriterion("UPDATE_OPERATION_IP =", value, "updateOperationIp");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpdateOperationIpNotEqualTo(String value) {
+            addCriterion("UPDATE_OPERATION_IP <>", value, "updateOperationIp");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpdateOperationIpGreaterThan(String value) {
+            addCriterion("UPDATE_OPERATION_IP >", value, "updateOperationIp");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpdateOperationIpGreaterThanOrEqualTo(String value) {
+            addCriterion("UPDATE_OPERATION_IP >=", value, "updateOperationIp");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpdateOperationIpLessThan(String value) {
+            addCriterion("UPDATE_OPERATION_IP <", value, "updateOperationIp");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpdateOperationIpLessThanOrEqualTo(String value) {
+            addCriterion("UPDATE_OPERATION_IP <=", value, "updateOperationIp");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpdateOperationIpLike(String value) {
+            addCriterion("UPDATE_OPERATION_IP like", value, "updateOperationIp");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpdateOperationIpNotLike(String value) {
+            addCriterion("UPDATE_OPERATION_IP not like", value, "updateOperationIp");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpdateOperationIpIn(List<String> values) {
+            addCriterion("UPDATE_OPERATION_IP in", values, "updateOperationIp");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpdateOperationIpNotIn(List<String> values) {
+            addCriterion("UPDATE_OPERATION_IP not in", values, "updateOperationIp");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpdateOperationIpBetween(String value1, String value2) {
+            addCriterion("UPDATE_OPERATION_IP between", value1, value2, "updateOperationIp");
+            return (Criteria) this;
+        }
+
+        public Criteria andUpdateOperationIpNotBetween(String value1, String value2) {
+            addCriterion("UPDATE_OPERATION_IP not between", value1, value2, "updateOperationIp");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {
