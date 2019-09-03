@@ -1,37 +1,62 @@
-# Created by .ignore support plugin (hsz.mobi)
-*.idea
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
 *.class
-*.gz
-*.log
-*.gitignore
-xgb-boot/boot-backend/logs/boot-backend.log
-将删除 xgb-boot/boot-backend/target/classes/com/
-将删除 xgb-boot/boot-backend/target/generated-sources/
-将删除 xgb-boot/boot-dao/target/classes/META-INF/
-将删除 xgb-boot/boot-dao/target/classes/com/xgb/dao/SysConfigMapper.class
-将删除 xgb-boot/boot-dao/target/classes/com/xgb/dao/SysConfigSqlMapper.class
-将删除 xgb-boot/boot-dao/target/classes/com/xgb/dao/SysDeptMapper.class
-将删除 xgb-boot/boot-dao/target/classes/com/xgb/dao/SysDeptSqlMapper.class
-将删除 xgb-boot/boot-dao/target/classes/com/xgb/dao/SysDictMapper.class
-将删除 xgb-boot/boot-dao/target/classes/com/xgb/dao/SysDictSqlMapper.class
-将删除 xgb-boot/boot-dao/target/classes/com/xgb/dao/SysDivistionMapper.class
-将删除 xgb-boot/boot-dao/target/classes/com/xgb/dao/SysLogMapper.class
-将删除 xgb-boot/boot-dao/target/classes/com/xgb/dao/SysLogSqlMapper.class
-将删除 xgb-boot/boot-dao/target/classes/com/xgb/dao/SysMenuMapper.class
-将删除 xgb-boot/boot-dao/target/classes/com/xgb/dao/SysMenuSqlMapper.class
-将删除 xgb-boot/boot-dao/target/classes/com/xgb/dao/SysOssMapper.class
-将删除 xgb-boot/boot-dao/target/classes/com/xgb/dao/SysOssSqlMapper.class
-将删除 xgb-boot/boot-dao/target/classes/com/xgb/dao/SysPermissionMapper.class
-将删除 xgb-boot/boot-dao/target/classes/com/xgb/dao/SysPermissionSqlMapper.class
-将删除 xgb-boot/boot-dao/target/classes/com/xgb/dao/SysRoleMapper.class
-将删除 xgb-boot/boot-dao/target/classes/com/xgb/dao/SysRolePermissionMapper.class
-将删除 xgb-boot/boot-dao/target/classes/com/xgb/dao/SysRolePermissionSqlMapper.class
-将删除 xgb-boot/boot-dao/target/classes/com/xgb/dao/SysUserMapper.class
-将删除 xgb-boot/boot-dao/target/classes/com/xgb/dao/SysUserRoleMapper.class
-将删除 xgb-boot/boot-dao/target/generated-sources/
-将删除 xgb-boot/boot-model/target/
-将删除 xgb-boot/boot-service/target/
-将删除 xgb-common/target/classes/com/xgb/lang/IntegerUtils.class
-将删除 xgb-common/target/generated-sources/
-将删除 xgb-boot/boot-model/target/generated-sources/
-将删除 xgb-boot/boot-service/target/generated-sources/
+*.iws
+*.iml
+*.ipr
+/node_modules/
+/hatchet-generator
+### NetBeans ###
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+package-lock.json
+page/SysRole.java
+xgb-boot/boot-backend/target/generated-sources/
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysDatabasesMapper.xml
+xgb-boot/boot-dao/target/generated-sources/
+xgb-boot/boot-model/target/generated-sources/
+xgb-boot/boot-service/target/generated-sources/
+xgb-common/target/generated-sources/
+xgb-common/target/maven-archiver/
+xgb-common/target/maven-status/
+xgb-common/target/xgb-common-1.0-SNAPSHOT.jar
+xgb-mybatis/target/classes/application.properties
+xgb-mybatis/target/classes/config/
+xgb-mybatis/target/classes/spring/
+xgb-mybatis/target/classes/template/
+xgb-mybatis/target/generated-sources/
+xgb-boot/boot-backend/logs/
+xgb-boot/boot-backend/target/classes/com/
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysConfigMapper.class
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysDatabasesMapper.class
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysDeptMapper.class
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysDictMapper.class
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysDivistionMapper.class
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysLogMapper.class
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysMenuMapper.class
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysOssMapper.class
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysPermissionMapper.class
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysRoleMapper.class
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysRolePermissionMapper.class
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysUserMapper.class
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysUserRoleMapper.class
+xgb-boot/boot-model/target/
+xgb-boot/boot-service/target/
+xgb-common/target/classes/com/xgb/lang/IntegerUtils.class
+xgb-mybatis/target/

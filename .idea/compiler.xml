@@ -8,17 +8,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="boot-backend" />
-        <module name="xgb-spider" />
+        <module name="boot-dao" />
+        <module name="boot-model" />
+        <module name="boot-oss" />
+        <module name="boot-service" />
+        <module name="cloud-eureka" />
         <module name="send-mail" />
         <module name="xgb-common" />
-        <module name="xgb-test" />
-        <module name="boot-model" />
-        <module name="boot-mybatisplus" />
         <module name="xgb-mybatis" />
-        <module name="boot-dao" />
-        <module name="boot-service" />
-        <module name="boot-oss" />
-        <module name="cloud-eureka" />
+        <module name="xgb-spider" />
+        <module name="xgb-test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
