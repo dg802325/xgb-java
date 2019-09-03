@@ -64,12 +64,13 @@ public class SqlMapperXmlGenerator extends CodeGeneratorManager implements CodeG
 
     public String codeSqlIsModelNull(List<TableInformation> tableInformation,String tn){
         StringBuilder stringBuilder = new StringBuilder();
+        String space2 = "        ";
 //        <if test="acctId!= null and acctId!=''">
 //                AND ab.ACCT_ID LIKE '%${acctId}%'
 //        </if>
         //生成基础
         for(TableInformation ti : tableInformation){
-
+            stringBuilder.append(space2).append("<if ").append("test")
         }
         return stringBuilder.toString();
     }
