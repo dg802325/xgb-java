@@ -13,6 +13,7 @@
 ### IntelliJ IDEA ###
 .idea
 *.class
+.gitignore
 *.iws
 *.iml
 *.ipr
@@ -60,3 +61,23 @@ xgb-boot/boot-model/target/
 xgb-boot/boot-service/target/
 xgb-common/target/classes/com/xgb/lang/IntegerUtils.class
 xgb-mybatis/target/
+xgb-boot/boot-backend/target/classes/application-dev.properties
+xgb-boot/boot-backend/target/classes/application-prod.properties
+xgb-boot/boot-backend/target/classes/application.properties
+xgb-boot/boot-backend/target/classes/ehcache.xml
+xgb-boot/boot-backend/target/classes/logback-spring.xml
+xgb-boot/boot-backend/target/classes/mybatis-config.xml
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysConfigMapper.xml
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysDeptMapper.xml
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysDictMapper.xml
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysDivistionMapper.xml
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysLogMapper.xml
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysMenuMapper.xml
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysOssMapper.xml
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysPermissionMapper.xml
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysRoleMapper.xml
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysRolePermissionMapper.xml
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysUserMapper.xml
+xgb-boot/boot-dao/target/classes/com/xgb/dao/SysUserRoleMapper.xml
+xgb-boot/boot-dao/target/classes/generatorConfig.xml
+xgb-boot/boot-dao/target/classes/jdbc.properties
