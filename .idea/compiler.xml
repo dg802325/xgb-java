@@ -10,6 +10,7 @@
         <module name="boot-backend" />
         <module name="boot-dao" />
         <module name="boot-model" />
+        <module name="boot-mybatis" />
         <module name="boot-oss" />
         <module name="boot-service" />
         <module name="cloud-eureka" />
@@ -24,6 +25,7 @@
       <module name="boot-backend" target="1.8" />
       <module name="boot-dao" target="1.8" />
       <module name="boot-model" target="1.8" />
+      <module name="boot-mybatis" target="1.8" />
       <module name="boot-mybatisplus" target="1.8" />
       <module name="boot-oss" target="1.8" />
       <module name="boot-service" target="1.8" />

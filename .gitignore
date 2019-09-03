@@ -81,3 +81,5 @@ xgb-boot/boot-dao/target/classes/com/xgb/dao/SysUserMapper.xml
 xgb-boot/boot-dao/target/classes/com/xgb/dao/SysUserRoleMapper.xml
 xgb-boot/boot-dao/target/classes/generatorConfig.xml
 xgb-boot/boot-dao/target/classes/jdbc.properties
+xgb-boot/boot-mybatis/pom.xml
+xgb-boot/boot-mybatis/src/

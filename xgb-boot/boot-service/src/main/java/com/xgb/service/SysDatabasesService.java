@@ -6,6 +6,7 @@ import com.xgb.utils.MyUtils;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,6 +17,7 @@ import java.util.Map;
  *
  * Created by Mr Xgb on 2019/07/28.
  */
+@Transactional(readOnly=true)
 @Service
 public class SysDatabasesService {
 

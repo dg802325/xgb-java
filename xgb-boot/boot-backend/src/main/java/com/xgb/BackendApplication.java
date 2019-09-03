@@ -15,7 +15,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 import javax.sql.DataSource;
 
-@ComponentScan(basePackages = {"com.xgb.controller","com.xgb.config","com.xgb.service","com.xgb.mybatisplus"})
+@ComponentScan(basePackages = {"com.xgb.controller","com.xgb.config","com.xgb.service","com.xgb.mybatis"})
 @MapperScan(basePackages = "com.xgb.dao")
 @SpringBootApplication
 //@EnableScheduling//定时任务注解
