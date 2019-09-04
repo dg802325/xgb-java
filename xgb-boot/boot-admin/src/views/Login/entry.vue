@@ -2,12 +2,12 @@
     <div class="login-container">
         <div class="login-wrapper">
             <div class="login-logo">
-                <img src="./images/login_logo.png"/>
+                <!--<img src="./images/login_logo.png"/>-->
             </div>
             <el-form ref="ruleForm" label-width="0px" class="ms-content" onsubmit="return false">
                 <div class="login-form" >
                     <br>
-                    <h2 class="title">供应商业务管理系统</h2>
+                    <h2 class="title">X-G-B工具箱</h2>
                     <p class="en">&nbsp;</p>
                     <div class="login-form-wrapper">
                         <div class="login-form-item">
@@ -32,7 +32,7 @@
                         </div>
                         <div style="float: left">
                             <br>
-                            <router-link to="/registUser" style="font-size: 14px">申请入驻</router-link>
+                            <!--<router-link to="/registUser" style="font-size: 14px">申请入驻</router-link>-->
                         </div>
                         <div class="error-wrapper" v-show="msg" style="margin-left: 120px">
                             <span class="icon el-icon-info"></span>

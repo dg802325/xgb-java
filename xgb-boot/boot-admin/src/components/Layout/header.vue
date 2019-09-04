@@ -2,7 +2,7 @@
     <div class="header-container">
         <div class="logo-wrapper">
             <img src="../../assets/images/logo.svg" height="33">
-            <p class="name">供应商业务管理系统</p>
+            <p class="name">X-G-B工具箱</p>
         </div>
 
         <div class="header-right">
