@@ -15,12 +15,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Controller层 代码生成器 Created by xgb on 2019/07/26.
+ * ModelExample层 代码生成器 Created by xgb on 2019/07/26.
  */
 public class ModelExampleGenerator extends CodeGeneratorManager implements CodeGenerator {
 
     @Override
-    public void genCode(List<TableInformation> tableInformation, Generator generator, SysDatabases sysDatabases) {
+    public void genGeratorCode(List<TableInformation> tableInformation, Generator generator, SysDatabases sysDatabases,String path) {
         String tableName = generator.getTableName();
         String modelName = StringUtils.tableNameConvertUpperCamel(tableName);
         Configuration cfg = getFreemarkerConfiguration();
@@ -30,7 +30,7 @@ public class ModelExampleGenerator extends CodeGeneratorManager implements CodeG
         data.put("isList",true);
         data.put("codeEntityExample",codeEntityExample(tableInformation));
         try {
-            File controllerFile = new File(PROJECT_PATH +customMapping+"page"+customMapping+ modelName + "Example.java");
+            File controllerFile = new File(path +customMapping+sysDatabases.getDirectoryPrefix()+customMapping+"model"+customMapping+ modelName + "Example.java");
             if (!controllerFile.getParentFile().exists()) {
                 controllerFile.getParentFile().mkdirs();
             }

@@ -15,12 +15,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Controller层 代码生成器 Created by xgb on 2019/07/26.
+ * MapperXml层 代码生成器 Created by xgb on 2019/07/26.
  */
 public class MapperXmlGenerator extends CodeGeneratorManager implements CodeGenerator {
 
     @Override
-    public void genCode(List<TableInformation> tableInformation, Generator generator, SysDatabases sysDatabases) {
+    public void genGeratorCode(List<TableInformation> tableInformation, Generator generator, SysDatabases sysDatabases,String path) {
         String tableName = generator.getTableName();
         String modelName = StringUtils.tableNameConvertUpperCamel(tableName);
         Configuration cfg = getFreemarkerConfiguration();
@@ -46,11 +46,11 @@ public class MapperXmlGenerator extends CodeGeneratorManager implements CodeGene
         data.put("condition3","and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}");
 
         try {
-            File controllerFile = new File(PROJECT_PATH +customMapping+"page"+customMapping+ modelName + "Mapper.xml");
+            File controllerFile = new File(path +customMapping+sysDatabases.getDirectoryPrefix()+customMapping+"dao"+customMapping+ modelName + "Mapper.xml");
             if (!controllerFile.getParentFile().exists()) {
                 controllerFile.getParentFile().mkdirs();
             }
-            cfg.getTemplate("MapperXml.ftl").process(data, new FileWriter(controllerFile));
+            cfg.getTemplate("mapperXml.ftl").process(data, new FileWriter(controllerFile));
             logger.info(modelName + "MapperXml.java 生成成功!");
         } catch (Exception e) {
             throw new RuntimeException("MapperXml 生成失败!", e);

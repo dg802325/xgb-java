@@ -3,10 +3,7 @@ package com.xgb.mybatis.service;
 import com.xgb.model.Generator;
 import com.xgb.model.SysDatabases;
 import com.xgb.model.TableInformation;
-import com.xgb.mybatis.service.impl.MapperGenerator;
-import com.xgb.mybatis.service.impl.MapperXmlGenerator;
-import com.xgb.mybatis.service.impl.ModelExampleGenerator;
-import com.xgb.mybatis.service.impl.ModelGenerator;
+import com.xgb.mybatis.service.impl.*;
 import freemarker.template.Configuration;
 import freemarker.template.TemplateExceptionHandler;
 import org.slf4j.Logger;
@@ -47,37 +44,42 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
      * 
      * @param lists 表数组
      */
-    public void genCode(List<TableInformation> lists, Generator generator,SysDatabases sysDatabases) {
+    public String genCode(List<TableInformation> lists, Generator generator,SysDatabases sysDatabases,String path) {
         //根据generator判断要生成的东西
             //生成Model
 //            if("1".equals(generator.getIsModel())){
-                new ModelGenerator().genCode(lists,generator,sysDatabases);
-                new ModelExampleGenerator().genCode(lists,generator,sysDatabases);
+                new ModelGenerator().genGeratorCode(lists,generator,sysDatabases,path);
+//            }
+            //生成ModelExample
+//            if("1".equals(generator.getIsModel())){
+                new ModelExampleGenerator().genGeratorCode(lists,generator,sysDatabases,path);
 //            }
             //生成Mapper
 //            if ("1".equals(generator.getIsMapper())){
-                new MapperGenerator().genCode(lists,generator,sysDatabases);
+                new MapperGenerator().genGeratorCode(lists,generator,sysDatabases,path);
 //            }
 //            //生成Mapperxml
 //            if ("1".equals(generator.getIsMapper())){
-                new MapperXmlGenerator().genCode(lists,generator,sysDatabases);
-//            }
-//            //生成Service
-//            if ("1".equals(generator.getIsMapper())){
-//                new ServiceGenerator().genCode(tableInformation);
-//            }
-//            //生成Controller
-//            if ("1".equals(generator.getIsMapper())){
-//                new ControllerGenerator().genCode(tableInformation);
+                new MapperXmlGenerator().genGeratorCode(lists,generator,sysDatabases,path);
 //            }
 //            //生成SqlMapper
 //            if ("1".equals(generator.getIsMapper())){
-//                new SqlMapperGenerator().genCode(tableInformation);
+                new SqlMapperGenerator().genGeratorCode(lists,generator,sysDatabases,path);
 //            }
 //            //生成SqlMapperXml
 //            if ("1".equals(generator.getIsMapper())){
-//                new SqlMapperXmlGenerator().genCode(tableInformation);
+                new SqlMapperXmlGenerator().genGeratorCode(lists,generator,sysDatabases,path);
 //            }
+//            //生成Service
+//            if ("1".equals(generator.getIsMapper())){
+                new ServiceGenerator().genGeratorCode(lists,generator,sysDatabases,path);
+//            }
+//            //生成Controller
+//            if ("1".equals(generator.getIsMapper())){
+                new ControllerGenerator().genGeratorCode(lists,generator,sysDatabases,path);
+//            }
+        return "success";
+
     }
 
     /**
@@ -90,8 +92,7 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
         Configuration cfg = null;
         try {
             cfg = new Configuration(Configuration.VERSION_2_3_23);
-            System.out.println(PROJECT_PATH);
-            cfg.setDirectoryForTemplateLoading(new File(PROJECT_PATH+"/xgb-boot/boot-mybatis/src/main/resources/template"));
+            cfg.setDirectoryForTemplateLoading(new File(System.getProperty("user.dir")+"/xgb-boot/boot-mybatis/src/main/resources/template"));
             cfg.setDefaultEncoding("UTF-8");
             cfg.setTemplateExceptionHandler(TemplateExceptionHandler.IGNORE_HANDLER);
         } catch (IOException e) {

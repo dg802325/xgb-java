@@ -21,6 +21,7 @@
       <arg column="PACKET_TYPE" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="PACKET_ADDRESS" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="UPDATE_OPERATION_IP" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="COMMON_PATH" jdbcType="VARCHAR" javaType="java.lang.String" />
     </constructor>
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -84,7 +85,8 @@
   <sql id="Base_Column_List" >
     ID, DATABASE_URL, DATABASE_PORT_NUMBER, DATABASE_NAME, DATABASE_TYPE, DATABASE_LOGIN_NAME, 
     DATABASE_LOGIN_PASSWORD, CREATE_ID, CREATE_TIME, UPDATE_ID, UPDATE_TIME, IS_DEL, 
-    STATUS, OPERATION_IP, DIRECTORY_PREFIX, PACKET_TYPE, PACKET_ADDRESS, UPDATE_OPERATION_IP
+    STATUS, OPERATION_IP, DIRECTORY_PREFIX, PACKET_TYPE, PACKET_ADDRESS, UPDATE_OPERATION_IP, 
+    COMMON_PATH
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.SysDatabasesExample" >
     select
@@ -122,15 +124,15 @@
       DATABASE_LOGIN_PASSWORD, CREATE_ID, CREATE_TIME, 
       UPDATE_ID, UPDATE_TIME, IS_DEL, 
       STATUS, OPERATION_IP, DIRECTORY_PREFIX, 
-      PACKET_TYPE, PACKET_ADDRESS, UPDATE_OPERATION_IP
-      )
+      PACKET_TYPE, PACKET_ADDRESS, UPDATE_OPERATION_IP, 
+      COMMON_PATH)
     values (#{id,jdbcType=VARCHAR}, #{databaseUrl,jdbcType=VARCHAR}, #{databasePortNumber,jdbcType=VARCHAR}, 
       #{databaseName,jdbcType=VARCHAR}, #{databaseType,jdbcType=VARCHAR}, #{databaseLoginName,jdbcType=VARCHAR}, 
       #{databaseLoginPassword,jdbcType=VARCHAR}, #{createId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateId,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{isDel,jdbcType=VARCHAR}, 
       #{status,jdbcType=VARCHAR}, #{operationIp,jdbcType=VARCHAR}, #{directoryPrefix,jdbcType=VARCHAR}, 
-      #{packetType,jdbcType=VARCHAR}, #{packetAddress,jdbcType=VARCHAR}, #{updateOperationIp,jdbcType=VARCHAR}
-      )
+      #{packetType,jdbcType=VARCHAR}, #{packetAddress,jdbcType=VARCHAR}, #{updateOperationIp,jdbcType=VARCHAR}, 
+      #{commonPath,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.xgb.model.SysDatabases" >
     insert into SYS_DATABASES
@@ -189,6 +191,9 @@
       <if test="updateOperationIp != null" >
         UPDATE_OPERATION_IP,
       </if>
+      <if test="commonPath != null" >
+        COMMON_PATH,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -244,6 +249,9 @@
       </if>
       <if test="updateOperationIp != null" >
         #{updateOperationIp,jdbcType=VARCHAR},
+      </if>
+      <if test="commonPath != null" >
+        #{commonPath,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -310,6 +318,9 @@
       <if test="record.updateOperationIp != null" >
         UPDATE_OPERATION_IP = #{record.updateOperationIp,jdbcType=VARCHAR},
       </if>
+      <if test="record.commonPath != null" >
+        COMMON_PATH = #{record.commonPath,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -334,7 +345,8 @@
       DIRECTORY_PREFIX = #{record.directoryPrefix,jdbcType=VARCHAR},
       PACKET_TYPE = #{record.packetType,jdbcType=VARCHAR},
       PACKET_ADDRESS = #{record.packetAddress,jdbcType=VARCHAR},
-      UPDATE_OPERATION_IP = #{record.updateOperationIp,jdbcType=VARCHAR}
+      UPDATE_OPERATION_IP = #{record.updateOperationIp,jdbcType=VARCHAR},
+      COMMON_PATH = #{record.commonPath,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -393,6 +405,9 @@
       <if test="updateOperationIp != null" >
         UPDATE_OPERATION_IP = #{updateOperationIp,jdbcType=VARCHAR},
       </if>
+      <if test="commonPath != null" >
+        COMMON_PATH = #{commonPath,jdbcType=VARCHAR},
+      </if>
     </set>
     where ID = #{id,jdbcType=VARCHAR}
   </update>
@@ -414,7 +429,8 @@
       DIRECTORY_PREFIX = #{directoryPrefix,jdbcType=VARCHAR},
       PACKET_TYPE = #{packetType,jdbcType=VARCHAR},
       PACKET_ADDRESS = #{packetAddress,jdbcType=VARCHAR},
-      UPDATE_OPERATION_IP = #{updateOperationIp,jdbcType=VARCHAR}
+      UPDATE_OPERATION_IP = #{updateOperationIp,jdbcType=VARCHAR},
+      COMMON_PATH = #{commonPath,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=VARCHAR}
   </update>
 </mapper>

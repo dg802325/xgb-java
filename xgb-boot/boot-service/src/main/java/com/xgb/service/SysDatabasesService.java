@@ -30,6 +30,7 @@ public class SysDatabasesService {
 	    return sysDatabasesMapper.selectByExample(sysDatabasesExample);
     }
 
+    @Transactional
     public int insert(SysDatabases sysDatabases){
 		return sysDatabasesMapper.insert(sysDatabases);
 	}
@@ -44,5 +45,10 @@ public class SysDatabasesService {
 
 	public SysDatabases selectByPrimaryKey(String id){
 		return sysDatabasesMapper.selectByPrimaryKey(id);
+	}
+
+	@Transactional
+	public int update(SysDatabases sysDatabases){
+		return sysDatabasesMapper.updateByPrimaryKeySelective(sysDatabases);
 	}
 }

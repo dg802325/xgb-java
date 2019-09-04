@@ -81,9 +81,24 @@ public class StringUtils {
     }
 
     public static void main(String[] args) {
-        String sys_user = tableNameConvertUpperCamel("SYS_USER");
+        String sys_user = getSomeModelName("SysUser");
         System.out.println(sys_user);
     }
+
+    /**
+     * 将字符串第一个字符转化为小写，其他不管   SysUser -> sysUser
+     * @param modelName
+     * @return
+     */
+    public static String getSomeModelName(String modelName){
+        StringBuilder stringBuilder = new StringBuilder();
+        String substring = modelName.substring(0, 1).toLowerCase();
+        String substring1 = modelName.substring(1);
+        stringBuilder.append(substring).append(substring1);
+        return stringBuilder.toString();
+    }
+
+
     /**
      * 判断给入的字符串是否为空,null、""、" "都表示空字符串
      * 

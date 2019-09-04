@@ -6,11 +6,17 @@ import com.xgb.model.SysDatabases;
 import com.xgb.model.SysMabtaisPlus;
 import com.xgb.model.TableInformation;
 import com.xgb.mybatis.service.CodeGeneratorManager;
+import com.xgb.mybatis.util.FileUtil;
+import com.xgb.mybatis.util.ZipUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -87,7 +93,7 @@ public class MybatisUtils {
         return stringBuffer.toString();
     }
 
-    public String generatorCode(Generator generator) throws SQLException {
+    public String generatorCode(Generator generator,String path) throws SQLException {
         System.out.println(generator.getDataId());
         System.out.println(generator.getTableName());
         SysDatabases sysDatabases = sysDatabasesMapper.selectByPrimaryKey(generator.getDataId());
@@ -108,7 +114,27 @@ public class MybatisUtils {
             lists.add(tableInformation);
         }
         CodeGeneratorManager cgm = new CodeGeneratorManager();
-        cgm.genCode(lists,generator,sysDatabases);
-        return "";
+        String newPath = path+"/mybatis";
+        String code = cgm.genCode(lists, generator, sysDatabases, newPath);
+        FileOutputStream ftp = null;
+        try {
+            FileUtil.CreatFileDir(path+"\\"+sysDatabases.getId());
+            ftp = new FileOutputStream(new File(path+"\\"+sysDatabases.getId()+"\\"+sysDatabases.getDatabaseName()+".zip"));
+            if("success".equals(code)){
+                String s = ZipUtils.toZip(newPath, ftp, true);
+                if("success".equals(s)){
+                    return "success";
+                }
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                ftp.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return code;
     }
 }

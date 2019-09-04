@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+${sqlMapperHeader!}
 <mapper namespace="${mapperPackage!}.${modelName!}SqlMapper">
     <sql id="Base_Column_List">
 ${codeSqlMapperModel!}
@@ -8,7 +7,7 @@ ${codeSqlMapperModel!}
     <select id="get${modelName!}Count" resultType="java.lang.Integer" parameterType="Map">
         select count(*) from ${tableName!} ${tn!}
         where 1=1
-${isModelNull}
+${codeSqlIsModelNull}
     </select>
 
     <select id="get${modelName!}List" resultType="${mapperPackage!}.${modelName!}" parameterType="Map">
@@ -16,7 +15,7 @@ ${isModelNull}
         <include refid="Base_Column_List"/>
         from ${tableName!} ${tn!}
         where 1=1
-${isModelNull}
+${codeSqlIsModelNull}
         <if test="begin!=null and end != null">
             ${limit}
         </if>
@@ -26,7 +25,7 @@ ${isModelNull}
         <include refid="Base_Column_List"/>
         from ${tableName!} ${tn!}
         where 1=1
-${isModelNull}
+${codeSqlIsModelNull}
         limit 0,1
     </select>
 

@@ -49,6 +49,7 @@
 </template>
 
 <script>
+    import {Base_url} from '../../config/index'
     export default {
         data() {
             return {
@@ -88,7 +89,11 @@
                     tableName:this.tableName,
                 }
                 let res = await this.$post("/admin/runGenerator",data)
-                console.log(res);
+                if(res.code=='200'){
+                    window.open(Base_url+"/admin/codeGeneratorDownload?dataId="+this.dataId);
+                }else {
+                    this.$message.error('生成失败!');
+                }
             },
         }
     }

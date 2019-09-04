@@ -19,8 +19,8 @@ import java.util.*;
 
 @RequestMapping("/admin/")
 @RestController
-public class DatabaseController {
-    protected static final Logger logger = LoggerFactory.getLogger(DatabaseController.class);
+public class SysDatabaseController {
+    protected static final Logger logger = LoggerFactory.getLogger(SysDatabaseController.class);
 
     @Autowired
     private SysDatabasesService sysDatabasesService;
@@ -45,6 +45,8 @@ public class DatabaseController {
             map.put("databaseType",item.getDatabaseType());
             map.put("databaseLoginName",item.getDatabaseLoginName());
             map.put("databaseLoginPassword",item.getDatabaseLoginPassword());
+            map.put("packageType",item.getPacketType());
+            map.put("directoryPrefix",item.getDirectoryPrefix());
             lists.add(map);
         });
         int deptCount = sysDatabasesService.getDatabaseCount();
@@ -82,8 +84,8 @@ public class DatabaseController {
             sysDatabases.setOperationIp(HttpKit.getIp(request));
             sysDatabases.setUpdateId(sysUserId);
             sysDatabases.setUpdateTime(new Date());
-            int insert = sysDatabasesService.insert(sysDatabases);
-            if (insert>0) {
+            int update = sysDatabasesService.update(sysDatabases);
+            if (update>0) {
                 return R.ok("保存成功");
             }else {
                 return R.error(999,"保存失败");

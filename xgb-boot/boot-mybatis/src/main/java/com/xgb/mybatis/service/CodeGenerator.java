@@ -15,5 +15,5 @@ public interface CodeGenerator {
 	/**
 	 * 代码生成主要逻辑
 	 */
-	void genCode(List<TableInformation> tableInformation, Generator generator, SysDatabases sysDatabases);
+	void genGeratorCode(List<TableInformation> tableInformation, Generator generator, SysDatabases sysDatabases,String path);
 }

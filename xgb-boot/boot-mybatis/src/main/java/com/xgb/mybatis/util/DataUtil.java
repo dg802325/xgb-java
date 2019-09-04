@@ -52,6 +52,7 @@ public class DataUtil extends CodeGeneratorConfig {
         data.put("author", AUTHOR);
         data.put("tableName", tableName);
         data.put("modelName", modelName);
+        data.put("someModelName", StringUtils.getSomeModelName(modelName));
         data.put("baseRequestMapping", StringUtils.toLowerCaseFirstOne(modelName));
         return data;
     }

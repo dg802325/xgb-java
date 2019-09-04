@@ -104,6 +104,9 @@
                     <el-form-item label="目录路径:" required>
                         <el-input v-model="addDirectoryPrefix" size="1" style="width: 200px;"></el-input>
                     </el-form-item>
+                    <el-form-item label="工具包路径:" required>
+                        <el-input v-model="addCommonPath" size="1" style="width: 200px;"></el-input>
+                    </el-form-item>
                 </el-form>
                 <span slot="footer" class="dialog-footer">
                 <el-button @click="closeAdd">取 消</el-button>
@@ -141,10 +144,20 @@
                         <el-input v-model="databaseInfo.databaseLoginPassword" size="1" style="width: 200px;"></el-input>
                     </el-form-item>
                     <el-form-item label="生成包类型:" required>
-                        <el-input v-model="databaseInfo.packageType" size="1" style="width: 200px;"></el-input>
+                        <el-select  v-model="databaseInfo.packageType" size="1" style="width: 200px;" placeholder="生成包类型" >
+                            <el-option
+                                    v-for="item in packageTypeList"
+                                    :key="item.value"
+                                    :label="item.label"
+                                    :value="item.value">
+                            </el-option>
+                        </el-select>
                     </el-form-item>
                     <el-form-item label="目录路径:" required>
                         <el-input v-model="databaseInfo.directoryPrefix" size="1" style="width: 200px;"></el-input>
+                    </el-form-item>
+                    <el-form-item label="工具包路径:" required>
+                        <el-input v-model="databaseInfo.commonPath" size="1" style="width: 200px;"></el-input>
                     </el-form-item>
                 </el-form>
                 <span slot="footer" class="dialog-footer">
@@ -189,6 +202,7 @@
                 addDatabaseLoginPassword:'',
                 addPackageType:'',
                 addDirectoryPrefix:'',
+                addCommonPath:'',
                 queryUser:'',
                 pagination:{},
                 list: [],
@@ -246,6 +260,7 @@
                     databaseLoginPassword:this.addDatabaseLoginPassword,
                     packageType:this.addPackageType,
                     directoryPrefix:this.addDirectoryPrefix,
+                    commonPath:this.addCommonPath,
                 }
                 let res = await this.$post("/admin/saveSysDatabase", data)
                 if (res.code == 200) {
@@ -259,13 +274,16 @@
             //修改
             async saveEdit(){
                 let data= {
-                    id:this.userInfo.id,
+                    id:this.databaseInfo.id,
                     databaseUrl:this.databaseInfo.databaseUrl,
                     databasePortNumber:this.databaseInfo.databasePortNumber,
                     databaseType:this.databaseInfo.databaseType,
                     databaseName:this.databaseInfo.databaseName,
                     databaseLoginName:this.databaseInfo.databaseLoginName,
                     databaseLoginPassword:this.databaseInfo.databaseLoginPassword,
+                    packageType:this.databaseInfo.packageType,
+                    directoryPrefix:this.databaseInfo.directoryPrefix,
+                    commonPath:this.databaseInfo.commonPath,
                 }
                 let res = await this.$post("/admin/saveSysDatabase", data)
                 if (res.code == 200) {
@@ -290,6 +308,7 @@
             //修改
             editDatabase(index) {
                 this.databaseInfo = this.list[index]
+                console.log(this.databaseInfo)
                 this.isShowEdit = true
             },
             closeAdd(){

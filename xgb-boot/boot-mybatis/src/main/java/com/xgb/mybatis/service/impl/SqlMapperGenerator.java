@@ -15,20 +15,21 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Controller层 代码生成器 Created by xgb on 2019/07/26.
+ * SqlMapper层 代码生成器 Created by xgb on 2019/07/26.
  */
 public class SqlMapperGenerator extends CodeGeneratorManager implements CodeGenerator {
 
     @Override
-    public void genCode(List<TableInformation> tableInformation, Generator generator, SysDatabases sysDatabases) {
+    public void genGeratorCode(List<TableInformation> tableInformation, Generator generator, SysDatabases sysDatabases, String path) {
         String tableName = generator.getTableName();
         String modelName = StringUtils.tableNameConvertUpperCamel(tableName);
         Configuration cfg = getFreemarkerConfiguration();
         String customMapping = "/";
         Map<String, Object> data = DataUtil.getDataMapInit(tableName, modelName,tableInformation);
         data.put("modelPackage",sysDatabases.getDirectoryPrefix()+".model");
+        data.put("mapperPackage",sysDatabases.getDirectoryPrefix()+".dao");
         try {
-            File controllerFile = new File(PROJECT_PATH +customMapping+"page"+customMapping+ modelName + "SqlMapper.java");
+            File controllerFile = new File(path +customMapping+sysDatabases.getDirectoryPrefix()+customMapping+"dao"+customMapping+ modelName + "SqlMapper.java");
             if (!controllerFile.getParentFile().exists()) {
                 controllerFile.getParentFile().mkdirs();
             }

@@ -1344,6 +1344,76 @@ public class SysDatabasesExample {
             addCriterion("UPDATE_OPERATION_IP not between", value1, value2, "updateOperationIp");
             return (Criteria) this;
         }
+
+        public Criteria andCommonPathIsNull() {
+            addCriterion("COMMON_PATH is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommonPathIsNotNull() {
+            addCriterion("COMMON_PATH is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommonPathEqualTo(String value) {
+            addCriterion("COMMON_PATH =", value, "commonPath");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommonPathNotEqualTo(String value) {
+            addCriterion("COMMON_PATH <>", value, "commonPath");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommonPathGreaterThan(String value) {
+            addCriterion("COMMON_PATH >", value, "commonPath");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommonPathGreaterThanOrEqualTo(String value) {
+            addCriterion("COMMON_PATH >=", value, "commonPath");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommonPathLessThan(String value) {
+            addCriterion("COMMON_PATH <", value, "commonPath");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommonPathLessThanOrEqualTo(String value) {
+            addCriterion("COMMON_PATH <=", value, "commonPath");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommonPathLike(String value) {
+            addCriterion("COMMON_PATH like", value, "commonPath");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommonPathNotLike(String value) {
+            addCriterion("COMMON_PATH not like", value, "commonPath");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommonPathIn(List<String> values) {
+            addCriterion("COMMON_PATH in", values, "commonPath");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommonPathNotIn(List<String> values) {
+            addCriterion("COMMON_PATH not in", values, "commonPath");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommonPathBetween(String value1, String value2) {
+            addCriterion("COMMON_PATH between", value1, value2, "commonPath");
+            return (Criteria) this;
+        }
+
+        public Criteria andCommonPathNotBetween(String value1, String value2) {
+            addCriterion("COMMON_PATH not between", value1, value2, "commonPath");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {
