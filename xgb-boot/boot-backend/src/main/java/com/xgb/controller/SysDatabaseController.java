@@ -31,8 +31,9 @@ public class SysDatabaseController {
         int begin = Integer.valueOf(mapParam.get("begin").toString());
         int end = Integer.valueOf(mapParam.get("end").toString());
         begin = IntegerUtils.getBegin(begin,end);//根据第几页查询数据
+        String sysUserId = SessionUtil.getSysUserId();
         SysDatabasesExample sysDatabasesExample = new SysDatabasesExample();
-        sysDatabasesExample.createCriteria();
+        sysDatabasesExample.createCriteria().andCreateIdEqualTo(sysUserId);
         sysDatabasesExample.setOrderByClause("CREATE_TIME DESC LIMIT "+begin+", "+end);
         List<Map<String,Object>> lists = new ArrayList<Map<String,Object>>();
         List<SysDatabases> sysDatabases = sysDatabasesService.selectByExample(sysDatabasesExample);

@@ -101,7 +101,7 @@ public class MysqlController {
     public void download(String dataId, HttpServletResponse response) throws IOException {
         SysDatabases sysDatabases = sysDatabasesService.selectByPrimaryKey(dataId);
         //1.获取要下载的文件的绝对路径
-        String realPath = mybatisPath+"/"+sysDatabases.getId()+"/"+sysDatabases.getDatabaseName()+".zip";
+        String realPath = mybatisPath+"/"+sysDatabases.getId()+"/"+sysDatabases.getId()+"/"+sysDatabases.getDatabaseName()+".zip";
         //2.获取要下载的文件名
         String fileName = sysDatabases.getDatabaseName()+".zip";
         response.reset();
