@@ -83,10 +83,10 @@ public class MysqlController {
     public R runGenerator(Generator generator) throws SQLException {
         logger.info("------request-address----------------：/admin/runGenerator");
         System.out.println(generator);
-        FileUtil.deleteDirectory(mybatisPath+"\\"+generator.getDataId());
+        FileUtil.deleteDirectory(mybatisPath+"/"+generator.getDataId());
         //生成
-        FileUtil.CreatFileDir(mybatisPath+"\\"+generator.getDataId());
-        String s = mybatisUtils.generatorCode(generator,mybatisPath+"\\"+generator.getDataId());
+        FileUtil.CreatFileDir(mybatisPath+"/"+generator.getDataId());
+        String s = mybatisUtils.generatorCode(generator,mybatisPath+"/"+generator.getDataId());
         if("success".equals(s)){
             return R.ok("生成成功");
         }

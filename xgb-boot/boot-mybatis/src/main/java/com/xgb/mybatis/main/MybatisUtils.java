@@ -118,8 +118,8 @@ public class MybatisUtils {
         String code = cgm.genCode(lists, generator, sysDatabases, newPath);
         FileOutputStream ftp = null;
         try {
-            FileUtil.CreatFileDir(path+"\\"+sysDatabases.getId());
-            ftp = new FileOutputStream(new File(path+"\\"+sysDatabases.getId()+"\\"+sysDatabases.getDatabaseName()+".zip"));
+            FileUtil.CreatFileDir(path+"/"+sysDatabases.getId());
+            ftp = new FileOutputStream(new File(path+"/"+sysDatabases.getId()+"/"+sysDatabases.getDatabaseName()+".zip"));
             if("success".equals(code)){
                 String s = ZipUtils.toZip(newPath, ftp, true);
                 if("success".equals(s)){
