@@ -47,37 +47,42 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
     public String genCode(List<TableInformation> lists, Generator generator,SysDatabases sysDatabases,String path) {
         //根据generator判断要生成的东西
             //生成Model
-//            if("1".equals(generator.getIsModel())){
+            if("true".equals(generator.getIsModel())){
                 new ModelGenerator().genGeratorCode(lists,generator,sysDatabases,path);
-//            }
+            }
             //生成ModelExample
-//            if("1".equals(generator.getIsModel())){
+            if("true".equals(generator.getIsModelExample())){
                 new ModelExampleGenerator().genGeratorCode(lists,generator,sysDatabases,path);
-//            }
+            }
             //生成Mapper
-//            if ("1".equals(generator.getIsMapper())){
+            if ("true".equals(generator.getIsMapper())){
                 new MapperGenerator().genGeratorCode(lists,generator,sysDatabases,path);
-//            }
+            }
 //            //生成Mapperxml
-//            if ("1".equals(generator.getIsMapper())){
+            if ("true".equals(generator.getIsMapperXml())){
                 new MapperXmlGenerator().genGeratorCode(lists,generator,sysDatabases,path);
-//            }
+            }
 //            //生成SqlMapper
-//            if ("1".equals(generator.getIsMapper())){
+            if ("true".equals(generator.getIsSqlMapper())){
                 new SqlMapperGenerator().genGeratorCode(lists,generator,sysDatabases,path);
-//            }
+            }
 //            //生成SqlMapperXml
-//            if ("1".equals(generator.getIsMapper())){
+            if ("true".equals(generator.getIsSqlMapperXml())){
                 new SqlMapperXmlGenerator().genGeratorCode(lists,generator,sysDatabases,path);
-//            }
+            }
 //            //生成Service
-//            if ("1".equals(generator.getIsMapper())){
+            if ("true".equals(generator.getIsService())){
                 new ServiceGenerator().genGeratorCode(lists,generator,sysDatabases,path);
-//            }
+            }
 //            //生成Controller
-//            if ("1".equals(generator.getIsMapper())){
+            if ("true".equals(generator.getIsController())){
                 new ControllerGenerator().genGeratorCode(lists,generator,sysDatabases,path);
-//            }
+            }
+//            //生成VueList
+            if ("true".equals(generator.getIsVueList())){
+                new VueListGenerator().genGeratorCode(lists,generator,sysDatabases,path);
+            }
+
         return "success";
 
     }

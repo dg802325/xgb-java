@@ -7,6 +7,7 @@ import com.xgb.lang.R;
 import com.xgb.model.SysDatabases;
 import com.xgb.model.SysDatabasesExample;
 import com.xgb.service.SysDatabasesService;
+import com.xgb.utils.MD5Util;
 import com.xgb.utils.MyUtils;
 import com.xgb.utils.UUIDUtils;
 import org.slf4j.Logger;
@@ -45,7 +46,7 @@ public class SysDatabaseController {
             map.put("databaseName",item.getDatabaseName());
             map.put("databaseType",item.getDatabaseType());
             map.put("databaseLoginName",item.getDatabaseLoginName());
-            map.put("databaseLoginPassword",item.getDatabaseLoginPassword());
+            map.put("databaseLoginPassword", MD5Util.toMd5(item.getDatabaseLoginPassword()));
             map.put("packageType",item.getPacketType());
             map.put("directoryPrefix",item.getDirectoryPrefix());
             lists.add(map);

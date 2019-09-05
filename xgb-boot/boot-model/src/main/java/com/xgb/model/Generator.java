@@ -9,7 +9,9 @@ public class Generator {
 
     private String dataId;
     private String tableName;
+    private String tableRemark;
     private String isModel;
+    private String isModelExample;
     private String isMapper;
     private String isMapperXml;
     private String isSqlMapper;
@@ -18,12 +20,44 @@ public class Generator {
     private String isController;
     private String isVueList;
 
+    public String getDataId() {
+        return dataId;
+    }
+
+    public void setDataId(String dataId) {
+        this.dataId = dataId;
+    }
+
+    public String getTableName() {
+        return tableName;
+    }
+
+    public void setTableName(String tableName) {
+        this.tableName = tableName;
+    }
+
+    public String getTableRemark() {
+        return tableRemark;
+    }
+
+    public void setTableRemark(String tableRemark) {
+        this.tableRemark = tableRemark;
+    }
+
     public String getIsModel() {
         return isModel;
     }
 
     public void setIsModel(String isModel) {
         this.isModel = isModel;
+    }
+
+    public String getIsModelExample() {
+        return isModelExample;
+    }
+
+    public void setIsModelExample(String isModelExample) {
+        this.isModelExample = isModelExample;
     }
 
     public String getIsMapper() {
@@ -80,21 +114,5 @@ public class Generator {
 
     public void setIsVueList(String isVueList) {
         this.isVueList = isVueList;
-    }
-
-    public String getDataId() {
-        return dataId;
-    }
-
-    public void setDataId(String dataId) {
-        this.dataId = dataId;
-    }
-
-    public String getTableName() {
-        return tableName;
-    }
-
-    public void setTableName(String tableName) {
-        this.tableName = tableName;
     }
 }

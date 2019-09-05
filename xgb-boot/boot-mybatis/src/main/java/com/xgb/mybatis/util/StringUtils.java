@@ -3,6 +3,7 @@ package com.xgb.mybatis.util;
 import com.google.common.base.CaseFormat;
 import com.xgb.model.TableInformation;
 
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -69,6 +70,7 @@ public class StringUtils {
         return CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, tableName.toLowerCase());
     }
     /**
+     * 下划线转驼峰  第一字符为大写   SYS_USER -> SysUser
      * Convert table name with or without underline to camel style object name. .The first character is lower case<br>
      * For example:<br>
      * table to Table<br>
@@ -81,8 +83,18 @@ public class StringUtils {
     }
 
     public static void main(String[] args) {
-        String sys_user = getSomeModelName("SysUser");
+        String sys_user = tableNameConvertUpperCamel("SYS_USER");
         System.out.println(sys_user);
+    }
+
+    /**
+     * 判断某个字符串值是否在一个字符串数组内
+     * @param str
+     * @param strings
+     * @return
+     */
+    public static boolean stringIsOnArray(String str,String[] strings){
+        return Arrays.asList(strings).contains(str);
     }
 
     /**

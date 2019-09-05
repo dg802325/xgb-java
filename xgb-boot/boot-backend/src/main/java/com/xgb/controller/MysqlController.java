@@ -82,7 +82,6 @@ public class MysqlController {
     @PostMapping("runGenerator")
     public R runGenerator(Generator generator) throws SQLException {
         logger.info("------request-address----------------：/admin/runGenerator");
-        System.out.println(generator);
         FileUtil.deleteDirectory(mybatisPath+"/"+generator.getDataId());
         //生成
         FileUtil.CreatFileDir(mybatisPath+"/"+generator.getDataId());
