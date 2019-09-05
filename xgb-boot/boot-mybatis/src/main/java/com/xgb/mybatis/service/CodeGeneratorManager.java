@@ -82,7 +82,8 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
             if ("true".equals(generator.getIsVueList())){
                 new VueListGenerator().genGeratorCode(lists,generator,sysDatabases,path);
             }
-
+            //记录权限/vue路径等信息  必生成
+            new AboutGenerator().genGeratorCode(lists,generator,sysDatabases,path);
         return "success";
 
     }
