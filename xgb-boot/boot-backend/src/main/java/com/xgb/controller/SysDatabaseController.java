@@ -94,4 +94,18 @@ public class SysDatabaseController {
             }
         }
     }
+
+    @PostMapping("/delSysDatabase")
+    public R delSysDatabase(String databaseId){
+        if (MyUtils.isEmpty(databaseId)){
+            return R.error(999,"id为空");
+        }
+        int i = sysDatabasesService.deleteByPrimaryKey(databaseId);
+        if(i>0){
+            return R.ok();
+        }else {
+            return R.error(999,"删除失败");
+        }
+
+    }
 }

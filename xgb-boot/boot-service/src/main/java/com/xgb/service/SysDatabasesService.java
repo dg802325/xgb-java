@@ -51,4 +51,9 @@ public class SysDatabasesService {
 	public int update(SysDatabases sysDatabases){
 		return sysDatabasesMapper.updateByPrimaryKeySelective(sysDatabases);
 	}
+
+	@Transactional
+	public int deleteByPrimaryKey(String id){
+		return sysDatabasesMapper.deleteByPrimaryKey(id);
+	}
 }
