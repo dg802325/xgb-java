@@ -23,7 +23,7 @@ public class ${modelName!}Service {
 	@Autowired
     private ${modelName!}Mapper ${someModelName!}Mapper;
 
-    public List<${modelName!}> selectAll${modelName!}(${someModelName!},begin,end){
+    public List<${modelName!}> selectAll${modelName!}(${modelName!} ${someModelName!},String begin,String end){
         ${modelName!}Example ${someModelName!}Example = new ${modelName!}Example();
         ${someModelName!}Example.createCriteria();
         ${someModelName!}Example.setOrderByClause("CREATE_TIME DESC LIMIT "+begin+", "+end);

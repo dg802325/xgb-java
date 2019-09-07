@@ -29,6 +29,8 @@ public class AboutGenerator extends CodeGeneratorManager implements CodeGenerato
         data.put("permissions",StringUtils.createPermissions(tableName));
         data.put("vueTableName",generator.getTableRemark());//表备注
         data.put("codeEntity",codeEntity(tableInformation));
+        data.put("isController",generator.getIsController());
+        data.put("isVueList",generator.getIsVueList());
         try {
             File controllerFile = new File(path +customMapping+sysDatabases.getDirectoryPrefix()+customMapping + modelName + ".txt");
             if (!controllerFile.getParentFile().exists()) {

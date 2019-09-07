@@ -183,7 +183,10 @@
                 }else if(row.menuType=='1') {
                     this.addMenuType = '2'
                     this.addParentId=row.id;
-                }else{
+                // }else if(row.menuType=='2'){
+                //     this.addMenuType = '3'
+                //     this.addParentId=row.id;
+                } else {
                     this.$message({
                         type: 'warning',
                         message: '不能添加4级目录!'

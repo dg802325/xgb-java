@@ -74,42 +74,64 @@ public class SysPermissionService {
         SysPermissionExample oneSysPermissionExample = new SysPermissionExample();
         oneSysPermissionExample.createCriteria().andParentIdEqualTo(parentId);
         List<SysPermission> oneSysPermissions = sysPermissionMapper.selectByExample(oneSysPermissionExample);
-        oneSysPermissions.forEach(oneSysPermission -> {
-            //创建二级菜单集合
-            List<Map<String,Object>> twoPermissionList = new ArrayList<Map<String,Object>>();
-            Map<String,Object> oneParentMap = new HashMap<String,Object>();
-            oneParentMap.put("id",oneSysPermission.getId());
-            oneParentMap.put("permissionName",oneSysPermission.getPermissionName());
-            oneParentMap.put("remark",oneSysPermission.getRemark());
-            oneParentMap.put("permissionType",oneSysPermission.getPermissionType());
-            SysPermissionExample twoSysPermissionExample = new SysPermissionExample();
-            twoSysPermissionExample.createCriteria().andParentIdEqualTo(oneSysPermission.getId());
-            List<SysPermission> twoSysPermissions = sysPermissionMapper.selectByExample(twoSysPermissionExample);
-            twoSysPermissions.forEach(twoSysPermission->{
-                //创建三级菜单集合
-                List<Map<String,Object>> threePermissionList = new ArrayList<Map<String,Object>>();
-                Map<String,Object> twoParentMap = new HashMap<String,Object>();
-                twoParentMap.put("id",twoSysPermission.getId());
-                twoParentMap.put("permissionName",twoSysPermission.getPermissionName());
-                twoParentMap.put("remark",twoSysPermission.getRemark());
-                twoParentMap.put("permissionType",twoSysPermission.getPermissionType());
-                SysPermissionExample threeSysPermissionExample = new SysPermissionExample();
-                threeSysPermissionExample.createCriteria().andParentIdEqualTo(twoSysPermission.getId());
-                List<SysPermission> threeSysPermissions = sysPermissionMapper.selectByExample(threeSysPermissionExample);
-                threeSysPermissions.forEach(threeSysPermission->{
-                    Map<String,Object> threeParentMap = new HashMap<String,Object>();
-                    threeParentMap.put("id",threeSysPermission.getId());
-                    threeParentMap.put("permissionName",threeSysPermission.getPermissionName());
-                    threeParentMap.put("remark",threeSysPermission.getRemark());
-                    threeParentMap.put("permissionType",threeSysPermission.getPermissionType());
-                    threePermissionList.add(threeParentMap);
-                });
-                twoParentMap.put("children",threePermissionList);
-                twoPermissionList.add(twoParentMap);
+        if(oneSysPermissions.size()>0){
+            oneSysPermissions.forEach(oneSysPermission -> {
+                //创建二级菜单集合
+                List<Map<String,Object>> twoPermissionList = new ArrayList<Map<String,Object>>();
+                Map<String,Object> oneParentMap = new HashMap<String,Object>();
+                oneParentMap.put("id",oneSysPermission.getId());
+                oneParentMap.put("permissionName",oneSysPermission.getPermissionName());
+                oneParentMap.put("remark",oneSysPermission.getRemark());
+                oneParentMap.put("permissionType",oneSysPermission.getPermissionType());
+                SysPermissionExample twoSysPermissionExample = new SysPermissionExample();
+                twoSysPermissionExample.createCriteria().andParentIdEqualTo(oneSysPermission.getId());
+                List<SysPermission> twoSysPermissions = sysPermissionMapper.selectByExample(twoSysPermissionExample);
+                if(twoSysPermissions.size()>0){
+                    twoSysPermissions.forEach(twoSysPermission->{
+                        //创建三级菜单集合
+                        List<Map<String,Object>> threePermissionList = new ArrayList<Map<String,Object>>();
+                        Map<String,Object> twoParentMap = new HashMap<String,Object>();
+                        twoParentMap.put("id",twoSysPermission.getId());
+                        twoParentMap.put("permissionName",twoSysPermission.getPermissionName());
+                        twoParentMap.put("remark",twoSysPermission.getRemark());
+                        twoParentMap.put("permissionType",twoSysPermission.getPermissionType());
+                        SysPermissionExample threeSysPermissionExample = new SysPermissionExample();
+                        threeSysPermissionExample.createCriteria().andParentIdEqualTo(twoSysPermission.getId());
+                        List<SysPermission> threeSysPermissions = sysPermissionMapper.selectByExample(threeSysPermissionExample);
+                        if(threeSysPermissions.size()>0){
+                            threeSysPermissions.forEach(threeSysPermission->{
+                                //创建4级按钮
+                                List<Map<String,Object>> fourPermissionList = new ArrayList<Map<String,Object>>();
+                                SysPermissionExample fourSysPermissionExample = new SysPermissionExample();
+                                fourSysPermissionExample.createCriteria().andParentIdEqualTo(threeSysPermission.getId());
+                                List<SysPermission> fourSysPermissions = sysPermissionMapper.selectByExample(fourSysPermissionExample);
+                                Map<String,Object> threeParentMap = new HashMap<String,Object>();
+                                if (fourSysPermissions.size()>0){
+                                    fourSysPermissions.forEach(fourSysPermission->{
+                                        Map<String,Object> fourParentMap = new HashMap<String,Object>();
+                                        fourParentMap.put("id",fourSysPermission.getId());
+                                        fourParentMap.put("permissionName",fourSysPermission.getPermissionName());
+                                        fourParentMap.put("remark",fourSysPermission.getRemark());
+                                        fourParentMap.put("permissionType",fourSysPermission.getPermissionType());
+                                        fourPermissionList.add(fourParentMap);
+                                    });
+                                    threeParentMap.put("children",fourPermissionList);
+                                }
+                                threeParentMap.put("id",threeSysPermission.getId());
+                                threeParentMap.put("permissionName",threeSysPermission.getPermissionName());
+                                threeParentMap.put("remark",threeSysPermission.getRemark());
+                                threeParentMap.put("permissionType",threeSysPermission.getPermissionType());
+                                threePermissionList.add(threeParentMap);
+                            });
+                            twoParentMap.put("children",threePermissionList);
+                        }
+                        twoPermissionList.add(twoParentMap);
+                    });
+                }
+                oneParentMap.put("children",twoPermissionList);
+                lists.add(oneParentMap);
             });
-            oneParentMap.put("children",twoPermissionList);
-            lists.add(oneParentMap);
-        });
+        }
         return lists;
     }
     //根据父级id查询权限列表
@@ -121,5 +143,49 @@ public class SysPermissionService {
 
     public List<SysPermission> selectByExample(SysPermissionExample sysPermissionExample){
         return sysPermissionMapper.selectByExample(sysPermissionExample);
+    }
+
+    public List<Map<String,Object>> selectAllRolePermissionList() {
+        List<Map<String,Object>> lists = new ArrayList<Map<String,Object>>();
+        //查询一级权限列表
+        SysPermissionExample oneSysPermissionExample = new SysPermissionExample();
+        oneSysPermissionExample.createCriteria().andParentIdEqualTo("0").andPermissionTypeEqualTo("0");
+        List<SysPermission> oneSysPermissions = sysPermissionMapper.selectByExample(oneSysPermissionExample);
+        oneSysPermissions.forEach(oneItem->{
+            List<Map<String,Object>> towLists = new ArrayList<>();
+            //根据一级获取二级
+            SysPermissionExample twoSysPermissionExample = new SysPermissionExample();
+            twoSysPermissionExample.createCriteria().andParentIdEqualTo(oneItem.getId()).andPermissionTypeEqualTo("1");
+            List<SysPermission> twoSysPermissions = sysPermissionMapper.selectByExample(twoSysPermissionExample);
+            twoSysPermissions.forEach(twoItem->{
+                List<Map<String,Object>> threeLists = new ArrayList<>();
+                SysPermissionExample threeSysPermissionExample = new SysPermissionExample();
+                threeSysPermissionExample.createCriteria().andParentIdEqualTo(twoItem.getId()).andPermissionTypeEqualTo("2");
+                List<SysPermission> threeSysPermissions = sysPermissionMapper.selectByExample(threeSysPermissionExample);
+                threeSysPermissions.forEach(threeItem->{
+                    Map<String,Object> threeMap = new HashMap<>();
+                    threeMap.put("id",threeItem.getId());
+                    threeMap.put("permissionName",threeItem.getPermissionName());
+                    threeMap.put("parentId",threeItem.getParentId());
+                    threeMap.put("permissionType",threeItem.getPermissionType());
+                    threeLists.add(threeMap);
+                });
+                Map<String,Object> twoMap = new HashMap<>();
+                twoMap.put("id",twoItem.getId());
+                twoMap.put("permissionName",twoItem.getPermissionName());
+                twoMap.put("parentId",twoItem.getParentId());
+                twoMap.put("permissionType",twoItem.getPermissionType());
+                twoMap.put("children",threeLists);
+                towLists.add(twoMap);
+            });
+            Map<String,Object> oneMap = new HashMap<>();
+            oneMap.put("id",oneItem.getId());
+            oneMap.put("permissionName",oneItem.getPermissionName());
+            oneMap.put("parentId",oneItem.getParentId());
+            oneMap.put("permissionType",oneItem.getPermissionType());
+            oneMap.put("children",towLists);
+            lists.add(oneMap);
+        });
+        return lists;
     }
 }

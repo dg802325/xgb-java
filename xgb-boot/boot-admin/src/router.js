@@ -83,7 +83,7 @@ const systemRouter = [
             meta: {title: '权限管理'}
         },
         {
-            path: 'editPermissions',
+            path: 'editPermissions/:sysRoleId',
             component: () => import('./views/Role/Character/editPermissions.vue'),
             meta: {title: '权限管理'}
         },
