@@ -27,7 +27,7 @@ public class ServiceGenerator extends CodeGeneratorManager implements CodeGenera
         String customMapping = "/";
         Map<String, Object> data = DataUtil.getDataMapInit(tableName, modelName,tableInformation);
         data.put("modelPackage",sysDatabases.getDirectoryPrefix()+".model");
-        data.put("mapperPackage",sysDatabases.getDirectoryPrefix()+".mapper");
+        data.put("mapperPackage",sysDatabases.getDirectoryPrefix()+".dao");
         data.put("servicePackage",sysDatabases.getDirectoryPrefix()+".service");
         try {
             File controllerFile = new File(path +customMapping+sysDatabases.getDirectoryPrefix()+customMapping+"service"+customMapping+ modelName + "Service.java");

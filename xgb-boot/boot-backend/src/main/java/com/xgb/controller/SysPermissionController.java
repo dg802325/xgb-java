@@ -5,8 +5,11 @@ import com.xgb.lang.R;
 import com.xgb.model.SysMenu;
 import com.xgb.model.SysPermission;
 import com.xgb.model.SysPermissionExample;
+import com.xgb.model.SysRolePermissionExample;
 import com.xgb.service.SysMenuService;
 import com.xgb.service.SysPermissionService;
+import com.xgb.service.SysRolePermissionService;
+import com.xgb.utils.MyUtils;
 import com.xgb.utils.UUIDUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,7 +23,7 @@ import java.util.*;
  *
  * Created by Mr Xgb on 2019/07/28.
  */
-@Controller
+@RestController
 @RequestMapping("/admin/")
 public class SysPermissionController {
 
@@ -35,8 +38,7 @@ public class SysPermissionController {
      * 查询权限列表
      * @return
      */
-    @ResponseBody
-    @PostMapping(value = "getSysPermission")
+    @GetMapping("getSysPermission")
     public List<Map<String,Object>> getSysPermission() {
         logger.info("------request-address----------------：/admin/getSysPermission");
         //查询代码
@@ -46,7 +48,6 @@ public class SysPermissionController {
 
 
     //新增权限
-    @ResponseBody
     @PostMapping(value = "addSysPermission")
     public R addSysPermission(String addParentId,String addPermissionName,String addPermissionKey,String addRemark,String addPermissionType) {
         logger.info("------request-address----------------：/admin/addSysPermission");
@@ -55,6 +56,7 @@ public class SysPermissionController {
         sysPermission.setId(UUIDUtils.getUUID());
         sysPermission.setCreateId(sysUserId);
         sysPermission.setUpdateId(sysUserId);
+        sysPermission.setPermissionKey(addPermissionKey);
         sysPermission.setPermissionName(addPermissionName);
         sysPermission.setParentId(addParentId);
         sysPermission.setStatus("0");
@@ -69,7 +71,6 @@ public class SysPermissionController {
     }
 
     //编辑权限
-    @ResponseBody
     @PostMapping(value = "editSysPermission")
     public R editSysPermission(String editPermissionId,String editPermissionName,String editPermissionKey,String editRemark) {
         logger.info("------request-address----------------：/admin/editSysPermission");
@@ -77,6 +78,7 @@ public class SysPermissionController {
         SysPermission sysPermission = sysPermissionService.selectByPrimaryKey(editPermissionId);
         sysPermission.setUpdateId(sysUserId);
         sysPermission.setPermissionName(editPermissionName);
+        sysPermission.setPermissionKey(editPermissionKey);
         sysPermission.setRemark(editRemark);
         if (sysPermissionService.updateByPrimaryKeySelective(sysPermission)>0) {
             return R.ok("编辑成功");
@@ -90,7 +92,6 @@ public class SysPermissionController {
     * @return
     */
 //    @RequiresPermissions("SYS:PERMISSION:DELETE")
-    @ResponseBody
     @PostMapping("deleteSysPermission")
     public R deleteSysPermission(String id) {
         logger.info("------request-address-----------------：/admin/delete_sysPermission");
@@ -102,24 +103,41 @@ public class SysPermissionController {
         }
     }
 
+//    /**
+//     * 查询权限列表
+//     * @return
+//     */
+//    @GetMapping(value = "getAllSysPermission")
+//    public List<SysPermission> getAllSysPermission(String parentId) {
+//        logger.info("------request-address----------------：/admin/getAllSysPermission");
+//        //查询代码
+//        List<SysPermission> sysPermission = sysPermissionService.selectByExample(new SysPermissionExample());
+//        return sysPermission;
+//    }
+
     /**
      * 查询权限列表
      * @return
      */
-    @ResponseBody
     @GetMapping(value = "getAllSysPermission")
-    public List<SysPermission> getAllSysPermission(String parentId) {
+    public R getAllSysPermission() {
         logger.info("------request-address----------------：/admin/getAllSysPermission");
         //查询代码
+        Map<String,Object> parentMap = new HashMap<String,Object>();
         List<SysPermission> sysPermission = sysPermissionService.selectByExample(new SysPermissionExample());
-        return sysPermission;
+        List<Map<String, Object>> list = sysPermissionService.selectAllRolePermissionList();
+        if(list.size()>0){
+            parentMap.put("lists",list);
+            return R.ok(parentMap);
+        }else {
+            return R.error(999,"未查到数据");
+        }
     }
 
     /**
      * 根据父级菜单id查询权限列表
      * @return
      */
-    @ResponseBody
     @PostMapping(value = "getSysPermissionByMenuId")
     public List<SysPermission> getSysPermissionByMenuId(String parentId) {
         logger.info("------request-address----------------：/admin/getSysPermission");
@@ -133,5 +151,8 @@ public class SysPermissionController {
         }
         return sysPermission;
     }
+
+
+
 
 }

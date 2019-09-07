@@ -33,16 +33,22 @@
                         <el-table-column
                                 prop="remark"
                                 label="备注"
-                                width="315">
+                                width="200">
+                        </el-table-column>
+                        <el-table-column
+                                prop="permissionKey"
+                                label="权限值"
+                                width="200">
                         </el-table-column>
                         <el-table-column
                                 prop="permissionType"
                                 label="标签"
-                                width="100">
+                                width="80">
                             <template slot-scope="scope">
                                  <el-tag v-if="scope.row.permissionType==='0'">主权限</el-tag>
                                  <el-tag v-if="scope.row.permissionType==='1'">子权限</el-tag>
                                  <el-tag v-if="scope.row.permissionType==='2'">附权限</el-tag>
+                                 <el-tag v-if="scope.row.permissionType==='3'">按钮</el-tag>
                             </template>
                         </el-table-column>
                         <el-table-column
@@ -77,6 +83,9 @@
                 <el-form-item label="备注:" required>
                     <el-input v-model="addRemark" size="1" style="width: 200px;"></el-input>
                 </el-form-item>
+                <el-form-item label="权限值:" required>
+                    <el-input v-model="addPsermissionKey" size="1" style="width: 200px;"></el-input>
+                </el-form-item>
             </el-form>
             <span slot="footer" class="dialog-footer">
                 <el-button @click="closeInsert">取 消</el-button>
@@ -92,6 +101,9 @@
                 </el-form-item>
                 <el-form-item label="备注:" required>
                     <el-input v-model="editRemark" size="1" style="width: 200px;"></el-input>
+                </el-form-item>
+                <el-form-item label="备注:" required>
+                    <el-input v-model="editPermissionKey" size="1" style="width: 200px;"></el-input>
                 </el-form-item>
             </el-form>
             <span slot="footer" class="dialog-footer">
@@ -114,9 +126,11 @@
                 addParentId:'',
                 addPermissionName:'',
                 addRemark:'',
+                addPsermissionKey:'',
                 addPermissionType:'',
                 editPermissionId:'',
                 editPermissionName:'',
+                editPermissionKey:'',
                 editRemark:'',
             }
         },
@@ -134,10 +148,13 @@
                 }else if(row.permissionType=='1'){
                     this.addPermissionType = '2'
                     this.addParentId=row.id;
+                }else if(row.permissionType=='2'){
+                    this.addPermissionType = '3'
+                    this.addParentId=row.id;
                 }else{
                     this.$message({
                         type: 'warning',
-                        message: '不能添加4级目录!'
+                        message: '不能添加5级目录!'
                     });
                     return
                 }
@@ -149,6 +166,7 @@
                 this.editPermissionId=row.id
                 this.editPermissionName = row.permissionName
                 this.editRemark = row.remark
+                this.editPermissionKey = row.permissionKey
                 this.isShowEdit = true;
             },
             //删除权限
@@ -187,6 +205,7 @@
                     addParentId:this.addParentId,
                     addPermissionName: this.addPermissionName,
                     addRemark: this.addRemark,
+                    addPermissionKey: this.addPermissionKey,
                     addPermissionType: this.addPermissionType,
                 }
                 console.log(data);
@@ -239,7 +258,7 @@
                 let data = {
                     id:'0',
                 }
-                let res = await this.$post('/admin/getSysPermission', {id:'0'})
+                let res = await this.$get('/admin/getSysPermission', {id:'0'})
                 console.log(res)
                 this.tableData = res;
             },

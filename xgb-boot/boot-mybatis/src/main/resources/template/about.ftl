@@ -1,18 +1,21 @@
 #######################################################################################################################################
 
-生成 Controller
+<#if isController >
+    生成 Controller
 
-    权限列表如下：
+        权限列表如下：
 
             查询 ： ${permissions!}:MENU
 
-       新增/修改 ： ${permissions!}:SAVE
+            新增/修改 ： ${permissions!}:SAVE
 
             删除 ： ${permissions!}:DELETE
+</#if>
 
-生成 Vue
+<#if isVueList >
+    生成 Vue
 
-    菜单列表如下：
+        菜单列表如下：
 
         //${vueTableName!}
         const ${someModelName!}Router = [
@@ -29,3 +32,6 @@
                 ]
             },
         ];
+
+</#if>
+
