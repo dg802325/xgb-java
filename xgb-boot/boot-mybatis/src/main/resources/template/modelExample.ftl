@@ -1,4 +1,4 @@
-package ${modelPackage};
+package ${modelPackage!};
 
 <#if isDatetime||isDate >
 import java.util.Date;
@@ -11,11 +11,11 @@ import java.util.List;
 import java.util.ArrayList;
 </#if>
 /**
-* @Auther: ${author}
-* @Date: ${date}
+* @Auther: ${author!}
+* @Date: ${date!}
 * @Description:
 */
-public class ${modelName}Example {
+public class ${modelName!}Example {
 
     protected String orderByClause;
 
@@ -23,7 +23,7 @@ public class ${modelName}Example {
 
     protected List<Criteria> oredCriteria;
 
-    public ErpUserRoleExample() {
+    public ${modelName!}Example() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -117,6 +117,14 @@ public class ${modelName}Example {
 
         ${codeEntityExample!}
     }
+
+    public static class Criteria extends GeneratedCriteria {
+
+        protected Criteria() {
+            super();
+        }
+    }
+
 
     public static class Criterion {
 

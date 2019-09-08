@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.ReptileCarMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.ReptileCar" >
+    <constructor >
+      <idArg column="ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="TITLE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CAR_SPEED" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CAR_BRAKE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CAR_OIL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="EDITOR_NAME1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="EDITOR_REMARK1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="EDITOR_NAME2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="EDITOR_REMARK2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="EDIT_NAME3" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="EDITOR_REMARK3" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="IMAGE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CREATE_TIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="UPDATE_TIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="CREATE_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATUS" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="UPDATE_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, TITLE, CAR_SPEED, CAR_BRAKE, CAR_OIL, EDITOR_NAME1, EDITOR_REMARK1, EDITOR_NAME2, 
+    EDITOR_REMARK2, EDIT_NAME3, EDITOR_REMARK3, IMAGE, CREATE_TIME, UPDATE_TIME, CREATE_ID, 
+    STATUS, UPDATE_ID
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.ReptileCarExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from REPTILE_CAR
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from REPTILE_CAR
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from REPTILE_CAR
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xgb.model.ReptileCarExample" >
+    delete from REPTILE_CAR
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.ReptileCar" >
+    insert into REPTILE_CAR (ID, TITLE, CAR_SPEED, 
+      CAR_BRAKE, CAR_OIL, EDITOR_NAME1, 
+      EDITOR_REMARK1, EDITOR_NAME2, EDITOR_REMARK2, 
+      EDIT_NAME3, EDITOR_REMARK3, IMAGE, 
+      CREATE_TIME, UPDATE_TIME, CREATE_ID, 
+      STATUS, UPDATE_ID)
+    values (#{id,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{carSpeed,jdbcType=VARCHAR}, 
+      #{carBrake,jdbcType=VARCHAR}, #{carOil,jdbcType=VARCHAR}, #{editorName1,jdbcType=VARCHAR}, 
+      #{editorRemark1,jdbcType=VARCHAR}, #{editorName2,jdbcType=VARCHAR}, #{editorRemark2,jdbcType=VARCHAR}, 
+      #{editName3,jdbcType=VARCHAR}, #{editorRemark3,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{createId,jdbcType=VARCHAR}, 
+      #{status,jdbcType=VARCHAR}, #{updateId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.ReptileCar" >
+    insert into REPTILE_CAR
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="title != null" >
+        TITLE,
+      </if>
+      <if test="carSpeed != null" >
+        CAR_SPEED,
+      </if>
+      <if test="carBrake != null" >
+        CAR_BRAKE,
+      </if>
+      <if test="carOil != null" >
+        CAR_OIL,
+      </if>
+      <if test="editorName1 != null" >
+        EDITOR_NAME1,
+      </if>
+      <if test="editorRemark1 != null" >
+        EDITOR_REMARK1,
+      </if>
+      <if test="editorName2 != null" >
+        EDITOR_NAME2,
+      </if>
+      <if test="editorRemark2 != null" >
+        EDITOR_REMARK2,
+      </if>
+      <if test="editName3 != null" >
+        EDIT_NAME3,
+      </if>
+      <if test="editorRemark3 != null" >
+        EDITOR_REMARK3,
+      </if>
+      <if test="image != null" >
+        IMAGE,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME,
+      </if>
+      <if test="createId != null" >
+        CREATE_ID,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="updateId != null" >
+        UPDATE_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="carSpeed != null" >
+        #{carSpeed,jdbcType=VARCHAR},
+      </if>
+      <if test="carBrake != null" >
+        #{carBrake,jdbcType=VARCHAR},
+      </if>
+      <if test="carOil != null" >
+        #{carOil,jdbcType=VARCHAR},
+      </if>
+      <if test="editorName1 != null" >
+        #{editorName1,jdbcType=VARCHAR},
+      </if>
+      <if test="editorRemark1 != null" >
+        #{editorRemark1,jdbcType=VARCHAR},
+      </if>
+      <if test="editorName2 != null" >
+        #{editorName2,jdbcType=VARCHAR},
+      </if>
+      <if test="editorRemark2 != null" >
+        #{editorRemark2,jdbcType=VARCHAR},
+      </if>
+      <if test="editName3 != null" >
+        #{editName3,jdbcType=VARCHAR},
+      </if>
+      <if test="editorRemark3 != null" >
+        #{editorRemark3,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null" >
+        #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createId != null" >
+        #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="updateId != null" >
+        #{updateId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.ReptileCarExample" resultType="java.lang.Integer" >
+    select count(*) from REPTILE_CAR
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update REPTILE_CAR
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.title != null" >
+        TITLE = #{record.title,jdbcType=VARCHAR},
+      </if>
+      <if test="record.carSpeed != null" >
+        CAR_SPEED = #{record.carSpeed,jdbcType=VARCHAR},
+      </if>
+      <if test="record.carBrake != null" >
+        CAR_BRAKE = #{record.carBrake,jdbcType=VARCHAR},
+      </if>
+      <if test="record.carOil != null" >
+        CAR_OIL = #{record.carOil,jdbcType=VARCHAR},
+      </if>
+      <if test="record.editorName1 != null" >
+        EDITOR_NAME1 = #{record.editorName1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.editorRemark1 != null" >
+        EDITOR_REMARK1 = #{record.editorRemark1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.editorName2 != null" >
+        EDITOR_NAME2 = #{record.editorName2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.editorRemark2 != null" >
+        EDITOR_REMARK2 = #{record.editorRemark2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.editName3 != null" >
+        EDIT_NAME3 = #{record.editName3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.editorRemark3 != null" >
+        EDITOR_REMARK3 = #{record.editorRemark3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.image != null" >
+        IMAGE = #{record.image,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateTime != null" >
+        UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createId != null" >
+        CREATE_ID = #{record.createId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateId != null" >
+        UPDATE_ID = #{record.updateId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update REPTILE_CAR
+    set ID = #{record.id,jdbcType=VARCHAR},
+      TITLE = #{record.title,jdbcType=VARCHAR},
+      CAR_SPEED = #{record.carSpeed,jdbcType=VARCHAR},
+      CAR_BRAKE = #{record.carBrake,jdbcType=VARCHAR},
+      CAR_OIL = #{record.carOil,jdbcType=VARCHAR},
+      EDITOR_NAME1 = #{record.editorName1,jdbcType=VARCHAR},
+      EDITOR_REMARK1 = #{record.editorRemark1,jdbcType=VARCHAR},
+      EDITOR_NAME2 = #{record.editorName2,jdbcType=VARCHAR},
+      EDITOR_REMARK2 = #{record.editorRemark2,jdbcType=VARCHAR},
+      EDIT_NAME3 = #{record.editName3,jdbcType=VARCHAR},
+      EDITOR_REMARK3 = #{record.editorRemark3,jdbcType=VARCHAR},
+      IMAGE = #{record.image,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      CREATE_ID = #{record.createId,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=VARCHAR},
+      UPDATE_ID = #{record.updateId,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.ReptileCar" >
+    update REPTILE_CAR
+    <set >
+      <if test="title != null" >
+        TITLE = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="carSpeed != null" >
+        CAR_SPEED = #{carSpeed,jdbcType=VARCHAR},
+      </if>
+      <if test="carBrake != null" >
+        CAR_BRAKE = #{carBrake,jdbcType=VARCHAR},
+      </if>
+      <if test="carOil != null" >
+        CAR_OIL = #{carOil,jdbcType=VARCHAR},
+      </if>
+      <if test="editorName1 != null" >
+        EDITOR_NAME1 = #{editorName1,jdbcType=VARCHAR},
+      </if>
+      <if test="editorRemark1 != null" >
+        EDITOR_REMARK1 = #{editorRemark1,jdbcType=VARCHAR},
+      </if>
+      <if test="editorName2 != null" >
+        EDITOR_NAME2 = #{editorName2,jdbcType=VARCHAR},
+      </if>
+      <if test="editorRemark2 != null" >
+        EDITOR_REMARK2 = #{editorRemark2,jdbcType=VARCHAR},
+      </if>
+      <if test="editName3 != null" >
+        EDIT_NAME3 = #{editName3,jdbcType=VARCHAR},
+      </if>
+      <if test="editorRemark3 != null" >
+        EDITOR_REMARK3 = #{editorRemark3,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null" >
+        IMAGE = #{image,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createId != null" >
+        CREATE_ID = #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="updateId != null" >
+        UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xgb.model.ReptileCar" >
+    update REPTILE_CAR
+    set TITLE = #{title,jdbcType=VARCHAR},
+      CAR_SPEED = #{carSpeed,jdbcType=VARCHAR},
+      CAR_BRAKE = #{carBrake,jdbcType=VARCHAR},
+      CAR_OIL = #{carOil,jdbcType=VARCHAR},
+      EDITOR_NAME1 = #{editorName1,jdbcType=VARCHAR},
+      EDITOR_REMARK1 = #{editorRemark1,jdbcType=VARCHAR},
+      EDITOR_NAME2 = #{editorName2,jdbcType=VARCHAR},
+      EDITOR_REMARK2 = #{editorRemark2,jdbcType=VARCHAR},
+      EDIT_NAME3 = #{editName3,jdbcType=VARCHAR},
+      EDITOR_REMARK3 = #{editorRemark3,jdbcType=VARCHAR},
+      IMAGE = #{image,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      CREATE_ID = #{createId,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=VARCHAR},
+      UPDATE_ID = #{updateId,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

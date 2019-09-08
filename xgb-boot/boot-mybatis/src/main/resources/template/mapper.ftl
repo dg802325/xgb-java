@@ -2,6 +2,7 @@ package ${mapperPackage};
 
 import ${modelPackage}.${modelName};
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 
 /**

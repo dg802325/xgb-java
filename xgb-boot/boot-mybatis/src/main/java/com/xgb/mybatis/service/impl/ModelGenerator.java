@@ -48,10 +48,10 @@ public class ModelGenerator extends CodeGeneratorManager implements CodeGenerato
         for(TableInformation ti : tableInformation){
             if(i==0){
                 stringBuilder.append("private ");
-                stringBuilder.append(StringUtils.builderString(ti)).append(StringUtils.lineToHump(ti.getColumnName())).append(";\n");
+                stringBuilder.append(StringUtils.builderString(ti)).append(" ").append(StringUtils.lineToHump(ti.getColumnName())).append(";\n");
             }else {
                 stringBuilder.append(space).append("private ");
-                stringBuilder.append(StringUtils.builderString(ti)).append(StringUtils.lineToHump(ti.getColumnName())).append(";\n");
+                stringBuilder.append(StringUtils.builderString(ti)).append(" ").append(StringUtils.lineToHump(ti.getColumnName())).append(";\n");
             }
             i++;
         }
@@ -61,13 +61,13 @@ public class ModelGenerator extends CodeGeneratorManager implements CodeGenerato
         for(TableInformation ti : tableInformation){
             //生成get
             stringBuilder.append(space).append("public ");
-            stringBuilder.append(StringUtils.builderString(ti)).append("get").append(StringUtils.tableNameConvertUpperCamel(ti.getColumnName())).append(" (){").append("\n");
+            stringBuilder.append(StringUtils.builderString(ti)).append(" ").append("get").append(StringUtils.tableNameConvertUpperCamel(ti.getColumnName())).append(" (){").append("\n");
             stringBuilder.append(space).append(space);
             stringBuilder.append("return "+StringUtils.lineToHump(ti.getColumnName())).append(";").append("\n");
             stringBuilder.append(space).append("}").append("\n");
             //生成set
             stringBuilder.append(space).append("public ");
-            stringBuilder.append(StringUtils.builderString(ti)).append("set").append(StringUtils.tableNameConvertUpperCamel(ti.getColumnName())).append(" (").append(StringUtils.builderString(ti)).append(" ").append(StringUtils.lineToHump(ti.getColumnName())).append("){").append("\n");
+            stringBuilder.append(StringUtils.builderString(ti)).append(" ").append("set").append(StringUtils.tableNameConvertUpperCamel(ti.getColumnName())).append(" (").append(StringUtils.builderString(ti)).append(" ").append(StringUtils.lineToHump(ti.getColumnName())).append("){").append("\n");
             stringBuilder.append(space).append(space);
             stringBuilder.append("return this."+StringUtils.lineToHump(ti.getColumnName())).append(" = ").append(StringUtils.lineToHump(ti.getColumnName())).append(";").append("\n");
             stringBuilder.append(space).append("}").append("\n");

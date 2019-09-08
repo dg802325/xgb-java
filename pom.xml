@@ -22,6 +22,7 @@
         <module>xgb-mybatis</module>
         <module>xgb-boot</module>
         <module>xgb-cloud</module>
+        <module>xgb-reptile</module>
     </modules>
     <dependencies>
         <!-- 引入依赖-->

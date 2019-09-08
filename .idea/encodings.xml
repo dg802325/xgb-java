@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+  <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-backend" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-dao" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-model" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-mybatis" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/xgb-boot/boot-mybatisplus" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-oss" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-cloud" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/xgb-cloud/boot-mybatis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-cloud/cloud-eureka" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-mybatis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-reptile" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-reptile/reptile-backend" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-reptile/reptile-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-reptile/reptile-model" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-reptile/reptile-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-spider" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-test" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />

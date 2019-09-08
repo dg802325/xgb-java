@@ -212,8 +212,15 @@ public class MapperXmlGenerator extends CodeGeneratorManager implements CodeGene
         StringBuilder stringBuilder = new StringBuilder();
         String space2 = "        ";
         stringBuilder.append(space2);
+        int i = 0;
+        int size = tableInformation.size();
         for(TableInformation ti : tableInformation){
-            stringBuilder.append(ti.getColumnName()).append(",");
+            i++;
+            if (i==size){
+                stringBuilder.append(ti.getColumnName());
+            }else {
+                stringBuilder.append(ti.getColumnName()).append(",");
+            }
         }
         return stringBuilder.toString();
     }
@@ -221,7 +228,6 @@ public class MapperXmlGenerator extends CodeGeneratorManager implements CodeGene
     public String codeXmlMapper(List<TableInformation> tableInformation){
         StringBuilder stringBuilder = new StringBuilder();
         String space3 = "            ";
-        int i = 0;
         //生成基础
         for(TableInformation ti : tableInformation){
             if("ID".equals(ti.getColumnName())){

@@ -22,7 +22,7 @@ import java.util.Map;
 */
 @Controller
 @RequestMapping("/admin/")
-public class ${modelName!}}Controller {
+public class ${modelName!}Controller {
 
     protected Logger logger = LoggerFactory.getLogger(getClass());
 

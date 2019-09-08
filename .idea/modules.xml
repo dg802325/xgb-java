@@ -9,12 +9,16 @@
       <module fileurl="file://$PROJECT_DIR$/xgb-boot/boot-oss/boot-oss.iml" filepath="$PROJECT_DIR$/xgb-boot/boot-oss/boot-oss.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-boot/boot-service/boot-service.iml" filepath="$PROJECT_DIR$/xgb-boot/boot-service/boot-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-cloud/cloud-eureka/cloud-eureka.iml" filepath="$PROJECT_DIR$/xgb-cloud/cloud-eureka/cloud-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xgb-reptile/reptile-backend/reptile-backend.iml" filepath="$PROJECT_DIR$/xgb-reptile/reptile-backend/reptile-backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xgb-reptile/reptile-dao/reptile-dao.iml" filepath="$PROJECT_DIR$/xgb-reptile/reptile-dao/reptile-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xgb-reptile/reptile-model/reptile-model.iml" filepath="$PROJECT_DIR$/xgb-reptile/reptile-model/reptile-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xgb-reptile/reptile-service/reptile-service.iml" filepath="$PROJECT_DIR$/xgb-reptile/reptile-service/reptile-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-boot/xgb-boot.iml" filepath="$PROJECT_DIR$/xgb-boot/xgb-boot.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-cloud/xgb-cloud.iml" filepath="$PROJECT_DIR$/xgb-cloud/xgb-cloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-common/xgb-common.iml" filepath="$PROJECT_DIR$/xgb-common/xgb-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-java.iml" filepath="$PROJECT_DIR$/xgb-java.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-mybatis/xgb-mybatis.iml" filepath="$PROJECT_DIR$/xgb-mybatis/xgb-mybatis.iml" />
-      <module fileurl="file://$PROJECT_DIR$/xgb-spider/xgb-spider.iml" filepath="$PROJECT_DIR$/xgb-spider/xgb-spider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xgb-reptile/xgb-reptile.iml" filepath="$PROJECT_DIR$/xgb-reptile/xgb-reptile.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-test/xgb-test.iml" filepath="$PROJECT_DIR$/xgb-test/xgb-test.iml" />
     </modules>
   </component>

@@ -16,6 +16,7 @@
 .gitignore
 *.iws
 *.iml
+*.log
 *.ipr
 /node_modules/
 /hatchet-generator
@@ -58,6 +59,7 @@ xgb-boot/boot-dao/target/classes/com/xgb/dao/SysRolePermissionMapper.class
 xgb-boot/boot-dao/target/classes/com/xgb/dao/SysUserMapper.class
 xgb-boot/boot-dao/target/classes/com/xgb/dao/SysUserRoleMapper.class
 xgb-boot/boot-model/target/
+xgb-boot/boot-oss/logs/
 xgb-boot/boot-service/target/
 xgb-common/target/classes/com/xgb/lang/IntegerUtils.class
 xgb-mybatis/target/
@@ -114,3 +116,35 @@ xgb-boot/boot-mybatis/target/
 将删除 xgb-test/target/maven-archiver/
 将删除 xgb-test/target/maven-status/
 将删除 xgb-test/target/xgb-test-1.0-SNAPSHOT.jar
+将删除 xgb-reptile/reptile-backend/src/test/
+将删除 xgb-reptile/reptile-backend/target/classes/META-INF/
+将删除 xgb-reptile/reptile-backend/target/classes/application-dev.properties
+将删除 xgb-reptile/reptile-backend/target/classes/application-prod.properties
+将删除 xgb-reptile/reptile-backend/target/classes/application.properties
+将删除 xgb-reptile/reptile-backend/target/classes/ehcache.xml
+将删除 xgb-reptile/reptile-backend/target/classes/logback-spring.xml
+将删除 xgb-reptile/reptile-backend/target/classes/mybatis-config.xml
+将删除 xgb-reptile/reptile-backend/target/generated-sources/
+将删除 xgb-reptile/reptile-backend/target/maven-archiver/
+将删除 xgb-reptile/reptile-backend/target/maven-status/
+将删除 xgb-reptile/reptile-backend/target/reptile-backend-1.0-SNAPSHOT.jar
+将删除 xgb-reptile/reptile-dao/src/test/
+将删除 xgb-reptile/reptile-dao/target/classes/com/xgb/dao/ReptileCarMapper.xml
+将删除 xgb-reptile/reptile-dao/target/classes/generatorConfig.xml
+将删除 xgb-reptile/reptile-dao/target/classes/jdbc.properties
+将删除 xgb-reptile/reptile-dao/target/generated-sources/
+将删除 xgb-reptile/reptile-dao/target/maven-archiver/
+将删除 xgb-reptile/reptile-dao/target/maven-status/
+将删除 xgb-reptile/reptile-dao/target/reptile-dao-1.0-SNAPSHOT.jar
+将删除 xgb-reptile/reptile-model/src/main/resources/
+将删除 xgb-reptile/reptile-model/src/test/
+将删除 xgb-reptile/reptile-model/target/generated-sources/
+将删除 xgb-reptile/reptile-model/target/maven-archiver/
+将删除 xgb-reptile/reptile-model/target/maven-status/
+将删除 xgb-reptile/reptile-model/target/reptile-model-1.0-SNAPSHOT.jar
+将删除 xgb-reptile/reptile-service/src/main/resources/
+将删除 xgb-reptile/reptile-service/src/test/
+将删除 xgb-reptile/reptile-service/target/generated-sources/
+将删除 xgb-reptile/reptile-service/target/maven-archiver/
+将删除 xgb-reptile/reptile-service/target/maven-status/
+将删除 xgb-reptile/reptile-service/target/reptile-service-1.0-SNAPSHOT.jar

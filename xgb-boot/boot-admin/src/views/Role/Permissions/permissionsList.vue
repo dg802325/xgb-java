@@ -102,7 +102,7 @@
                 <el-form-item label="备注:" required>
                     <el-input v-model="editRemark" size="1" style="width: 200px;"></el-input>
                 </el-form-item>
-                <el-form-item label="备注:" required>
+                <el-form-item label="权限值:" required>
                     <el-input v-model="editPermissionKey" size="1" style="width: 200px;"></el-input>
                 </el-form-item>
             </el-form>

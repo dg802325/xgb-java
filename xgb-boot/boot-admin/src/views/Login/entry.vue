@@ -4,6 +4,12 @@
             <div class="login-logo">
                 <!--<img src="./images/login_logo.png"/>-->
             </div>
+            <div class="error-wrapper" v-show="msg" style="margin-left: 120px">
+                <span class="icon el-icon-info"></span>
+                <span class="tips">
+                             {{msg}}
+                        </span>
+            </div>
             <el-form ref="ruleForm" label-width="0px" class="ms-content" onsubmit="return false">
                 <div class="login-form" >
                     <br>
@@ -34,12 +40,7 @@
                             <br>
                             <!--<router-link to="/registUser" style="font-size: 14px">申请入驻</router-link>-->
                         </div>
-                        <div class="error-wrapper" v-show="msg" style="margin-left: 120px">
-                            <span class="icon el-icon-info"></span>
-                            <span class="tips">
-                             {{msg}}
-                        </span>
-                        </div>
+
                     </div>
                 </div>
             </el-form>
