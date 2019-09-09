@@ -15,10 +15,10 @@
     <file url="file://$PROJECT_DIR$/xgb-mybatis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-reptile" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-reptile/reptile-backend" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-reptile/reptile-backend/src/main/java/com/xgb/comtroller/ReptileCarController.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-reptile/reptile-dao" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-reptile/reptile-model" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-reptile/reptile-service" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/xgb-spider" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-test" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
