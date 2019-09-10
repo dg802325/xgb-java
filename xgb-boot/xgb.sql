@@ -3,15 +3,15 @@
 
  Source Server         : localhost
  Source Server Type    : MySQL
- Source Server Version : 50726
+ Source Server Version : 50727
  Source Host           : localhost:3306
  Source Schema         : xgb
 
  Target Server Type    : MySQL
- Target Server Version : 50726
+ Target Server Version : 50727
  File Encoding         : 65001
 
- Date: 10/09/2019 20:20:41
+ Date: 11/09/2019 00:15:58
 */
 
 SET NAMES utf8mb4;
@@ -4963,6 +4963,27 @@ INSERT INTO `BBI_CHINA_DIVISION` VALUES ('FFF41372E0504B438DDCA0FB87A0BB72', '�
 INSERT INTO `BBI_CHINA_DIVISION` VALUES ('FFF58BB30331440BAF0CF34C11673666', '市辖区', '649C1DECB6724F36B4CB24FBC681177C', '361001', NULL, '4370', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
+-- Table structure for BLOG_GARDEN
+-- ----------------------------
+DROP TABLE IF EXISTS `BLOG_GARDEN`;
+CREATE TABLE `BLOG_GARDEN`  (
+  `ID` varchar(32) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL COMMENT 'ID',
+  `BLOG_TAITL` varchar(64) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL COMMENT '博客标题',
+  `BLOG_ABOUT` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL COMMENT '博客简介',
+  `VOLUME` int(11) NULL DEFAULT NULL COMMENT '浏览量',
+  `SUPPORT` int(11) NULL DEFAULT NULL COMMENT '支持',
+  `OPPOSITION` int(11) NULL DEFAULT NULL COMMENT '反对',
+  `CLASSIFICATION_ID` varchar(32) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL COMMENT '分类id',
+  `STATUS` varchar(3) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL COMMENT '状态',
+  `CREATE_ID` varchar(32) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL COMMENT '创建人',
+  `UPDATE_ID` varchar(32) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL COMMENT '更新人',
+  `CREATE_TIME` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
+  `UPDATE_TIME` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `KEY_WORD` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL COMMENT '关键词',
+  PRIMARY KEY (`ID`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
 -- Table structure for SYS_CONFIG
 -- ----------------------------
 DROP TABLE IF EXISTS `SYS_CONFIG`;
@@ -5327,7 +5348,7 @@ INSERT INTO `SYS_USER` VALUES ('0710722001A644B0A8526777DB4FFA80', 'admin38', 'e
 INSERT INTO `SYS_USER` VALUES ('092698A776414A35BC03D363FE073C87', 'admin13', 'e10adc3949ba59abbe56e057f20f883e', NULL, '295841112@qq.com', '15835760177', '0', 0, '1', '2019-07-07 14:27:37', '2019-07-07 14:27:37', NULL, NULL, NULL, NULL, 'http://dealer.e-nongye.com.cn/group1/M00/00/00/rBEEQ11DrxKAdlyHAABpv4Ow2BU710.jpg', NULL, NULL);
 INSERT INTO `SYS_USER` VALUES ('0D706FCFCE13480ABCB6F4B020198DD0', 'admin49', 'e10adc3949ba59abbe56e057f20f883e', NULL, '295841112@qq.com', '15835760177', '0', 0, '1', '2019-07-07 14:27:37', '2019-07-07 14:27:37', NULL, NULL, NULL, NULL, 'http://dealer.e-nongye.com.cn/group1/M00/00/00/rBEEQ11DrxKAdlyHAABpv4Ow2BU710.jpg', NULL, NULL);
 INSERT INTO `SYS_USER` VALUES ('0EF62C0D48D2492D8967726348F45910', 'admin81', 'e10adc3949ba59abbe56e057f20f883e', NULL, '295841112@qq.com', '15835760177', '0', 0, '1', '2019-07-07 14:27:37', '2019-07-07 14:27:37', NULL, NULL, NULL, NULL, 'http://dealer.e-nongye.com.cn/group1/M00/00/00/rBEEQ11DrxKAdlyHAABpv4Ow2BU710.jpg', NULL, NULL);
-INSERT INTO `SYS_USER` VALUES ('1', 'admin', 'e10adc3949ba59abbe56e057f20f883e', NULL, '295841112@qq.com', '15835760177', '0', 0, '1', '2019-07-07 14:27:37', '2019-07-07 14:27:37', NULL, NULL, '小小酥', '2019-09-10 20:09:11', 'http://dealer.e-nongye.com.cn/group1/M00/00/00/rBEEQ11DrxKAdlyHAABpv4Ow2BU710.jpg', '0:0:0:0:0:0:0:1', 'OPERA12');
+INSERT INTO `SYS_USER` VALUES ('1', 'admin', 'e10adc3949ba59abbe56e057f20f883e', NULL, '295841112@qq.com', '15835760177', '0', 0, '1', '2019-07-07 14:27:37', '2019-07-07 14:27:37', NULL, NULL, '小小酥', '2019-09-10 22:51:03', 'http://dealer.e-nongye.com.cn/group1/M00/00/00/rBEEQ11DrxKAdlyHAABpv4Ow2BU710.jpg', '0:0:0:0:0:0:0:1', 'CHROME');
 INSERT INTO `SYS_USER` VALUES ('10C522E9E9BE42D489593B3707C46186', 'admin34', 'e10adc3949ba59abbe56e057f20f883e', NULL, '295841112@qq.com', '15835760177', '0', 0, '1', '2019-07-07 14:27:37', '2019-07-07 14:27:37', NULL, NULL, NULL, NULL, 'http://dealer.e-nongye.com.cn/group1/M00/00/00/rBEEQ11DrxKAdlyHAABpv4Ow2BU710.jpg', NULL, NULL);
 INSERT INTO `SYS_USER` VALUES ('14E8D7ABA2F1480ABE7AE9250EB37E44', 'admin25', 'e10adc3949ba59abbe56e057f20f883e', NULL, '295841112@qq.com', '15835760177', '0', 0, '1', '2019-07-07 14:27:37', '2019-07-07 14:27:37', NULL, NULL, NULL, NULL, 'http://dealer.e-nongye.com.cn/group1/M00/00/00/rBEEQ11DrxKAdlyHAABpv4Ow2BU710.jpg', NULL, NULL);
 INSERT INTO `SYS_USER` VALUES ('154EE01930324211A644949804572DCB', 'admin95', 'e10adc3949ba59abbe56e057f20f883e', NULL, '295841112@qq.com', '15835760177', '0', 0, '1', '2019-07-07 14:27:37', '2019-07-07 14:27:37', NULL, NULL, NULL, NULL, 'http://dealer.e-nongye.com.cn/group1/M00/00/00/rBEEQ11DrxKAdlyHAABpv4Ow2BU710.jpg', NULL, NULL);
@@ -5542,5 +5563,69 @@ INSERT INTO `SYS_USER_ROLE` VALUES ('F964B0F15EF546A386E61BAE8468ECDD', 'E6B587F
 INSERT INTO `SYS_USER_ROLE` VALUES ('F9CE918DDBF641ECB5D3F89C6FBC623F', '25507148D53E4A82919B19FF91D305FF', '1', '2019-08-26 14:53:47', '2019-08-26 14:53:47', '1', '1', NULL, NULL);
 INSERT INTO `SYS_USER_ROLE` VALUES ('FBFD8AF559C1446FAC5B1781ED0D2D0C', '177282E8DCB042C69F79736C5E493DDB', '1', '2019-08-26 14:53:46', '2019-08-26 14:53:46', '1', '1', NULL, NULL);
 INSERT INTO `SYS_USER_ROLE` VALUES ('FCA593C135764746A272263B8BE11AC5', '96BC25FF121D441FAEE7EE7E3A054F34', '1', '2019-08-26 14:53:48', '2019-08-26 14:53:48', '1', '1', NULL, NULL);
+
+-- ----------------------------
+-- Procedure structure for lb_play_value
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `lb_play_value`;
+delimiter ;;
+CREATE DEFINER=`root`@`%` PROCEDURE `lb_play_value`()
+begin
+	-- 定义变量
+	DECLARE s int DEFAULT 0;
+	DECLARE sssvalue int(11);
+	-- 定义游标，并将sql结果集赋值到游标中
+	DECLARE report CURSOR FOR select sssvalue from HATCHET_SPECIAL;
+	-- 声明当游标遍历完后将标志变量置成某个值
+	DECLARE CONTINUE HANDLER FOR NOT FOUND SET s=1;
+	-- 打开游标
+	open report;
+		-- 将游标中的值赋值给变量，注意：变量名不要和返回的列名同名，变量顺序要和sql结果列的顺序一致
+		fetch report into sssvalue;
+		-- 当s不等于1，也就是未遍历完时，会一直循环
+		while s<>1 do
+			-- 执行业务逻辑
+			update HATCHET_SPECIAL set PLAY_VOLUME = FLOOR(RAND() * 400) ;
+			-- 将游标中的值再赋值给变量，供下次循环使用
+			fetch report into sssvalue;
+		-- 当s等于1时表明遍历以完成，退出循环
+		end while;
+	-- 关闭游标
+	close report;
+end
+;;
+delimiter ;
+
+-- ----------------------------
+-- Procedure structure for sp_name
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `sp_name`;
+delimiter ;;
+CREATE DEFINER=`root`@`%` PROCEDURE `sp_name`()
+begin
+	-- 定义变量
+	DECLARE s int DEFAULT 0;
+	DECLARE sssvalue int(11);
+	-- 定义游标，并将sql结果集赋值到游标中
+	DECLARE report CURSOR FOR select sssvalue from HATCHET_RESOURCE;
+	-- 声明当游标遍历完后将标志变量置成某个值
+	DECLARE CONTINUE HANDLER FOR NOT FOUND SET s=1;
+	-- 打开游标
+	open report;
+		-- 将游标中的值赋值给变量，注意：变量名不要和返回的列名同名，变量顺序要和sql结果列的顺序一致
+		fetch report into sssvalue;
+		-- 当s不等于1，也就是未遍历完时，会一直循环
+		while s<>1 do
+			-- 执行业务逻辑
+			update HATCHET_RESOURCE set PLAY_VOLUME = FLOOR(RAND() * 400) ;
+			-- 将游标中的值再赋值给变量，供下次循环使用
+			fetch report into sssvalue;
+		-- 当s等于1时表明遍历以完成，退出循环
+		end while;
+	-- 关闭游标
+	close report;
+end
+;;
+delimiter ;
 
 SET FOREIGN_KEY_CHECKS = 1;
