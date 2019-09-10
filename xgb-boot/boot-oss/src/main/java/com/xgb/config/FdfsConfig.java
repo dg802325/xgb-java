@@ -1,4 +1,4 @@
-package com.xgb.oss.config;
+package com.xgb.config;
 
 import com.github.tobato.fastdfs.FdfsClientConfig;
 import org.springframework.context.annotation.Configuration;

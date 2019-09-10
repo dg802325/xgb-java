@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-backend" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-boot/boot-message" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-model" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-mybatis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-oss" charset="UTF-8" />

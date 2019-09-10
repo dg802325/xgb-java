@@ -1,8 +1,8 @@
-package com.xgb.oss.controller;
+package com.xgb.controller;
 
 import com.xgb.error.ApiResultCodeEnum;
 import com.xgb.model.FastDFSVO;
-import com.xgb.oss.service.FastDFSClientService;
+import com.xgb.service.FastDFSClientService;
 import com.xgb.utils.MyUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

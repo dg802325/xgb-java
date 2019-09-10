@@ -34,13 +34,17 @@ public class SysRolePermissionController {
 
     @GetMapping("getSysRolePermission")
     public List<String> getSysRolePermission(String roleId){
-        SysRolePermissionExample sysRolePermissionExample = new SysRolePermissionExample();
-        sysRolePermissionExample.createCriteria().andRoleIdEqualTo(roleId).andPermissionTypeEqualTo("2");
-        List<SysRolePermission> sysRolePermissions = sysRolePermissionService.selectByExample(sysRolePermissionExample);
+        //查询会员有的一级权限 如果会员有一级权限，则不返回一级权限
+        SysRolePermissionExample oneSysRolePermissionExample = new SysRolePermissionExample();
+        oneSysRolePermissionExample.createCriteria();
+        List<SysRolePermission> oneSysRolePermissions = sysRolePermissionService.selectByExample(oneSysRolePermissionExample);
         List<String> lists = new ArrayList<>();
-        sysRolePermissions.forEach(item->{
-            lists.add(item.getPermissionId());
-        });
+        //查询会员有的二级权限 如果有二级权限，不返回二级权限
+        if(oneSysRolePermissions.size()>0){
+            oneSysRolePermissions.forEach(oneItem->{
+                lists.add(oneItem.getPermissionId());
+            });
+        }
         return lists;
     }
 

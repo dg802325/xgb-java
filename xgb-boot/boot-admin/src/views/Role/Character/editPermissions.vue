@@ -14,6 +14,7 @@
                         @check="bindOnClick"
                         :default-checked-keys="selected"
                         show-checkbox
+                        :check-strictly=true
                         default-expand-all
                         node-key="id"
                         ref="tree"
@@ -67,6 +68,7 @@
                 }
                 let res = await this.$post("/admin/saveSysRolePermission",data)
                 if(res.code=='200'){
+                    this.getAllPermission()
                     this.getSysRolePermission()
                 }else {
 

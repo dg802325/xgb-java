@@ -18,6 +18,7 @@
         <module>boot-dao</module>
         <module>boot-oss</module>
         <module>boot-mybatis</module>
+        <module>boot-message</module>
     </modules>
     <dependencies>
         <dependency>

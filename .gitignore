@@ -148,4 +148,21 @@ xgb-boot/boot-mybatis/target/
 将删除 xgb-reptile/reptile-service/target/maven-archiver/
 将删除 xgb-reptile/reptile-service/target/maven-status/
 将删除 xgb-reptile/reptile-service/target/reptile-service-1.0-SNAPSHOT.jar
+xgb-boot/boot-backend/target/boot-backend-1.0-SNAPSHOT.jar
+xgb-boot/boot-backend/target/boot-backend-1.0-SNAPSHOT.jar.original
+xgb-boot/boot-backend/target/classes/META-INF/
+xgb-boot/boot-backend/target/maven-archiver/
+xgb-boot/boot-backend/target/maven-status/
+xgb-boot/boot-dao/target/boot-dao-1.0-SNAPSHOT.jar
+xgb-boot/boot-dao/target/maven-archiver/
+xgb-boot/boot-dao/target/maven-status/
+xgb-boot/boot-mybatis/src/test/
+xgb-boot/boot-oss/target/boot-oss-0.0.1-SNAPSHOT.jar
+xgb-boot/boot-oss/target/boot-oss-0.0.1-SNAPSHOT.jar.original
+xgb-boot/boot-oss/target/classes/application-dev.yml
+xgb-boot/boot-oss/target/classes/application-prod.yml
+xgb-boot/boot-oss/target/classes/application.yml
+xgb-boot/boot-oss/target/generated-sources/
+xgb-boot/boot-oss/target/maven-archiver/
+xgb-boot/boot-oss/target/maven-status/
 将删除 xgb-boot/boot-backend/target/classes/META-INF/

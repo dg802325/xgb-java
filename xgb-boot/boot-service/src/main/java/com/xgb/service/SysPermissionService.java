@@ -151,41 +151,62 @@ public class SysPermissionService {
         SysPermissionExample oneSysPermissionExample = new SysPermissionExample();
         oneSysPermissionExample.createCriteria().andParentIdEqualTo("0").andPermissionTypeEqualTo("0");
         List<SysPermission> oneSysPermissions = sysPermissionMapper.selectByExample(oneSysPermissionExample);
-        oneSysPermissions.forEach(oneItem->{
-            List<Map<String,Object>> towLists = new ArrayList<>();
-            //根据一级获取二级
-            SysPermissionExample twoSysPermissionExample = new SysPermissionExample();
-            twoSysPermissionExample.createCriteria().andParentIdEqualTo(oneItem.getId()).andPermissionTypeEqualTo("1");
-            List<SysPermission> twoSysPermissions = sysPermissionMapper.selectByExample(twoSysPermissionExample);
-            twoSysPermissions.forEach(twoItem->{
-                List<Map<String,Object>> threeLists = new ArrayList<>();
-                SysPermissionExample threeSysPermissionExample = new SysPermissionExample();
-                threeSysPermissionExample.createCriteria().andParentIdEqualTo(twoItem.getId()).andPermissionTypeEqualTo("2");
-                List<SysPermission> threeSysPermissions = sysPermissionMapper.selectByExample(threeSysPermissionExample);
-                threeSysPermissions.forEach(threeItem->{
-                    Map<String,Object> threeMap = new HashMap<>();
-                    threeMap.put("id",threeItem.getId());
-                    threeMap.put("permissionName",threeItem.getPermissionName());
-                    threeMap.put("parentId",threeItem.getParentId());
-                    threeMap.put("permissionType",threeItem.getPermissionType());
-                    threeLists.add(threeMap);
-                });
-                Map<String,Object> twoMap = new HashMap<>();
-                twoMap.put("id",twoItem.getId());
-                twoMap.put("permissionName",twoItem.getPermissionName());
-                twoMap.put("parentId",twoItem.getParentId());
-                twoMap.put("permissionType",twoItem.getPermissionType());
-                twoMap.put("children",threeLists);
-                towLists.add(twoMap);
+        if(oneSysPermissions.size()>0){
+            oneSysPermissions.forEach(oneItem->{
+                List<Map<String,Object>> towLists = new ArrayList<>();
+                //根据一级获取二级
+                SysPermissionExample twoSysPermissionExample = new SysPermissionExample();
+                twoSysPermissionExample.createCriteria().andParentIdEqualTo(oneItem.getId()).andPermissionTypeEqualTo("1");
+                List<SysPermission> twoSysPermissions = sysPermissionMapper.selectByExample(twoSysPermissionExample);
+                if(twoSysPermissions.size()>0){
+                    twoSysPermissions.forEach(twoItem->{
+                        List<Map<String,Object>> threeLists = new ArrayList<>();
+                        SysPermissionExample threeSysPermissionExample = new SysPermissionExample();
+                        threeSysPermissionExample.createCriteria().andParentIdEqualTo(twoItem.getId()).andPermissionTypeEqualTo("2");
+                        List<SysPermission> threeSysPermissions = sysPermissionMapper.selectByExample(threeSysPermissionExample);
+                        if(threeSysPermissions.size()>0){
+                            threeSysPermissions.forEach(threeItem->{
+                                List<Map<String,Object>> fourLists = new ArrayList<>();
+                                SysPermissionExample fourSysPermissionExample = new SysPermissionExample();
+                                fourSysPermissionExample.createCriteria().andParentIdEqualTo(threeItem.getId()).andPermissionTypeEqualTo("3");
+                                List<SysPermission> fourSysPermissions = sysPermissionMapper.selectByExample(fourSysPermissionExample);
+                                if(fourSysPermissions.size()>0){
+                                    fourSysPermissions.forEach(fourItem->{
+                                        Map<String,Object> fourMap = new HashMap<>();
+                                        fourMap.put("id",fourItem.getId());
+                                        fourMap.put("permissionName",fourItem.getPermissionName());
+                                        fourMap.put("parentId",fourItem.getParentId());
+                                        fourMap.put("permissionType",fourItem.getPermissionType());
+                                        fourLists.add(fourMap);
+                                    });
+                                }
+                                Map<String,Object> threeMap = new HashMap<>();
+                                threeMap.put("id",threeItem.getId());
+                                threeMap.put("permissionName",threeItem.getPermissionName());
+                                threeMap.put("parentId",threeItem.getParentId());
+                                threeMap.put("permissionType",threeItem.getPermissionType());
+                                threeMap.put("children",fourLists);
+                                threeLists.add(threeMap);
+                            });
+                        }
+                        Map<String,Object> twoMap = new HashMap<>();
+                        twoMap.put("id",twoItem.getId());
+                        twoMap.put("permissionName",twoItem.getPermissionName());
+                        twoMap.put("parentId",twoItem.getParentId());
+                        twoMap.put("permissionType",twoItem.getPermissionType());
+                        twoMap.put("children",threeLists);
+                        towLists.add(twoMap);
+                    });
+                }
+                Map<String,Object> oneMap = new HashMap<>();
+                oneMap.put("id",oneItem.getId());
+                oneMap.put("permissionName",oneItem.getPermissionName());
+                oneMap.put("parentId",oneItem.getParentId());
+                oneMap.put("permissionType",oneItem.getPermissionType());
+                oneMap.put("children",towLists);
+                lists.add(oneMap);
             });
-            Map<String,Object> oneMap = new HashMap<>();
-            oneMap.put("id",oneItem.getId());
-            oneMap.put("permissionName",oneItem.getPermissionName());
-            oneMap.put("parentId",oneItem.getParentId());
-            oneMap.put("permissionType",oneItem.getPermissionType());
-            oneMap.put("children",towLists);
-            lists.add(oneMap);
-        });
+        }
         return lists;
     }
 }

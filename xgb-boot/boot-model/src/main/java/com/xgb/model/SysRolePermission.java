@@ -21,7 +21,9 @@ public class SysRolePermission {
 
     private String permissionType;
 
-    public SysRolePermission(String id, String roleId, String permissionId, Date createTime, Date updateTime, String createId, String updateId, String status, String permissionType) {
+    private String parentId;
+
+    public SysRolePermission(String id, String roleId, String permissionId, Date createTime, Date updateTime, String createId, String updateId, String status, String permissionType, String parentId) {
         this.id = id;
         this.roleId = roleId;
         this.permissionId = permissionId;
@@ -31,6 +33,7 @@ public class SysRolePermission {
         this.updateId = updateId;
         this.status = status;
         this.permissionType = permissionType;
+        this.parentId = parentId;
     }
 
     public SysRolePermission() {
@@ -107,5 +110,13 @@ public class SysRolePermission {
 
     public void setPermissionType(String permissionType) {
         this.permissionType = permissionType == null ? null : permissionType.trim();
+    }
+
+    public String getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(String parentId) {
+        this.parentId = parentId == null ? null : parentId.trim();
     }
 }

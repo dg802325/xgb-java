@@ -32,7 +32,8 @@
                     <el-table-column prop="databasePortNumber" align="center" label="数据库端口号" width="135px"></el-table-column>
                     <el-table-column prop="databaseType" align="center" label="数据库类型" width="135px;"></el-table-column>
                     <el-table-column prop="databaseName" align="center" label="数据库名称" width="135px;"></el-table-column>
-                    <el-table-column prop="databaseLoginName" align="center" label="账号" width="160px"></el-table-column>
+                    <el-table-column prop="databaseLoginName" align="center" label="账号" width="120px"></el-table-column>
+                    <el-table-column prop="nickName" align="center" label="昵称" width="120px"></el-table-column>
                     <el-table-column prop="databaseLoginPassword" align="center" label="密码" width="160px"></el-table-column>
                     <el-table-column label="操作" align="center">
                         <template slot-scope="scope">
@@ -82,7 +83,7 @@
                             </el-option>
                         </el-select>
                     </el-form-item>
-                    <el-form-item label="名称:" required>
+                    <el-form-item label="数据库名称:" required>
                         <el-input v-model="addDatabaseName" size="1" style="width: 200px;"></el-input>
                     </el-form-item>
                     <el-form-item label="账号:" required>
@@ -106,6 +107,9 @@
                     </el-form-item>
                     <el-form-item label="工具包路径:" required>
                         <el-input v-model="addCommonPath" size="1" style="width: 200px;"></el-input>
+                    </el-form-item>
+                    <el-form-item label="数据库名称:" required>
+                        <el-input v-model="addNickName" size="1" style="width: 200px;"></el-input>
                     </el-form-item>
                 </el-form>
                 <span slot="footer" class="dialog-footer">
@@ -159,6 +163,9 @@
                     <el-form-item label="工具包路径:" required>
                         <el-input v-model="databaseInfo.commonPath" size="1" style="width: 200px;"></el-input>
                     </el-form-item>
+                    <el-form-item label="数据库昵称:" required>
+                        <el-input v-model="databaseInfo.nickName" size="1" style="width: 200px;"></el-input>
+                    </el-form-item>
                 </el-form>
                 <span slot="footer" class="dialog-footer">
                 <el-button @click="closeEdit">取 消</el-button>
@@ -203,6 +210,7 @@
                 addPackageType:'',
                 addDirectoryPrefix:'',
                 addCommonPath:'',
+                addNickName:'',
                 queryUser:'',
                 pagination:{},
                 list: [],
@@ -260,6 +268,7 @@
                     databaseLoginPassword:this.addDatabaseLoginPassword,
                     packageType:this.addPackageType,
                     directoryPrefix:this.addDirectoryPrefix,
+                    nickName:this.addNickName,
                     commonPath:this.addCommonPath,
                 }
                 let res = await this.$post("/admin/saveSysDatabase", data)
@@ -282,6 +291,7 @@
                     databaseLoginName:this.databaseInfo.databaseLoginName,
                     databaseLoginPassword:this.databaseInfo.databaseLoginPassword,
                     packageType:this.databaseInfo.packageType,
+                    nickName:this.databaseInfo.nickName,
                     directoryPrefix:this.databaseInfo.directoryPrefix,
                     commonPath:this.databaseInfo.commonPath,
                 }

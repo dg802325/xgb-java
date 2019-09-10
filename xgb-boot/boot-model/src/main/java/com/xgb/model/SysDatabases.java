@@ -41,7 +41,9 @@ public class SysDatabases {
 
     private String commonPath;
 
-    public SysDatabases(String id, String databaseUrl, String databasePortNumber, String databaseName, String databaseType, String databaseLoginName, String databaseLoginPassword, String createId, Date createTime, String updateId, Date updateTime, String isDel, String status, String operationIp, String directoryPrefix, String packetType, String packetAddress, String updateOperationIp, String commonPath) {
+    private String nickName;
+
+    public SysDatabases(String id, String databaseUrl, String databasePortNumber, String databaseName, String databaseType, String databaseLoginName, String databaseLoginPassword, String createId, Date createTime, String updateId, Date updateTime, String isDel, String status, String operationIp, String directoryPrefix, String packetType, String packetAddress, String updateOperationIp, String commonPath, String nickName) {
         this.id = id;
         this.databaseUrl = databaseUrl;
         this.databasePortNumber = databasePortNumber;
@@ -61,6 +63,7 @@ public class SysDatabases {
         this.packetAddress = packetAddress;
         this.updateOperationIp = updateOperationIp;
         this.commonPath = commonPath;
+        this.nickName = nickName;
     }
 
     public SysDatabases() {
@@ -217,5 +220,13 @@ public class SysDatabases {
 
     public void setCommonPath(String commonPath) {
         this.commonPath = commonPath == null ? null : commonPath.trim();
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName == null ? null : nickName.trim();
     }
 }

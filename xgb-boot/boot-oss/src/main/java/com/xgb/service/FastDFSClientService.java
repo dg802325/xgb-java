@@ -1,4 +1,4 @@
-package com.xgb.oss.service;
+package com.xgb.service;
 
 import com.github.tobato.fastdfs.domain.FileInfo;
 import com.github.tobato.fastdfs.domain.StorePath;
