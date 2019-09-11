@@ -23,7 +23,7 @@ public class ${modelName!}Service {
 	@Autowired
     private ${modelName!}Mapper ${someModelName!}Mapper;
 
-    public List<${modelName!}> selectAll${modelName!}(${modelName!} ${someModelName!},String begin,String end){
+    public List<${modelName!}> selectAll${modelName!}(${modelName!} ${someModelName!},Integer begin,Integer end){
         ${modelName!}Example ${someModelName!}Example = new ${modelName!}Example();
         ${someModelName!}Example.createCriteria();
         ${someModelName!}Example.setOrderByClause("CREATE_TIME DESC LIMIT "+begin+", "+end);
@@ -50,9 +50,8 @@ public class ${modelName!}Service {
     }
 
     @Transactional
-    public int delete(${modelName!} ${someModelName!}) {
-        return ${someModelName!}Mapper.deleteByPrimaryKey((${someModelName!}.getId()));
+    public int deleteByPrimaryKey(String id) {
+        return ${someModelName!}Mapper.deleteByPrimaryKey(id);
     }
-
 
 }

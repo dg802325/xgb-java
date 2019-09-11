@@ -33,7 +33,7 @@
                                                 v-for="item in tableList"
                                                 :key="item.tableName"
                                                 :label="item.tableName"
-                                                :value="item">
+                                                :value="item.tableName">
                                         </el-option>
                                     </el-select>
                                 </el-form-item>
@@ -155,13 +155,13 @@
                 }
             },
             async submission() {
-                let tableRemark = this.tableName.remark;
+                let tableRemark = this.tableName;
                 if(!this.tableName.remark){
                     tableRemark = '';
                 }
                 let data = {
                     dataId:this.dataId,
-                    tableName:this.tableName.tableName,
+                    tableName:this.tableName,
                     tableRemark:tableRemark,
                     isModel:this.isModel,
                     isModelExample:this.isModelExample,

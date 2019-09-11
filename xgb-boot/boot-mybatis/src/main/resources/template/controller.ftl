@@ -62,7 +62,7 @@ public class ${modelName!}Controller {
         logger.info("------request-address----------------：/admin/get${modelName!}One");
         //查询代码
         Map<String,Object> map = new HashMap<String,Object>();
-        ${modelName!} ${someModelName!} = ${someModelName!}Service.selectByPrimaryKey(String id);
+        ${modelName!} ${someModelName!} = ${someModelName!}Service.selectByPrimaryKey(id);
         if(MyUtils.isNotEmpty(${someModelName!})){
             map.put("${someModelName!}",${someModelName!});
             return R.ok();
