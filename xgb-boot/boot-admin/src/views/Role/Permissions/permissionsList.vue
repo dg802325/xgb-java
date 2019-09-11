@@ -240,6 +240,7 @@
                         message: '编辑成功!'
                     });
                     this.selectRole()
+                    this.closeEdit()
                 }else {
                     this.$message({
                         type: 'error',

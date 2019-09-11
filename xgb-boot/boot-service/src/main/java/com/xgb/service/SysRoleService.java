@@ -4,6 +4,7 @@ import com.xgb.dao.*;
 import com.xgb.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
@@ -60,5 +61,20 @@ public class SysRoleService {
 
     public int getRoleCount(){
         return sysRoleMapper.countByExample(new SysRoleExample());
+    }
+
+    @Transactional
+    public int insert(SysRole sysRole){
+        return sysRoleMapper.insert(sysRole);
+    }
+
+    @Transactional
+    public int update(SysRole sysRole){
+        return sysRoleMapper.updateByPrimaryKeySelective(sysRole);
+    }
+
+    @Transactional
+    public int deleteByPrimaryKey(String id){
+        return sysRoleMapper.deleteByPrimaryKey(id);
     }
 }

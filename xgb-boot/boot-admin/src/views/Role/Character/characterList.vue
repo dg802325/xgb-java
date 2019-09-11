@@ -30,6 +30,9 @@
                     数据列表
                 </div>
             </div>
+            <div class="v-cart-title">
+                <el-button type="success" size="mini" @click="handleAdd('', '')">新增</el-button>
+            </div>
             <div class="table_border">
                 <el-table
                         :data="list"
@@ -42,8 +45,8 @@
                     <el-table-column label="操作" align="center">
                         <template slot-scope="scope">
                             <el-button size="mini" type="primary" @click="roleEdit(scope.row)">权限编辑</el-button>
-                            <el-button size="mini" type="primary" @click="editUser(scope.$index)">编辑</el-button>
-                            <el-button size="mini" type="danger" @click="toDelUser(scope.$index)">删除</el-button>
+                            <el-button size="mini" type="primary" @click="editRole(scope.$index)">编辑</el-button>
+                            <el-button size="mini" type="danger" @click="toDelRole(scope.$index)">删除</el-button>
                         </template>
                     </el-table-column>
                 </el-table>
@@ -69,17 +72,14 @@
                 </span>
             </el-dialog>
 
-            <!-- 角色编辑框 -->
-            <el-dialog title="修改角色" :visible.sync="isShowEdit" width="20%" :before-close="closeEdit">
+            <!-- 角色新增框 -->
+            <el-dialog title="新增角色" :visible.sync="isShowAdd" width="20%" :before-close="closeInsert">
                 <el-form ref="form"  label-width="100px">
-                    <el-form-item label="昵称:" required>
-                        <el-input v-model="userInfo.nickName" size="1" style="width: 200px;"></el-input>
-                    </el-form-item>
-                    <el-form-item label="账号:" required>
-                        <el-input v-model="userInfo.userName" size="1" style="width: 200px;"></el-input>
+                    <el-form-item label="角色名称:" required>
+                        <el-input v-model="addRoleName" size="1" style="width: 200px;"></el-input>
                     </el-form-item>
                     <el-form-item label="部门:" required>
-                        <el-select  v-model="editDeptId" size="1" style="width: 200px;" placeholder="所属权限" >
+                        <el-select  v-model="addDeptId" size="1" style="width: 200px;" placeholder="所属权限" >
                             <el-option
                                     v-for="item in deptList"
                                     :key="item.label"
@@ -88,15 +88,34 @@
                             ></el-option>
                         </el-select>
                     </el-form-item>
-                    <el-form-item label="岗位:" required>
-                        <el-select  v-model="editRoleId" size="1" style="width: 200px;" placeholder="所属权限" >
+                    <el-form-item label="备注:" required>
+                        <el-input v-model="addRemark" size="1" style="width: 200px;"></el-input>
+                    </el-form-item>
+                </el-form>
+                <span slot="footer" class="dialog-footer">
+                <el-button @click="closeInsert">取 消</el-button>
+                <el-button type="primary" @click="addSysRole">确 定</el-button>
+            </span>
+            </el-dialog>
+
+            <!-- 角色编辑框 -->
+            <el-dialog title="修改角色" :visible.sync="isShowEdit" width="20%" :before-close="closeEdit">
+                <el-form ref="form"  label-width="100px">
+                    <el-form-item label="角色名称:" required>
+                        <el-input v-model="roleInfo.roleName" size="1" style="width: 200px;"></el-input>
+                    </el-form-item>
+                    <el-form-item label="部门:" required>
+                        <el-select  v-model="roleInfo.deptId" size="1" style="width: 200px;" placeholder="所属权限" >
                             <el-option
-                                    v-for="item in roleList"
+                                    v-for="item in deptList"
                                     :key="item.label"
-                                    :label="item.roleName"
+                                    :label="item.deptName"
                                     :value="item.id"
                             ></el-option>
                         </el-select>
+                    </el-form-item>
+                    <el-form-item label="备注:" required>
+                        <el-input v-model="roleInfo.remark" size="1" style="width: 200px;"></el-input>
                     </el-form-item>
                 </el-form>
                 <span slot="footer" class="dialog-footer">
@@ -116,9 +135,12 @@
                 queryUser:'',
                 pagination:{},
                 list: [],
-                userInfo:{},
+                roleInfo:{},
                 deptId: '',
                 deptList: [],
+                addRoleName:'',
+                addDeptId:'',
+                addRemark:'',
                 editRoleId:'',
                 editDeptId:'',
                 roleId:'',
@@ -126,34 +148,21 @@
                 nickName:'',
                 userName:'',
                 delVisible:false,
+                isShowAdd:false,
                 isShowEdit:false,
             }
         },
         watch:{
-            editDeptId(val){
-                this.getRoleBydeptId(val)
-            }
         },
         created() {
             this.requestSearch()
             this.getDeptInfo()
-            this.getRole()
         },
         methods: {
             //获得全部部门
             async getDeptInfo(){
                 let res = await this.$get("/admin/getAllDept", {})
                 this.deptList = res;
-            },
-            //获得全部岗位
-            async getRole(){
-                let res = await this.$get("/admin/getAllRole", {})
-                this.roleList = res;
-            },
-            //根据部门id获取岗位
-            async getRoleBydeptId(deptId){
-                let res = await this.$get("/admin/getAllRole", {deptId:deptId})
-                this.roleList = res;
             },
             //分页查询
             handleCurrentChange(page) {
@@ -181,17 +190,39 @@
                 }
             },
             //删除显示
-            toDelUser(index) {
+            toDelRole(index) {
                 this.item = this.list[index]
                 this.delVisible = true
             },
+            async handleAdd(index, row) {
+                    this.addRoleName = '',
+                    this.addRemark = '',
+                    this.isShowAdd = true;
+            },
+            //新增
+            async addSysRole(){
+                let data= {
+                    roleName:this.addRoleName,
+                    remark:this.addRemark,
+                }
+                let res = await this.$post("/admin/saveSysRole", data)
+                if (res.code == 200) {
+                    this.$message.success(res.message);
+                    this.isShowAdd = false
+                    this.requestSearch()
+                } else {
+                    this.$message.error(res.message);
+                }
+            },
+
             //修改
             async saveEdit(){
                 let data= {
-                    id:this.userInfo.id,
-                    roleId:this.editRoleId,
+                    id:this.roleInfo.id,
+                    roleName:this.roleInfo.roleInfo,
+                    remark:this.roleInfo.remark,
                 }
-                let res = await this.$post("/admin/saveSysUserRole", data)
+                let res = await this.$post("/admin/saveSysRole", data)
                 if (res.code == 200) {
                     this.$message.success(res.message);
                     this.isShowEdit = false
@@ -201,8 +232,8 @@
                 }
             },
             //删除
-            async delUser() {
-                let res = await this.$post("/admin/delSysUserRole", {userRoleId: this.item.userRoleId})
+            async delRole() {
+                let res = await this.$post("/admin/delSysRole", {userRoleId: this.item.userRoleId})
                 if (res.code == 200) {
                     this.$message.success(res.message);
                     this.delVisible = false
@@ -211,15 +242,16 @@
                     this.$message.error(res.message);
                 }
             },
-            //修改
-            editUser(index) {
-                this.userInfo = this.list[index]
-                this.editDeptId = this.userInfo.deptId
-                this.editRoleId = this.userInfo.roleId
+            //修改角色
+            editRole(index) {
+                this.roleInfo = this.list[index]
                 this.isShowEdit = true
             },
             closeEdit(){
                 this.isShowEdit = false
+            },
+            closeInsert() {
+                this.isShowAdd = false;
             },
             //修改权限
             async roleEdit(row){

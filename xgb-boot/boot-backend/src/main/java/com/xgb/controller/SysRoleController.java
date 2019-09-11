@@ -1,5 +1,6 @@
 package com.xgb.controller;
 
+import com.xgb.common.SessionUtil;
 import com.xgb.lang.IntegerUtils;
 import com.xgb.lang.R;
 import com.xgb.model.SysRole;
@@ -7,6 +8,7 @@ import com.xgb.model.SysRoleExample;
 import com.xgb.service.SysDeptService;
 import com.xgb.service.SysRoleService;
 import com.xgb.utils.MyUtils;
+import com.xgb.utils.UUIDUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -84,5 +86,48 @@ public class SysRoleController {
             return R.ok(parentMap,"成功");
         }
         return R.error(999,"查询失败");
+    }
+
+    @PostMapping("saveSysRole")
+    public R saveSysRole(SysRole sysRole){
+        logger.info("------request-address----------------：/admin/saveSysRole");
+        if(MyUtils.isEmpty(sysRole.getId())){
+            String sysUserId = SessionUtil.getSysUserId();
+            sysRole.setId(UUIDUtils.getUUID());
+            sysRole.setCreateId(sysUserId);
+            sysRole.setCreateTime(new Date());
+            sysRole.setUpdateId(sysUserId);
+            sysRole.setStatus("0");
+            sysRole.setUpdateTime(new Date());
+            int insert = sysRoleService.insert(sysRole);
+            if(insert>0){
+                return R.ok("新增成功");
+            }else {
+                return R.error(999,"新增失败");
+            }
+        }else {
+            String sysUserId = SessionUtil.getSysUserId();
+            sysRole.setUpdateId(sysUserId);
+            sysRole.setUpdateTime(new Date());
+            int update = sysRoleService.update(sysRole);
+            if(update>0){
+                return R.ok("编辑成功");
+            }else {
+                return R.error(999,"编辑失败");
+            }
+        }
+    }
+
+    @PostMapping("delSysRole")
+    public R delSysRole(SysRole sysRole){
+       if(MyUtils.isEmpty(sysRole.getId())){
+           return R.error(999,"未传入id");
+       }
+       int i = sysRoleService.deleteByPrimaryKey(sysRole.getId());
+       if(i>0){
+           return R.ok("删除成功");
+       }else {
+           return R.error(999,"删除失败");
+       }
     }
 }

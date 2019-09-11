@@ -7,6 +7,7 @@ import com.xgb.service.SysMenuService;
 import com.xgb.service.SysUserRoleService;
 import com.xgb.service.SysUserService;
 import com.xgb.utils.UUIDUtils;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ import java.util.Map;
  *
  * Created by Mr Xgb on 2019/07/28.
  */
-@Controller
+@RestController
 @RequestMapping("/admin/")
 public class SysMenuController {
 
@@ -29,17 +30,13 @@ public class SysMenuController {
 
     @Autowired
     private SysMenuService sysMenuService;
-    @Autowired
-    private SysUserService sysUserService;
-    @Autowired
-    private SysUserRoleService sysUserRoleService;
 
 
     /**
      * 查询菜单列表
      * @return
      */
-    @ResponseBody
+    @RequiresPermissions("SYS:MENU:MENU")
     @PostMapping(value = "getSysMenuList")
     public List<Map<String,Object>> getSysMenuList(String id) {
         logger.info("------request-address----------------：/admin/getSysMenuList");
@@ -50,7 +47,7 @@ public class SysMenuController {
 
 
     //新增权限
-    @ResponseBody
+    @RequiresPermissions("SYS:MENU:SAVE")
     @PostMapping(value = "addSysMenu")
     public R addSysPermission(SysMenu sysMenu) {
         logger.info("------request-address----------------：/admin/addSysMenu");
@@ -68,7 +65,7 @@ public class SysMenuController {
     }
 
     //编辑权限
-    @ResponseBody
+    @RequiresPermissions("SYS:MENU:SAVE")
     @PostMapping(value = "editSysMenu")
     public R editSysPermission(SysMenu sysMenu) {
         logger.info("------request-address----------------：/admin/editSysMenu");
@@ -85,8 +82,7 @@ public class SysMenuController {
     * 删除
     * @return
     */
-//    @RequiresPermissions("SYS:MENU:DELETE")
-    @ResponseBody
+    @RequiresPermissions("SYS:MENU:DELETE")
     @PostMapping("deleteSysMenu")
     public R deleteSysMenu(String id) {
         logger.info("------request-address-----------------：/admin/deleteSysMenu");
@@ -98,7 +94,6 @@ public class SysMenuController {
         }
     }
 
-    @ResponseBody
     @GetMapping("getUserMenuList")
     public R getUserMenuList() {
         logger.info("------request-address-----------------：/admin/getUserMenuList");

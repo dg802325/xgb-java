@@ -79,5 +79,6 @@
         <!--<table tableName="SYS_USER"></table>-->
         <!--<table tableName="SYS_USER_ROLE"></table>-->
         <!--<table tableName="SYS_DATABASES"></table>-->
+        <table tableName="BLOG_GARDEN"></table>
     </context>
 </generatorConfiguration>

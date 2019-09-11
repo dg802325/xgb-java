@@ -64,6 +64,49 @@ public class SysPermissionController {
         sysPermission.setUpdateTime(new Date());
         sysPermission.setPermissionType(addPermissionType);
         sysPermission.setRemark(addRemark);
+        //获得当前权限permissionKey最大的值
+        SysPermissionExample sysPermissionExample = new SysPermissionExample();
+        if(addPermissionType.equals("0")){
+            sysPermissionExample.createCriteria().andParentIdEqualTo("0").andPermissionCodeLike("___");
+            sysPermissionExample.setOrderByClause("PERMISSION_CODE DESC");
+            List<SysPermission> sysPermissions = sysPermissionService.selectByExample(sysPermissionExample);
+            String newPermissionCode = "001";
+            if(sysPermissions.size()>0){
+                newPermissionCode = org.apache.commons.lang.StringUtils.leftPad(String.valueOf(Integer.parseInt(sysPermissions.get(0).getPermissionCode()) + 1), 3, "0");
+
+            }
+            sysPermission.setPermissionCode(newPermissionCode);
+        }else if(addPermissionType.equals("1")){
+            String permissionCode = sysPermissionService.selectByPrimaryKey(addParentId).getPermissionCode();
+            sysPermissionExample.createCriteria().andParentIdEqualTo("1").andPermissionCodeLike(permissionCode+"___");
+            sysPermissionExample.setOrderByClause("PERMISSION_CODE DESC");
+            List<SysPermission> sysPermissions = sysPermissionService.selectByExample(sysPermissionExample);
+            String newPermissionCode = permissionCode+"001";
+            if(sysPermissions.size()>0){
+                newPermissionCode = org.apache.commons.lang.StringUtils.leftPad(String.valueOf(Integer.parseInt(sysPermissions.get(0).getPermissionCode()) + 1), 6, "0");
+            }
+            sysPermission.setPermissionCode(newPermissionCode);
+        }else if(addPermissionType.equals("2")){
+            String permissionCode = sysPermissionService.selectByPrimaryKey(addParentId).getPermissionCode();
+            sysPermissionExample.createCriteria().andParentIdEqualTo("2").andPermissionCodeLike(permissionCode+"___");
+            sysPermissionExample.setOrderByClause("PERMISSION_CODE DESC");
+            List<SysPermission> sysPermissions = sysPermissionService.selectByExample(sysPermissionExample);
+            String newPermissionCode = permissionCode+"001";
+            if(sysPermissions.size()>0){
+                newPermissionCode = org.apache.commons.lang.StringUtils.leftPad(String.valueOf(Integer.parseInt(sysPermissions.get(0).getPermissionCode()) + 1), 9, "0");
+            }
+            sysPermission.setPermissionCode(newPermissionCode);
+        }else if(addPermissionType.equals("3")){
+            String permissionCode = sysPermissionService.selectByPrimaryKey(addParentId).getPermissionCode();
+            sysPermissionExample.createCriteria().andParentIdEqualTo("3").andPermissionCodeLike(permissionCode+"___");
+            sysPermissionExample.setOrderByClause("PERMISSION_CODE DESC");
+            List<SysPermission> sysPermissions = sysPermissionService.selectByExample(sysPermissionExample);
+            String newPermissionCode = permissionCode+"001";
+            if(sysPermissions.size()>0){
+                newPermissionCode = org.apache.commons.lang.StringUtils.leftPad(String.valueOf(Integer.parseInt(sysPermissions.get(0).getPermissionCode()) + 1), 12, "0");
+            }
+            sysPermission.setPermissionCode(newPermissionCode);
+        }
         if (sysPermissionService.insert(sysPermission)>0) {
             return R.ok("添加成功");
         }

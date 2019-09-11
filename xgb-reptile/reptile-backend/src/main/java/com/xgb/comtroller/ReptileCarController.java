@@ -1,98 +1,118 @@
 package com.xgb.comtroller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-import us.codecraft.webmagic.Page;
-import us.codecraft.webmagic.Site;
-import us.codecraft.webmagic.Spider;
-import us.codecraft.webmagic.pipeline.ConsolePipeline;
-import us.codecraft.webmagic.processor.PageProcessor;
-import us.codecraft.webmagic.processor.example.GithubRepoPageProcessor;
-import us.codecraft.webmagic.selector.Selectable;
 
-import java.util.ArrayList;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.nodes.Node;
+import org.jsoup.select.Elements;
+
+import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
+import java.util.Map;
 
 /**
 * @Auther: Mr Deng
 * @Date: 2019-09-08 00:29:04
 * @Description:
 */
-public class ReptileCarController implements PageProcessor {
+public class ReptileCarController {
 
-    private Site site = Site.me().setRetryTimes(3).setSleepTime(1000);
-
-    @Override
-    public Site getSite() {
-        return site;
+    private static Map<Integer, String> cssMap = new HashMap<Integer, String>();
+    static
+    {
+        cssMap.put(1, "provincetr");// 省
+        cssMap.put(2, "citytr");// 市
+        cssMap.put(3, "countytr");// 县
+        cssMap.put(4, "towntr");// 镇
+        cssMap.put(5, "villagetr");// 村
     }
-
-    /**
-     * 内容分析逻辑
-     * 工具：1、正则表达式
-     * 	   2、cssStyle
-     *     3、Jsoup
-     *     4、Xpath
-     */
-    @Override
-    public void process(Page page) {
-        //电影详情链接movieLink的正则表达式
-        String movieLinkReg="/html/gndy/\\w{4}/\\d{8}/\\d{5}.html";
-        Pattern movieLinkPattern=Pattern.compile(movieLinkReg);
-        //写相应的xpath
-        String movieNameXpath="//title/text()";
-        String movieDownloadXpath="//a[starts-with(@href,'ftp')]/text()";
-        String movieLinkXpath="//div[@class='co_content2']/ul/a[@href]";
-        List<String> movieLinkList=new ArrayList<String>();
-        //结果抽取
-        Selectable moviePage;
-        Selectable movieNameS;
-        Selectable movieDownloadS;
-        if("http://www.dytt8.net".equals(page.getUrl().toString())){
-            //抽取结果
-            moviePage=page.getHtml().xpath(movieLinkXpath);
-            //选中结果
-            movieLinkList=moviePage.all();
-            //循环遍历
-            String movieLink="";
-            Matcher movieLinkMatcher;
-            for(int i=1;i<10;i++){
-                //第一条过滤，从第二条开始遍历
-                movieLinkList.get(i);
-                //正则匹配
-                movieLinkMatcher=movieLinkPattern.matcher(movieLink);
-                if(movieLinkMatcher.find()){//匹配子串
-                    movieLink=movieLinkMatcher.group();//返回匹配到的字串
-                    //将找到的链接放到ddTargetRequest里面，会自动发起请求
-                    page.addTargetRequest(movieLink);
-                    //输出到控制台
-                    System.out.println(movieLink);
+    public static void main(String[] args) throws Exception{
+        int level = 1;
+        // 获取全国各个省级信息
+        Document connect = connect("http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2018/");
+        Elements rowProvince = connect.select("tr." + cssMap.get(level));
+        int num=1;//记录省级行政单位个数
+        for (Element provinceElement : rowProvince){
+            //获取第一级行政单位
+            List<Node> child=provinceElement.childNodes();
+            for(Node  chi : child){
+                List<Node> ch=chi.childNodes();
+                List<Node>  ss=ch.get(0).childNodes();
+                Node  s=ss.get(0);
+                String Cyte=s.toString();
+                System.out.println(Cyte+num);
+                num++;
+                //获取除级行政单位 以外的行政级别
+                Elements select =provinceElement.select("a");
+                for (Element province : select){
+                    List<Node>  pro=province.childNodes();
+                    String cy= pro.get(0).toString();
+                    //判断是否是同一个一级行政单位，如果是,跳出当次循环
+                    if(!Cyte.equals(cy)){
+                        continue;
+                    }
+                    parseNextLevel(province, level + 1);
                 }
             }
-        }else{//第二次请求，电影详情页面
-            //获取html
-            movieNameS=page.getHtml().xpath(movieNameXpath);
-            movieDownloadS=page.getHtml().xpath(movieDownloadXpath);
-            page.putField("movieName",page.getHtml().xpath("//title/text()").toString());
-            page.putField("downloadURL", page.getHtml().xpath("//a[starts-with(@href,'ftp')]/text()").toString());
+        }
+    }
+    private static void parseNextLevel(Element parentElement, int level) throws Exception{
+        try {
+            Thread.sleep(10);//睡眠一下，否则可能出现各种错误状态码
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+        Document doc = connect(parentElement.attr("abs:href"));
+        if (doc != null){
+            Elements newsHeadlines = doc.select("tr." + cssMap.get(level));//
+            // 获取表格的一行数据
+            for (Element element : newsHeadlines){
+                printInfo(element, level+1);
+                Elements select = element.select("a");// 在递归调用的时候，这里是判断是否是村一级的数据，村一级的数据没有a标签
+                if (select.size() != 0){
+                    if(level<4){
+                        parseNextLevel(select.last(), level + 1);
+                    }
+                }
+            }
+        }
+    }
+    static int i=1;
+    private static void printInfo(Element element, int level) throws Exception{
+        String value1=element.select("td").first().text();
+        String value2=element.select("td").last().text();
+        //String code=element.select("td").first().text();
+        switch(level){
+            //获取地级市
+            case 3:System.out.println("----"+value2+"------------"+value1);
+                break;
+            //获取县(区)、县级市
+            case 4:System.out.println("--------"+value2+"------------"+value1);
+                i++;
+                break;
+            //获取镇（乡）
+            case 5:System.out.println("------------"+value2+"------------"+value1);
+                break;
+            //获取村委会
+            case 6:System.out.println("----------"+value2+"------------"+value1);
+                break;
+        }
+    }
+    private static Document connect(String url){
+        if (url == null || url.isEmpty()){
+            throw new IllegalArgumentException("The input url('" + url + "') is invalid!");
+        }else{
+            try {
+                return Jsoup.connect(url).timeout(100 * 1000).get();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+                return null;
+            }
 
         }
-        movieLinkList.clear();
-    }
-
-    /**
-     * 1、网络请求
-     * 2、内容分析及抽取
-     * @param args
-     */
-    public static void main(String[] args) {
-        //爬取的路径URL---1个线程去执行
-//        Spider.create(new InfoByWebMagic()).addUrl("http://www.dytt8.net").thread(1).run();
-        //或者--也是输出到控制台
-        Spider.create(new ReptileCarController()).addUrl("http://www.dytt8.net").addPipeline(new ConsolePipeline()).run();
     }
 
 }

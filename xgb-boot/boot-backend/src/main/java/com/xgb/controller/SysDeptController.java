@@ -9,6 +9,7 @@ import com.xgb.service.SysRoleService;
 import com.xgb.service.SysUserRoleService;
 import com.xgb.utils.MyUtils;
 import com.xgb.utils.UUIDUtils;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,7 @@ public class SysDeptController {
     @Autowired
     private SysUserRoleService sysUserRoleService;
 
+    @RequiresPermissions("SYS:DEPT:MENU")
     @GetMapping("getAllDept")
     public List<SysDept> getAllDept(){
         logger.info("------request-address----------------：/admin/getAllDept");
@@ -44,6 +46,7 @@ public class SysDeptController {
      * 列表分页查询
      * @return
      */
+    @RequiresPermissions("SYS:DEPT:MENU")
     @GetMapping("getSysDeptForPage")
     public R getSysDeptForPage(@RequestParam Map mapParam) {
         logger.info("------request-address----------------：/admin/getSysDeptForPage");
@@ -81,6 +84,7 @@ public class SysDeptController {
      * @param sysDept
      * @return
      */
+    @RequiresPermissions("SYS:DEPT:SAVE")
     @PostMapping("saveSysDept")
     public R saveSysDept(SysDept sysDept){
         logger.info("------request-address----------------：/admin/saveSysDept");
@@ -111,6 +115,7 @@ public class SysDeptController {
      * @param id
      * @return
      */
+    @RequiresPermissions("SYS:DEPT:DELETE")
     @PostMapping("delSysDept")
     public R delSysDept(String id){
         //查询部门

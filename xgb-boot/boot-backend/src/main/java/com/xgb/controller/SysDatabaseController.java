@@ -10,6 +10,7 @@ import com.xgb.service.SysDatabasesService;
 import com.xgb.utils.MD5Util;
 import com.xgb.utils.MyUtils;
 import com.xgb.utils.UUIDUtils;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,7 @@ public class SysDatabaseController {
     @Autowired
     private SysDatabasesService sysDatabasesService;
 
+    @RequiresPermissions("SYS:DATABASE:MENU")
     @GetMapping("getSysDatabaseForPage")
     public R getSysDatabaseForPage(@RequestParam Map mapParam){
         logger.info("------request-address----------------：/admin/getSysDatabaseForPage");
@@ -62,6 +64,7 @@ public class SysDatabaseController {
         return R.error(999,"没有数据");
     }
 
+    @RequiresPermissions("SYS:DATABASE:SAVE")
     @PostMapping("saveSysDatabase")
     public R saveDatabase(SysDatabases sysDatabases, HttpServletRequest request){
         String sysUserId = SessionUtil.getSysUserId();
@@ -95,6 +98,7 @@ public class SysDatabaseController {
         }
     }
 
+    @RequiresPermissions("SYS:DATABASE:DELETE")
     @PostMapping("/delSysDatabase")
     public R delSysDatabase(String databaseId){
         if (MyUtils.isEmpty(databaseId)){
