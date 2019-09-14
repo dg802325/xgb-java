@@ -7,22 +7,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="boot-backend" />
-        <module name="boot-dao" />
-        <module name="boot-message" />
-        <module name="boot-model" />
         <module name="boot-mybatis" />
-        <module name="boot-oss" />
-        <module name="boot-service" />
-        <module name="cloud-eureka" />
-        <module name="reptile-backend" />
-        <module name="reptile-dao" />
-        <module name="reptile-model" />
-        <module name="reptile-service" />
-        <module name="send-mail" />
-        <module name="xgb-common" />
         <module name="xgb-mybatis" />
+        <module name="send-mail" />
+        <module name="boot-dao" />
+        <module name="boot-backend" />
+        <module name="reptile-dao" />
+        <module name="boot-oss" />
+        <module name="reptile-backend" />
         <module name="xgb-test" />
+        <module name="boot-model" />
+        <module name="reptile-model" />
+        <module name="cloud-eureka" />
+        <module name="boot-service" />
+        <module name="boot-message" />
+        <module name="reptile-service" />
+        <module name="xgb-common" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
@@ -42,9 +42,8 @@
       <module name="xgb-cloud" target="1.8" />
       <module name="xgb-common" target="1.8" />
       <module name="xgb-java" target="1.8" />
-      <module name="xgb-mybatis" target="8" />
+      <module name="xgb-mybatis" target="1.8" />
       <module name="xgb-reptile" target="1.8" />
-      <module name="xgb-spider" target="1.8" />
       <module name="xgb-test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -56,7 +55,6 @@
       <module name="cloud-eureka" options="-parameters" />
       <module name="reptile-backend" options="-parameters" />
       <module name="xgb-common" options="" />
-      <module name="xgb-spider" options="-parameters" />
       <module name="xgb-test" options="" />
     </option>
   </component>
