@@ -10,6 +10,12 @@ import {get,post,fileUpload} from './utils/http'
 import './permisson';
 import echarts from 'echarts'
 import './filters/formatter'
+import  VueQuillEditor from 'vue-quill-editor'
+// require styles 引入样式
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+Vue.use(VueQuillEditor)
 Vue.prototype.$echarts = echarts
 Vue.config.productionTip = false
 Vue.prototype.$get = get
