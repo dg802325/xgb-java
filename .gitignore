@@ -166,3 +166,7 @@ xgb-boot/boot-oss/target/generated-sources/
 xgb-boot/boot-oss/target/maven-archiver/
 xgb-boot/boot-oss/target/maven-status/
 将删除 xgb-boot/boot-backend/target/classes/META-INF/
+xgb-boot/boot-dao/target/classes/com/xgb/dao/BlogGardenMapper.xml
+xgb-test/target/maven-archiver/
+xgb-test/target/maven-status/
+xgb-test/target/xgb-test-1.0-SNAPSHOT.jar
