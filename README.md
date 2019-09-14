@@ -8,7 +8,6 @@
 	+ SpringBoot
 	+ MyBatis
 	+ log4j
-	+ Thymeleaf
 	+ Freemarker
 2. 数据库
 	+ MySql 5.7
