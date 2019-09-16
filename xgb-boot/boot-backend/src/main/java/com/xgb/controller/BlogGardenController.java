@@ -21,7 +21,7 @@ import java.util.Map;
 * @Date: 2019-09-11 11:44:18
 * @Description:
 */
-@Controller
+@RestController
 @RequestMapping("/admin/")
 public class BlogGardenController {
 
@@ -34,8 +34,7 @@ public class BlogGardenController {
     * 列表分页查询
     * @return
     */
-    @RequiresPermissions("BLOG:GARDEN:MENU")
-    @ResponseBody
+//    @RequiresPermissions("BLOG:GARDEN:MENU")
     @GetMapping("getBlogGardenForPage")
     public R getBlogGardenForPage(@RequestParam Map mapParam,BlogGarden blogGarden) {
         logger.info("------request-address----------------：/admin/getBlogGardenForPage");
@@ -56,8 +55,7 @@ public class BlogGardenController {
     * 根据id查询一条数据
     * @return
     */
-    @RequiresPermissions("BLOG:GARDEN:MENU")
-    @ResponseBody
+//    @RequiresPermissions("BLOG:GARDEN:MENU")
     @GetMapping("getBlogGardenOne")
     public R getBlogGardenForPage(String id) {
         logger.info("------request-address----------------：/admin/getBlogGardenOne");
@@ -76,10 +74,9 @@ public class BlogGardenController {
     * 保存
     * @return
     */
-    @ResponseBody
-    @RequiresPermissions("BLOG:GARDEN:SAVE")
+//    @RequiresPermissions("BLOG:GARDEN:SAVE")
     @PostMapping("saveBlogGarden")
-    public R saveBlogGarden(BlogGarden blogGarden){
+    public R saveBlogGarden(BlogGarden blogGarden,String content){
         logger.info("------request-address----------------：/admin/saveBlogGarden");
         Map<String,Object> map = new HashMap<String,Object>();
         if(MyUtils.isEmpty(blogGarden.getId())){
@@ -103,8 +100,7 @@ public class BlogGardenController {
     * 删除
     * @return
     */
-    @RequiresPermissions("BLOG:GARDEN:DELETE")
-    @ResponseBody
+//    @RequiresPermissions("BLOG:GARDEN:DELETE")
     @PostMapping("deleteBlogGarden")
     public R deleteBlogGarden(BlogGarden blogGarden) {
         logger.info("------request-address-----------------：/admin/deleteBlogGarden");

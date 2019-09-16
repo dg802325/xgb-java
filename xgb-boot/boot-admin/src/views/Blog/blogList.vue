@@ -79,7 +79,7 @@
                 addClassificationId : '',
                 addKeyWord : '',
                 blogGardenInfo : {},
-                BlogTaitl : '',
+                blogTaitl : '',
                 BlogAbout : '',
                 Volume : '',
                 Support : '',

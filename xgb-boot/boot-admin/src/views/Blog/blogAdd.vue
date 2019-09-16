@@ -17,7 +17,7 @@
                     <el-switch v-model="delivery"></el-switch>
                 </el-form-item>
                 <el-form-item label="标签">
-                    <el-checkbox-group style="margin-top: 7px;" v-model="type">
+                    <el-checkbox-group style="margin-top: 1px;" v-model="type">
                         <el-checkbox label="美食/餐厅线上活动" name="type"></el-checkbox>
                         <el-checkbox label="地推活动" name="type"></el-checkbox>
                         <el-checkbox label="线下主题活动" name="type"></el-checkbox>
@@ -45,6 +45,7 @@
 </template>
 
 <script>
+
     import { quillEditor } from 'vue-quill-editor' //调用编辑器
     export default {
         data() {
@@ -58,8 +59,18 @@
             }
         },
         methods: {
-            onSubmit() {
+            async onSubmit() {
+                let data = {
+                    blogTaitl:this.title,
+                    classificationId:this.classification,
+                    status:this.delivery,
+                    type:this.type,
+                    content:this.content,
+                }
+                console.log(data)
                 console.log('submit!');
+                let res = await this.$post("/admin/saveBlogGarden", data)
+                console.log(res)
             },
             onEditorBlur(e){//失去焦点事件
                 console.log(e)

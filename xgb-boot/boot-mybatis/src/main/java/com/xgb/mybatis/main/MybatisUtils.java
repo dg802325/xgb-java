@@ -56,7 +56,7 @@ public class MybatisUtils {
     }
 
     public List<SysMabtaisPlus> getTables(Connection conn) throws SQLException {
-        List<SysMabtaisPlus> lists = new ArrayList<>();
+        List<SysMabtaisPlus> lists = new ArrayList<SysMabtaisPlus>();
         DatabaseMetaData dbMetData = null;
             dbMetData = conn.getMetaData();
             ResultSet rs = dbMetData.getTables(null, null, null, new String[] { "TABLE" });
@@ -102,7 +102,7 @@ public class MybatisUtils {
         Connection connection = getConnection(driver, dbUrl, sysDatabases.getDatabaseLoginName(), sysDatabases.getDatabaseLoginPassword());
         DatabaseMetaData databaseMetaData = connection.getMetaData();
         ResultSet rs = databaseMetaData.getColumns(null, "%", generator.getTableName(), "%");
-        List<TableInformation> lists = new ArrayList<>();
+        List<TableInformation> lists = new ArrayList<TableInformation>();
         while(rs.next()){
             TableInformation tableInformation = new TableInformation();
             //列名

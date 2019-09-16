@@ -42,7 +42,7 @@ public class DataUtil extends CodeGeneratorConfig {
             }
         }
 
-        Map<String, Object> data = new HashMap<>();
+        Map<String, Object> data = new HashMap<String, Object>();
         data.put("isString",isString);
         data.put("isDatetime",isDatetime);
         data.put("isInt",isInt);
