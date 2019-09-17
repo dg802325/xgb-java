@@ -48,8 +48,9 @@
 </template>
 
 <script>
-    import {removeToken} from "../../utils/auth";
-
+    import {mapMutations} from 'vuex';
+    import {getToken,removeToken} from "../../utils/auth";
+    import bus from "../bus";
     export default {
         data() {
             return {
@@ -70,10 +71,19 @@
                 default: 0
             }
         },
-        created() {
+        async created() {
+            let res = this.getPermissionList()
+            this.setPermissions(res);
             this.getUserInfo()
         },
         methods: {
+            ...mapMutations({
+                'setPermissions':'SET_PERMISSIONS'
+            }),
+            async getPermissionList(){
+                let res = await this.$get("/admin/getPermissionList")
+                return res;
+            },
             handleClick(index){
                 this.currentIndex = index,
                     this.$emit('change',index);

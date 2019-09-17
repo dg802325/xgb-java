@@ -1,8 +1,9 @@
 package com.xgb.service;
 
 import com.xgb.dao.SysPermissionMapper;
-import com.xgb.model.SysPermission;
-import com.xgb.model.SysPermissionExample;
+import com.xgb.dao.SysRolePermissionMapper;
+import com.xgb.dao.SysUserRoleMapper;
+import com.xgb.model.*;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,10 @@ public class SysPermissionService {
 
 	@Autowired
     private SysPermissionMapper sysPermissionMapper;
+	@Autowired
+    private SysUserRoleMapper sysUserRoleMapper;
+	@Autowired
+    private SysRolePermissionMapper sysRolePermissionMapper;
 
     public long countByExample(SysPermissionExample example){
         return sysPermissionMapper.countByExample(example);
@@ -66,6 +71,24 @@ public class SysPermissionService {
 
     public int updateByPrimaryKey(SysPermission record){
         return sysPermissionMapper.updateByPrimaryKey(record);
+    }
+
+    //根据登录人id获得当前登录人所有的权限key
+    public List<String> getPermissionListByUserId(String userId){
+        List<String> lists = new ArrayList<>();
+        SysUserRoleExample sysUserRoleExample = new SysUserRoleExample();
+        sysUserRoleExample.createCriteria().andUserIdEqualTo(userId);
+        List<SysUserRole> sysUserRoles = sysUserRoleMapper.selectByExample(sysUserRoleExample);
+        sysUserRoles.forEach(item->{
+            SysRolePermissionExample sysRolePermissionExample = new SysRolePermissionExample();
+            sysRolePermissionExample.createCriteria().andRoleIdEqualTo(item.getRoleId());
+            List<SysRolePermission> sysRolePermissions = sysRolePermissionMapper.selectByExample(sysRolePermissionExample);
+            sysRolePermissions.forEach(sysRolePermission->{
+                String permissionKey = sysPermissionMapper.selectByPrimaryKey(sysRolePermission.getPermissionId()).getPermissionKey();
+                lists.add(permissionKey);
+            });
+        });
+        return lists;
     }
 
     //查询权限列表

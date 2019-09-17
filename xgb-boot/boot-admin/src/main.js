@@ -1,12 +1,14 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import store from './store'
+import './permisson';
 import './plugins/element.js'
 import './assets/css/reset.css'
 import './assets/css/main.scss'
 import './components/global';
 import {get,post,fileUpload} from './utils/http'
+import {checkPermission} from './utils/main'
+import store from './store'
 import './permisson';
 import echarts from 'echarts'
 import './filters/formatter'

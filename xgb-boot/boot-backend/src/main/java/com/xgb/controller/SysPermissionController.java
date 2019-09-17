@@ -35,6 +35,19 @@ public class SysPermissionController {
     private SysMenuService sysMenuService;
 
     /**
+     * 根据用户token获得会员有的权限key
+     * @return
+     */
+    @GetMapping("getPermissionList")
+    public List<String> getPermissionList() {
+        logger.info("------request-address----------------：/admin/getSysPermission");
+        //查询代码
+        String sysUserId = SessionUtil.getSysUserId();
+        List<String> lists = sysPermissionService.getPermissionListByUserId(sysUserId);
+        return lists;
+    }
+
+    /**
      * 查询权限列表
      * @return
      */
