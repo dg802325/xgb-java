@@ -18,6 +18,7 @@ import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
 Vue.use(VueQuillEditor)
+Vue.prototype.checkPermission = checkPermission;
 Vue.prototype.$echarts = echarts
 Vue.config.productionTip = false
 Vue.prototype.$get = get

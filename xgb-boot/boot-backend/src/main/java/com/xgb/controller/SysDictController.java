@@ -20,7 +20,7 @@ import java.util.Map;
  *
  * Created by Mr Xgb on 2019/07/28.
  */
-@Controller
+@RestController
 @RequestMapping("/admin/")
 public class SysDictController {
 
@@ -31,24 +31,10 @@ public class SysDictController {
 
 
     /**
-    * 查看列表显示
-    * @return
-    */
-    @RequiresPermissions("SYS:DICT:MENU")
-    @GetMapping("/view_sysDict")
-	public ModelAndView viewSysDict(ModelAndView mv){
-        logger.info("------request-address----------------：/admin/view_sysDict");
-        mv.setViewName("admin/view_sys_dict");
-        return mv;
-    }
-
-
-    /**
     * 列表分页查询
     * @return
     */
     @RequiresPermissions("SYS:DICT:MENU")
-    @ResponseBody
     @GetMapping(value = "getSysDictForPage")
     public R getSysDictForPage(@RequestParam Map mapParam) {
         logger.info("------request-address----------------：/admin/getSysDictForPage");
@@ -62,34 +48,9 @@ public class SysDictController {
     }
 
     /**
-    * 新增页面跳转
-    * @return
-    */
-    @RequiresPermissions("SYS:DICT:INSERT")
-    @GetMapping("insert_sysDict")
-    public ModelAndView insertSysDict(ModelAndView mv){
-        logger.info("------request-address----------------：/admin/insert_sysDict");
-        mv.setViewName("admin/insert_sys_dict");
-        return mv;
-    }
-
-    /**
-    * 编辑页面跳转
-    * @return
-    */
-    @RequiresPermissions("SYS:DICT:EDIT")
-    @GetMapping("edit_sysDict")
-    public ModelAndView editSysDict(ModelAndView mv){
-        logger.info("------request-address----------------：/admin/edit_sysDict");
-        mv.setViewName("admin/edit_sys_dict");
-        return mv;
-    }
-
-    /**
     * 保存
     * @return
     */
-    @ResponseBody
     @RequiresPermissions("SYS:DICT:SAVE")
     @PostMapping("save_sysDict")
     public R saveSysDict(SysDict sysDict){
@@ -117,7 +78,6 @@ public class SysDictController {
     * @return
     */
     @RequiresPermissions("SYS:DICT:DELETE")
-    @ResponseBody
     @PostMapping("delete_sysDict")
     public R deleteSysDict(SysDict sysDict) {
         logger.info("------request-address-----------------：/admin/delete_sysDict");
@@ -130,18 +90,4 @@ public class SysDictController {
         }
     }
 
-    /**
-    * freemarker 模板 使用方法
-    * 根据id查询一个条数据
-    * @return
-    */
-    @RequiresPermissions("SYS:DICT:MENU")
-    @GetMapping("select_sysDict")
-    public ModelAndView selectSysDict(ModelAndView mv, String id){
-        logger.info("------request-address----------------：/admin/select_sysDict");
-        SysDict sysDict = sysDictService.selectByPrimaryKey(id);
-        mv.setViewName("admin/select_sysDict");
-        mv.addObject("sys_dict",sysDict);
-        return mv;
-    }
 }

@@ -2,6 +2,7 @@ package com.xgb.service;
 
 import com.xgb.dao.*;
 import com.xgb.model.*;
+import com.xgb.utils.MyUtils;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
@@ -94,7 +95,10 @@ public class SysUserService {
             sysRolePermissionExample.createCriteria().andRoleIdEqualTo(item.getRoleId());
             List<SysRolePermission> sysRolePermissions = sysRolePermissionMapper.selectByExample(sysRolePermissionExample);
             sysRolePermissions.forEach(permissions->{
-                lists.add(sysPermissionMapper.selectByPrimaryKey(permissions.getPermissionId()).getPermissionKey());
+                String permissionKey = sysPermissionMapper.selectByPrimaryKey(permissions.getPermissionId()).getPermissionKey();
+                if(MyUtils.isNotEmpty(permissionKey)){
+                    lists.add(permissionKey);
+                }
             });
         });
         return lists;

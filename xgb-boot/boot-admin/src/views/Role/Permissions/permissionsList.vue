@@ -229,6 +229,7 @@
                 let data = {
                     editPermissionId:this.editPermissionId,
                     editPermissionName: this.editPermissionName,
+                    editPermissionKey:this.editPermissionKey,
                     editRemark: this.editRemark
                 }
                 console.log(data)

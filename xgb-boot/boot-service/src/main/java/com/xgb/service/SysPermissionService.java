@@ -105,6 +105,7 @@ public class SysPermissionService {
                 oneParentMap.put("id",oneSysPermission.getId());
                 oneParentMap.put("permissionName",oneSysPermission.getPermissionName());
                 oneParentMap.put("remark",oneSysPermission.getRemark());
+                oneParentMap.put("permissionKey",oneSysPermission.getPermissionKey());
                 oneParentMap.put("permissionType",oneSysPermission.getPermissionType());
                 SysPermissionExample twoSysPermissionExample = new SysPermissionExample();
                 twoSysPermissionExample.createCriteria().andParentIdEqualTo(oneSysPermission.getId());
@@ -117,6 +118,7 @@ public class SysPermissionService {
                         twoParentMap.put("id",twoSysPermission.getId());
                         twoParentMap.put("permissionName",twoSysPermission.getPermissionName());
                         twoParentMap.put("remark",twoSysPermission.getRemark());
+                        twoParentMap.put("permissionKey",twoSysPermission.getPermissionKey());
                         twoParentMap.put("permissionType",twoSysPermission.getPermissionType());
                         SysPermissionExample threeSysPermissionExample = new SysPermissionExample();
                         threeSysPermissionExample.createCriteria().andParentIdEqualTo(twoSysPermission.getId());
@@ -135,6 +137,7 @@ public class SysPermissionService {
                                         fourParentMap.put("id",fourSysPermission.getId());
                                         fourParentMap.put("permissionName",fourSysPermission.getPermissionName());
                                         fourParentMap.put("remark",fourSysPermission.getRemark());
+                                        fourParentMap.put("permissionKey",fourSysPermission.getPermissionKey());
                                         fourParentMap.put("permissionType",fourSysPermission.getPermissionType());
                                         fourPermissionList.add(fourParentMap);
                                     });
@@ -143,6 +146,7 @@ public class SysPermissionService {
                                 threeParentMap.put("id",threeSysPermission.getId());
                                 threeParentMap.put("permissionName",threeSysPermission.getPermissionName());
                                 threeParentMap.put("remark",threeSysPermission.getRemark());
+                                threeParentMap.put("permissionKey",threeSysPermission.getPermissionKey());
                                 threeParentMap.put("permissionType",threeSysPermission.getPermissionType());
                                 threePermissionList.add(threeParentMap);
                             });
