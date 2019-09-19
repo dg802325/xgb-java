@@ -68,7 +68,7 @@
                 <div class="del-dialog-cnt">删除不可恢复，是否确定删除？</div>
                 <span slot="footer" class="dialog-footer">
                 <el-button class="el-button_1" @click="delVisible = false">取 消</el-button>
-                <el-button class="el-button_1" type="primary" @click="delUser">确 定</el-button>
+                <el-button class="el-button_1" type="primary" @click="delRole">确 定</el-button>
                 </span>
             </el-dialog>
 
