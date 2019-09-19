@@ -40,7 +40,7 @@ public class SysPermissionController {
      */
     @GetMapping("getPermissionList")
     public List<String> getPermissionList() {
-        logger.info("------request-address----------------：/admin/getSysPermission");
+        logger.info("------request-address----------------：/admin/getPermissionList");
         //查询代码
         String sysUserId = SessionUtil.getSysUserId();
         List<String> lists = sysPermissionService.getPermissionListByUserId(sysUserId);

@@ -8,7 +8,7 @@ import './assets/css/main.scss'
 import './components/global';
 import {get,post,fileUpload} from './utils/http'
 import {checkPermission} from './utils/main'
-import store from './store'
+import store from './store';
 import './permisson';
 import echarts from 'echarts'
 import './filters/formatter'

@@ -72,7 +72,7 @@
             }
         },
         async created() {
-            let res = this.getPermissionList()
+            let res = await this.$get("/admin/getPermissionList")
             this.setPermissions(res);
             this.getUserInfo()
         },
@@ -80,10 +80,6 @@
             ...mapMutations({
                 'setPermissions':'SET_PERMISSIONS'
             }),
-            async getPermissionList(){
-                let res = await this.$get("/admin/getPermissionList")
-                return res;
-            },
             handleClick(index){
                 this.currentIndex = index,
                     this.$emit('change',index);
