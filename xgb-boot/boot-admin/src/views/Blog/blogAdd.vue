@@ -8,9 +8,13 @@
                     <el-input v-model="title"></el-input>
                 </el-form-item>
                 <el-form-item label="所属分类">
-                    <el-select v-model="classification" placeholder="请选择所属分类">
-                        <el-option label="区域一" value="shanghai"></el-option>
-                        <el-option label="区域二" value="beijing"></el-option>
+                    <el-select v-model="classification" clearable placeholder="请选择所属分类">
+                        <el-option
+                                v-for="item in classificationList"
+                                :key="item.id"
+                                :label="item.classificationName"
+                                :value="item.id">
+                        </el-option>
                     </el-select>
                 </el-form-item>
                 <el-form-item label="是否显示">
@@ -56,6 +60,7 @@
                 content:'',
                 type:'',
                 editorOption:{},
+                classificationList:[],
             }
         },
         methods: {

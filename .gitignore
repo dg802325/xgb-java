@@ -29,6 +29,12 @@
 /.nb-gradle/
 package-lock.json
 page/SysRole.java
+xgb-boot/boot-message/target/
+xgb-cloud/cloud-eureka/target/
+xgb-reptile/reptile-backend/target/
+xgb-reptile/reptile-dao/target/
+xgb-reptile/reptile-service/target/
+xgb-reptile/reptile-model/target/
 xgb-boot/boot-backend/target/generated-sources/
 xgb-boot/boot-dao/target/classes/com/xgb/dao/SysDatabasesMapper.xml
 xgb-boot/boot-dao/target/generated-sources/

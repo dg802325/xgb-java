@@ -19,6 +19,9 @@ public class MyUtils {
         if (o == null) {
             return true;
         }
+        if("null".equals(o)){
+            return true;
+        }
         if (o instanceof String) {
             if (o.toString().trim().equals("")) {
                 return true;
