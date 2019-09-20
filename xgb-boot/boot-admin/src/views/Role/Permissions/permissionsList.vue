@@ -83,7 +83,7 @@
                     <el-input v-model="addRemark" size="1" style="width: 200px;"></el-input>
                 </el-form-item>
                 <el-form-item label="权限值:" required>
-                    <el-input v-model="addPsermissionKey" size="1" style="width: 200px;"></el-input>
+                    <el-input v-model="addPermissionKey" size="1" style="width: 200px;"></el-input>
                 </el-form-item>
             </el-form>
             <span slot="footer" class="dialog-footer">
@@ -125,7 +125,7 @@
                 addParentId:'',
                 addPermissionName:'',
                 addRemark:'',
-                addPsermissionKey:'',
+                addPermissionKey:'',
                 addPermissionType:'',
                 editPermissionId:'',
                 editPermissionName:'',

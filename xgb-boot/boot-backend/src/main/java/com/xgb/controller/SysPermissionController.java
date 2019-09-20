@@ -11,6 +11,7 @@ import com.xgb.service.SysPermissionService;
 import com.xgb.service.SysRolePermissionService;
 import com.xgb.utils.MyUtils;
 import com.xgb.utils.UUIDUtils;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,7 @@ public class SysPermissionController {
      * 根据用户token获得会员有的权限key
      * @return
      */
+    @RequiresPermissions("SYS:PERMISSION:MENU")
     @GetMapping("getPermissionList")
     public List<String> getPermissionList() {
         logger.info("------request-address----------------：/admin/getPermissionList");
@@ -51,6 +53,7 @@ public class SysPermissionController {
      * 查询权限列表
      * @return
      */
+    @RequiresPermissions("SYS:PERMISSION:MENU")
     @GetMapping("getSysPermission")
     public List<Map<String,Object>> getSysPermission() {
         logger.info("------request-address----------------：/admin/getSysPermission");
@@ -61,6 +64,7 @@ public class SysPermissionController {
 
 
     //新增权限
+    @RequiresPermissions("SYS:PERMISSION:SAVE")
     @PostMapping(value = "addSysPermission")
     public R addSysPermission(String addParentId,String addPermissionName,String addPermissionKey,String addRemark,String addPermissionType) {
         logger.info("------request-address----------------：/admin/addSysPermission");
@@ -127,6 +131,7 @@ public class SysPermissionController {
     }
 
     //编辑权限
+    @RequiresPermissions("SYS:PERMISSION:SAVE")
     @PostMapping(value = "editSysPermission")
     public R editSysPermission(String editPermissionId,String editPermissionName,String editPermissionKey,String editRemark) {
         logger.info("------request-address----------------：/admin/editSysPermission");
@@ -147,7 +152,7 @@ public class SysPermissionController {
     * 删除
     * @return
     */
-//    @RequiresPermissions("SYS:PERMISSION:DELETE")
+    @RequiresPermissions("SYS:PERMISSION:DELETE")
     @PostMapping("deleteSysPermission")
     public R deleteSysPermission(String id) {
         logger.info("------request-address-----------------：/admin/delete_sysPermission");
@@ -175,6 +180,7 @@ public class SysPermissionController {
      * 查询权限列表
      * @return
      */
+    @RequiresPermissions("SYS:PERMISSION:MENU")
     @GetMapping(value = "getAllSysPermission")
     public R getAllSysPermission() {
         logger.info("------request-address----------------：/admin/getAllSysPermission");
@@ -194,6 +200,7 @@ public class SysPermissionController {
      * 根据父级菜单id查询权限列表
      * @return
      */
+    @RequiresPermissions("SYS:PERMISSION:MENU")
     @PostMapping(value = "getSysPermissionByMenuId")
     public List<SysPermission> getSysPermissionByMenuId(String parentId) {
         logger.info("------request-address----------------：/admin/getSysPermission");
