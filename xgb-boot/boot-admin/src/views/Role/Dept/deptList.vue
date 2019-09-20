@@ -42,7 +42,7 @@
                     <el-table-column label="操作" align="center">
                         <template slot-scope="scope">
                             <el-button size="mini" v-if="checkPermission('SYS:DEPT:SAVE')" type="primary" @click="editUser(scope.$index)">编辑</el-button>
-                            <el-button size="mini" type="danger" @click="toDelUser(scope.$index)">删除</el-button>
+                            <el-button size="mini" v-if="checkPermission('SYS:DEPT:DELETE')" type="danger" @click="toDelUser(scope.$index)">删除</el-button>
                         </template>
                     </el-table-column>
                 </el-table>

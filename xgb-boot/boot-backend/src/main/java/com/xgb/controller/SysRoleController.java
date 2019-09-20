@@ -9,6 +9,7 @@ import com.xgb.service.SysDeptService;
 import com.xgb.service.SysRoleService;
 import com.xgb.utils.MyUtils;
 import com.xgb.utils.UUIDUtils;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,7 @@ public class SysRoleController {
     @Autowired
     private SysDeptService sysDeptService;
 
-
+    @RequiresPermissions("SYS:ROLE:MENU")
     @GetMapping("getAllRole")
     public List<SysRole> getAllRole(String deptId){
         logger.info("------request-address----------------：/admin/getAllRole");
@@ -50,6 +51,7 @@ public class SysRoleController {
      * 列表分页查询
      * @return
      */
+    @RequiresPermissions("SYS:ROLE:MENU")
     @GetMapping("getSysRoleForPage")
     public R getSysRoleForPage(@RequestParam Map mapParam) {
         logger.info("------request-address----------------：/admin/getSysRoleForPage");
@@ -88,6 +90,7 @@ public class SysRoleController {
         return R.error(999,"查询失败");
     }
 
+    @RequiresPermissions("SYS:ROLE:SAVE")
     @PostMapping("saveSysRole")
     public R saveSysRole(SysRole sysRole){
         logger.info("------request-address----------------：/admin/saveSysRole");
@@ -118,6 +121,7 @@ public class SysRoleController {
         }
     }
 
+    @RequiresPermissions("SYS:ROLE:DELETE")
     @PostMapping("delSysRole")
     public R delSysRole(SysRole sysRole){
        if(MyUtils.isEmpty(sysRole.getId())){

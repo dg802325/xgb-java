@@ -79,6 +79,7 @@ public class SysMenuService {
             List<Map<String,Object>> lists = new ArrayList<Map<String,Object>>();
             SysMenuExample oneSysMenu = new SysMenuExample();
             oneSysMenu.createCriteria().andParentIdEqualTo(parentId);
+            oneSysMenu.setOrderByClause("SORT ASC");
             List<SysMenu> oneMenus = sysMenuMapper.selectByExample(oneSysMenu);
             oneMenus.forEach(oneMenu->{
                 Map<String,Object> oneMu = new HashMap<String,Object>();

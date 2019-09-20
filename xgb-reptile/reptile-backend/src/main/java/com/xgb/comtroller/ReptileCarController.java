@@ -31,7 +31,7 @@ public class ReptileCarController {
     public static void main(String[] args) throws Exception{
         int level = 1;
         // 获取全国各个省级信息
-        Document connect = connect("http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2018/");
+        Document connect = connect("http://www.icama.org.cn/myquery/queryselect");
         Elements rowProvince = connect.select("tr." + cssMap.get(level));
         int num=1;//记录省级行政单位个数
         for (Element provinceElement : rowProvince){

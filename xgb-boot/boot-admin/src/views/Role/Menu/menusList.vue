@@ -15,7 +15,7 @@
                     </el-form>
                 </glob-base-search>
                 <div class="v-cart-title">
-                    <el-button type="success" size="mini" @click="handleAdd('', '')">添加主菜单</el-button>
+                    <el-button type="success" v-if="checkPermission('SYS:MENU:SAVE')" size="mini" @click="handleAdd('', '')">添加主菜单</el-button>
                 </div>
                 <div>
                     <el-table
@@ -59,14 +59,17 @@
                                 align="right">
                             <template slot-scope="scope">
                                 <el-button
+                                        v-if="checkPermission('SYS:MENU:SAVE')"
                                         size="mini"
                                         type="success"
                                         @click="handleAdd(scope.$index, scope.row)">Add</el-button>
                                 <el-button
+                                        v-if="checkPermission('SYS:MENU:SAVE')"
                                         size="mini"
                                         type="primary"
                                         @click="handleEdit(scope.$index, scope.row)">Edit</el-button>
                                 <el-button
+                                        v-if="checkPermission('SYS:MENU:DELETE')"
                                         size="mini"
                                         type="danger"
                                         @click="handleDelete(scope.$index, scope.row)">Delete</el-button>

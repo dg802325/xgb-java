@@ -33,7 +33,7 @@ public class SysRolePermissionController {
 
 
     @GetMapping("getSysRolePermission")
-    public List<String> getSysRolePermission(String roleId){
+    public List<String> getSysRolePermission(){
         //查询会员有的一级权限 如果会员有一级权限，则不返回一级权限
         SysRolePermissionExample oneSysRolePermissionExample = new SysRolePermissionExample();
         oneSysRolePermissionExample.createCriteria();
@@ -52,7 +52,7 @@ public class SysRolePermissionController {
     * 保存
     * @return
     */
-//    @RequiresPermissions("SYS:ROLE:PERMISSION:SAVE")
+    @RequiresPermissions("SYS:ROLE:PERMISSION:EDIT")
     @PostMapping("saveSysRolePermission")
     public R saveSysRolePermission(SysRolePermission sysRolePermission){
         logger.info("------request-address----------------：/admin/saveSysRolePermission");
@@ -91,7 +91,7 @@ public class SysRolePermissionController {
     * 删除
     * @return
     */
-    @RequiresPermissions("SYS:ROLE:PERMISSION:DELETE")
+    @RequiresPermissions("SYS:ROLE:PERMISSION:EDIT")
     @PostMapping("delete_sysRolePermission")
     public R deleteSysRolePermission(SysRolePermission sysRolePermission) {
         logger.info("------request-address-----------------：/admin/delete_sysRolePermission");
