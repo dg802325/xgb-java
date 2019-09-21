@@ -12,8 +12,10 @@ import org.slf4j.LoggerFactory;
 import ${myCommonPath!}.util.StringUtils;
 import ${myCommonPath!}.lang.R;
 import ${myCommonPath!}.utils.UUIDUtils;
+import ${myCommonPath!}.utils.MyUtils;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.List;
 
 /**
 * @Auther: ${author!}
@@ -81,21 +83,20 @@ public class ${modelName!}Controller {
     public R save${modelName!}(${modelName!} ${someModelName!}){
         logger.info("------request-address----------------：/admin/save${modelName!}");
         Map<String,Object> map = new HashMap<String,Object>();
-        if(StringUtils.isEmpty(${someModelName!}.getId())){
+        if(MyUtils.isEmpty(${someModelName!}.getId())){
             ${someModelName!}.setId(UUIDUtils.getUUID());
             if(${someModelName!}Service.insert(${someModelName!}) > 0){
-                R.ok("添加成功");
+                return R.ok("添加成功");
             }else{
-                R.error(996,"添加失败");
+                return R.error(996,"添加失败");
             }
         }else{
-            if(${someModelName}Service.updateByPrimaryKeySelective(${someModelName}) > 0){
-                R.ok("编辑成功");
+            if(${someModelName}Service.update(${someModelName}) > 0){
+                return R.ok("编辑成功");
             }else{
-                R.error(996,"编辑失败");
+                return R.error(996,"编辑失败");
             }
         }
-        return R.error(996,"未做任何操作");
     }
 
     /**

@@ -1,6 +1,7 @@
 package ${mapperPackage};
 
 import ${modelPackage}.${modelName};
+import ${modelPackage}.${modelName}Example;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

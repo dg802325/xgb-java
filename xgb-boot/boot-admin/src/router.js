@@ -127,7 +127,12 @@ const BlogRouter = [
             {
                 path: 'blogAdd',
                 component: () => import('./views/Blog/blogAdd.vue'),
-                meta: {title: '博客列表'}
+                meta: {title: '博客添加'}
+            },
+            {
+                path: 'blogClass',
+                component: () => import('./views/Blog/blogClass.vue'),
+                meta: {title: '博客分类'}
             },
         ]
     },

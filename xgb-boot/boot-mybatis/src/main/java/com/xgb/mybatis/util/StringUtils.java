@@ -187,7 +187,7 @@ public class StringUtils {
     public static String builderString(TableInformation tableInformation){
         if("VARCHAR".equals(tableInformation.getTypeName())){
             return "String";
-        }else if("DATETIME".equals(tableInformation.getTypeName())||"DATE".equals(tableInformation.getTypeName())){
+        }else if("DATETIME".equals(tableInformation.getTypeName())||"DATE".equals(tableInformation.getTypeName())||"TIMESTAMP".equals(tableInformation.getTypeName())){
             return "Date";
         }else if("DECIMAL".equals(tableInformation.getTypeName())){
             return "BigDecimal";
@@ -201,7 +201,7 @@ public class StringUtils {
     public static String builderToPathString(TableInformation tableInformation){
         if("VARCHAR".equals(tableInformation.getTypeName())){
             return "java.lang.String";
-        }else if("DATETIME".equals(tableInformation.getTypeName())||"DATE".equals(tableInformation.getTypeName())){
+        }else if("DATETIME".equals(tableInformation.getTypeName())||"DATE".equals(tableInformation.getTypeName())||"TIMESTAMP".equals(tableInformation.getTypeName())){
             return "java.util.Date";
         }else if("DECIMAL".equals(tableInformation.getTypeName())){
             return "java.math.BigDecimal";
@@ -210,6 +210,7 @@ public class StringUtils {
         }
         return null;
     }
+
 
 
 }

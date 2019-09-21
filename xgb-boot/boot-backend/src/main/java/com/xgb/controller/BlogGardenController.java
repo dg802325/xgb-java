@@ -1,5 +1,7 @@
 package com.xgb.controller;
 
+import com.xgb.common.SessionUtil;
+import com.xgb.lang.DateUtils;
 import com.xgb.model.BlogGarden;
 import com.xgb.service.BlogGardenService;
 import com.xgb.utils.MyUtils;
@@ -77,10 +79,20 @@ public class BlogGardenController {
 //    @RequiresPermissions("BLOG:GARDEN:SAVE")
     @PostMapping("saveBlogGarden")
     public R saveBlogGarden(BlogGarden blogGarden,String content){
+        String sysUserId = SessionUtil.getSysUserId();
         logger.info("------request-address----------------：/admin/saveBlogGarden");
         Map<String,Object> map = new HashMap<String,Object>();
         if(MyUtils.isEmpty(blogGarden.getId())){
+            //添加博客表
             blogGarden.setId(UUIDUtils.getUUID());
+            blogGarden.setCreateId(sysUserId);
+            blogGarden.setCreateTime(DateUtils.getNowDate());
+            blogGarden.setStatus("0");
+            blogGarden.setVolume(0);
+            blogGarden.setSupport(0);
+            blogGarden.setOpposition(0);
+            //准备内容表
+
             if(blogGardenService.insert(blogGarden) > 0){
                 R.ok("添加成功");
             }else{

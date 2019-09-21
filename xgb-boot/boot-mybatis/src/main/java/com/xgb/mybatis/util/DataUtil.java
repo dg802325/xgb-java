@@ -60,4 +60,17 @@ public class DataUtil extends CodeGeneratorConfig {
     static public String date2String(Date date) {
         return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(date);
     }
+
+
+    public static List<TableInformation> xmlDataFormat(List<TableInformation> tableInformation){
+        List<TableInformation> tableColoms = new ArrayList<>();
+        tableInformation.forEach(item->{
+            if(item.getTypeName().equals("DATETIME")){
+                item.setTypeName("TIMESTAMP");
+            }
+            tableColoms.add(item);
+        });
+        return tableColoms;
+    }
+
 }
