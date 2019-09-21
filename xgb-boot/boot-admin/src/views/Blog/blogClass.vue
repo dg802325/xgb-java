@@ -1,6 +1,6 @@
 <template>
     <div>
-        <glob-breadcrumb title="${vueTableName}"/>
+        <glob-breadcrumb title="管理"/>
         <br><br>
         <glob-base-search>
             <div slot="button">
@@ -8,7 +8,7 @@
             </div>
             <el-form label-width="130px" :inline="true">
                 <el-form-item label="输入搜索：">
-${codeSearchList!}
+                    <el-input v-model="classIfication" placeholder="分类名称" clearable></el-input>
                 </el-form-item>
             </el-form>
         </glob-base-search>
@@ -21,18 +21,21 @@ ${codeSearchList!}
                 </div>
             </div>
             <div class="v-cart-title">
-                <el-button type="success" size="mini" @click="handleAdd()">${addLabel!}</el-button>
+                <el-button type="success" size="mini" @click="handleAdd()">添加</el-button>
             </div>
             <div class="table_border">
                 <el-table
                         :data="list"
                         border
                         style="width: 100%">
-${seeModelList!}
+                    <el-table-column prop="classIfication" align="center" label="分类名称" width="120px;"></el-table-column>
+                    <el-table-column prop="classType" align="center" label="分类类型" width="120px;"></el-table-column>
+                    <el-table-column prop="createTime" align="center" label="创建时间" width="240px;"></el-table-column>
+
                     <el-table-column label="操作" align="center">
                         <template slot-scope="scope">
-                            <el-button size="mini" type="primary" @click="edit${modelName!}(scope.$index)">编辑</el-button>
-                            <el-button size="mini" type="danger" @click="toDel${modelName!}(scope.$index)">删除</el-button>
+                            <el-button size="mini" type="primary" @click="editBlogClass(scope.$index)">编辑</el-button>
+                            <el-button size="mini" type="danger" @click="toDelBlogClass(scope.$index)">删除</el-button>
                         </template>
                     </el-table-column>
                 </el-table>
@@ -54,14 +57,20 @@ ${seeModelList!}
                 <div class="del-dialog-cnt">删除不可恢复，是否确定删除？</div>
                 <span slot="footer" class="dialog-footer">
                 <el-button class="el-button_1" @click="delVisible = false">取 消</el-button>
-                <el-button class="el-button_1" type="primary" @click="del${modelName!}">确 定</el-button>
+                <el-button class="el-button_1" type="primary" @click="delBlogClass">确 定</el-button>
                 </span>
             </el-dialog>
 
             <!-- 数据库连接新增框 -->
-            <el-dialog title="${addLabel!}" :visible.sync="isShowAdd" width="20%" :before-close="closeAdd">
+            <el-dialog title="添加" :visible.sync="isShowAdd" width="20%" :before-close="closeAdd">
                 <el-form ref="form"  label-width="100px">
-${addModelList!}
+                    <el-form-item label="分类名称：" required>
+                        <el-input v-model="addClassIfication" size="1" style="width:200px;"></el-input>
+                    </el-form-item>
+                    <el-form-item label="分类类型：" required>
+                        <el-input v-model="addClassType" size="1" style="width:200px;"></el-input>
+                    </el-form-item>
+
                 </el-form>
                 <span slot="footer" class="dialog-footer">
                 <el-button @click="closeAdd">取 消</el-button>
@@ -72,7 +81,13 @@ ${addModelList!}
             <!-- 数据库编辑框 -->
             <el-dialog title="修改角色" :visible.sync="isShowEdit" width="20%" :before-close="closeEdit">
                 <el-form ref="form"  label-width="100px">
-${editModelList!}
+                    <el-form-item label="分类名称：" required>
+                        <el-input v-model="blogClassInfo.ClassIfication" size="1" style="width:200px;"></el-input>
+                    </el-form-item>
+                    <el-form-item label="分类类型：" required>
+                        <el-input v-model="blogClassInfo.ClassType" size="1" style="width:200px;"></el-input>
+                    </el-form-item>
+
                 </el-form>
                 <span slot="footer" class="dialog-footer">
                 <el-button @click="closeEdit">取 消</el-button>
@@ -88,9 +103,11 @@ ${editModelList!}
         name: 'dashboard',
         data() {
             return {
-${returnModel!}
-                ${dataInfo!}
-${searchModel!}
+                addClassIfication : '',
+                addClassType : '',
+                blogClassInfo : {},
+                ClassIfication : '',
+                ClassType : '',
                 pagination:{},
                 list: [],
                 delVisible:false,
@@ -111,11 +128,13 @@ ${searchModel!}
             async requestSearch(page) {
                 let currentPage = page || 1;
                 let data = {
-${searchModelList!}
+                    classIfication : this.classIfication,
+                    classType : this.classType,
+
                     begin:currentPage,
                     end:10
                 }
-                let res = await this.$get("/admin/get${modelName!}ForPage", data)
+                let res = await this.$get("/admin/getBlogClassForPage", data)
                 if (res.code == 200) {
                     console.log("成功")
                     let list = res.lists
@@ -129,7 +148,7 @@ ${searchModelList!}
                 }
             },
             //删除显示
-            toDel${modelName!}(index) {
+            toDelBlogClass(index) {
                 this.item = this.list[index]
                 this.delVisible = true
             },
@@ -138,9 +157,11 @@ ${searchModelList!}
             },
             async saveAdd(){
                 let data= {
-${saveModel!}
+                    classIfication : this.addClassIfication,
+                    classType : this.addClassType,
+
                 }
-                let res = await this.$post("/admin/save${modelName!}", data)
+                let res = await this.$post("/admin/saveBlogClass", data)
                 if (res.code == 200) {
                     this.$message.success(res.message);
                     this.isShowAdd = false
@@ -152,9 +173,11 @@ ${saveModel!}
             //修改
             async saveEdit(){
                 let data= {
-${editModel!}
+                    classIfication : this.classIficationInfo.ClassIfication,
+                    classType : this.classTypeInfo.ClassType,
+
                 }
-                let res = await this.$post("/admin/save${modelName!}", data)
+                let res = await this.$post("/admin/saveBlogClass", data)
                 if (res.code == 200) {
                     this.$message.success(res.message);
                     this.isShowEdit = false
@@ -164,8 +187,8 @@ ${editModel!}
                 }
             },
             //删除
-            async del${modelName!}() {
-                let res = await this.$post("/admin/delete${modelName!}", {id: this.item.id})
+            async delBlogClass() {
+                let res = await this.$post("/admin/deleteBlogClass", {id: this.item.id})
                 if (res.code == 200) {
                     this.$message.success(res.message);
                     this.delVisible = false
@@ -175,9 +198,9 @@ ${editModel!}
                 }
             },
             //修改
-            edit${modelName!}(index) {
-                this.${someModelName!}Info = this.list[index]
-                console.log(this.${someModelName!}Info)
+            editBlogClass(index) {
+                this.blogClassInfo = this.list[index]
+                console.log(this.blogClassInfo)
                 this.isShowEdit = true
             },
             closeAdd(){

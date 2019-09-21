@@ -58,6 +58,7 @@ public class MapperXmlGenerator extends CodeGeneratorManager implements CodeGene
     }
 
     public String codeUpdateByKey(List<TableInformation> tableInformation){
+        tableInformation = DataUtil.xmlDataFormat(tableInformation);
         StringBuilder stringBuilder = new StringBuilder();
         String space3 = "            ";
         int size = tableInformation.size();
@@ -74,6 +75,7 @@ public class MapperXmlGenerator extends CodeGeneratorManager implements CodeGene
     }
 
     public String codeUpdateByKeySelective(List<TableInformation> tableInformation){
+        tableInformation = DataUtil.xmlDataFormat(tableInformation);
         StringBuilder stringBuilder = new StringBuilder();
         String space3 = "            ";
         String space4 = "                ";
@@ -98,6 +100,7 @@ public class MapperXmlGenerator extends CodeGeneratorManager implements CodeGene
     }
 
     public String codeUpdate(List<TableInformation> tableInformation,String tableName){
+        tableInformation = DataUtil.xmlDataFormat(tableInformation);
         StringBuilder stringBuilder = new StringBuilder();
         String space2 = "        ";
         String space3 = "            ";
@@ -118,6 +121,7 @@ public class MapperXmlGenerator extends CodeGeneratorManager implements CodeGene
 
 
     public String codeUpdateExampleSelective1(List<TableInformation> tableInformation){
+        tableInformation = DataUtil.xmlDataFormat(tableInformation);
         StringBuilder stringBuilder = new StringBuilder();
         String space3 = "            ";
         String space4 = "                ";
@@ -140,6 +144,7 @@ public class MapperXmlGenerator extends CodeGeneratorManager implements CodeGene
 
 
     public String codeInsertSelective1(List<TableInformation> tableInformation){
+        tableInformation = DataUtil.xmlDataFormat(tableInformation);
         StringBuilder stringBuilder = new StringBuilder();
         String space3 = "            ";
         String space4 = "                ";
@@ -160,6 +165,7 @@ public class MapperXmlGenerator extends CodeGeneratorManager implements CodeGene
         return stringBuilder.toString();
     }
     public String codeInsertSelective2(List<TableInformation> tableInformation){
+        tableInformation = DataUtil.xmlDataFormat(tableInformation);
         StringBuilder stringBuilder = new StringBuilder();
         String space3 = "            ";
         String space4 = "                ";
@@ -181,6 +187,7 @@ public class MapperXmlGenerator extends CodeGeneratorManager implements CodeGene
     }
 
     public String codeInsert(List<TableInformation> tableInformation,String tableName){
+        tableInformation = DataUtil.xmlDataFormat(tableInformation);
         StringBuilder stringBuilder = new StringBuilder();
         String space2 = "        ";
         String space3 = "            ";
@@ -209,6 +216,7 @@ public class MapperXmlGenerator extends CodeGeneratorManager implements CodeGene
     }
 
     public String getTableColumnName(List<TableInformation> tableInformation){
+        tableInformation = DataUtil.xmlDataFormat(tableInformation);
         StringBuilder stringBuilder = new StringBuilder();
         String space2 = "        ";
         stringBuilder.append(space2);
@@ -226,6 +234,7 @@ public class MapperXmlGenerator extends CodeGeneratorManager implements CodeGene
     }
 
     public String codeXmlMapper(List<TableInformation> tableInformation){
+        tableInformation = DataUtil.xmlDataFormat(tableInformation);
         StringBuilder stringBuilder = new StringBuilder();
         String space3 = "            ";
         //生成基础

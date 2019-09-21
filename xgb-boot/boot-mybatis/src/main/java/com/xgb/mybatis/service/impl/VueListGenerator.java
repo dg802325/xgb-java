@@ -40,14 +40,14 @@ public class VueListGenerator extends CodeGeneratorManager implements CodeGenera
         data.put("editModel",editModel(tableInformation));
         data.put("dataInfo",StringUtils.lineToHump(tableName)+"Info : {},");
         try {
-            File controllerFile = new File(path +customMapping+sysDatabases.getDirectoryPrefix()+customMapping+"vue"+customMapping+ modelName + ".vue");
+            File controllerFile = new File(path +customMapping+sysDatabases.getDirectoryPrefix()+customMapping+"vue"+customMapping+ StringUtils.lineToHump(tableName) + ".vue");
             if (!controllerFile.getParentFile().exists()) {
                 controllerFile.getParentFile().mkdirs();
             }
             cfg.getTemplate("vueList.ftl").process(data, new FileWriter(controllerFile));
-            logger.info(modelName + "vueList.java 生成成功!");
+            logger.info(modelName + "vueList.vue 生成成功!");
         } catch (Exception e) {
-            throw new RuntimeException("vueList 生成失败!", e);
+            throw new RuntimeException("vueList.vue 生成失败!", e);
         }
     }
 
@@ -115,9 +115,9 @@ public class VueListGenerator extends CodeGeneratorManager implements CodeGenera
             i++;
             if(!StringUtils.stringIsOnArray(ti.getColumnName(),columns)){
                 if(i==size){
-                    stringBuilder.append(space5).append("<el-table-column prop=\"").append(StringUtils.lineToHump(ti.getColumnName())).append("\" align=\"center\" label=\"").append(ti.getRemarks()).append("\" width=\"120px;\"></el-tab-column>");
+                    stringBuilder.append(space5).append("<el-table-column prop=\"").append(StringUtils.lineToHump(ti.getColumnName())).append("\" align=\"center\" label=\"").append(ti.getRemarks()).append("\" width=\"120px;\"></el-table-column>");
                 }else {
-                    stringBuilder.append(space5).append("<el-table-column prop=\"").append(StringUtils.lineToHump(ti.getColumnName())).append("\" align=\"center\" label=\"").append(ti.getRemarks()).append("\" width=\"120px;\"></el-tab-column>").append("\n");
+                    stringBuilder.append(space5).append("<el-table-column prop=\"").append(StringUtils.lineToHump(ti.getColumnName())).append("\" align=\"center\" label=\"").append(ti.getRemarks()).append("\" width=\"120px;\"></el-table-column>").append("\n");
                 }
             }
         }
@@ -137,11 +137,11 @@ public class VueListGenerator extends CodeGeneratorManager implements CodeGenera
             i++;
             if(!StringUtils.stringIsOnArray(ti.getColumnName(),columns)){
                 if(i==size){
-                    stringBuilder.append(space5).append("<el-form-item label=\"").append(ti.getRemarks()).append("：\" required").append("\n");
+                    stringBuilder.append(space5).append("<el-form-item label=\"").append(ti.getRemarks()).append("：\" required").append(">\n");
                     stringBuilder.append(space6).append("<el-input v-model=\"add").append(StringUtils.tableNameConvertUpperCamel(ti.getColumnName())).append("\" size=\"1\" style=\"width:200px;\"></el-input>").append("\n");
                     stringBuilder.append(space5).append("</el-form-item>");
                 }else {
-                   stringBuilder.append(space5).append("<el-form-item label=\"").append(ti.getRemarks()).append("：\" required").append("\n");
+                   stringBuilder.append(space5).append("<el-form-item label=\"").append(ti.getRemarks()).append("：\" required").append(">\n");
                    stringBuilder.append(space6).append("<el-input v-model=\"add").append(StringUtils.tableNameConvertUpperCamel(ti.getColumnName())).append("\" size=\"1\" style=\"width:200px;\"></el-input>").append("\n");
                    stringBuilder.append(space5).append("</el-form-item>").append("\n");
                 }
@@ -163,11 +163,11 @@ public class VueListGenerator extends CodeGeneratorManager implements CodeGenera
             i++;
             if(!StringUtils.stringIsOnArray(ti.getColumnName(),columns)){
                 if(i==size){
-                    stringBuilder.append(space5).append("<el-form-item label=\"").append(ti.getRemarks()).append("：\" required").append("\n");
+                    stringBuilder.append(space5).append("<el-form-item label=\"").append(ti.getRemarks()).append("：\" required").append(">\n");
                     stringBuilder.append(space6).append("<el-input v-model=\"").append(someTable).append("Info.").append(StringUtils.tableNameConvertUpperCamel(ti.getColumnName())).append("\" size=\"1\" style=\"width:200px;\"></el-input>").append("\n");
                     stringBuilder.append(space5).append("</el-form-item>");
                 }else {
-                    stringBuilder.append(space5).append("<el-form-item label=\"").append(ti.getRemarks()).append("：\" required").append("\n");
+                    stringBuilder.append(space5).append("<el-form-item label=\"").append(ti.getRemarks()).append("：\" required").append(">\n");
                     stringBuilder.append(space6).append("<el-input v-model=\"").append(someTable).append("Info.").append(StringUtils.tableNameConvertUpperCamel(ti.getColumnName())).append("\" size=\"1\" style=\"width:200px;\"></el-input>").append("\n");
                     stringBuilder.append(space5).append("</el-form-item>").append("\n");
                 }

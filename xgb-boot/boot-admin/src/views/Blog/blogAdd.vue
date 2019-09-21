@@ -12,7 +12,7 @@
                         <el-option
                                 v-for="item in classificationList"
                                 :key="item.id"
-                                :label="item.classificationName"
+                                :label="item.classIfication"
                                 :value="item.id">
                         </el-option>
                     </el-select>
@@ -21,11 +21,11 @@
                     <el-switch v-model="delivery"></el-switch>
                 </el-form-item>
                 <el-form-item label="标签">
-                    <el-checkbox-group style="margin-top: 1px;" v-model="type">
-                        <el-checkbox label="美食/餐厅线上活动" name="type"></el-checkbox>
-                        <el-checkbox label="地推活动" name="type"></el-checkbox>
-                        <el-checkbox label="线下主题活动" name="type"></el-checkbox>
-                        <el-checkbox label="单纯品牌曝光" name="type"></el-checkbox>
+                    <el-checkbox-group
+                            v-model="checkedCities"
+                            :min="0"
+                            :max="3">
+                        <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
                     </el-checkbox-group>
                 </el-form-item>
                 <el-form-item label="博客内容">
@@ -49,11 +49,13 @@
     import {quillEditor, Quill} from 'vue-quill-editor'
     import {container, ImageExtend, QuillWatch} from 'quill-image-extend-module'
     Quill.register('modules/ImageExtend', ImageExtend)
-
+    const cityOptions = ['上海', '北京', '广州', '深圳'];
     export default {
         components: {quillEditor},
         data() {
             return {
+                cities: cityOptions,
+                checkedCities: [],
                 title:'',
                 classification:'',
                 delivery:'',
@@ -92,6 +94,9 @@
             }
 
         },
+        created() {
+            this.getClassification()
+        },
         methods: {
             async onSubmit() {
                 let data = {
@@ -106,14 +111,21 @@
                 let res = await this.$post("/admin/saveBlogGarden", data)
                 console.log(res)
             },
-
+            async getClassification(){
+                let data = {
+                }
+                let res = await this.$get("/admin/getBlogClassList", data)
+                if(res.code=='200'){
+                    this.classificationList = res.lists;
+                }
+            }
 
         }
     }
 </script>
 <style>
-    .container{
-        height: 900px;
+    .item_editor{
+        height: 600px;
     }
     .but_submit{
         margin-top:80px;

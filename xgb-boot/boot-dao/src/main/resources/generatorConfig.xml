@@ -81,6 +81,8 @@
         <!--<table tableName="SYS_DATABASES"></table>-->
         <!--<table tableName="SYS_DATABASES"></table>-->
         <!--<table tableName="BBI_CHINA_DIVISION"></table>-->
-        <!--<table tableName="SYS_CHINA_DIVISION"></table>-->
+        <!--<table tableName="BLOG_CLASS"></table>-->
+        <table tableName="BLOG_GARDEN"></table>
+        <table tableName="BLOG_GARDEN_RESOURCE"></table>
     </context>
 </generatorConfiguration>
