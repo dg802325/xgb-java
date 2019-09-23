@@ -1,11 +1,13 @@
 package com.xgb.service;
 
+import com.xgb.dao.BlogGardenResourceMapper;
 import com.xgb.model.BlogGarden;
 import com.xgb.model.BlogGardenExample;
 import com.xgb.dao.BlogGardenMapper;
 
 import java.util.List;
 
+import com.xgb.model.BlogGardenResource;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,6 +24,8 @@ public class BlogGardenService {
 
 	@Autowired
     private BlogGardenMapper blogGardenMapper;
+	@Autowired
+    private BlogGardenResourceMapper blogGardenResourceMapper;
 
     public List<BlogGarden> selectAllBlogGarden(BlogGarden blogGarden,Integer begin,Integer end){
         BlogGardenExample blogGardenExample = new BlogGardenExample();
@@ -54,5 +58,9 @@ public class BlogGardenService {
         return blogGardenMapper.deleteByPrimaryKey(id);
     }
 
-
+    @Transactional
+    public int insertBlogAndResouce(BlogGarden blogGarden, BlogGardenResource blogGardenResource) {
+        blogGardenMapper.insert(blogGarden);
+        return blogGardenResourceMapper.insert(blogGardenResource);
+    }
 }

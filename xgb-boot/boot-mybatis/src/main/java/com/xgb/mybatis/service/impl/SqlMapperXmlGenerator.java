@@ -78,11 +78,11 @@ public class SqlMapperXmlGenerator extends CodeGeneratorManager implements CodeG
         for(TableInformation ti : tableInformation){
             i++;
             if(i==size){
-                stringBuilder.append(space2).append("<if ").append("test=\"").append(StringUtils.lineToHump(ti.getColumnName())).append("!=''\">").append("\n");
+                stringBuilder.append(space2).append("<if ").append("test=\"").append(StringUtils.lineToHump(ti.getColumnName())).append(" != null and ").append(StringUtils.lineToHump(ti.getColumnName())).append(" !=''\">").append("\n");
                 stringBuilder.append(space3).append("AND ").append(tn).append(".").append(ti.getColumnName()).append(" = #{").append(StringUtils.lineToHump(ti.getColumnName())).append("}\n");
                 stringBuilder.append(space2).append("</if>");
             }else {
-                stringBuilder.append(space2).append("<if ").append("test=\"").append(StringUtils.lineToHump(ti.getColumnName())).append("!=''\">").append("\n");
+                stringBuilder.append(space2).append("<if ").append("test=\"").append(StringUtils.lineToHump(ti.getColumnName())).append(" != null and ").append(StringUtils.lineToHump(ti.getColumnName())).append(" !=''\">").append("\n");
                 stringBuilder.append(space3).append("AND ").append(tn).append(".").append(ti.getColumnName()).append(" = #{").append(StringUtils.lineToHump(ti.getColumnName())).append("}\n");
                 stringBuilder.append(space2).append("</if>").append("\n");
             }

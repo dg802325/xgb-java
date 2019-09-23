@@ -197,7 +197,7 @@ public class StringUtils {
         return null;
     }
 
-
+    //数据库类型替换为java类型
     public static String builderToPathString(TableInformation tableInformation){
         if("VARCHAR".equals(tableInformation.getTypeName())){
             return "java.lang.String";
@@ -210,6 +210,19 @@ public class StringUtils {
         }
         return null;
     }
+
+    /**
+     * 数据库类型替换为mybatis许可的类型(INT转INTEGER)
+     * @param tableInformation
+     * @return
+     */
+    public static String mysqlToMysql(TableInformation tableInformation){
+        if("INTEGER".equals(tableInformation.getTypeName())||"INT".equals(tableInformation.getTypeName())){
+            return "INTEGER";
+        }
+        return null;
+    }
+
 
 
 

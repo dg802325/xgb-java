@@ -13,8 +13,10 @@
       <arg column="OOS_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="OOS_SUFFIX" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="OOS_TYPE" jdbcType="VARCHAR" javaType="java.lang.String" />
+
     </constructor>
   </resultMap>
+
   <sql id="Example_Where_Clause" >
     <where >
       <foreach collection="oredCriteria" item="criteria" separator="or" >
@@ -44,6 +46,7 @@
       </foreach>
     </where>
   </sql>
+
   <sql id="Update_By_Example_Where_Clause" >
     <where >
       <foreach collection="example.oredCriteria" item="criteria" separator="or" >
@@ -73,10 +76,11 @@
       </foreach>
     </where>
   </sql>
+
   <sql id="Base_Column_List" >
-    ID, OOS_URL, CREATE_TIME, UPDATE_TIME, CREATE_ID, UPDATE_ID, STATUS, OOS_NAME, OOS_SUFFIX, 
-    OOS_TYPE
-  </sql>
+        ID,OOS_URL,CREATE_TIME,UPDATE_TIME,CREATE_ID,UPDATE_ID,STATUS,OOS_NAME,OOS_SUFFIX,OOS_TYPE
+    </sql>
+
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.SysOssExample" >
     select
     <if test="distinct" >
@@ -91,32 +95,31 @@
       order by ${orderByClause}
     </if>
   </select>
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from SYS_OSS
-    where ID = #{id,jdbcType=VARCHAR}
+    where  ID = #{id,jdbcType=VARCHAR}
   </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
-    delete from SYS_OSS
-    where ID = #{id,jdbcType=VARCHAR}
-  </delete>
+        delete from SYS_OSS
+        where  ID = #{id,jdbcType=VARCHAR}
+    </delete>
+
   <delete id="deleteByExample" parameterType="com.xgb.model.SysOssExample" >
     delete from SYS_OSS
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
+
   <insert id="insert" parameterType="com.xgb.model.SysOss" >
-    insert into SYS_OSS (ID, OOS_URL, CREATE_TIME, 
-      UPDATE_TIME, CREATE_ID, UPDATE_ID, 
-      STATUS, OOS_NAME, OOS_SUFFIX, 
-      OOS_TYPE)
-    values (#{id,jdbcType=VARCHAR}, #{oosUrl,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{createId,jdbcType=VARCHAR}, #{updateId,jdbcType=VARCHAR}, 
-      #{status,jdbcType=VARCHAR}, #{oosName,jdbcType=VARCHAR}, #{oosSuffix,jdbcType=VARCHAR}, 
-      #{oosType,jdbcType=VARCHAR})
-  </insert>
+        insert into SYS_OSS (ID, OOS_URL, CREATE_TIME, UPDATE_TIME, CREATE_ID, UPDATE_ID, STATUS, OOS_NAME, OOS_SUFFIX, OOS_TYPE)
+        values (#{id,jdbcType=VARCHAR}, #{oosUrl,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{createId,jdbcType=VARCHAR}, #{updateId,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{oosName,jdbcType=VARCHAR}, #{oosSuffix,jdbcType=VARCHAR}, #{oosType,jdbcType=VARCHAR} )
+    </insert>
+
   <insert id="insertSelective" parameterType="com.xgb.model.SysOss" >
     insert into SYS_OSS
     <trim prefix="(" suffix=")" suffixOverrides="," >
@@ -148,7 +151,7 @@
         OOS_SUFFIX,
       </if>
       <if test="oosType != null" >
-        OOS_TYPE,
+        OOS_TYPE
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -180,70 +183,65 @@
         #{oosSuffix,jdbcType=VARCHAR},
       </if>
       <if test="oosType != null" >
-        #{oosType,jdbcType=VARCHAR},
+        #{oosType,jdbcType=VARCHAR}
       </if>
     </trim>
   </insert>
+
   <select id="countByExample" parameterType="com.xgb.model.SysOssExample" resultType="java.lang.Integer" >
     select count(*) from SYS_OSS
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
+
   <update id="updateByExampleSelective" parameterType="map" >
     update SYS_OSS
     <set >
       <if test="record.id != null" >
-        ID = #{record.id,jdbcType=VARCHAR},
+        ID = #{id,jdbcType=VARCHAR},
       </if>
       <if test="record.oosUrl != null" >
-        OOS_URL = #{record.oosUrl,jdbcType=VARCHAR},
+        OOS_URL = #{oosUrl,jdbcType=VARCHAR},
       </if>
       <if test="record.createTime != null" >
-        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.updateTime != null" >
-        UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.createId != null" >
-        CREATE_ID = #{record.createId,jdbcType=VARCHAR},
+        CREATE_ID = #{createId,jdbcType=VARCHAR},
       </if>
       <if test="record.updateId != null" >
-        UPDATE_ID = #{record.updateId,jdbcType=VARCHAR},
+        UPDATE_ID = #{updateId,jdbcType=VARCHAR},
       </if>
       <if test="record.status != null" >
-        STATUS = #{record.status,jdbcType=VARCHAR},
+        STATUS = #{status,jdbcType=VARCHAR},
       </if>
       <if test="record.oosName != null" >
-        OOS_NAME = #{record.oosName,jdbcType=VARCHAR},
+        OOS_NAME = #{oosName,jdbcType=VARCHAR},
       </if>
       <if test="record.oosSuffix != null" >
-        OOS_SUFFIX = #{record.oosSuffix,jdbcType=VARCHAR},
+        OOS_SUFFIX = #{oosSuffix,jdbcType=VARCHAR},
       </if>
       <if test="record.oosType != null" >
-        OOS_TYPE = #{record.oosType,jdbcType=VARCHAR},
+        OOS_TYPE = #{oosType,jdbcType=VARCHAR}
       </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
+
   <update id="updateByExample" parameterType="map" >
-    update SYS_OSS
-    set ID = #{record.id,jdbcType=VARCHAR},
-      OOS_URL = #{record.oosUrl,jdbcType=VARCHAR},
-      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
-      UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
-      CREATE_ID = #{record.createId,jdbcType=VARCHAR},
-      UPDATE_ID = #{record.updateId,jdbcType=VARCHAR},
-      STATUS = #{record.status,jdbcType=VARCHAR},
-      OOS_NAME = #{record.oosName,jdbcType=VARCHAR},
-      OOS_SUFFIX = #{record.oosSuffix,jdbcType=VARCHAR},
-      OOS_TYPE = #{record.oosType,jdbcType=VARCHAR}
+    update SYS_OSS set
+    ID = #{record.id,jdbcType=VARCHAR}, OOS_URL = #{record.oosUrl,jdbcType=VARCHAR}, CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP}, UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP}, CREATE_ID = #{record.createId,jdbcType=VARCHAR}, UPDATE_ID = #{record.updateId,jdbcType=VARCHAR}, STATUS = #{record.status,jdbcType=VARCHAR}, OOS_NAME = #{record.oosName,jdbcType=VARCHAR}, OOS_SUFFIX = #{record.oosSuffix,jdbcType=VARCHAR}, OOS_TYPE = #{record.oosType,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
+
   <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.SysOss" >
     update SYS_OSS
     <set >
@@ -272,22 +270,24 @@
         OOS_SUFFIX = #{oosSuffix,jdbcType=VARCHAR},
       </if>
       <if test="oosType != null" >
-        OOS_TYPE = #{oosType,jdbcType=VARCHAR},
+        OOS_TYPE = #{oosType,jdbcType=VARCHAR}
       </if>
     </set>
-    where ID = #{id,jdbcType=VARCHAR}
+    where  ID = #{id,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.xgb.model.SysOss" >
-    update SYS_OSS
-    set OOS_URL = #{oosUrl,jdbcType=VARCHAR},
-      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
-      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
-      CREATE_ID = #{createId,jdbcType=VARCHAR},
-      UPDATE_ID = #{updateId,jdbcType=VARCHAR},
-      STATUS = #{status,jdbcType=VARCHAR},
-      OOS_NAME = #{oosName,jdbcType=VARCHAR},
-      OOS_SUFFIX = #{oosSuffix,jdbcType=VARCHAR},
-      OOS_TYPE = #{oosType,jdbcType=VARCHAR}
-    where ID = #{id,jdbcType=VARCHAR}
-  </update>
+        update SYS_OSS
+        set
+            ID = #{id,jdbcType=VARCHAR},
+            OOS_URL = #{oosUrl,jdbcType=VARCHAR},
+            CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+            UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+            CREATE_ID = #{createId,jdbcType=VARCHAR},
+            UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+            STATUS = #{status,jdbcType=VARCHAR},
+            OOS_NAME = #{oosName,jdbcType=VARCHAR},
+            OOS_SUFFIX = #{oosSuffix,jdbcType=VARCHAR},
+            OOS_TYPE = #{oosType,jdbcType=VARCHAR}
+        where  ID = #{id,jdbcType=VARCHAR}
+    </update>
 </mapper>

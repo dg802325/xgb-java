@@ -3,6 +3,7 @@ package com.xgb.controller;
 import com.xgb.common.SessionUtil;
 import com.xgb.lang.DateUtils;
 import com.xgb.model.BlogGarden;
+import com.xgb.model.BlogGardenResource;
 import com.xgb.service.BlogGardenService;
 import com.xgb.utils.MyUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,7 +77,7 @@ public class BlogGardenController {
     * 保存
     * @return
     */
-//    @RequiresPermissions("BLOG:GARDEN:SAVE")
+    @RequiresPermissions("BLOG:GARDEN:SAVE")
     @PostMapping("saveBlogGarden")
     public R saveBlogGarden(BlogGarden blogGarden,String content){
         String sysUserId = SessionUtil.getSysUserId();
@@ -92,8 +93,11 @@ public class BlogGardenController {
             blogGarden.setSupport(0);
             blogGarden.setOpposition(0);
             //准备内容表
-
-            if(blogGardenService.insert(blogGarden) > 0){
+            BlogGardenResource blogGardenResource = new BlogGardenResource();
+            blogGardenResource.setId(UUIDUtils.getUUID());
+            blogGardenResource.setBlogGardenId(blogGarden.getId());
+            blogGardenResource.setContent(content);
+            if(blogGardenService.insertBlogAndResouce(blogGarden,blogGardenResource) > 0){
                 R.ok("添加成功");
             }else{
                 R.error(996,"添加失败");
