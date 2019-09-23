@@ -13,6 +13,7 @@
         <module name="boot-model" />
         <module name="boot-mybatis" />
         <module name="boot-oss" />
+        <module name="boot-pay" />
         <module name="boot-service" />
         <module name="cloud-eureka" />
         <module name="reptile-backend" />
@@ -32,6 +33,7 @@
       <module name="boot-model" target="1.8" />
       <module name="boot-mybatis" target="1.8" />
       <module name="boot-oss" target="1.8" />
+      <module name="boot-pay" target="1.8" />
       <module name="boot-service" target="8" />
       <module name="cloud-eureka" target="1.8" />
       <module name="reptile-backend" target="1.8" />
@@ -52,6 +54,7 @@
       <module name="boot-backend" options="-parameters" />
       <module name="boot-message" options="-parameters" />
       <module name="boot-oss" options="-parameters" />
+      <module name="boot-pay" options="-parameters" />
       <module name="cloud-eureka" options="-parameters" />
       <module name="reptile-backend" options="-parameters" />
       <module name="xgb-common" options="" />
