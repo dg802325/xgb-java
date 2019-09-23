@@ -66,9 +66,9 @@ public class MapperXmlGenerator extends CodeGeneratorManager implements CodeGene
         for(TableInformation ti : tableInformation){
             i++;
             if(i==size){
-                stringBuilder.append(space3).append(ti.getColumnName()).append(" = #{").append(StringUtils.lineToHump(ti.getColumnName())).append(",jdbcType=").append(ti.getTypeName()).append("}");
+                stringBuilder.append(space3).append(ti.getColumnName()).append(" = #{").append(StringUtils.lineToHump(ti.getColumnName())).append(",jdbcType=").append(StringUtils.mysqlToMysql(ti)).append("}");
             }else {
-                stringBuilder.append(space3).append(ti.getColumnName()).append(" = #{").append(StringUtils.lineToHump(ti.getColumnName())).append(",jdbcType=").append(ti.getTypeName()).append("},\n");
+                stringBuilder.append(space3).append(ti.getColumnName()).append(" = #{").append(StringUtils.lineToHump(ti.getColumnName())).append(",jdbcType=").append(StringUtils.mysqlToMysql(ti)).append("},\n");
             }
     }
         return stringBuilder.toString();
@@ -88,11 +88,11 @@ public class MapperXmlGenerator extends CodeGeneratorManager implements CodeGene
             }
             if(i==size){
                 stringBuilder.append(space3).append("<if test=\"").append(StringUtils.lineToHump(ti.getColumnName())).append(" != null\" >").append("\n");
-                stringBuilder.append(space4).append(ti.getColumnName()).append(" = #{").append(StringUtils.lineToHump(ti.getColumnName())).append(",jdbcType=").append(ti.getTypeName()).append("}").append("\n");
+                stringBuilder.append(space4).append(ti.getColumnName()).append(" = #{").append(StringUtils.lineToHump(ti.getColumnName())).append(",jdbcType=").append(StringUtils.mysqlToMysql(ti)).append("}").append("\n");
                 stringBuilder.append(space3).append("</if>");
             }else {
                 stringBuilder.append(space3).append("<if test=\"").append(StringUtils.lineToHump(ti.getColumnName())).append(" != null\" >").append("\n");
-                stringBuilder.append(space4).append(ti.getColumnName()).append(" = #{").append(StringUtils.lineToHump(ti.getColumnName())).append(",jdbcType=").append(ti.getTypeName()).append("},").append("\n");
+                stringBuilder.append(space4).append(ti.getColumnName()).append(" = #{").append(StringUtils.lineToHump(ti.getColumnName())).append(",jdbcType=").append(StringUtils.mysqlToMysql(ti)).append("},").append("\n");
                 stringBuilder.append(space3).append("</if>").append("\n");
             }
         }
@@ -131,11 +131,11 @@ public class MapperXmlGenerator extends CodeGeneratorManager implements CodeGene
             i++;
             if(i==size){
                 stringBuilder.append(space3).append("<if test=\"record.").append(StringUtils.lineToHump(ti.getColumnName())).append(" != null\" >").append("\n");
-                stringBuilder.append(space4).append(ti.getColumnName()).append(" = #{").append(StringUtils.lineToHump(ti.getColumnName())).append(",jdbcType=").append(ti.getTypeName()).append("}").append("\n");
+                stringBuilder.append(space4).append(ti.getColumnName()).append(" = #{").append(StringUtils.lineToHump(ti.getColumnName())).append(",jdbcType=").append(StringUtils.mysqlToMysql(ti)).append("}").append("\n");
                 stringBuilder.append(space3).append("</if>");
             }else {
                 stringBuilder.append(space3).append("<if test=\"record.").append(StringUtils.lineToHump(ti.getColumnName())).append(" != null\" >").append("\n");
-                stringBuilder.append(space4).append(ti.getColumnName()).append(" = #{").append(StringUtils.lineToHump(ti.getColumnName())).append(",jdbcType=").append(ti.getTypeName()).append("},").append("\n");
+                stringBuilder.append(space4).append(ti.getColumnName()).append(" = #{").append(StringUtils.lineToHump(ti.getColumnName())).append(",jdbcType=").append(StringUtils.mysqlToMysql(ti)).append("},").append("\n");
                 stringBuilder.append(space3).append("</if>").append("\n");
             }
         }
@@ -175,11 +175,11 @@ public class MapperXmlGenerator extends CodeGeneratorManager implements CodeGene
             i++;
             if(i==size){
                 stringBuilder.append(space3).append("<if test=\"").append(StringUtils.lineToHump(ti.getColumnName())).append(" != null\" >").append("\n");
-                stringBuilder.append(space4).append("#{").append(StringUtils.lineToHump(ti.getColumnName())).append(",jdbcType=").append(ti.getTypeName()).append("}").append("\n");
+                stringBuilder.append(space4).append("#{").append(StringUtils.lineToHump(ti.getColumnName())).append(",jdbcType=").append(StringUtils.mysqlToMysql(ti)).append("}").append("\n");
                 stringBuilder.append(space3).append("</if>");
             }else {
                 stringBuilder.append(space3).append("<if test=\"").append(StringUtils.lineToHump(ti.getColumnName())).append(" != null\" >").append("\n");
-                stringBuilder.append(space4).append("#{").append(StringUtils.lineToHump(ti.getColumnName())).append(",jdbcType=").append(ti.getTypeName()).append("},").append("\n");
+                stringBuilder.append(space4).append("#{").append(StringUtils.lineToHump(ti.getColumnName())).append(",jdbcType=").append(StringUtils.mysqlToMysql(ti)).append("},").append("\n");
                 stringBuilder.append(space3).append("</if>").append("\n");
             }
         }
@@ -207,9 +207,9 @@ public class MapperXmlGenerator extends CodeGeneratorManager implements CodeGene
         for(TableInformation ti : tableInformation){
             y++;
             if(y==size){
-                stringBuilder.append("#{").append(StringUtils.lineToHump(ti.getColumnName())).append(",").append("jdbcType=").append(ti.getTypeName()).append("} ").append(")");
+                stringBuilder.append("#{").append(StringUtils.lineToHump(ti.getColumnName())).append(",").append("jdbcType=").append(StringUtils.mysqlToMysql(ti)).append("} ").append(")");
             }else {
-                stringBuilder.append("#{").append(StringUtils.lineToHump(ti.getColumnName())).append(",").append("jdbcType=").append(ti.getTypeName()).append("}, ");
+                stringBuilder.append("#{").append(StringUtils.lineToHump(ti.getColumnName())).append(",").append("jdbcType=").append(StringUtils.mysqlToMysql(ti)).append("}, ");
             }
         }
         return stringBuilder.toString();
@@ -240,9 +240,9 @@ public class MapperXmlGenerator extends CodeGeneratorManager implements CodeGene
         //生成基础
         for(TableInformation ti : tableInformation){
             if("ID".equals(ti.getColumnName())){
-                stringBuilder.append(space3).append("<idArg column=").append("\"ID\" ").append("jdbcType=").append("\"").append(ti.getTypeName()).append("\" javaType=\"").append(StringUtils.builderToPathString(ti)).append("\" />").append("\n");
+                stringBuilder.append(space3).append("<idArg column=").append("\"ID\" ").append("jdbcType=").append("\"").append(StringUtils.mysqlToMysql(ti)).append("\" javaType=\"").append(StringUtils.builderToPathString(ti)).append("\" />").append("\n");
             }else {
-                stringBuilder.append(space3).append("<arg column=").append("\"").append(ti.getColumnName()).append("\" jdbcType=").append("\"").append(ti.getTypeName()).append("\" javaType=\"").append(StringUtils.builderToPathString(ti)).append("\" />").append("\n");
+                stringBuilder.append(space3).append("<arg column=").append("\"").append(ti.getColumnName()).append("\" jdbcType=").append("\"").append(StringUtils.mysqlToMysql(ti)).append("\" javaType=\"").append(StringUtils.builderToPathString(ti)).append("\" />").append("\n");
             }
         }
         return stringBuilder.toString();

@@ -14,8 +14,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
+
+import static java.math.BigDecimal.ROUND_HALF_DOWN;
+import static java.math.BigDecimal.ROUND_HALF_UP;
 
 /**
  *
@@ -126,7 +130,5 @@ public class SysUserController {
         SysUser sysUser = sysUserService.selectByPrimaryKey(sysUserId);
         return R.ok("sys",sysUser,"查询成功");
     }
-
-
 
 }
