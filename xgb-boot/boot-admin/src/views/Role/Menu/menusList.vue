@@ -22,41 +22,47 @@
                             :data="tableData"
                             style="width: 100%;margin-bottom: 20px;"
                             row-key="id"
+                            :header-cell-style="{'text-align':'center'}"
                             border
                             :tree-props="{children: 'children', hasChildren: 'hasChildren'}">
                         <el-table-column
                                 prop="menuName"
                                 label="菜单名称"
-                                width="160">
+                                width="180">
                         </el-table-column>
                         <el-table-column
+                                align="center"
                                 prop="menuUrl"
                                 label="菜单地址"
-                                width="160">
+                                width="300">
                         </el-table-column>
                         <el-table-column
+                                align="center"
                                 prop="permissionName"
                                 label="所属权限"
                                 width="160">
                         </el-table-column>
                         <el-table-column
+                                align="center"
                                 prop="sort"
                                 label="排序"
-                                width="50">
+                                width="80">
                         </el-table-column>
                         <el-table-column
+                                align="center"
                                 prop="menuType"
                                 label="标签"
                                 width="100">
                             <template slot-scope="scope">
-                                 <el-tag v-if="scope.row.menuType==='0'">目录</el-tag>
-                                 <el-tag v-if="scope.row.menuType==='1'">主菜单</el-tag>
-                                 <el-tag v-if="scope.row.menuType==='2'">子菜单</el-tag>
+                                 <el-tag v-if="scope.row.menuType==='0'" type="success">目录</el-tag>
+                                 <el-tag v-if="scope.row.menuType==='1'" type="info">主菜单</el-tag>
+                                 <el-tag v-if="scope.row.menuType==='2'" type="danger">子菜单</el-tag>
                             </template>
                         </el-table-column>
                         <el-table-column
+                                width="279px"
                                 label="操作"
-                                align="right">
+                                align="center">
                             <template slot-scope="scope">
                                 <el-button
                                         v-if="checkPermission('SYS:MENU:SAVE')"

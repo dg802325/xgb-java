@@ -22,37 +22,41 @@
                             :data="tableData"
                             style="width: 100%;margin-bottom: 20px;"
                             row-key="id"
+                            :header-cell-style="{'text-align':'center'}"
                             border
                             :tree-props="{children: 'children', hasChildren: 'hasChildren'}">
                         <el-table-column
                                 prop="permissionName"
                                 label="权限名称"
-                                width="220">
+                                width="170">
                         </el-table-column>
                         <el-table-column
+                                align="center"
                                 prop="remark"
                                 label="备注"
-                                width="200">
+                                width="160">
                         </el-table-column>
                         <el-table-column
+                                align="center"
                                 prop="permissionKey"
                                 label="权限值"
-                                width="200">
+                                width="300">
                         </el-table-column>
                         <el-table-column
+                                align="center"
                                 prop="permissionType"
                                 label="标签"
                                 width="80">
                             <template slot-scope="scope">
-                                 <el-tag v-if="scope.row.permissionType==='0'">主权限</el-tag>
-                                 <el-tag v-if="scope.row.permissionType==='1'">子权限</el-tag>
-                                 <el-tag v-if="scope.row.permissionType==='2'">附权限</el-tag>
-                                 <el-tag v-if="scope.row.permissionType==='3'">按钮</el-tag>
+                                 <el-tag v-if="scope.row.permissionType==='0'" type="success">主权限</el-tag>
+                                 <el-tag v-if="scope.row.permissionType==='1'" type="danger">子权限</el-tag>
+                                 <el-tag v-if="scope.row.permissionType==='2'" type="info">附权限</el-tag>
+                                 <el-tag v-if="scope.row.permissionType==='3'" type="warning">按钮</el-tag>
                             </template>
                         </el-table-column>
                         <el-table-column
-                                label="操作"
-                                align="right">
+                                align="center"
+                                label="操作">
                             <template slot-scope="scope">
                                 <el-button
                                         size="mini"

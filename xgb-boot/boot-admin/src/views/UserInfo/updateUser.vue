@@ -22,7 +22,7 @@
                                 <!--http://dealer.e-nongye.com.cn/group1/M00/00/00/rBEEQ11DrxKAdlyHAABpv4Ow2BU710.jpg-->
                                 <i v-else class="el-icon-plus avatar-uploader-icon"></i>
                             </el-upload>
-                            <p class="sc">上传头像</p>
+                            <p class="sc">(点击头像修改)</p>
                         </div>
                         <div style="padding-top: 70px">
                             <el-form ref="form" label-width="125px">
@@ -39,7 +39,7 @@
                                               style="margin-top: -10px;width: 300px"></el-input>
                                 </el-form-item>
                                 <el-form-item label="手机号:" required>
-                                    <el-input v-model="mobile" size="1" type="password"
+                                    <el-input v-model="mobile" size="1"
                                               style="margin-top: -10px;width: 300px"></el-input>
                                 </el-form-item>
                                 <el-form-item label="性别:" required>
@@ -203,9 +203,9 @@
 
     .sc {
         text-align: center;
-        color: #1abc9c;
-        font-size: 16px;
-        margin-top: 10px;
+        color: #f00;
+        font-size: 13px;
+        margin-top: 2px;
     }
 
     .el-button_2{
