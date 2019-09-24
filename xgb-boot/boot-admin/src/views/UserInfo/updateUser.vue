@@ -89,7 +89,6 @@
             },
             async getNowUser() {
                 let res = await this.$get("/admin/getNowUser")
-                console.log(res)
                 if (res != null) {
                     this.userName = res.sys.userName;
                     this.id = res.sys.id

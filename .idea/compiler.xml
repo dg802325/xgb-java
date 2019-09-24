@@ -33,7 +33,8 @@
       <module name="boot-mybatis" target="1.8" />
       <module name="boot-oss" target="1.8" />
       <module name="boot-pay" target="1.8" />
-      <module name="boot-service" target="1.8" />
+      <module name="boot-service" target="8" />
+      <module name="boot-web" target="1.8" />
       <module name="cloud-eureka" target="1.8" />
       <module name="reptile-backend" target="1.8" />
       <module name="reptile-dao" target="1.8" />
@@ -43,9 +44,9 @@
       <module name="xgb-cloud" target="1.8" />
       <module name="xgb-common" target="1.8" />
       <module name="xgb-java" target="1.8" />
-      <module name="xgb-mybatis" target="1.8" />
+      <module name="xgb-mybatis" target="8" />
       <module name="xgb-reptile" target="1.8" />
-      <module name="xgb-test" target="1.8" />
+      <module name="xgb-test" target="6" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

@@ -168,9 +168,7 @@
                     end:10
                 }
                 let res = await this.$get("/admin/getSysUserRoleForPage", data)
-                console.log(res)
                 if (res.code == 200) {
-                    console.log("成功")
                     let list = res.roles
                     this.list = res.roles
                     this.pagination = {

@@ -51,13 +51,16 @@ public class SysDatabaseController {
             map.put("databaseLoginPassword", MD5Util.toMd5(item.getDatabaseLoginPassword()));
             map.put("packageType",item.getPacketType());
             map.put("directoryPrefix",item.getDirectoryPrefix());
+            map.put("packageType",item.getPacketType());
+            map.put("commonPath",item.getCommonPath());
+            map.put("nickName",item.getNickName());
             lists.add(map);
         });
         int deptCount = sysDatabasesService.getDatabaseCount();
         //默认返回查询结果
         if(sysDatabases.size()>0){
             Map<String,Object> parentMap = new HashMap<String,Object>();
-            parentMap.put("roles",lists);
+            parentMap.put("lists",lists);
             parentMap.put("count",deptCount);
             return R.ok(parentMap,"成功");
         }

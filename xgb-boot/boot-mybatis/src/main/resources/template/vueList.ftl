@@ -117,7 +117,6 @@ ${searchModelList!}
                 }
                 let res = await this.$get("/admin/get${modelName!}ForPage", data)
                 if (res.code == 200) {
-                    console.log("成功")
                     let list = res.lists
                     this.list = res.lists
                     this.pagination = {
@@ -177,7 +176,6 @@ ${editModel!}
             //修改
             edit${modelName!}(index) {
                 this.${someModelName!}Info = this.list[index]
-                console.log(this.${someModelName!}Info)
                 this.isShowEdit = true
             },
             closeAdd(){

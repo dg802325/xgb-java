@@ -178,9 +178,7 @@
                     end:10
                 }
                 let res = await this.$get("/admin/getSysRoleForPage", data)
-                console.log(res)
                 if (res.code == 200) {
-                    console.log("成功")
                     let list = res.roles
                     this.list = res.roles
                     this.pagination = {
@@ -257,7 +255,6 @@
             },
             //修改权限
             async roleEdit(row){
-                console.log(row.id)
                 this.$router.push({path:'/system/editPermissions/'+row.id})
             },
         },

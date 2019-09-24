@@ -128,9 +128,7 @@
                     end:10
                 }
                 let res = await this.$get("/admin/getSysDeptForPage", data)
-                console.log(res)
                 if (res.code == 200) {
-                    console.log("成功")
                     let list = res.databases
                     this.list = res.databases
                     this.pagination = {

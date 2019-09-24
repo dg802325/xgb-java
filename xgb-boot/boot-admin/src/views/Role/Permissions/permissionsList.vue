@@ -174,7 +174,6 @@
             },
             //删除权限
             async handleDelete(index, row) {
-                console.log(index, row);
                 this.$confirm('此操作将永久删除, 是否继续?', '提示', {
                     confirmButtonText: '确定',
                     cancelButtonText: '取消',
@@ -182,7 +181,6 @@
                 }).then(async () => {
                     //删除逻辑
                     let res = await this.$post('/admin/deleteSysPermission', {id: row.id});
-                    console.log(res)
                     if (res.code == '200') {
                         this.$message({
                             type: 'success',
@@ -211,9 +209,7 @@
                     addPermissionKey: this.addPermissionKey,
                     addPermissionType: this.addPermissionType,
                 }
-                console.log(data);
                 let res = await this.$post('/admin/addSysPermission', data);
-                console.log(res);
                 if(res.code=='200'){
                     this.$message({
                         type: 'success',
@@ -236,9 +232,7 @@
                     editPermissionKey:this.editPermissionKey,
                     editRemark: this.editRemark
                 }
-                console.log(data)
                 let res = await this.$post('/admin/editSysPermission', data)
-                console.log(res);
                 if(res.code=='200'){
                     this.$message({
                         type: 'success',
@@ -264,7 +258,6 @@
                     id:'0',
                 }
                 let res = await this.$get('/admin/getSysPermission', {id:'0'})
-                console.log(res)
                 this.tableData = res;
             },
         },

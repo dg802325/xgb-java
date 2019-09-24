@@ -178,7 +178,6 @@
             //查询一级权限列表
             async getInsPermission(){
                 let res = await this.$post('/admin/getSysPermissionByMenuId', {parentId:this.addParentId})
-                console.log(res)
                 this.permissionList = res;
             },
             async handleAdd(index, row) {
@@ -210,7 +209,6 @@
             },
             async getEditPermission(){
                 let res = await this.$post('/admin/getSysPermissionByMenuId', {parentId:this.editParentId})
-                console.log(res)
                 this.permissionList = res;
             },
             async handleEdit(index, row) {
@@ -235,7 +233,6 @@
             },
             //删除权限
             async handleDelete(index, row) {
-                console.log(index, row);
                 this.$confirm('此操作将永久删除, 是否继续?', '提示', {
                     confirmButtonText: '确定',
                     cancelButtonText: '取消',
@@ -323,7 +320,6 @@
                     id:'0',
                 }
                 let res = await this.$post('/admin/getSysMenuList', {id:'0'})
-                console.log(res)
                 this.tableData = res;
             },
         },

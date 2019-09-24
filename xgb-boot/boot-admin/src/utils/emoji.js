@@ -19,7 +19,6 @@ export function emoji (value) {
     })
 
     let fileType = matchType(value)
-    console.log(fileType)
     if(fileType =='image'){
         value = `<img src="${value}" style="max-width:90%;max-height:400px"/>`
     }else if(fileType =='other'){

@@ -107,10 +107,7 @@
                     type:this.type,
                     content:this.content,
                 }
-                console.log(data)
-                console.log('submit!');
                 let res = await this.$post("/admin/saveBlogGarden", data)
-                console.log(res)
             },
             async getClassification(){
                 let data = {
