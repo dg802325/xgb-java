@@ -25,19 +25,19 @@ public class AboutGenerator extends CodeGeneratorManager implements CodeGenerato
         String modelName = StringUtils.tableNameConvertUpperCamel(tableName);
         Configuration cfg = getFreemarkerConfiguration();
         String customMapping = "/";
-        Map<String, Object> data = DataUtil.getDataMapInit(tableName, modelName,tableInformation);
+        Map<String, Object> data = DataUtil.getDataMapInit(tableName, modelName,tableInformation,sysDatabases);
         data.put("permissions",StringUtils.createPermissions(tableName));
         data.put("vueTableName",generator.getTableRemark());//表备注
         data.put("codeEntity",codeEntity(tableInformation));
-        data.put("isController",generator.getIsController());
-        data.put("isVueList",generator.getIsVueList());
+        data.put("toController",generator.getIsController());
+        data.put("toVueList",generator.getIsVueList());
         try {
             File controllerFile = new File(path +customMapping+sysDatabases.getDirectoryPrefix()+customMapping + modelName + ".txt");
             if (!controllerFile.getParentFile().exists()) {
                 controllerFile.getParentFile().mkdirs();
             }
             cfg.getTemplate("about.ftl").process(data, new FileWriter(controllerFile));
-            logger.info(modelName + "About.java 生成成功!");
+            logger.info(modelName + "About.txt 生成成功!");
         } catch (Exception e) {
             throw new RuntimeException("About 生成失败!", e);
         }

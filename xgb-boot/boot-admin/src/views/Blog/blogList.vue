@@ -117,7 +117,6 @@
                 }
                 let res = await this.$get("/admin/getBlogGardenForPage", data)
                 if (res.code == 200) {
-                    console.log("成功")
                     let list = res.roles
                     this.list = res.roles
                     this.pagination = {

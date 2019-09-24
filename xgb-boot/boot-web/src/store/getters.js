@@ -1,0 +1,9 @@
+export const firstMenu = state => state.firstMenu;
+export const twoMenu = state => state.twoMenu;
+export const cartList = state => state.cartList;
+export const token = state => state.token;
+export const member = state => state.member;
+export const regionMap = state => state.regionMap;
+export const regions = state => state.regions;
+export const location = state => state.location;
+export const code = state => state.code;

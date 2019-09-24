@@ -1,5 +1,6 @@
 package com.xgb.mybatis.util;
 
+import com.xgb.model.SysDatabases;
 import com.xgb.model.TableInformation;
 import com.xgb.mybatis.service.CodeGeneratorConfig;
 
@@ -22,7 +23,7 @@ public class DataUtil extends CodeGeneratorConfig {
      * @param modelName 自定义实体类名, 为null则默认将表名下划线转成大驼峰形式
      * @return
      */
-    public static Map<String, Object> getDataMapInit(String tableName, String modelName, List<TableInformation> tableInformation) {
+    public static Map<String, Object> getDataMapInit(String tableName, String modelName, List<TableInformation> tableInformation, SysDatabases sysDatabases) {
         boolean isString = false;
         boolean isDatetime = false;
         boolean isInt = false;
@@ -49,7 +50,7 @@ public class DataUtil extends CodeGeneratorConfig {
         data.put("isDecimal",isDecimal);
         data.put("isDate",isDate);
         data.put("date", date2String(new Date()));
-        data.put("author", AUTHOR);
+        data.put("author", sysDatabases.getNickName());
         data.put("tableName", tableName);
         data.put("modelName", modelName);
         data.put("someModelName", StringUtils.getSomeModelName(modelName));

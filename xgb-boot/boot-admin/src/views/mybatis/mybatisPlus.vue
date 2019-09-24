@@ -114,7 +114,6 @@
             async getTablesList(val){
                 this.dataId= val;
                 let res = await this.$get("/admin/getTableList",{dataId:val})
-                console.log(res)
                 if(res.code=='200'){
                     this.tableList = res.tables;
                 }
@@ -173,7 +172,6 @@
                     isController:this.isController,
                     isVueList:this.isVueList,
                 }
-                console.log(data)
                 let res = await this.$post("/admin/runGenerator",data)
                 if(res.code=='200'){
                     window.open(Base_url+"/admin/codeGeneratorDownload?dataId="+this.dataId);

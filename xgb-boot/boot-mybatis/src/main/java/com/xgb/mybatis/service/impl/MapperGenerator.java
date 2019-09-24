@@ -25,7 +25,7 @@ public class MapperGenerator extends CodeGeneratorManager implements CodeGenerat
         String modelName = StringUtils.tableNameConvertUpperCamel(tableName);
         Configuration cfg = getFreemarkerConfiguration();
         String customMapping = "/";
-        Map<String, Object> data = DataUtil.getDataMapInit(tableName, modelName,tableInformation);
+        Map<String, Object> data = DataUtil.getDataMapInit(tableName, modelName,tableInformation,sysDatabases);
         data.put("mapperPackage",sysDatabases.getDirectoryPrefix()+".dao");
         data.put("modelPackage",sysDatabases.getDirectoryPrefix()+".model");
         try {

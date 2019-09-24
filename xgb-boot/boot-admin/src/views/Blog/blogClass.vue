@@ -106,7 +106,7 @@
                 addClassIfication : '',
                 addClassType : '',
                 blogClassInfo : {},
-                ClassIfication : '',
+                classIfication : '',
                 ClassType : '',
                 pagination:{},
                 list: [],
@@ -136,7 +136,6 @@
                 }
                 let res = await this.$get("/admin/getBlogClassForPage", data)
                 if (res.code == 200) {
-                    console.log("成功")
                     let list = res.lists
                     this.list = res.lists
                     this.pagination = {
@@ -200,7 +199,6 @@
             //修改
             editBlogClass(index) {
                 this.blogClassInfo = this.list[index]
-                console.log(this.blogClassInfo)
                 this.isShowEdit = true
             },
             closeAdd(){

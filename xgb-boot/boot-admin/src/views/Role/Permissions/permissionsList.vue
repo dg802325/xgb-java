@@ -22,37 +22,41 @@
                             :data="tableData"
                             style="width: 100%;margin-bottom: 20px;"
                             row-key="id"
+                            :header-cell-style="{'text-align':'center'}"
                             border
                             :tree-props="{children: 'children', hasChildren: 'hasChildren'}">
                         <el-table-column
                                 prop="permissionName"
                                 label="权限名称"
-                                width="220">
+                                width="170">
                         </el-table-column>
                         <el-table-column
+                                align="center"
                                 prop="remark"
                                 label="备注"
-                                width="200">
+                                width="160">
                         </el-table-column>
                         <el-table-column
+                                align="center"
                                 prop="permissionKey"
                                 label="权限值"
-                                width="200">
+                                width="300">
                         </el-table-column>
                         <el-table-column
+                                align="center"
                                 prop="permissionType"
                                 label="标签"
                                 width="80">
                             <template slot-scope="scope">
-                                 <el-tag v-if="scope.row.permissionType==='0'">主权限</el-tag>
-                                 <el-tag v-if="scope.row.permissionType==='1'">子权限</el-tag>
-                                 <el-tag v-if="scope.row.permissionType==='2'">附权限</el-tag>
-                                 <el-tag v-if="scope.row.permissionType==='3'">按钮</el-tag>
+                                 <el-tag v-if="scope.row.permissionType==='0'" type="success">主权限</el-tag>
+                                 <el-tag v-if="scope.row.permissionType==='1'" type="danger">子权限</el-tag>
+                                 <el-tag v-if="scope.row.permissionType==='2'" type="info">附权限</el-tag>
+                                 <el-tag v-if="scope.row.permissionType==='3'" type="warning">按钮</el-tag>
                             </template>
                         </el-table-column>
                         <el-table-column
-                                label="操作"
-                                align="right">
+                                align="center"
+                                label="操作">
                             <template slot-scope="scope">
                                 <el-button
                                         size="mini"
@@ -170,7 +174,6 @@
             },
             //删除权限
             async handleDelete(index, row) {
-                console.log(index, row);
                 this.$confirm('此操作将永久删除, 是否继续?', '提示', {
                     confirmButtonText: '确定',
                     cancelButtonText: '取消',
@@ -178,7 +181,6 @@
                 }).then(async () => {
                     //删除逻辑
                     let res = await this.$post('/admin/deleteSysPermission', {id: row.id});
-                    console.log(res)
                     if (res.code == '200') {
                         this.$message({
                             type: 'success',
@@ -207,9 +209,7 @@
                     addPermissionKey: this.addPermissionKey,
                     addPermissionType: this.addPermissionType,
                 }
-                console.log(data);
                 let res = await this.$post('/admin/addSysPermission', data);
-                console.log(res);
                 if(res.code=='200'){
                     this.$message({
                         type: 'success',
@@ -232,9 +232,7 @@
                     editPermissionKey:this.editPermissionKey,
                     editRemark: this.editRemark
                 }
-                console.log(data)
                 let res = await this.$post('/admin/editSysPermission', data)
-                console.log(res);
                 if(res.code=='200'){
                     this.$message({
                         type: 'success',
@@ -260,7 +258,6 @@
                     id:'0',
                 }
                 let res = await this.$get('/admin/getSysPermission', {id:'0'})
-                console.log(res)
                 this.tableData = res;
             },
         },

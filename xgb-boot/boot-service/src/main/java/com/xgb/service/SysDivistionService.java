@@ -27,6 +27,11 @@ public class SysDivistionService {
     }
 
     @Transactional
+    public int insert(BbiChinaDivision bbiChinaDivision){
+        return bbiChinaDivisionMapper.insert(bbiChinaDivision);
+    }
+
+    @Transactional
     public int update(SysDivistion sysDivistion){
         return sysDivistionMapper.updateByPrimaryKey(sysDivistion);
     }

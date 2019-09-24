@@ -1,0 +1,10 @@
+export const SET_FIRSTMENU = 'SET_FIRSTMENU';
+export const SET_TWOMENU = 'SET_TWOMENU';
+export const QUERY_CART_LIST = 'QUERY_CART_LIST';
+export const SET_CART_LIST = 'SET_CART_LIST';
+export const SET_TOKEN = 'SET_TOKEN';
+export const SET_MEMBER = 'SET_MEMBER';
+export const SET_REGIONMAP = 'SET_REGIONMAP';
+export const SET_REGIONS = 'SET_REGIONS';
+export const SET_LOCATION = 'SET_LOCATION';
+export const SET_CODE = 'SET_CODE';

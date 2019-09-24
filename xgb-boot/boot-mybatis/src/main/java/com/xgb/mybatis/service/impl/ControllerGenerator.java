@@ -25,7 +25,7 @@ public class ControllerGenerator extends CodeGeneratorManager implements CodeGen
         String modelName = StringUtils.tableNameConvertUpperCamel(tableName);
         Configuration cfg = getFreemarkerConfiguration();
         String customMapping = "/";
-        Map<String, Object> data = DataUtil.getDataMapInit(tableName, modelName,tableInformation);
+        Map<String, Object> data = DataUtil.getDataMapInit(tableName, modelName,tableInformation,sysDatabases);
         data.put("modelPackage",sysDatabases.getDirectoryPrefix()+".model");
         data.put("mapperPackage",sysDatabases.getDirectoryPrefix()+".mapper");
         data.put("servicePackage",sysDatabases.getDirectoryPrefix()+".service");

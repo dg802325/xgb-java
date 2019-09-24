@@ -33,7 +33,7 @@
                     <el-table-column prop="databaseType" align="center" label="数据库类型" width="135px;"></el-table-column>
                     <el-table-column prop="databaseName" align="center" label="数据库名称" width="135px;"></el-table-column>
                     <el-table-column prop="databaseLoginName" align="center" label="账号" width="120px"></el-table-column>
-                    <el-table-column prop="nickName" align="center" label="昵称" width="120px"></el-table-column>
+                    <el-table-column prop="nickName" align="center" label="备注昵称" width="120px"></el-table-column>
                     <el-table-column prop="databaseLoginPassword" align="center" label="密码" width="160px"></el-table-column>
                     <el-table-column label="操作" align="center">
                         <template slot-scope="scope">
@@ -93,7 +93,7 @@
                         <el-input v-model="addDatabaseLoginPassword" size="1" style="width: 200px;"></el-input>
                     </el-form-item>
                     <el-form-item label="生成包类型:" required>
-                        <el-select  v-model="addPackageType" size="1" style="width: 200px;" placeholder="生成包类型" >
+                        <el-select  v-model="addPacketType" size="1" style="width: 200px;" placeholder="生成包类型" >
                             <el-option
                                     v-for="item in packageTypeList"
                                     :key="item.value"
@@ -108,7 +108,7 @@
                     <el-form-item label="工具包路径:" required>
                         <el-input v-model="addCommonPath" size="1" style="width: 200px;"></el-input>
                     </el-form-item>
-                    <el-form-item label="数据库名称:" required>
+                    <el-form-item label="文件备注名:" required>
                         <el-input v-model="addNickName" size="1" style="width: 200px;"></el-input>
                     </el-form-item>
                 </el-form>
@@ -148,7 +148,7 @@
                         <el-input v-model="databaseInfo.databaseLoginPassword" size="1" style="width: 200px;"></el-input>
                     </el-form-item>
                     <el-form-item label="生成包类型:" required>
-                        <el-select  v-model="databaseInfo.packageType" size="1" style="width: 200px;" placeholder="生成包类型" >
+                        <el-select  v-model="databaseInfo.packetType" size="1" style="width: 200px;" placeholder="生成包类型" >
                             <el-option
                                     v-for="item in packageTypeList"
                                     :key="item.value"
@@ -193,7 +193,7 @@
                 ],
                 packageTypeList:[
                     {
-                        value: '原文件',
+                        value: 'ORIGINAL',
                         label: 'Original'
                     },
                     {
@@ -207,7 +207,7 @@
                 addDatabaseName:'',
                 addDatabaseLoginName:'',
                 addDatabaseLoginPassword:'',
-                addPackageType:'',
+                addPacketType:'',
                 addDirectoryPrefix:'',
                 addCommonPath:'',
                 addNickName:'',
@@ -237,11 +237,10 @@
                     end:10
                 }
                 let res = await this.$get("/admin/getSysDatabaseForPage", data)
-                console.log(res)
                 if (res.code == 200) {
-                    console.log("成功")
-                    let list = res.roles
-                    this.list = res.roles
+                    console.log(res)
+                    let list = res.lists
+                    this.list = res.lists
                     this.pagination = {
                         count: res.count,
                         pageNumber: res.pageNumber,
@@ -266,7 +265,7 @@
                     databaseName:this.addDatabaseName,
                     databaseLoginName:this.addDatabaseLoginName,
                     databaseLoginPassword:this.addDatabaseLoginPassword,
-                    packageType:this.addPackageType,
+                    packetType:this.addPacketType,
                     directoryPrefix:this.addDirectoryPrefix,
                     nickName:this.addNickName,
                     commonPath:this.addCommonPath,
@@ -290,7 +289,7 @@
                     databaseName:this.databaseInfo.databaseName,
                     databaseLoginName:this.databaseInfo.databaseLoginName,
                     databaseLoginPassword:this.databaseInfo.databaseLoginPassword,
-                    packageType:this.databaseInfo.packageType,
+                    packetType:this.databaseInfo.packetType,
                     nickName:this.databaseInfo.nickName,
                     directoryPrefix:this.databaseInfo.directoryPrefix,
                     commonPath:this.databaseInfo.commonPath,
@@ -318,7 +317,6 @@
             //修改
             editDatabase(index) {
                 this.databaseInfo = this.list[index]
-                console.log(this.databaseInfo)
                 this.isShowEdit = true
             },
             closeAdd(){

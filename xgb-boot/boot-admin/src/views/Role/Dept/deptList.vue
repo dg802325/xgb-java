@@ -33,12 +33,14 @@
             <div class="table_border">
                 <el-table
                         :data="list"
+                        :header-cell-style="{'text-align':'center'}"
+                        :cell-style="{'text-align':'center'}"
                         border
                         style="width: 100%">
-                    <el-table-column prop="deptName" align="center" label="部门名称" width="135px;"></el-table-column>
+                    <el-table-column prop="deptName" align="center" label="部门名称" width="160px;"></el-table-column>
                     <el-table-column prop="deptCount" align="center" label="部门人数" width="135px;"></el-table-column>
                     <el-table-column prop="remark" align="center" label="部门说明" width="135px;"></el-table-column>
-                    <el-table-column prop="createTime" align="center" label="创建时间" width="160px"></el-table-column>
+                    <el-table-column prop="createTime" align="center" label="创建时间" width="200px"></el-table-column>
                     <el-table-column label="操作" align="center">
                         <template slot-scope="scope">
                             <el-button size="mini" v-if="checkPermission('SYS:DEPT:SAVE')" type="primary" @click="editUser(scope.$index)">编辑</el-button>
@@ -126,9 +128,7 @@
                     end:10
                 }
                 let res = await this.$get("/admin/getSysDeptForPage", data)
-                console.log(res)
                 if (res.code == 200) {
-                    console.log("成功")
                     let list = res.databases
                     this.list = res.databases
                     this.pagination = {
