@@ -25,7 +25,7 @@ public class AboutGenerator extends CodeGeneratorManager implements CodeGenerato
         String modelName = StringUtils.tableNameConvertUpperCamel(tableName);
         Configuration cfg = getFreemarkerConfiguration();
         String customMapping = "/";
-        Map<String, Object> data = DataUtil.getDataMapInit(tableName, modelName,tableInformation);
+        Map<String, Object> data = DataUtil.getDataMapInit(tableName, modelName,tableInformation,sysDatabases);
         data.put("permissions",StringUtils.createPermissions(tableName));
         data.put("vueTableName",generator.getTableRemark());//表备注
         data.put("codeEntity",codeEntity(tableInformation));

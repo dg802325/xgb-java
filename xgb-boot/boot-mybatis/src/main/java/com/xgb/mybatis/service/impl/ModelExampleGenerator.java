@@ -25,7 +25,7 @@ public class ModelExampleGenerator extends CodeGeneratorManager implements CodeG
         String modelName = StringUtils.tableNameConvertUpperCamel(tableName);
         Configuration cfg = getFreemarkerConfiguration();
         String customMapping = "/";
-        Map<String, Object> data = DataUtil.getDataMapInit(tableName, modelName,tableInformation);
+        Map<String, Object> data = DataUtil.getDataMapInit(tableName, modelName,tableInformation,sysDatabases);
         data.put("modelPackage",sysDatabases.getDirectoryPrefix()+".model");
         data.put("isList",true);
         data.put("codeEntityExample",codeEntityExample(tableInformation));

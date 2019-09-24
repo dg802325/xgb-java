@@ -26,7 +26,7 @@ public class SqlMapperXmlGenerator extends CodeGeneratorManager implements CodeG
         String modelName = StringUtils.tableNameConvertUpperCamel(tableName);
         Configuration cfg = getFreemarkerConfiguration();
         String customMapping = "/";
-        Map<String, Object> data = DataUtil.getDataMapInit(tableName, modelName,tableInformation);
+        Map<String, Object> data = DataUtil.getDataMapInit(tableName, modelName,tableInformation,sysDatabases);
         data.put("sqlMapperHeader",sqlMapperHeader());
         data.put("modelPackage",sysDatabases.getDirectoryPrefix()+".model");
         data.put("tn",tn);
