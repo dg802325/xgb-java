@@ -1,7 +1,9 @@
 package com.xgb.controller;
 
+import com.xgb.lang.DateUtils;
 import com.xgb.model.*;
 import com.xgb.service.SysDivistionService;
+import com.xgb.utils.UUIDUtils;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
@@ -10,10 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
+import java.util.function.Supplier;
 
 @RestController
 public class ReadExcel {
@@ -134,153 +134,135 @@ public class ReadExcel {
         return uuid.toString().replace("-", "").toUpperCase();
     }
 
-
-
-
-
     @GetMapping("testsssss")
     public String testsssss(){
-        SysChinaDivisionExample sysShengs = new SysChinaDivisionExample();
-        sysShengs.createCriteria().andParentIdEqualTo("0");
-        List<SysChinaDivision> sysShengList = sysDivistionService.selectSysByExample(sysShengs);
-        sysShengList.forEach(sysSheng->{
-            SysChinaDivisionExample sysShis = new SysChinaDivisionExample();
-            sysShis.createCriteria().andParentIdEqualTo(sysSheng.getId());
-            List<SysChinaDivision> sysShiList = sysDivistionService.selectSysByExample(sysShis);
-            if(sysShiList.size()>0){
-                sysShiList.forEach(sysShi->{
-                    SysChinaDivisionExample sysQus = new SysChinaDivisionExample();
-                    sysQus.createCriteria().andParentIdEqualTo(sysShi.getId());
-                    List<SysChinaDivision> sysQuList = sysDivistionService.selectSysByExample(sysQus);
-                    if(sysQuList.size()>0){
-                        sysQuList.forEach(sysQu->{
-                            SysChinaDivisionExample sysCuns = new SysChinaDivisionExample();
-                            sysCuns.createCriteria().andParentIdEqualTo(sysQu.getId());
-                            List<SysChinaDivision> sysCunList = sysDivistionService.selectSysByExample(sysCuns);
-                            if(sysCunList.size()>0){
-                                sysCunList.forEach(sysCun->{
-                                    String divisionName = sysSheng.getDivisionName();
-                                    String parentId = sysSheng.getParentId();
-                                    //获得bbi省级数据
-                                    BbiChinaDivisionExample bbiShengs = new BbiChinaDivisionExample();
-                                    bbiShengs.createCriteria().andParentIdEqualTo(parentId).andDivisionNameEqualTo(divisionName);
-                                    List<BbiChinaDivision> bbiChinaDivisions = sysDivistionService.selectBbiByExample(bbiShengs);
-                                    if(bbiChinaDivisions.size()>0){
-                                        //获得bbi市级数据
-                                        String bbiShi = sysShi.getDivisionName();
-                                        String bbiShipId = bbiChinaDivisions.get(0).getId();
-                                        BbiChinaDivisionExample bbiShis = new BbiChinaDivisionExample();
-                                        bbiShis.createCriteria().andParentIdEqualTo(bbiShipId).andDivisionNameEqualTo(bbiShi);
-                                        List<BbiChinaDivision> bbiShiChinaDivisions = sysDivistionService.selectBbiByExample(bbiShis);
-                                        if(bbiShiChinaDivisions.size()>0){
-                                            //获得bbi区级数据
-                                            String bbiQu = sysQu.getDivisionName();
-                                            String bbiQupId = bbiShiChinaDivisions.get(0).getId();
-                                            BbiChinaDivisionExample bbiQus = new BbiChinaDivisionExample();
-                                            bbiQus.createCriteria().andParentIdEqualTo(bbiQupId).andDivisionNameEqualTo(bbiQu);
-                                            List<BbiChinaDivision> bbiQuChinaDivisions = sysDivistionService.selectBbiByExample(bbiQus);
-                                            if(bbiQuChinaDivisions.size()>0){
-                                                //获得bbi村级数据
-                                                String bbiCun = sysCun.getDivisionName();
-                                                String bbiCunpId = bbiQuChinaDivisions.get(0).getId();
-                                                BbiChinaDivisionExample bbiCuns = new BbiChinaDivisionExample();
-                                                bbiCuns.createCriteria().andParentIdEqualTo(bbiCunpId).andDivisionNameEqualTo(bbiCun);
-                                                List<BbiChinaDivision> bbiCunChinaDivisions = sysDivistionService.selectBbiByExample(bbiCuns);
-                                                if(bbiCunChinaDivisions.size()>0){
-                                                    SysChinaDivisionExample ss = new SysChinaDivisionExample();
-                                                    ss.createCriteria().andIdEqualTo(sysCun.getId());
-                                                    sysCun.setId(bbiCunChinaDivisions.get(0).getId());
-                                                    sysCun.setParentId(bbiQuChinaDivisions.get(0).getId());
-                                                    sysDivistionService.updateSysChinaDivision(sysCun,ss);
-                                                    System.out.println("更新村--" + sysCun.getDivisionName() + "id成功");
-                                                }
-                                            }else {
-                                                SysChinaDivisionExample ss = new SysChinaDivisionExample();
-                                                ss.createCriteria().andIdEqualTo(sysCun.getId());
-                                                sysCun.setParentId(bbiQupId);
-                                                sysDivistionService.updateSysChinaDivision(sysCun,ss);
-                                                System.out.println("设置村--" + sysCun.getDivisionName() + "id成功");
-                                            }
-                                        }
-                                    }
-                                });
-                            }
-                            String divisionName = sysSheng.getDivisionName();
-                            String parentId = sysSheng.getParentId();
-                            //获得bbi省级数据
-                            BbiChinaDivisionExample bbiShengs = new BbiChinaDivisionExample();
-                            bbiShengs.createCriteria().andParentIdEqualTo(parentId).andDivisionNameEqualTo(divisionName);
-                            List<BbiChinaDivision> bbiChinaDivisions = sysDivistionService.selectBbiByExample(bbiShengs);
-                            if(bbiChinaDivisions.size()>0){
-                                //获得bbi市级数据
-                                String bbiShi = sysShi.getDivisionName();
-                                String bbiShipId = bbiChinaDivisions.get(0).getId();
-                                BbiChinaDivisionExample bbiShis = new BbiChinaDivisionExample();
-                                bbiShis.createCriteria().andParentIdEqualTo(bbiShipId).andDivisionNameEqualTo(bbiShi);
-                                List<BbiChinaDivision> bbiShiChinaDivisions = sysDivistionService.selectBbiByExample(bbiShis);
-                                if(bbiShiChinaDivisions.size()>0){
-                                    //获得bbi区级数据
-                                    String bbiQu = sysQu.getDivisionName();
-                                    String bbiQupId = bbiShiChinaDivisions.get(0).getId();
-                                    BbiChinaDivisionExample bbiQus = new BbiChinaDivisionExample();
-                                    bbiQus.createCriteria().andParentIdEqualTo(bbiQupId).andDivisionNameEqualTo(bbiQu);
-                                    List<BbiChinaDivision> bbiQuChinaDivisions = sysDivistionService.selectBbiByExample(bbiQus);
-                                    if(bbiQuChinaDivisions.size()>0){
-                                        SysChinaDivisionExample ss = new SysChinaDivisionExample();
-                                        ss.createCriteria().andIdEqualTo(sysQu.getId());
-                                        sysQu.setId(bbiQuChinaDivisions.get(0).getId());
-                                        sysQu.setParentId(bbiShiChinaDivisions.get(0).getId());
-                                        sysDivistionService.updateSysChinaDivision(sysQu,ss);
-                                        System.out.println("更新区--" + sysQu.getDivisionName() + "id成功");
-                                    }
-                                }
-                            }
-                        });
-
+        String[] sheng = {"安徽省","湖北省","重庆市","福建省","黑龙江省","湖南省","四川省","宁夏回族自治区","贵州省","山东省","浙江省","河南省","陕西省","吉林省","江西省","内蒙古自治区","云南省"};
+//        String[] sheng = {"天津市"};
+        List<String> tongji = new ArrayList<>();
+        for(String ss : sheng){
+            List<BbiChinaDivision> bbi1 = getBbi(ss);
+            List<SysChinaDivision> sys = getSys(ss);
+            int len = 0;
+            for (BbiChinaDivision bbiChinaDivision : bbi1) {
+                for (SysChinaDivision sysChinaDivision : sys) {
+                    if (bbiChinaDivision.getDivisionCode().equals(sysChinaDivision.getDivisionCode().substring(0,6))) {
+                        BbiChinaDivision bbi = new BbiChinaDivision();
+                        bbi.setId(UUIDUtils.getUUID());
+                        bbi.setDivisionCode(sysChinaDivision.getDivisionCode());
+                        bbi.setCreateTime(DateUtils.getNowDate());
+                        bbi.setDivisionName(sysChinaDivision.getDivisionName());
+                        bbi.setParentId(bbiChinaDivision.getId());
+                        int insert = sysDivistionService.insert(bbi);
+                        len++;
                     }
-                    String divisionName = sysSheng.getDivisionName();
-                    String parentId = sysSheng.getParentId();
-                    //获得bbi省级数据
-                    BbiChinaDivisionExample bbiShengs = new BbiChinaDivisionExample();
-                    bbiShengs.createCriteria().andParentIdEqualTo(parentId).andDivisionNameEqualTo(divisionName);
-                    List<BbiChinaDivision> bbiChinaDivisions = sysDivistionService.selectBbiByExample(bbiShengs);
-                    if(bbiChinaDivisions.size()>0){
-                        //获得bbi市级数据
-                        String bbiShi = sysShi.getDivisionName();
-                        String bbiShipId = bbiChinaDivisions.get(0).getId();
-                        BbiChinaDivisionExample bbiShis = new BbiChinaDivisionExample();
-                        bbiShis.createCriteria().andParentIdEqualTo(bbiShipId).andDivisionNameEqualTo(bbiShi);
-                        List<BbiChinaDivision> bbiShiChinaDivisions = sysDivistionService.selectBbiByExample(bbiShis);
-                        if(bbiShiChinaDivisions.size()>0){
-                            SysChinaDivisionExample ss = new SysChinaDivisionExample();
-                            ss.createCriteria().andIdEqualTo(sysShi.getId());
-                            sysShi.setId(bbiShiChinaDivisions.get(0).getId());
-                            sysShi.setParentId(bbiChinaDivisions.get(0).getId());
-                            sysDivistionService.updateSysChinaDivision(sysShi,ss);
-                            System.out.println("更新市--" + sysShi.getDivisionName() + "id成功");
-                        }
-                    }
-                });
+                }
             }
-            String divisionName = sysSheng.getDivisionName();
-            String parentId = sysSheng.getParentId();
-            BbiChinaDivisionExample bbiShengs = new BbiChinaDivisionExample();
-            bbiShengs.createCriteria().andParentIdEqualTo(parentId).andDivisionNameEqualTo(divisionName);
-            List<BbiChinaDivision> bbiChinaDivisions = sysDivistionService.selectBbiByExample(bbiShengs);
-            if(bbiChinaDivisions.size()>0){
-                SysChinaDivisionExample ss = new SysChinaDivisionExample();
-                ss.createCriteria().andIdEqualTo(sysSheng.getId());
-                String id = bbiChinaDivisions.get(0).getId();
-                sysSheng.setId(id);
-                sysDivistionService.updateSysChinaDivision(sysSheng,ss);
-                System.out.println("更新省--" + sysSheng.getDivisionName() + "id成功");
-            }
-
+            System.out.println(ss+"缺少：" + len);
+            tongji.add(ss+"缺少：" + len);
+        }
+        tongji.forEach(item->{
+            System.out.println(item);
         });
         return null;
     }
 
+    public List<BbiChinaDivision> getBbi(String sheng){
 
+        List<BbiChinaDivision> bshengs = new ArrayList<>();
+        List<BbiChinaDivision> bshis = new ArrayList<>();
+        List<BbiChinaDivision> bqus = new ArrayList<>();
+        List<BbiChinaDivision> bzs = new ArrayList<>();
+        int bs= 0;
+        int bh = 0;
+        int bq = 0;
+        int bz = 0;
+        BbiChinaDivisionExample bChinaDivisionExample = new BbiChinaDivisionExample();
+        bChinaDivisionExample.createCriteria().andParentIdEqualTo("0").andDivisionNameEqualTo(sheng);
+        List<BbiChinaDivision> bChinaDivisions = sysDivistionService.selectBbiByExample(bChinaDivisionExample);
+        for (BbiChinaDivision scd : bChinaDivisions){
+            bs++;
+            bshengs.add(scd);
+            BbiChinaDivisionExample hChinaDivisionExample = new BbiChinaDivisionExample();
+            hChinaDivisionExample.createCriteria().andParentIdEqualTo(scd.getId());
+            List<BbiChinaDivision> hChinaDivisions = sysDivistionService.selectBbiByExample(hChinaDivisionExample);
+            for (BbiChinaDivision hcd : hChinaDivisions){
+                bh++;
+                bshis.add(hcd);
+                BbiChinaDivisionExample qChinaDivisionExample = new BbiChinaDivisionExample();
+                qChinaDivisionExample.createCriteria().andParentIdEqualTo(hcd.getId());
+                List<BbiChinaDivision> qChinaDivisions = sysDivistionService.selectBbiByExample(qChinaDivisionExample);
+                for (BbiChinaDivision qcd : qChinaDivisions){
+                    bq++;
+                    bqus.add(qcd);
+                    BbiChinaDivisionExample zChinaDivisionExample = new BbiChinaDivisionExample();
+                    zChinaDivisionExample.createCriteria().andParentIdEqualTo(qcd.getId());
+                    List<BbiChinaDivision> zChinaDivisions = sysDivistionService.selectBbiByExample(zChinaDivisionExample);
+                    for (BbiChinaDivision zcd : zChinaDivisions){
+                        bz++;
+                        bzs.add(zcd);
+                    }
+                }
+            }
+        }
+        System.out.println("--------------sys---------------------");
+        System.out.println(bs);
+        System.out.println(bh);
+        System.out.println(bq);
+        System.out.println(bz);
+        System.out.println(bshengs);
+        System.out.println(bshis);
+        System.out.println(bqus);
+        System.out.println(bzs);
+        return bqus;
+    }
 
+    public List<SysChinaDivision> getSys(String sheng){
+        List<SysChinaDivision> sshengs = new ArrayList<>();
+        List<SysChinaDivision> sshis = new ArrayList<>();
+        List<SysChinaDivision> squs = new ArrayList<>();
+        List<SysChinaDivision> szs = new ArrayList<>();
+        int ss= 0;
+        int sh = 0;
+        int sq = 0;
+        int sz = 0;
+        SysChinaDivisionExample sChinaDivisionExample = new SysChinaDivisionExample();
+        sChinaDivisionExample.createCriteria().andParentIdEqualTo("0").andDivisionNameEqualTo(sheng);
+        List<SysChinaDivision> sChinaDivisions = sysDivistionService.selectSysByExample(sChinaDivisionExample);
+        for (SysChinaDivision scd : sChinaDivisions){
+            ss++;
+            sshengs.add(scd);
+            SysChinaDivisionExample hChinaDivisionExample = new SysChinaDivisionExample();
+            hChinaDivisionExample.createCriteria().andParentIdEqualTo(scd.getId());
+            List<SysChinaDivision> hChinaDivisions = sysDivistionService.selectSysByExample(hChinaDivisionExample);
+            for (SysChinaDivision hcd : hChinaDivisions){
+                sh++;
+                sshis.add(hcd);
+                SysChinaDivisionExample qChinaDivisionExample = new SysChinaDivisionExample();
+                qChinaDivisionExample.createCriteria().andParentIdEqualTo(hcd.getId());
+                List<SysChinaDivision> qChinaDivisions = sysDivistionService.selectSysByExample(qChinaDivisionExample);
+                for (SysChinaDivision qcd : qChinaDivisions){
+                    sq++;
+                    squs.add(qcd);
+                    SysChinaDivisionExample zChinaDivisionExample = new SysChinaDivisionExample();
+                    zChinaDivisionExample.createCriteria().andParentIdEqualTo(qcd.getId());
+                    List<SysChinaDivision> zChinaDivisions = sysDivistionService.selectSysByExample(zChinaDivisionExample);
+                    for (SysChinaDivision zcd : zChinaDivisions){
+                        sz++;
+                        szs.add(zcd);
+                    }
+                }
+            }
+        }
+        System.out.println("--------------sys---------------------");
+        System.out.println(ss);
+        System.out.println(sh);
+        System.out.println(sq);
+        System.out.println(sz);
+        System.out.println(sshengs);
+        System.out.println(sshis);
+        System.out.println(squs);
+        System.out.println(szs);
+        return szs;
+    }
 
 }

@@ -13,7 +13,6 @@
         <module name="boot-model" />
         <module name="boot-mybatis" />
         <module name="boot-oss" />
-        <module name="boot-pay" />
         <module name="boot-service" />
         <module name="cloud-eureka" />
         <module name="reptile-backend" />
