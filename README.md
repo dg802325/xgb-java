@@ -20,7 +20,7 @@
         2. 生成Mapper和MapperXml --已完成 (另加 SqlMapper 和 SqlMapperXml 用于写拓展 Sql 语句 可选择不生成)
         3. 生成Service --已完成
         4. 生成Controller --已完成
-        5. 生成一个带增删改(窗口化)查的Vue页面 --进行中 --90%
+        5. 生成一个带增删改(窗口化)查的Vue页面 --已完成
     + 使用方法在项目下的文档中。
 2. xgm-mybatis 代码生成工具 下面简单介绍下
     + 项目借鉴自 https://github.com/fenglibin/CodeGenerator 找了很久的代码生成工具，感觉这个还是最简单易懂的，
