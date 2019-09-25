@@ -30,7 +30,6 @@
                 </el-form-item>
                 <el-form-item label="博客内容">
                     <quill-editor
-                            class="item_editor"
                             v-model="content"
                             ref="myQuillEditor"
                             :options="editorOption">
