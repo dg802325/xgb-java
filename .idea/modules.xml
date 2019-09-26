@@ -10,6 +10,10 @@
       <module fileurl="file://$PROJECT_DIR$/xgb-boot/boot-oss/boot-oss.iml" filepath="$PROJECT_DIR$/xgb-boot/boot-oss/boot-oss.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-boot/boot-service/boot-service.iml" filepath="$PROJECT_DIR$/xgb-boot/boot-service/boot-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-cloud/cloud-eureka/cloud-eureka.iml" filepath="$PROJECT_DIR$/xgb-cloud/cloud-eureka/cloud-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xgb-cloud/cloud-member/cloud-member.iml" filepath="$PROJECT_DIR$/xgb-cloud/cloud-member/cloud-member.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xgb-cloud/cloud-oss/cloud-oss.iml" filepath="$PROJECT_DIR$/xgb-cloud/cloud-oss/cloud-oss.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xgb-cloud/cloud-pay/cloud-pay.iml" filepath="$PROJECT_DIR$/xgb-cloud/cloud-pay/cloud-pay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xgb-cloud/cloud-zuul/cloud-zuul.iml" filepath="$PROJECT_DIR$/xgb-cloud/cloud-zuul/cloud-zuul.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-reptile/reptile-backend/reptile-backend.iml" filepath="$PROJECT_DIR$/xgb-reptile/reptile-backend/reptile-backend.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-reptile/reptile-dao/reptile-dao.iml" filepath="$PROJECT_DIR$/xgb-reptile/reptile-dao/reptile-dao.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-reptile/reptile-model/reptile-model.iml" filepath="$PROJECT_DIR$/xgb-reptile/reptile-model/reptile-model.iml" />

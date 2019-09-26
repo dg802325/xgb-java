@@ -19,8 +19,6 @@
         <module>boot-oss</module>
         <module>boot-mybatis</module>
         <module>boot-message</module>
-        <module>boot-pay</module>
-        <module>boot-web</module>
     </modules>
     <dependencies>
         <dependency>

@@ -15,6 +15,10 @@
         <module name="boot-oss" />
         <module name="boot-service" />
         <module name="cloud-eureka" />
+        <module name="cloud-member" />
+        <module name="cloud-oss" />
+        <module name="cloud-pay" />
+        <module name="cloud-zuul" />
         <module name="reptile-backend" />
         <module name="reptile-dao" />
         <module name="reptile-model" />
@@ -34,6 +38,11 @@
       <module name="boot-oss" target="1.8" />
       <module name="boot-service" target="8" />
       <module name="cloud-eureka" target="1.8" />
+      <module name="cloud-member" target="1.8" />
+      <module name="cloud-order" target="1.8" />
+      <module name="cloud-oss" target="1.8" />
+      <module name="cloud-pay" target="1.8" />
+      <module name="cloud-zuul" target="1.8" />
       <module name="reptile-backend" target="1.8" />
       <module name="reptile-dao" target="1.8" />
       <module name="reptile-model" target="1.8" />
@@ -53,6 +62,8 @@
       <module name="boot-message" options="-parameters" />
       <module name="boot-oss" options="-parameters" />
       <module name="cloud-eureka" options="-parameters" />
+      <module name="cloud-member" options="-parameters" />
+      <module name="cloud-order" options="-parameters" />
       <module name="reptile-backend" options="-parameters" />
       <module name="xgb-common" options="" />
       <module name="xgb-test" options="" />

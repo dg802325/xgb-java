@@ -11,7 +11,13 @@
         <option value="$PROJECT_DIR$/xgb-blog/blog-backend/pom.xml" />
         <option value="$PROJECT_DIR$/xgb-blog/blog-dao/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/xgb-cloud/cloud-order/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/xgb-cloud/cloud-order/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
