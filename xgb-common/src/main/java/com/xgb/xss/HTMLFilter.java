@@ -42,7 +42,7 @@ import java.util.regex.Pattern;
  */
 public final class HTMLFilter {
 
-    /** regex flag union representing /si modifiers in php **/
+    /** regex flag b2bUnion representing /si modifiers in php **/
     private static final int REGEX_FLAGS_SI = Pattern.CASE_INSENSITIVE | Pattern.DOTALL;
     private static final Pattern P_COMMENTS = Pattern.compile("<!--(.*?)-->", Pattern.DOTALL);
     private static final Pattern P_COMMENT = Pattern.compile("^!--(.*)--$", REGEX_FLAGS_SI);

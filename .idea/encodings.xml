@@ -9,12 +9,12 @@
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-model" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-mybatis" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-oss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-boot/boot-pay" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-web" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-cloud" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-cloud/cloud-eureka" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-cloud/cloud-member" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/xgb-cloud/cloud-order" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-cloud/cloud-oss" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-cloud/cloud-pay" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-cloud/cloud-zuul" charset="UTF-8" />

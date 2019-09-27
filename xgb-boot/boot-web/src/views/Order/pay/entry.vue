@@ -142,8 +142,8 @@ export default {
       // this.$router.push('/wxpay/'+this.orderId)
     },
     unionPay(){
-      // this.open('/union/'+this.orderId+'/'+this.amountPayable);
-      this.$router.push('/union/'+this.orderId+'/'+this.amountPayable)
+      // this.open('/b2bUnion/'+this.orderId+'/'+this.amountPayable);
+      this.$router.push('/b2bUnion/'+this.orderId+'/'+this.amountPayable)
     },
     alPay(){
       // this.visible = true;
