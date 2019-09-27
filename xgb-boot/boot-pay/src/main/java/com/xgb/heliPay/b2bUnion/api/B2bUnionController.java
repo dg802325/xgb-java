@@ -1,5 +1,6 @@
 package com.xgb.heliPay.b2bUnion.api;
 
+import com.xgb.heliPay.b2bUnion.service.Disguiser;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,7 +16,7 @@ import java.util.Set;
  * @Description:
  */
 @RestController
-public class B2bUnionController {
+public class B2bUnionController extends B2bUnionBase {
 
     @ResponseBody
     @RequestMapping(value = "/toEntryResult")
@@ -42,7 +43,7 @@ public class B2bUnionController {
         System.out.println("---商户编号---："+"C1800537538");
         System.out.println("---签名密钥---："+"MFFKNSpVggyKdFXXGhKEg7QoS4nWssUA");
         System.out.println("---待签名串---："+valuepinjie);
-        String sign = IncomingDisguiser.disguiseMD5(valuepinjie);
+        String sign = Disguiser.disguiseMD5(valuepinjie);
         System.out.println("-----加密sign串：" + sign);
         sPara.put("sign", sign);
 
