@@ -105,7 +105,7 @@ export default new Router({
           meta: {title:'支付订单'}
         },
         {
-          path: 'union/:orderId/:amountPayable',
+          path: 'b2bUnion/:orderId/:amountPayable',
           component: () => import('./views/Order/pay/union.vue'),
           meta: {title:'支付订单'}
         },

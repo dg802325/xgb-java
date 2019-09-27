@@ -118,14 +118,14 @@ export default {
   methods: {
     // 确认支付
     async confirmPay() {
-      // this.$router.push('/order/success/union/'+ this.amountPayable)
+      // this.$router.push('/order/success/b2bUnion/'+ this.amountPayable)
       // return;
       let res = await this.$post('/api/confirmPay',{
         ocSettlementId:this.ocSettlementId,
         validateCode: this.validateCode
       })
       if(res.code==='200'){
-        this.$router.push('/order/success/union/'+this.amountPayable)
+        this.$router.push('/order/success/b2bUnion/'+this.amountPayable)
       }else{
         this.$message.warning(res.message);
       }

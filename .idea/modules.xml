@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/xgb-boot/boot-model/boot-model.iml" filepath="$PROJECT_DIR$/xgb-boot/boot-model/boot-model.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-boot/boot-mybatis/boot-mybatis.iml" filepath="$PROJECT_DIR$/xgb-boot/boot-mybatis/boot-mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-boot/boot-oss/boot-oss.iml" filepath="$PROJECT_DIR$/xgb-boot/boot-oss/boot-oss.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xgb-boot/boot-pay/boot-pay.iml" filepath="$PROJECT_DIR$/xgb-boot/boot-pay/boot-pay.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-boot/boot-service/boot-service.iml" filepath="$PROJECT_DIR$/xgb-boot/boot-service/boot-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-cloud/cloud-eureka/cloud-eureka.iml" filepath="$PROJECT_DIR$/xgb-cloud/cloud-eureka/cloud-eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-cloud/cloud-member/cloud-member.iml" filepath="$PROJECT_DIR$/xgb-cloud/cloud-member/cloud-member.iml" />
