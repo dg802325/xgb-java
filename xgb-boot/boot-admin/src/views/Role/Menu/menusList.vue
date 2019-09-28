@@ -115,13 +115,13 @@
             </span>
         </el-dialog>
 
-        <el-dialog title="编辑权限" :visible.sync="isShowEdit" width="20%" :before-close="closeEdit">
+        <el-dialog title="编辑菜单" :visible.sync="isShowEdit" width="20%" :before-close="closeEdit">
             <el-form ref="form"  label-width="100px">
                 <el-input v-if="notShow" v-model="editMenuId"></el-input>
                 <el-form-item label="菜单名称:" required>
                     <el-input v-model="editMenuName" size="1" style="width: 200px;"></el-input>
                 </el-form-item>
-                <el-form-item v-if="!editMenuType==1" label="菜单地址:" required>
+                <el-form-item label="菜单地址:" required>
                     <el-input v-model="editMenuUrl" size="1" style="width: 200px;"></el-input>
                 </el-form-item>
                 <el-form-item label="所属权限:" required>
@@ -212,16 +212,8 @@
                 this.permissionList = res;
             },
             async handleEdit(index, row) {
-                if(!row.menuType){
-                    this.editMenuType = '0'
-                    this.editParentId='0';
-                }else if(row.menuType=='0'){
-                    this.editMenuType = '1'
-                    this.editParentId=row.id;
-                }else if(row.menuType=='1') {
-                    this.editMenuType = '2'
-                    this.editParentId=row.id;
-                }
+                console.log(row)
+                this.editMenuType = row.menuType
                 this.editMenuId=row.id
                 this.editMenuName = row.menuName
                 this.editParentId = row.parentId

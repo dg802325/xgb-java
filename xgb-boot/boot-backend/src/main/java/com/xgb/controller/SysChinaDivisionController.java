@@ -4,6 +4,7 @@ import com.xgb.lang.R;
 import com.xgb.model.SysChinaDivision;
 import com.xgb.model.SysChinaDivisionExample;
 import com.xgb.service.SysChinaDivistionService;
+import com.xgb.utils.MyUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,10 @@ public class SysChinaDivisionController {
     @Autowired
     private SysChinaDivistionService sysChinaDivistionService;
 
+    /**
+     * 获得省
+     * @return
+     */
     @GetMapping("getProvinceList")
     public R getProvinceList(){
         logger.info("------request-address----------------：/admin/getProvinceList");
@@ -40,6 +45,10 @@ public class SysChinaDivisionController {
         return R.ok(parentMap,"查询成功");
     }
 
+    /**
+     * 根据省获得市
+     * @return
+     */
     @GetMapping("getCityList")
     public R getCityList(String parentId){
         logger.info("------request-address----------------：/admin/getCityList");
@@ -51,6 +60,10 @@ public class SysChinaDivisionController {
         return R.ok(parentMap,"查询成功");
     }
 
+    /**
+     * 根据市获得区
+     * @return
+     */
     @GetMapping("getAreaList")
     public R getAreaList(String parentId){
         logger.info("------request-address----------------：/admin/getAreaList");
@@ -62,6 +75,10 @@ public class SysChinaDivisionController {
         return R.ok(parentMap,"查询成功");
     }
 
+    /**
+     * 根据区获得村
+     * @return
+     */
     @GetMapping("getVillageList")
     public R getVillageList(String parentId){
         logger.info("------request-address----------------：/admin/getVillageList");
@@ -70,6 +87,23 @@ public class SysChinaDivisionController {
         List<SysChinaDivision> sysChinaDivisions = sysChinaDivistionService.selectSysByExample(sysChinaDivisionExample);
         Map<String,Object> parentMap = new HashMap<String,Object>();
         parentMap.put("lists",sysChinaDivisions);
+        return R.ok(parentMap,"查询成功");
+    }
+
+    /**
+     * 根据区获得合利宝区编码
+     * @param id
+     * @return
+     */
+    @GetMapping("getRegionCode")
+    public R getRegionCode(String id){
+        logger.info("------request-address----------------：/admin/getRegionCode");
+        if(MyUtils.isEmpty(id)){
+            return R.error(996,"id为空");
+        }
+        SysChinaDivision sysChinaDivision = sysChinaDivistionService.selectByPrimaryKey(id);
+        Map<String,Object> parentMap = new HashMap<String,Object>();
+        parentMap.put("code",sysChinaDivision.getHlbDivisionCode());
         return R.ok(parentMap,"查询成功");
     }
 

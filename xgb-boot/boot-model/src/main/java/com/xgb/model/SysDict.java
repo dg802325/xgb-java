@@ -7,7 +7,7 @@ public class SysDict {
 
     private String dictName;
 
-    private String dictTyp;
+    private String dictType;
 
     private String dictCode;
 
@@ -17,7 +17,7 @@ public class SysDict {
 
     private String remark;
 
-    private Byte status;
+    private String status;
 
     private Date createTime;
 
@@ -27,12 +27,34 @@ public class SysDict {
 
     private String updateId;
 
+    private String parentId;
+
+    public SysDict(String id, String dictName, String dictType, String dictCode, String dictValue, Integer sort, String remark, String status, Date createTime, Date updateTime, String createId, String updateId, String parentId) {
+        this.id = id;
+        this.dictName = dictName;
+        this.dictType = dictType;
+        this.dictCode = dictCode;
+        this.dictValue = dictValue;
+        this.sort = sort;
+        this.remark = remark;
+        this.status = status;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+        this.createId = createId;
+        this.updateId = updateId;
+        this.parentId = parentId;
+    }
+
+    public SysDict() {
+        super();
+    }
+
     public String getId() {
         return id;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.id = id == null ? null : id.trim();
     }
 
     public String getDictName() {
@@ -40,15 +62,15 @@ public class SysDict {
     }
 
     public void setDictName(String dictName) {
-        this.dictName = dictName;
+        this.dictName = dictName == null ? null : dictName.trim();
     }
 
-    public String getDictTyp() {
-        return dictTyp;
+    public String getDictType() {
+        return dictType;
     }
 
-    public void setDictTyp(String dictTyp) {
-        this.dictTyp = dictTyp;
+    public void setDictType(String dictType) {
+        this.dictType = dictType == null ? null : dictType.trim();
     }
 
     public String getDictCode() {
@@ -56,7 +78,7 @@ public class SysDict {
     }
 
     public void setDictCode(String dictCode) {
-        this.dictCode = dictCode;
+        this.dictCode = dictCode == null ? null : dictCode.trim();
     }
 
     public String getDictValue() {
@@ -64,7 +86,7 @@ public class SysDict {
     }
 
     public void setDictValue(String dictValue) {
-        this.dictValue = dictValue;
+        this.dictValue = dictValue == null ? null : dictValue.trim();
     }
 
     public Integer getSort() {
@@ -80,15 +102,15 @@ public class SysDict {
     }
 
     public void setRemark(String remark) {
-        this.remark = remark;
+        this.remark = remark == null ? null : remark.trim();
     }
 
-    public Byte getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Byte status) {
-        this.status = status;
+    public void setStatus(String status) {
+        this.status = status == null ? null : status.trim();
     }
 
     public Date getCreateTime() {
@@ -112,7 +134,7 @@ public class SysDict {
     }
 
     public void setCreateId(String createId) {
-        this.createId = createId;
+        this.createId = createId == null ? null : createId.trim();
     }
 
     public String getUpdateId() {
@@ -120,6 +142,14 @@ public class SysDict {
     }
 
     public void setUpdateId(String updateId) {
-        this.updateId = updateId;
+        this.updateId = updateId == null ? null : updateId.trim();
+    }
+
+    public String getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(String parentId) {
+        this.parentId = parentId == null ? null : parentId.trim();
     }
 }

@@ -1,7 +1,5 @@
 package com.xgb.heliPay.utils;
 
-import com.helipay.demo.action.DemoBase;
-
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -75,8 +73,5 @@ public class Disguiser {
 		return ConvertUtils.toHex(md.digest(value));
 	}
 
-	public static void main(String[] args) {
-           System.out.println(disguiseMD5("&MerchantSettlement&0003&E1800010627&p_20171222191544&" + "fd95Gv3ZAGE02kv8oTM6yFfMKeU63XW0"));
-	}
 
 }

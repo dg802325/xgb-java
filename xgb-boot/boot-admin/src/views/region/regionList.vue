@@ -2,14 +2,6 @@
     <div>
         <glob-breadcrumb title="地域4级联动"/>
         <br><br>
-        <!--<div class="z-di-cc">-->
-            <!--<div class="z-space-cc">-->
-                <!--<el-steps :space="340" :active="1" finish-status="success" align-center>-->
-                    <!--<el-step title="选择物资分类"></el-step>-->
-                    <!--<el-step title="填写物资信息"></el-step>-->
-                <!--</el-steps>-->
-            <!--</div>-->
-        <!--</div>-->
         <!--内容-->
         <div class="content-cc container">
             <!--右侧栏-->
@@ -107,11 +99,6 @@
                     </p>
                     <div class="c-bottom">
                     </div>
-                    <!--<div>-->
-                        <!--<el-button type="primary" size="15" @click="toWriteSkuInfo"-->
-                                   <!--style="margin-top: 35px;margin-left: 285px;width: 200px;background-color: #33d0b2">下一步, 填写物资信息-->
-                        <!--</el-button>-->
-                    <!--</div>-->
                     <br/>
                 </div>
             </div>
@@ -186,20 +173,6 @@
                 })
 
             },
-            // async toWriteSkuInfo() {
-            //     if (!this.threeCategoryId) {
-            //         this.$message.info("请选择三级分类!")
-            //         return;
-            //     }
-            //     let data = {
-            //         categoryOneId: this.oneCategoryId,
-            //         categoryTwoId: this.twoCategoryId,
-            //         categoryThreeId : this.threeCategoryId,
-            //     }
-            //     // this.$router.push('/addGoodInformation/' + this.threeCategoryId)
-            //     this.$router.push('/stock/resourceManagement/addGoodInformation/' + this.threeCategoryId)
-            //     console.log(this.threeCategoryId)
-            // }
         }
 
     }

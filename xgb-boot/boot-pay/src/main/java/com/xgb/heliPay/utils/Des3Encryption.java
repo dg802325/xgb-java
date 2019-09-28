@@ -45,11 +45,4 @@ public class Des3Encryption  {
 	}
 
 
-    public static void main(String[] args) throws UnsupportedEncodingException {
-        String key = "sv0MZSKWy7AaHRIESbr0nbrj";
-        String src = "16864110548832799";
-        String end = Des3Encryption.encode(key, src);
-        System.out.println(src.equals(Des3Encryption.decode(key, end)));
-    }
-
 }

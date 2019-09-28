@@ -2,6 +2,7 @@ package com.xgb.controller;
 
 import com.xgb.lang.R;
 import com.xgb.model.SysDict;
+import com.xgb.model.SysDictExample;
 import com.xgb.service.SysDictService;
 import com.xgb.utils.MyUtils;
 import com.xgb.utils.UUIDUtils;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -31,30 +33,48 @@ public class SysDictController {
 
 
     /**
-    * 列表分页查询
+    * 查询一级字典表
     * @return
     */
-    @RequiresPermissions("SYS:DICT:MENU")
-    @GetMapping(value = "getSysDictForPage")
-    public R getSysDictForPage(@RequestParam Map mapParam) {
-        logger.info("------request-address----------------：/admin/getSysDictForPage");
-        Map<String,Object> map = new HashMap<String,Object>();
-        int begin = Integer.valueOf(mapParam.get("begin").toString());
-        int end = Integer.valueOf(mapParam.get("end").toString());
-        //查询代码
-
+//    @RequiresPermissions("SYS:DICT:MENU")
+    @GetMapping(value = "getOneDictList")
+    public R getOneDictList() {
+        logger.info("------request-address----------------：/admin/getOneDictList");
+        SysDictExample sysDictExample = new SysDictExample();
+        sysDictExample.createCriteria().andDictTypeEqualTo("0");
+        List<SysDict> sysDicts = sysDictService.selectByExample(sysDictExample);
+        Map<String,Object> parentMap = new HashMap<String,Object>();
         //默认返回查询结果
-        return R.error(996,"未找到内容");
+        parentMap.put("lists",sysDicts);
+
+        return R.ok(parentMap,"查询成功");
     }
 
     /**
-    * 保存
+     * 查询二级字典表
+     * @return
+     */
+//    @RequiresPermissions("SYS:DICT:MENU")
+    @GetMapping(value = "getTwoDictList")
+    public R getTwoDictList(String parentId) {
+        logger.info("------request-address----------------：/admin/getTwoDictList");
+        SysDictExample sysDictExample = new SysDictExample();
+        sysDictExample.createCriteria().andParentIdEqualTo(parentId);
+        List<SysDict> sysDicts = sysDictService.selectByExample(sysDictExample);
+        Map<String,Object> parentMap = new HashMap<String,Object>();
+        //默认返回查询结果
+        parentMap.put("lists",sysDicts);
+        return R.ok(parentMap,"查询成功");
+    }
+
+    /**
+    * 新增/编辑一级字典
     * @return
     */
-    @RequiresPermissions("SYS:DICT:SAVE")
-    @PostMapping("save_sysDict")
+//    @RequiresPermissions("SYS:DICT:SAVE")
+    @PostMapping("saveSysDict")
     public R saveSysDict(SysDict sysDict){
-        logger.info("------request-address----------------：/admin/save_sysDict");
+        logger.info("------request-address----------------：/admin/saveSysDict");
         Map<String,Object> map = new HashMap<String,Object>();
         if(MyUtils.isEmpty(sysDict.getId())){
             sysDict.setId(UUIDUtils.getUUID());
@@ -78,9 +98,9 @@ public class SysDictController {
     * @return
     */
     @RequiresPermissions("SYS:DICT:DELETE")
-    @PostMapping("delete_sysDict")
+    @PostMapping("deleteSysDict")
     public R deleteSysDict(SysDict sysDict) {
-        logger.info("------request-address-----------------：/admin/delete_sysDict");
+        logger.info("------request-address-----------------：/admin/deleteSysDict");
         Map<String,Object> map = new HashMap<String,Object>();
         int delete = sysDictService.deleteByPrimaryKey(sysDict.getId());
         if(delete>0){

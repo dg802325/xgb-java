@@ -26,6 +26,10 @@ public class SysChinaDivistionService {
         return sysChinaDivisionMapper.updateByPrimaryKeySelective(sysDivistion);
     }
 
+    public SysChinaDivision selectByPrimaryKey(String id){
+        return sysChinaDivisionMapper.selectByPrimaryKey(id);
+    }
+
 
 
     public List<SysChinaDivision> selectSysByExample(SysChinaDivisionExample example){

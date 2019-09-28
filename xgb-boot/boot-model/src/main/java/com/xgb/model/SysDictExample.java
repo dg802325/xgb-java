@@ -245,73 +245,73 @@ public class SysDictExample {
             return (Criteria) this;
         }
 
-        public Criteria andDictTypIsNull() {
-            addCriterion("DICT_TYP is null");
+        public Criteria andDictTypeIsNull() {
+            addCriterion("DICT_TYPE is null");
             return (Criteria) this;
         }
 
-        public Criteria andDictTypIsNotNull() {
-            addCriterion("DICT_TYP is not null");
+        public Criteria andDictTypeIsNotNull() {
+            addCriterion("DICT_TYPE is not null");
             return (Criteria) this;
         }
 
-        public Criteria andDictTypEqualTo(String value) {
-            addCriterion("DICT_TYP =", value, "dictTyp");
+        public Criteria andDictTypeEqualTo(String value) {
+            addCriterion("DICT_TYPE =", value, "dictType");
             return (Criteria) this;
         }
 
-        public Criteria andDictTypNotEqualTo(String value) {
-            addCriterion("DICT_TYP <>", value, "dictTyp");
+        public Criteria andDictTypeNotEqualTo(String value) {
+            addCriterion("DICT_TYPE <>", value, "dictType");
             return (Criteria) this;
         }
 
-        public Criteria andDictTypGreaterThan(String value) {
-            addCriterion("DICT_TYP >", value, "dictTyp");
+        public Criteria andDictTypeGreaterThan(String value) {
+            addCriterion("DICT_TYPE >", value, "dictType");
             return (Criteria) this;
         }
 
-        public Criteria andDictTypGreaterThanOrEqualTo(String value) {
-            addCriterion("DICT_TYP >=", value, "dictTyp");
+        public Criteria andDictTypeGreaterThanOrEqualTo(String value) {
+            addCriterion("DICT_TYPE >=", value, "dictType");
             return (Criteria) this;
         }
 
-        public Criteria andDictTypLessThan(String value) {
-            addCriterion("DICT_TYP <", value, "dictTyp");
+        public Criteria andDictTypeLessThan(String value) {
+            addCriterion("DICT_TYPE <", value, "dictType");
             return (Criteria) this;
         }
 
-        public Criteria andDictTypLessThanOrEqualTo(String value) {
-            addCriterion("DICT_TYP <=", value, "dictTyp");
+        public Criteria andDictTypeLessThanOrEqualTo(String value) {
+            addCriterion("DICT_TYPE <=", value, "dictType");
             return (Criteria) this;
         }
 
-        public Criteria andDictTypLike(String value) {
-            addCriterion("DICT_TYP like", value, "dictTyp");
+        public Criteria andDictTypeLike(String value) {
+            addCriterion("DICT_TYPE like", value, "dictType");
             return (Criteria) this;
         }
 
-        public Criteria andDictTypNotLike(String value) {
-            addCriterion("DICT_TYP not like", value, "dictTyp");
+        public Criteria andDictTypeNotLike(String value) {
+            addCriterion("DICT_TYPE not like", value, "dictType");
             return (Criteria) this;
         }
 
-        public Criteria andDictTypIn(List<String> values) {
-            addCriterion("DICT_TYP in", values, "dictTyp");
+        public Criteria andDictTypeIn(List<String> values) {
+            addCriterion("DICT_TYPE in", values, "dictType");
             return (Criteria) this;
         }
 
-        public Criteria andDictTypNotIn(List<String> values) {
-            addCriterion("DICT_TYP not in", values, "dictTyp");
+        public Criteria andDictTypeNotIn(List<String> values) {
+            addCriterion("DICT_TYPE not in", values, "dictType");
             return (Criteria) this;
         }
 
-        public Criteria andDictTypBetween(String value1, String value2) {
-            addCriterion("DICT_TYP between", value1, value2, "dictTyp");
+        public Criteria andDictTypeBetween(String value1, String value2) {
+            addCriterion("DICT_TYPE between", value1, value2, "dictType");
             return (Criteria) this;
         }
 
-        public Criteria andDictTypNotBetween(String value1, String value2) {
-            addCriterion("DICT_TYP not between", value1, value2, "dictTyp");
+        public Criteria andDictTypeNotBetween(String value1, String value2) {
+            addCriterion("DICT_TYPE not between", value1, value2, "dictType");
             return (Criteria) this;
         }
 
@@ -595,52 +595,62 @@ public class SysDictExample {
             return (Criteria) this;
         }
 
-        public Criteria andStatusEqualTo(Byte value) {
+        public Criteria andStatusEqualTo(String value) {
             addCriterion("STATUS =", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotEqualTo(Byte value) {
+        public Criteria andStatusNotEqualTo(String value) {
             addCriterion("STATUS <>", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusGreaterThan(Byte value) {
+        public Criteria andStatusGreaterThan(String value) {
             addCriterion("STATUS >", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusGreaterThanOrEqualTo(Byte value) {
+        public Criteria andStatusGreaterThanOrEqualTo(String value) {
             addCriterion("STATUS >=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusLessThan(Byte value) {
+        public Criteria andStatusLessThan(String value) {
             addCriterion("STATUS <", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusLessThanOrEqualTo(Byte value) {
+        public Criteria andStatusLessThanOrEqualTo(String value) {
             addCriterion("STATUS <=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusIn(List<Byte> values) {
+        public Criteria andStatusLike(String value) {
+            addCriterion("STATUS like", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusNotLike(String value) {
+            addCriterion("STATUS not like", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusIn(List<String> values) {
             addCriterion("STATUS in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotIn(List<Byte> values) {
+        public Criteria andStatusNotIn(List<String> values) {
             addCriterion("STATUS not in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusBetween(Byte value1, Byte value2) {
+        public Criteria andStatusBetween(String value1, String value2) {
             addCriterion("STATUS between", value1, value2, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotBetween(Byte value1, Byte value2) {
+        public Criteria andStatusNotBetween(String value1, String value2) {
             addCriterion("STATUS not between", value1, value2, "status");
             return (Criteria) this;
         }
@@ -902,6 +912,76 @@ public class SysDictExample {
 
         public Criteria andUpdateIdNotBetween(String value1, String value2) {
             addCriterion("UPDATE_ID not between", value1, value2, "updateId");
+            return (Criteria) this;
+        }
+
+        public Criteria andParentIdIsNull() {
+            addCriterion("PARENT_ID is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andParentIdIsNotNull() {
+            addCriterion("PARENT_ID is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andParentIdEqualTo(String value) {
+            addCriterion("PARENT_ID =", value, "parentId");
+            return (Criteria) this;
+        }
+
+        public Criteria andParentIdNotEqualTo(String value) {
+            addCriterion("PARENT_ID <>", value, "parentId");
+            return (Criteria) this;
+        }
+
+        public Criteria andParentIdGreaterThan(String value) {
+            addCriterion("PARENT_ID >", value, "parentId");
+            return (Criteria) this;
+        }
+
+        public Criteria andParentIdGreaterThanOrEqualTo(String value) {
+            addCriterion("PARENT_ID >=", value, "parentId");
+            return (Criteria) this;
+        }
+
+        public Criteria andParentIdLessThan(String value) {
+            addCriterion("PARENT_ID <", value, "parentId");
+            return (Criteria) this;
+        }
+
+        public Criteria andParentIdLessThanOrEqualTo(String value) {
+            addCriterion("PARENT_ID <=", value, "parentId");
+            return (Criteria) this;
+        }
+
+        public Criteria andParentIdLike(String value) {
+            addCriterion("PARENT_ID like", value, "parentId");
+            return (Criteria) this;
+        }
+
+        public Criteria andParentIdNotLike(String value) {
+            addCriterion("PARENT_ID not like", value, "parentId");
+            return (Criteria) this;
+        }
+
+        public Criteria andParentIdIn(List<String> values) {
+            addCriterion("PARENT_ID in", values, "parentId");
+            return (Criteria) this;
+        }
+
+        public Criteria andParentIdNotIn(List<String> values) {
+            addCriterion("PARENT_ID not in", values, "parentId");
+            return (Criteria) this;
+        }
+
+        public Criteria andParentIdBetween(String value1, String value2) {
+            addCriterion("PARENT_ID between", value1, value2, "parentId");
+            return (Criteria) this;
+        }
+
+        public Criteria andParentIdNotBetween(String value1, String value2) {
+            addCriterion("PARENT_ID not between", value1, value2, "parentId");
             return (Criteria) this;
         }
     }

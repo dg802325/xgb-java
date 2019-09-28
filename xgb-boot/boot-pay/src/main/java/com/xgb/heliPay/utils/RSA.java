@@ -425,13 +425,4 @@ public class RSA {
         return null;
     }
 
-    /**
-     * 512位PKCS#8
-     *
-     * @param args
-     * @throws Exception
-     */
-    public static void main(String[] args) throws Exception {
-
-    }
 }

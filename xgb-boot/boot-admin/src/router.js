@@ -138,7 +138,7 @@ const BlogRouter = [
     },
 ];
 
-//博客
+//地域
 const RegoinRouter = [
     {
         path: '/region',
@@ -148,13 +148,45 @@ const RegoinRouter = [
             {
                 path: 'regionList',
                 component: () => import('./views/region/regionList.vue'),
-                meta: {title: '博客列表'}
+                meta: {title: '地域4级'}
             },
         ]
     },
 ];
 
-const routes = [...publicRouter,...systemRouter,...homeRouter,...mybatisRouter,...BlogRouter,...RegoinRouter,];
+//支付
+const PayRouter = [
+    {
+        path: '/pay',
+        component: Layout,
+        redirect: '/login',
+        children: [
+            {
+                path: 'enterpriseIncoming',
+                component: () => import('./views/heliPay/enterpriseIncoming.vue'),
+                meta: {title: '合利宝进件'}
+            },
+        ]
+    },
+];
+
+//设置
+const SettingsRouter = [
+    {
+        path: '/settings',
+        component: Layout,
+        redirect: '/login',
+        children: [
+            {
+                path: 'dictionaries',
+                component: () => import('./views/settings/dictionaries.vue'),
+                meta: {title: '合利宝进件'}
+            },
+        ]
+    },
+];
+
+const routes = [...publicRouter,...systemRouter,...homeRouter,...mybatisRouter,...BlogRouter,...RegoinRouter,...PayRouter,...SettingsRouter,];
 
 export default new Router({
   base: process.env.BASE_URL,

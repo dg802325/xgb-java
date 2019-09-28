@@ -1,39 +1,42 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xgb.dao.SysDictMapper">
-  <resultMap id="BaseResultMap" type="com.xgb.model.SysDict">
-    <id column="ID" jdbcType="VARCHAR" property="id" />
-    <result column="DICT_NAME" jdbcType="VARCHAR" property="dictName" />
-    <result column="DICT_TYP" jdbcType="VARCHAR" property="dictTyp" />
-    <result column="DICT_CODE" jdbcType="VARCHAR" property="dictCode" />
-    <result column="DICT_VALUE" jdbcType="VARCHAR" property="dictValue" />
-    <result column="SORT" jdbcType="INTEGER" property="sort" />
-    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
-    <result column="STATUS" jdbcType="TINYINT" property="status" />
-    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
-    <result column="CREATE_ID" jdbcType="VARCHAR" property="createId" />
-    <result column="UPDATE_ID" jdbcType="VARCHAR" property="updateId" />
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.SysDictMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.SysDict" >
+    <constructor >
+      <idArg column="ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DICT_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DICT_TYPE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DICT_CODE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DICT_VALUE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SORT" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="REMARK" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATUS" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CREATE_TIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="UPDATE_TIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="CREATE_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="UPDATE_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PARENT_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
   </resultMap>
-  <sql id="Example_Where_Clause">
-    <where>
-      <foreach collection="oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
                   and ${criterion.condition}
                 </when>
-                <when test="criterion.singleValue">
+                <when test="criterion.singleValue" >
                   and ${criterion.condition} #{criterion.value}
                 </when>
-                <when test="criterion.betweenValue">
+                <when test="criterion.betweenValue" >
                   and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
                 </when>
-                <when test="criterion.listValue">
+                <when test="criterion.listValue" >
                   and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
                     #{listItem}
                   </foreach>
                 </when>
@@ -44,25 +47,25 @@
       </foreach>
     </where>
   </sql>
-  <sql id="Update_By_Example_Where_Clause">
-    <where>
-      <foreach collection="example.oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
                   and ${criterion.condition}
                 </when>
-                <when test="criterion.singleValue">
+                <when test="criterion.singleValue" >
                   and ${criterion.condition} #{criterion.value}
                 </when>
-                <when test="criterion.betweenValue">
+                <when test="criterion.betweenValue" >
                   and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
                 </when>
-                <when test="criterion.listValue">
+                <when test="criterion.listValue" >
                   and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
                     #{listItem}
                   </foreach>
                 </when>
@@ -73,245 +76,265 @@
       </foreach>
     </where>
   </sql>
-  <sql id="Base_Column_List">
-    ID, DICT_NAME, DICT_TYP, DICT_CODE, DICT_VALUE, SORT, REMARK, STATUS, CREATE_TIME, 
-    UPDATE_TIME, CREATE_ID, UPDATE_ID
+  <sql id="Base_Column_List" >
+    ID, DICT_NAME, DICT_TYPE, DICT_CODE, DICT_VALUE, SORT, REMARK, STATUS, CREATE_TIME, 
+    UPDATE_TIME, CREATE_ID, UPDATE_ID, PARENT_ID
   </sql>
-  <select id="selectByExample" parameterType="com.xgb.model.SysDictExample" resultMap="BaseResultMap">
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.SysDictExample" >
     select
-    <if test="distinct">
+    <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
     from SYS_DICT
-    <if test="_parameter != null">
+    <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
-    <if test="orderByClause != null">
+    <if test="orderByClause != null" >
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
     from SYS_DICT
     where ID = #{id,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from SYS_DICT
     where ID = #{id,jdbcType=VARCHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="com.xgb.model.SysDictExample">
+  <delete id="deleteByExample" parameterType="com.xgb.model.SysDictExample" >
     delete from SYS_DICT
-    <if test="_parameter != null">
+    <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.xgb.model.SysDict">
-
-    insert into SYS_DICT (DICT_NAME, DICT_TYP, DICT_CODE, 
-      DICT_VALUE, SORT, REMARK, 
-      STATUS, CREATE_TIME, UPDATE_TIME, 
-      CREATE_ID, UPDATE_ID)
-    values (#{dictName,jdbcType=VARCHAR}, #{dictTyp,jdbcType=VARCHAR}, #{dictCode,jdbcType=VARCHAR}, 
-      #{dictValue,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
-      #{status,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{createId,jdbcType=VARCHAR}, #{updateId,jdbcType=VARCHAR})
+  <insert id="insert" parameterType="com.xgb.model.SysDict" >
+    insert into SYS_DICT (ID, DICT_NAME, DICT_TYPE, 
+      DICT_CODE, DICT_VALUE, SORT, 
+      REMARK, STATUS, CREATE_TIME, 
+      UPDATE_TIME, CREATE_ID, UPDATE_ID, 
+      PARENT_ID)
+    values (#{id,jdbcType=VARCHAR}, #{dictName,jdbcType=VARCHAR}, #{dictType,jdbcType=VARCHAR}, 
+      #{dictCode,jdbcType=VARCHAR}, #{dictValue,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}, 
+      #{remark,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{createId,jdbcType=VARCHAR}, #{updateId,jdbcType=VARCHAR}, 
+      #{parentId,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.xgb.model.SysDict">
-
+  <insert id="insertSelective" parameterType="com.xgb.model.SysDict" >
     insert into SYS_DICT
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="dictName != null">
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="dictName != null" >
         DICT_NAME,
       </if>
-      <if test="dictTyp != null">
-        DICT_TYP,
+      <if test="dictType != null" >
+        DICT_TYPE,
       </if>
-      <if test="dictCode != null">
+      <if test="dictCode != null" >
         DICT_CODE,
       </if>
-      <if test="dictValue != null">
+      <if test="dictValue != null" >
         DICT_VALUE,
       </if>
-      <if test="sort != null">
+      <if test="sort != null" >
         SORT,
       </if>
-      <if test="remark != null">
+      <if test="remark != null" >
         REMARK,
       </if>
-      <if test="status != null">
+      <if test="status != null" >
         STATUS,
       </if>
-      <if test="createTime != null">
+      <if test="createTime != null" >
         CREATE_TIME,
       </if>
-      <if test="updateTime != null">
+      <if test="updateTime != null" >
         UPDATE_TIME,
       </if>
-      <if test="createId != null">
+      <if test="createId != null" >
         CREATE_ID,
       </if>
-      <if test="updateId != null">
+      <if test="updateId != null" >
         UPDATE_ID,
       </if>
+      <if test="parentId != null" >
+        PARENT_ID,
+      </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="dictName != null">
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="dictName != null" >
         #{dictName,jdbcType=VARCHAR},
       </if>
-      <if test="dictTyp != null">
-        #{dictTyp,jdbcType=VARCHAR},
+      <if test="dictType != null" >
+        #{dictType,jdbcType=VARCHAR},
       </if>
-      <if test="dictCode != null">
+      <if test="dictCode != null" >
         #{dictCode,jdbcType=VARCHAR},
       </if>
-      <if test="dictValue != null">
+      <if test="dictValue != null" >
         #{dictValue,jdbcType=VARCHAR},
       </if>
-      <if test="sort != null">
+      <if test="sort != null" >
         #{sort,jdbcType=INTEGER},
       </if>
-      <if test="remark != null">
+      <if test="remark != null" >
         #{remark,jdbcType=VARCHAR},
       </if>
-      <if test="status != null">
-        #{status,jdbcType=TINYINT},
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
       </if>
-      <if test="createTime != null">
+      <if test="createTime != null" >
         #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updateTime != null">
+      <if test="updateTime != null" >
         #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createId != null">
+      <if test="createId != null" >
         #{createId,jdbcType=VARCHAR},
       </if>
-      <if test="updateId != null">
+      <if test="updateId != null" >
         #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null" >
+        #{parentId,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.xgb.model.SysDictExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.xgb.model.SysDictExample" resultType="java.lang.Integer" >
     select count(*) from SYS_DICT
-    <if test="_parameter != null">
+    <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
-  <update id="updateByExampleSelective" parameterType="map">
+  <update id="updateByExampleSelective" parameterType="map" >
     update SYS_DICT
-    <set>
-      <if test="record.id != null">
+    <set >
+      <if test="record.id != null" >
         ID = #{record.id,jdbcType=VARCHAR},
       </if>
-      <if test="record.dictName != null">
+      <if test="record.dictName != null" >
         DICT_NAME = #{record.dictName,jdbcType=VARCHAR},
       </if>
-      <if test="record.dictTyp != null">
-        DICT_TYP = #{record.dictTyp,jdbcType=VARCHAR},
+      <if test="record.dictType != null" >
+        DICT_TYPE = #{record.dictType,jdbcType=VARCHAR},
       </if>
-      <if test="record.dictCode != null">
+      <if test="record.dictCode != null" >
         DICT_CODE = #{record.dictCode,jdbcType=VARCHAR},
       </if>
-      <if test="record.dictValue != null">
+      <if test="record.dictValue != null" >
         DICT_VALUE = #{record.dictValue,jdbcType=VARCHAR},
       </if>
-      <if test="record.sort != null">
+      <if test="record.sort != null" >
         SORT = #{record.sort,jdbcType=INTEGER},
       </if>
-      <if test="record.remark != null">
+      <if test="record.remark != null" >
         REMARK = #{record.remark,jdbcType=VARCHAR},
       </if>
-      <if test="record.status != null">
-        STATUS = #{record.status,jdbcType=TINYINT},
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=VARCHAR},
       </if>
-      <if test="record.createTime != null">
+      <if test="record.createTime != null" >
         CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.updateTime != null">
+      <if test="record.updateTime != null" >
         UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.createId != null">
+      <if test="record.createId != null" >
         CREATE_ID = #{record.createId,jdbcType=VARCHAR},
       </if>
-      <if test="record.updateId != null">
+      <if test="record.updateId != null" >
         UPDATE_ID = #{record.updateId,jdbcType=VARCHAR},
       </if>
+      <if test="record.parentId != null" >
+        PARENT_ID = #{record.parentId,jdbcType=VARCHAR},
+      </if>
     </set>
-    <if test="_parameter != null">
+    <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByExample" parameterType="map">
+  <update id="updateByExample" parameterType="map" >
     update SYS_DICT
     set ID = #{record.id,jdbcType=VARCHAR},
       DICT_NAME = #{record.dictName,jdbcType=VARCHAR},
-      DICT_TYP = #{record.dictTyp,jdbcType=VARCHAR},
+      DICT_TYPE = #{record.dictType,jdbcType=VARCHAR},
       DICT_CODE = #{record.dictCode,jdbcType=VARCHAR},
       DICT_VALUE = #{record.dictValue,jdbcType=VARCHAR},
       SORT = #{record.sort,jdbcType=INTEGER},
       REMARK = #{record.remark,jdbcType=VARCHAR},
-      STATUS = #{record.status,jdbcType=TINYINT},
+      STATUS = #{record.status,jdbcType=VARCHAR},
       CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
       UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
       CREATE_ID = #{record.createId,jdbcType=VARCHAR},
-      UPDATE_ID = #{record.updateId,jdbcType=VARCHAR}
-    <if test="_parameter != null">
+      UPDATE_ID = #{record.updateId,jdbcType=VARCHAR},
+      PARENT_ID = #{record.parentId,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.SysDict">
+  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.SysDict" >
     update SYS_DICT
-    <set>
-      <if test="dictName != null">
+    <set >
+      <if test="dictName != null" >
         DICT_NAME = #{dictName,jdbcType=VARCHAR},
       </if>
-      <if test="dictTyp != null">
-        DICT_TYP = #{dictTyp,jdbcType=VARCHAR},
+      <if test="dictType != null" >
+        DICT_TYPE = #{dictType,jdbcType=VARCHAR},
       </if>
-      <if test="dictCode != null">
+      <if test="dictCode != null" >
         DICT_CODE = #{dictCode,jdbcType=VARCHAR},
       </if>
-      <if test="dictValue != null">
+      <if test="dictValue != null" >
         DICT_VALUE = #{dictValue,jdbcType=VARCHAR},
       </if>
-      <if test="sort != null">
+      <if test="sort != null" >
         SORT = #{sort,jdbcType=INTEGER},
       </if>
-      <if test="remark != null">
+      <if test="remark != null" >
         REMARK = #{remark,jdbcType=VARCHAR},
       </if>
-      <if test="status != null">
-        STATUS = #{status,jdbcType=TINYINT},
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=VARCHAR},
       </if>
-      <if test="createTime != null">
+      <if test="createTime != null" >
         CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="updateTime != null">
+      <if test="updateTime != null" >
         UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createId != null">
+      <if test="createId != null" >
         CREATE_ID = #{createId,jdbcType=VARCHAR},
       </if>
-      <if test="updateId != null">
+      <if test="updateId != null" >
         UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null" >
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
       </if>
     </set>
     where ID = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.xgb.model.SysDict">
+  <update id="updateByPrimaryKey" parameterType="com.xgb.model.SysDict" >
     update SYS_DICT
     set DICT_NAME = #{dictName,jdbcType=VARCHAR},
-      DICT_TYP = #{dictTyp,jdbcType=VARCHAR},
+      DICT_TYPE = #{dictType,jdbcType=VARCHAR},
       DICT_CODE = #{dictCode,jdbcType=VARCHAR},
       DICT_VALUE = #{dictValue,jdbcType=VARCHAR},
       SORT = #{sort,jdbcType=INTEGER},
       REMARK = #{remark,jdbcType=VARCHAR},
-      STATUS = #{status,jdbcType=TINYINT},
+      STATUS = #{status,jdbcType=VARCHAR},
       CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
       UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
       CREATE_ID = #{createId,jdbcType=VARCHAR},
-      UPDATE_ID = #{updateId,jdbcType=VARCHAR}
+      UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+      PARENT_ID = #{parentId,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=VARCHAR}
   </update>
 </mapper>

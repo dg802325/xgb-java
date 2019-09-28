@@ -4,9 +4,6 @@ import java.io.UnsupportedEncodingException;
 
 public class Base64 {
 	
-	public static void main(String[] args) {
-		
-	}
     /**
      * Chunk size per RFC 2045 section 6.8.
      *

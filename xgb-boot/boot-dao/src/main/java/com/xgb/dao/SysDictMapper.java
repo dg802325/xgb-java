@@ -2,12 +2,11 @@ package com.xgb.dao;
 
 import com.xgb.model.SysDict;
 import com.xgb.model.SysDictExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-import java.util.List;
-
 public interface SysDictMapper {
-    long countByExample(SysDictExample example);
+    int countByExample(SysDictExample example);
 
     int deleteByExample(SysDictExample example);
 

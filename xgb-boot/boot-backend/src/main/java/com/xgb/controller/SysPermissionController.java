@@ -206,7 +206,7 @@ public class SysPermissionController {
         logger.info("------request-address----------------：/admin/getSysPermission");
         //查询代码
         List<SysPermission> sysPermission = null;
-        if("0".equals(parentId)){
+        if("0".equals(parentId)||MyUtils.isEmpty(parentId)){
             sysPermission = sysPermissionService.selectPermissionByParentId("0");
         }else {
             SysMenu sysMenu = sysMenuService.selectByPrimaryKey(parentId);

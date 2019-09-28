@@ -87,6 +87,8 @@ public class SysMenuService {
                 oneMu.put("menuName",oneMenu.getMenuName());
                 oneMu.put("menuUrl",oneMenu.getMenuUrl());
                 oneMu.put("permissionName",sysPermissionMapper.selectByPrimaryKey(oneMenu.getPermissionId()).getPermissionName());
+                oneMu.put("parentId",oneMenu.getParentId());
+                oneMu.put("permissionId",oneMenu.getPermissionId());
                 oneMu.put("sort",oneMenu.getSort());
                 oneMu.put("menuType",oneMenu.getMenuType());
                 SysMenuExample twoSysMenu = new SysMenuExample();
@@ -99,6 +101,8 @@ public class SysMenuService {
                     twoMu.put("menuName",twoMenu.getMenuName());
                     twoMu.put("menuUrl",twoMenu.getMenuUrl());
                     twoMu.put("permissionName",sysPermissionMapper.selectByPrimaryKey(twoMenu.getPermissionId()).getPermissionName());
+                    twoMu.put("parentId",twoMenu.getParentId());
+                    twoMu.put("permissionId",twoMenu.getPermissionId());
                     twoMu.put("sort",twoMenu.getSort());
                     twoMu.put("menuType",twoMenu.getMenuType());
                     SysMenuExample threeSysMenu = new SysMenuExample();
@@ -111,6 +115,8 @@ public class SysMenuService {
                         threeMu.put("menuName",threeMenu.getMenuName());
                         threeMu.put("menuUrl",threeMenu.getMenuUrl());
                         threeMu.put("permissionName",sysPermissionMapper.selectByPrimaryKey(threeMenu.getPermissionId()).getPermissionName());
+                        threeMu.put("parentId",threeMenu.getParentId());
+                        threeMu.put("permissionId",threeMenu.getPermissionId());
                         threeMu.put("sort",threeMenu.getSort());
                         threeMu.put("menuType",threeMenu.getMenuType());
                         threelists.add(threeMu);
