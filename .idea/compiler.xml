@@ -20,11 +20,10 @@
         <module name="cloud-oss" />
         <module name="cloud-pay" />
         <module name="cloud-zuul" />
-        <module name="spider1" />
         <module name="send-mail" />
+        <module name="spider1" />
         <module name="xgb-common" />
         <module name="xgb-mybatis" />
-        <module name="xgb-test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
@@ -51,9 +50,8 @@
       <module name="xgb-cloud" target="1.8" />
       <module name="xgb-common" target="1.8" />
       <module name="xgb-java" target="1.8" />
-      <module name="xgb-mybatis" target="1.8" />
+      <module name="xgb-mybatis" target="8" />
       <module name="xgb-reptile" target="1.8" />
-      <module name="xgb-test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -67,7 +65,6 @@
       <module name="cloud-order" options="-parameters" />
       <module name="reptile-backend" options="-parameters" />
       <module name="xgb-common" options="" />
-      <module name="xgb-test" options="" />
     </option>
   </component>
 </project>

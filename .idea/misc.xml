@@ -21,6 +21,7 @@
         <option value="$PROJECT_DIR$/xgb-reptile/reptile-dao/pom.xml" />
         <option value="$PROJECT_DIR$/xgb-reptile/reptile-model/pom.xml" />
         <option value="$PROJECT_DIR$/xgb-reptile/reptile-service/pom.xml" />
+        <option value="$PROJECT_DIR$/xgb-test/pom.xml" />
       </set>
     </option>
   </component>

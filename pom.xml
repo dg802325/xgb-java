@@ -16,7 +16,6 @@
         <java.version>1.8</java.version>
     </properties>
     <modules>
-        <module>xgb-test</module>
         <module>xgb-common</module>
         <module>xgb-mybatis</module>
         <module>xgb-boot</module>

@@ -22,7 +22,6 @@
       <module fileurl="file://$PROJECT_DIR$/xgb-java.iml" filepath="$PROJECT_DIR$/xgb-java.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-mybatis/xgb-mybatis.iml" filepath="$PROJECT_DIR$/xgb-mybatis/xgb-mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-reptile/xgb-reptile.iml" filepath="$PROJECT_DIR$/xgb-reptile/xgb-reptile.iml" />
-      <module fileurl="file://$PROJECT_DIR$/xgb-test/xgb-test.iml" filepath="$PROJECT_DIR$/xgb-test/xgb-test.iml" />
     </modules>
   </component>
 </project>
