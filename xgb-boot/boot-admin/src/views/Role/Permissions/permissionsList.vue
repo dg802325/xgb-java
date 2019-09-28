@@ -6,7 +6,7 @@
             <div class="container">
                 <glob-base-search>
                     <div slot="button">
-                        <el-button @click="selectRole">查询结果</el-button>
+                        <el-button v-if="checkPermission('SYS:PERMISSION:MENU')" @click="selectRole">查询结果</el-button>
                     </div>
                     <el-form label-width="90px" :inline="true">
                         <el-form-item label="权限名称：">
@@ -15,7 +15,7 @@
                     </el-form>
                 </glob-base-search>
                 <div class="v-cart-title">
-                    <el-button type="success" size="mini" @click="handleAdd('', '')">添加主权限</el-button>
+                    <el-button v-if="checkPermission('SYS:PERMISSION:SAVE')" type="success" size="mini" @click="handleAdd('', '')">添加主权限</el-button>
                 </div>
                 <div>
                     <el-table
@@ -59,14 +59,17 @@
                                 label="操作">
                             <template slot-scope="scope">
                                 <el-button
+                                        v-if="checkPermission('SYS:PERMISSION:SAVE')"
                                         size="mini"
                                         type="success"
                                         @click="handleAdd(scope.$index, scope.row)">Add</el-button>
                                 <el-button
+                                        v-if="checkPermission('SYS:PERMISSION:SAVE')"
                                         size="mini"
                                         type="primary"
                                         @click="handleEdit(scope.$index, scope.row)">Edit</el-button>
                                 <el-button
+                                        v-if="checkPermission('SYS:PERMISSION:DELETE')"
                                         size="mini"
                                         type="danger"
                                         @click="handleDelete(scope.$index, scope.row)">Delete</el-button>

@@ -385,76 +385,6 @@ public class SysChinaDivisionExample {
             return (Criteria) this;
         }
 
-        public Criteria andRegionIdIsNull() {
-            addCriterion("REGION_ID is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andRegionIdIsNotNull() {
-            addCriterion("REGION_ID is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andRegionIdEqualTo(String value) {
-            addCriterion("REGION_ID =", value, "regionId");
-            return (Criteria) this;
-        }
-
-        public Criteria andRegionIdNotEqualTo(String value) {
-            addCriterion("REGION_ID <>", value, "regionId");
-            return (Criteria) this;
-        }
-
-        public Criteria andRegionIdGreaterThan(String value) {
-            addCriterion("REGION_ID >", value, "regionId");
-            return (Criteria) this;
-        }
-
-        public Criteria andRegionIdGreaterThanOrEqualTo(String value) {
-            addCriterion("REGION_ID >=", value, "regionId");
-            return (Criteria) this;
-        }
-
-        public Criteria andRegionIdLessThan(String value) {
-            addCriterion("REGION_ID <", value, "regionId");
-            return (Criteria) this;
-        }
-
-        public Criteria andRegionIdLessThanOrEqualTo(String value) {
-            addCriterion("REGION_ID <=", value, "regionId");
-            return (Criteria) this;
-        }
-
-        public Criteria andRegionIdLike(String value) {
-            addCriterion("REGION_ID like", value, "regionId");
-            return (Criteria) this;
-        }
-
-        public Criteria andRegionIdNotLike(String value) {
-            addCriterion("REGION_ID not like", value, "regionId");
-            return (Criteria) this;
-        }
-
-        public Criteria andRegionIdIn(List<String> values) {
-            addCriterion("REGION_ID in", values, "regionId");
-            return (Criteria) this;
-        }
-
-        public Criteria andRegionIdNotIn(List<String> values) {
-            addCriterion("REGION_ID not in", values, "regionId");
-            return (Criteria) this;
-        }
-
-        public Criteria andRegionIdBetween(String value1, String value2) {
-            addCriterion("REGION_ID between", value1, value2, "regionId");
-            return (Criteria) this;
-        }
-
-        public Criteria andRegionIdNotBetween(String value1, String value2) {
-            addCriterion("REGION_ID not between", value1, value2, "regionId");
-            return (Criteria) this;
-        }
-
         public Criteria andPostCodeIsNull() {
             addCriterion("POST_CODE is null");
             return (Criteria) this;
@@ -525,123 +455,73 @@ public class SysChinaDivisionExample {
             return (Criteria) this;
         }
 
-        public Criteria andIsForbiddenIsNull() {
-            addCriterion("IS_FORBIDDEN is null");
+        public Criteria andStatusIsNull() {
+            addCriterion("STATUS is null");
             return (Criteria) this;
         }
 
-        public Criteria andIsForbiddenIsNotNull() {
-            addCriterion("IS_FORBIDDEN is not null");
+        public Criteria andStatusIsNotNull() {
+            addCriterion("STATUS is not null");
             return (Criteria) this;
         }
 
-        public Criteria andIsForbiddenEqualTo(Boolean value) {
-            addCriterion("IS_FORBIDDEN =", value, "isForbidden");
+        public Criteria andStatusEqualTo(String value) {
+            addCriterion("STATUS =", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andIsForbiddenNotEqualTo(Boolean value) {
-            addCriterion("IS_FORBIDDEN <>", value, "isForbidden");
+        public Criteria andStatusNotEqualTo(String value) {
+            addCriterion("STATUS <>", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andIsForbiddenGreaterThan(Boolean value) {
-            addCriterion("IS_FORBIDDEN >", value, "isForbidden");
+        public Criteria andStatusGreaterThan(String value) {
+            addCriterion("STATUS >", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andIsForbiddenGreaterThanOrEqualTo(Boolean value) {
-            addCriterion("IS_FORBIDDEN >=", value, "isForbidden");
+        public Criteria andStatusGreaterThanOrEqualTo(String value) {
+            addCriterion("STATUS >=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andIsForbiddenLessThan(Boolean value) {
-            addCriterion("IS_FORBIDDEN <", value, "isForbidden");
+        public Criteria andStatusLessThan(String value) {
+            addCriterion("STATUS <", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andIsForbiddenLessThanOrEqualTo(Boolean value) {
-            addCriterion("IS_FORBIDDEN <=", value, "isForbidden");
+        public Criteria andStatusLessThanOrEqualTo(String value) {
+            addCriterion("STATUS <=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andIsForbiddenIn(List<Boolean> values) {
-            addCriterion("IS_FORBIDDEN in", values, "isForbidden");
+        public Criteria andStatusLike(String value) {
+            addCriterion("STATUS like", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andIsForbiddenNotIn(List<Boolean> values) {
-            addCriterion("IS_FORBIDDEN not in", values, "isForbidden");
+        public Criteria andStatusNotLike(String value) {
+            addCriterion("STATUS not like", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andIsForbiddenBetween(Boolean value1, Boolean value2) {
-            addCriterion("IS_FORBIDDEN between", value1, value2, "isForbidden");
+        public Criteria andStatusIn(List<String> values) {
+            addCriterion("STATUS in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andIsForbiddenNotBetween(Boolean value1, Boolean value2) {
-            addCriterion("IS_FORBIDDEN not between", value1, value2, "isForbidden");
+        public Criteria andStatusNotIn(List<String> values) {
+            addCriterion("STATUS not in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andIsDelIsNull() {
-            addCriterion("IS_DEL is null");
+        public Criteria andStatusBetween(String value1, String value2) {
+            addCriterion("STATUS between", value1, value2, "status");
             return (Criteria) this;
         }
 
-        public Criteria andIsDelIsNotNull() {
-            addCriterion("IS_DEL is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDelEqualTo(Boolean value) {
-            addCriterion("IS_DEL =", value, "isDel");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDelNotEqualTo(Boolean value) {
-            addCriterion("IS_DEL <>", value, "isDel");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDelGreaterThan(Boolean value) {
-            addCriterion("IS_DEL >", value, "isDel");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDelGreaterThanOrEqualTo(Boolean value) {
-            addCriterion("IS_DEL >=", value, "isDel");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDelLessThan(Boolean value) {
-            addCriterion("IS_DEL <", value, "isDel");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDelLessThanOrEqualTo(Boolean value) {
-            addCriterion("IS_DEL <=", value, "isDel");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDelIn(List<Boolean> values) {
-            addCriterion("IS_DEL in", values, "isDel");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDelNotIn(List<Boolean> values) {
-            addCriterion("IS_DEL not in", values, "isDel");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDelBetween(Boolean value1, Boolean value2) {
-            addCriterion("IS_DEL between", value1, value2, "isDel");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsDelNotBetween(Boolean value1, Boolean value2) {
-            addCriterion("IS_DEL not between", value1, value2, "isDel");
+        public Criteria andStatusNotBetween(String value1, String value2) {
+            addCriterion("STATUS not between", value1, value2, "status");
             return (Criteria) this;
         }
 
@@ -972,6 +852,76 @@ public class SysChinaDivisionExample {
 
         public Criteria andHlbDivisionCodeNotBetween(String value1, String value2) {
             addCriterion("HLB_DIVISION_CODE not between", value1, value2, "hlbDivisionCode");
+            return (Criteria) this;
+        }
+
+        public Criteria andDivisionTypeIsNull() {
+            addCriterion("DIVISION_TYPE is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDivisionTypeIsNotNull() {
+            addCriterion("DIVISION_TYPE is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDivisionTypeEqualTo(String value) {
+            addCriterion("DIVISION_TYPE =", value, "divisionType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDivisionTypeNotEqualTo(String value) {
+            addCriterion("DIVISION_TYPE <>", value, "divisionType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDivisionTypeGreaterThan(String value) {
+            addCriterion("DIVISION_TYPE >", value, "divisionType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDivisionTypeGreaterThanOrEqualTo(String value) {
+            addCriterion("DIVISION_TYPE >=", value, "divisionType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDivisionTypeLessThan(String value) {
+            addCriterion("DIVISION_TYPE <", value, "divisionType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDivisionTypeLessThanOrEqualTo(String value) {
+            addCriterion("DIVISION_TYPE <=", value, "divisionType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDivisionTypeLike(String value) {
+            addCriterion("DIVISION_TYPE like", value, "divisionType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDivisionTypeNotLike(String value) {
+            addCriterion("DIVISION_TYPE not like", value, "divisionType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDivisionTypeIn(List<String> values) {
+            addCriterion("DIVISION_TYPE in", values, "divisionType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDivisionTypeNotIn(List<String> values) {
+            addCriterion("DIVISION_TYPE not in", values, "divisionType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDivisionTypeBetween(String value1, String value2) {
+            addCriterion("DIVISION_TYPE between", value1, value2, "divisionType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDivisionTypeNotBetween(String value1, String value2) {
+            addCriterion("DIVISION_TYPE not between", value1, value2, "divisionType");
             return (Criteria) this;
         }
     }

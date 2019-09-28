@@ -52,7 +52,7 @@ public class SysRolePermissionController {
     * 保存
     * @return
     */
-    @RequiresPermissions("SYS:ROLE:PERMISSION:EDIT")
+//    @RequiresPermissions("SYS:ROLE:PERMISSION:EDIT")
     @PostMapping("saveSysRolePermission")
     public R saveSysRolePermission(SysRolePermission sysRolePermission){
         logger.info("------request-address----------------：/admin/saveSysRolePermission");

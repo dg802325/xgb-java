@@ -39,7 +39,7 @@ public class SysPermissionController {
      * 根据用户token获得会员有的权限key
      * @return
      */
-    @RequiresPermissions("SYS:PERMISSION:MENU")
+//    @RequiresPermissions("SYS:PERMISSION:MENU")
     @GetMapping("getPermissionList")
     public List<String> getPermissionList() {
         logger.info("------request-address----------------：/admin/getPermissionList");

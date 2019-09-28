@@ -11,13 +11,9 @@ public class SysChinaDivision {
 
     private String divisionCode;
 
-    private String regionId;
-
     private String postCode;
 
-    private Boolean isForbidden;
-
-    private Boolean isDel;
+    private String status;
 
     private String creatorId;
 
@@ -29,20 +25,21 @@ public class SysChinaDivision {
 
     private String hlbDivisionCode;
 
-    public SysChinaDivision(String id, String divisionName, String parentId, String divisionCode, String regionId, String postCode, Boolean isForbidden, Boolean isDel, String creatorId, Date createTime, String modifierId, Date modifyTime, String hlbDivisionCode) {
+    private String divisionType;
+
+    public SysChinaDivision(String id, String divisionName, String parentId, String divisionCode, String postCode, String status, String creatorId, Date createTime, String modifierId, Date modifyTime, String hlbDivisionCode, String divisionType) {
         this.id = id;
         this.divisionName = divisionName;
         this.parentId = parentId;
         this.divisionCode = divisionCode;
-        this.regionId = regionId;
         this.postCode = postCode;
-        this.isForbidden = isForbidden;
-        this.isDel = isDel;
+        this.status = status;
         this.creatorId = creatorId;
         this.createTime = createTime;
         this.modifierId = modifierId;
         this.modifyTime = modifyTime;
         this.hlbDivisionCode = hlbDivisionCode;
+        this.divisionType = divisionType;
     }
 
     public SysChinaDivision() {
@@ -81,14 +78,6 @@ public class SysChinaDivision {
         this.divisionCode = divisionCode == null ? null : divisionCode.trim();
     }
 
-    public String getRegionId() {
-        return regionId;
-    }
-
-    public void setRegionId(String regionId) {
-        this.regionId = regionId == null ? null : regionId.trim();
-    }
-
     public String getPostCode() {
         return postCode;
     }
@@ -97,20 +86,12 @@ public class SysChinaDivision {
         this.postCode = postCode == null ? null : postCode.trim();
     }
 
-    public Boolean getIsForbidden() {
-        return isForbidden;
+    public String getStatus() {
+        return status;
     }
 
-    public void setIsForbidden(Boolean isForbidden) {
-        this.isForbidden = isForbidden;
-    }
-
-    public Boolean getIsDel() {
-        return isDel;
-    }
-
-    public void setIsDel(Boolean isDel) {
-        this.isDel = isDel;
+    public void setStatus(String status) {
+        this.status = status == null ? null : status.trim();
     }
 
     public String getCreatorId() {
@@ -151,5 +132,13 @@ public class SysChinaDivision {
 
     public void setHlbDivisionCode(String hlbDivisionCode) {
         this.hlbDivisionCode = hlbDivisionCode == null ? null : hlbDivisionCode.trim();
+    }
+
+    public String getDivisionType() {
+        return divisionType;
+    }
+
+    public void setDivisionType(String divisionType) {
+        this.divisionType = divisionType == null ? null : divisionType.trim();
     }
 }

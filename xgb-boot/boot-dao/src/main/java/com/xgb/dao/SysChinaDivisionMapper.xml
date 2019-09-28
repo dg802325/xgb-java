@@ -7,15 +7,14 @@
       <arg column="DIVISION_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="PARENT_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="DIVISION_CODE" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="REGION_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="POST_CODE" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="IS_FORBIDDEN" jdbcType="BIT" javaType="java.lang.Boolean" />
-      <arg column="IS_DEL" jdbcType="BIT" javaType="java.lang.Boolean" />
+      <arg column="STATUS" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="CREATOR_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="CREATE_TIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
       <arg column="MODIFIER_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="MODIFY_TIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
       <arg column="HLB_DIVISION_CODE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DIVISION_TYPE" jdbcType="VARCHAR" javaType="java.lang.String" />
     </constructor>
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -77,8 +76,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    ID, DIVISION_NAME, PARENT_ID, DIVISION_CODE, REGION_ID, POST_CODE, IS_FORBIDDEN, 
-    IS_DEL, CREATOR_ID, CREATE_TIME, MODIFIER_ID, MODIFY_TIME, HLB_DIVISION_CODE
+    ID, DIVISION_NAME, PARENT_ID, DIVISION_CODE, POST_CODE, STATUS, CREATOR_ID, CREATE_TIME, 
+    MODIFIER_ID, MODIFY_TIME, HLB_DIVISION_CODE, DIVISION_TYPE
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.SysChinaDivisionExample" >
     select
@@ -112,15 +111,15 @@
   </delete>
   <insert id="insert" parameterType="com.xgb.model.SysChinaDivision" >
     insert into SYS_CHINA_DIVISION (ID, DIVISION_NAME, PARENT_ID, 
-      DIVISION_CODE, REGION_ID, POST_CODE, 
-      IS_FORBIDDEN, IS_DEL, CREATOR_ID, 
-      CREATE_TIME, MODIFIER_ID, MODIFY_TIME, 
-      HLB_DIVISION_CODE)
+      DIVISION_CODE, POST_CODE, STATUS, 
+      CREATOR_ID, CREATE_TIME, MODIFIER_ID, 
+      MODIFY_TIME, HLB_DIVISION_CODE, DIVISION_TYPE
+      )
     values (#{id,jdbcType=VARCHAR}, #{divisionName,jdbcType=VARCHAR}, #{parentId,jdbcType=VARCHAR}, 
-      #{divisionCode,jdbcType=VARCHAR}, #{regionId,jdbcType=VARCHAR}, #{postCode,jdbcType=VARCHAR}, 
-      #{isForbidden,jdbcType=BIT}, #{isDel,jdbcType=BIT}, #{creatorId,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{modifierId,jdbcType=VARCHAR}, #{modifyTime,jdbcType=TIMESTAMP}, 
-      #{hlbDivisionCode,jdbcType=VARCHAR})
+      #{divisionCode,jdbcType=VARCHAR}, #{postCode,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{creatorId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{modifierId,jdbcType=VARCHAR}, 
+      #{modifyTime,jdbcType=TIMESTAMP}, #{hlbDivisionCode,jdbcType=VARCHAR}, #{divisionType,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.xgb.model.SysChinaDivision" >
     insert into SYS_CHINA_DIVISION
@@ -137,17 +136,11 @@
       <if test="divisionCode != null" >
         DIVISION_CODE,
       </if>
-      <if test="regionId != null" >
-        REGION_ID,
-      </if>
       <if test="postCode != null" >
         POST_CODE,
       </if>
-      <if test="isForbidden != null" >
-        IS_FORBIDDEN,
-      </if>
-      <if test="isDel != null" >
-        IS_DEL,
+      <if test="status != null" >
+        STATUS,
       </if>
       <if test="creatorId != null" >
         CREATOR_ID,
@@ -164,6 +157,9 @@
       <if test="hlbDivisionCode != null" >
         HLB_DIVISION_CODE,
       </if>
+      <if test="divisionType != null" >
+        DIVISION_TYPE,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -178,17 +174,11 @@
       <if test="divisionCode != null" >
         #{divisionCode,jdbcType=VARCHAR},
       </if>
-      <if test="regionId != null" >
-        #{regionId,jdbcType=VARCHAR},
-      </if>
       <if test="postCode != null" >
         #{postCode,jdbcType=VARCHAR},
       </if>
-      <if test="isForbidden != null" >
-        #{isForbidden,jdbcType=BIT},
-      </if>
-      <if test="isDel != null" >
-        #{isDel,jdbcType=BIT},
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
       </if>
       <if test="creatorId != null" >
         #{creatorId,jdbcType=VARCHAR},
@@ -204,6 +194,9 @@
       </if>
       <if test="hlbDivisionCode != null" >
         #{hlbDivisionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="divisionType != null" >
+        #{divisionType,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -228,17 +221,11 @@
       <if test="record.divisionCode != null" >
         DIVISION_CODE = #{record.divisionCode,jdbcType=VARCHAR},
       </if>
-      <if test="record.regionId != null" >
-        REGION_ID = #{record.regionId,jdbcType=VARCHAR},
-      </if>
       <if test="record.postCode != null" >
         POST_CODE = #{record.postCode,jdbcType=VARCHAR},
       </if>
-      <if test="record.isForbidden != null" >
-        IS_FORBIDDEN = #{record.isForbidden,jdbcType=BIT},
-      </if>
-      <if test="record.isDel != null" >
-        IS_DEL = #{record.isDel,jdbcType=BIT},
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=VARCHAR},
       </if>
       <if test="record.creatorId != null" >
         CREATOR_ID = #{record.creatorId,jdbcType=VARCHAR},
@@ -255,6 +242,9 @@
       <if test="record.hlbDivisionCode != null" >
         HLB_DIVISION_CODE = #{record.hlbDivisionCode,jdbcType=VARCHAR},
       </if>
+      <if test="record.divisionType != null" >
+        DIVISION_TYPE = #{record.divisionType,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -266,15 +256,14 @@
       DIVISION_NAME = #{record.divisionName,jdbcType=VARCHAR},
       PARENT_ID = #{record.parentId,jdbcType=VARCHAR},
       DIVISION_CODE = #{record.divisionCode,jdbcType=VARCHAR},
-      REGION_ID = #{record.regionId,jdbcType=VARCHAR},
       POST_CODE = #{record.postCode,jdbcType=VARCHAR},
-      IS_FORBIDDEN = #{record.isForbidden,jdbcType=BIT},
-      IS_DEL = #{record.isDel,jdbcType=BIT},
+      STATUS = #{record.status,jdbcType=VARCHAR},
       CREATOR_ID = #{record.creatorId,jdbcType=VARCHAR},
       CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
       MODIFIER_ID = #{record.modifierId,jdbcType=VARCHAR},
       MODIFY_TIME = #{record.modifyTime,jdbcType=TIMESTAMP},
-      HLB_DIVISION_CODE = #{record.hlbDivisionCode,jdbcType=VARCHAR}
+      HLB_DIVISION_CODE = #{record.hlbDivisionCode,jdbcType=VARCHAR},
+      DIVISION_TYPE = #{record.divisionType,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -291,17 +280,11 @@
       <if test="divisionCode != null" >
         DIVISION_CODE = #{divisionCode,jdbcType=VARCHAR},
       </if>
-      <if test="regionId != null" >
-        REGION_ID = #{regionId,jdbcType=VARCHAR},
-      </if>
       <if test="postCode != null" >
         POST_CODE = #{postCode,jdbcType=VARCHAR},
       </if>
-      <if test="isForbidden != null" >
-        IS_FORBIDDEN = #{isForbidden,jdbcType=BIT},
-      </if>
-      <if test="isDel != null" >
-        IS_DEL = #{isDel,jdbcType=BIT},
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=VARCHAR},
       </if>
       <if test="creatorId != null" >
         CREATOR_ID = #{creatorId,jdbcType=VARCHAR},
@@ -318,6 +301,9 @@
       <if test="hlbDivisionCode != null" >
         HLB_DIVISION_CODE = #{hlbDivisionCode,jdbcType=VARCHAR},
       </if>
+      <if test="divisionType != null" >
+        DIVISION_TYPE = #{divisionType,jdbcType=VARCHAR},
+      </if>
     </set>
     where ID = #{id,jdbcType=VARCHAR}
   </update>
@@ -326,15 +312,14 @@
     set DIVISION_NAME = #{divisionName,jdbcType=VARCHAR},
       PARENT_ID = #{parentId,jdbcType=VARCHAR},
       DIVISION_CODE = #{divisionCode,jdbcType=VARCHAR},
-      REGION_ID = #{regionId,jdbcType=VARCHAR},
       POST_CODE = #{postCode,jdbcType=VARCHAR},
-      IS_FORBIDDEN = #{isForbidden,jdbcType=BIT},
-      IS_DEL = #{isDel,jdbcType=BIT},
+      STATUS = #{status,jdbcType=VARCHAR},
       CREATOR_ID = #{creatorId,jdbcType=VARCHAR},
       CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
       MODIFIER_ID = #{modifierId,jdbcType=VARCHAR},
       MODIFY_TIME = #{modifyTime,jdbcType=TIMESTAMP},
-      HLB_DIVISION_CODE = #{hlbDivisionCode,jdbcType=VARCHAR}
+      HLB_DIVISION_CODE = #{hlbDivisionCode,jdbcType=VARCHAR},
+      DIVISION_TYPE = #{divisionType,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=VARCHAR}
   </update>
 </mapper>

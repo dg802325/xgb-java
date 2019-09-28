@@ -138,7 +138,23 @@ const BlogRouter = [
     },
 ];
 
-const routes = [...publicRouter,...systemRouter,...homeRouter,...mybatisRouter,...BlogRouter,];
+//博客
+const RegoinRouter = [
+    {
+        path: '/region',
+        component: Layout,
+        redirect: '/login',
+        children: [
+            {
+                path: 'regionList',
+                component: () => import('./views/region/regionList.vue'),
+                meta: {title: '博客列表'}
+            },
+        ]
+    },
+];
+
+const routes = [...publicRouter,...systemRouter,...homeRouter,...mybatisRouter,...BlogRouter,...RegoinRouter,];
 
 export default new Router({
   base: process.env.BASE_URL,
