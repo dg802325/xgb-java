@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8" addBOMForNewFiles="with NO BOM">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-backend" charset="UTF-8" />
@@ -26,6 +26,7 @@
     <file url="file://$PROJECT_DIR$/xgb-reptile/reptile-dao" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-reptile/reptile-model" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-reptile/reptile-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-reptile/spider1" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-test" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>

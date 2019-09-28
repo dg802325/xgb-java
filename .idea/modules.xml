@@ -15,10 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/xgb-cloud/cloud-oss/cloud-oss.iml" filepath="$PROJECT_DIR$/xgb-cloud/cloud-oss/cloud-oss.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-cloud/cloud-pay/cloud-pay.iml" filepath="$PROJECT_DIR$/xgb-cloud/cloud-pay/cloud-pay.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-cloud/cloud-zuul/cloud-zuul.iml" filepath="$PROJECT_DIR$/xgb-cloud/cloud-zuul/cloud-zuul.iml" />
-      <module fileurl="file://$PROJECT_DIR$/xgb-reptile/reptile-backend/reptile-backend.iml" filepath="$PROJECT_DIR$/xgb-reptile/reptile-backend/reptile-backend.iml" />
-      <module fileurl="file://$PROJECT_DIR$/xgb-reptile/reptile-dao/reptile-dao.iml" filepath="$PROJECT_DIR$/xgb-reptile/reptile-dao/reptile-dao.iml" />
-      <module fileurl="file://$PROJECT_DIR$/xgb-reptile/reptile-model/reptile-model.iml" filepath="$PROJECT_DIR$/xgb-reptile/reptile-model/reptile-model.iml" />
-      <module fileurl="file://$PROJECT_DIR$/xgb-reptile/reptile-service/reptile-service.iml" filepath="$PROJECT_DIR$/xgb-reptile/reptile-service/reptile-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xgb-reptile/spider1/spider1.iml" filepath="$PROJECT_DIR$/xgb-reptile/spider1/spider1.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-boot/xgb-boot.iml" filepath="$PROJECT_DIR$/xgb-boot/xgb-boot.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-cloud/xgb-cloud.iml" filepath="$PROJECT_DIR$/xgb-cloud/xgb-cloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-common/xgb-common.iml" filepath="$PROJECT_DIR$/xgb-common/xgb-common.iml" />
