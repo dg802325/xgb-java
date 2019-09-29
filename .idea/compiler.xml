@@ -7,23 +7,23 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="boot-backend" />
-        <module name="boot-dao" />
-        <module name="boot-message" />
-        <module name="boot-model" />
         <module name="boot-mybatis" />
-        <module name="boot-oss" />
-        <module name="boot-pay" />
-        <module name="boot-service" />
-        <module name="cloud-eureka" />
-        <module name="cloud-member" />
-        <module name="cloud-oss" />
-        <module name="cloud-pay" />
+        <module name="xgb-mybatis" />
         <module name="cloud-zuul" />
         <module name="send-mail" />
         <module name="spider1" />
+        <module name="boot-dao" />
+        <module name="boot-backend" />
+        <module name="boot-pay" />
+        <module name="boot-oss" />
+        <module name="cloud-pay" />
+        <module name="cloud-oss" />
+        <module name="boot-model" />
+        <module name="cloud-member" />
+        <module name="cloud-eureka" />
+        <module name="boot-service" />
+        <module name="boot-message" />
         <module name="xgb-common" />
-        <module name="xgb-mybatis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
@@ -34,7 +34,7 @@
       <module name="boot-mybatis" target="1.8" />
       <module name="boot-oss" target="1.8" />
       <module name="boot-pay" target="1.8" />
-      <module name="boot-service" target="8" />
+      <module name="boot-service" target="1.8" />
       <module name="cloud-eureka" target="1.8" />
       <module name="cloud-member" target="1.8" />
       <module name="cloud-order" target="1.8" />
@@ -46,7 +46,7 @@
       <module name="xgb-cloud" target="1.8" />
       <module name="xgb-common" target="1.8" />
       <module name="xgb-java" target="1.8" />
-      <module name="xgb-mybatis" target="8" />
+      <module name="xgb-mybatis" target="1.8" />
       <module name="xgb-reptile" target="1.8" />
     </bytecodeTargetLevel>
   </component>

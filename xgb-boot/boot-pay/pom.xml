@@ -20,11 +20,11 @@
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/jdom/jdom -->
-        <dependency>
-            <groupId>com.hatchet</groupId>
-            <artifactId>alipay-trade-sdk</artifactId>
-            <version>1.0.0</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.hatchet</groupId>-->
+<!--            <artifactId>alipay-trade-sdk</artifactId>-->
+<!--            <version>1.0.0</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>com.alipay.sdk</groupId>
             <artifactId>alipay-sdk-java</artifactId>
