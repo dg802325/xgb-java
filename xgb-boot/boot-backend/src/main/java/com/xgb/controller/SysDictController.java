@@ -1,5 +1,6 @@
 package com.xgb.controller;
 
+import com.xgb.common.SessionUtil;
 import com.xgb.lang.R;
 import com.xgb.model.SysDict;
 import com.xgb.model.SysDictExample;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,6 +44,7 @@ public class SysDictController {
         logger.info("------request-address----------------：/admin/getOneDictList");
         SysDictExample sysDictExample = new SysDictExample();
         sysDictExample.createCriteria().andDictTypeEqualTo("0");
+        sysDictExample.setOrderByClause("SORT ASC");
         List<SysDict> sysDicts = sysDictService.selectByExample(sysDictExample);
         Map<String,Object> parentMap = new HashMap<String,Object>();
         //默认返回查询结果
@@ -60,6 +63,7 @@ public class SysDictController {
         logger.info("------request-address----------------：/admin/getTwoDictList");
         SysDictExample sysDictExample = new SysDictExample();
         sysDictExample.createCriteria().andParentIdEqualTo(parentId);
+        sysDictExample.setOrderByClause("SORT ASC");
         List<SysDict> sysDicts = sysDictService.selectByExample(sysDictExample);
         Map<String,Object> parentMap = new HashMap<String,Object>();
         //默认返回查询结果
@@ -68,41 +72,74 @@ public class SysDictController {
     }
 
     /**
-    * 新增/编辑一级字典
+    * 新增一级字典
     * @return
     */
 //    @RequiresPermissions("SYS:DICT:SAVE")
-    @PostMapping("saveSysDict")
-    public R saveSysDict(SysDict sysDict){
-        logger.info("------request-address----------------：/admin/saveSysDict");
+    @PostMapping("saveOneSysDict")
+    public R saveOneSysDict(SysDict sysDict){
+        logger.info("------request-address----------------：/admin/saveOneSysDict");
         Map<String,Object> map = new HashMap<String,Object>();
-        if(MyUtils.isEmpty(sysDict.getId())){
-            sysDict.setId(UUIDUtils.getUUID());
-            if(sysDictService.insert(sysDict) > 0){
-                R.ok("添加成功");
-            }else{
-                R.error(996,"添加失败");
-            }
+        String sysUserId = SessionUtil.getSysUserId();
+        sysDict.setId(UUIDUtils.getUUID());
+        sysDict.setCreateId(sysUserId);
+        sysDict.setCreateTime(new Date());
+        sysDict.setStatus("0");
+        sysDict.setDictType("0");
+        if(sysDictService.insert(sysDict) > 0){
+            return R.ok("添加成功");
         }else{
-            if(sysDictService.updateByPrimaryKeySelective(sysDict) > 0){
-                R.ok("编辑成功");
-            }else{
-                R.error(996,"编辑失败");
-            }
+            return R.error(996,"添加失败");
         }
-        return R.error(996,"未做任何操作");
+    }
+
+    /**
+     * 新增二级字典
+     * @return
+     */
+//    @RequiresPermissions("SYS:DICT:SAVE")
+    @PostMapping("saveTwoSysDict")
+    public R saveTwoSysDict(SysDict sysDict){
+        logger.info("------request-address----------------：/admin/saveTwoSysDict");
+        Map<String,Object> map = new HashMap<String,Object>();
+        String sysUserId = SessionUtil.getSysUserId();
+        sysDict.setId(UUIDUtils.getUUID());
+        sysDict.setCreateId(sysUserId);
+        sysDict.setCreateTime(new Date());
+        sysDict.setStatus("0");
+        sysDict.setDictType("1");
+        if(sysDictService.insert(sysDict) > 0){
+            return R.ok("添加成功");
+        }else{
+            return R.error(996,"添加失败");
+        }
+    }
+
+    /**
+     * 编辑字典
+     * @return
+     */
+//    @RequiresPermissions("SYS:DICT:SAVE")
+    @PostMapping("saveEditSysDict")
+    public R saveEditSysDict(SysDict sysDict){
+        logger.info("------request-address----------------：/admin/saveEditSysDict");
+        if(sysDictService.updateByPrimaryKeySelective(sysDict) > 0){
+            return R.ok("编辑成功");
+        }else{
+            return R.error(996,"编辑失败");
+        }
     }
 
     /**
     * 删除
     * @return
     */
-    @RequiresPermissions("SYS:DICT:DELETE")
+//    @RequiresPermissions("SYS:DICT:DELETE")
     @PostMapping("deleteSysDict")
     public R deleteSysDict(SysDict sysDict) {
         logger.info("------request-address-----------------：/admin/deleteSysDict");
         Map<String,Object> map = new HashMap<String,Object>();
-        int delete = sysDictService.deleteByPrimaryKey(sysDict.getId());
+        int delete = sysDictService.deleteSysDictById(sysDict.getId());
         if(delete>0){
             return R.ok("删除成功");
         }else{
@@ -110,4 +147,16 @@ public class SysDictController {
         }
     }
 
+    @GetMapping("selectByOnlyCode")
+    public R selectByOnlyCode(String code){
+        logger.info("------request-address-----------------：/admin/selectByOnlyCode");
+        //查询一级
+        SysDictExample example = new SysDictExample();
+        example.createCriteria().andDictCodeEqualTo(code);
+        SysDict sysDict = sysDictService.selectByExample(example).get(0);
+        SysDictExample sysDictExample = new SysDictExample();
+        sysDictExample.createCriteria().andParentIdEqualTo(sysDict.getId());
+        List<SysDict> sysDicts = sysDictService.selectByExample(sysDictExample);
+        return R.ok("lists",sysDicts,"查询成功");
+    }
 }

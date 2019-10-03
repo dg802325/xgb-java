@@ -26,6 +26,7 @@ import static com.xgb.heliPay.incoming.enums.MerchantEntryCodeEnum.SUCCESS;
  * @Date: 2019/9/27 13:50
  * @Description:  进件api
  */
+@RequestMapping("/incoming")
 public class IncomingController extends IncomingBase {
 
     private static final String tempDir = System.getProperty("java.io.tmpdir");

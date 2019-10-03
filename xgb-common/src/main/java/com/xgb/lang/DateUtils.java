@@ -1,8 +1,7 @@
 package com.xgb.lang;
 
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
@@ -12,10 +11,24 @@ import java.util.Date;
  */
 public class DateUtils {
 
+    /**
+     * 获得当前时间
+     * @return
+     */
     public static Date getNowDate(){
         LocalDateTime localDateTime = LocalDateTime.now();
         ZoneId zone = ZoneId.systemDefault();
         Instant instant = localDateTime.atZone(zone).toInstant();
         return Date.from(instant);
     }
+
+    public static String getNowDateFormatyyyyMMddHHmmss(){
+        //格式化日期
+        DateTimeFormatter yyyyMMdd = DateTimeFormatter.ofPattern("yyyyMMdd");
+        DateTimeFormatter HHmmss = DateTimeFormatter.ofPattern("HHmmss");
+        LocalTime now1 = LocalTime.now().withNano(0);//18:18:37
+        String format = LocalDate.now().format(yyyyMMdd)+now1.format(HHmmss);
+        return format;
+    }
+
 }

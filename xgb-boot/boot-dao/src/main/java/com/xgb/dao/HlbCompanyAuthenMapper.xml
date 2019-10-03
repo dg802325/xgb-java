@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.HlbCompanyAuthenMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.HlbCompanyAuthen" >
+    <constructor >
+      <idArg column="ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="COMPANY_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SHOW_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEB_SITE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ACCESS_URL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MERCHANT_TYPE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="LEGAL_PERSON" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="LEGAL_PERSON_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORG_NUM" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="BUSINESS_LICENSE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PROVINCE_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CITY_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="AREA_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="REGION_CODE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ADDRESS" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="LINKMAN" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="LINK_PHONE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="EMAIL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="BIND_MOBILE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SERVICE_PHONE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="BANK_CODE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ACCOUNT_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ACCOUNT_NO" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SETTLE_BANK_TYPE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SETTLEMENT_PERIOD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SETTLEMENT_MODE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SETTLEMENT_REMARK" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MERCHANT_CATEGORY" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="INDUSTRY_TYPE_CODE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="AUTHORIZATION_FLAG" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="UNION_PAY_QR_CODE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NEED_POS_FUNCTION" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ID_CARD_START_DATE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ID_CARD_END_DATE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="BUSINESS_DATE_START" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="BUSINESS_DATE_LIMIT" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="ACCOUNT_ID_CARD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MCC" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="AGREEPROTOCOL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CALLBACK_URL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SETTLE_MODE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SETTLEMENT_AUTH" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="POSTAL_ADDRESS" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MICRO_BIZ_TYPE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CERT_TYPE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="LINK_MAN_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NEED_AUTHORIZE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SPECIAL_SIGN_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATUS" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="REMARK" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CREATE_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="UPDATE_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CREATE_TIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="UPDATE_TIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, COMPANY_NAME, SHOW_NAME, WEB_SITE, ACCESS_URL, MERCHANT_TYPE, LEGAL_PERSON, LEGAL_PERSON_ID, 
+    ORG_NUM, BUSINESS_LICENSE, PROVINCE_ID, CITY_ID, AREA_ID, REGION_CODE, ADDRESS, LINKMAN, 
+    LINK_PHONE, EMAIL, BIND_MOBILE, SERVICE_PHONE, BANK_CODE, ACCOUNT_NAME, ACCOUNT_NO, 
+    SETTLE_BANK_TYPE, SETTLEMENT_PERIOD, SETTLEMENT_MODE, SETTLEMENT_REMARK, MERCHANT_CATEGORY, 
+    INDUSTRY_TYPE_CODE, AUTHORIZATION_FLAG, UNION_PAY_QR_CODE, NEED_POS_FUNCTION, ID_CARD_START_DATE, 
+    ID_CARD_END_DATE, BUSINESS_DATE_START, BUSINESS_DATE_LIMIT, ACCOUNT_ID_CARD, MCC, 
+    AGREEPROTOCOL, CALLBACK_URL, SETTLE_MODE, SETTLEMENT_AUTH, POSTAL_ADDRESS, MICRO_BIZ_TYPE, 
+    CERT_TYPE, LINK_MAN_ID, NEED_AUTHORIZE, SPECIAL_SIGN_NAME, STATUS, REMARK, CREATE_ID, 
+    UPDATE_ID, CREATE_TIME, UPDATE_TIME
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.HlbCompanyAuthenExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from HLB_COMPANY_AUTHEN
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from HLB_COMPANY_AUTHEN
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from HLB_COMPANY_AUTHEN
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xgb.model.HlbCompanyAuthenExample" >
+    delete from HLB_COMPANY_AUTHEN
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.HlbCompanyAuthen" >
+    insert into HLB_COMPANY_AUTHEN (ID, COMPANY_NAME, SHOW_NAME, 
+      WEB_SITE, ACCESS_URL, MERCHANT_TYPE, 
+      LEGAL_PERSON, LEGAL_PERSON_ID, ORG_NUM, 
+      BUSINESS_LICENSE, PROVINCE_ID, CITY_ID, 
+      AREA_ID, REGION_CODE, ADDRESS, 
+      LINKMAN, LINK_PHONE, EMAIL, 
+      BIND_MOBILE, SERVICE_PHONE, BANK_CODE, 
+      ACCOUNT_NAME, ACCOUNT_NO, SETTLE_BANK_TYPE, 
+      SETTLEMENT_PERIOD, SETTLEMENT_MODE, SETTLEMENT_REMARK, 
+      MERCHANT_CATEGORY, INDUSTRY_TYPE_CODE, AUTHORIZATION_FLAG, 
+      UNION_PAY_QR_CODE, NEED_POS_FUNCTION, ID_CARD_START_DATE, 
+      ID_CARD_END_DATE, BUSINESS_DATE_START, BUSINESS_DATE_LIMIT, 
+      ACCOUNT_ID_CARD, MCC, AGREEPROTOCOL, 
+      CALLBACK_URL, SETTLE_MODE, SETTLEMENT_AUTH, 
+      POSTAL_ADDRESS, MICRO_BIZ_TYPE, CERT_TYPE, 
+      LINK_MAN_ID, NEED_AUTHORIZE, SPECIAL_SIGN_NAME, 
+      STATUS, REMARK, CREATE_ID, 
+      UPDATE_ID, CREATE_TIME, UPDATE_TIME
+      )
+    values (#{id,jdbcType=VARCHAR}, #{companyName,jdbcType=VARCHAR}, #{showName,jdbcType=VARCHAR}, 
+      #{webSite,jdbcType=VARCHAR}, #{accessUrl,jdbcType=VARCHAR}, #{merchantType,jdbcType=VARCHAR}, 
+      #{legalPerson,jdbcType=VARCHAR}, #{legalPersonId,jdbcType=VARCHAR}, #{orgNum,jdbcType=VARCHAR}, 
+      #{businessLicense,jdbcType=VARCHAR}, #{provinceId,jdbcType=VARCHAR}, #{cityId,jdbcType=VARCHAR}, 
+      #{areaId,jdbcType=VARCHAR}, #{regionCode,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{linkman,jdbcType=VARCHAR}, #{linkPhone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{bindMobile,jdbcType=VARCHAR}, #{servicePhone,jdbcType=VARCHAR}, #{bankCode,jdbcType=VARCHAR}, 
+      #{accountName,jdbcType=VARCHAR}, #{accountNo,jdbcType=VARCHAR}, #{settleBankType,jdbcType=VARCHAR}, 
+      #{settlementPeriod,jdbcType=VARCHAR}, #{settlementMode,jdbcType=VARCHAR}, #{settlementRemark,jdbcType=VARCHAR}, 
+      #{merchantCategory,jdbcType=VARCHAR}, #{industryTypeCode,jdbcType=VARCHAR}, #{authorizationFlag,jdbcType=VARCHAR}, 
+      #{unionPayQrCode,jdbcType=VARCHAR}, #{needPosFunction,jdbcType=VARCHAR}, #{idCardStartDate,jdbcType=VARCHAR}, 
+      #{idCardEndDate,jdbcType=VARCHAR}, #{businessDateStart,jdbcType=TIMESTAMP}, #{businessDateLimit,jdbcType=TIMESTAMP}, 
+      #{accountIdCard,jdbcType=VARCHAR}, #{mcc,jdbcType=VARCHAR}, #{agreeprotocol,jdbcType=VARCHAR}, 
+      #{callbackUrl,jdbcType=VARCHAR}, #{settleMode,jdbcType=VARCHAR}, #{settlementAuth,jdbcType=VARCHAR}, 
+      #{postalAddress,jdbcType=VARCHAR}, #{microBizType,jdbcType=VARCHAR}, #{certType,jdbcType=VARCHAR}, 
+      #{linkManId,jdbcType=VARCHAR}, #{needAuthorize,jdbcType=VARCHAR}, #{specialSignName,jdbcType=VARCHAR}, 
+      #{status,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{createId,jdbcType=VARCHAR}, 
+      #{updateId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.HlbCompanyAuthen" >
+    insert into HLB_COMPANY_AUTHEN
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="companyName != null" >
+        COMPANY_NAME,
+      </if>
+      <if test="showName != null" >
+        SHOW_NAME,
+      </if>
+      <if test="webSite != null" >
+        WEB_SITE,
+      </if>
+      <if test="accessUrl != null" >
+        ACCESS_URL,
+      </if>
+      <if test="merchantType != null" >
+        MERCHANT_TYPE,
+      </if>
+      <if test="legalPerson != null" >
+        LEGAL_PERSON,
+      </if>
+      <if test="legalPersonId != null" >
+        LEGAL_PERSON_ID,
+      </if>
+      <if test="orgNum != null" >
+        ORG_NUM,
+      </if>
+      <if test="businessLicense != null" >
+        BUSINESS_LICENSE,
+      </if>
+      <if test="provinceId != null" >
+        PROVINCE_ID,
+      </if>
+      <if test="cityId != null" >
+        CITY_ID,
+      </if>
+      <if test="areaId != null" >
+        AREA_ID,
+      </if>
+      <if test="regionCode != null" >
+        REGION_CODE,
+      </if>
+      <if test="address != null" >
+        ADDRESS,
+      </if>
+      <if test="linkman != null" >
+        LINKMAN,
+      </if>
+      <if test="linkPhone != null" >
+        LINK_PHONE,
+      </if>
+      <if test="email != null" >
+        EMAIL,
+      </if>
+      <if test="bindMobile != null" >
+        BIND_MOBILE,
+      </if>
+      <if test="servicePhone != null" >
+        SERVICE_PHONE,
+      </if>
+      <if test="bankCode != null" >
+        BANK_CODE,
+      </if>
+      <if test="accountName != null" >
+        ACCOUNT_NAME,
+      </if>
+      <if test="accountNo != null" >
+        ACCOUNT_NO,
+      </if>
+      <if test="settleBankType != null" >
+        SETTLE_BANK_TYPE,
+      </if>
+      <if test="settlementPeriod != null" >
+        SETTLEMENT_PERIOD,
+      </if>
+      <if test="settlementMode != null" >
+        SETTLEMENT_MODE,
+      </if>
+      <if test="settlementRemark != null" >
+        SETTLEMENT_REMARK,
+      </if>
+      <if test="merchantCategory != null" >
+        MERCHANT_CATEGORY,
+      </if>
+      <if test="industryTypeCode != null" >
+        INDUSTRY_TYPE_CODE,
+      </if>
+      <if test="authorizationFlag != null" >
+        AUTHORIZATION_FLAG,
+      </if>
+      <if test="unionPayQrCode != null" >
+        UNION_PAY_QR_CODE,
+      </if>
+      <if test="needPosFunction != null" >
+        NEED_POS_FUNCTION,
+      </if>
+      <if test="idCardStartDate != null" >
+        ID_CARD_START_DATE,
+      </if>
+      <if test="idCardEndDate != null" >
+        ID_CARD_END_DATE,
+      </if>
+      <if test="businessDateStart != null" >
+        BUSINESS_DATE_START,
+      </if>
+      <if test="businessDateLimit != null" >
+        BUSINESS_DATE_LIMIT,
+      </if>
+      <if test="accountIdCard != null" >
+        ACCOUNT_ID_CARD,
+      </if>
+      <if test="mcc != null" >
+        MCC,
+      </if>
+      <if test="agreeprotocol != null" >
+        AGREEPROTOCOL,
+      </if>
+      <if test="callbackUrl != null" >
+        CALLBACK_URL,
+      </if>
+      <if test="settleMode != null" >
+        SETTLE_MODE,
+      </if>
+      <if test="settlementAuth != null" >
+        SETTLEMENT_AUTH,
+      </if>
+      <if test="postalAddress != null" >
+        POSTAL_ADDRESS,
+      </if>
+      <if test="microBizType != null" >
+        MICRO_BIZ_TYPE,
+      </if>
+      <if test="certType != null" >
+        CERT_TYPE,
+      </if>
+      <if test="linkManId != null" >
+        LINK_MAN_ID,
+      </if>
+      <if test="needAuthorize != null" >
+        NEED_AUTHORIZE,
+      </if>
+      <if test="specialSignName != null" >
+        SPECIAL_SIGN_NAME,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+      <if test="createId != null" >
+        CREATE_ID,
+      </if>
+      <if test="updateId != null" >
+        UPDATE_ID,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="companyName != null" >
+        #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="showName != null" >
+        #{showName,jdbcType=VARCHAR},
+      </if>
+      <if test="webSite != null" >
+        #{webSite,jdbcType=VARCHAR},
+      </if>
+      <if test="accessUrl != null" >
+        #{accessUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="merchantType != null" >
+        #{merchantType,jdbcType=VARCHAR},
+      </if>
+      <if test="legalPerson != null" >
+        #{legalPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="legalPersonId != null" >
+        #{legalPersonId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgNum != null" >
+        #{orgNum,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLicense != null" >
+        #{businessLicense,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceId != null" >
+        #{provinceId,jdbcType=VARCHAR},
+      </if>
+      <if test="cityId != null" >
+        #{cityId,jdbcType=VARCHAR},
+      </if>
+      <if test="areaId != null" >
+        #{areaId,jdbcType=VARCHAR},
+      </if>
+      <if test="regionCode != null" >
+        #{regionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="linkman != null" >
+        #{linkman,jdbcType=VARCHAR},
+      </if>
+      <if test="linkPhone != null" >
+        #{linkPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="bindMobile != null" >
+        #{bindMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="servicePhone != null" >
+        #{servicePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCode != null" >
+        #{bankCode,jdbcType=VARCHAR},
+      </if>
+      <if test="accountName != null" >
+        #{accountName,jdbcType=VARCHAR},
+      </if>
+      <if test="accountNo != null" >
+        #{accountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="settleBankType != null" >
+        #{settleBankType,jdbcType=VARCHAR},
+      </if>
+      <if test="settlementPeriod != null" >
+        #{settlementPeriod,jdbcType=VARCHAR},
+      </if>
+      <if test="settlementMode != null" >
+        #{settlementMode,jdbcType=VARCHAR},
+      </if>
+      <if test="settlementRemark != null" >
+        #{settlementRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="merchantCategory != null" >
+        #{merchantCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="industryTypeCode != null" >
+        #{industryTypeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="authorizationFlag != null" >
+        #{authorizationFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="unionPayQrCode != null" >
+        #{unionPayQrCode,jdbcType=VARCHAR},
+      </if>
+      <if test="needPosFunction != null" >
+        #{needPosFunction,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardStartDate != null" >
+        #{idCardStartDate,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardEndDate != null" >
+        #{idCardEndDate,jdbcType=VARCHAR},
+      </if>
+      <if test="businessDateStart != null" >
+        #{businessDateStart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="businessDateLimit != null" >
+        #{businessDateLimit,jdbcType=TIMESTAMP},
+      </if>
+      <if test="accountIdCard != null" >
+        #{accountIdCard,jdbcType=VARCHAR},
+      </if>
+      <if test="mcc != null" >
+        #{mcc,jdbcType=VARCHAR},
+      </if>
+      <if test="agreeprotocol != null" >
+        #{agreeprotocol,jdbcType=VARCHAR},
+      </if>
+      <if test="callbackUrl != null" >
+        #{callbackUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="settleMode != null" >
+        #{settleMode,jdbcType=VARCHAR},
+      </if>
+      <if test="settlementAuth != null" >
+        #{settlementAuth,jdbcType=VARCHAR},
+      </if>
+      <if test="postalAddress != null" >
+        #{postalAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="microBizType != null" >
+        #{microBizType,jdbcType=VARCHAR},
+      </if>
+      <if test="certType != null" >
+        #{certType,jdbcType=VARCHAR},
+      </if>
+      <if test="linkManId != null" >
+        #{linkManId,jdbcType=VARCHAR},
+      </if>
+      <if test="needAuthorize != null" >
+        #{needAuthorize,jdbcType=VARCHAR},
+      </if>
+      <if test="specialSignName != null" >
+        #{specialSignName,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createId != null" >
+        #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateId != null" >
+        #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.HlbCompanyAuthenExample" resultType="java.lang.Integer" >
+    select count(*) from HLB_COMPANY_AUTHEN
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update HLB_COMPANY_AUTHEN
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.companyName != null" >
+        COMPANY_NAME = #{record.companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.showName != null" >
+        SHOW_NAME = #{record.showName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.webSite != null" >
+        WEB_SITE = #{record.webSite,jdbcType=VARCHAR},
+      </if>
+      <if test="record.accessUrl != null" >
+        ACCESS_URL = #{record.accessUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.merchantType != null" >
+        MERCHANT_TYPE = #{record.merchantType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.legalPerson != null" >
+        LEGAL_PERSON = #{record.legalPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="record.legalPersonId != null" >
+        LEGAL_PERSON_ID = #{record.legalPersonId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orgNum != null" >
+        ORG_NUM = #{record.orgNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.businessLicense != null" >
+        BUSINESS_LICENSE = #{record.businessLicense,jdbcType=VARCHAR},
+      </if>
+      <if test="record.provinceId != null" >
+        PROVINCE_ID = #{record.provinceId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cityId != null" >
+        CITY_ID = #{record.cityId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.areaId != null" >
+        AREA_ID = #{record.areaId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.regionCode != null" >
+        REGION_CODE = #{record.regionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.address != null" >
+        ADDRESS = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.linkman != null" >
+        LINKMAN = #{record.linkman,jdbcType=VARCHAR},
+      </if>
+      <if test="record.linkPhone != null" >
+        LINK_PHONE = #{record.linkPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.email != null" >
+        EMAIL = #{record.email,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bindMobile != null" >
+        BIND_MOBILE = #{record.bindMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.servicePhone != null" >
+        SERVICE_PHONE = #{record.servicePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bankCode != null" >
+        BANK_CODE = #{record.bankCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.accountName != null" >
+        ACCOUNT_NAME = #{record.accountName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.accountNo != null" >
+        ACCOUNT_NO = #{record.accountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.settleBankType != null" >
+        SETTLE_BANK_TYPE = #{record.settleBankType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.settlementPeriod != null" >
+        SETTLEMENT_PERIOD = #{record.settlementPeriod,jdbcType=VARCHAR},
+      </if>
+      <if test="record.settlementMode != null" >
+        SETTLEMENT_MODE = #{record.settlementMode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.settlementRemark != null" >
+        SETTLEMENT_REMARK = #{record.settlementRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.merchantCategory != null" >
+        MERCHANT_CATEGORY = #{record.merchantCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="record.industryTypeCode != null" >
+        INDUSTRY_TYPE_CODE = #{record.industryTypeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.authorizationFlag != null" >
+        AUTHORIZATION_FLAG = #{record.authorizationFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.unionPayQrCode != null" >
+        UNION_PAY_QR_CODE = #{record.unionPayQrCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.needPosFunction != null" >
+        NEED_POS_FUNCTION = #{record.needPosFunction,jdbcType=VARCHAR},
+      </if>
+      <if test="record.idCardStartDate != null" >
+        ID_CARD_START_DATE = #{record.idCardStartDate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.idCardEndDate != null" >
+        ID_CARD_END_DATE = #{record.idCardEndDate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.businessDateStart != null" >
+        BUSINESS_DATE_START = #{record.businessDateStart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.businessDateLimit != null" >
+        BUSINESS_DATE_LIMIT = #{record.businessDateLimit,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.accountIdCard != null" >
+        ACCOUNT_ID_CARD = #{record.accountIdCard,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mcc != null" >
+        MCC = #{record.mcc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.agreeprotocol != null" >
+        AGREEPROTOCOL = #{record.agreeprotocol,jdbcType=VARCHAR},
+      </if>
+      <if test="record.callbackUrl != null" >
+        CALLBACK_URL = #{record.callbackUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.settleMode != null" >
+        SETTLE_MODE = #{record.settleMode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.settlementAuth != null" >
+        SETTLEMENT_AUTH = #{record.settlementAuth,jdbcType=VARCHAR},
+      </if>
+      <if test="record.postalAddress != null" >
+        POSTAL_ADDRESS = #{record.postalAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.microBizType != null" >
+        MICRO_BIZ_TYPE = #{record.microBizType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.certType != null" >
+        CERT_TYPE = #{record.certType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.linkManId != null" >
+        LINK_MAN_ID = #{record.linkManId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.needAuthorize != null" >
+        NEED_AUTHORIZE = #{record.needAuthorize,jdbcType=VARCHAR},
+      </if>
+      <if test="record.specialSignName != null" >
+        SPECIAL_SIGN_NAME = #{record.specialSignName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null" >
+        REMARK = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createId != null" >
+        CREATE_ID = #{record.createId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateId != null" >
+        UPDATE_ID = #{record.updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateTime != null" >
+        UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update HLB_COMPANY_AUTHEN
+    set ID = #{record.id,jdbcType=VARCHAR},
+      COMPANY_NAME = #{record.companyName,jdbcType=VARCHAR},
+      SHOW_NAME = #{record.showName,jdbcType=VARCHAR},
+      WEB_SITE = #{record.webSite,jdbcType=VARCHAR},
+      ACCESS_URL = #{record.accessUrl,jdbcType=VARCHAR},
+      MERCHANT_TYPE = #{record.merchantType,jdbcType=VARCHAR},
+      LEGAL_PERSON = #{record.legalPerson,jdbcType=VARCHAR},
+      LEGAL_PERSON_ID = #{record.legalPersonId,jdbcType=VARCHAR},
+      ORG_NUM = #{record.orgNum,jdbcType=VARCHAR},
+      BUSINESS_LICENSE = #{record.businessLicense,jdbcType=VARCHAR},
+      PROVINCE_ID = #{record.provinceId,jdbcType=VARCHAR},
+      CITY_ID = #{record.cityId,jdbcType=VARCHAR},
+      AREA_ID = #{record.areaId,jdbcType=VARCHAR},
+      REGION_CODE = #{record.regionCode,jdbcType=VARCHAR},
+      ADDRESS = #{record.address,jdbcType=VARCHAR},
+      LINKMAN = #{record.linkman,jdbcType=VARCHAR},
+      LINK_PHONE = #{record.linkPhone,jdbcType=VARCHAR},
+      EMAIL = #{record.email,jdbcType=VARCHAR},
+      BIND_MOBILE = #{record.bindMobile,jdbcType=VARCHAR},
+      SERVICE_PHONE = #{record.servicePhone,jdbcType=VARCHAR},
+      BANK_CODE = #{record.bankCode,jdbcType=VARCHAR},
+      ACCOUNT_NAME = #{record.accountName,jdbcType=VARCHAR},
+      ACCOUNT_NO = #{record.accountNo,jdbcType=VARCHAR},
+      SETTLE_BANK_TYPE = #{record.settleBankType,jdbcType=VARCHAR},
+      SETTLEMENT_PERIOD = #{record.settlementPeriod,jdbcType=VARCHAR},
+      SETTLEMENT_MODE = #{record.settlementMode,jdbcType=VARCHAR},
+      SETTLEMENT_REMARK = #{record.settlementRemark,jdbcType=VARCHAR},
+      MERCHANT_CATEGORY = #{record.merchantCategory,jdbcType=VARCHAR},
+      INDUSTRY_TYPE_CODE = #{record.industryTypeCode,jdbcType=VARCHAR},
+      AUTHORIZATION_FLAG = #{record.authorizationFlag,jdbcType=VARCHAR},
+      UNION_PAY_QR_CODE = #{record.unionPayQrCode,jdbcType=VARCHAR},
+      NEED_POS_FUNCTION = #{record.needPosFunction,jdbcType=VARCHAR},
+      ID_CARD_START_DATE = #{record.idCardStartDate,jdbcType=VARCHAR},
+      ID_CARD_END_DATE = #{record.idCardEndDate,jdbcType=VARCHAR},
+      BUSINESS_DATE_START = #{record.businessDateStart,jdbcType=TIMESTAMP},
+      BUSINESS_DATE_LIMIT = #{record.businessDateLimit,jdbcType=TIMESTAMP},
+      ACCOUNT_ID_CARD = #{record.accountIdCard,jdbcType=VARCHAR},
+      MCC = #{record.mcc,jdbcType=VARCHAR},
+      AGREEPROTOCOL = #{record.agreeprotocol,jdbcType=VARCHAR},
+      CALLBACK_URL = #{record.callbackUrl,jdbcType=VARCHAR},
+      SETTLE_MODE = #{record.settleMode,jdbcType=VARCHAR},
+      SETTLEMENT_AUTH = #{record.settlementAuth,jdbcType=VARCHAR},
+      POSTAL_ADDRESS = #{record.postalAddress,jdbcType=VARCHAR},
+      MICRO_BIZ_TYPE = #{record.microBizType,jdbcType=VARCHAR},
+      CERT_TYPE = #{record.certType,jdbcType=VARCHAR},
+      LINK_MAN_ID = #{record.linkManId,jdbcType=VARCHAR},
+      NEED_AUTHORIZE = #{record.needAuthorize,jdbcType=VARCHAR},
+      SPECIAL_SIGN_NAME = #{record.specialSignName,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=VARCHAR},
+      REMARK = #{record.remark,jdbcType=VARCHAR},
+      CREATE_ID = #{record.createId,jdbcType=VARCHAR},
+      UPDATE_ID = #{record.updateId,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.HlbCompanyAuthen" >
+    update HLB_COMPANY_AUTHEN
+    <set >
+      <if test="companyName != null" >
+        COMPANY_NAME = #{companyName,jdbcType=VARCHAR},
+      </if>
+      <if test="showName != null" >
+        SHOW_NAME = #{showName,jdbcType=VARCHAR},
+      </if>
+      <if test="webSite != null" >
+        WEB_SITE = #{webSite,jdbcType=VARCHAR},
+      </if>
+      <if test="accessUrl != null" >
+        ACCESS_URL = #{accessUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="merchantType != null" >
+        MERCHANT_TYPE = #{merchantType,jdbcType=VARCHAR},
+      </if>
+      <if test="legalPerson != null" >
+        LEGAL_PERSON = #{legalPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="legalPersonId != null" >
+        LEGAL_PERSON_ID = #{legalPersonId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgNum != null" >
+        ORG_NUM = #{orgNum,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLicense != null" >
+        BUSINESS_LICENSE = #{businessLicense,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceId != null" >
+        PROVINCE_ID = #{provinceId,jdbcType=VARCHAR},
+      </if>
+      <if test="cityId != null" >
+        CITY_ID = #{cityId,jdbcType=VARCHAR},
+      </if>
+      <if test="areaId != null" >
+        AREA_ID = #{areaId,jdbcType=VARCHAR},
+      </if>
+      <if test="regionCode != null" >
+        REGION_CODE = #{regionCode,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="linkman != null" >
+        LINKMAN = #{linkman,jdbcType=VARCHAR},
+      </if>
+      <if test="linkPhone != null" >
+        LINK_PHONE = #{linkPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        EMAIL = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="bindMobile != null" >
+        BIND_MOBILE = #{bindMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="servicePhone != null" >
+        SERVICE_PHONE = #{servicePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCode != null" >
+        BANK_CODE = #{bankCode,jdbcType=VARCHAR},
+      </if>
+      <if test="accountName != null" >
+        ACCOUNT_NAME = #{accountName,jdbcType=VARCHAR},
+      </if>
+      <if test="accountNo != null" >
+        ACCOUNT_NO = #{accountNo,jdbcType=VARCHAR},
+      </if>
+      <if test="settleBankType != null" >
+        SETTLE_BANK_TYPE = #{settleBankType,jdbcType=VARCHAR},
+      </if>
+      <if test="settlementPeriod != null" >
+        SETTLEMENT_PERIOD = #{settlementPeriod,jdbcType=VARCHAR},
+      </if>
+      <if test="settlementMode != null" >
+        SETTLEMENT_MODE = #{settlementMode,jdbcType=VARCHAR},
+      </if>
+      <if test="settlementRemark != null" >
+        SETTLEMENT_REMARK = #{settlementRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="merchantCategory != null" >
+        MERCHANT_CATEGORY = #{merchantCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="industryTypeCode != null" >
+        INDUSTRY_TYPE_CODE = #{industryTypeCode,jdbcType=VARCHAR},
+      </if>
+      <if test="authorizationFlag != null" >
+        AUTHORIZATION_FLAG = #{authorizationFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="unionPayQrCode != null" >
+        UNION_PAY_QR_CODE = #{unionPayQrCode,jdbcType=VARCHAR},
+      </if>
+      <if test="needPosFunction != null" >
+        NEED_POS_FUNCTION = #{needPosFunction,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardStartDate != null" >
+        ID_CARD_START_DATE = #{idCardStartDate,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardEndDate != null" >
+        ID_CARD_END_DATE = #{idCardEndDate,jdbcType=VARCHAR},
+      </if>
+      <if test="businessDateStart != null" >
+        BUSINESS_DATE_START = #{businessDateStart,jdbcType=TIMESTAMP},
+      </if>
+      <if test="businessDateLimit != null" >
+        BUSINESS_DATE_LIMIT = #{businessDateLimit,jdbcType=TIMESTAMP},
+      </if>
+      <if test="accountIdCard != null" >
+        ACCOUNT_ID_CARD = #{accountIdCard,jdbcType=VARCHAR},
+      </if>
+      <if test="mcc != null" >
+        MCC = #{mcc,jdbcType=VARCHAR},
+      </if>
+      <if test="agreeprotocol != null" >
+        AGREEPROTOCOL = #{agreeprotocol,jdbcType=VARCHAR},
+      </if>
+      <if test="callbackUrl != null" >
+        CALLBACK_URL = #{callbackUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="settleMode != null" >
+        SETTLE_MODE = #{settleMode,jdbcType=VARCHAR},
+      </if>
+      <if test="settlementAuth != null" >
+        SETTLEMENT_AUTH = #{settlementAuth,jdbcType=VARCHAR},
+      </if>
+      <if test="postalAddress != null" >
+        POSTAL_ADDRESS = #{postalAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="microBizType != null" >
+        MICRO_BIZ_TYPE = #{microBizType,jdbcType=VARCHAR},
+      </if>
+      <if test="certType != null" >
+        CERT_TYPE = #{certType,jdbcType=VARCHAR},
+      </if>
+      <if test="linkManId != null" >
+        LINK_MAN_ID = #{linkManId,jdbcType=VARCHAR},
+      </if>
+      <if test="needAuthorize != null" >
+        NEED_AUTHORIZE = #{needAuthorize,jdbcType=VARCHAR},
+      </if>
+      <if test="specialSignName != null" >
+        SPECIAL_SIGN_NAME = #{specialSignName,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createId != null" >
+        CREATE_ID = #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateId != null" >
+        UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xgb.model.HlbCompanyAuthen" >
+    update HLB_COMPANY_AUTHEN
+    set COMPANY_NAME = #{companyName,jdbcType=VARCHAR},
+      SHOW_NAME = #{showName,jdbcType=VARCHAR},
+      WEB_SITE = #{webSite,jdbcType=VARCHAR},
+      ACCESS_URL = #{accessUrl,jdbcType=VARCHAR},
+      MERCHANT_TYPE = #{merchantType,jdbcType=VARCHAR},
+      LEGAL_PERSON = #{legalPerson,jdbcType=VARCHAR},
+      LEGAL_PERSON_ID = #{legalPersonId,jdbcType=VARCHAR},
+      ORG_NUM = #{orgNum,jdbcType=VARCHAR},
+      BUSINESS_LICENSE = #{businessLicense,jdbcType=VARCHAR},
+      PROVINCE_ID = #{provinceId,jdbcType=VARCHAR},
+      CITY_ID = #{cityId,jdbcType=VARCHAR},
+      AREA_ID = #{areaId,jdbcType=VARCHAR},
+      REGION_CODE = #{regionCode,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      LINKMAN = #{linkman,jdbcType=VARCHAR},
+      LINK_PHONE = #{linkPhone,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      BIND_MOBILE = #{bindMobile,jdbcType=VARCHAR},
+      SERVICE_PHONE = #{servicePhone,jdbcType=VARCHAR},
+      BANK_CODE = #{bankCode,jdbcType=VARCHAR},
+      ACCOUNT_NAME = #{accountName,jdbcType=VARCHAR},
+      ACCOUNT_NO = #{accountNo,jdbcType=VARCHAR},
+      SETTLE_BANK_TYPE = #{settleBankType,jdbcType=VARCHAR},
+      SETTLEMENT_PERIOD = #{settlementPeriod,jdbcType=VARCHAR},
+      SETTLEMENT_MODE = #{settlementMode,jdbcType=VARCHAR},
+      SETTLEMENT_REMARK = #{settlementRemark,jdbcType=VARCHAR},
+      MERCHANT_CATEGORY = #{merchantCategory,jdbcType=VARCHAR},
+      INDUSTRY_TYPE_CODE = #{industryTypeCode,jdbcType=VARCHAR},
+      AUTHORIZATION_FLAG = #{authorizationFlag,jdbcType=VARCHAR},
+      UNION_PAY_QR_CODE = #{unionPayQrCode,jdbcType=VARCHAR},
+      NEED_POS_FUNCTION = #{needPosFunction,jdbcType=VARCHAR},
+      ID_CARD_START_DATE = #{idCardStartDate,jdbcType=VARCHAR},
+      ID_CARD_END_DATE = #{idCardEndDate,jdbcType=VARCHAR},
+      BUSINESS_DATE_START = #{businessDateStart,jdbcType=TIMESTAMP},
+      BUSINESS_DATE_LIMIT = #{businessDateLimit,jdbcType=TIMESTAMP},
+      ACCOUNT_ID_CARD = #{accountIdCard,jdbcType=VARCHAR},
+      MCC = #{mcc,jdbcType=VARCHAR},
+      AGREEPROTOCOL = #{agreeprotocol,jdbcType=VARCHAR},
+      CALLBACK_URL = #{callbackUrl,jdbcType=VARCHAR},
+      SETTLE_MODE = #{settleMode,jdbcType=VARCHAR},
+      SETTLEMENT_AUTH = #{settlementAuth,jdbcType=VARCHAR},
+      POSTAL_ADDRESS = #{postalAddress,jdbcType=VARCHAR},
+      MICRO_BIZ_TYPE = #{microBizType,jdbcType=VARCHAR},
+      CERT_TYPE = #{certType,jdbcType=VARCHAR},
+      LINK_MAN_ID = #{linkManId,jdbcType=VARCHAR},
+      NEED_AUTHORIZE = #{needAuthorize,jdbcType=VARCHAR},
+      SPECIAL_SIGN_NAME = #{specialSignName,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      CREATE_ID = #{createId,jdbcType=VARCHAR},
+      UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

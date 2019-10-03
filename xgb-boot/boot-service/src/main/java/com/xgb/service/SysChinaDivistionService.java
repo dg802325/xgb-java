@@ -14,8 +14,6 @@ public class SysChinaDivistionService {
     @Autowired
     private SysChinaDivisionMapper sysChinaDivisionMapper;
 
-
-
     @Transactional
     public int insert(SysChinaDivision sysChinaDivision){
         return sysChinaDivisionMapper.insert(sysChinaDivision);

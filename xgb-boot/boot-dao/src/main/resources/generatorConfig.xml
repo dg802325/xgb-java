@@ -83,5 +83,6 @@
         <!--<table tableName="BLOG_CLASS"></table>-->
         <!--<table tableName="BLOG_GARDEN"></table>-->
         <!--<table tableName="BLOG_GARDEN_RESOURCE"></table>-->
+<!--        <table tableName="HLB_COMPANY_AUTHEN"></table>-->
     </context>
 </generatorConfiguration>

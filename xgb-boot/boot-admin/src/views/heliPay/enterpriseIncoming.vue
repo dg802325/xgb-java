@@ -1,18 +1,18 @@
 <template>
     <div>
         <div>
-            <glob-breadcrumb title="企业进件"/>
+            <glob-breadcrumb title="进件"/>
             <br><br>
             <div class="container">
                 <div class="v-cart-title">
                     <div class="title">
-                        企业进件 ( <span style="font-size: 15px;color: #f00;">*</span> 必填  )
+                        进件 ( <span style="font-size: 15px;color: #f00;">*</span> 必填  )
                     </div>
                 </div>
                 <div class="content_b">
                     <div class="content_b_tx_1">
                         <div>
-                            <div style="padding-top: 20px;padding-left: 176px">
+                            <div style="padding-top: 20px;padding-left: 176px;height: 2400px;">
                                 <table class="left-table" style="width: 800px;height: 90px;">
                                     <tbody>
                                         <tr>
@@ -33,7 +33,16 @@
                                         </tr>
                                         <tr>
                                             <td>子商户类型<span style="font-size: 15px;color: #f00;">*</span></td>
-                                            <td><el-input v-model="merchantType" class="form_item_input" placeholder="请填写子商户类型"></el-input></td>
+                                            <td>
+                                                <el-select v-model="merchantType" style="width:626px;" clearable placeholder="请填写子商户类型">
+                                                    <el-option
+                                                            v-for="item in merchantTypeList"
+                                                            :key="item.dictValue"
+                                                            :label="item.dictName"
+                                                            :value="item.dictValue">
+                                                    </el-option>
+                                                </el-select>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>法人名字<span style="font-size: 15px;color: #f00;">*</span></td>
@@ -45,11 +54,11 @@
                                         </tr>
                                         <tr>
                                             <td>统一社会信用码<span style="font-size: 15px;color: #f00;">*</span></td>
-                                            <td><el-input v-model="orgNum" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="orgNum" class="form_item_input" placeholder="请填写统一社会信用码"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>营业执照号<span style="font-size: 15px;color: #f00;">*</span></td>
-                                            <td><el-input v-model="businessLicense" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="businessLicense" class="form_item_input" placeholder="请填写营业执照号"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>地址<span style="font-size: 15px;color: #f00;">*</span></td>
@@ -84,142 +93,208 @@
                                         </tr>
                                         <tr>
                                             <td>详细地址<span style="font-size: 15px;color: #f00;">*</span></td>
-                                            <td><el-input v-model="address" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="address" class="form_item_input" placeholder="请填写详细地址"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>联系人<span style="font-size: 15px;color: #f00;">*</span></td>
-                                            <td><el-input v-model="linkman" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="linkman" class="form_item_input" placeholder="请填写联系人"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>联系电话<span style="font-size: 15px;color: #f00;">*</span></td>
-                                            <td><el-input v-model="linkPhone" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="linkPhone" class="form_item_input" placeholder="请填写联系电话"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>联系邮箱<span style="font-size: 15px;color: #f00;">*</span></td>
-                                            <td><el-input v-model="email" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="email" class="form_item_input" placeholder="请填写联系邮箱"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>绑定手机</td>
-                                            <td><el-input v-model="bindMobile" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="bindMobile" class="form_item_input" placeholder="请填写绑定手机"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>客服联系电话</td>
-                                            <td><el-input v-model="servicePhone" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="servicePhone" class="form_item_input" placeholder="请填写客服联系电话"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>结算卡联行号<span style="font-size: 15px;color: #f00;">*</span></td>
-                                            <td><el-input v-model="bankCode" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="bankCode" class="form_item_input" placeholder="请填写结算卡联行号"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>开户名<span style="font-size: 15px;color: #f00;">*</span></td>
-                                            <td><el-input v-model="accountName" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="accountName" class="form_item_input" placeholder="请填写开户名"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>开户账号<span style="font-size: 15px;color: #f00;">*</span></td>
-                                            <td><el-input v-model="accountNo" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="accountNo" class="form_item_input" placeholder="请填写开户账号"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>结算卡类型<span style="font-size: 15px;color: #f00;">*</span></td>
-                                            <td><el-input v-model="settleBankType" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td>
+                                                <el-select v-model="settleBankType" style="width:626px;" clearable placeholder="请选择结算卡类型">
+                                                    <el-option
+                                                            v-for="item in settleBankTypeList"
+                                                            :key="item.dictValue"
+                                                            :label="item.dictName"
+                                                            :value="item.dictValue">
+                                                    </el-option>
+                                                </el-select>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>结算类型<span style="font-size: 15px;color: #f00;">*</span></td>
-                                            <td><el-input v-model="settlementPeriod" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td>
+                                                <el-select v-model="settlementPeriod" style="width:626px;" clearable placeholder="请选择结算类型">
+                                                    <el-option
+                                                            v-for="item in settlementPeriodList"
+                                                            :key="item.dictValue"
+                                                            :label="item.dictName"
+                                                            :value="item.dictValue">
+                                                    </el-option>
+                                                </el-select>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>结算方式<span style="font-size: 15px;color: #f00;">*</span></td>
-                                            <td><el-input v-model="settlementMode" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td>
+                                                <el-select v-model="settlementMode" style="width:626px;" clearable placeholder="请选择结算方式">
+                                                    <el-option
+                                                            v-for="item in settlementModeList"
+                                                            :key="item.dictValue"
+                                                            :label="item.dictName"
+                                                            :value="item.dictValue">
+                                                    </el-option>
+                                                </el-select>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>结算备注</td>
-                                            <td><el-input v-model="settlementRemark" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="settlementRemark" class="form_item_input" placeholder="请填写结算备注"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>经营类别<span style="font-size: 15px;color: #f00;">*</span></td>
-                                            <td><el-input v-model="merchantCategory" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="merchantCategory" class="form_item_input" placeholder="请填写经营类别"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>行业类型编码</td>
-                                            <td><el-input v-model="industryTypeCode" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="industryTypeCode" class="form_item_input" placeholder="请填写行业类型编码"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>授权使用平台商秘钥<span style="font-size: 15px;color: #f00;">*</span></td>
-                                            <td><el-input v-model="authorizationFlag" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td>
+                                                <template>
+                                                    <el-radio v-model="authorizationFlag" label="true">接受</el-radio>
+                                                    <el-radio v-model="authorizationFlag" label="false">拒绝</el-radio>
+                                                </template>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>银联二维码</td>
-                                            <td><el-input v-model="unionPayQrCode" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="unionPayQrCode" class="form_item_input" placeholder="请填写银联二维码"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>是否需要开通 POS 功能<span style="font-size: 15px;color: #f00;">*</span></td>
-                                            <td><el-input v-model="needPosFunction" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td>
+                                                <template>
+                                                    <el-radio v-model="needPosFunction" label="true">接受</el-radio>
+                                                    <el-radio v-model="needPosFunction" label="false">拒绝</el-radio>
+                                                </template>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>法人身份证开始日期</td>
-                                            <td><el-input v-model="idCardStartDate" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="idCardStartDate" class="form_item_input" placeholder="请填写法人身份证开始日期"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>法人身份证结束日期</td>
-                                            <td><el-input v-model="idCardEndDate" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="idCardEndDate" class="form_item_input" placeholder="请填写法人身份证结束日期"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>经营起始日期</td>
-                                            <td><el-input v-model="businessDateStart" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="businessDateStart" class="form_item_input" placeholder="请填写经营起始日期"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>经营期限</td>
-                                            <td><el-input v-model="businessDateLimit" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="businessDateLimit" class="form_item_input" placeholder="请填写经营期限"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>开户人身份证</td>
-                                            <td><el-input v-model="accountIdCard" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="accountIdCard" class="form_item_input" placeholder="请填写开户人身份证"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>银联 mcc 码</td>
-                                            <td><el-input v-model="mcc" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="mcc" class="form_item_input" placeholder="请填写银联 mcc 码"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>是否同意协议<span style="font-size: 15px;color: #f00;">*</span></td>
-                                            <td><el-input v-model="agreeProtocol" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td>
+                                                <template>
+                                                    <el-radio v-model="agreeProtocol" label="true">接受</el-radio>
+                                                    <el-radio v-model="agreeProtocol" label="false">拒绝</el-radio>
+                                                </template>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>回调地址</td>
-                                            <td><el-input v-model="callbackUrl" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="callbackUrl" class="form_item_input" placeholder="请填写回调地址"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>结算模式<span style="font-size: 15px;color: #f00;">*</span></td>
-                                            <td><el-input v-model="settleMode" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td>
+                                                <el-select v-model="settleMode" style="width:626px;" clearable placeholder="请选择结算模式">
+                                                    <el-option
+                                                            v-for="item in settleModeList"
+                                                            :key="item.dictValue"
+                                                            :label="item.dictName"
+                                                            :value="item.dictValue">
+                                                    </el-option>
+                                                </el-select>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>结算信息鉴权</td>
-                                            <td><el-input v-model="settlementAuth" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="settlementAuth" class="form_item_input" placeholder="请填写结算信息鉴权"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>注册地址</td>
-                                            <td><el-input v-model="postalAddress" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="postalAddress" class="form_item_input" placeholder="请填写注册地址"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>小微经营类型</td>
-                                            <td><el-input v-model="microBizType" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="microBizType" class="form_item_input" placeholder="请填写小微经营类型"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>证书类型</td>
-                                            <td><el-input v-model="certType" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="certType" class="form_item_input" placeholder="请填写证书类型"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>联系人身份证号</td>
-                                            <td><el-input v-model="linkManId" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td><el-input v-model="linkManId" class="form_item_input" placeholder="请填写联系人身份证号"></el-input></td>
                                         </tr>
                                         <tr>
                                             <td>是否需要认证</td>
-                                            <td><el-input v-model="needAuthorize" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td>
+                                                <template>
+                                                    <el-radio v-model="needAuthorize" label="true">接受</el-radio>
+                                                    <el-radio v-model="needAuthorize" label="false">拒绝</el-radio>
+                                                </template>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>是否特殊处理商户名称</td>
-                                            <td><el-input v-model="specialSignName" class="form_item_input" placeholder="请填写营业执照上的名称"></el-input></td>
+                                            <td>
+                                                <template>
+                                                    <el-radio v-model="specialSignName" label="true">接受</el-radio>
+                                                    <el-radio v-model="specialSignName" label="false">拒绝</el-radio>
+                                                </template>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
+                                <div class="btn-tj">
+                                    <el-button type="primary" style="height: 35px;width: 90px;margin-top: 20px"
+                                               @click="toEntryResult">提 交
+                                    </el-button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -263,16 +338,16 @@
                 settlementRemark:'',//结算备注
                 merchantCategory:'',//经营类别
                 industryTypeCode:'',//行业类型编码
-                authorizationFlag:'',//授权使用平台商秘钥
+                authorizationFlag:'true',//授权使用平台商秘钥
                 unionPayQrCode:'',//银联二维码
-                needPosFunction:'',//是否需要开通 POS 功能
+                needPosFunction:'true',//是否需要开通 POS 功能
                 idCardStartDate:'',//法人身份证开始日期
                 idCardEndDate:'',//法人身份证结束日期
                 businessDateStart:'',//经营起始日期
                 businessDateLimit:'',//经营期限
                 accountIdCard:'',//开户人身份证
                 mcc:'',//银联 mcc 码
-                agreeProtocol:'',//是否同意协议
+                agreeProtocol:'true',//是否同意协议
                 callbackUrl:'',//回调地址
                 settleMode:'',//结算模式
                 settlementAuth:'',//结算信息鉴权
@@ -280,8 +355,13 @@
                 microBizType:'',//小微经营类型
                 certType:'',//证书类型
                 linkManId:'',//联系人身份证号
-                needAuthorize:'',//是否需要认证
-                specialSignName:'',//是否需要特殊处理商户名称
+                needAuthorize:'true',//是否需要认证
+                specialSignName:'true',//是否需要特殊处理商户名称
+                merchantTypeList:[],
+                settleBankTypeList:[],
+                settlementPeriodList:[],
+                settlementModeList:[],
+                settleModeList:[],
             }
         },
         watch:{
@@ -303,8 +383,57 @@
         },
         created(){
             this.getProvinceList()
+            this.getMerchantTypeList();
+            this.getBankTypeList();
+            this.getMentPeriodList();
+            this.getMentModeList();
+            this.getSettleModeList();
         },
         methods: {
+            //获得企业类型 merchantTypeList
+            async getMerchantTypeList(){
+                let data = {
+                    code : "HLB_MERCHANT_TYPE"
+                }
+                let res = await this.$get("/admin/selectByOnlyCode",data)
+                this.merchantTypeList = res.lists
+            },
+            //获得结算卡类型 settleBankTypeList
+            async getBankTypeList(){
+                let data = {
+                    code : "HLB_SETTLE_BANK_TYPE"
+                }
+                let res = await this.$get("/admin/selectByOnlyCode",data)
+                this.settleBankTypeList = res.lists
+            },
+
+            //获得结算类型 settlementPeriodList
+            async getMentPeriodList(){
+                let data = {
+                    code : "HLB_SETTLE_MENT_PERIOD"
+                }
+                let res = await this.$get("/admin/selectByOnlyCode",data)
+                this.settlementPeriodList = res.lists
+            },
+
+            //获得结算方式 SettlementModeList
+            async getMentModeList(){
+                let data = {
+                    code : "HLB_SETTLE_MENT_MODE"
+                }
+                let res = await this.$get("/admin/selectByOnlyCode",data)
+                this.settlementModeList = res.lists
+            },
+
+            //获得结算方式 getSettleModeList
+            async getSettleModeList(){
+                let data = {
+                    code : "HLB_SETTLE_MODE"
+                }
+                let res = await this.$get("/admin/selectByOnlyCode",data)
+                this.settleModeList = res.lists
+            },
+
             async getProvinceList(){
                 let data = {
 
@@ -332,38 +461,36 @@
                 }
                 let res = await this.$get("/admin/getRegionCode",data)
                 this.regionCode = res.code;
+            },
+            //提交信息
+            async toEntryResult(){
+                if(!this.companyName){this.$message.error("企业名称 不能为空");}
+                if(!this.showName){this.$message.error("展示名称 不能为空");}
+                if(!this.merchantType){this.$message.error("子商户类型 不能为空");}
+                let data = {
+
+                }
+                let res = await this.$post("/admin/toEntryResult",data)
+                console.log(res)
             }
         }
     }
 </script>
 
 <style>
+    .btn-tj {
+        height: 35px;
+        width: 90px;
+        margin-top: 20px;
+        margin-left: 320px;
+
+    }
     .content_b {
         width: 99.8%;
         height: auto;
         background-color: #fff;
         border:1px #e4e4e4 solid;
     }
-    .img_Border_1 {
-        border:solid;
-        border-width: 1px;
-        border-color: #e4e4e4;
-        width:150px;
-        height:120px;
-    }
-    .img_bottom {
-        border-left:solid;
-        border-right:solid;
-        border-bottom:solid;
-        border-width: 1px;
-        border-color: #e4e4e4;
-        background-color: #f9f9f9;
-        width:150px;
-        height:35px;
-    }
-
-
-
     .el-form-item_1 .el-form-item__label {
         font-size: 12px;
     }
