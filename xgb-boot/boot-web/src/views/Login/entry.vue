@@ -111,7 +111,7 @@ export default {
       h2{
         font-weight: 400;
         font-size: 20px;
-        color: #999;
+        color: #0a97bc;
         padding-left: 111px;
         padding-top: 27px;
         height: 76px;

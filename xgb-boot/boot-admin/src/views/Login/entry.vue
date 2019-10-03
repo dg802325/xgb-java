@@ -129,7 +129,7 @@
     .login-container {
         width: 100%;
         height: 100%;
-        background: #1abc9c url(./images/login_bj.png) no-repeat center top;
+        background: #0a97bc url(./images/login_bj.png) no-repeat center top;
         .login-wrapper {
             position: absolute;
             left: 50%;
@@ -156,14 +156,14 @@
                     height: 42px;
                     font-size: 27px;
                     text-align: center;
-                    color: #1abc9c;
+                    color: #0a97bc;
                 }
                 .en {
 
                     height: 40px;
                     text-align: center;
                     font-size: 20px;
-                    color: #1ABC9C;
+                    color: #0a97bc;
                     line-height: 1;
                     font-family: Arial;
                 }
@@ -201,7 +201,7 @@
                             font-weight: 400;
                             color: #ccc;
                             &:focus {
-                                outline: 2px #1abc9c solid;
+                                outline: 2px #0a97bc solid;
                             }
                             &::placeholder {
                                 font-size: 14px;
@@ -214,7 +214,7 @@
                             right: 8px;
                             top: 15px;
                             font-size: 20px;
-                            color: #1ABC9C;
+                            color: #0a97bc;
                             cursor: pointer;
                         }
                     }
@@ -226,7 +226,7 @@
                     border: none;
                     height: 50px;
                     font-size: 17px;
-                    background: #1abc9c;
+                    background: #0a97bc;
                     color: #fff;
                     width: 100%;
                     border-radius: 3px;
