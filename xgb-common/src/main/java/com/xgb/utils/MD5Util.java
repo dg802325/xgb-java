@@ -1,13 +1,9 @@
 package com.xgb.utils;
 
 
-import org.apache.commons.codec.binary.Base64;
-
-import javax.crypto.Cipher;
-import javax.crypto.KeyGenerator;
-import java.security.Key;
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
 
 /**
  * MD5加密类（封装jdk自带的md5加密方法）
@@ -15,120 +11,35 @@ import java.security.SecureRandom;
  */
 public class MD5Util {
 
-    public static Key DEFAULT_KEY = null;
+    public static void main(String[] args) {
 
-    public static final String DEFAULT_SECRET_KEY = "xgb";
-
-    public static final String DES = "DES";
-
-    static {
-        DEFAULT_KEY = obtainKey(DEFAULT_SECRET_KEY);
     }
 
-    /**
-     * 获得key
-     **/
-    public static Key obtainKey(String key) {
-        if (key == null) {
-            return DEFAULT_KEY;
-        }
-        KeyGenerator generator = null;
+    public static String toMd5(String source) {
         try {
-            generator = KeyGenerator.getInstance(DES);
+            return encodeMd5(source.getBytes("UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private static String encodeMd5(byte[] source) {
+        try {
+            return encodeHex(MessageDigest.getInstance("MD5").digest(source));
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
+            throw new IllegalStateException(e.getMessage(), e);
         }
-        generator.init(new SecureRandom(key.getBytes()));
-        Key key1 = generator.generateKey();
-        generator = null;
-        return key1;
     }
 
-    /**
-     * 加密<br>
-     * String明文输入,String密文输出
-     */
-    public static String toMd5(String str) {
-        return encode(null, str);
-    }
-
-    /**
-     * 加密<br>
-     * String明文输入,String密文输出
-     */
-    public static String encode(String key, String str) {
-        return Base64.encodeBase64URLSafeString(obtainEncode(key, str.getBytes()));
-        // return Hex.encodeHexString(obtainEncode(key, str.getBytes()));
-        // 可以转化为16进制数据
-    }
-
-    /**
-     * 解密<br>
-     * 以String密文输入,String明文输出
-     */
-    public static String md5Decrypt(String str) {
-        return decode(null, str);
-    }
-
-    /**
-     * 解密<br>
-     * 以String密文输入,String明文输出
-     */
-    public static String decode(String key, String str) {
-        return new String(obtainDecode(key, Base64.decodeBase64(str)));
-        // 可以转化为16进制的数据
-//      try {
-//          return new String(obtainDecode(key, Hex.decodeHex(str.toCharArray())));
-//      } catch (DecoderException e) {
-//          // TODO Auto-generated catch block
-//          e.printStackTrace();
-//      }
-    }
-
-    /**
-     * 加密<br>
-     * 以byte[]明文输入,byte[]密文输出
-     */
-    private static byte[] obtainEncode(String key, byte[] str) {
-        byte[] byteFina = null;
-        Cipher cipher;
-        try {
-            Key key1 = obtainKey(key);
-            cipher = Cipher.getInstance(DES);
-            cipher.init(Cipher.ENCRYPT_MODE, key1);
-            byteFina = cipher.doFinal(str);
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            cipher = null;
+    private static String encodeHex(byte[] bytes) {
+        StringBuffer buffer = new StringBuffer(bytes.length * 2);
+        for (int i = 0; i < bytes.length; i++) {
+            if (((int) bytes[i] & 0xff) < 0x10)
+                buffer.append("0");
+            buffer.append(Long.toString((int) bytes[i] & 0xff, 16));
         }
-        return byteFina;
+        return buffer.toString();
     }
-
-    @Override
-    public int hashCode() {
-        return super.hashCode();
-    }
-
-    /**
-     * 解密<br>
-     * 以byte[]密文输入,以byte[]明文输出
-     */
-    private static byte[] obtainDecode(String key, byte[] str) {
-        Cipher cipher;
-        byte[] byteFina = null;
-        try {
-            Key key1 = obtainKey(key);
-            cipher = Cipher.getInstance(DES);
-            cipher.init(Cipher.DECRYPT_MODE, key1);
-            byteFina = cipher.doFinal(str);
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            cipher = null;
-        }
-        return byteFina;
-    }
-
 
 }

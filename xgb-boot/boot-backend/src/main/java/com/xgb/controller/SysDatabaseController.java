@@ -48,7 +48,7 @@ public class SysDatabaseController {
             map.put("databaseName",item.getDatabaseName());
             map.put("databaseType",item.getDatabaseType());
             map.put("databaseLoginName",item.getDatabaseLoginName());
-            map.put("databaseLoginPassword", MD5Util.toMd5(item.getDatabaseLoginPassword()));
+            map.put("databaseLoginPassword", item.getDatabaseLoginPassword());
             map.put("packageType",item.getPacketType());
             map.put("directoryPrefix",item.getDirectoryPrefix());
             map.put("packageType",item.getPacketType());

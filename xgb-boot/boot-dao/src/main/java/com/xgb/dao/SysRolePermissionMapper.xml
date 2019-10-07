@@ -290,4 +290,51 @@
       PARENT_ID = #{parentId,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=VARCHAR}
   </update>
+  <select id="getSysRolePermissionList" resultType="com.xgb.model.SysRolePermission" parameterType="Map">
+    select
+    srp.ID AS id,
+    srp.ROLE_ID AS roleId,
+    srp.PERMISSION_ID AS permissionId,
+    srp.CREATE_TIME AS createTime,
+    srp.UPDATE_TIME AS updateTime,
+    srp.CREATE_ID AS createId,
+    srp.UPDATE_ID AS updateId,
+    srp.STATUS AS status,
+    srp.PERMISSION_TYPE AS permissionType,
+    srp.PARENT_ID AS parentId
+    from SYS_ROLE_PERMISSION srp
+    left join SYS_MENU sm on sm.PERMISSION_ID = srp.PERMISSION_ID
+    where 1=1
+    <if test="id != null and id !=''">
+      AND srp.ID = #{id}
+    </if>
+    <if test="roleId != null and roleId !=''">
+      AND srp.ROLE_ID = #{roleId}
+    </if>
+    <if test="permissionId != null and permissionId !=''">
+      AND srp.PERMISSION_ID = #{permissionId}
+    </if>
+    <if test="createTime != null and createTime !=''">
+      AND srp.CREATE_TIME = #{createTime}
+    </if>
+    <if test="updateTime != null and updateTime !=''">
+      AND srp.UPDATE_TIME = #{updateTime}
+    </if>
+    <if test="createId != null and createId !=''">
+      AND srp.CREATE_ID = #{createId}
+    </if>
+    <if test="updateId != null and updateId !=''">
+      AND srp.UPDATE_ID = #{updateId}
+    </if>
+    <if test="status != null and status !=''">
+      AND srp.STATUS = #{status}
+    </if>
+    <if test="permissionType != null and permissionType !=''">
+      AND srp.PERMISSION_TYPE = #{permissionType}
+    </if>
+    <if test="parentId != null and parentId !=''">
+      AND srp.PARENT_ID = #{parentId}
+    </if>
+    order by sm.SORT ASC
+  </select>
 </mapper>

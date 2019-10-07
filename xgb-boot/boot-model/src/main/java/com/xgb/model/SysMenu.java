@@ -11,6 +11,8 @@ public class SysMenu {
 
     private String menuUrl;
 
+    private String menuCode;
+
     private String permissionId;
 
     private String menuType;
@@ -29,12 +31,33 @@ public class SysMenu {
 
     private String status;
 
+    public SysMenu(String id, String parentId, String menuName, String menuUrl, String menuCode, String permissionId, String menuType, String menuIcon, Integer sort, Date createTime, Date updateTime, String createId, String updateId, String status) {
+        this.id = id;
+        this.parentId = parentId;
+        this.menuName = menuName;
+        this.menuUrl = menuUrl;
+        this.menuCode = menuCode;
+        this.permissionId = permissionId;
+        this.menuType = menuType;
+        this.menuIcon = menuIcon;
+        this.sort = sort;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+        this.createId = createId;
+        this.updateId = updateId;
+        this.status = status;
+    }
+
+    public SysMenu() {
+        super();
+    }
+
     public String getId() {
         return id;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.id = id == null ? null : id.trim();
     }
 
     public String getParentId() {
@@ -42,7 +65,7 @@ public class SysMenu {
     }
 
     public void setParentId(String parentId) {
-        this.parentId = parentId;
+        this.parentId = parentId == null ? null : parentId.trim();
     }
 
     public String getMenuName() {
@@ -50,7 +73,7 @@ public class SysMenu {
     }
 
     public void setMenuName(String menuName) {
-        this.menuName = menuName;
+        this.menuName = menuName == null ? null : menuName.trim();
     }
 
     public String getMenuUrl() {
@@ -58,7 +81,15 @@ public class SysMenu {
     }
 
     public void setMenuUrl(String menuUrl) {
-        this.menuUrl = menuUrl;
+        this.menuUrl = menuUrl == null ? null : menuUrl.trim();
+    }
+
+    public String getMenuCode() {
+        return menuCode;
+    }
+
+    public void setMenuCode(String menuCode) {
+        this.menuCode = menuCode == null ? null : menuCode.trim();
     }
 
     public String getPermissionId() {
@@ -66,7 +97,7 @@ public class SysMenu {
     }
 
     public void setPermissionId(String permissionId) {
-        this.permissionId = permissionId;
+        this.permissionId = permissionId == null ? null : permissionId.trim();
     }
 
     public String getMenuType() {
@@ -74,7 +105,7 @@ public class SysMenu {
     }
 
     public void setMenuType(String menuType) {
-        this.menuType = menuType;
+        this.menuType = menuType == null ? null : menuType.trim();
     }
 
     public String getMenuIcon() {
@@ -82,7 +113,7 @@ public class SysMenu {
     }
 
     public void setMenuIcon(String menuIcon) {
-        this.menuIcon = menuIcon;
+        this.menuIcon = menuIcon == null ? null : menuIcon.trim();
     }
 
     public Integer getSort() {
@@ -114,7 +145,7 @@ public class SysMenu {
     }
 
     public void setCreateId(String createId) {
-        this.createId = createId;
+        this.createId = createId == null ? null : createId.trim();
     }
 
     public String getUpdateId() {
@@ -122,7 +153,7 @@ public class SysMenu {
     }
 
     public void setUpdateId(String updateId) {
-        this.updateId = updateId;
+        this.updateId = updateId == null ? null : updateId.trim();
     }
 
     public String getStatus() {
@@ -130,6 +161,6 @@ public class SysMenu {
     }
 
     public void setStatus(String status) {
-        this.status = status;
+        this.status = status == null ? null : status.trim();
     }
 }

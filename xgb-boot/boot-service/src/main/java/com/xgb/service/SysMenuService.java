@@ -143,9 +143,10 @@ public class SysMenuService {
             allRole.createCriteria().andRoleIdEqualTo(item.getRoleId());
             List<SysRolePermission> allPermission = sysRolePermissionMapper.selectByExample(allRole);
             //根据角色查询用户所有的1级权限
-            SysRolePermissionExample sysRolePermissionExample = new SysRolePermissionExample();
-            sysRolePermissionExample.createCriteria().andRoleIdEqualTo(item.getRoleId()).andPermissionTypeEqualTo("0");
-            List<SysRolePermission> sysRolePermissions = sysRolePermissionMapper.selectByExample(sysRolePermissionExample);
+            Map<String,Object> seMap = new HashMap<>();
+            seMap.put("roleId",item.getRoleId());
+            seMap.put("permissionType","0");
+            List<SysRolePermission> sysRolePermissions = sysRolePermissionMapper.getSysRolePermissionList(seMap);
             sysRolePermissions.forEach(permissions->{
                 //根据权限查询用户关联的菜单1级菜单
                 SysMenuExample oneSysMenuExample = new SysMenuExample();
@@ -161,6 +162,7 @@ public class SysMenuService {
                 //根据一级菜单查询二级菜单
                 SysMenuExample towSysMenuExample = new SysMenuExample();
                 towSysMenuExample.createCriteria().andParentIdEqualTo(oneSysMenu.getId());
+                towSysMenuExample.setOrderByClause("SORT ASC");
                 List<SysMenu> twoSysMenus = sysMenuMapper.selectByExample(towSysMenuExample);
                 List<Map<String,Object>> twoMenulist = new ArrayList<>();
                 //根据二级菜单查询三级菜单
@@ -174,6 +176,7 @@ public class SysMenuService {
                     twoMenu.put("menuType",towMenus.getMenuType());
                     SysMenuExample threeSysMenuExample = new SysMenuExample();
                     threeSysMenuExample.createCriteria().andParentIdEqualTo(towMenus.getId());
+                    threeSysMenuExample.setOrderByClause("SORT ASC");
                     List<SysMenu> threeSysMenus = sysMenuMapper.selectByExample(threeSysMenuExample);
                     List<Map<String,Object>> threeMenulist = new ArrayList<>();
                     threeSysMenus.forEach(threeMenus->{

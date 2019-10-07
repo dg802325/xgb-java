@@ -143,7 +143,7 @@
     .header-container {
         height: 50px;
         box-sizing: border-box;
-        background-color: rgba(26, 188, 156, 0.898039215686275);
+        background-color: #0a97bc;
         border-bottom: 2px rgba(0, 0, 0, 0.2) solid;
     }
 
@@ -264,7 +264,7 @@
     .sidebar-container dd:hover,
     .sidebar-container dd.router-link-active{
         background: #fff;
-        color:#48c9b0;
+        color:#0a97bc;
     }
 
     .main-container{

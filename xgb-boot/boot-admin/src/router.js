@@ -164,7 +164,12 @@ const PayRouter = [
             {
                 path: 'enterpriseIncoming',
                 component: () => import('./views/heliPay/enterpriseIncoming.vue'),
-                meta: {title: '合利宝进件'}
+                meta: {title: '进件'}
+            },
+            {
+                path: 'incomingList',
+                component: () => import('./views/heliPay/incomingList.vue'),
+                meta: {title: '进件列表'}
             },
         ]
     },
@@ -180,7 +185,7 @@ const SettingsRouter = [
             {
                 path: 'dictionaries',
                 component: () => import('./views/settings/dictionaries.vue'),
-                meta: {title: '合利宝进件'}
+                meta: {title: '字典'}
             },
         ]
     },

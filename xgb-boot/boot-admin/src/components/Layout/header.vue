@@ -1,7 +1,7 @@
 <template>
     <div class="header-container">
         <div class="logo-wrapper">
-            <img src="../../assets/images/logo.svg" height="33">
+            <img src="../../assets/images/tow-truck.svg" height="33">
             <p class="name">X-G-B工具箱</p>
         </div>
 

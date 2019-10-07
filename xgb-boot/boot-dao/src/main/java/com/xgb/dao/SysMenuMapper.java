@@ -2,12 +2,11 @@ package com.xgb.dao;
 
 import com.xgb.model.SysMenu;
 import com.xgb.model.SysMenuExample;
+import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-import java.util.List;
-
 public interface SysMenuMapper {
-    long countByExample(SysMenuExample example);
+    int countByExample(SysMenuExample example);
 
     int deleteByExample(SysMenuExample example);
 

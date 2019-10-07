@@ -3,6 +3,7 @@ package com.xgb.controller;
 import com.xgb.common.SessionUtil;
 import com.xgb.lang.R;
 import com.xgb.model.SysMenu;
+import com.xgb.model.SysMenuExample;
 import com.xgb.service.SysMenuService;
 import com.xgb.service.SysUserRoleService;
 import com.xgb.service.SysUserService;
@@ -58,6 +59,49 @@ public class SysMenuController {
         sysMenu.setStatus("0");
         sysMenu.setCreateTime(new Date());
         sysMenu.setUpdateTime(new Date());
+        //获得当前权限permissionKey最大的值
+        SysMenuExample sysMenuExample = new SysMenuExample();
+        if(sysMenu.getMenuType().equals("0")){
+            sysMenuExample.createCriteria().andParentIdEqualTo("0").andMenuCodeLike("___");
+            sysMenuExample.setOrderByClause("PERMISSION_CODE DESC");
+            List<SysMenu> sysPermissions = sysMenuService.selectByExample(sysMenuExample);
+            String newMenuCode = "001";
+            if(sysPermissions.size()>0){
+                newMenuCode = org.apache.commons.lang.StringUtils.leftPad(String.valueOf(Integer.parseInt(sysPermissions.get(0).getMenuCode()) + 1), 3, "0");
+
+            }
+            sysMenu.setMenuCode(newMenuCode);
+        }else if(sysMenu.getMenuType().equals("1")){
+            String menuCode = sysMenuService.selectByPrimaryKey(sysMenu.getParentId()).getMenuCode();
+            sysMenuExample.createCriteria().andParentIdEqualTo("1").andMenuCodeLike(menuCode+"___");
+            sysMenuExample.setOrderByClause("PERMISSION_CODE DESC");
+            List<SysMenu> sysPermissions = sysMenuService.selectByExample(sysMenuExample);
+            String newMenuCode = menuCode+"001";
+            if(sysPermissions.size()>0){
+                newMenuCode = org.apache.commons.lang.StringUtils.leftPad(String.valueOf(Integer.parseInt(sysPermissions.get(0).getMenuCode()) + 1), 6, "0");
+            }
+            sysMenu.setMenuCode(newMenuCode);
+        }else if(sysMenu.getMenuType().equals("2")){
+            String menuCode = sysMenuService.selectByPrimaryKey(sysMenu.getParentId()).getMenuCode();
+            sysMenuExample.createCriteria().andParentIdEqualTo("2").andMenuCodeLike(menuCode+"___");
+            sysMenuExample.setOrderByClause("PERMISSION_CODE DESC");
+            List<SysMenu> sysPermissions = sysMenuService.selectByExample(sysMenuExample);
+            String newMenuCode = menuCode+"001";
+            if(sysPermissions.size()>0){
+                newMenuCode = org.apache.commons.lang.StringUtils.leftPad(String.valueOf(Integer.parseInt(sysPermissions.get(0).getMenuCode()) + 1), 9, "0");
+            }
+            sysMenu.setMenuCode(newMenuCode);
+        }else if(sysMenu.getMenuType().equals("3")){
+            String menuCode = sysMenuService.selectByPrimaryKey(sysMenu.getParentId()).getMenuCode();
+            sysMenuExample.createCriteria().andParentIdEqualTo("3").andMenuCodeLike(menuCode+"___");
+            sysMenuExample.setOrderByClause("PERMISSION_CODE DESC");
+            List<SysMenu> sysPermissions = sysMenuService.selectByExample(sysMenuExample);
+            String newMenuCode = menuCode+"001";
+            if(sysPermissions.size()>0){
+                newMenuCode = org.apache.commons.lang.StringUtils.leftPad(String.valueOf(Integer.parseInt(sysPermissions.get(0).getMenuCode()) + 1), 12, "0");
+            }
+            sysMenu.setMenuCode(newMenuCode);
+        }
         if (sysMenuService.insert(sysMenu)>0) {
             return R.ok("添加成功");
         }
