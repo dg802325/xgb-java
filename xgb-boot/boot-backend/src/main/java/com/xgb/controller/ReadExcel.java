@@ -1,8 +1,8 @@
 package com.xgb.controller;
 
-import com.xgb.lang.DateUtils;
 import com.xgb.model.*;
-import com.xgb.service.SysChinaDivistionService;
+import com.xgb.service.ChinaBankCodeService;
+import com.xgb.utils.DateUtils;
 import com.xgb.utils.UUIDUtils;
 import jxl.Sheet;
 import jxl.Workbook;
@@ -13,67 +13,90 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.*;
 import java.util.*;
+import java.util.function.Supplier;
 
 @RestController
 public class ReadExcel {
 
     @Autowired
-    private SysChinaDivistionService sysChinaDivistionService;
-
+    private ChinaBankCodeService chinaBankCodeService;
 
     @GetMapping("/test")
     public String test() {
-////        List<SysDivistion> sysDivistionList = sysDivistionService.getSysDivistionList();
-////        int size1 = sysDivistionList.size();
-//        ReadExcel obj = new ReadExcel();
-//        // 此处为我创建Excel路径：E:/zhanhj/studysrc/jxl下
-//        File file = new File("E:\\test\\ssq.xls");
-//        List excelList = obj.readExcel(file);
-//        Iterator iterator = excelList.iterator();
-//        if (iterator.hasNext()) {
-//            String[] split = iterator.next().toString().split("|");
-//            int size = split.length;
-//            ExcelEntiy ee = new ExcelEntiy();
-//            ee.setId(randomUUID());
-//            for (int i=0;i<size;i++){
-//                ee.setIndustryCategory(split[0]);
-//            }
-//
-//        }
-//        List<SysChinaDivision> list2 = new ArrayList<>();
-//        System.out.println("list中的数据打印出来");
-//        for (int i = 0; i < excelList.size(); i++) {
-//            List list = (List) excelList.get(i);
-//            SysChinaDivision sd = new SysChinaDivision();
-//            for (int j = 0; j < list.size(); j++) {
-//                if(j==0){
-//                    String substring = list.get(j).toString().substring(0, list.get(j).toString().length() - 1);
-//                    if(substring.equals("省")){
-//                        sd.setDivisionType("0");
-//                    }else if(substring.equals("市")){
-//                        sd.setDivisionType("1");
-//                    }else if(substring.equals("区")){
-//                        sd.setDivisionType("2");
-//                    }else if(substring.equals("乡")){
-//                        sd.setDivisionType("3");
-//                    }
-//                    continue;
-//                }else if(j==1){
-//                    sd.setHlbDivisionCode(list.get(j).toString().substring(0,list.get(j).toString().length()-1));
-//                    continue;
-//                }else if(j==2){
-//                    sd.setDivisionName(list.get(j).toString().substring(0,list.get(j).toString().length()-1));
-//                    continue;
-//                }else if(j==3){
-//                    continue;
-//                }
-//                System.out.print(list.get(j));
-//            }
-//            list2.add(sd);
-//            System.out.println();
-//        }
-//
-return null;
+        ReadExcel obj = new ReadExcel();
+        // 此处为我创建Excel路径：E:/zhanhj/studysrc/jxl下
+        File file = new File("E:\\test\\FCF65200.xls");
+        List excelList = obj.readExcel(file);
+        List<Map<String,Object>> lists = new ArrayList<>();
+        for (Object o : excelList) {
+            Map<String,Object> map = new HashMap<>();
+            String s = o.toString();
+            String[] split = s.split(",");
+            String s1 = split[0].toString();
+            s1 = s1.substring(1, s1.length()-1);
+            ChinaBankCode chinaBankCode = new ChinaBankCode();
+            map.put("index",s1);
+            chinaBankCode.setId(UUIDUtils.getUUID());
+            String s2 = split[1].toString();
+            s2 = s2.substring(1, s2.length()-1);
+            map.put("CODE",s2);
+            chinaBankCode.setBankCode(s2);
+            String s3 = split[2].toString();
+            s3 = s3.substring(1, s3.length()-2);
+            map.put("NAME",s3);
+            chinaBankCode.setBankName(s3);
+            chinaBankCode.setStatus("0");
+            chinaBankCode.setCreateId("1");
+            chinaBankCode.setCreateTime(DateUtils.getNowDate());
+            chinaBankCode.setIsDel("0");
+            chinaBankCodeService.insert(chinaBankCode);
+            lists.add(map);
+        }
+        System.out.println(lists);
+        return "success";
+    }
+
+    // 去读Excel的方法readExcel，该方法的入口参数为一个File对象
+    public List readExcel(File file) {
+        try {
+            // 创建输入流，读取Excel
+            InputStream is = new FileInputStream(file.getAbsolutePath());
+            // jxl提供的Workbook类
+            Workbook wb = Workbook.getWorkbook(is);
+            // Excel的页签数量
+            int sheet_size = wb.getNumberOfSheets();
+            for (int index = 0; index < sheet_size; index++) {
+                List<List> outerList=new ArrayList<List>();
+                // 每个页签创建一个Sheet对象
+                Sheet sheet = wb.getSheet(index);
+                int rows = sheet.getRows();//返回该页的总行数
+                for (int i = 0; i < rows; i++) {
+                    List innerList=new ArrayList();
+                    int columns = sheet.getColumns();//返回总列数
+                    for (int j = 0; j < columns; j++) {
+                        String cellinfo = sheet.getCell(j, i).getContents();
+                        if(cellinfo.isEmpty()){
+                            continue;
+                        }
+                        if(j==columns-1){
+                            innerList.add(cellinfo);
+                            continue;
+                        }
+                        innerList.add(cellinfo+"|");
+                    }
+                    outerList.add(i, innerList);
+                    System.out.println();
+                }
+                return outerList;
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (BiffException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

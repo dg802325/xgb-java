@@ -190,8 +190,24 @@ const SettingsRouter = [
         ]
     },
 ];
+//工具包
+const ToolsRouter = [
+    {
+        path: '/tools',
+        component: Layout,
+        redirect: '/login',
+        children: [
+            {
+                path: 'queryBankCard',
+                component: () => import('./views/Bank/queryBankCard.vue'),
+                meta: {title: '字典'}
+            },
+        ]
+    },
+];
 
-const routes = [...publicRouter,...systemRouter,...homeRouter,...mybatisRouter,...BlogRouter,...RegoinRouter,...PayRouter,...SettingsRouter,];
+
+const routes = [...publicRouter,...systemRouter,...homeRouter,...mybatisRouter,...BlogRouter,...RegoinRouter,...PayRouter,...SettingsRouter,...ToolsRouter,];
 
 export default new Router({
   base: process.env.BASE_URL,

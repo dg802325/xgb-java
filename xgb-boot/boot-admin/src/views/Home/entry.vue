@@ -79,13 +79,13 @@
 
             <glob-card title="快捷入口" style="margin: 20px 0">
                 <div class="entry-list">
-                    <router-link to="/choiceCategory">
+                    <router-link to="/tools/queryBankCard">
                         <div class="entry-item">
                             <div class="icon">
-                                <img src="./images/u341.png"/>
+                                <img src="./images/bankCard.png"/>
                             </div>
                             <div class="name">
-                                添加商品
+                                银行卡查询
                             </div>
                         </div>
                     </router-link>

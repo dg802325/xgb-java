@@ -371,6 +371,64 @@ public class QuickController extends QuickBase {
         }
     }
 
+
+    @ResponseBody
+    @RequestMapping(value = "/bankCardbindList")
+    public R bankCardbindList(BankCardbindListVo requestVo) {
+        logger.info("--------查询绑卡列表----------");
+        try {
+            Map reqestMap = MessageHandle.getReqestMap(requestVo);
+            Map<String, Object> resultMap = HttpClientService.getHttpResp(reqestMap, REQUEST_URL_QUICKPAY);
+            logger.info("响应结果：" + resultMap);
+
+            if ((Integer) resultMap.get("statusCode") != HttpStatus.SC_OK) {
+                return R.error(999,"请求失败");
+            }
+
+            String resultMsg = (String) resultMap.get("response");
+            if (!isJSON(resultMsg)) {
+                return R.error(998,resultMsg);
+            }
+            BankCardBindResponseVo responseVo = JSONObject.parseObject(resultMsg, BankCardBindResponseVo.class);
+            if (!MessageHandle.checkSign(responseVo)) {
+                return R.error(997,"验签失败");
+            }
+            return R.ok("json",JSONObject.toJSON(responseVo),"验签失败");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return R.error(996,"交易异常：" + e.getMessage());
+        }
+    }
+
+
+    @ResponseBody
+    @RequestMapping(value = "/bankCardUnbind")
+    public R bankCardUnbind(BankCardUnbindVo requestVo) {
+        logger.info("--------解绑银行卡----------");
+        try {
+            Map reqestMap = MessageHandle.getReqestMap(requestVo);
+            Map<String, Object> resultMap = HttpClientService.getHttpResp(reqestMap, REQUEST_URL_QUICKPAY);
+            logger.info("响应结果：" + resultMap);
+
+            if ((Integer) resultMap.get("statusCode") != HttpStatus.SC_OK) {
+                return R.error(999,"请求失败");
+            }
+
+            String resultMsg = (String) resultMap.get("response");
+            if (!isJSON(resultMsg)) {
+                return R.error(998,resultMsg);
+            }
+            BankCardUnbindResponseVo responseVo = JSONObject.parseObject(resultMsg,BankCardUnbindResponseVo.class);
+            if (!MessageHandle.checkSign(responseVo)) {
+                return R.error(997,"验签失败");
+            }
+            return R.ok("json",JSONObject.toJSON(responseVo),"验签失败");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return R.error(996,"交易异常：" + e.getMessage());
+        }
+    }
+
     public static boolean isJSON(String test) {
         try {
             JSONObject.parseObject(test);
