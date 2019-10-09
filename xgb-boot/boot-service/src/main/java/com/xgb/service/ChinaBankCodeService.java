@@ -5,6 +5,7 @@ import com.xgb.dao.ChinaBankCodeMapper;
 import com.xgb.model.BlogClass;
 import com.xgb.model.BlogClassExample;
 import com.xgb.model.ChinaBankCode;
+import com.xgb.model.ChinaBankCodeExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,6 +27,13 @@ public class ChinaBankCodeService {
 	@Transactional
     public int insert(ChinaBankCode chinaBankCode){
 	    return chinaBankCodeMapper.insert(chinaBankCode);
+    }
+
+    public String getBankNameByBankCode(String bankCode){
+        ChinaBankCodeExample example = new ChinaBankCodeExample();
+        example.createCriteria().andBankCodeEqualTo(bankCode);
+        List<ChinaBankCode> chinaBankCodes = chinaBankCodeMapper.selectByExample(example);
+        return chinaBankCodes.isEmpty()?"null":chinaBankCodes.get(0).getBankName();
     }
 
 }
