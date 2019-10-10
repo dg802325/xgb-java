@@ -21,7 +21,11 @@ public class ChinaBankCode {
 
     private String isDel;
 
-    public ChinaBankCode(String id, String bankName, String bankCode, String createId, Date createTime, String updateId, Date updateTime, String status, String isDel) {
+    private String bankColor;
+
+    private String bankIcon;
+
+    public ChinaBankCode(String id, String bankName, String bankCode, String createId, Date createTime, String updateId, Date updateTime, String status, String isDel, String bankColor, String bankIcon) {
         this.id = id;
         this.bankName = bankName;
         this.bankCode = bankCode;
@@ -31,6 +35,8 @@ public class ChinaBankCode {
         this.updateTime = updateTime;
         this.status = status;
         this.isDel = isDel;
+        this.bankColor = bankColor;
+        this.bankIcon = bankIcon;
     }
 
     public ChinaBankCode() {
@@ -107,5 +113,21 @@ public class ChinaBankCode {
 
     public void setIsDel(String isDel) {
         this.isDel = isDel == null ? null : isDel.trim();
+    }
+
+    public String getBankColor() {
+        return bankColor;
+    }
+
+    public void setBankColor(String bankColor) {
+        this.bankColor = bankColor == null ? null : bankColor.trim();
+    }
+
+    public String getBankIcon() {
+        return bankIcon;
+    }
+
+    public void setBankIcon(String bankIcon) {
+        this.bankIcon = bankIcon == null ? null : bankIcon.trim();
     }
 }

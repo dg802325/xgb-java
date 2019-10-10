@@ -714,6 +714,146 @@ public class ChinaBankCodeExample {
             addCriterion("IS_DEL not between", value1, value2, "isDel");
             return (Criteria) this;
         }
+
+        public Criteria andBankColorIsNull() {
+            addCriterion("BANK_COLOR is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankColorIsNotNull() {
+            addCriterion("BANK_COLOR is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankColorEqualTo(String value) {
+            addCriterion("BANK_COLOR =", value, "bankColor");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankColorNotEqualTo(String value) {
+            addCriterion("BANK_COLOR <>", value, "bankColor");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankColorGreaterThan(String value) {
+            addCriterion("BANK_COLOR >", value, "bankColor");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankColorGreaterThanOrEqualTo(String value) {
+            addCriterion("BANK_COLOR >=", value, "bankColor");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankColorLessThan(String value) {
+            addCriterion("BANK_COLOR <", value, "bankColor");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankColorLessThanOrEqualTo(String value) {
+            addCriterion("BANK_COLOR <=", value, "bankColor");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankColorLike(String value) {
+            addCriterion("BANK_COLOR like", value, "bankColor");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankColorNotLike(String value) {
+            addCriterion("BANK_COLOR not like", value, "bankColor");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankColorIn(List<String> values) {
+            addCriterion("BANK_COLOR in", values, "bankColor");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankColorNotIn(List<String> values) {
+            addCriterion("BANK_COLOR not in", values, "bankColor");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankColorBetween(String value1, String value2) {
+            addCriterion("BANK_COLOR between", value1, value2, "bankColor");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankColorNotBetween(String value1, String value2) {
+            addCriterion("BANK_COLOR not between", value1, value2, "bankColor");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankIconIsNull() {
+            addCriterion("BANK_ICON is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankIconIsNotNull() {
+            addCriterion("BANK_ICON is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankIconEqualTo(String value) {
+            addCriterion("BANK_ICON =", value, "bankIcon");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankIconNotEqualTo(String value) {
+            addCriterion("BANK_ICON <>", value, "bankIcon");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankIconGreaterThan(String value) {
+            addCriterion("BANK_ICON >", value, "bankIcon");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankIconGreaterThanOrEqualTo(String value) {
+            addCriterion("BANK_ICON >=", value, "bankIcon");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankIconLessThan(String value) {
+            addCriterion("BANK_ICON <", value, "bankIcon");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankIconLessThanOrEqualTo(String value) {
+            addCriterion("BANK_ICON <=", value, "bankIcon");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankIconLike(String value) {
+            addCriterion("BANK_ICON like", value, "bankIcon");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankIconNotLike(String value) {
+            addCriterion("BANK_ICON not like", value, "bankIcon");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankIconIn(List<String> values) {
+            addCriterion("BANK_ICON in", values, "bankIcon");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankIconNotIn(List<String> values) {
+            addCriterion("BANK_ICON not in", values, "bankIcon");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankIconBetween(String value1, String value2) {
+            addCriterion("BANK_ICON between", value1, value2, "bankIcon");
+            return (Criteria) this;
+        }
+
+        public Criteria andBankIconNotBetween(String value1, String value2) {
+            addCriterion("BANK_ICON not between", value1, value2, "bankIcon");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

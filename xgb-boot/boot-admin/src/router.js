@@ -163,13 +163,18 @@ const PayRouter = [
         children: [
             {
                 path: 'enterpriseIncoming',
-                component: () => import('./views/heliPay/enterpriseIncoming.vue'),
+                component: () => import('./views/Pay/enterpriseIncoming.vue'),
                 meta: {title: '进件'}
             },
             {
                 path: 'incomingList',
-                component: () => import('./views/heliPay/incomingList.vue'),
+                component: () => import('./views/Pay/incomingList.vue'),
                 meta: {title: '进件列表'}
+            },
+            {
+                path: 'chinaBankCodeList',
+                component: () => import('./views/Pay/chinaBankCodeList.vue'),
+                meta: {title: '管理'}
             },
         ]
     },
@@ -200,7 +205,7 @@ const ToolsRouter = [
             {
                 path: 'queryBankCard',
                 component: () => import('./views/Bank/queryBankCard.vue'),
-                meta: {title: '字典'}
+                meta: {title: '根据银行卡号查询银行'}
             },
         ]
     },

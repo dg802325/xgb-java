@@ -63,7 +63,7 @@ public class SysMenuController {
         SysMenuExample sysMenuExample = new SysMenuExample();
         if(sysMenu.getMenuType().equals("0")){
             sysMenuExample.createCriteria().andParentIdEqualTo("0").andMenuCodeLike("___");
-            sysMenuExample.setOrderByClause("PERMISSION_CODE DESC");
+            sysMenuExample.setOrderByClause("MENU_CODE DESC");
             List<SysMenu> sysPermissions = sysMenuService.selectByExample(sysMenuExample);
             String newMenuCode = "001";
             if(sysPermissions.size()>0){
@@ -74,7 +74,7 @@ public class SysMenuController {
         }else if(sysMenu.getMenuType().equals("1")){
             String menuCode = sysMenuService.selectByPrimaryKey(sysMenu.getParentId()).getMenuCode();
             sysMenuExample.createCriteria().andParentIdEqualTo("1").andMenuCodeLike(menuCode+"___");
-            sysMenuExample.setOrderByClause("PERMISSION_CODE DESC");
+            sysMenuExample.setOrderByClause("MENU_CODE DESC");
             List<SysMenu> sysPermissions = sysMenuService.selectByExample(sysMenuExample);
             String newMenuCode = menuCode+"001";
             if(sysPermissions.size()>0){
@@ -84,7 +84,7 @@ public class SysMenuController {
         }else if(sysMenu.getMenuType().equals("2")){
             String menuCode = sysMenuService.selectByPrimaryKey(sysMenu.getParentId()).getMenuCode();
             sysMenuExample.createCriteria().andParentIdEqualTo("2").andMenuCodeLike(menuCode+"___");
-            sysMenuExample.setOrderByClause("PERMISSION_CODE DESC");
+            sysMenuExample.setOrderByClause("MENU_CODE DESC");
             List<SysMenu> sysPermissions = sysMenuService.selectByExample(sysMenuExample);
             String newMenuCode = menuCode+"001";
             if(sysPermissions.size()>0){
@@ -94,7 +94,7 @@ public class SysMenuController {
         }else if(sysMenu.getMenuType().equals("3")){
             String menuCode = sysMenuService.selectByPrimaryKey(sysMenu.getParentId()).getMenuCode();
             sysMenuExample.createCriteria().andParentIdEqualTo("3").andMenuCodeLike(menuCode+"___");
-            sysMenuExample.setOrderByClause("PERMISSION_CODE DESC");
+            sysMenuExample.setOrderByClause("MENU_CODE DESC");
             List<SysMenu> sysPermissions = sysMenuService.selectByExample(sysMenuExample);
             String newMenuCode = menuCode+"001";
             if(sysPermissions.size()>0){

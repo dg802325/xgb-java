@@ -12,6 +12,8 @@
       <arg column="UPDATE_TIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
       <arg column="STATUS" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="IS_DEL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="BANK_COLOR" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="BANK_ICON" jdbcType="VARCHAR" javaType="java.lang.String" />
     </constructor>
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -74,7 +76,7 @@
   </sql>
   <sql id="Base_Column_List" >
     ID, BANK_NAME, BANK_CODE, CREATE_ID, CREATE_TIME, UPDATE_ID, UPDATE_TIME, STATUS, 
-    IS_DEL
+    IS_DEL, BANK_COLOR, BANK_ICON
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.ChinaBankCodeExample" >
     select
@@ -109,12 +111,12 @@
   <insert id="insert" parameterType="com.xgb.model.ChinaBankCode" >
     insert into CHINA_BANK_CODE (ID, BANK_NAME, BANK_CODE, 
       CREATE_ID, CREATE_TIME, UPDATE_ID, 
-      UPDATE_TIME, STATUS, IS_DEL
-      )
+      UPDATE_TIME, STATUS, IS_DEL, 
+      BANK_COLOR, BANK_ICON)
     values (#{id,jdbcType=VARCHAR}, #{bankName,jdbcType=VARCHAR}, #{bankCode,jdbcType=VARCHAR}, 
       #{createId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateId,jdbcType=VARCHAR}, 
-      #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=VARCHAR}, #{isDel,jdbcType=VARCHAR}
-      )
+      #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=VARCHAR}, #{isDel,jdbcType=VARCHAR}, 
+      #{bankColor,jdbcType=VARCHAR}, #{bankIcon,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.xgb.model.ChinaBankCode" >
     insert into CHINA_BANK_CODE
@@ -146,6 +148,12 @@
       <if test="isDel != null" >
         IS_DEL,
       </if>
+      <if test="bankColor != null" >
+        BANK_COLOR,
+      </if>
+      <if test="bankIcon != null" >
+        BANK_ICON,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -174,6 +182,12 @@
       </if>
       <if test="isDel != null" >
         #{isDel,jdbcType=VARCHAR},
+      </if>
+      <if test="bankColor != null" >
+        #{bankColor,jdbcType=VARCHAR},
+      </if>
+      <if test="bankIcon != null" >
+        #{bankIcon,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -213,6 +227,12 @@
       <if test="record.isDel != null" >
         IS_DEL = #{record.isDel,jdbcType=VARCHAR},
       </if>
+      <if test="record.bankColor != null" >
+        BANK_COLOR = #{record.bankColor,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bankIcon != null" >
+        BANK_ICON = #{record.bankIcon,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -228,7 +248,9 @@
       UPDATE_ID = #{record.updateId,jdbcType=VARCHAR},
       UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
       STATUS = #{record.status,jdbcType=VARCHAR},
-      IS_DEL = #{record.isDel,jdbcType=VARCHAR}
+      IS_DEL = #{record.isDel,jdbcType=VARCHAR},
+      BANK_COLOR = #{record.bankColor,jdbcType=VARCHAR},
+      BANK_ICON = #{record.bankIcon,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -260,6 +282,12 @@
       <if test="isDel != null" >
         IS_DEL = #{isDel,jdbcType=VARCHAR},
       </if>
+      <if test="bankColor != null" >
+        BANK_COLOR = #{bankColor,jdbcType=VARCHAR},
+      </if>
+      <if test="bankIcon != null" >
+        BANK_ICON = #{bankIcon,jdbcType=VARCHAR},
+      </if>
     </set>
     where ID = #{id,jdbcType=VARCHAR}
   </update>
@@ -272,7 +300,9 @@
       UPDATE_ID = #{updateId,jdbcType=VARCHAR},
       UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
       STATUS = #{status,jdbcType=VARCHAR},
-      IS_DEL = #{isDel,jdbcType=VARCHAR}
+      IS_DEL = #{isDel,jdbcType=VARCHAR},
+      BANK_COLOR = #{bankColor,jdbcType=VARCHAR},
+      BANK_ICON = #{bankIcon,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=VARCHAR}
   </update>
 </mapper>
