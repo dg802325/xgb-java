@@ -1,6 +1,6 @@
 package com.xgb.heliPay.quickPay.entity.response;
 
-import com.hatchet.efarm.pay.modules.helipay.constant.SignExclude;
+import com.xgb.heliPay.quickPay.annotation.SignExclude;
 
 /**
  * Created by heli50 on 2017/4/15.
