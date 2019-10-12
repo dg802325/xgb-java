@@ -1,14 +1,13 @@
 package com.xgb.controller;
 
 import com.xgb.common.SessionUtil;
-import com.xgb.lang.HttpKit;
-import com.xgb.lang.IntegerUtils;
+import com.xgb.utils.IntegerUtils;
 import com.xgb.lang.R;
 import com.xgb.model.SysDatabases;
 import com.xgb.model.SysDatabasesExample;
 import com.xgb.service.SysDatabasesService;
-import com.xgb.utils.MD5Util;
 import com.xgb.utils.MyUtils;
+import com.xgb.utils.RequestUtils;
 import com.xgb.utils.UUIDUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
@@ -75,7 +74,7 @@ public class SysDatabaseController {
             sysDatabases.setId(UUIDUtils.getUUID());
             sysDatabases.setCreateId(sysUserId);
             sysDatabases.setCreateTime(new Date());
-            sysDatabases.setOperationIp(HttpKit.getIp(request));
+            sysDatabases.setOperationIp(RequestUtils.getIpAddr(request));
             sysDatabases.setStatus("0");
             sysDatabases.setIsDel("0");
             sysDatabases.setUpdateId(sysUserId);
@@ -89,7 +88,7 @@ public class SysDatabaseController {
         }else {
             sysDatabases.setCreateId(sysUserId);
             sysDatabases.setCreateTime(new Date());
-            sysDatabases.setOperationIp(HttpKit.getIp(request));
+            sysDatabases.setOperationIp(RequestUtils.getIpAddr(request));
             sysDatabases.setUpdateId(sysUserId);
             sysDatabases.setUpdateTime(new Date());
             int update = sysDatabasesService.update(sysDatabases);

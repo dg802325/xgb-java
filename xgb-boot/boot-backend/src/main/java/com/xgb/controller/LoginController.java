@@ -1,10 +1,9 @@
 package com.xgb.controller;
 
 import com.xgb.common.SessionUtil;
-import com.xgb.jwt.JWTToken;
-import com.xgb.lang.HttpKit;
+import com.xgb.lang.JWTToken;
 import com.xgb.lang.R;
-import com.xgb.lang.RequestUtils;
+import com.xgb.utils.RequestUtils;
 import com.xgb.model.SysUser;
 import com.xgb.service.SysUserService;
 import com.xgb.utils.CookieUtils;
@@ -47,7 +46,7 @@ public class LoginController {
 
     @PostMapping("/login")
     public R login(SysUser sysUser, HttpServletResponse response,String code, HttpServletRequest request){
-        Object str = HttpKit.getRequest().getSession().getAttribute("verifyCode");
+        Object str = RequestUtils.getRequest().getSession().getAttribute("verifyCode");
         if (MyUtils.isNotEmpty(str)&&str.toString().equals(code)) {
             return R.error(999,"验证码错误");
         }

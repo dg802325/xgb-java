@@ -1,4 +1,4 @@
-package com.xgb.jwt;
+package com.xgb.lang;
 
 
 import org.apache.shiro.authc.UsernamePasswordToken;

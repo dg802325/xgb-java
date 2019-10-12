@@ -177,3 +177,7 @@ xgb-test/target/maven-archiver/
 xgb-test/target/maven-status/
 xgb-test/target/xgb-test-1.0-SNAPSHOT.jar
 xgb-boot/boot-web/node_modules/
+/xgb-boot/boot-pay/target/maven-archiver/pom.properties
+/xgb-boot/boot-pay/target/maven-status/maven-compiler-plugin/compile/default-compile/
+/xgb-boot/boot-pay/target/boot-pay-1.0-SNAPSHOT.jar
+/xgb-boot/boot-pay/target/boot-pay-1.0-SNAPSHOT.jar.original

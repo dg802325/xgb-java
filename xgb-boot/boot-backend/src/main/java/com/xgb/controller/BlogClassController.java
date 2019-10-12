@@ -2,7 +2,7 @@ package com.xgb.controller;
 
 import com.xgb.common.SessionUtil;
 import com.xgb.utils.DateUtils;
-import com.xgb.lang.IntegerUtils;
+import com.xgb.utils.IntegerUtils;
 import com.xgb.model.BlogClass;
 import com.xgb.model.BlogClassExample;
 import com.xgb.service.BlogClassService;

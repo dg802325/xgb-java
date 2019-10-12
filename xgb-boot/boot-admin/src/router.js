@@ -211,8 +211,24 @@ const ToolsRouter = [
     },
 ];
 
+//工具包
+const ShopRouter = [
+    {
+        path: '/shop',
+        component: Layout,
+        redirect: '/login',
+        children: [
+            {
+                path: 'shopAdverList',
+                component: () => import('./views/Shop/shopAdverList.vue'),
+                meta: {title: '商城轮播图列表'}
+            },
+        ]
+    },
+];
 
-const routes = [...publicRouter,...systemRouter,...homeRouter,...mybatisRouter,...BlogRouter,...RegoinRouter,...PayRouter,...SettingsRouter,...ToolsRouter,];
+
+const routes = [...publicRouter,...systemRouter,...homeRouter,...mybatisRouter,...BlogRouter,...RegoinRouter,...PayRouter,...SettingsRouter,...ToolsRouter,...ShopRouter,];
 
 export default new Router({
   base: process.env.BASE_URL,

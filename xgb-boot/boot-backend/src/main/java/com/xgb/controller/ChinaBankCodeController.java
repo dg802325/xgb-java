@@ -1,7 +1,7 @@
 package com.xgb.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.xgb.lang.IntegerUtils;
+import com.xgb.utils.IntegerUtils;
 import com.xgb.lang.R;
 import com.xgb.model.ChinaBankCode;
 import com.xgb.service.ChinaBankCodeService;
@@ -33,24 +33,25 @@ public class ChinaBankCodeController {
 
     @GetMapping("getBankCardByNo")
     public R getBankCardByNo(String bankCardNo){
-        Map<String,String> codeMap = new HashMap<String,String>();
-        codeMap.put("_input_charset","utf-8");
-        codeMap.put("cardNo",bankCardNo);
-        codeMap.put("cardBinCheck","true");
-        String s = HttpClientUtils.sendGet("https://ccdcapi.alipay.com/validateAndCacheCardInfo.json", codeMap);
-        JSONObject jsonObject = JSONObject.parseObject(s);
-        //获得银行编码
-        String bank = jsonObject.getString("bank");
-        //获得银行图标 ?d=cashier&t=银行代码
-        Map<String,String> pngMap = new HashMap<>();
-        pngMap.put("d","cashier");
-        pngMap.put("t",bank);
-//        String s1 = HttpClientUtils.sendGet("https://apimg.alipay.com/combo.png", pngMap);
-        String bankNameByBankCode = chinaBankCodeService.getBankNameByBankCode(bank);
-        if(MyUtils.isEmpty(bankNameByBankCode)){
-
+        JSONObject jsonObject = null;
+        try {
+            Map<String,String> codeMap = new HashMap<String,String>();
+            codeMap.put("_input_charset","utf-8");
+            codeMap.put("cardNo",bankCardNo);
+            codeMap.put("cardBinCheck","true");
+            String s = HttpClientUtils.sendGet("https://ccdcapi.alipay.com/validateAndCacheCardInfo.json", codeMap);
+            jsonObject = JSONObject.parseObject(s);
+            String bank = jsonObject.getString("bank");
+            String bankName = chinaBankCodeService.getBankNameByBankCode(bank);
+            if(MyUtils.isNotEmpty(bankName)){
+                Map<String,Object> map = new HashMap<>();
+                map.put("bankCardNo",bankCardNo);
+                map.put("bankName",bankName);
+                return R.ok(map,"查询成功");
+            }
+        }catch (Exception e){
+            return R.error(999,"未查询到");
         }
-        System.out.println(bank);
         return R.error(999,"未查询到");
     }
 

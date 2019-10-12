@@ -1,7 +1,7 @@
 package com.xgb.controller;
 
 import com.xgb.common.VerifyCodeUtils;
-import com.xgb.lang.HttpKit;
+import com.xgb.utils.RequestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -30,7 +30,7 @@ public class KaptchaController {
         //生成随机字串
         String verifyCode = VerifyCodeUtils.generateVerifyCode(4);
         //存入会话session
-        HttpKit.getRequest().getSession().setAttribute("verifyCode", verifyCode);
+        RequestUtils.getRequest().getSession().setAttribute("verifyCode", verifyCode);
         //生成图片
         int w = 200, h = 75;
         VerifyCodeUtils.outputImage(w, h, resp.getOutputStream(), verifyCode);

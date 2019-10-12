@@ -1,8 +1,11 @@
-package com.xgb.lang;
+package com.xgb.utils;
 
+import com.xgb.lang.WafRequestWrapper;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
@@ -169,6 +172,16 @@ public class RequestUtils {
             }
         }
         return map;
+    }
+
+    /**
+     * 获取 包装防Xss Sql注入的 HttpServletRequest
+     *
+     * @return request
+     */
+    public static HttpServletRequest getRequest() {
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+        return new WafRequestWrapper(request);
     }
 
     /**

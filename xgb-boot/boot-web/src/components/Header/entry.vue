@@ -50,10 +50,10 @@
 
       <div class="nav-wrapper container">
         <router-link to="/" class="logo-wrapper">
-          <img src="images/web-logo.png" width="45" height="45">
+          <img src="./images/web-logo.png" width="45" height="45">
         </router-link>
         <div class="login-title">
-          <h1>佛系商城</h1>
+          <h1>商城</h1>
           <p>爱买不买</p>
         </div>
         <div class="nav-group">

@@ -1,6 +1,6 @@
 package com.xgb.controller;
 
-import com.xgb.lang.IntegerUtils;
+import com.xgb.utils.IntegerUtils;
 import com.xgb.lang.R;
 import com.xgb.model.SysUserRole;
 import com.xgb.service.SysRoleService;

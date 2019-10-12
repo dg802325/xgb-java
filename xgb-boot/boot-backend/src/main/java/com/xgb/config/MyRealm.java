@@ -1,7 +1,7 @@
 package com.xgb.config;
 
 import com.alibaba.fastjson.JSONObject;
-import com.xgb.jwt.JWTToken;
+import com.xgb.lang.JWTToken;
 import com.xgb.model.SysUser;
 import com.xgb.service.SysUserService;
 import com.xgb.utils.MyUtils;
@@ -17,9 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author Mr.Li

@@ -70,7 +70,7 @@ ${addModelList!}
             </el-dialog>
 
             <!-- 数据库编辑框 -->
-            <el-dialog title="修改角色" :visible.sync="isShowEdit" width="20%" :before-close="closeEdit">
+            <el-dialog title="修改" :visible.sync="isShowEdit" width="20%" :before-close="closeEdit">
                 <el-form ref="form"  label-width="100px">
 ${editModelList!}
                 </el-form>

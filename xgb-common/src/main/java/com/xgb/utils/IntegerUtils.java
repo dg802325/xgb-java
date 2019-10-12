@@ -1,4 +1,4 @@
-package com.xgb.lang;
+package com.xgb.utils;
 
 import com.xgb.utils.MyUtils;
 

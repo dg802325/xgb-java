@@ -4,15 +4,14 @@ import ${modelPackage!}.${modelName!};
 import ${servicePackage!}.${modelName!}Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.bind.annotation.*;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ${myCommonPath!}.util.StringUtils;
 import ${myCommonPath!}.lang.R;
 import ${myCommonPath!}.utils.UUIDUtils;
 import ${myCommonPath!}.utils.MyUtils;
+import ${myCommonPath!}.utils.IntegerUtils;;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
@@ -44,6 +43,7 @@ public class ${modelName!}Controller {
         int begin = Integer.valueOf(mapParam.get("begin").toString());
         int end = Integer.valueOf(mapParam.get("end").toString());
         //查询代码
+        begin = IntegerUtils.getBegin(begin,end);//根据第几页查询数据
         List<${modelName!}> lists = ${someModelName!}Service.selectAll${modelName!}(${someModelName!},begin,end);
         if(lists.size()>0){
             map.put("lists",lists);

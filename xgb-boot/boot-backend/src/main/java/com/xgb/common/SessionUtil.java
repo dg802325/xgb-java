@@ -2,16 +2,16 @@ package com.xgb.common;
 
 import com.alibaba.fastjson.JSONObject;
 import com.auth0.jwt.JWT;
-import com.xgb.lang.HttpKit;
 import com.xgb.model.SysUser;
 import com.xgb.utils.CookieUtils;
 import com.xgb.utils.MyUtils;
+import com.xgb.utils.RequestUtils;
 
 public class SessionUtil {
     //获取后台登陆用户
     public static String getSysUserId() {
 
-        String token = CookieUtils.getCookie(HttpKit.getRequest(), "boot-admin");
+        String token = CookieUtils.getCookie(RequestUtils.getRequest(), "boot-admin");
         if (MyUtils.isEmpty(token)||"undefined".equals(token)) {
             return null;
         }

@@ -1,5 +1,7 @@
 package com.xgb.utils;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
@@ -33,6 +35,14 @@ public class DateUtils {
         LocalTime now1 = LocalTime.now().withNano(0);//18:18:37
         String format = LocalDate.now().format(yyyyMMdd)+now1.format(HHmmss);
         return format;
+    }
+
+
+    public static Date tzStringToDate(String dateString) throws ParseException {
+        dateString = dateString.replace("Z", " UTC");//注意是空格+UTC
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS Z");//注意格式化的表达式
+        Date d = format.parse(dateString);
+        return d;
     }
 
 }

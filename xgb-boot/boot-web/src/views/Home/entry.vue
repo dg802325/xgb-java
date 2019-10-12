@@ -12,14 +12,6 @@
          <div class="title">
            <p>热销商品</p>
          </div>
-         <!--<div class="switch-button-wrapper">-->
-           <!--<button>-->
-             <!--<i class="fa fa-chevron-left"></i>-->
-           <!--</button>-->
-            <!--<button>-->
-             <!--<i class="fa fa-chevron-right"></i>-->
-           <!--</button>-->
-         <!--</div>-->
        </div>
      </div>
      <div class="container special-offer">
@@ -39,11 +31,6 @@
          </div>
        </el-card>
 
-     <!--  <el-card class="browse-more" shadow="hover">
-         <p class="main-title">浏览更多</p>
-         <p class="subtitle">新鲜事物</p>
-         <i class="fa  fa-arrow-circle-o-right"></i>
-       </el-card>-->
      </div>
     <div  v-for='first in goodsList' :key="first.id">
       <div class="container">

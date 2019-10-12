@@ -4,25 +4,37 @@
             <glob-breadcrumb title="银行卡查询"/>
             <br><br>
             <glob-base-search>
+                <div slot="button">
+                    <el-button class="el-button_1" @click="requestSearch()">查询结果</el-button>
+                </div>
                 <el-form label-width="130px" :inline="true">
                     <el-form-item label="输入银行卡号：">
-                        <el-input v-model="bankCardNo" placeholder="请输入银行卡号" clearable></el-input>
+                        <el-input style="width: 250px;" v-model="bankNo" placeholder="请输入银行卡号" clearable></el-input>
                     </el-form-item>
                 </el-form>
             </glob-base-search>
 
-            <div class="container">
+            <div class="container" v-if="isShow">
                 <div class="v-cart-title">
                     <div class="title">
                         <i class="el-icon-s-grid"></i>
-                        银行信息
+                        相关信息
                     </div>
                 </div>
                 <div class="content_u">
                     <div class="content_b_tx">
-                        <div style="padding-top: 70px">
-                            信息
-                        </div>
+                        <table class="left-table">
+                            <tbody>
+                            <tr>
+                                <td>银行卡号</td>
+                                <td>{{bankCardNo}}</td>
+                            </tr>
+                            <tr>
+                                <td>所属银行</td>
+                                <td>{{bankName}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -34,7 +46,30 @@
     export default {
         data() {
             return {
+                bankNo:'',
                 bankCardNo:'',
+                bankName:'',
+                isShow:false,
+            }
+        },
+        methods: {
+            async requestSearch(page) {
+                if(!this.bankNo){
+                    this.$message.error("银行卡号不能为空");
+                    return;
+                }
+                let data = {
+                    bankCardNo : this.bankNo,
+                }
+                let res = await this.$get("/admin/getBankCardByNo", data)
+                if(res.code=='200'){
+                    this.isShow = true;
+                    this.bankCardNo = res.bankCardNo;
+                    this.bankName = res.bankName;
+                    this.$message.success(res.message);
+                }else {
+                    this.$message.error(res.message);
+                }
             }
         },
     }

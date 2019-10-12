@@ -18,9 +18,9 @@ import java.util.Map;
 /**
  * 二维码生成
  */
-public class Generation {
+public class QrCodeUtils {
 
-    private static Logger logger = LoggerFactory.getLogger(Generation.class);
+    private static Logger logger = LoggerFactory.getLogger(QrCodeUtils.class);
 
     /**
      * 生成二维码二维码

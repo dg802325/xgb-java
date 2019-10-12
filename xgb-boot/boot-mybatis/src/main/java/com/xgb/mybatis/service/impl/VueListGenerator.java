@@ -97,7 +97,7 @@ public class VueListGenerator extends CodeGeneratorManager implements CodeGenera
         //生成基础
         for(TableInformation ti : tableInformation){
             if(!StringUtils.stringIsOnArray(ti.getColumnName(),columns)){
-                stringBuilder.append(space4).append(StringUtils.tableNameConvertUpperCamel(ti.getColumnName())).append(" : '',").append("\n");
+                stringBuilder.append(space4).append(StringUtils.tableNameConvertLowerCamel(ti.getColumnName())).append(" : '',").append("\n");
             }
         }
         return stringBuilder.toString();
@@ -164,11 +164,11 @@ public class VueListGenerator extends CodeGeneratorManager implements CodeGenera
             if(!StringUtils.stringIsOnArray(ti.getColumnName(),columns)){
                 if(i==size){
                     stringBuilder.append(space5).append("<el-form-item label=\"").append(ti.getRemarks()).append("：\" required").append(">\n");
-                    stringBuilder.append(space6).append("<el-input v-model=\"").append(someTable).append("Info.").append(StringUtils.tableNameConvertUpperCamel(ti.getColumnName())).append("\" size=\"1\" style=\"width:200px;\"></el-input>").append("\n");
+                    stringBuilder.append(space6).append("<el-input v-model=\"").append(someTable).append("Info.").append(StringUtils.tableNameConvertLowerCamel(ti.getColumnName())).append("\" size=\"1\" style=\"width:200px;\"></el-input>").append("\n");
                     stringBuilder.append(space5).append("</el-form-item>");
                 }else {
                     stringBuilder.append(space5).append("<el-form-item label=\"").append(ti.getRemarks()).append("：\" required").append(">\n");
-                    stringBuilder.append(space6).append("<el-input v-model=\"").append(someTable).append("Info.").append(StringUtils.tableNameConvertUpperCamel(ti.getColumnName())).append("\" size=\"1\" style=\"width:200px;\"></el-input>").append("\n");
+                    stringBuilder.append(space6).append("<el-input v-model=\"").append(someTable).append("Info.").append(StringUtils.tableNameConvertLowerCamel(ti.getColumnName())).append("\" size=\"1\" style=\"width:200px;\"></el-input>").append("\n");
                     stringBuilder.append(space5).append("</el-form-item>").append("\n");
                 }
             }

@@ -83,7 +83,7 @@ public class StringUtils {
     }
 
     public static void main(String[] args) {
-        String sys_user = tableNameConvertUpperCamel("SYS_USER");
+        String sys_user = tableNameConvertLowerCamel("SYS_USER");
         System.out.println(sys_user);
     }
 
@@ -220,7 +220,7 @@ public class StringUtils {
         if("INTEGER".equals(tableInformation.getTypeName())||"INT".equals(tableInformation.getTypeName())){
             return "INTEGER";
         }
-        return null;
+        return tableInformation.getTypeName();
     }
 
 

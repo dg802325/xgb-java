@@ -82,7 +82,7 @@
                     <router-link to="/tools/queryBankCard">
                         <div class="entry-item">
                             <div class="icon">
-                                <img src="./images/bankCard.png"/>
+                                <img style="width: 46px;height: 48px;" src="./images/bankCard.png"/>
                             </div>
                             <div class="name">
                                 银行卡查询

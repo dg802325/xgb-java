@@ -1,7 +1,7 @@
 package com.xgb.controller;
 
 import com.xgb.common.SessionUtil;
-import com.xgb.lang.IntegerUtils;
+import com.xgb.utils.IntegerUtils;
 import com.xgb.lang.R;
 import com.xgb.model.SysRole;
 import com.xgb.model.SysRoleExample;

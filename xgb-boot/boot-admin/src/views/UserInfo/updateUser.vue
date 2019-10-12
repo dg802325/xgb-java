@@ -15,11 +15,10 @@
                         <div class="el">
                             <el-upload
                                     class="avatar-uploader"
-                                    action="http://localhost:10010/admin/upload/file"
+                                    action="http://admin.lovexgb.com/admin/upload/file"
                                     :show-file-list="false"
                                     :on-success="handleAvatarSuccess">
                                 <img v-if="userHeaderUrl" :src="userHeaderUrl" class="avatar">
-                                <!--http://dealer.e-nongye.com.cn/group1/M00/00/00/rBEEQ11DrxKAdlyHAABpv4Ow2BU710.jpg-->
                                 <i v-else class="el-icon-plus avatar-uploader-icon"></i>
                             </el-upload>
                             <p class="sc">(点击头像修改)</p>
@@ -62,6 +61,7 @@
     </div>
 </template>
 <script>
+    import {Base_url} from '../../config/index'
     export default {
         data() {
             return {

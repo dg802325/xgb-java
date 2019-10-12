@@ -85,5 +85,6 @@
         <!--<table tableName="BLOG_GARDEN_RESOURCE"></table>-->
 <!--        <table tableName="HLB_COMPANY_AUTHEN"></table>-->
         <!--<table tableName="CHINA_BANK_CODE"></table>-->
+<!--        <table tableName="SHOP_ADVER"></table>-->
     </context>
 </generatorConfiguration>
