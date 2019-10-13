@@ -167,11 +167,12 @@
        },*/
       // 获取轮播图
       async getAdResources(){
-        let res = await this.$get('/api/getAdResources',{
-          origin: 'pc'
-        });
+        let data = {
+          adverLocation: '0'
+        }
+        let res = await this.$get('/api/getAdverList',data);
         if(res.code==='200'){
-          this.bannerList = res.resources;
+          this.bannerList = res.lists;
         }
       },
       // 跳转商品详情页

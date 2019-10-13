@@ -1,6 +1,7 @@
 package com.xgb.controller;
 
 import com.xgb.model.ShopAdver;
+import com.xgb.model.ShopAdverExample;
 import com.xgb.service.ShopAdverService;
 import com.xgb.utils.DateUtils;
 import com.xgb.utils.IntegerUtils;
@@ -25,8 +26,7 @@ import java.util.List;
 * @Date: 2019-10-12 15:29:39
 * @Description:
 */
-@Controller
-@RequestMapping("/admin/")
+@RestController
 public class ShopAdverController {
 
     protected Logger logger = LoggerFactory.getLogger(getClass());
@@ -39,8 +39,7 @@ public class ShopAdverController {
     * @return
     */
 //    @RequiresPermissions("SHOP:ADVER:MENU")
-    @ResponseBody
-    @GetMapping("getShopAdverForPage")
+    @GetMapping("/admin/getShopAdverForPage")
     public R getShopAdverForPage(@RequestParam Map mapParam,ShopAdver shopAdver) {
         logger.info("------request-address----------------：/admin/getShopAdverForPage");
         Map<String,Object> map = new HashMap<String,Object>();
@@ -62,8 +61,7 @@ public class ShopAdverController {
     * @return
     */
 //    @RequiresPermissions("SHOP:ADVER:MENU")
-    @ResponseBody
-    @GetMapping("getShopAdverOne")
+    @GetMapping("/admin/getShopAdverOne")
     public R getShopAdverForPage(String id) {
         logger.info("------request-address----------------：/admin/getShopAdverOne");
         //查询代码
@@ -81,9 +79,8 @@ public class ShopAdverController {
     * 新增
     * @return
     */
-    @ResponseBody
 //    @RequiresPermissions("SHOP:ADVER:SAVE")
-    @PostMapping("addShopAdver")
+    @PostMapping("/admin/addShopAdver")
     public R addShopAdver(ShopAdver shopAdver,String astartTime,String aendTime){
         logger.info("------request-address----------------：/admin/addShopAdver");
         shopAdver.setId(UUIDUtils.getUUID());
@@ -105,9 +102,8 @@ public class ShopAdverController {
      * 编辑
      * @return
      */
-    @ResponseBody
 //    @RequiresPermissions("SHOP:ADVER:SAVE")
-    @PostMapping("editShopAdver")
+    @PostMapping("/admin/editShopAdver")
     public R editShopAdver(ShopAdver shopAdver,String astartTime,String aendTime){
         logger.info("------request-address----------------：/admin/editShopAdver");
         if(shopAdverService.update(shopAdver) > 0){
@@ -122,8 +118,7 @@ public class ShopAdverController {
     * @return
     */
 //    @RequiresPermissions("SHOP:ADVER:DELETE")
-    @ResponseBody
-    @PostMapping("deleteShopAdver")
+    @PostMapping("/admin/deleteShopAdver")
     public R deleteShopAdver(ShopAdver shopAdver) {
         logger.info("------request-address-----------------：/admin/deleteShopAdver");
         Map<String,Object> map = new HashMap<String,Object>();
@@ -133,6 +128,16 @@ public class ShopAdverController {
         }else{
             return R.error(996,"删除失败");
         }
+    }
+
+    @GetMapping("/api/getAdverList")
+    public R getAdverList(String adverLocation){
+        ShopAdverExample example = new ShopAdverExample();
+        example.createCriteria().andAdverLocationEqualTo("0");
+        List<ShopAdver> shopAdvers = shopAdverService.selectByExample(example);
+        Map<String,Object> map = new HashMap<>();
+        map.put("lists",shopAdvers);
+        return R.ok(map,"查询成功");
     }
 
 }

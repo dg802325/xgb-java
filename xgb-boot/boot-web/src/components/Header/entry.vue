@@ -150,7 +150,7 @@
     <div class="fixed-header" v-show="fixedHeader">
       <div class="container">
         <router-link to="/" class="logo-wrapper">
-          <img src="images/web-logo.png" width="45" height="45">
+          <img src="./images/web-logo.png" width="45" height="45">
         </router-link>
         <div class="login-title">
           <h1>佛系商城</h1>
