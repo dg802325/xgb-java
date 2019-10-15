@@ -236,8 +236,13 @@ const GameRouter = [
         children: [
             {
                 path: 'maze',
-                component: () => import('./views/Game/maze.vue'),
-                meta: {title: '迷宫'}
+                component: () => import('./views/Game/2048/maze.vue'),
+                meta: {title: '2048'}
+            },
+            {
+                path: 'notBlock',
+                component: () => import('./views/Game/notBlock/index.vue'),
+                meta: {title: '别踩白块'}
             },
         ]
     },

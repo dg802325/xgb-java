@@ -47,7 +47,7 @@
                         <span class="num">(<span class="red">{{messageNum}}</span>)</span>
                     </li>
                     <li>
-                        <router-link to="/orderManager/4">已完成订单</router-link>
+                        <router-link to="/game/notBlock">别踩白块</router-link>
                         <span class="num">(<span class="red">10</span>)</span>
                     </li>
                     <li class="m0">
