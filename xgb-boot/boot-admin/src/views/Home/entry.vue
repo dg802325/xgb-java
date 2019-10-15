@@ -40,10 +40,10 @@
                     </div>
                 </div>
             </div>
-            <glob-card title="待处理事务">
+            <glob-card title="小游戏入口">
                 <ul class="todo">
                     <li>
-                        <router-link to="/message/list">待查看消息</router-link>
+                        <router-link to="/game/maze">2048</router-link>
                         <span class="num">(<span class="red">{{messageNum}}</span>)</span>
                     </li>
                     <li>

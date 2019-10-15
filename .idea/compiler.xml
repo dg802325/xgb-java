@@ -7,23 +7,23 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="boot-backend" />
+        <module name="boot-dao" />
+        <module name="boot-message" />
+        <module name="boot-model" />
         <module name="boot-mybatis" />
+        <module name="boot-oss" />
+        <module name="boot-pay" />
+        <module name="boot-service" />
+        <module name="cloud-eureka" />
+        <module name="cloud-member" />
+        <module name="cloud-oss" />
+        <module name="cloud-pay" />
         <module name="cloud-zuul" />
         <module name="send-mail" />
         <module name="spider1" />
-        <module name="boot-dao" />
-        <module name="boot-backend" />
-        <module name="xgb-mybatis" />
-        <module name="boot-oss" />
-        <module name="cloud-pay" />
-        <module name="cloud-oss" />
-        <module name="boot-model" />
-        <module name="cloud-member" />
-        <module name="cloud-eureka" />
-        <module name="boot-service" />
-        <module name="boot-message" />
         <module name="xgb-common" />
-        <module name="boot-pay" />
+        <module name="xgb-mybatis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">

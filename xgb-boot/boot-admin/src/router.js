@@ -227,8 +227,24 @@ const ShopRouter = [
     },
 ];
 
+//游戏
+const GameRouter = [
+    {
+        path: '/game',
+        component: Layout,
+        redirect: '/login',
+        children: [
+            {
+                path: 'maze',
+                component: () => import('./views/Game/maze.vue'),
+                meta: {title: '迷宫'}
+            },
+        ]
+    },
+]
 
-const routes = [...publicRouter,...systemRouter,...homeRouter,...mybatisRouter,...BlogRouter,...RegoinRouter,...PayRouter,...SettingsRouter,...ToolsRouter,...ShopRouter,];
+
+const routes = [...publicRouter,...systemRouter,...homeRouter,...mybatisRouter,...BlogRouter,...RegoinRouter,...PayRouter,...SettingsRouter,...ToolsRouter,...ShopRouter,...GameRouter,];
 
 export default new Router({
   base: process.env.BASE_URL,
