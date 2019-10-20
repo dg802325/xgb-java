@@ -43,8 +43,8 @@
                     <el-table-column prop="lastLogin" align="center" label="最后登录" width="160px"></el-table-column>
                     <el-table-column label="操作" align="center">
                         <template slot-scope="scope">
-                            <el-button size="mini" type="primary" @click="editUser(scope.$index)">编辑</el-button>
-                            <el-button size="mini" type="danger" @click="toDelUser(scope.$index)">删除</el-button>
+                            <el-button size="mini" type="primary" @click="editUser(scope.$index)" v-if="checkPermission('SYS:USER:SAVE')">编辑</el-button>
+                            <el-button size="mini" type="danger" @click="toDelUser(scope.$index)" v-if="checkPermission('SYS:USER:DELETE')">删除</el-button>
                         </template>
                     </el-table-column>
                 </el-table>
@@ -164,6 +164,7 @@
             async requestSearch(page) {
                 let currentPage = page || 1;
                 let data = {
+                    roleName:this.queryUser,
                     begin:currentPage,
                     end:10
                 }
@@ -189,6 +190,8 @@
                 let data= {
                     id:this.userInfo.id,
                     roleId:this.editRoleId,
+                    nickName:this.userInfo.nickName,
+                    userName:this.userInfo.userName,
                 }
                 let res = await this.$post("/admin/saveSysUserRole", data)
                 if (res.code == 200) {

@@ -1,11 +1,14 @@
 package com.xgb.controller;
 
+import com.xgb.model.SysMenuExample;
+import com.xgb.model.SysUserExample;
 import com.xgb.utils.IntegerUtils;
 import com.xgb.lang.R;
 import com.xgb.model.SysUserRole;
 import com.xgb.service.SysRoleService;
 import com.xgb.service.SysUserRoleService;
 import com.xgb.service.SysUserService;
+import com.xgb.utils.MyUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,8 +47,13 @@ public class SysUserRoleController {
         int end = Integer.valueOf(mapParam.get("end").toString());
         begin = IntegerUtils.getBegin(begin,end);//根据第几页查询数据
         //查询代码
-        List<Map<String, Object>> maps = sysUserRoleService.selectRoleMapByDeptId(null,begin,end);
-        int roleMapByDeptId = sysUserService.getUserCount();
+        List<Map<String, Object>> maps = sysUserRoleService.selectRoleMapByDeptId(mapParam,begin,end);
+        SysUserExample sysUserExample = new SysUserExample();
+        SysUserExample.Criteria criteria = sysUserExample.createCriteria();
+        if(MyUtils.isNotEmpty(mapParam.get("roleName").toString())){
+            criteria.andUserNameEqualTo(mapParam.get("roleName").toString());
+        }
+        int roleMapByDeptId = sysUserService.getUserCount(sysUserExample);
 //        sysRoleService
         if(maps.size()>0){
             map.put("roles",maps);
@@ -59,11 +67,7 @@ public class SysUserRoleController {
     @PostMapping("saveSysUserRole")
     public R saveSysUserRole(@RequestParam Map mapParam){
         logger.info("------request-address----------------：/admin/saveSysUserRole");
-        String id = mapParam.get("id").toString();
-        String roleId = mapParam.get("roleId").toString();
-        SysUserRole sysUserRole = sysUserRoleService.selectRoleIdByUserId(id);
-        sysUserRole.setRoleId(roleId);
-        int update = sysUserRoleService.update(sysUserRole);
+        int update = sysUserRoleService.updateUserAndRole(mapParam);
         if (update>0) {
             return R.ok("更新成功");
         }else {

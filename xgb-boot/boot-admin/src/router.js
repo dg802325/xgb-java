@@ -244,6 +244,11 @@ const GameRouter = [
                 component: () => import('./views/Game/notBlock/index.vue'),
                 meta: {title: '别踩白块'}
             },
+            {
+                path: 'soKoBon',
+                component: () => import('./views/Game/soKoBon/soKoBon.vue'),
+                meta: {title: '别踩白块'}
+            },
         ]
     },
 ]

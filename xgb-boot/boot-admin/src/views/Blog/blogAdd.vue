@@ -3,7 +3,7 @@
         <glob-breadcrumb title="博客发表"/>
         <br><br>
         <div class="container">
-            <el-form label-width="80px">
+            <el-form label-width="120px">
                 <el-form-item label="标题">
                     <el-input v-model="title"></el-input>
                 </el-form-item>
@@ -28,8 +28,9 @@
                         <el-checkbox v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox>
                     </el-checkbox-group>
                 </el-form-item>
-                <el-form-item label="博客内容">
+                <el-form-item label="博客内容" style="background-color: #FFFFFF">
                     <quill-editor
+                            style="height: 600px"
                             v-model="content"
                             ref="myQuillEditor"
                             :options="editorOption">

@@ -55,7 +55,7 @@ public class SysDeptController {
         begin = IntegerUtils.getBegin(begin,end);//根据第几页查询数据
         //查询代码
         SysDeptExample sysDeptExample = new SysDeptExample();
-        sysDeptExample.createCriteria();
+        SysDeptExample.Criteria criteria = sysDeptExample.createCriteria();
         sysDeptExample.setOrderByClause("CREATE_TIME DESC LIMIT "+begin+", "+end);
         List<Map<String,Object>> lists = new ArrayList<Map<String,Object>>();
         List<SysDept> sysDepts = sysDeptService.selectByExample(sysDeptExample);

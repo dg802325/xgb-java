@@ -2,40 +2,40 @@
   <div class="header-container">
     <div class="header-wrapper">
       <div class="container">
-        <div class="link-wrapper">
-          <div class="user-nav" v-if="member">
-            <div class="shadow">
-              <span class="el-dropdown-link">
-                {{member.memberName}} <i class="fa fa-chevron-down"></i>
-              </span>
-              <ul>
-                <router-link tag="li" to="/center/person">个人中心</router-link>
-                <router-link tag="li" to="/center/security">安全设置</router-link>
-                <li @click="loginOut">退出登录</li>
-              </ul>
-            </div>
-          </div>
-          <span class="line" v-if="member">|</span>
-          <router-link to="/login" v-if="!member" class="link">请先登录</router-link>
-          <span class="line" v-if="!member">|</span>
-          <router-link to="/register" v-if="!member" class="link">免费注册</router-link>
-          <span class="line" v-if="!member">|</span>
-          <router-link to="/center/order" class="link">我的订单</router-link>
-          <span class="line">|</span>
-          <router-link to="/help" class="link">帮助中心</router-link>
-          <span class="line">|</span>
-          <div class="link">
-            <el-dropdown>
-              <span class="link mobile">手机版</span>
-              <el-dropdown-menu class="qr-code" slot="dropdown">
-                <p class="code">
-                  <img src="./images/u90.png">
-                </p>
-                <p class="desc">扫描二维码下载e农商城APP</p>
-              </el-dropdown-menu>
-            </el-dropdown>
-          </div>
-        </div>
+<!--        <div class="link-wrapper">-->
+<!--          <div class="user-nav" v-if="member">-->
+<!--            <div class="shadow">-->
+<!--              <span class="el-dropdown-link">-->
+<!--                {{member.memberName}} <i class="fa fa-chevron-down"></i>-->
+<!--              </span>-->
+<!--              <ul>-->
+<!--                <router-link tag="li" to="/center/person">个人中心</router-link>-->
+<!--                <router-link tag="li" to="/center/security">安全设置</router-link>-->
+<!--                <li @click="loginOut">退出登录</li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <span class="line" v-if="member">|</span>-->
+<!--          <router-link to="/login" v-if="!member" class="link">请先登录</router-link>-->
+<!--          <span class="line" v-if="!member">|</span>-->
+<!--          <router-link to="/register" v-if="!member" class="link">免费注册</router-link>-->
+<!--          <span class="line" v-if="!member">|</span>-->
+<!--          <router-link to="/center/order" class="link">我的订单</router-link>-->
+<!--          <span class="line">|</span>-->
+<!--          <router-link to="/help" class="link">帮助中心</router-link>-->
+<!--          <span class="line">|</span>-->
+<!--          <div class="link">-->
+<!--            <el-dropdown>-->
+<!--              <span class="link mobile">手机版</span>-->
+<!--              <el-dropdown-menu class="qr-code" slot="dropdown">-->
+<!--                <p class="code">-->
+<!--                  <img src="./images/u90.png">-->
+<!--                </p>-->
+<!--                <p class="desc">扫描二维码下载e农商城APP</p>-->
+<!--              </el-dropdown-menu>-->
+<!--            </el-dropdown>-->
+<!--          </div>-->
+<!--        </div>-->
         <div class="address-wrapper">
           <p class="address" @click="showCityEvent">🚩
             <span v-if="showCity.length" v-for="(city,index) in showCity" :key="index">{{regionMap[city].divisionName}}<template
@@ -53,8 +53,8 @@
           <img src="./images/web-logo.png" width="45" height="45">
         </router-link>
         <div class="login-title">
-          <h1>商城</h1>
-          <p>爱买不买</p>
+          <h1>正在制作</h1>
+          <p>稍后</p>
         </div>
         <div class="nav-group">
           <router-link to="/home">首页</router-link>
@@ -94,7 +94,7 @@
           </el-dropdown>
         </div>
         <div class="search-wrapper">
-          <el-input v-model="searchVal" class="context" @keyup.enter.native="searchEvent"  placeholder="输入商品关键词"></el-input>
+          <el-input v-model="searchVal" class="context" @keyup.enter.native="searchEvent"  placeholder="输入什么都没用"></el-input>
           <span v-show="deleteVisible" class="delete" @click="deleteContext">
             <img src="./images/delete.svg"/>
           </span>
@@ -142,7 +142,7 @@
               </div>
             </el-dropdown-menu>
           </el-dropdown>
-          <router-link v-if="!cartList.length" tag="p" to="/cart" class="label">我的购物车</router-link>
+<!--          <router-link v-if="!cartList.length" tag="p" to="/cart" class="label">我的购物车</router-link>-->
         </div>
       </div>
     </div>

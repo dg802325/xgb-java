@@ -51,7 +51,7 @@
                         <span class="num">(<span class="red">10</span>)</span>
                     </li>
                     <li class="m0">
-                        <router-link to="/refundGoods/2">待确认退货订单</router-link>
+                        <router-link to="/game/soKoBon">推箱子</router-link>
                         <span class="num">(<span class="red">10</span>)</span>
                     </li>
                     <li>

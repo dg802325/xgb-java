@@ -186,7 +186,6 @@ public class SysPermissionController {
         logger.info("------request-address----------------：/admin/getAllSysPermission");
         //查询代码
         Map<String,Object> parentMap = new HashMap<String,Object>();
-        List<SysPermission> sysPermission = sysPermissionService.selectByExample(new SysPermissionExample());
         List<Map<String, Object>> list = sysPermissionService.selectAllRolePermissionList();
         if(list.size()>0){
             parentMap.put("lists",list);

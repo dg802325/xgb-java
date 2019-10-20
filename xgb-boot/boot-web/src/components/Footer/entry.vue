@@ -1,51 +1,51 @@
 <template>
   <div class="footer-container">
-    <div class="container top">
-      <div class="app">
-        <dl>
-          <dt>下载APP</dt>
-          <dd>
-            <img src="./images/u9.png"/>
-            <p>
-              扫描二维码下载e农商城APP
-            </p>
-          </dd>
-        </dl>
-      </div>
-      <div class="tal-wrapper">
-          <p class="title">服务热线</p>
-          <p class="tal">400-1126-800</p>
-          <p>周一至周日 8:00-18:00</p>
-          <p>（仅收市话费）</p>
-      </div>
-    </div>
-    <div class="bottom">
-      <div class="container">
-        <ul>
-          <li>30天无忧退换货</li>
-          <li style="width:330px;"><img src="./images/u14.png"/>满88元免邮费</li>
-          <li><img src="./images/u16.png" style="margin-right:22px;"/>e农商城品质保证</li>
-        </ul>
-        <p class="copyright ">
-          CopyRight &copy; 京ICP备16000129号-3 e农商城 2015 - 2019
-          <router-link to="/business" class="business-link">商家中心</router-link>
-        </p>
-      </div>
-    </div>
-    <div class="suspension">
-      <div class="item">
-        <i class="fa fa-arrow-circle-o-up" @click="backtopEvent"></i>
-        <p>返回顶部</p>
-      </div>
-      <div class="item">
-        <div class="app-code">
-          <img src="./images/u90.png"/>
-          <p>扫描二维码下载e农商城APP</p>
-        </div>
-        <i class="fa fa-mobile"></i>
-        <p>下载APP</p>
-      </div>
-    </div>
+<!--    <div class="container top">-->
+<!--      <div class="app">-->
+<!--        <dl>-->
+<!--          <dt>下载APP</dt>-->
+<!--          <dd>-->
+<!--            <img src="./images/u9.png"/>-->
+<!--            <p>-->
+<!--              扫描二维码下载e农商城APP-->
+<!--            </p>-->
+<!--          </dd>-->
+<!--        </dl>-->
+<!--      </div>-->
+<!--      <div class="tal-wrapper">-->
+<!--          <p class="title">服务热线</p>-->
+<!--          <p class="tal">400-1126-800</p>-->
+<!--          <p>周一至周日 8:00-18:00</p>-->
+<!--          <p>（仅收市话费）</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="bottom">-->
+<!--      <div class="container">-->
+<!--        <ul>-->
+<!--          <li>30天无忧退换货</li>-->
+<!--          <li style="width:330px;"><img src="./images/u14.png"/>满88元免邮费</li>-->
+<!--          <li><img src="./images/u16.png" style="margin-right:22px;"/>e农商城品质保证</li>-->
+<!--        </ul>-->
+<!--        <p class="copyright ">-->
+<!--          CopyRight &copy; 京ICP备16000129号-3 e农商城 2015 - 2019-->
+<!--          <router-link to="/business" class="business-link">商家中心</router-link>-->
+<!--        </p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="suspension">-->
+<!--      <div class="item">-->
+<!--        <i class="fa fa-arrow-circle-o-up" @click="backtopEvent"></i>-->
+<!--        <p>返回顶部</p>-->
+<!--      </div>-->
+<!--      <div class="item">-->
+<!--        <div class="app-code">-->
+<!--          <img src="./images/u90.png"/>-->
+<!--          <p>扫描二维码下载e农商城APP</p>-->
+<!--        </div>-->
+<!--        <i class="fa fa-mobile"></i>-->
+<!--        <p>下载APP</p>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </template>
 

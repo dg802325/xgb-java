@@ -49,6 +49,9 @@
         methods: {
 
             async getAllPermission(){
+                let data = {
+
+                }
                 let res = await this.$get("/admin/getAllSysPermission")
                 this.data = res.lists;
             },

@@ -223,9 +223,15 @@ export default new Router({
       name: 'forgetPassword',
       component: () => import('./views/ForgetPassword/entry.vue'),
       meta: {title:'忘记密码'}
-    }
+    },
+    {
+      path: '/mySume',
+      name: 'mySume',
+      component: () => import('./views/MySume/mySume.vue'),
+      meta: {title:'我的简历'}
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     return {x: 0, y: 0}
-  }
+  },
 })

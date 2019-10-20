@@ -81,8 +81,9 @@ public class SysUserService {
         return sysUserMapper.updateByPrimaryKey(record);
     }
 
-    public int getUserCount(){
-	    return sysUserMapper.countByExample(new SysUserExample());
+    public int getUserCount(SysUserExample sysUserExample){
+
+	    return sysUserMapper.countByExample(sysUserExample);
     }
 
     public List<String> selectPermissionByUserId(String userId) {
