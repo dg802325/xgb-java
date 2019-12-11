@@ -1,7 +1,7 @@
 package com.xgb.controller;
 
-import com.xgb.error.ApiResultCodeEnum;
-import com.xgb.model.FastDFSVO;
+import com.xgb.code.ResultCode;
+import com.xgb.entity.FastDFS;
 import com.xgb.service.FastDFSClientService;
 import com.xgb.util.MyTools;
 import org.slf4j.Logger;
@@ -43,11 +43,11 @@ public class   FastDFSController {
      */
     @ResponseBody
     @RequestMapping(value = "/upload/text", method = RequestMethod.POST)
-    public FastDFSVO upload(String content, String ext) {
-        FastDFSVO fastDFSVO = new FastDFSVO();
+    public FastDFS upload(String content, String ext) {
+        FastDFS FastDFS = new FastDFS();
         if (MyTools.isOneEmpty(content, ext)) {
-            fastDFSVO.setCode(ApiResultCodeEnum.ERROR.getCode());
-            fastDFSVO.setMessage("请求参数不全!");
+            FastDFS.setCode(ResultCode.ERROR.getCode());
+            FastDFS.setMessage("请求参数不全!");
             logger.warn("上传文本的内容，扩展名不能为空!");
         } else {
             String msgObj = null;
@@ -56,16 +56,16 @@ public class   FastDFSController {
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
                 logger.error("待上传的文本内容解码出错! " + e.getMessage());
-                fastDFSVO.setCode(ApiResultCodeEnum.ERROR.getCode());
-                fastDFSVO.setMessage("待上传的文本内容解码出错! " + e.getMessage());
+                FastDFS.setCode(ResultCode.ERROR.getCode());
+                FastDFS.setMessage("待上传的文本内容解码出错! " + e.getMessage());
             }
             String url = fastDFSClientService.uploadFile(msgObj, ext);
-            fastDFSVO.setUrl(fastDFSClientService.getResAccessUrl(url)); // 资源全路径
-            fastDFSVO.setCode(ApiResultCodeEnum.SUCCESS.getCode()); //成功
-            fastDFSVO.setMessage("上传文件成功!");
+            FastDFS.setUrl(fastDFSClientService.getResAccessUrl(url)); // 资源全路径
+            FastDFS.setCode(ResultCode.SUCCESS.getCode()); //成功
+            FastDFS.setMessage("上传文件成功!");
             logger.debug("上传文件成功:" + url);
         }
-        return fastDFSVO;
+        return FastDFS;
     }
 
 
@@ -77,26 +77,26 @@ public class   FastDFSController {
      */
     @ResponseBody
     @RequestMapping(value = "/upload/file", method = RequestMethod.POST)
-    public FastDFSVO upload(MultipartFile file) {
-        FastDFSVO fastDFSVO = new FastDFSVO();
+    public FastDFS upload(MultipartFile file) {
+        FastDFS FastDFS = new FastDFS();
         if (MyTools.isEmpty(file)) {
-            fastDFSVO.setCode(ApiResultCodeEnum.ERROR.getCode());
-            fastDFSVO.setMessage("上传文件不能为空!");
+            FastDFS.setCode(ResultCode.ERROR.getCode());
+            FastDFS.setMessage("上传文件不能为空!");
             logger.warn("上传文件不能为空!");
         } else {
             try {
                 String url = fastDFSClientService.uploadFile(file);   // 资源存储路径
-                fastDFSVO.setUrl(fastDFSClientService.getResAccessUrl(url)); // 资源全路径
-                fastDFSVO.setCode(ApiResultCodeEnum.SUCCESS.getCode());
-                fastDFSVO.setMessage("上传文件成功!");
+                FastDFS.setUrl(fastDFSClientService.getResAccessUrl(url)); // 资源全路径
+                FastDFS.setCode(ResultCode.SUCCESS.getCode());
+                FastDFS.setMessage("上传文件成功!");
                 logger.debug("上传文件成功:" + url);
             } catch (IOException e) {
                 logger.error("上传文件异常！" + e.getMessage());
-                fastDFSVO.setCode(ApiResultCodeEnum.ERROR.getCode()); // 上传文件异常
-                fastDFSVO.setMessage("上传文件异常!" + e.getMessage()); // 上传文件异常
+                FastDFS.setCode(ResultCode.ERROR.getCode()); // 上传文件异常
+                FastDFS.setMessage("上传文件异常!" + e.getMessage()); // 上传文件异常
             }
         }
-        return fastDFSVO;
+        return FastDFS;
     }
 
 
@@ -108,25 +108,25 @@ public class   FastDFSController {
      */
     @ResponseBody
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
-    public FastDFSVO delete(String url) {
-        FastDFSVO fastDFSVO = new FastDFSVO();
+    public FastDFS delete(String url) {
+        FastDFS FastDFS = new FastDFS();
         if (MyTools.isEmpty(url)) {
-            fastDFSVO.setCode(ApiResultCodeEnum.ERROR.getCode());
-            fastDFSVO.setMessage("请求参数不全!");
+            FastDFS.setCode(ResultCode.ERROR.getCode());
+            FastDFS.setMessage("请求参数不全!");
             logger.warn("上传文本的内容，扩展名不能为空!");
         } else {
             try {
                 fastDFSClientService.deleteFile(url);
-                fastDFSVO.setCode(ApiResultCodeEnum.SUCCESS.getCode()); //成功
-                fastDFSVO.setMessage("文件删除成功!");
+                FastDFS.setCode(ResultCode.SUCCESS.getCode()); //成功
+                FastDFS.setMessage("文件删除成功!");
                 logger.debug("已删除文件:" + url);
             } catch (Exception e) {
                 logger.error("删除文件异常！" + e.getMessage());
-                fastDFSVO.setCode(ApiResultCodeEnum.ERROR.getCode());
-                fastDFSVO.setMessage("删除文件异常！" + e.getMessage());
+                FastDFS.setCode(ResultCode.ERROR.getCode());
+                FastDFS.setMessage("删除文件异常！" + e.getMessage());
             }
         }
-        return fastDFSVO;
+        return FastDFS;
     }
 
     /**

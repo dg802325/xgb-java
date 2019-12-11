@@ -2,10 +2,10 @@ package com.xgb.controller;
 
 import com.xgb.common.SessionUtil;
 import com.xgb.entity.R;
-import com.xgb.model.FastDFSVO;
+import com.xgb.entity.FastDFS;
 import com.xgb.model.SysOss;
 import com.xgb.service.SysOssService;
-import com.xgb.utils.MasterKeyID;
+import com.xgb.util.UUIDUtils;
 import com.xgb.util.MyTools;
 import com.xgb.util.UUIDUtils;
 import org.apache.commons.io.FileUtils;
@@ -62,8 +62,8 @@ public class SysOssController {
         try {
             // 创建临时文件
             String fileName = file.getOriginalFilename();
-            String suffixName = MyUtils.getFileSuffix(fileName);
-            File tmpFile = File.createTempFile(MasterKeyID.nextID("fastTemp"), "." + suffixName);//创建临时文件
+            String suffixName = MyTools.getFileSuffix(fileName);
+            File tmpFile = File.createTempFile(UUIDUtils.nextID("fastTemp"), "." + suffixName);//创建临时文件
             file.transferTo(tmpFile);
             BufferedImage bufferedImage = ImageIO.read(tmpFile); // 通过临时文件获取图片流
             if (bufferedImage != null) {
@@ -77,8 +77,8 @@ public class SysOssController {
             // 发送请求
             HttpEntity<MultiValueMap<String, Object>> httpEntity = new HttpEntity<>(requestEntity, null);
             RestTemplate restTemplate = new RestTemplate();
-            ResponseEntity<FastDFSVO> responseEntity = restTemplate.exchange(fastUrl + "/upload/file", HttpMethod.POST, httpEntity, FastDFSVO.class);
-            FastDFSVO result = responseEntity.getBody();
+            ResponseEntity<FastDFS> responseEntity = restTemplate.exchange(fastUrl + "/upload/file", HttpMethod.POST, httpEntity, FastDFS.class);
+            FastDFS result = responseEntity.getBody();
             fileUrl = result.getUrl();
             FileUtils.forceDelete(tmpFile); // 删除临时文件
             Map<String, Object> map = new HashMap<>();

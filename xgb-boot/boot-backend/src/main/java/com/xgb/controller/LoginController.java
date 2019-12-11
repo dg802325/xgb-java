@@ -1,14 +1,14 @@
 package com.xgb.controller;
 
 import com.xgb.common.SessionUtil;
-import com.xgb.lang.JWTToken;
+import com.xgb.entity.JWTToken;
 import com.xgb.entity.R;
-import com.xgb.utils.RequestUtils;
+import com.xgb.util.MD5Util;
 import com.xgb.model.SysUser;
 import com.xgb.service.SysUserService;
-import com.xgb.utils.CookieUtils;
-import com.xgb.utils.MD5Util;
+import com.xgb.util.CookieUtils;
 import com.xgb.util.MyTools;
+import com.xgb.util.RequestUtils;
 import eu.bitwalker.useragentutils.Browser;
 import eu.bitwalker.useragentutils.UserAgent;
 import org.apache.shiro.subject.Subject;

@@ -1,8 +1,8 @@
 package com.xgb.controller;
 
 import com.xgb.entity.R;
-import com.xgb.model.FastDFSVO;
-import com.xgb.utils.MasterKeyID;
+import com.xgb.entity.FastDFS;
+import com.xgb.util.UUIDUtils;
 import com.xgb.util.MyTools;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Value;
@@ -45,8 +45,8 @@ public class OosController {
             try {
                 // 创建临时文件
                 String fileName = file.getOriginalFilename();
-                String suffixName = MyUtils.getFileSuffix(fileName);
-                File tmpFile = File.createTempFile(MasterKeyID.nextID("fastTemp"), "." + suffixName);//创建临时文件
+                String suffixName = MyTools.getFileSuffix(fileName);
+                File tmpFile = File.createTempFile(UUIDUtils.nextID("fastTemp"), "." + suffixName);//创建临时文件
                 file.transferTo(tmpFile);
                 // 请求参数
                 MultiValueMap<String, Object> requestEntity = new LinkedMultiValueMap<>();
@@ -55,8 +55,8 @@ public class OosController {
                 // 发送请求
                 HttpEntity<MultiValueMap<String, Object>> httpEntity = new HttpEntity<>(requestEntity, null);
                 RestTemplate restTemplate = new RestTemplate();
-                ResponseEntity<FastDFSVO> responseEntity = restTemplate.exchange(fastUrl + "/upload/file", HttpMethod.POST, httpEntity, FastDFSVO.class);
-                FastDFSVO result = responseEntity.getBody();
+                ResponseEntity<FastDFS> responseEntity = restTemplate.exchange(fastUrl + "/upload/file", HttpMethod.POST, httpEntity, FastDFS.class);
+                FastDFS result = responseEntity.getBody();
                 fileUrl = result.getUrl();
                 FileUtils.forceDelete(tmpFile); // 删除临时文件
                 Map<String, Object> map = new HashMap<>();

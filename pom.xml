@@ -18,6 +18,7 @@
     <modules>
         <module>xgb-common</module>
         <module>xgb-boot</module>
+        <module>xgb-test</module>
     </modules>
     <dependencies>
         <!-- 引入依赖-->

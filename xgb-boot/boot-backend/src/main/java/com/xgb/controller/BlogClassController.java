@@ -1,7 +1,7 @@
 package com.xgb.controller;
 
 import com.xgb.common.SessionUtil;
-import com.xgb.utils.DateUtils;
+import com.xgb.util.DateUtils;
 import com.xgb.util.IntegerUtils;
 import com.xgb.model.BlogClass;
 import com.xgb.model.BlogClassExample;

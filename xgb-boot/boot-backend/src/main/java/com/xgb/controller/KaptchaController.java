@@ -1,7 +1,8 @@
 package com.xgb.controller;
 
 import com.xgb.common.VerifyCodeUtils;
-import com.xgb.utils.RequestUtils;
+import com.xgb.util.MD5Util;
+import com.xgb.util.RequestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;

@@ -4,7 +4,7 @@ import com.xgb.common.SessionUtil;
 import com.xgb.entity.R;
 import com.xgb.model.SysUser;
 import com.xgb.service.SysUserService;
-import com.xgb.utils.MD5Util;
+import com.xgb.util.MD5Util;
 import com.xgb.util.MyTools;
 import com.xgb.util.UUIDUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;

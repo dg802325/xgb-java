@@ -6,7 +6,7 @@ import com.github.tobato.fastdfs.exception.FdfsUnsupportStorePathException;
 import com.github.tobato.fastdfs.proto.storage.DownloadCallback;
 import com.github.tobato.fastdfs.service.FastFileStorageClient;
 import com.github.tobato.fastdfs.service.TrackerClient;
-import com.xgb.utils.MasterKeyID;
+import com.xgb.util.UUIDUtils;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -93,7 +93,7 @@ public class FastDFSClientService {
         DownloadCallback<File> callback = new DownloadCallback<File>() {
             @Override
             public File recv(InputStream ins) throws IOException {
-                String tempFilename = MasterKeyID.nextID("fast-downtmp");
+                String tempFilename = UUIDUtils.nextID("fast-downtmp");
                 String suffixName = ".tmp";
                 File dest = File.createTempFile(tempFilename, suffixName);
                 logger.debug("download to: " + dest.getAbsolutePath());

@@ -1,7 +1,7 @@
 package com.xgb.config;
 
 import com.alibaba.fastjson.JSONObject;
-import com.xgb.lang.JWTToken;
+import com.xgb.entity.JWTToken;
 import com.xgb.model.SysUser;
 import com.xgb.service.SysUserService;
 import com.xgb.util.MyTools;

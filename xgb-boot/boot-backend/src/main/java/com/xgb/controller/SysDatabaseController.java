@@ -7,7 +7,7 @@ import com.xgb.model.SysDatabases;
 import com.xgb.model.SysDatabasesExample;
 import com.xgb.service.SysDatabasesService;
 import com.xgb.util.MyTools;
-import com.xgb.utils.RequestUtils;
+import com.xgb.util.RequestUtils;
 import com.xgb.util.UUIDUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
