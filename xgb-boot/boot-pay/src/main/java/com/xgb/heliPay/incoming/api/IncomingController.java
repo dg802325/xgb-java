@@ -5,7 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.xgb.heliPay.incoming.entity.*;
 import com.xgb.heliPay.incoming.enums.MerchantEntryStatus;
 import com.xgb.heliPay.incoming.service.EntryService;
-import com.xgb.lang.R;
+import com.xgb.entity.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;

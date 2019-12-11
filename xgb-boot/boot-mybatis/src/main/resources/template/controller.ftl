@@ -65,7 +65,7 @@ public class ${modelName!}Controller {
         //查询代码
         Map<String,Object> map = new HashMap<String,Object>();
         ${modelName!} ${someModelName!} = ${someModelName!}Service.selectByPrimaryKey(id);
-        if(MyUtils.isNotEmpty(${someModelName!})){
+        if(MyTools.isNotEmpty(${someModelName!})){
             map.put("${someModelName!}",${someModelName!});
             return R.ok();
         }
@@ -83,7 +83,7 @@ public class ${modelName!}Controller {
     public R save${modelName!}(${modelName!} ${someModelName!}){
         logger.info("------request-address----------------：/admin/save${modelName!}");
         Map<String,Object> map = new HashMap<String,Object>();
-        if(MyUtils.isEmpty(${someModelName!}.getId())){
+        if(MyTools.isEmpty(${someModelName!}.getId())){
             ${someModelName!}.setId(UUIDUtils.getUUID());
             if(${someModelName!}Service.insert(${someModelName!}) > 0){
                 return R.ok("添加成功");

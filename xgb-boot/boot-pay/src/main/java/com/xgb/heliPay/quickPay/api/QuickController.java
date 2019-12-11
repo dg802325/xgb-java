@@ -7,7 +7,7 @@ import com.xgb.heliPay.quickPay.entity.response.*;
 import com.xgb.heliPay.quickPay.service.HttpClientService;
 import com.xgb.heliPay.quickPay.service.MessageHandle;
 import com.xgb.heliPay.utils.Des3Encryption;
-import com.xgb.lang.R;
+import com.xgb.entity.R;
 import org.apache.commons.httpclient.HttpStatus;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -3,7 +3,7 @@ package com.xgb.controller;
 import com.xgb.model.*;
 import com.xgb.service.ChinaBankCodeService;
 import com.xgb.utils.DateUtils;
-import com.xgb.utils.UUIDUtils;
+import com.xgb.util.UUIDUtils;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;

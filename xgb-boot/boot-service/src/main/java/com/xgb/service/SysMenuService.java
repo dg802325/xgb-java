@@ -2,7 +2,7 @@ package com.xgb.service;
 
 import com.xgb.dao.*;
 import com.xgb.model.*;
-import com.xgb.utils.MyUtils;
+import com.xgb.util.MyTools;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -188,13 +188,13 @@ public class SysMenuService {
                         threeMenu.put("sort",threeMenus.getSort());
                         threeMenu.put("menuType",threeMenus.getMenuType());
                         SysRolePermission sysRolePermission = allPermission.stream().filter(o -> o.getPermissionId().equals(threeMenus.getPermissionId())).findAny().orElse(null);
-                        if (MyUtils.isNotEmpty(sysRolePermission)) {
+                        if (MyTools.isNotEmpty(sysRolePermission)) {
                             threeMenulist.add(threeMenu);
                         }
                         twoMenu.put("menuItemThree",threeMenulist);
                     });
                     SysRolePermission sysRolePermission = allPermission.stream().filter(o -> o.getPermissionId().equals(towMenus.getPermissionId())).findAny().orElse(null);
-                    if (MyUtils.isNotEmpty(sysRolePermission)) {
+                    if (MyTools.isNotEmpty(sysRolePermission)) {
                         twoMenulist.add(twoMenu);
                     }
                 });

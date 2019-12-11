@@ -1,9 +1,9 @@
 package com.xgb.controller;
 
-import com.xgb.lang.R;
+import com.xgb.entity.R;
 import com.xgb.model.FastDFSVO;
 import com.xgb.utils.MasterKeyID;
-import com.xgb.utils.MyUtils;
+import com.xgb.util.MyTools;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.FileSystemResource;

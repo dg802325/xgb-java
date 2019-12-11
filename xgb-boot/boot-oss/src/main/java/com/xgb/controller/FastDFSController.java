@@ -3,7 +3,7 @@ package com.xgb.controller;
 import com.xgb.error.ApiResultCodeEnum;
 import com.xgb.model.FastDFSVO;
 import com.xgb.service.FastDFSClientService;
-import com.xgb.utils.MyUtils;
+import com.xgb.util.MyTools;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +45,7 @@ public class   FastDFSController {
     @RequestMapping(value = "/upload/text", method = RequestMethod.POST)
     public FastDFSVO upload(String content, String ext) {
         FastDFSVO fastDFSVO = new FastDFSVO();
-        if (MyUtils.isOneEmpty(content, ext)) {
+        if (MyTools.isOneEmpty(content, ext)) {
             fastDFSVO.setCode(ApiResultCodeEnum.ERROR.getCode());
             fastDFSVO.setMessage("请求参数不全!");
             logger.warn("上传文本的内容，扩展名不能为空!");
@@ -79,7 +79,7 @@ public class   FastDFSController {
     @RequestMapping(value = "/upload/file", method = RequestMethod.POST)
     public FastDFSVO upload(MultipartFile file) {
         FastDFSVO fastDFSVO = new FastDFSVO();
-        if (MyUtils.isEmpty(file)) {
+        if (MyTools.isEmpty(file)) {
             fastDFSVO.setCode(ApiResultCodeEnum.ERROR.getCode());
             fastDFSVO.setMessage("上传文件不能为空!");
             logger.warn("上传文件不能为空!");
@@ -110,7 +110,7 @@ public class   FastDFSController {
     @RequestMapping(value = "/delete", method = RequestMethod.POST)
     public FastDFSVO delete(String url) {
         FastDFSVO fastDFSVO = new FastDFSVO();
-        if (MyUtils.isEmpty(url)) {
+        if (MyTools.isEmpty(url)) {
             fastDFSVO.setCode(ApiResultCodeEnum.ERROR.getCode());
             fastDFSVO.setMessage("请求参数不全!");
             logger.warn("上传文本的内容，扩展名不能为空!");

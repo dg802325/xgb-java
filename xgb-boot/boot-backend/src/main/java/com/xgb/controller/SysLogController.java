@@ -1,10 +1,10 @@
 package com.xgb.controller;
 
-import com.xgb.lang.R;
+import com.xgb.entity.R;
 import com.xgb.model.SysLog;
 import com.xgb.service.SysLogService;
-import com.xgb.utils.MyUtils;
-import com.xgb.utils.UUIDUtils;
+import com.xgb.util.MyTools;
+import com.xgb.util.UUIDUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -95,7 +95,7 @@ public class SysLogController {
     public R saveSysLog(SysLog sysLog){
         logger.info("------request-address----------------：/admin/save_sysLog");
         Map<String,Object> map = new HashMap<String,Object>();
-        if(MyUtils.isEmpty(sysLog.getId())){
+        if(MyTools.isEmpty(sysLog.getId())){
             sysLog.setId(UUIDUtils.getUUID());
             if(sysLogService.insert(sysLog) > 0){
                 R.ok("添加成功");

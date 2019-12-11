@@ -5,7 +5,7 @@ import com.xgb.dao.SysRoleMapper;
 import com.xgb.dao.SysUserMapper;
 import com.xgb.dao.SysUserRoleMapper;
 import com.xgb.model.*;
-import com.xgb.utils.MyUtils;
+import com.xgb.util.MyTools;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,7 +32,7 @@ public class SysUserRoleService {
     public List<Map<String,Object>> selectRoleMapByDeptId(Map mapParam, Integer begin, Integer end) {
         SysUserExample sysRoleExample = new SysUserExample();
         SysUserExample.Criteria criteria = sysRoleExample.createCriteria();
-        if(MyUtils.isNotEmpty(mapParam.get("roleName").toString())){
+        if(MyTools.isNotEmpty(mapParam.get("roleName").toString())){
             criteria.andUserNameEqualTo(mapParam.get("roleName").toString());
         }
         sysRoleExample.setOrderByClause("CREATE_TIME DESC LIMIT "+begin+","+end);
@@ -94,10 +94,10 @@ public class SysUserRoleService {
         String id = mapParam.get("id").toString();
         //更新角色基本信息
         SysUser sysUser = sysUserMapper.selectByPrimaryKey(id);
-        if(MyUtils.isNotEmpty(mapParam.get("nickName").toString())){
+        if(MyTools.isNotEmpty(mapParam.get("nickName").toString())){
             sysUser.setNickName(mapParam.get("nickName").toString());
         }
-        if(MyUtils.isNotEmpty(mapParam.get("userName").toString())){
+        if(MyTools.isNotEmpty(mapParam.get("userName").toString())){
             sysUser.setUserName(mapParam.get("userName").toString());
         }
         sysUserMapper.updateByPrimaryKeySelective(sysUser);

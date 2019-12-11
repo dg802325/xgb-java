@@ -1,14 +1,14 @@
 package com.xgb.controller;
 
 import com.xgb.common.SessionUtil;
-import com.xgb.utils.IntegerUtils;
-import com.xgb.lang.R;
+import com.xgb.util.IntegerUtils;
+import com.xgb.entity.R;
 import com.xgb.model.*;
 import com.xgb.service.SysDeptService;
 import com.xgb.service.SysRoleService;
 import com.xgb.service.SysUserRoleService;
-import com.xgb.utils.MyUtils;
-import com.xgb.utils.UUIDUtils;
+import com.xgb.util.MyTools;
+import com.xgb.util.UUIDUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -91,7 +91,7 @@ public class SysDeptController {
         String sysUserId = SessionUtil.getSysUserId();
         sysDept.setUpdateId(sysUserId);
         sysDept.setUpdateTime(new Date());
-        if (MyUtils.isEmpty(sysDept)) {
+        if (MyTools.isEmpty(sysDept)) {
             //添加流程
             sysDept.setId(UUIDUtils.getUUID());
             sysDept.setCreateTime(new Date());

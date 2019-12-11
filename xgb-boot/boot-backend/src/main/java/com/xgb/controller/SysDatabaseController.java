@@ -1,14 +1,14 @@
 package com.xgb.controller;
 
 import com.xgb.common.SessionUtil;
-import com.xgb.utils.IntegerUtils;
-import com.xgb.lang.R;
+import com.xgb.util.IntegerUtils;
+import com.xgb.entity.R;
 import com.xgb.model.SysDatabases;
 import com.xgb.model.SysDatabasesExample;
 import com.xgb.service.SysDatabasesService;
-import com.xgb.utils.MyUtils;
+import com.xgb.util.MyTools;
 import com.xgb.utils.RequestUtils;
-import com.xgb.utils.UUIDUtils;
+import com.xgb.util.UUIDUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -70,7 +70,7 @@ public class SysDatabaseController {
     @PostMapping("saveSysDatabase")
     public R saveDatabase(SysDatabases sysDatabases, HttpServletRequest request){
         String sysUserId = SessionUtil.getSysUserId();
-        if (MyUtils.isEmpty(sysDatabases.getId())) {
+        if (MyTools.isEmpty(sysDatabases.getId())) {
             sysDatabases.setId(UUIDUtils.getUUID());
             sysDatabases.setCreateId(sysUserId);
             sysDatabases.setCreateTime(new Date());
@@ -103,7 +103,7 @@ public class SysDatabaseController {
     @RequiresPermissions("SYS:DATABASE:DELETE")
     @PostMapping("/delSysDatabase")
     public R delSysDatabase(String databaseId){
-        if (MyUtils.isEmpty(databaseId)){
+        if (MyTools.isEmpty(databaseId)){
             return R.error(999,"id为空");
         }
         int i = sysDatabasesService.deleteByPrimaryKey(databaseId);

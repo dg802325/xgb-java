@@ -1,10 +1,10 @@
 package com.xgb.controller;
 
-import com.xgb.lang.R;
+import com.xgb.entity.R;
 import com.xgb.model.SysChinaDivision;
 import com.xgb.model.SysChinaDivisionExample;
 import com.xgb.service.SysChinaDivistionService;
-import com.xgb.utils.MyUtils;
+import com.xgb.util.MyTools;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -98,7 +98,7 @@ public class SysChinaDivisionController {
     @GetMapping("getRegionCode")
     public R getRegionCode(String id){
         logger.info("------request-address----------------：/admin/getRegionCode");
-        if(MyUtils.isEmpty(id)){
+        if(MyTools.isEmpty(id)){
             return R.error(996,"id为空");
         }
         SysChinaDivision sysChinaDivision = sysChinaDivistionService.selectByPrimaryKey(id);

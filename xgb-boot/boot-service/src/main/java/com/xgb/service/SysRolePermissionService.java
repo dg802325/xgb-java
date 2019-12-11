@@ -6,7 +6,7 @@ import com.xgb.model.SysPermission;
 import com.xgb.model.SysPermissionExample;
 import com.xgb.model.SysRolePermission;
 import com.xgb.model.SysRolePermissionExample;
-import com.xgb.utils.UUIDUtils;
+import com.xgb.util.UUIDUtils;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

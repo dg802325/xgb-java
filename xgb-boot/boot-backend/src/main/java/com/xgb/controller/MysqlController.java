@@ -1,7 +1,7 @@
 package com.xgb.controller;
 
 import com.xgb.common.SessionUtil;
-import com.xgb.lang.R;
+import com.xgb.entity.R;
 import com.xgb.model.Generator;
 import com.xgb.model.SysDatabases;
 import com.xgb.model.SysMabtaisPlus;

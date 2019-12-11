@@ -1,14 +1,14 @@
 package com.xgb.controller;
 
 import com.xgb.common.SessionUtil;
-import com.xgb.utils.IntegerUtils;
-import com.xgb.lang.R;
+import com.xgb.util.IntegerUtils;
+import com.xgb.entity.R;
 import com.xgb.model.SysRole;
 import com.xgb.model.SysRoleExample;
 import com.xgb.service.SysDeptService;
 import com.xgb.service.SysRoleService;
-import com.xgb.utils.MyUtils;
-import com.xgb.utils.UUIDUtils;
+import com.xgb.util.MyTools;
+import com.xgb.util.UUIDUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,7 +37,7 @@ public class SysRoleController {
     public List<SysRole> getAllRole(String deptId){
         logger.info("------request-address----------------：/admin/getAllRole");
         List<SysRole> sysRoles = null;
-        if(MyUtils.isEmpty(deptId)){
+        if(MyTools.isEmpty(deptId)){
             sysRoles = sysRoleService.selectByExample(new SysRoleExample());
         }else {
             SysRoleExample sysRoleExample = new SysRoleExample();
@@ -60,7 +60,7 @@ public class SysRoleController {
         begin = IntegerUtils.getBegin(begin,end);//根据第几页查询数据
         //查询代码
         SysRoleExample sysRoleExample = new SysRoleExample();
-        if(MyUtils.isEmpty(mapParam.get("deptId"))){
+        if(MyTools.isEmpty(mapParam.get("deptId"))){
             sysRoleExample.createCriteria();
             sysRoleExample.setOrderByClause("CREATE_TIME DESC LIMIT "+begin+", "+end);
         }else {
@@ -94,7 +94,7 @@ public class SysRoleController {
     @PostMapping("saveSysRole")
     public R saveSysRole(SysRole sysRole){
         logger.info("------request-address----------------：/admin/saveSysRole");
-        if(MyUtils.isEmpty(sysRole.getId())){
+        if(MyTools.isEmpty(sysRole.getId())){
             String sysUserId = SessionUtil.getSysUserId();
             sysRole.setId(UUIDUtils.getUUID());
             sysRole.setCreateId(sysUserId);
@@ -124,7 +124,7 @@ public class SysRoleController {
     @RequiresPermissions("SYS:ROLE:DELETE")
     @PostMapping("delSysRole")
     public R delSysRole(SysRole sysRole){
-       if(MyUtils.isEmpty(sysRole.getId())){
+       if(MyTools.isEmpty(sysRole.getId())){
            return R.error(999,"未传入id");
        }
        int i = sysRoleService.deleteByPrimaryKey(sysRole.getId());

@@ -1,13 +1,13 @@
 package com.xgb.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.xgb.utils.IntegerUtils;
-import com.xgb.lang.R;
+import com.xgb.util.IntegerUtils;
+import com.xgb.entity.R;
 import com.xgb.model.ChinaBankCode;
 import com.xgb.service.ChinaBankCodeService;
-import com.xgb.utils.HttpClientUtils;
-import com.xgb.utils.MyUtils;
-import com.xgb.utils.UUIDUtils;
+import com.xgb.util.HttpClientUtils;
+import com.xgb.util.MyTools;
+import com.xgb.util.UUIDUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,7 +43,7 @@ public class ChinaBankCodeController {
             jsonObject = JSONObject.parseObject(s);
             String bank = jsonObject.getString("bank");
             String bankName = chinaBankCodeService.getBankNameByBankCode(bank);
-            if(MyUtils.isNotEmpty(bankName)){
+            if(MyTools.isNotEmpty(bankName)){
                 Map<String,Object> map = new HashMap<>();
                 map.put("bankCardNo",bankCardNo);
                 map.put("bankName",bankName);
@@ -92,7 +92,7 @@ public class ChinaBankCodeController {
         //查询代码
         Map<String,Object> map = new HashMap<String,Object>();
         ChinaBankCode chinaBankCode = chinaBankCodeService.selectByPrimaryKey(id);
-        if(MyUtils.isNotEmpty(chinaBankCode)){
+        if(MyTools.isNotEmpty(chinaBankCode)){
             map.put("chinaBankCode",chinaBankCode);
             return R.ok();
         }
@@ -110,7 +110,7 @@ public class ChinaBankCodeController {
     public R saveChinaBankCode(ChinaBankCode chinaBankCode){
         logger.info("------request-address----------------：/admin/saveChinaBankCode");
         Map<String,Object> map = new HashMap<String,Object>();
-        if(MyUtils.isEmpty(chinaBankCode.getId())){
+        if(MyTools.isEmpty(chinaBankCode.getId())){
             chinaBankCode.setId(UUIDUtils.getUUID());
             if(chinaBankCodeService.insert(chinaBankCode) > 0){
                 return R.ok("添加成功");

@@ -1,11 +1,11 @@
 package com.xgb.controller;
 
-import com.xgb.lang.R;
+import com.xgb.entity.R;
 import com.xgb.model.HlbCompanyAuthen;
 import com.xgb.service.HlbCompanyAuthenService;
 import com.xgb.service.SysChinaDivistionService;
-import com.xgb.utils.MyUtils;
-import com.xgb.utils.UUIDUtils;
+import com.xgb.util.MyTools;
+import com.xgb.util.UUIDUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,10 +48,10 @@ public class HeliPayController {
             map.put("orderNo", hlbCompanyAuthen.getId());
             map.put("merchantType", hlbCompanyAuthen.getMerchantType());//
             map.put("merchantCategory", hlbCompanyAuthen.getMerchantCategory());//
-            if(MyUtils.isNotEmpty(hlbCompanyAuthen.getWebSite())){
+            if(MyTools.isNotEmpty(hlbCompanyAuthen.getWebSite())){
                 map.put("webSite", hlbCompanyAuthen.getWebSite());//
             }
-            if(MyUtils.isNotEmpty(hlbCompanyAuthen.getWebSite())){
+            if(MyTools.isNotEmpty(hlbCompanyAuthen.getWebSite())){
                 map.put("accessUrl", hlbCompanyAuthen.getAccessUrl());//
             }
             map.put("legalPerson", hlbCompanyAuthen.getLegalPerson());//法人姓名
@@ -69,10 +69,10 @@ public class HeliPayController {
             map.put("linkman", hlbCompanyAuthen.getLinkman());//联系人
             map.put("linkPhone", hlbCompanyAuthen.getLinkPhone());//联系人电话
             map.put("email", hlbCompanyAuthen.getEmail());//联系人邮箱
-            if(MyUtils.isNotEmpty(hlbCompanyAuthen.getBindMobile())){
+            if(MyTools.isNotEmpty(hlbCompanyAuthen.getBindMobile())){
                 map.put("bindMobile", hlbCompanyAuthen.getBindMobile());//绑定手机
             }
-            if(MyUtils.isNotEmpty(hlbCompanyAuthen.getServicePhone())){
+            if(MyTools.isNotEmpty(hlbCompanyAuthen.getServicePhone())){
                 map.put("servicePhone", hlbCompanyAuthen.getBindMobile());//绑定手机
             }
             map.put("bankCode", hlbCompanyAuthen.getBankCode());//结算联行号
@@ -81,7 +81,7 @@ public class HeliPayController {
             map.put("settleBankType", hlbCompanyAuthen.getSettleBankType());//结算卡类型
             map.put("settlementPeriod", hlbCompanyAuthen.getSettlementPeriod());//默认t1
             map.put("settlementMode", hlbCompanyAuthen.getSettlementMode());//默认自主结算
-            if(MyUtils.isNotEmpty(hlbCompanyAuthen.getAuthorizationFlag())){
+            if(MyTools.isNotEmpty(hlbCompanyAuthen.getAuthorizationFlag())){
                 if("true".equals(hlbCompanyAuthen.getAuthorizationFlag())){
                     map.put("authorizationFlag", true);
                 }else {
@@ -89,7 +89,7 @@ public class HeliPayController {
                 }
             }
             map.put("unionPayQrCode", hlbCompanyAuthen.getUnionPayQrCode());//
-            if(MyUtils.isNotEmpty(hlbCompanyAuthen.getNeedPosFunction())){
+            if(MyTools.isNotEmpty(hlbCompanyAuthen.getNeedPosFunction())){
                 if("true".equals(hlbCompanyAuthen.getNeedPosFunction())){
                     map.put("needPosFunction", true);
                 }else {
@@ -98,7 +98,7 @@ public class HeliPayController {
             }
             map.put("industryTypeCode", hlbCompanyAuthen.getIndustryTypeCode());//
             map.put("merchantCategory", "OFFLINE_RETAIL");//默认经营类别 线下零售
-            if(MyUtils.isNotEmpty(hlbCompanyAuthen.getAgreeprotocol())){
+            if(MyTools.isNotEmpty(hlbCompanyAuthen.getAgreeprotocol())){
                 if("true".equals(hlbCompanyAuthen.getAgreeprotocol())){
                     map.put("agreeProtocol", true);
                 }else {
@@ -108,22 +108,22 @@ public class HeliPayController {
             map.put("callbackUrl", hlbCompanyAuthen.getCallbackUrl());
             map.put("settlementAuth", hlbCompanyAuthen.getSettlementAuth());
             map.put("settleMode", hlbCompanyAuthen.getSettleMode());//默认按商户结算
-            if(MyUtils.isNotEmpty(hlbCompanyAuthen.getIdCardStartDate())){
+            if(MyTools.isNotEmpty(hlbCompanyAuthen.getIdCardStartDate())){
                 map.put("idCardStartDate", hlbCompanyAuthen.getIdCardStartDate());//
             }
-            if(MyUtils.isNotEmpty(hlbCompanyAuthen.getIdCardEndDate())){
+            if(MyTools.isNotEmpty(hlbCompanyAuthen.getIdCardEndDate())){
                map.put("idCardEndDate", hlbCompanyAuthen.getIdCardEndDate());//
             }
-            if(MyUtils.isNotEmpty(hlbCompanyAuthen.getBusinessDateStart())){
+            if(MyTools.isNotEmpty(hlbCompanyAuthen.getBusinessDateStart())){
                 map.put("businessDateStart", hlbCompanyAuthen.getBusinessDateStart());//
             }
-            if(MyUtils.isNotEmpty(hlbCompanyAuthen.getBusinessDateLimit())){
+            if(MyTools.isNotEmpty(hlbCompanyAuthen.getBusinessDateLimit())){
                 map.put("idCardEndDate", hlbCompanyAuthen.getBusinessDateLimit());//
             }
-            if(MyUtils.isNotEmpty(hlbCompanyAuthen.getAccountIdCard())){
+            if(MyTools.isNotEmpty(hlbCompanyAuthen.getAccountIdCard())){
                 map.put("businessDateLimit", hlbCompanyAuthen.getAccountIdCard());//
             }
-            if(MyUtils.isNotEmpty(hlbCompanyAuthen.getMcc())){
+            if(MyTools.isNotEmpty(hlbCompanyAuthen.getMcc())){
                 map.put("mcc", hlbCompanyAuthen.getMcc());//
             }
             r = restTemplate.patchForObject(payUrl + "/incoming/toEntryResult?", map,R.class);

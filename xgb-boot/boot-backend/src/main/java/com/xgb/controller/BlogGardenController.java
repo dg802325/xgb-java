@@ -5,14 +5,14 @@ import com.xgb.utils.DateUtils;
 import com.xgb.model.BlogGarden;
 import com.xgb.model.BlogGardenResource;
 import com.xgb.service.BlogGardenService;
-import com.xgb.utils.MyUtils;
+import com.xgb.util.MyTools;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.xgb.lang.R;
-import com.xgb.utils.UUIDUtils;
+import com.xgb.entity.R;
+import com.xgb.util.UUIDUtils;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -63,7 +63,7 @@ public class BlogGardenController {
         //查询代码
         Map<String,Object> map = new HashMap<String,Object>();
         BlogGarden blogGarden = blogGardenService.selectByPrimaryKey(id);
-        if(MyUtils.isNotEmpty(blogGarden)){
+        if(MyTools.isNotEmpty(blogGarden)){
             map.put("blogGarden",blogGarden);
             return R.ok();
         }
@@ -81,7 +81,7 @@ public class BlogGardenController {
         String sysUserId = SessionUtil.getSysUserId();
         logger.info("------request-address----------------：/admin/saveBlogGarden");
         Map<String,Object> map = new HashMap<String,Object>();
-        if(MyUtils.isEmpty(blogGarden.getId())){
+        if(MyTools.isEmpty(blogGarden.getId())){
             //添加博客表
             blogGarden.setId(UUIDUtils.getUUID());
             blogGarden.setCreateId(sysUserId);

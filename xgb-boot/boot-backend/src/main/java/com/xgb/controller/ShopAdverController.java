@@ -4,15 +4,15 @@ import com.xgb.model.ShopAdver;
 import com.xgb.model.ShopAdverExample;
 import com.xgb.service.ShopAdverService;
 import com.xgb.utils.DateUtils;
-import com.xgb.utils.IntegerUtils;
+import com.xgb.util.IntegerUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.xgb.lang.R;
-import com.xgb.utils.UUIDUtils;
-import com.xgb.utils.MyUtils;
+import com.xgb.entity.R;
+import com.xgb.util.UUIDUtils;
+import com.xgb.util.MyTools;
 
 import java.sql.DatabaseMetaData;
 import java.text.ParseException;
@@ -67,7 +67,7 @@ public class ShopAdverController {
         //查询代码
         Map<String,Object> map = new HashMap<String,Object>();
         ShopAdver shopAdver = shopAdverService.selectByPrimaryKey(id);
-        if(MyUtils.isNotEmpty(shopAdver)){
+        if(MyTools.isNotEmpty(shopAdver)){
             map.put("shopAdver",shopAdver);
             return R.ok();
         }

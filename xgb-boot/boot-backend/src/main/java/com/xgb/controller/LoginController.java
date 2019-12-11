@@ -2,13 +2,13 @@ package com.xgb.controller;
 
 import com.xgb.common.SessionUtil;
 import com.xgb.lang.JWTToken;
-import com.xgb.lang.R;
+import com.xgb.entity.R;
 import com.xgb.utils.RequestUtils;
 import com.xgb.model.SysUser;
 import com.xgb.service.SysUserService;
 import com.xgb.utils.CookieUtils;
 import com.xgb.utils.MD5Util;
-import com.xgb.utils.MyUtils;
+import com.xgb.util.MyTools;
 import eu.bitwalker.useragentutils.Browser;
 import eu.bitwalker.useragentutils.UserAgent;
 import org.apache.shiro.subject.Subject;
@@ -47,7 +47,7 @@ public class LoginController {
     @PostMapping("/login")
     public R login(SysUser sysUser, HttpServletResponse response,String code, HttpServletRequest request){
         Object str = RequestUtils.getRequest().getSession().getAttribute("verifyCode");
-        if (MyUtils.isNotEmpty(str)&&str.toString().equals(code)) {
+        if (MyTools.isNotEmpty(str)&&str.toString().equals(code)) {
             return R.error(999,"验证码错误");
         }
         String pwd = MD5Util.toMd5(sysUser.getPassword());
@@ -85,7 +85,7 @@ public class LoginController {
     public R getUser(HttpServletRequest request) {
         Map<String, Object> map = new HashMap<>();
         String id  = SessionUtil.getSysUserId();
-        if(MyUtils.isEmpty(id)){
+        if(MyTools.isEmpty(id)){
             return R.error(666,"token失效");
         }
         SysUser user = sysUserService.selectByPrimaryKey(id);
@@ -128,7 +128,7 @@ public class LoginController {
     @GetMapping("/vrifyToken")
     @ResponseBody
     public boolean vrifyToken(String token) {
-        if (MyUtils.isEmpty(token)) {
+        if (MyTools.isEmpty(token)) {
             return false;
         }
         try {

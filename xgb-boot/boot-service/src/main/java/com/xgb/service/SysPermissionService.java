@@ -4,7 +4,7 @@ import com.xgb.dao.SysPermissionMapper;
 import com.xgb.dao.SysRolePermissionMapper;
 import com.xgb.dao.SysUserRoleMapper;
 import com.xgb.model.*;
-import com.xgb.utils.MyUtils;
+import com.xgb.util.MyTools;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -86,7 +86,7 @@ public class SysPermissionService {
             List<SysRolePermission> sysRolePermissions = sysRolePermissionMapper.selectByExample(sysRolePermissionExample);
             sysRolePermissions.forEach(sysRolePermission->{
                 String permissionKey = sysPermissionMapper.selectByPrimaryKey(sysRolePermission.getPermissionId()).getPermissionKey();
-                if(MyUtils.isNotEmpty(permissionKey)){
+                if(MyTools.isNotEmpty(permissionKey)){
                     lists.add(permissionKey);
                 }
             });

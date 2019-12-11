@@ -1,12 +1,12 @@
 package com.xgb.controller;
 
 import com.xgb.common.SessionUtil;
-import com.xgb.lang.R;
+import com.xgb.entity.R;
 import com.xgb.model.SysUser;
 import com.xgb.service.SysUserService;
 import com.xgb.utils.MD5Util;
-import com.xgb.utils.MyUtils;
-import com.xgb.utils.UUIDUtils;
+import com.xgb.util.MyTools;
+import com.xgb.util.UUIDUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -85,7 +85,7 @@ public class SysUserController {
     @PostMapping("saveSysUser")
     public R saveSysUser(SysUser sysUser){
         logger.info("------request-address----------------：/admin/saveSysUser");
-        if(MyUtils.isEmpty(sysUser.getId())){
+        if(MyTools.isEmpty(sysUser.getId())){
             sysUser.setId(UUIDUtils.getUUID());
             if(sysUserService.insert(sysUser) > 0){
                 return R.ok("添加成功");

@@ -6,7 +6,7 @@ import com.xgb.dao.ChinaBankCodeMapper;
 
 import java.util.List;
 
-import com.xgb.utils.MyUtils;
+import com.xgb.util.MyTools;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,10 +27,10 @@ public class ChinaBankCodeService {
     public List<ChinaBankCode> selectAllChinaBankCode(ChinaBankCode chinaBankCode,Integer begin,Integer end){
         ChinaBankCodeExample chinaBankCodeExample = new ChinaBankCodeExample();
         ChinaBankCodeExample.Criteria criteria = chinaBankCodeExample.createCriteria();
-        if (MyUtils.isNotEmpty(chinaBankCode.getBankName())){
+        if (MyTools.isNotEmpty(chinaBankCode.getBankName())){
             criteria.andBankNameLike("%"+chinaBankCode.getBankName()+"%");
         }
-        if(MyUtils.isNotEmpty(chinaBankCode.getBankCode())){
+        if(MyTools.isNotEmpty(chinaBankCode.getBankCode())){
             criteria.andBankCodeLike("%"+chinaBankCode.getBankCode()+"%");
         }
         chinaBankCodeExample.setOrderByClause("CREATE_TIME DESC LIMIT "+begin+", "+end);
@@ -71,10 +71,10 @@ public class ChinaBankCodeService {
     public int getAllChinaBankCodeCount(ChinaBankCode chinaBankCode) {
         ChinaBankCodeExample chinaBankCodeExample = new ChinaBankCodeExample();
         ChinaBankCodeExample.Criteria criteria = chinaBankCodeExample.createCriteria();
-        if (MyUtils.isNotEmpty(chinaBankCode.getBankName())){
+        if (MyTools.isNotEmpty(chinaBankCode.getBankName())){
             criteria.andBankNameLike("%"+chinaBankCode.getBankName()+"%");
         }
-        if(MyUtils.isNotEmpty(chinaBankCode.getBankCode())){
+        if(MyTools.isNotEmpty(chinaBankCode.getBankCode())){
             criteria.andBankCodeLike("%"+chinaBankCode.getBankCode()+"%");
         }
         return chinaBankCodeMapper.countByExample(chinaBankCodeExample);

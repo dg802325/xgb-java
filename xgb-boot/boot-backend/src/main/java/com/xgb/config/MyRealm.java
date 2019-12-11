@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.xgb.lang.JWTToken;
 import com.xgb.model.SysUser;
 import com.xgb.service.SysUserService;
-import com.xgb.utils.MyUtils;
+import com.xgb.util.MyTools;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.apache.shiro.authc.*;
@@ -36,7 +36,7 @@ public class MyRealm extends AuthorizingRealm {
         String userType = token.getUserType();
         if ("boot-admin".equals(userType)) {
             SysUser user = sysUserService.selectUserByPassword(token.getUsername(), new String(token.getPassword()));
-            if (MyUtils.isNotEmpty(user)) {
+            if (MyTools.isNotEmpty(user)) {
                 SysUser idUser = new SysUser();
                 idUser.setId(user.getId());
                 String sign = Jwts.builder().setSubject(JSONObject.toJSONString(idUser))

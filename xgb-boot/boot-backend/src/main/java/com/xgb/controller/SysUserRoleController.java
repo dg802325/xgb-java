@@ -2,13 +2,13 @@ package com.xgb.controller;
 
 import com.xgb.model.SysMenuExample;
 import com.xgb.model.SysUserExample;
-import com.xgb.utils.IntegerUtils;
-import com.xgb.lang.R;
+import com.xgb.util.IntegerUtils;
+import com.xgb.entity.R;
 import com.xgb.model.SysUserRole;
 import com.xgb.service.SysRoleService;
 import com.xgb.service.SysUserRoleService;
 import com.xgb.service.SysUserService;
-import com.xgb.utils.MyUtils;
+import com.xgb.util.MyTools;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,7 +50,7 @@ public class SysUserRoleController {
         List<Map<String, Object>> maps = sysUserRoleService.selectRoleMapByDeptId(mapParam,begin,end);
         SysUserExample sysUserExample = new SysUserExample();
         SysUserExample.Criteria criteria = sysUserExample.createCriteria();
-        if(MyUtils.isNotEmpty(mapParam.get("roleName").toString())){
+        if(MyTools.isNotEmpty(mapParam.get("roleName").toString())){
             criteria.andUserNameEqualTo(mapParam.get("roleName").toString());
         }
         int roleMapByDeptId = sysUserService.getUserCount(sysUserExample);

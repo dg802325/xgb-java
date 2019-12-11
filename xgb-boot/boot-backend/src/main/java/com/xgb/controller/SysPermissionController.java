@@ -1,7 +1,7 @@
 package com.xgb.controller;
 
 import com.xgb.common.SessionUtil;
-import com.xgb.lang.R;
+import com.xgb.entity.R;
 import com.xgb.model.SysMenu;
 import com.xgb.model.SysPermission;
 import com.xgb.model.SysPermissionExample;
@@ -9,8 +9,8 @@ import com.xgb.model.SysRolePermissionExample;
 import com.xgb.service.SysMenuService;
 import com.xgb.service.SysPermissionService;
 import com.xgb.service.SysRolePermissionService;
-import com.xgb.utils.MyUtils;
-import com.xgb.utils.UUIDUtils;
+import com.xgb.util.MyTools;
+import com.xgb.util.UUIDUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -205,7 +205,7 @@ public class SysPermissionController {
         logger.info("------request-address----------------：/admin/getSysPermission");
         //查询代码
         List<SysPermission> sysPermission = null;
-        if("0".equals(parentId)||MyUtils.isEmpty(parentId)){
+        if("0".equals(parentId)||MyTools.isEmpty(parentId)){
             sysPermission = sysPermissionService.selectPermissionByParentId("0");
         }else {
             SysMenu sysMenu = sysMenuService.selectByPrimaryKey(parentId);

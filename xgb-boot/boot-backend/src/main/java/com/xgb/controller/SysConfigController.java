@@ -1,10 +1,10 @@
 package com.xgb.controller;
 
-import com.xgb.lang.R;
+import com.xgb.entity.R;
 import com.xgb.model.SysConfig;
 import com.xgb.service.SysConfigService;
-import com.xgb.utils.MyUtils;
-import com.xgb.utils.UUIDUtils;
+import com.xgb.util.MyTools;
+import com.xgb.util.UUIDUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -95,7 +95,7 @@ public class SysConfigController {
     public R saveSysConfig(SysConfig sysConfig){
         logger.info("------request-address----------------：/admin/save_sysConfig");
         Map<String,Object> map = new HashMap<String,Object>();
-        if(MyUtils.isEmpty(sysConfig.getId())){
+        if(MyTools.isEmpty(sysConfig.getId())){
             sysConfig.setId(UUIDUtils.getUUID());
             if(sysConfigService.insert(sysConfig) > 0){
                 R.ok("添加成功");

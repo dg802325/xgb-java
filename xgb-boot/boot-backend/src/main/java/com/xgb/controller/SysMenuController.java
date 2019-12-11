@@ -1,13 +1,13 @@
 package com.xgb.controller;
 
 import com.xgb.common.SessionUtil;
-import com.xgb.lang.R;
+import com.xgb.entity.R;
 import com.xgb.model.SysMenu;
 import com.xgb.model.SysMenuExample;
 import com.xgb.service.SysMenuService;
 import com.xgb.service.SysUserRoleService;
 import com.xgb.service.SysUserService;
-import com.xgb.utils.UUIDUtils;
+import com.xgb.util.UUIDUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
