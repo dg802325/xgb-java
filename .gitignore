@@ -27,3 +27,13 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+/xgb-boot/boot-dao/target/
+xgb-boot/boot-model/target/boot-model-1.0-SNAPSHOT.jar
+xgb-boot/boot-model/target/generated-sources/
+xgb-boot/boot-model/target/maven-archiver/
+xgb-boot/boot-model/target/maven-status/
+xgb-boot/boot-service/target/
+xgb-common/target/generated-sources/
+xgb-common/target/maven-archiver/
+xgb-common/target/maven-status/
+xgb-common/target/xgb-common-1.0-SNAPSHOT.jar
