@@ -6,41 +6,13 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/xgb-blog/pom.xml" />
-        <option value="$PROJECT_DIR$/xgb-blog/blog-service/pom.xml" />
-        <option value="$PROJECT_DIR$/xgb-blog/blog-backend/pom.xml" />
-        <option value="$PROJECT_DIR$/xgb-blog/blog-dao/pom.xml" />
-        <option value="$PROJECT_DIR$/xgb-cloud/cloud-order/pom.xml" />
-        <option value="$PROJECT_DIR$/xgb-boot/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
-        <option value="$PROJECT_DIR$/xgb-cloud/cloud-order/pom.xml" />
-        <option value="$PROJECT_DIR$/xgb-reptile/reptile-backend/pom.xml" />
-        <option value="$PROJECT_DIR$/xgb-reptile/reptile-dao/pom.xml" />
-        <option value="$PROJECT_DIR$/xgb-reptile/reptile-model/pom.xml" />
-        <option value="$PROJECT_DIR$/xgb-reptile/reptile-service/pom.xml" />
-        <option value="$PROJECT_DIR$/xgb-test/pom.xml" />
+        <option value="$PROJECT_DIR$/xgb-cloud/pom.xml" />
       </set>
     </option>
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State />
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>Android</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
-  </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/classes" />
   </component>
 </project>

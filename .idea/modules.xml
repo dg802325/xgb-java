@@ -17,9 +17,8 @@
       <module fileurl="file://$PROJECT_DIR$/xgb-cloud/cloud-zuul/cloud-zuul.iml" filepath="$PROJECT_DIR$/xgb-cloud/cloud-zuul/cloud-zuul.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-reptile/spider1/spider1.iml" filepath="$PROJECT_DIR$/xgb-reptile/spider1/spider1.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-boot/xgb-boot.iml" filepath="$PROJECT_DIR$/xgb-boot/xgb-boot.iml" />
-      <module fileurl="file://$PROJECT_DIR$/xgb-cloud/xgb-cloud.iml" filepath="$PROJECT_DIR$/xgb-cloud/xgb-cloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-common/xgb-common.iml" filepath="$PROJECT_DIR$/xgb-common/xgb-common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/xgb-java.iml" filepath="$PROJECT_DIR$/xgb-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/xgb-java.iml" filepath="$PROJECT_DIR$/.idea/xgb-java.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-mybatis/xgb-mybatis.iml" filepath="$PROJECT_DIR$/xgb-mybatis/xgb-mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-reptile/xgb-reptile.iml" filepath="$PROJECT_DIR$/xgb-reptile/xgb-reptile.iml" />
     </modules>
