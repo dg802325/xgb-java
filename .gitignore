@@ -37,8 +37,11 @@ xgb-common/target/generated-sources/
 xgb-common/target/maven-archiver/
 xgb-common/target/maven-status/
 xgb-common/target/xgb-common-1.0-SNAPSHOT.jar
-/xgb-boot/boot-backend/target/
+/xgb-boot/boot-api/target/
 /xgb-boot/boot-message/target/
 /xgb-boot/boot-mybatis/target/
 /xgb-boot/boot-oss/target/
 /xgb-boot/boot-pay/target/
+xgb-test/src/main/resources/
+xgb-test/src/test/
+xgb-test/target/generated-sources/

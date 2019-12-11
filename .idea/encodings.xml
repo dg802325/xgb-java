@@ -3,7 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/xgb-boot/boot-backend" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-boot/boot-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-dao" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-message" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-model" charset="UTF-8" />

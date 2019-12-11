@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/xgb-boot/boot-backend/boot-backend.iml" filepath="$PROJECT_DIR$/xgb-boot/boot-backend/boot-backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xgb-boot/boot-api/boot-api.iml" filepath="$PROJECT_DIR$/xgb-boot/boot-api/boot-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-boot/boot-dao/boot-dao.iml" filepath="$PROJECT_DIR$/xgb-boot/boot-dao/boot-dao.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-boot/boot-message/boot-message.iml" filepath="$PROJECT_DIR$/xgb-boot/boot-message/boot-message.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-boot/boot-model/boot-model.iml" filepath="$PROJECT_DIR$/xgb-boot/boot-model/boot-model.iml" />
