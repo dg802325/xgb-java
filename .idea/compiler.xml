@@ -7,10 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="boot-mybatis" />
-        <module name="xgb-mybatis" />
         <module name="cloud-zuul" />
         <module name="boot-message" />
-        <module name="spider1" />
         <module name="boot-dao" />
         <module name="boot-backend" />
         <module name="boot-pay" />
