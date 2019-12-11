@@ -36,12 +36,6 @@
                         <div class="button-wrapper">
                             <button @click="handleSubmit">登录</button>
                         </div>
-                        <div style="float: left">
-                            <br>
-                            <span>测试账号 test 密码 test ,如果有地方感觉缺少按钮，是因为权限不够，不会显示</span>
-                            <!--<router-link to="/registUser" style="font-size: 14px">申请入驻</router-link>-->
-                        </div>
-
                     </div>
                 </div>
             </el-form>
