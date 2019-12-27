@@ -1,0 +1,82 @@
+#######################################################################################################################################
+
+
+        //id
+        if(MyTools.isNotEmpty(stNjGyhdzcSub.getId())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjGyhdzcSub.getId());lists.add(jc);jc=null;}
+
+        //instanceid
+        if(MyTools.isNotEmpty(stNjGyhdzcSub.getInstanceid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjGyhdzcSub.getInstanceid());lists.add(jc);jc=null;}
+
+        //organizationid
+        if(MyTools.isNotEmpty(stNjGyhdzcSub.getOrganizationid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjGyhdzcSub.getOrganizationid());lists.add(jc);jc=null;}
+
+        //status
+        if(MyTools.isNotEmpty(stNjGyhdzcSub.getStatus())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjGyhdzcSub.getStatus());lists.add(jc);jc=null;}
+
+        //公益活动名称
+        if(MyTools.isNotEmpty(stNjGyhdzcSub.getMingcheng())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("title");
+            jc.setAttrValue(stNjGyhdzcSub.getMingcheng());lists.add(jc);jc=null;}
+
+        //直接用于受助人的款物
+        if(MyTools.isNotEmpty(stNjGyhdzcSub.getKuanwu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("szrdkw");
+            jc.setAttrValue(stNjGyhdzcSub.getKuanwu());lists.add(jc);jc=null;}
+
+        //人员费用
+        if(MyTools.isNotEmpty(stNjGyhdzcSub.getRenyuanfeiyong())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("ryfy");
+            jc.setAttrValue(stNjGyhdzcSub.getRenyuanfeiyong());lists.add(jc);jc=null;}
+
+        //办公费用
+        if(MyTools.isNotEmpty(stNjGyhdzcSub.getBangongfeiyong())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("bgfy");
+            jc.setAttrValue(stNjGyhdzcSub.getBangongfeiyong());lists.add(jc);jc=null;}
+
+        //资产使用费用
+        if(MyTools.isNotEmpty(stNjGyhdzcSub.getShiyongfeiyong())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("zcsyfy");
+            jc.setAttrValue(stNjGyhdzcSub.getShiyongfeiyong());lists.add(jc);jc=null;}
+
+        //直接筹资费用
+        if(MyTools.isNotEmpty(stNjGyhdzcSub.getChouzifeiyong())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("zjczfy");
+            jc.setAttrValue(stNjGyhdzcSub.getChouzifeiyong());lists.add(jc);jc=null;}
+
+        //其他费用
+        if(MyTools.isNotEmpty(stNjGyhdzcSub.getQitafeiyong())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("qtfy");
+            jc.setAttrValue(stNjGyhdzcSub.getQitafeiyong());lists.add(jc);jc=null;}
+
+        //总计
+        if(MyTools.isNotEmpty(stNjGyhdzcSub.getZongji())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("zj");
+            jc.setAttrValue(stNjGyhdzcSub.getZongji());lists.add(jc);jc=null;}
+
+        //MASTERID
+        if(MyTools.isNotEmpty(stNjGyhdzcSub.getMasterid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjGyhdzcSub.getMasterid());lists.add(jc);jc=null;}
+
+

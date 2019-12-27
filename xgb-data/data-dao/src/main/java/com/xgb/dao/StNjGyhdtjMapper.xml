@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.StNjGyhdtjMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.StNjGyhdtj" >
+    <constructor >
+      <idArg column="ID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="INSTANCEID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORGANIZATIONID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATUS" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="ZONGSHOURU1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ZONGZHICHU1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ZHICHU1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SHANGNIANDUZHANBI1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="BENNIANDUZHANBI1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ZONGSHOURU2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ZONGZHICHU2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ZHICHU2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SHANGNIANDUZHANBI2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="BENNIANDUZHANBI2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ZONGSHOURU3" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ZONGZHICHU3" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ZHICHU3" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SHANGNIANDUZHANBI3" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="BENNIANDUZHANBI3" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ZONGSHOURU4" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ZONGZHICHU4" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ZHICHU4" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SHANGNIANDUZHANBI4" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="BENNIANDUZHANBI4" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, INSTANCEID, ORGANIZATIONID, STATUS, ZONGSHOURU1, ZONGZHICHU1, ZHICHU1, SHANGNIANDUZHANBI1, 
+    BENNIANDUZHANBI1, ZONGSHOURU2, ZONGZHICHU2, ZHICHU2, SHANGNIANDUZHANBI2, BENNIANDUZHANBI2, 
+    ZONGSHOURU3, ZONGZHICHU3, ZHICHU3, SHANGNIANDUZHANBI3, BENNIANDUZHANBI3, ZONGSHOURU4, 
+    ZONGZHICHU4, ZHICHU4, SHANGNIANDUZHANBI4, BENNIANDUZHANBI4
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.StNjGyhdtjExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from ST_NJ_GYHDTJ
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from ST_NJ_GYHDTJ
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from ST_NJ_GYHDTJ
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xgb.model.StNjGyhdtjExample" >
+    delete from ST_NJ_GYHDTJ
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.StNjGyhdtj" >
+    insert into ST_NJ_GYHDTJ (ID, INSTANCEID, ORGANIZATIONID, 
+      STATUS, ZONGSHOURU1, ZONGZHICHU1, 
+      ZHICHU1, SHANGNIANDUZHANBI1, BENNIANDUZHANBI1, 
+      ZONGSHOURU2, ZONGZHICHU2, ZHICHU2, 
+      SHANGNIANDUZHANBI2, BENNIANDUZHANBI2, ZONGSHOURU3, 
+      ZONGZHICHU3, ZHICHU3, SHANGNIANDUZHANBI3, 
+      BENNIANDUZHANBI3, ZONGSHOURU4, ZONGZHICHU4, 
+      ZHICHU4, SHANGNIANDUZHANBI4, BENNIANDUZHANBI4
+      )
+    values (#{id,jdbcType=DECIMAL}, #{instanceid,jdbcType=VARCHAR}, #{organizationid,jdbcType=VARCHAR}, 
+      #{status,jdbcType=DECIMAL}, #{zongshouru1,jdbcType=VARCHAR}, #{zongzhichu1,jdbcType=VARCHAR}, 
+      #{zhichu1,jdbcType=VARCHAR}, #{shangnianduzhanbi1,jdbcType=VARCHAR}, #{bennianduzhanbi1,jdbcType=VARCHAR}, 
+      #{zongshouru2,jdbcType=VARCHAR}, #{zongzhichu2,jdbcType=VARCHAR}, #{zhichu2,jdbcType=VARCHAR}, 
+      #{shangnianduzhanbi2,jdbcType=VARCHAR}, #{bennianduzhanbi2,jdbcType=VARCHAR}, #{zongshouru3,jdbcType=VARCHAR}, 
+      #{zongzhichu3,jdbcType=VARCHAR}, #{zhichu3,jdbcType=VARCHAR}, #{shangnianduzhanbi3,jdbcType=VARCHAR}, 
+      #{bennianduzhanbi3,jdbcType=VARCHAR}, #{zongshouru4,jdbcType=VARCHAR}, #{zongzhichu4,jdbcType=VARCHAR}, 
+      #{zhichu4,jdbcType=VARCHAR}, #{shangnianduzhanbi4,jdbcType=VARCHAR}, #{bennianduzhanbi4,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.StNjGyhdtj" >
+    insert into ST_NJ_GYHDTJ
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="instanceid != null" >
+        INSTANCEID,
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="zongshouru1 != null" >
+        ZONGSHOURU1,
+      </if>
+      <if test="zongzhichu1 != null" >
+        ZONGZHICHU1,
+      </if>
+      <if test="zhichu1 != null" >
+        ZHICHU1,
+      </if>
+      <if test="shangnianduzhanbi1 != null" >
+        SHANGNIANDUZHANBI1,
+      </if>
+      <if test="bennianduzhanbi1 != null" >
+        BENNIANDUZHANBI1,
+      </if>
+      <if test="zongshouru2 != null" >
+        ZONGSHOURU2,
+      </if>
+      <if test="zongzhichu2 != null" >
+        ZONGZHICHU2,
+      </if>
+      <if test="zhichu2 != null" >
+        ZHICHU2,
+      </if>
+      <if test="shangnianduzhanbi2 != null" >
+        SHANGNIANDUZHANBI2,
+      </if>
+      <if test="bennianduzhanbi2 != null" >
+        BENNIANDUZHANBI2,
+      </if>
+      <if test="zongshouru3 != null" >
+        ZONGSHOURU3,
+      </if>
+      <if test="zongzhichu3 != null" >
+        ZONGZHICHU3,
+      </if>
+      <if test="zhichu3 != null" >
+        ZHICHU3,
+      </if>
+      <if test="shangnianduzhanbi3 != null" >
+        SHANGNIANDUZHANBI3,
+      </if>
+      <if test="bennianduzhanbi3 != null" >
+        BENNIANDUZHANBI3,
+      </if>
+      <if test="zongshouru4 != null" >
+        ZONGSHOURU4,
+      </if>
+      <if test="zongzhichu4 != null" >
+        ZONGZHICHU4,
+      </if>
+      <if test="zhichu4 != null" >
+        ZHICHU4,
+      </if>
+      <if test="shangnianduzhanbi4 != null" >
+        SHANGNIANDUZHANBI4,
+      </if>
+      <if test="bennianduzhanbi4 != null" >
+        BENNIANDUZHANBI4,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="instanceid != null" >
+        #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="zongshouru1 != null" >
+        #{zongshouru1,jdbcType=VARCHAR},
+      </if>
+      <if test="zongzhichu1 != null" >
+        #{zongzhichu1,jdbcType=VARCHAR},
+      </if>
+      <if test="zhichu1 != null" >
+        #{zhichu1,jdbcType=VARCHAR},
+      </if>
+      <if test="shangnianduzhanbi1 != null" >
+        #{shangnianduzhanbi1,jdbcType=VARCHAR},
+      </if>
+      <if test="bennianduzhanbi1 != null" >
+        #{bennianduzhanbi1,jdbcType=VARCHAR},
+      </if>
+      <if test="zongshouru2 != null" >
+        #{zongshouru2,jdbcType=VARCHAR},
+      </if>
+      <if test="zongzhichu2 != null" >
+        #{zongzhichu2,jdbcType=VARCHAR},
+      </if>
+      <if test="zhichu2 != null" >
+        #{zhichu2,jdbcType=VARCHAR},
+      </if>
+      <if test="shangnianduzhanbi2 != null" >
+        #{shangnianduzhanbi2,jdbcType=VARCHAR},
+      </if>
+      <if test="bennianduzhanbi2 != null" >
+        #{bennianduzhanbi2,jdbcType=VARCHAR},
+      </if>
+      <if test="zongshouru3 != null" >
+        #{zongshouru3,jdbcType=VARCHAR},
+      </if>
+      <if test="zongzhichu3 != null" >
+        #{zongzhichu3,jdbcType=VARCHAR},
+      </if>
+      <if test="zhichu3 != null" >
+        #{zhichu3,jdbcType=VARCHAR},
+      </if>
+      <if test="shangnianduzhanbi3 != null" >
+        #{shangnianduzhanbi3,jdbcType=VARCHAR},
+      </if>
+      <if test="bennianduzhanbi3 != null" >
+        #{bennianduzhanbi3,jdbcType=VARCHAR},
+      </if>
+      <if test="zongshouru4 != null" >
+        #{zongshouru4,jdbcType=VARCHAR},
+      </if>
+      <if test="zongzhichu4 != null" >
+        #{zongzhichu4,jdbcType=VARCHAR},
+      </if>
+      <if test="zhichu4 != null" >
+        #{zhichu4,jdbcType=VARCHAR},
+      </if>
+      <if test="shangnianduzhanbi4 != null" >
+        #{shangnianduzhanbi4,jdbcType=VARCHAR},
+      </if>
+      <if test="bennianduzhanbi4 != null" >
+        #{bennianduzhanbi4,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.StNjGyhdtjExample" resultType="java.lang.Integer" >
+    select count(*) from ST_NJ_GYHDTJ
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update ST_NJ_GYHDTJ
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=DECIMAL},
+      </if>
+      <if test="record.instanceid != null" >
+        INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organizationid != null" >
+        ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zongshouru1 != null" >
+        ZONGSHOURU1 = #{record.zongshouru1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.zongzhichu1 != null" >
+        ZONGZHICHU1 = #{record.zongzhichu1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.zhichu1 != null" >
+        ZHICHU1 = #{record.zhichu1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shangnianduzhanbi1 != null" >
+        SHANGNIANDUZHANBI1 = #{record.shangnianduzhanbi1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bennianduzhanbi1 != null" >
+        BENNIANDUZHANBI1 = #{record.bennianduzhanbi1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.zongshouru2 != null" >
+        ZONGSHOURU2 = #{record.zongshouru2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.zongzhichu2 != null" >
+        ZONGZHICHU2 = #{record.zongzhichu2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.zhichu2 != null" >
+        ZHICHU2 = #{record.zhichu2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shangnianduzhanbi2 != null" >
+        SHANGNIANDUZHANBI2 = #{record.shangnianduzhanbi2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bennianduzhanbi2 != null" >
+        BENNIANDUZHANBI2 = #{record.bennianduzhanbi2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.zongshouru3 != null" >
+        ZONGSHOURU3 = #{record.zongshouru3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.zongzhichu3 != null" >
+        ZONGZHICHU3 = #{record.zongzhichu3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.zhichu3 != null" >
+        ZHICHU3 = #{record.zhichu3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shangnianduzhanbi3 != null" >
+        SHANGNIANDUZHANBI3 = #{record.shangnianduzhanbi3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bennianduzhanbi3 != null" >
+        BENNIANDUZHANBI3 = #{record.bennianduzhanbi3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.zongshouru4 != null" >
+        ZONGSHOURU4 = #{record.zongshouru4,jdbcType=VARCHAR},
+      </if>
+      <if test="record.zongzhichu4 != null" >
+        ZONGZHICHU4 = #{record.zongzhichu4,jdbcType=VARCHAR},
+      </if>
+      <if test="record.zhichu4 != null" >
+        ZHICHU4 = #{record.zhichu4,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shangnianduzhanbi4 != null" >
+        SHANGNIANDUZHANBI4 = #{record.shangnianduzhanbi4,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bennianduzhanbi4 != null" >
+        BENNIANDUZHANBI4 = #{record.bennianduzhanbi4,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update ST_NJ_GYHDTJ
+    set ID = #{record.id,jdbcType=DECIMAL},
+      INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=DECIMAL},
+      ZONGSHOURU1 = #{record.zongshouru1,jdbcType=VARCHAR},
+      ZONGZHICHU1 = #{record.zongzhichu1,jdbcType=VARCHAR},
+      ZHICHU1 = #{record.zhichu1,jdbcType=VARCHAR},
+      SHANGNIANDUZHANBI1 = #{record.shangnianduzhanbi1,jdbcType=VARCHAR},
+      BENNIANDUZHANBI1 = #{record.bennianduzhanbi1,jdbcType=VARCHAR},
+      ZONGSHOURU2 = #{record.zongshouru2,jdbcType=VARCHAR},
+      ZONGZHICHU2 = #{record.zongzhichu2,jdbcType=VARCHAR},
+      ZHICHU2 = #{record.zhichu2,jdbcType=VARCHAR},
+      SHANGNIANDUZHANBI2 = #{record.shangnianduzhanbi2,jdbcType=VARCHAR},
+      BENNIANDUZHANBI2 = #{record.bennianduzhanbi2,jdbcType=VARCHAR},
+      ZONGSHOURU3 = #{record.zongshouru3,jdbcType=VARCHAR},
+      ZONGZHICHU3 = #{record.zongzhichu3,jdbcType=VARCHAR},
+      ZHICHU3 = #{record.zhichu3,jdbcType=VARCHAR},
+      SHANGNIANDUZHANBI3 = #{record.shangnianduzhanbi3,jdbcType=VARCHAR},
+      BENNIANDUZHANBI3 = #{record.bennianduzhanbi3,jdbcType=VARCHAR},
+      ZONGSHOURU4 = #{record.zongshouru4,jdbcType=VARCHAR},
+      ZONGZHICHU4 = #{record.zongzhichu4,jdbcType=VARCHAR},
+      ZHICHU4 = #{record.zhichu4,jdbcType=VARCHAR},
+      SHANGNIANDUZHANBI4 = #{record.shangnianduzhanbi4,jdbcType=VARCHAR},
+      BENNIANDUZHANBI4 = #{record.bennianduzhanbi4,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.StNjGyhdtj" >
+    update ST_NJ_GYHDTJ
+    <set >
+      <if test="instanceid != null" >
+        INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="zongshouru1 != null" >
+        ZONGSHOURU1 = #{zongshouru1,jdbcType=VARCHAR},
+      </if>
+      <if test="zongzhichu1 != null" >
+        ZONGZHICHU1 = #{zongzhichu1,jdbcType=VARCHAR},
+      </if>
+      <if test="zhichu1 != null" >
+        ZHICHU1 = #{zhichu1,jdbcType=VARCHAR},
+      </if>
+      <if test="shangnianduzhanbi1 != null" >
+        SHANGNIANDUZHANBI1 = #{shangnianduzhanbi1,jdbcType=VARCHAR},
+      </if>
+      <if test="bennianduzhanbi1 != null" >
+        BENNIANDUZHANBI1 = #{bennianduzhanbi1,jdbcType=VARCHAR},
+      </if>
+      <if test="zongshouru2 != null" >
+        ZONGSHOURU2 = #{zongshouru2,jdbcType=VARCHAR},
+      </if>
+      <if test="zongzhichu2 != null" >
+        ZONGZHICHU2 = #{zongzhichu2,jdbcType=VARCHAR},
+      </if>
+      <if test="zhichu2 != null" >
+        ZHICHU2 = #{zhichu2,jdbcType=VARCHAR},
+      </if>
+      <if test="shangnianduzhanbi2 != null" >
+        SHANGNIANDUZHANBI2 = #{shangnianduzhanbi2,jdbcType=VARCHAR},
+      </if>
+      <if test="bennianduzhanbi2 != null" >
+        BENNIANDUZHANBI2 = #{bennianduzhanbi2,jdbcType=VARCHAR},
+      </if>
+      <if test="zongshouru3 != null" >
+        ZONGSHOURU3 = #{zongshouru3,jdbcType=VARCHAR},
+      </if>
+      <if test="zongzhichu3 != null" >
+        ZONGZHICHU3 = #{zongzhichu3,jdbcType=VARCHAR},
+      </if>
+      <if test="zhichu3 != null" >
+        ZHICHU3 = #{zhichu3,jdbcType=VARCHAR},
+      </if>
+      <if test="shangnianduzhanbi3 != null" >
+        SHANGNIANDUZHANBI3 = #{shangnianduzhanbi3,jdbcType=VARCHAR},
+      </if>
+      <if test="bennianduzhanbi3 != null" >
+        BENNIANDUZHANBI3 = #{bennianduzhanbi3,jdbcType=VARCHAR},
+      </if>
+      <if test="zongshouru4 != null" >
+        ZONGSHOURU4 = #{zongshouru4,jdbcType=VARCHAR},
+      </if>
+      <if test="zongzhichu4 != null" >
+        ZONGZHICHU4 = #{zongzhichu4,jdbcType=VARCHAR},
+      </if>
+      <if test="zhichu4 != null" >
+        ZHICHU4 = #{zhichu4,jdbcType=VARCHAR},
+      </if>
+      <if test="shangnianduzhanbi4 != null" >
+        SHANGNIANDUZHANBI4 = #{shangnianduzhanbi4,jdbcType=VARCHAR},
+      </if>
+      <if test="bennianduzhanbi4 != null" >
+        BENNIANDUZHANBI4 = #{bennianduzhanbi4,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xgb.model.StNjGyhdtj" >
+    update ST_NJ_GYHDTJ
+    set INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=DECIMAL},
+      ZONGSHOURU1 = #{zongshouru1,jdbcType=VARCHAR},
+      ZONGZHICHU1 = #{zongzhichu1,jdbcType=VARCHAR},
+      ZHICHU1 = #{zhichu1,jdbcType=VARCHAR},
+      SHANGNIANDUZHANBI1 = #{shangnianduzhanbi1,jdbcType=VARCHAR},
+      BENNIANDUZHANBI1 = #{bennianduzhanbi1,jdbcType=VARCHAR},
+      ZONGSHOURU2 = #{zongshouru2,jdbcType=VARCHAR},
+      ZONGZHICHU2 = #{zongzhichu2,jdbcType=VARCHAR},
+      ZHICHU2 = #{zhichu2,jdbcType=VARCHAR},
+      SHANGNIANDUZHANBI2 = #{shangnianduzhanbi2,jdbcType=VARCHAR},
+      BENNIANDUZHANBI2 = #{bennianduzhanbi2,jdbcType=VARCHAR},
+      ZONGSHOURU3 = #{zongshouru3,jdbcType=VARCHAR},
+      ZONGZHICHU3 = #{zongzhichu3,jdbcType=VARCHAR},
+      ZHICHU3 = #{zhichu3,jdbcType=VARCHAR},
+      SHANGNIANDUZHANBI3 = #{shangnianduzhanbi3,jdbcType=VARCHAR},
+      BENNIANDUZHANBI3 = #{bennianduzhanbi3,jdbcType=VARCHAR},
+      ZONGSHOURU4 = #{zongshouru4,jdbcType=VARCHAR},
+      ZONGZHICHU4 = #{zongzhichu4,jdbcType=VARCHAR},
+      ZHICHU4 = #{zhichu4,jdbcType=VARCHAR},
+      SHANGNIANDUZHANBI4 = #{shangnianduzhanbi4,jdbcType=VARCHAR},
+      BENNIANDUZHANBI4 = #{bennianduzhanbi4,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>

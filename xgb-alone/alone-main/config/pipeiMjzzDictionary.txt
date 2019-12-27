@@ -1,0 +1,70 @@
+#######################################################################################################################################
+
+
+        //ID
+        if(MyTools.isNotEmpty(mjzzDictionary.getId())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzDictionary.getId());lists.add(jc);jc=null;}
+
+        //父节点ID
+        if(MyTools.isNotEmpty(mjzzDictionary.getParentid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzDictionary.getParentid());lists.add(jc);jc=null;}
+
+        //结构ID
+        if(MyTools.isNotEmpty(mjzzDictionary.getDeptid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzDictionary.getDeptid());lists.add(jc);jc=null;}
+
+        //负责人ID
+        if(MyTools.isNotEmpty(mjzzDictionary.getUserid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzDictionary.getUserid());lists.add(jc);jc=null;}
+
+        //名称
+        if(MyTools.isNotEmpty(mjzzDictionary.getName())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzDictionary.getName());lists.add(jc);jc=null;}
+
+        //层次
+        if(MyTools.isNotEmpty(mjzzDictionary.getLev())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzDictionary.getLev());lists.add(jc);jc=null;}
+
+        //值
+        if(MyTools.isNotEmpty(mjzzDictionary.getVal())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzDictionary.getVal());lists.add(jc);jc=null;}
+
+        //登记管理机关
+        if(MyTools.isNotEmpty(mjzzDictionary.getInd())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzDictionary.getInd());lists.add(jc);jc=null;}
+
+        //状态
+        if(MyTools.isNotEmpty(mjzzDictionary.getStatus())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzDictionary.getStatus());lists.add(jc);jc=null;}
+
+        //类别
+        if(MyTools.isNotEmpty(mjzzDictionary.getTypename())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzDictionary.getTypename());lists.add(jc);jc=null;}
+
+        //1,社团,2,民非,3,基金会,7涉外基金会
+        if(MyTools.isNotEmpty(mjzzDictionary.getType())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzDictionary.getType());lists.add(jc);jc=null;}
+
+

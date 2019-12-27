@@ -1,0 +1,124 @@
+#######################################################################################################################################
+
+
+        //ID
+        if(MyTools.isNotEmpty(stNjReport13Sub.getId())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport13Sub.getId());lists.add(jc);jc=null;}
+
+        //INSTANCEID
+        if(MyTools.isNotEmpty(stNjReport13Sub.getInstanceid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport13Sub.getInstanceid());lists.add(jc);jc=null;}
+
+        //ORGANIZATIONID
+        if(MyTools.isNotEmpty(stNjReport13Sub.getOrganizationid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport13Sub.getOrganizationid());lists.add(jc);jc=null;}
+
+        //STATUS
+        if(MyTools.isNotEmpty(stNjReport13Sub.getStatus())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport13Sub.getStatus());lists.add(jc);jc=null;}
+
+        //MASTERID
+        if(MyTools.isNotEmpty(stNjReport13Sub.getMasterid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport13Sub.getMasterid());lists.add(jc);jc=null;}
+
+        //序号
+        if(MyTools.isNotEmpty(stNjReport13Sub.getXuhao())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport13Sub.getXuhao());lists.add(jc);jc=null;}
+
+        //举办方式
+        if(MyTools.isNotEmpty(stNjReport13Sub.getFangshi())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("jbfs");
+            jc.setAttrValue(stNjReport13Sub.getFangshi());lists.add(jc);jc=null;}
+
+        //活动名称
+        if(MyTools.isNotEmpty(stNjReport13Sub.getHuodongmingcheng())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport13Sub.getHuodongmingcheng());lists.add(jc);jc=null;}
+
+        //参加人数
+        if(MyTools.isNotEmpty(stNjReport13Sub.getRenshu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("cjrs");
+            jc.setAttrValue(stNjReport13Sub.getRenshu());lists.add(jc);jc=null;}
+
+        //地点
+        if(MyTools.isNotEmpty(stNjReport13Sub.getDidian())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("didian");
+            jc.setAttrValue(stNjReport13Sub.getDidian());lists.add(jc);jc=null;}
+
+        //经费来源
+        if(MyTools.isNotEmpty(stNjReport13Sub.getJinfeilaiyuan())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("jfly");
+            jc.setAttrValue(stNjReport13Sub.getJinfeilaiyuan());lists.add(jc);jc=null;}
+
+        //天津年检结果1
+        if(MyTools.isNotEmpty(stNjReport13Sub.getTjnjjieguo1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport13Sub.getTjnjjieguo1());lists.add(jc);jc=null;}
+
+        //天津年检结果2
+        if(MyTools.isNotEmpty(stNjReport13Sub.getTjnjjieguo2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport13Sub.getTjnjjieguo2());lists.add(jc);jc=null;}
+
+        //天津审核意见1
+        if(MyTools.isNotEmpty(stNjReport13Sub.getTjnjyijian1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport13Sub.getTjnjyijian1());lists.add(jc);jc=null;}
+
+        //天津审核意见2
+        if(MyTools.isNotEmpty(stNjReport13Sub.getTjnjyijian2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport13Sub.getTjnjyijian2());lists.add(jc);jc=null;}
+
+        //天津审核姓名1
+        if(MyTools.isNotEmpty(stNjReport13Sub.getTjnjxingming1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport13Sub.getTjnjxingming1());lists.add(jc);jc=null;}
+
+        //天津审核姓名2
+        if(MyTools.isNotEmpty(stNjReport13Sub.getTjnjxingming2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport13Sub.getTjnjxingming2());lists.add(jc);jc=null;}
+
+        //天津审批时间1
+        if(MyTools.isNotEmpty(stNjReport13Sub.getTjnjshijian1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport13Sub.getTjnjshijian1());lists.add(jc);jc=null;}
+
+        //天津审批时间2
+        if(MyTools.isNotEmpty(stNjReport13Sub.getTjnjshijian2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport13Sub.getTjnjshijian2());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stNjReport13Sub.getWuciqingkuang())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport13Sub.getWuciqingkuang());lists.add(jc);jc=null;}
+
+

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.SjzdNodeMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.SjzdNode" >
+    <constructor >
+      <idArg column="ID" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="PARENTID" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="NODE_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NODE_TYPENAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NODE_LEVEL" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="NODE_VALUE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NODE_INDEX" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="INSTITUTIONID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="STATE" jdbcType="DECIMAL" javaType="java.lang.Short" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, PARENTID, NODE_NAME, NODE_TYPENAME, NODE_LEVEL, NODE_VALUE, NODE_INDEX, INSTITUTIONID, 
+    STATE
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.SjzdNodeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from MJZZ.SJZD_NODE
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from MJZZ.SJZD_NODE
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from MJZZ.SJZD_NODE
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xgb.model.SjzdNodeExample" >
+    delete from MJZZ.SJZD_NODE
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.SjzdNode" >
+    insert into MJZZ.SJZD_NODE (ID, PARENTID, NODE_NAME, 
+      NODE_TYPENAME, NODE_LEVEL, NODE_VALUE, 
+      NODE_INDEX, INSTITUTIONID, STATE
+      )
+    values (#{id,jdbcType=DECIMAL}, #{parentid,jdbcType=DECIMAL}, #{nodeName,jdbcType=VARCHAR}, 
+      #{nodeTypename,jdbcType=VARCHAR}, #{nodeLevel,jdbcType=DECIMAL}, #{nodeValue,jdbcType=VARCHAR}, 
+      #{nodeIndex,jdbcType=DECIMAL}, #{institutionid,jdbcType=DECIMAL}, #{state,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.SjzdNode" >
+    insert into MJZZ.SJZD_NODE
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="parentid != null" >
+        PARENTID,
+      </if>
+      <if test="nodeName != null" >
+        NODE_NAME,
+      </if>
+      <if test="nodeTypename != null" >
+        NODE_TYPENAME,
+      </if>
+      <if test="nodeLevel != null" >
+        NODE_LEVEL,
+      </if>
+      <if test="nodeValue != null" >
+        NODE_VALUE,
+      </if>
+      <if test="nodeIndex != null" >
+        NODE_INDEX,
+      </if>
+      <if test="institutionid != null" >
+        INSTITUTIONID,
+      </if>
+      <if test="state != null" >
+        STATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="parentid != null" >
+        #{parentid,jdbcType=DECIMAL},
+      </if>
+      <if test="nodeName != null" >
+        #{nodeName,jdbcType=VARCHAR},
+      </if>
+      <if test="nodeTypename != null" >
+        #{nodeTypename,jdbcType=VARCHAR},
+      </if>
+      <if test="nodeLevel != null" >
+        #{nodeLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="nodeValue != null" >
+        #{nodeValue,jdbcType=VARCHAR},
+      </if>
+      <if test="nodeIndex != null" >
+        #{nodeIndex,jdbcType=DECIMAL},
+      </if>
+      <if test="institutionid != null" >
+        #{institutionid,jdbcType=DECIMAL},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.SjzdNodeExample" resultType="java.lang.Integer" >
+    select count(*) from MJZZ.SJZD_NODE
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update MJZZ.SJZD_NODE
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=DECIMAL},
+      </if>
+      <if test="record.parentid != null" >
+        PARENTID = #{record.parentid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nodeName != null" >
+        NODE_NAME = #{record.nodeName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nodeTypename != null" >
+        NODE_TYPENAME = #{record.nodeTypename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nodeLevel != null" >
+        NODE_LEVEL = #{record.nodeLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nodeValue != null" >
+        NODE_VALUE = #{record.nodeValue,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nodeIndex != null" >
+        NODE_INDEX = #{record.nodeIndex,jdbcType=DECIMAL},
+      </if>
+      <if test="record.institutionid != null" >
+        INSTITUTIONID = #{record.institutionid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.state != null" >
+        STATE = #{record.state,jdbcType=DECIMAL},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update MJZZ.SJZD_NODE
+    set ID = #{record.id,jdbcType=DECIMAL},
+      PARENTID = #{record.parentid,jdbcType=DECIMAL},
+      NODE_NAME = #{record.nodeName,jdbcType=VARCHAR},
+      NODE_TYPENAME = #{record.nodeTypename,jdbcType=VARCHAR},
+      NODE_LEVEL = #{record.nodeLevel,jdbcType=DECIMAL},
+      NODE_VALUE = #{record.nodeValue,jdbcType=VARCHAR},
+      NODE_INDEX = #{record.nodeIndex,jdbcType=DECIMAL},
+      INSTITUTIONID = #{record.institutionid,jdbcType=DECIMAL},
+      STATE = #{record.state,jdbcType=DECIMAL}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.SjzdNode" >
+    update MJZZ.SJZD_NODE
+    <set >
+      <if test="parentid != null" >
+        PARENTID = #{parentid,jdbcType=DECIMAL},
+      </if>
+      <if test="nodeName != null" >
+        NODE_NAME = #{nodeName,jdbcType=VARCHAR},
+      </if>
+      <if test="nodeTypename != null" >
+        NODE_TYPENAME = #{nodeTypename,jdbcType=VARCHAR},
+      </if>
+      <if test="nodeLevel != null" >
+        NODE_LEVEL = #{nodeLevel,jdbcType=DECIMAL},
+      </if>
+      <if test="nodeValue != null" >
+        NODE_VALUE = #{nodeValue,jdbcType=VARCHAR},
+      </if>
+      <if test="nodeIndex != null" >
+        NODE_INDEX = #{nodeIndex,jdbcType=DECIMAL},
+      </if>
+      <if test="institutionid != null" >
+        INSTITUTIONID = #{institutionid,jdbcType=DECIMAL},
+      </if>
+      <if test="state != null" >
+        STATE = #{state,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xgb.model.SjzdNode" >
+    update MJZZ.SJZD_NODE
+    set PARENTID = #{parentid,jdbcType=DECIMAL},
+      NODE_NAME = #{nodeName,jdbcType=VARCHAR},
+      NODE_TYPENAME = #{nodeTypename,jdbcType=VARCHAR},
+      NODE_LEVEL = #{nodeLevel,jdbcType=DECIMAL},
+      NODE_VALUE = #{nodeValue,jdbcType=VARCHAR},
+      NODE_INDEX = #{nodeIndex,jdbcType=DECIMAL},
+      INSTITUTIONID = #{institutionid,jdbcType=DECIMAL},
+      STATE = #{state,jdbcType=DECIMAL}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>

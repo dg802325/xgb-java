@@ -1,0 +1,670 @@
+#######################################################################################################################################
+
+
+        //ID
+        if(MyTools.isNotEmpty(stDjqk4.getId())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getId());lists.add(jc);jc=null;}
+
+        //INSTANCEID
+        if(MyTools.isNotEmpty(stDjqk4.getInstanceid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getInstanceid());lists.add(jc);jc=null;}
+
+        //ORGANIZATIONID
+        if(MyTools.isNotEmpty(stDjqk4.getOrganizationid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getOrganizationid());lists.add(jc);jc=null;}
+
+        //STATUS
+        if(MyTools.isNotEmpty(stDjqk4.getStatus())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getStatus());lists.add(jc);jc=null;}
+
+        //单位名称
+        if(MyTools.isNotEmpty(stDjqk4.getDanweimingcheng())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getDanweimingcheng());lists.add(jc);jc=null;}
+
+        //登记号
+        if(MyTools.isNotEmpty(stDjqk4.getDengjihao())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getDengjihao());lists.add(jc);jc=null;}
+
+        //登记机关
+        if(MyTools.isNotEmpty(stDjqk4.getDengjijiguan())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getDengjijiguan());lists.add(jc);jc=null;}
+
+        //党员总数
+        if(MyTools.isNotEmpty(stDjqk4.getDangyuanzongshu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("dangyrs");
+            jc.setAttrValue(stDjqk4.getDangyuanzongshu());lists.add(jc);jc=null;}
+
+        //专党数
+        if(MyTools.isNotEmpty(stDjqk4.getZhuandangshu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getZhuandangshu());lists.add(jc);jc=null;}
+
+        //负责人数
+        if(MyTools.isNotEmpty(stDjqk4.getFuzerenshu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getFuzerenshu());lists.add(jc);jc=null;}
+
+        //兼党数
+        if(MyTools.isNotEmpty(stDjqk4.getJiandangshu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getJiandangshu());lists.add(jc);jc=null;}
+
+        //当年数
+        if(MyTools.isNotEmpty(stDjqk4.getDangnianshu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getDangnianshu());lists.add(jc);jc=null;}
+
+        //人员数1
+        if(MyTools.isNotEmpty(stDjqk4.getRenyuanshu1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getRenyuanshu1());lists.add(jc);jc=null;}
+
+        //人员数2
+        if(MyTools.isNotEmpty(stDjqk4.getRenyuanshu2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getRenyuanshu2());lists.add(jc);jc=null;}
+
+        //三十五数
+        if(MyTools.isNotEmpty(stDjqk4.getSanshiwushu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getSanshiwushu());lists.add(jc);jc=null;}
+
+        //五十四数
+        if(MyTools.isNotEmpty(stDjqk4.getWushisishu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getWushisishu());lists.add(jc);jc=null;}
+
+        //五十五数
+        if(MyTools.isNotEmpty(stDjqk4.getWushiwushu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getWushiwushu());lists.add(jc);jc=null;}
+
+        //博士数
+        if(MyTools.isNotEmpty(stDjqk4.getBoshishu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getBoshishu());lists.add(jc);jc=null;}
+
+        //硕士数
+        if(MyTools.isNotEmpty(stDjqk4.getShuoshishu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getShuoshishu());lists.add(jc);jc=null;}
+
+        //本科数
+        if(MyTools.isNotEmpty(stDjqk4.getBenkeshu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getBenkeshu());lists.add(jc);jc=null;}
+
+        //大专数
+        if(MyTools.isNotEmpty(stDjqk4.getDazhuanshu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getDazhuanshu());lists.add(jc);jc=null;}
+
+        //中专数
+        if(MyTools.isNotEmpty(stDjqk4.getZhongzhuanshu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getZhongzhuanshu());lists.add(jc);jc=null;}
+
+        //高中数
+        if(MyTools.isNotEmpty(stDjqk4.getGaozhongshu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getGaozhongshu());lists.add(jc);jc=null;}
+
+        //京籍党数
+        if(MyTools.isNotEmpty(stDjqk4.getJingjidangshu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getJingjidangshu());lists.add(jc);jc=null;}
+
+        //外省党数
+        if(MyTools.isNotEmpty(stDjqk4.getWaishengdangshu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getWaishengdangshu());lists.add(jc);jc=null;}
+
+        //社会组数
+        if(MyTools.isNotEmpty(stDjqk4.getShehuizushu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getShehuizushu());lists.add(jc);jc=null;}
+
+        //业组数
+        if(MyTools.isNotEmpty(stDjqk4.getYezushu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getYezushu());lists.add(jc);jc=null;}
+
+        //挂靠组数
+        if(MyTools.isNotEmpty(stDjqk4.getGuakaozushu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getGuakaozushu());lists.add(jc);jc=null;}
+
+        //属地组数
+        if(MyTools.isNotEmpty(stDjqk4.getShudizushu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getShudizushu());lists.add(jc);jc=null;}
+
+        //原组织数
+        if(MyTools.isNotEmpty(stDjqk4.getYuanzuzhishu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getYuanzuzhishu());lists.add(jc);jc=null;}
+
+        //其他数
+        if(MyTools.isNotEmpty(stDjqk4.getQitashu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getQitashu());lists.add(jc);jc=null;}
+
+        //建立党1
+        if(MyTools.isNotEmpty(stDjqk4.getJianlidang1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("yijianli");
+            jc.setAttrValue(stDjqk4.getJianlidang1());lists.add(jc);jc=null;}
+
+        //建立党2
+        if(MyTools.isNotEmpty(stDjqk4.getJianlidang2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getJianlidang2());lists.add(jc);jc=null;}
+
+        //组织名称
+        if(MyTools.isNotEmpty(stDjqk4.getZuzhimingcheng())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("dangjiandengji");
+            jc.setAttrValue(stDjqk4.getZuzhimingcheng());lists.add(jc);jc=null;}
+
+        //党类型
+        if(MyTools.isNotEmpty(stDjqk4.getDangleixing())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("sfpq");
+            jc.setAttrValue(stDjqk4.getDangleixing());lists.add(jc);jc=null;}
+
+        //隶属关系
+        if(MyTools.isNotEmpty(stDjqk4.getLishuguanxi())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getLishuguanxi());lists.add(jc);jc=null;}
+
+        //担任职务
+        if(MyTools.isNotEmpty(stDjqk4.getDanrenzhiwu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("jsjlgh");
+            jc.setAttrValue(stDjqk4.getDanrenzhiwu());lists.add(jc);jc=null;}
+
+        //年龄
+        if(MyTools.isNotEmpty(stDjqk4.getNianling())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("ssjltzz");
+            jc.setAttrValue(stDjqk4.getNianling());lists.add(jc);jc=null;}
+
+        //学历
+        if(MyTools.isNotEmpty(stDjqk4.getXueli())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("sfjlfl");
+            jc.setAttrValue(stDjqk4.getXueli());lists.add(jc);jc=null;}
+
+        //流动数
+        if(MyTools.isNotEmpty(stDjqk4.getLiudongshu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("qtzzhdcs");
+            jc.setAttrValue(stDjqk4.getLiudongshu());lists.add(jc);jc=null;}
+
+        //原籍数
+        if(MyTools.isNotEmpty(stDjqk4.getYuanjishu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getYuanjishu());lists.add(jc);jc=null;}
+
+        //职介数
+        if(MyTools.isNotEmpty(stDjqk4.getZhijieshu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getZhijieshu());lists.add(jc);jc=null;}
+
+        //自带数
+        if(MyTools.isNotEmpty(stDjqk4.getZidaishu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getZidaishu());lists.add(jc);jc=null;}
+
+        //参加
+        if(MyTools.isNotEmpty(stDjqk4.getCanjia())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getCanjia());lists.add(jc);jc=null;}
+
+        //不参加
+        if(MyTools.isNotEmpty(stDjqk4.getBucanjia())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getBucanjia());lists.add(jc);jc=null;}
+
+        //未建原因
+        if(MyTools.isNotEmpty(stDjqk4.getWeijianyuanyin())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getWeijianyuanyin());lists.add(jc);jc=null;}
+
+        //活动场所
+        if(MyTools.isNotEmpty(stDjqk4.getHuodongchangsuo())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getHuodongchangsuo());lists.add(jc);jc=null;}
+
+        //活动经费
+        if(MyTools.isNotEmpty(stDjqk4.getHuodongjingfei())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getHuodongjingfei());lists.add(jc);jc=null;}
+
+        //经费来源
+        if(MyTools.isNotEmpty(stDjqk4.getJingfeilaiyuan())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getJingfeilaiyuan());lists.add(jc);jc=null;}
+
+        //发展党员
+        if(MyTools.isNotEmpty(stDjqk4.getFazhandangyuan())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getFazhandangyuan());lists.add(jc);jc=null;}
+
+        //党会数
+        if(MyTools.isNotEmpty(stDjqk4.getDanghuishu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getDanghuishu());lists.add(jc);jc=null;}
+
+        //支会数
+        if(MyTools.isNotEmpty(stDjqk4.getZhihuishu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getZhihuishu());lists.add(jc);jc=null;}
+
+        //民会数
+        if(MyTools.isNotEmpty(stDjqk4.getMinhuishu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getMinhuishu());lists.add(jc);jc=null;}
+
+        //党课数
+        if(MyTools.isNotEmpty(stDjqk4.getDangkeshu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getDangkeshu());lists.add(jc);jc=null;}
+
+        //动员会1
+        if(MyTools.isNotEmpty(stDjqk4.getDongyuanhui1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getDongyuanhui1());lists.add(jc);jc=null;}
+
+        //动员会2
+        if(MyTools.isNotEmpty(stDjqk4.getDongyuanhui2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getDongyuanhui2());lists.add(jc);jc=null;}
+
+        //开展数
+        if(MyTools.isNotEmpty(stDjqk4.getKaizhanshu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getKaizhanshu());lists.add(jc);jc=null;}
+
+        //活动载体
+        if(MyTools.isNotEmpty(stDjqk4.getHuodongzaiti())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getHuodongzaiti());lists.add(jc);jc=null;}
+
+        //完成状态
+        if(MyTools.isNotEmpty(stDjqk4.getWanchengzhuangtai())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getWanchengzhuangtai());lists.add(jc);jc=null;}
+
+        //兼负数
+        if(MyTools.isNotEmpty(stDjqk4.getJianfushu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getJianfushu());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getJiedangshu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getJiedangshu());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getFuzerenshu5())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getFuzerenshu5());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getRenyuanshu5())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getRenyuanshu5());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getLidangshu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getLidangshu());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getFuzerenshu6())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getFuzerenshu6());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getRenyuanshu6())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getRenyuanshu6());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getJijinhui())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getJijinhui());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getChenglishijian())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getChenglishijian());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getAnqihuanjie())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getAnqihuanjie());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getShangjidangzuzhi())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getShangjidangzuzhi());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getShixiangjuece())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getShixiangjuece());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getDangjiangongzuopeixun())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getDangjiangongzuopeixun());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getDangjianpeixun1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getDangjianpeixun1());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getPinpaihuodong())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getPinpaihuodong());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getS1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getS1());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getS2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getS2());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getS3())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getS3());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getS4())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getS4());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getS5())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getS5());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getS6())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getS6());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getS7())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getS7());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getS8())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getS8());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getS9())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getS9());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getS10())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getS10());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getS11())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getS11());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getS12())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getS12());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getS13())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getS13());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getS14())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getS14());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getS15())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getS15());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getS16())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getS16());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getS17())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getS17());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getS18())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getS18());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getS19())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getS19());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getS20())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getS20());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getS21())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getS21());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stDjqk4.getS22())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getS22());lists.add(jc);jc=null;}
+
+        //官方网站1
+        if(MyTools.isNotEmpty(stDjqk4.getGuanfangwangzhan1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getGuanfangwangzhan1());lists.add(jc);jc=null;}
+
+        //微信平台1
+        if(MyTools.isNotEmpty(stDjqk4.getWeixinpingtai1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getWeixinpingtai1());lists.add(jc);jc=null;}
+
+        //微博1
+        if(MyTools.isNotEmpty(stDjqk4.getWeibo1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getWeibo1());lists.add(jc);jc=null;}
+
+        //杂志期刊1
+        if(MyTools.isNotEmpty(stDjqk4.getZazhiqikan1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getZazhiqikan1());lists.add(jc);jc=null;}
+
+        //其他方式1
+        if(MyTools.isNotEmpty(stDjqk4.getQitafangshi1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getQitafangshi1());lists.add(jc);jc=null;}
+
+        //官方网站2
+        if(MyTools.isNotEmpty(stDjqk4.getGuanfangwangzhan2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getGuanfangwangzhan2());lists.add(jc);jc=null;}
+
+        //微信平台2
+        if(MyTools.isNotEmpty(stDjqk4.getWeixinpingtai2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getWeixinpingtai2());lists.add(jc);jc=null;}
+
+        //微博2
+        if(MyTools.isNotEmpty(stDjqk4.getWeibo2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getWeibo2());lists.add(jc);jc=null;}
+
+        //杂志期刊2
+        if(MyTools.isNotEmpty(stDjqk4.getZazhiqikan2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getZazhiqikan2());lists.add(jc);jc=null;}
+
+        //其他方式2
+        if(MyTools.isNotEmpty(stDjqk4.getQitafangshi2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getQitafangshi2());lists.add(jc);jc=null;}
+
+        //其他方式22
+        if(MyTools.isNotEmpty(stDjqk4.getQitafangshi22())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getQitafangshi22());lists.add(jc);jc=null;}
+
+        //其他方式11
+        if(MyTools.isNotEmpty(stDjqk4.getQitafangshi11())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getQitafangshi11());lists.add(jc);jc=null;}
+
+        //会员大会
+        if(MyTools.isNotEmpty(stDjqk4.getHuiyuandahui())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getHuiyuandahui());lists.add(jc);jc=null;}
+
+        //工作QQ群
+        if(MyTools.isNotEmpty(stDjqk4.getGongzuoqqqun())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getGongzuoqqqun());lists.add(jc);jc=null;}
+
+        //短信平台
+        if(MyTools.isNotEmpty(stDjqk4.getDuanxinpingtai())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stDjqk4.getDuanxinpingtai());lists.add(jc);jc=null;}
+
+

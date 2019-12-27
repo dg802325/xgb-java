@@ -1,0 +1,101 @@
+#######################################################################################################################################
+
+
+        Integer userId = content.getUserId ();//
+        Integer groupId = content.getGroupId ();//
+        String username = content.getUsername ();//
+        String email = content.getEmail ();//
+        Date registerTime = content.getRegisterTime ();//
+        String registerIp = content.getRegisterIp ();//
+        Date lastLoginTime = content.getLastLoginTime ();//
+        String lastLoginIp = content.getLastLoginIp ();//
+        Integer loginCount = content.getLoginCount ();//
+        Integer rank = content.getRank ();//
+        BigDecimal uploadTotal = content.getUploadTotal ();//
+        Integer uploadSize = content.getUploadSize ();//
+        Date uploadDate = content.getUploadDate ();//
+        BigDecimal isAdmin = content.getIsAdmin ();//
+        BigDecimal isSelfAdmin = content.getIsSelfAdmin ();//
+        BigDecimal isDisabled = content.getIsDisabled ();//
+        String sessionId = content.getSessionId ();//
+        Integer departId = content.getDepartId ();//
+
+
+
+
+        buffer.append(userId+"|");
+        buffer.append(groupId+"|");
+        buffer.append(username+"|");
+        buffer.append(email+"|");
+        buffer.append(registerTime+"|");
+        buffer.append(registerIp+"|");
+        buffer.append(lastLoginTime+"|");
+        buffer.append(lastLoginIp+"|");
+        buffer.append(loginCount+"|");
+        buffer.append(rank+"|");
+        buffer.append(uploadTotal+"|");
+        buffer.append(uploadSize+"|");
+        buffer.append(uploadDate+"|");
+        buffer.append(isAdmin+"|");
+        buffer.append(isSelfAdmin+"|");
+        buffer.append(isDisabled+"|");
+        buffer.append(sessionId+"|");
+        buffer.append(departId+"|");
+
+
+
+        if(MyTools.isNotEmpty(split[0])){
+            fcc.setUserId(Integer.parseInt(split[0]));
+        }
+        if(MyTools.isNotEmpty(split[1])){
+            fcc.setGroupId(Integer.parseInt(split[1]));
+        }
+        if(MyTools.isNotEmpty(split[2])){
+            fcc.setUsername(split[2]);
+        }
+        if(MyTools.isNotEmpty(split[3])){
+            fcc.setEmail(split[3]);
+        }
+        if(MyTools.isNotEmpty(split[4])){
+            fcc.setRegisterTime(DateUtils.strToDateLong(split[4]));
+        }
+        if(MyTools.isNotEmpty(split[5])){
+            fcc.setRegisterIp(split[5]);
+        }
+        if(MyTools.isNotEmpty(split[6])){
+            fcc.setLastLoginTime(DateUtils.strToDateLong(split[6]));
+        }
+        if(MyTools.isNotEmpty(split[7])){
+            fcc.setLastLoginIp(split[7]);
+        }
+        if(MyTools.isNotEmpty(split[8])){
+            fcc.setLoginCount(Integer.parseInt(split[8]));
+        }
+        if(MyTools.isNotEmpty(split[9])){
+            fcc.setRank(Integer.parseInt(split[9]));
+        }
+        if(MyTools.isNotEmpty(split[10])){
+            fcc.setUploadTotal(new BigDecimal(split[10]));
+        }
+        if(MyTools.isNotEmpty(split[11])){
+            fcc.setUploadSize(Integer.parseInt(split[11]));
+        }
+        if(MyTools.isNotEmpty(split[12])){
+            fcc.setUploadDate(DateUtils.strToDateLong(split[12]));
+        }
+        if(MyTools.isNotEmpty(split[13])){
+            fcc.setIsAdmin(new BigDecimal(split[13]));
+        }
+        if(MyTools.isNotEmpty(split[14])){
+            fcc.setIsSelfAdmin(new BigDecimal(split[14]));
+        }
+        if(MyTools.isNotEmpty(split[15])){
+            fcc.setIsDisabled(new BigDecimal(split[15]));
+        }
+        if(MyTools.isNotEmpty(split[16])){
+            fcc.setSessionId(split[16]);
+        }
+        if(MyTools.isNotEmpty(split[17])){
+            fcc.setDepartId(Integer.parseInt(split[17]));
+        }
+

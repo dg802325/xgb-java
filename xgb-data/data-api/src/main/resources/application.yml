@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: dev
+  freemarker:
+    check-template-location: false
+    servlet:
+      multipart:
+        max-file-size: 50MB
+        max-request-size: 50MB
+    jackson:
+      date-format: yyyy-MM-dd HH:mm:ss
+      time-zone: GMT+8
+###设置服务器启动Ip
+server:
+  port: 10020
+  compression:
+    enabled: true
+    min-response-size: 1024
+    mime-types: application/json,application/xml,application/javascript,text/html,text/xml,text/plain,text/css
+  tomcat:
+    max-http-post-size: 20971520
+  token:
+    time: 86400
+mybatis:
+  type-aliases-package: com.xgb.model
+  config-location: classpath:mybatis-com.xgb.config.xml
+logging:
+  level:
+    root: info
+    com.xgb: trace
+  path: xgb-data/data-api/logs/
+  file: data-api.log

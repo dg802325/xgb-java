@@ -1,0 +1,315 @@
+#######################################################################################################################################
+
+        //ID
+        if(MyTools.isNotEmpty(stNjReport15.getId())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getId());lists.add(jc);jc=null;}
+
+        //INSTANCEID
+        if(MyTools.isNotEmpty(stNjReport15.getInstanceid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getInstanceid());lists.add(jc);jc=null;}
+
+        //ORGANIZATIONID
+        if(MyTools.isNotEmpty(stNjReport15.getOrganizationid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getOrganizationid());lists.add(jc);jc=null;}
+
+        //STATUS
+        if(MyTools.isNotEmpty(stNjReport15.getStatus())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getStatus());lists.add(jc);jc=null;}
+
+        //现金1
+        if(MyTools.isNotEmpty(stNjReport15.getXianjin1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getXianjin1());lists.add(jc);jc=null;}
+
+        //非现金折合1
+        if(MyTools.isNotEmpty(stNjReport15.getFeixianjinzhehe1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getFeixianjinzhehe1());lists.add(jc);jc=null;}
+
+        //合计1
+        if(MyTools.isNotEmpty(stNjReport15.getHeji1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getHeji1());lists.add(jc);jc=null;}
+
+        //现金2
+        if(MyTools.isNotEmpty(stNjReport15.getXianjin2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getXianjin2());lists.add(jc);jc=null;}
+
+        //非现金折合2
+        if(MyTools.isNotEmpty(stNjReport15.getFeixianjinzhehe2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getFeixianjinzhehe2());lists.add(jc);jc=null;}
+
+        //合计2
+        if(MyTools.isNotEmpty(stNjReport15.getHeji2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getHeji2());lists.add(jc);jc=null;}
+
+        //现金3
+        if(MyTools.isNotEmpty(stNjReport15.getXianjin3())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getXianjin3());lists.add(jc);jc=null;}
+
+        //非现金折合3
+        if(MyTools.isNotEmpty(stNjReport15.getFeixianjinzhehe3())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getFeixianjinzhehe3());lists.add(jc);jc=null;}
+
+        //合计3
+        if(MyTools.isNotEmpty(stNjReport15.getHeji3())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getHeji3());lists.add(jc);jc=null;}
+
+        //现金4
+        if(MyTools.isNotEmpty(stNjReport15.getXianjin4())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getXianjin4());lists.add(jc);jc=null;}
+
+        //非现金折合4
+        if(MyTools.isNotEmpty(stNjReport15.getFeixianjinzhehe4())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getFeixianjinzhehe4());lists.add(jc);jc=null;}
+
+        //合计4
+        if(MyTools.isNotEmpty(stNjReport15.getHeji4())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getHeji4());lists.add(jc);jc=null;}
+
+        //现金5
+        if(MyTools.isNotEmpty(stNjReport15.getXianjin5())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getXianjin5());lists.add(jc);jc=null;}
+
+        //非现金折合5
+        if(MyTools.isNotEmpty(stNjReport15.getFeixianjinzhehe5())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getFeixianjinzhehe5());lists.add(jc);jc=null;}
+
+        //合计5
+        if(MyTools.isNotEmpty(stNjReport15.getHeji5())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getHeji5());lists.add(jc);jc=null;}
+
+        //现金6
+        if(MyTools.isNotEmpty(stNjReport15.getXianjin6())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getXianjin6());lists.add(jc);jc=null;}
+
+        //非现金折合6
+        if(MyTools.isNotEmpty(stNjReport15.getFeixianjinzhehe6())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getFeixianjinzhehe6());lists.add(jc);jc=null;}
+
+        //合计6
+        if(MyTools.isNotEmpty(stNjReport15.getHeji6())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getHeji6());lists.add(jc);jc=null;}
+
+        //现金7
+        if(MyTools.isNotEmpty(stNjReport15.getXianjin7())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getXianjin7());lists.add(jc);jc=null;}
+
+        //非现金折合7
+        if(MyTools.isNotEmpty(stNjReport15.getFeixianjinzhehe7())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getFeixianjinzhehe7());lists.add(jc);jc=null;}
+
+        //合计7
+        if(MyTools.isNotEmpty(stNjReport15.getHeji7())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getHeji7());lists.add(jc);jc=null;}
+
+        //主要用途和使用情况
+        if(MyTools.isNotEmpty(stNjReport15.getZhuyaoyongtuheshiyongqingkuang())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getZhuyaoyongtuheshiyongqingkuang());lists.add(jc);jc=null;}
+
+        //06
+        if(MyTools.isNotEmpty(stNjReport15.getShouru06())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getShouru06());lists.add(jc);jc=null;}
+
+        //07
+        if(MyTools.isNotEmpty(stNjReport15.getShouru07())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getShouru07());lists.add(jc);jc=null;}
+
+        //08
+        if(MyTools.isNotEmpty(stNjReport15.getShouru08())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getShouru08());lists.add(jc);jc=null;}
+
+        //06
+        if(MyTools.isNotEmpty(stNjReport15.getZhichu06())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getZhichu06());lists.add(jc);jc=null;}
+
+        //07
+        if(MyTools.isNotEmpty(stNjReport15.getZhichu07())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getZhichu07());lists.add(jc);jc=null;}
+
+        //08
+        if(MyTools.isNotEmpty(stNjReport15.getZhichu08())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getZhichu08());lists.add(jc);jc=null;}
+
+        //06
+        if(MyTools.isNotEmpty(stNjReport15.getGongyizhichu06())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getGongyizhichu06());lists.add(jc);jc=null;}
+
+        //07
+        if(MyTools.isNotEmpty(stNjReport15.getGongyizhichu07())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getGongyizhichu07());lists.add(jc);jc=null;}
+
+        //08
+        if(MyTools.isNotEmpty(stNjReport15.getGongyizhichu08())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getGongyizhichu08());lists.add(jc);jc=null;}
+
+        //06
+        if(MyTools.isNotEmpty(stNjReport15.getShangnianbili06())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getShangnianbili06());lists.add(jc);jc=null;}
+
+        //07
+        if(MyTools.isNotEmpty(stNjReport15.getShangnianbili07())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getShangnianbili07());lists.add(jc);jc=null;}
+
+        //08
+        if(MyTools.isNotEmpty(stNjReport15.getShangnianbili08())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getShangnianbili08());lists.add(jc);jc=null;}
+
+        //06
+        if(MyTools.isNotEmpty(stNjReport15.getBennianbili06())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getBennianbili06());lists.add(jc);jc=null;}
+
+        //07
+        if(MyTools.isNotEmpty(stNjReport15.getBennianbili07())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getBennianbili07());lists.add(jc);jc=null;}
+
+        //08
+        if(MyTools.isNotEmpty(stNjReport15.getBennianbili08())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getBennianbili08());lists.add(jc);jc=null;}
+
+        //天津年检结果1
+        if(MyTools.isNotEmpty(stNjReport15.getTjnjjieguo1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getTjnjjieguo1());lists.add(jc);jc=null;}
+
+        //天津年检结果2
+        if(MyTools.isNotEmpty(stNjReport15.getTjnjjieguo2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getTjnjjieguo2());lists.add(jc);jc=null;}
+
+        //天津审核意见1
+        if(MyTools.isNotEmpty(stNjReport15.getTjnjyijian1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getTjnjyijian1());lists.add(jc);jc=null;}
+
+        //天津审核意见2
+        if(MyTools.isNotEmpty(stNjReport15.getTjnjyijian2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getTjnjyijian2());lists.add(jc);jc=null;}
+
+        //天津审核姓名1
+        if(MyTools.isNotEmpty(stNjReport15.getTjnjxingming1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getTjnjxingming1());lists.add(jc);jc=null;}
+
+        //天津审核姓名2
+        if(MyTools.isNotEmpty(stNjReport15.getTjnjxingming2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getTjnjxingming2());lists.add(jc);jc=null;}
+
+        //天津审批时间1
+        if(MyTools.isNotEmpty(stNjReport15.getTjnjshijian1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getTjnjshijian1());lists.add(jc);jc=null;}
+
+        //天津审批时间2
+        if(MyTools.isNotEmpty(stNjReport15.getTjnjshijian2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getTjnjshijian2());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stNjReport15.getJuanzenghetong())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getJuanzenghetong());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stNjReport15.getJuanzengshu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getJuanzengshu());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stNjReport15.getWuciqingkuang())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjReport15.getWuciqingkuang());lists.add(jc);jc=null;}
+
+

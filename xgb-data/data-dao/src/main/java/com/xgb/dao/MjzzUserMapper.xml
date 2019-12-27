@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.MjzzUserMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.MjzzUser" >
+    <constructor >
+      <idArg column="ID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="USERNAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PASSWORD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DEPT" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="IDCARD" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ADDRESS" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="TELEPHONE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="FAX" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WORKDEPT" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="RESIDENCE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="EMAIL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="POSTCODE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="OTHERCONTACT" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="REGISTERED" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MANAGERDEPT" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="ORGANIZATION" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SERIALNUMBER" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CONSTITUTEDATE" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="CORPORATION" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CORPTELEPHONE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="TYPE" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="STATUS" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="TYPEDEPTID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="MANAGEORG" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="ORGANIZATION_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MF_TYPE" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="REGION" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="REGISTEDATE" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="AREA" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="USERTYPE" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="ORG_IDENTITY" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="UNIT_TYPE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="LAST_LOGGINGIN_TIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="LOGGINGIN_COUNT" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="TEMP" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="XINYONGDAIMA" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, NAME, USERNAME, PASSWORD, DEPT, IDCARD, ADDRESS, TELEPHONE, FAX, WORKDEPT, RESIDENCE, 
+    EMAIL, POSTCODE, OTHERCONTACT, REGISTERED, MANAGERDEPT, ORGANIZATION, SERIALNUMBER, 
+    CONSTITUTEDATE, CORPORATION, CORPTELEPHONE, TYPE, STATUS, TYPEDEPTID, MANAGEORG, 
+    ORGANIZATION_ID, MF_TYPE, REGION, REGISTEDATE, AREA, USERTYPE, ORG_IDENTITY, UNIT_TYPE, 
+    LAST_LOGGINGIN_TIME, LOGGINGIN_COUNT, TEMP, XINYONGDAIMA
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.MjzzUserExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from MJZZ.MJZZ_USER
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from MJZZ.MJZZ_USER
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from MJZZ.MJZZ_USER
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xgb.model.MjzzUserExample" >
+    delete from MJZZ.MJZZ_USER
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.MjzzUser" >
+    insert into MJZZ.MJZZ_USER (ID, NAME, USERNAME, 
+      PASSWORD, DEPT, IDCARD, 
+      ADDRESS, TELEPHONE, FAX, 
+      WORKDEPT, RESIDENCE, EMAIL, 
+      POSTCODE, OTHERCONTACT, REGISTERED, 
+      MANAGERDEPT, ORGANIZATION, SERIALNUMBER, 
+      CONSTITUTEDATE, CORPORATION, CORPTELEPHONE, 
+      TYPE, STATUS, TYPEDEPTID, 
+      MANAGEORG, ORGANIZATION_ID, MF_TYPE, 
+      REGION, REGISTEDATE, AREA, 
+      USERTYPE, ORG_IDENTITY, UNIT_TYPE, 
+      LAST_LOGGINGIN_TIME, LOGGINGIN_COUNT, TEMP, 
+      XINYONGDAIMA)
+    values (#{id,jdbcType=DECIMAL}, #{name,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{dept,jdbcType=VARCHAR}, #{idcard,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR}, #{fax,jdbcType=VARCHAR}, 
+      #{workdept,jdbcType=VARCHAR}, #{residence,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{postcode,jdbcType=VARCHAR}, #{othercontact,jdbcType=VARCHAR}, #{registered,jdbcType=VARCHAR}, 
+      #{managerdept,jdbcType=DECIMAL}, #{organization,jdbcType=VARCHAR}, #{serialnumber,jdbcType=VARCHAR}, 
+      #{constitutedate,jdbcType=TIMESTAMP}, #{corporation,jdbcType=VARCHAR}, #{corptelephone,jdbcType=VARCHAR}, 
+      #{type,jdbcType=DECIMAL}, #{status,jdbcType=DECIMAL}, #{typedeptid,jdbcType=DECIMAL}, 
+      #{manageorg,jdbcType=DECIMAL}, #{organizationId,jdbcType=VARCHAR}, #{mfType,jdbcType=DECIMAL}, 
+      #{region,jdbcType=DECIMAL}, #{registedate,jdbcType=TIMESTAMP}, #{area,jdbcType=DECIMAL}, 
+      #{usertype,jdbcType=DECIMAL}, #{orgIdentity,jdbcType=VARCHAR}, #{unitType,jdbcType=VARCHAR}, 
+      #{lastLogginginTime,jdbcType=TIMESTAMP}, #{logginginCount,jdbcType=DECIMAL}, #{temp,jdbcType=VARCHAR}, 
+      #{xinyongdaima,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.MjzzUser" >
+    insert into MJZZ.MJZZ_USER
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="username != null" >
+        USERNAME,
+      </if>
+      <if test="password != null" >
+        PASSWORD,
+      </if>
+      <if test="dept != null" >
+        DEPT,
+      </if>
+      <if test="idcard != null" >
+        IDCARD,
+      </if>
+      <if test="address != null" >
+        ADDRESS,
+      </if>
+      <if test="telephone != null" >
+        TELEPHONE,
+      </if>
+      <if test="fax != null" >
+        FAX,
+      </if>
+      <if test="workdept != null" >
+        WORKDEPT,
+      </if>
+      <if test="residence != null" >
+        RESIDENCE,
+      </if>
+      <if test="email != null" >
+        EMAIL,
+      </if>
+      <if test="postcode != null" >
+        POSTCODE,
+      </if>
+      <if test="othercontact != null" >
+        OTHERCONTACT,
+      </if>
+      <if test="registered != null" >
+        REGISTERED,
+      </if>
+      <if test="managerdept != null" >
+        MANAGERDEPT,
+      </if>
+      <if test="organization != null" >
+        ORGANIZATION,
+      </if>
+      <if test="serialnumber != null" >
+        SERIALNUMBER,
+      </if>
+      <if test="constitutedate != null" >
+        CONSTITUTEDATE,
+      </if>
+      <if test="corporation != null" >
+        CORPORATION,
+      </if>
+      <if test="corptelephone != null" >
+        CORPTELEPHONE,
+      </if>
+      <if test="type != null" >
+        TYPE,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="typedeptid != null" >
+        TYPEDEPTID,
+      </if>
+      <if test="manageorg != null" >
+        MANAGEORG,
+      </if>
+      <if test="organizationId != null" >
+        ORGANIZATION_ID,
+      </if>
+      <if test="mfType != null" >
+        MF_TYPE,
+      </if>
+      <if test="region != null" >
+        REGION,
+      </if>
+      <if test="registedate != null" >
+        REGISTEDATE,
+      </if>
+      <if test="area != null" >
+        AREA,
+      </if>
+      <if test="usertype != null" >
+        USERTYPE,
+      </if>
+      <if test="orgIdentity != null" >
+        ORG_IDENTITY,
+      </if>
+      <if test="unitType != null" >
+        UNIT_TYPE,
+      </if>
+      <if test="lastLogginginTime != null" >
+        LAST_LOGGINGIN_TIME,
+      </if>
+      <if test="logginginCount != null" >
+        LOGGINGIN_COUNT,
+      </if>
+      <if test="temp != null" >
+        TEMP,
+      </if>
+      <if test="xinyongdaima != null" >
+        XINYONGDAIMA,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="dept != null" >
+        #{dept,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard != null" >
+        #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null" >
+        #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null" >
+        #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="workdept != null" >
+        #{workdept,jdbcType=VARCHAR},
+      </if>
+      <if test="residence != null" >
+        #{residence,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="postcode != null" >
+        #{postcode,jdbcType=VARCHAR},
+      </if>
+      <if test="othercontact != null" >
+        #{othercontact,jdbcType=VARCHAR},
+      </if>
+      <if test="registered != null" >
+        #{registered,jdbcType=VARCHAR},
+      </if>
+      <if test="managerdept != null" >
+        #{managerdept,jdbcType=DECIMAL},
+      </if>
+      <if test="organization != null" >
+        #{organization,jdbcType=VARCHAR},
+      </if>
+      <if test="serialnumber != null" >
+        #{serialnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="constitutedate != null" >
+        #{constitutedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="corporation != null" >
+        #{corporation,jdbcType=VARCHAR},
+      </if>
+      <if test="corptelephone != null" >
+        #{corptelephone,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="typedeptid != null" >
+        #{typedeptid,jdbcType=DECIMAL},
+      </if>
+      <if test="manageorg != null" >
+        #{manageorg,jdbcType=DECIMAL},
+      </if>
+      <if test="organizationId != null" >
+        #{organizationId,jdbcType=VARCHAR},
+      </if>
+      <if test="mfType != null" >
+        #{mfType,jdbcType=DECIMAL},
+      </if>
+      <if test="region != null" >
+        #{region,jdbcType=DECIMAL},
+      </if>
+      <if test="registedate != null" >
+        #{registedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="area != null" >
+        #{area,jdbcType=DECIMAL},
+      </if>
+      <if test="usertype != null" >
+        #{usertype,jdbcType=DECIMAL},
+      </if>
+      <if test="orgIdentity != null" >
+        #{orgIdentity,jdbcType=VARCHAR},
+      </if>
+      <if test="unitType != null" >
+        #{unitType,jdbcType=VARCHAR},
+      </if>
+      <if test="lastLogginginTime != null" >
+        #{lastLogginginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logginginCount != null" >
+        #{logginginCount,jdbcType=DECIMAL},
+      </if>
+      <if test="temp != null" >
+        #{temp,jdbcType=VARCHAR},
+      </if>
+      <if test="xinyongdaima != null" >
+        #{xinyongdaima,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.MjzzUserExample" resultType="java.lang.Integer" >
+    select count(*) from MJZZ.MJZZ_USER
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update MJZZ.MJZZ_USER
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=DECIMAL},
+      </if>
+      <if test="record.name != null" >
+        NAME = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.username != null" >
+        USERNAME = #{record.username,jdbcType=VARCHAR},
+      </if>
+      <if test="record.password != null" >
+        PASSWORD = #{record.password,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dept != null" >
+        DEPT = #{record.dept,jdbcType=VARCHAR},
+      </if>
+      <if test="record.idcard != null" >
+        IDCARD = #{record.idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="record.address != null" >
+        ADDRESS = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.telephone != null" >
+        TELEPHONE = #{record.telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fax != null" >
+        FAX = #{record.fax,jdbcType=VARCHAR},
+      </if>
+      <if test="record.workdept != null" >
+        WORKDEPT = #{record.workdept,jdbcType=VARCHAR},
+      </if>
+      <if test="record.residence != null" >
+        RESIDENCE = #{record.residence,jdbcType=VARCHAR},
+      </if>
+      <if test="record.email != null" >
+        EMAIL = #{record.email,jdbcType=VARCHAR},
+      </if>
+      <if test="record.postcode != null" >
+        POSTCODE = #{record.postcode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.othercontact != null" >
+        OTHERCONTACT = #{record.othercontact,jdbcType=VARCHAR},
+      </if>
+      <if test="record.registered != null" >
+        REGISTERED = #{record.registered,jdbcType=VARCHAR},
+      </if>
+      <if test="record.managerdept != null" >
+        MANAGERDEPT = #{record.managerdept,jdbcType=DECIMAL},
+      </if>
+      <if test="record.organization != null" >
+        ORGANIZATION = #{record.organization,jdbcType=VARCHAR},
+      </if>
+      <if test="record.serialnumber != null" >
+        SERIALNUMBER = #{record.serialnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.constitutedate != null" >
+        CONSTITUTEDATE = #{record.constitutedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.corporation != null" >
+        CORPORATION = #{record.corporation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.corptelephone != null" >
+        CORPTELEPHONE = #{record.corptelephone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null" >
+        TYPE = #{record.type,jdbcType=DECIMAL},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=DECIMAL},
+      </if>
+      <if test="record.typedeptid != null" >
+        TYPEDEPTID = #{record.typedeptid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.manageorg != null" >
+        MANAGEORG = #{record.manageorg,jdbcType=DECIMAL},
+      </if>
+      <if test="record.organizationId != null" >
+        ORGANIZATION_ID = #{record.organizationId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mfType != null" >
+        MF_TYPE = #{record.mfType,jdbcType=DECIMAL},
+      </if>
+      <if test="record.region != null" >
+        REGION = #{record.region,jdbcType=DECIMAL},
+      </if>
+      <if test="record.registedate != null" >
+        REGISTEDATE = #{record.registedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.area != null" >
+        AREA = #{record.area,jdbcType=DECIMAL},
+      </if>
+      <if test="record.usertype != null" >
+        USERTYPE = #{record.usertype,jdbcType=DECIMAL},
+      </if>
+      <if test="record.orgIdentity != null" >
+        ORG_IDENTITY = #{record.orgIdentity,jdbcType=VARCHAR},
+      </if>
+      <if test="record.unitType != null" >
+        UNIT_TYPE = #{record.unitType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lastLogginginTime != null" >
+        LAST_LOGGINGIN_TIME = #{record.lastLogginginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.logginginCount != null" >
+        LOGGINGIN_COUNT = #{record.logginginCount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.temp != null" >
+        TEMP = #{record.temp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.xinyongdaima != null" >
+        XINYONGDAIMA = #{record.xinyongdaima,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update MJZZ.MJZZ_USER
+    set ID = #{record.id,jdbcType=DECIMAL},
+      NAME = #{record.name,jdbcType=VARCHAR},
+      USERNAME = #{record.username,jdbcType=VARCHAR},
+      PASSWORD = #{record.password,jdbcType=VARCHAR},
+      DEPT = #{record.dept,jdbcType=VARCHAR},
+      IDCARD = #{record.idcard,jdbcType=VARCHAR},
+      ADDRESS = #{record.address,jdbcType=VARCHAR},
+      TELEPHONE = #{record.telephone,jdbcType=VARCHAR},
+      FAX = #{record.fax,jdbcType=VARCHAR},
+      WORKDEPT = #{record.workdept,jdbcType=VARCHAR},
+      RESIDENCE = #{record.residence,jdbcType=VARCHAR},
+      EMAIL = #{record.email,jdbcType=VARCHAR},
+      POSTCODE = #{record.postcode,jdbcType=VARCHAR},
+      OTHERCONTACT = #{record.othercontact,jdbcType=VARCHAR},
+      REGISTERED = #{record.registered,jdbcType=VARCHAR},
+      MANAGERDEPT = #{record.managerdept,jdbcType=DECIMAL},
+      ORGANIZATION = #{record.organization,jdbcType=VARCHAR},
+      SERIALNUMBER = #{record.serialnumber,jdbcType=VARCHAR},
+      CONSTITUTEDATE = #{record.constitutedate,jdbcType=TIMESTAMP},
+      CORPORATION = #{record.corporation,jdbcType=VARCHAR},
+      CORPTELEPHONE = #{record.corptelephone,jdbcType=VARCHAR},
+      TYPE = #{record.type,jdbcType=DECIMAL},
+      STATUS = #{record.status,jdbcType=DECIMAL},
+      TYPEDEPTID = #{record.typedeptid,jdbcType=DECIMAL},
+      MANAGEORG = #{record.manageorg,jdbcType=DECIMAL},
+      ORGANIZATION_ID = #{record.organizationId,jdbcType=VARCHAR},
+      MF_TYPE = #{record.mfType,jdbcType=DECIMAL},
+      REGION = #{record.region,jdbcType=DECIMAL},
+      REGISTEDATE = #{record.registedate,jdbcType=TIMESTAMP},
+      AREA = #{record.area,jdbcType=DECIMAL},
+      USERTYPE = #{record.usertype,jdbcType=DECIMAL},
+      ORG_IDENTITY = #{record.orgIdentity,jdbcType=VARCHAR},
+      UNIT_TYPE = #{record.unitType,jdbcType=VARCHAR},
+      LAST_LOGGINGIN_TIME = #{record.lastLogginginTime,jdbcType=TIMESTAMP},
+      LOGGINGIN_COUNT = #{record.logginginCount,jdbcType=DECIMAL},
+      TEMP = #{record.temp,jdbcType=VARCHAR},
+      XINYONGDAIMA = #{record.xinyongdaima,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.MjzzUser" >
+    update MJZZ.MJZZ_USER
+    <set >
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        USERNAME = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="dept != null" >
+        DEPT = #{dept,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard != null" >
+        IDCARD = #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null" >
+        TELEPHONE = #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="fax != null" >
+        FAX = #{fax,jdbcType=VARCHAR},
+      </if>
+      <if test="workdept != null" >
+        WORKDEPT = #{workdept,jdbcType=VARCHAR},
+      </if>
+      <if test="residence != null" >
+        RESIDENCE = #{residence,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        EMAIL = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="postcode != null" >
+        POSTCODE = #{postcode,jdbcType=VARCHAR},
+      </if>
+      <if test="othercontact != null" >
+        OTHERCONTACT = #{othercontact,jdbcType=VARCHAR},
+      </if>
+      <if test="registered != null" >
+        REGISTERED = #{registered,jdbcType=VARCHAR},
+      </if>
+      <if test="managerdept != null" >
+        MANAGERDEPT = #{managerdept,jdbcType=DECIMAL},
+      </if>
+      <if test="organization != null" >
+        ORGANIZATION = #{organization,jdbcType=VARCHAR},
+      </if>
+      <if test="serialnumber != null" >
+        SERIALNUMBER = #{serialnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="constitutedate != null" >
+        CONSTITUTEDATE = #{constitutedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="corporation != null" >
+        CORPORATION = #{corporation,jdbcType=VARCHAR},
+      </if>
+      <if test="corptelephone != null" >
+        CORPTELEPHONE = #{corptelephone,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        TYPE = #{type,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="typedeptid != null" >
+        TYPEDEPTID = #{typedeptid,jdbcType=DECIMAL},
+      </if>
+      <if test="manageorg != null" >
+        MANAGEORG = #{manageorg,jdbcType=DECIMAL},
+      </if>
+      <if test="organizationId != null" >
+        ORGANIZATION_ID = #{organizationId,jdbcType=VARCHAR},
+      </if>
+      <if test="mfType != null" >
+        MF_TYPE = #{mfType,jdbcType=DECIMAL},
+      </if>
+      <if test="region != null" >
+        REGION = #{region,jdbcType=DECIMAL},
+      </if>
+      <if test="registedate != null" >
+        REGISTEDATE = #{registedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="area != null" >
+        AREA = #{area,jdbcType=DECIMAL},
+      </if>
+      <if test="usertype != null" >
+        USERTYPE = #{usertype,jdbcType=DECIMAL},
+      </if>
+      <if test="orgIdentity != null" >
+        ORG_IDENTITY = #{orgIdentity,jdbcType=VARCHAR},
+      </if>
+      <if test="unitType != null" >
+        UNIT_TYPE = #{unitType,jdbcType=VARCHAR},
+      </if>
+      <if test="lastLogginginTime != null" >
+        LAST_LOGGINGIN_TIME = #{lastLogginginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logginginCount != null" >
+        LOGGINGIN_COUNT = #{logginginCount,jdbcType=DECIMAL},
+      </if>
+      <if test="temp != null" >
+        TEMP = #{temp,jdbcType=VARCHAR},
+      </if>
+      <if test="xinyongdaima != null" >
+        XINYONGDAIMA = #{xinyongdaima,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xgb.model.MjzzUser" >
+    update MJZZ.MJZZ_USER
+    set NAME = #{name,jdbcType=VARCHAR},
+      USERNAME = #{username,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      DEPT = #{dept,jdbcType=VARCHAR},
+      IDCARD = #{idcard,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      TELEPHONE = #{telephone,jdbcType=VARCHAR},
+      FAX = #{fax,jdbcType=VARCHAR},
+      WORKDEPT = #{workdept,jdbcType=VARCHAR},
+      RESIDENCE = #{residence,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      POSTCODE = #{postcode,jdbcType=VARCHAR},
+      OTHERCONTACT = #{othercontact,jdbcType=VARCHAR},
+      REGISTERED = #{registered,jdbcType=VARCHAR},
+      MANAGERDEPT = #{managerdept,jdbcType=DECIMAL},
+      ORGANIZATION = #{organization,jdbcType=VARCHAR},
+      SERIALNUMBER = #{serialnumber,jdbcType=VARCHAR},
+      CONSTITUTEDATE = #{constitutedate,jdbcType=TIMESTAMP},
+      CORPORATION = #{corporation,jdbcType=VARCHAR},
+      CORPTELEPHONE = #{corptelephone,jdbcType=VARCHAR},
+      TYPE = #{type,jdbcType=DECIMAL},
+      STATUS = #{status,jdbcType=DECIMAL},
+      TYPEDEPTID = #{typedeptid,jdbcType=DECIMAL},
+      MANAGEORG = #{manageorg,jdbcType=DECIMAL},
+      ORGANIZATION_ID = #{organizationId,jdbcType=VARCHAR},
+      MF_TYPE = #{mfType,jdbcType=DECIMAL},
+      REGION = #{region,jdbcType=DECIMAL},
+      REGISTEDATE = #{registedate,jdbcType=TIMESTAMP},
+      AREA = #{area,jdbcType=DECIMAL},
+      USERTYPE = #{usertype,jdbcType=DECIMAL},
+      ORG_IDENTITY = #{orgIdentity,jdbcType=VARCHAR},
+      UNIT_TYPE = #{unitType,jdbcType=VARCHAR},
+      LAST_LOGGINGIN_TIME = #{lastLogginginTime,jdbcType=TIMESTAMP},
+      LOGGINGIN_COUNT = #{logginginCount,jdbcType=DECIMAL},
+      TEMP = #{temp,jdbcType=VARCHAR},
+      XINYONGDAIMA = #{xinyongdaima,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>

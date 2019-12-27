@@ -1,0 +1,130 @@
+#######################################################################################################################################
+
+
+        //ID
+        if(MyTools.isNotEmpty(stNjServiceCost.getId())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjServiceCost.getId());lists.add(jc);jc=null;}
+
+        //INSTANCEID
+        if(MyTools.isNotEmpty(stNjServiceCost.getInstanceid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjServiceCost.getInstanceid());lists.add(jc);jc=null;}
+
+        //ORGANIZATIONID
+        if(MyTools.isNotEmpty(stNjServiceCost.getOrganizationid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjServiceCost.getOrganizationid());lists.add(jc);jc=null;}
+
+        //STATUS
+        if(MyTools.isNotEmpty(stNjServiceCost.getStatus())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjServiceCost.getStatus());lists.add(jc);jc=null;}
+
+        //MASTERID
+        if(MyTools.isNotEmpty(stNjServiceCost.getMasterid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjServiceCost.getMasterid());lists.add(jc);jc=null;}
+
+        //收费项目
+        if(MyTools.isNotEmpty(stNjServiceCost.getShoufeixiangmu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjServiceCost.getShoufeixiangmu());lists.add(jc);jc=null;}
+
+        //收费标准（元）
+        if(MyTools.isNotEmpty(stNjServiceCost.getShoufeibiaozhu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjServiceCost.getShoufeibiaozhu());lists.add(jc);jc=null;}
+
+        //设立依据
+        if(MyTools.isNotEmpty(stNjServiceCost.getSheliyiju())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjServiceCost.getSheliyiju());lists.add(jc);jc=null;}
+
+        //合计（万元）
+        if(MyTools.isNotEmpty(stNjServiceCost.getHeji())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjServiceCost.getHeji());lists.add(jc);jc=null;}
+
+        //是否经理事会（常务理事会）通过
+        if(MyTools.isNotEmpty(stNjServiceCost.getShifoulishihuitongguo())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjServiceCost.getShifoulishihuitongguo());lists.add(jc);jc=null;}
+
+        //自查清理意见
+        if(MyTools.isNotEmpty(stNjServiceCost.getZichaqingliyijian())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjServiceCost.getZichaqingliyijian());lists.add(jc);jc=null;}
+
+        //2016年度服务性收费总额（万元）
+        if(MyTools.isNotEmpty(stNjServiceCost.getFuwushoufeizonge())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjServiceCost.getFuwushoufeizonge());lists.add(jc);jc=null;}
+
+        //2016年度是否存在强制会员接受服务并收取费用
+        if(MyTools.isNotEmpty(stNjServiceCost.getShifouqiangzhi())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjServiceCost.getShifouqiangzhi());lists.add(jc);jc=null;}
+
+        //强制涉及金额（万元）
+        if(MyTools.isNotEmpty(stNjServiceCost.getQiangzhishejijine())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjServiceCost.getQiangzhishejijine());lists.add(jc);jc=null;}
+
+        //2016年度是否存在利用政府名义或政府委托事项为由擅自设立收费项目
+        if(MyTools.isNotEmpty(stNjServiceCost.getShifouliyong())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjServiceCost.getShifouliyong());lists.add(jc);jc=null;}
+
+        //强制涉及金额（万元）
+        if(MyTools.isNotEmpty(stNjServiceCost.getLiyongshejijine())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjServiceCost.getLiyongshejijine());lists.add(jc);jc=null;}
+
+        //2016年度自行减免会费（万元）
+        if(MyTools.isNotEmpty(stNjServiceCost.getZixingjianmianhuifei())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjServiceCost.getZixingjianmianhuifei());lists.add(jc);jc=null;}
+
+        //2016年度自行减免会费（万元）具体情况
+        if(MyTools.isNotEmpty(stNjServiceCost.getJianmianhuifeijutiqingkuang())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjServiceCost.getJianmianhuifeijutiqingkuang());lists.add(jc);jc=null;}
+
+        //2016年度违规行为整改，涉及金额（万元）
+        if(MyTools.isNotEmpty(stNjServiceCost.getZhenggaijine())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjServiceCost.getZhenggaijine());lists.add(jc);jc=null;}
+
+        //2016年度违规行为整改，涉及金额（万元）具体情况
+        if(MyTools.isNotEmpty(stNjServiceCost.getZhenggaijinejutiqingkuang())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjServiceCost.getZhenggaijinejutiqingkuang());lists.add(jc);jc=null;}
+
+        //序号
+        if(MyTools.isNotEmpty(stNjServiceCost.getXuhao())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjServiceCost.getXuhao());lists.add(jc);jc=null;}
+
+

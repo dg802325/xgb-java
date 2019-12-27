@@ -1,0 +1,58 @@
+#######################################################################################################################################
+
+
+        //null
+        if(MyTools.isNotEmpty(sjzdNode.getId())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(sjzdNode.getId());lists.add(jc);jc=null;}
+
+        //父节点ID
+        if(MyTools.isNotEmpty(sjzdNode.getParentid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(sjzdNode.getParentid());lists.add(jc);jc=null;}
+
+        //节点名称
+        if(MyTools.isNotEmpty(sjzdNode.getNodeName())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(sjzdNode.getNodeName());lists.add(jc);jc=null;}
+
+        //节点所属名称
+        if(MyTools.isNotEmpty(sjzdNode.getNodeTypename())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(sjzdNode.getNodeTypename());lists.add(jc);jc=null;}
+
+        //节点所在层数
+        if(MyTools.isNotEmpty(sjzdNode.getNodeLevel())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(sjzdNode.getNodeLevel());lists.add(jc);jc=null;}
+
+        //节点特定值
+        if(MyTools.isNotEmpty(sjzdNode.getNodeValue())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(sjzdNode.getNodeValue());lists.add(jc);jc=null;}
+
+        //节点序列号
+        if(MyTools.isNotEmpty(sjzdNode.getNodeIndex())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(sjzdNode.getNodeIndex());lists.add(jc);jc=null;}
+
+        //所属机构
+        if(MyTools.isNotEmpty(sjzdNode.getInstitutionid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(sjzdNode.getInstitutionid());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(sjzdNode.getState())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(sjzdNode.getState());lists.add(jc);jc=null;}
+
+

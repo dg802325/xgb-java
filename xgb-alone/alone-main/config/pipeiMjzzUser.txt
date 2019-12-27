@@ -1,0 +1,226 @@
+#######################################################################################################################################
+
+
+        //ID
+        if(MyTools.isNotEmpty(mjzzUser.getId())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getId());lists.add(jc);jc=null;}
+
+        //姓名
+        if(MyTools.isNotEmpty(mjzzUser.getName())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getName());lists.add(jc);jc=null;}
+
+        //用户名称
+        if(MyTools.isNotEmpty(mjzzUser.getUsername())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getUsername());lists.add(jc);jc=null;}
+
+        //密码
+        if(MyTools.isNotEmpty(mjzzUser.getPassword())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getPassword());lists.add(jc);jc=null;}
+
+        //工作单位
+        if(MyTools.isNotEmpty(mjzzUser.getDept())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getDept());lists.add(jc);jc=null;}
+
+        //证件号码
+        if(MyTools.isNotEmpty(mjzzUser.getIdcard())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getIdcard());lists.add(jc);jc=null;}
+
+        //办公地址（公募基金会募捐地域）
+        if(MyTools.isNotEmpty(mjzzUser.getAddress())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getAddress());lists.add(jc);jc=null;}
+
+        //电话
+        if(MyTools.isNotEmpty(mjzzUser.getTelephone())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getTelephone());lists.add(jc);jc=null;}
+
+        //传真
+        if(MyTools.isNotEmpty(mjzzUser.getFax())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getFax());lists.add(jc);jc=null;}
+
+        //通信地址
+        if(MyTools.isNotEmpty(mjzzUser.getWorkdept())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getWorkdept());lists.add(jc);jc=null;}
+
+        //住所
+        if(MyTools.isNotEmpty(mjzzUser.getResidence())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getResidence());lists.add(jc);jc=null;}
+
+        //邮件地址
+        if(MyTools.isNotEmpty(mjzzUser.getEmail())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getEmail());lists.add(jc);jc=null;}
+
+        //邮编
+        if(MyTools.isNotEmpty(mjzzUser.getPostcode())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getPostcode());lists.add(jc);jc=null;}
+
+        //其它联系人
+        if(MyTools.isNotEmpty(mjzzUser.getOthercontact())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getOthercontact());lists.add(jc);jc=null;}
+
+        //户口所在地（单位简介）
+        if(MyTools.isNotEmpty(mjzzUser.getRegistered())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getRegistered());lists.add(jc);jc=null;}
+
+        //登记管理机关
+        if(MyTools.isNotEmpty(mjzzUser.getManagerdept())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getManagerdept());lists.add(jc);jc=null;}
+
+        //拟成立基金会名称
+        if(MyTools.isNotEmpty(mjzzUser.getOrganization())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getOrganization());lists.add(jc);jc=null;}
+
+        //登记证号
+        if(MyTools.isNotEmpty(mjzzUser.getSerialnumber())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getSerialnumber());lists.add(jc);jc=null;}
+
+        //成立日期
+        if(MyTools.isNotEmpty(mjzzUser.getConstitutedate())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getConstitutedate());lists.add(jc);jc=null;}
+
+        //法人
+        if(MyTools.isNotEmpty(mjzzUser.getCorporation())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getCorporation());lists.add(jc);jc=null;}
+
+        //法人联系电话
+        if(MyTools.isNotEmpty(mjzzUser.getCorptelephone())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getCorptelephone());lists.add(jc);jc=null;}
+
+        //类型1,社团,2,民非3基金会,4.拟成立境外基金会分支机构名称,5 国际社团6 外国商会7 涉外基金会,8 登记机关用户
+        if(MyTools.isNotEmpty(mjzzUser.getType())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getType());lists.add(jc);jc=null;}
+
+        // 用户状态,1,已批准申请人用户，2未批准申请人用户，3，社会组织用户0，已无效用户
+        if(MyTools.isNotEmpty(mjzzUser.getStatus())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getStatus());lists.add(jc);jc=null;}
+
+        //用户类型1,自然人3单位,2,公募基金会,4非公募基金会,5境外基金会分支代表机构
+        if(MyTools.isNotEmpty(mjzzUser.getTypedeptid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getTypedeptid());lists.add(jc);jc=null;}
+
+        //主管单位
+        if(MyTools.isNotEmpty(mjzzUser.getManageorg())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getManageorg());lists.add(jc);jc=null;}
+
+        //拟成立基金会类型1公募，2非公募，拟成立境外基金会分支机构名称
+        if(MyTools.isNotEmpty(mjzzUser.getOrganizationId())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getOrganizationId());lists.add(jc);jc=null;}
+
+        //用户证件类型1,身份证,2,军官证,3,护照
+        if(MyTools.isNotEmpty(mjzzUser.getMfType())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getMfType());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(mjzzUser.getRegion())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getRegion());lists.add(jc);jc=null;}
+
+        //注册日期
+        if(MyTools.isNotEmpty(mjzzUser.getRegistedate())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getRegistedate());lists.add(jc);jc=null;}
+
+        //公募基金会募捐地域1全国，2地方
+        if(MyTools.isNotEmpty(mjzzUser.getArea())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getArea());lists.add(jc);jc=null;}
+
+        //拟成立类型1基金会，2境外基金会分支/代表机构
+        if(MyTools.isNotEmpty(mjzzUser.getUsertype())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getUsertype());lists.add(jc);jc=null;}
+
+        //基金会的唯一标志
+        if(MyTools.isNotEmpty(mjzzUser.getOrgIdentity())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getOrgIdentity());lists.add(jc);jc=null;}
+
+        //基金会类型1公募，2非公募，民非类型 1).法人 2).合伙3).个体
+        if(MyTools.isNotEmpty(mjzzUser.getUnitType())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getUnitType());lists.add(jc);jc=null;}
+
+        //最后登陆时间
+        if(MyTools.isNotEmpty(mjzzUser.getLastLogginginTime())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getLastLogginginTime());lists.add(jc);jc=null;}
+
+        //登陆次数
+        if(MyTools.isNotEmpty(mjzzUser.getLogginginCount())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getLogginginCount());lists.add(jc);jc=null;}
+
+        //临时数据
+        if(MyTools.isNotEmpty(mjzzUser.getTemp())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getTemp());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(mjzzUser.getXinyongdaima())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(mjzzUser.getXinyongdaima());lists.add(jc);jc=null;}
+
+

@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.StNjAdministratCostMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.StNjAdministratCost" >
+    <constructor >
+      <idArg column="ID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="INSTANCEID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORGANIZATIONID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATUS" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="MASTERID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="SHOUFEIXIANGMU" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SHOUFEIBIAOZHU" jdbcType="FLOAT" javaType="java.lang.Double" />
+      <arg column="SHELIYIJU" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="HEJI" jdbcType="FLOAT" javaType="java.lang.Double" />
+      <arg column="ZICHAQINGLIYIJIAN" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="XINGZHENGSHOUFEIZONGE" jdbcType="FLOAT" javaType="java.lang.Double" />
+      <arg column="SHIFOUSHANZIGENGGAI" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SHANZISHEJIJINE" jdbcType="FLOAT" javaType="java.lang.Double" />
+      <arg column="ZIXINGJIANMIANSHOUFEI" jdbcType="FLOAT" javaType="java.lang.Double" />
+      <arg column="JIANMIANSHOUFEIJUTIQINGKUANG" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ZHENGGAIJINE" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZHENGGAIJINEJUTIQINGKUANG" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="XUHAO" jdbcType="DECIMAL" javaType="java.lang.Long" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, INSTANCEID, ORGANIZATIONID, STATUS, MASTERID, SHOUFEIXIANGMU, SHOUFEIBIAOZHU, 
+    SHELIYIJU, HEJI, ZICHAQINGLIYIJIAN, XINGZHENGSHOUFEIZONGE, SHIFOUSHANZIGENGGAI, SHANZISHEJIJINE, 
+    ZIXINGJIANMIANSHOUFEI, JIANMIANSHOUFEIJUTIQINGKUANG, ZHENGGAIJINE, ZHENGGAIJINEJUTIQINGKUANG, 
+    XUHAO
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.StNjAdministratCostExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from MJZZ.ST_NJ_ADMINISTRAT_COST
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from MJZZ.ST_NJ_ADMINISTRAT_COST
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from MJZZ.ST_NJ_ADMINISTRAT_COST
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xgb.model.StNjAdministratCostExample" >
+    delete from MJZZ.ST_NJ_ADMINISTRAT_COST
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.StNjAdministratCost" >
+    insert into MJZZ.ST_NJ_ADMINISTRAT_COST (ID, INSTANCEID, ORGANIZATIONID, 
+      STATUS, MASTERID, SHOUFEIXIANGMU, 
+      SHOUFEIBIAOZHU, SHELIYIJU, HEJI, 
+      ZICHAQINGLIYIJIAN, XINGZHENGSHOUFEIZONGE, 
+      SHIFOUSHANZIGENGGAI, SHANZISHEJIJINE, ZIXINGJIANMIANSHOUFEI, 
+      JIANMIANSHOUFEIJUTIQINGKUANG, ZHENGGAIJINE, 
+      ZHENGGAIJINEJUTIQINGKUANG, XUHAO)
+    values (#{id,jdbcType=DECIMAL}, #{instanceid,jdbcType=VARCHAR}, #{organizationid,jdbcType=VARCHAR}, 
+      #{status,jdbcType=DECIMAL}, #{masterid,jdbcType=DECIMAL}, #{shoufeixiangmu,jdbcType=VARCHAR}, 
+      #{shoufeibiaozhu,jdbcType=FLOAT}, #{sheliyiju,jdbcType=VARCHAR}, #{heji,jdbcType=FLOAT}, 
+      #{zichaqingliyijian,jdbcType=VARCHAR}, #{xingzhengshoufeizonge,jdbcType=FLOAT}, 
+      #{shifoushanzigenggai,jdbcType=VARCHAR}, #{shanzishejijine,jdbcType=FLOAT}, #{zixingjianmianshoufei,jdbcType=FLOAT}, 
+      #{jianmianshoufeijutiqingkuang,jdbcType=VARCHAR}, #{zhenggaijine,jdbcType=DECIMAL}, 
+      #{zhenggaijinejutiqingkuang,jdbcType=VARCHAR}, #{xuhao,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.StNjAdministratCost" >
+    insert into MJZZ.ST_NJ_ADMINISTRAT_COST
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="instanceid != null" >
+        INSTANCEID,
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="masterid != null" >
+        MASTERID,
+      </if>
+      <if test="shoufeixiangmu != null" >
+        SHOUFEIXIANGMU,
+      </if>
+      <if test="shoufeibiaozhu != null" >
+        SHOUFEIBIAOZHU,
+      </if>
+      <if test="sheliyiju != null" >
+        SHELIYIJU,
+      </if>
+      <if test="heji != null" >
+        HEJI,
+      </if>
+      <if test="zichaqingliyijian != null" >
+        ZICHAQINGLIYIJIAN,
+      </if>
+      <if test="xingzhengshoufeizonge != null" >
+        XINGZHENGSHOUFEIZONGE,
+      </if>
+      <if test="shifoushanzigenggai != null" >
+        SHIFOUSHANZIGENGGAI,
+      </if>
+      <if test="shanzishejijine != null" >
+        SHANZISHEJIJINE,
+      </if>
+      <if test="zixingjianmianshoufei != null" >
+        ZIXINGJIANMIANSHOUFEI,
+      </if>
+      <if test="jianmianshoufeijutiqingkuang != null" >
+        JIANMIANSHOUFEIJUTIQINGKUANG,
+      </if>
+      <if test="zhenggaijine != null" >
+        ZHENGGAIJINE,
+      </if>
+      <if test="zhenggaijinejutiqingkuang != null" >
+        ZHENGGAIJINEJUTIQINGKUANG,
+      </if>
+      <if test="xuhao != null" >
+        XUHAO,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="instanceid != null" >
+        #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="masterid != null" >
+        #{masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="shoufeixiangmu != null" >
+        #{shoufeixiangmu,jdbcType=VARCHAR},
+      </if>
+      <if test="shoufeibiaozhu != null" >
+        #{shoufeibiaozhu,jdbcType=FLOAT},
+      </if>
+      <if test="sheliyiju != null" >
+        #{sheliyiju,jdbcType=VARCHAR},
+      </if>
+      <if test="heji != null" >
+        #{heji,jdbcType=FLOAT},
+      </if>
+      <if test="zichaqingliyijian != null" >
+        #{zichaqingliyijian,jdbcType=VARCHAR},
+      </if>
+      <if test="xingzhengshoufeizonge != null" >
+        #{xingzhengshoufeizonge,jdbcType=FLOAT},
+      </if>
+      <if test="shifoushanzigenggai != null" >
+        #{shifoushanzigenggai,jdbcType=VARCHAR},
+      </if>
+      <if test="shanzishejijine != null" >
+        #{shanzishejijine,jdbcType=FLOAT},
+      </if>
+      <if test="zixingjianmianshoufei != null" >
+        #{zixingjianmianshoufei,jdbcType=FLOAT},
+      </if>
+      <if test="jianmianshoufeijutiqingkuang != null" >
+        #{jianmianshoufeijutiqingkuang,jdbcType=VARCHAR},
+      </if>
+      <if test="zhenggaijine != null" >
+        #{zhenggaijine,jdbcType=DECIMAL},
+      </if>
+      <if test="zhenggaijinejutiqingkuang != null" >
+        #{zhenggaijinejutiqingkuang,jdbcType=VARCHAR},
+      </if>
+      <if test="xuhao != null" >
+        #{xuhao,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.StNjAdministratCostExample" resultType="java.lang.Integer" >
+    select count(*) from MJZZ.ST_NJ_ADMINISTRAT_COST
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update MJZZ.ST_NJ_ADMINISTRAT_COST
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=DECIMAL},
+      </if>
+      <if test="record.instanceid != null" >
+        INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organizationid != null" >
+        ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=DECIMAL},
+      </if>
+      <if test="record.masterid != null" >
+        MASTERID = #{record.masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.shoufeixiangmu != null" >
+        SHOUFEIXIANGMU = #{record.shoufeixiangmu,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shoufeibiaozhu != null" >
+        SHOUFEIBIAOZHU = #{record.shoufeibiaozhu,jdbcType=FLOAT},
+      </if>
+      <if test="record.sheliyiju != null" >
+        SHELIYIJU = #{record.sheliyiju,jdbcType=VARCHAR},
+      </if>
+      <if test="record.heji != null" >
+        HEJI = #{record.heji,jdbcType=FLOAT},
+      </if>
+      <if test="record.zichaqingliyijian != null" >
+        ZICHAQINGLIYIJIAN = #{record.zichaqingliyijian,jdbcType=VARCHAR},
+      </if>
+      <if test="record.xingzhengshoufeizonge != null" >
+        XINGZHENGSHOUFEIZONGE = #{record.xingzhengshoufeizonge,jdbcType=FLOAT},
+      </if>
+      <if test="record.shifoushanzigenggai != null" >
+        SHIFOUSHANZIGENGGAI = #{record.shifoushanzigenggai,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shanzishejijine != null" >
+        SHANZISHEJIJINE = #{record.shanzishejijine,jdbcType=FLOAT},
+      </if>
+      <if test="record.zixingjianmianshoufei != null" >
+        ZIXINGJIANMIANSHOUFEI = #{record.zixingjianmianshoufei,jdbcType=FLOAT},
+      </if>
+      <if test="record.jianmianshoufeijutiqingkuang != null" >
+        JIANMIANSHOUFEIJUTIQINGKUANG = #{record.jianmianshoufeijutiqingkuang,jdbcType=VARCHAR},
+      </if>
+      <if test="record.zhenggaijine != null" >
+        ZHENGGAIJINE = #{record.zhenggaijine,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhenggaijinejutiqingkuang != null" >
+        ZHENGGAIJINEJUTIQINGKUANG = #{record.zhenggaijinejutiqingkuang,jdbcType=VARCHAR},
+      </if>
+      <if test="record.xuhao != null" >
+        XUHAO = #{record.xuhao,jdbcType=DECIMAL},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update MJZZ.ST_NJ_ADMINISTRAT_COST
+    set ID = #{record.id,jdbcType=DECIMAL},
+      INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=DECIMAL},
+      MASTERID = #{record.masterid,jdbcType=DECIMAL},
+      SHOUFEIXIANGMU = #{record.shoufeixiangmu,jdbcType=VARCHAR},
+      SHOUFEIBIAOZHU = #{record.shoufeibiaozhu,jdbcType=FLOAT},
+      SHELIYIJU = #{record.sheliyiju,jdbcType=VARCHAR},
+      HEJI = #{record.heji,jdbcType=FLOAT},
+      ZICHAQINGLIYIJIAN = #{record.zichaqingliyijian,jdbcType=VARCHAR},
+      XINGZHENGSHOUFEIZONGE = #{record.xingzhengshoufeizonge,jdbcType=FLOAT},
+      SHIFOUSHANZIGENGGAI = #{record.shifoushanzigenggai,jdbcType=VARCHAR},
+      SHANZISHEJIJINE = #{record.shanzishejijine,jdbcType=FLOAT},
+      ZIXINGJIANMIANSHOUFEI = #{record.zixingjianmianshoufei,jdbcType=FLOAT},
+      JIANMIANSHOUFEIJUTIQINGKUANG = #{record.jianmianshoufeijutiqingkuang,jdbcType=VARCHAR},
+      ZHENGGAIJINE = #{record.zhenggaijine,jdbcType=DECIMAL},
+      ZHENGGAIJINEJUTIQINGKUANG = #{record.zhenggaijinejutiqingkuang,jdbcType=VARCHAR},
+      XUHAO = #{record.xuhao,jdbcType=DECIMAL}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.StNjAdministratCost" >
+    update MJZZ.ST_NJ_ADMINISTRAT_COST
+    <set >
+      <if test="instanceid != null" >
+        INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="masterid != null" >
+        MASTERID = #{masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="shoufeixiangmu != null" >
+        SHOUFEIXIANGMU = #{shoufeixiangmu,jdbcType=VARCHAR},
+      </if>
+      <if test="shoufeibiaozhu != null" >
+        SHOUFEIBIAOZHU = #{shoufeibiaozhu,jdbcType=FLOAT},
+      </if>
+      <if test="sheliyiju != null" >
+        SHELIYIJU = #{sheliyiju,jdbcType=VARCHAR},
+      </if>
+      <if test="heji != null" >
+        HEJI = #{heji,jdbcType=FLOAT},
+      </if>
+      <if test="zichaqingliyijian != null" >
+        ZICHAQINGLIYIJIAN = #{zichaqingliyijian,jdbcType=VARCHAR},
+      </if>
+      <if test="xingzhengshoufeizonge != null" >
+        XINGZHENGSHOUFEIZONGE = #{xingzhengshoufeizonge,jdbcType=FLOAT},
+      </if>
+      <if test="shifoushanzigenggai != null" >
+        SHIFOUSHANZIGENGGAI = #{shifoushanzigenggai,jdbcType=VARCHAR},
+      </if>
+      <if test="shanzishejijine != null" >
+        SHANZISHEJIJINE = #{shanzishejijine,jdbcType=FLOAT},
+      </if>
+      <if test="zixingjianmianshoufei != null" >
+        ZIXINGJIANMIANSHOUFEI = #{zixingjianmianshoufei,jdbcType=FLOAT},
+      </if>
+      <if test="jianmianshoufeijutiqingkuang != null" >
+        JIANMIANSHOUFEIJUTIQINGKUANG = #{jianmianshoufeijutiqingkuang,jdbcType=VARCHAR},
+      </if>
+      <if test="zhenggaijine != null" >
+        ZHENGGAIJINE = #{zhenggaijine,jdbcType=DECIMAL},
+      </if>
+      <if test="zhenggaijinejutiqingkuang != null" >
+        ZHENGGAIJINEJUTIQINGKUANG = #{zhenggaijinejutiqingkuang,jdbcType=VARCHAR},
+      </if>
+      <if test="xuhao != null" >
+        XUHAO = #{xuhao,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xgb.model.StNjAdministratCost" >
+    update MJZZ.ST_NJ_ADMINISTRAT_COST
+    set INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=DECIMAL},
+      MASTERID = #{masterid,jdbcType=DECIMAL},
+      SHOUFEIXIANGMU = #{shoufeixiangmu,jdbcType=VARCHAR},
+      SHOUFEIBIAOZHU = #{shoufeibiaozhu,jdbcType=FLOAT},
+      SHELIYIJU = #{sheliyiju,jdbcType=VARCHAR},
+      HEJI = #{heji,jdbcType=FLOAT},
+      ZICHAQINGLIYIJIAN = #{zichaqingliyijian,jdbcType=VARCHAR},
+      XINGZHENGSHOUFEIZONGE = #{xingzhengshoufeizonge,jdbcType=FLOAT},
+      SHIFOUSHANZIGENGGAI = #{shifoushanzigenggai,jdbcType=VARCHAR},
+      SHANZISHEJIJINE = #{shanzishejijine,jdbcType=FLOAT},
+      ZIXINGJIANMIANSHOUFEI = #{zixingjianmianshoufei,jdbcType=FLOAT},
+      JIANMIANSHOUFEIJUTIQINGKUANG = #{jianmianshoufeijutiqingkuang,jdbcType=VARCHAR},
+      ZHENGGAIJINE = #{zhenggaijine,jdbcType=DECIMAL},
+      ZHENGGAIJINEJUTIQINGKUANG = #{zhenggaijinejutiqingkuang,jdbcType=VARCHAR},
+      XUHAO = #{xuhao,jdbcType=DECIMAL}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>

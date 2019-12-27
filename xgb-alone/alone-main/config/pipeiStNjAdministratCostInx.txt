@@ -1,0 +1,80 @@
+#######################################################################################################################################
+
+
+        //ID
+        if(MyTools.isNotEmpty(stNjAdministratCostInx.getId())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjAdministratCostInx.getId());lists.add(jc);jc=null;}
+
+        //INSTANCEID
+        if(MyTools.isNotEmpty(stNjAdministratCostInx.getInstanceid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjAdministratCostInx.getInstanceid());lists.add(jc);jc=null;}
+
+        //ORGANIZATIONID
+        if(MyTools.isNotEmpty(stNjAdministratCostInx.getOrganizationid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjAdministratCostInx.getOrganizationid());lists.add(jc);jc=null;}
+
+        //STATUS
+        if(MyTools.isNotEmpty(stNjAdministratCostInx.getStatus())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjAdministratCostInx.getStatus());lists.add(jc);jc=null;}
+
+        //MASTERID
+        if(MyTools.isNotEmpty(stNjAdministratCostInx.getMasterid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjAdministratCostInx.getMasterid());lists.add(jc);jc=null;}
+
+        //2016年度行政事业性收费总额（万元）
+        if(MyTools.isNotEmpty(stNjAdministratCostInx.getXingzhengshoufeizonge())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("fjitKCmH");
+            jc.setAttrValue(stNjAdministratCostInx.getXingzhengshoufeizonge());lists.add(jc);jc=null;}
+
+        //2016年度是否存在利用政府名义或政府委托事项为由擅自设立收费项目、提高收费标准
+        if(MyTools.isNotEmpty(stNjAdministratCostInx.getShifoushanzigenggai())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("YKWHVuym");
+            jc.setAttrValue(stNjAdministratCostInx.getShifoushanzigenggai());lists.add(jc);jc=null;}
+
+        //擅自涉及金额（万元）
+        if(MyTools.isNotEmpty(stNjAdministratCostInx.getShanzishejijine())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("YKmmVuym");
+            jc.setAttrValue(stNjAdministratCostInx.getShanzishejijine());lists.add(jc);jc=null;}
+
+        //2016年度自行调减收费，减轻企业负担，涉及金额（万元）
+        if(MyTools.isNotEmpty(stNjAdministratCostInx.getZixingjianmianshoufei())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("OPxQUuuU");
+            jc.setAttrValue(stNjAdministratCostInx.getZixingjianmianshoufei());lists.add(jc);jc=null;}
+
+        //2016年度自行调减收费，减轻企业负担，涉及金额（万元）具体情况
+        if(MyTools.isNotEmpty(stNjAdministratCostInx.getJianmianshoufeijutiqingkuang())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("aqLvimok");
+            jc.setAttrValue(stNjAdministratCostInx.getJianmianshoufeijutiqingkuang());lists.add(jc);jc=null;}
+
+        //2016年度违规行为整改，涉及金额（万元）
+        if(MyTools.isNotEmpty(stNjAdministratCostInx.getZhenggaijine())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("tHThfxnw");
+            jc.setAttrValue(stNjAdministratCostInx.getZhenggaijine());lists.add(jc);jc=null;}
+
+        //2016年度违规行为整改，涉及金额（万元）具体情况
+        if(MyTools.isNotEmpty(stNjAdministratCostInx.getZhenggaijinejutiqingkuang())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("AhwcqIoe");
+            jc.setAttrValue(stNjAdministratCostInx.getZhenggaijinejutiqingkuang());lists.add(jc);jc=null;}
+
+        //null
+        if(MyTools.isNotEmpty(stNjAdministratCostInx.getWuciqingkuang())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjAdministratCostInx.getWuciqingkuang());lists.add(jc);jc=null;}

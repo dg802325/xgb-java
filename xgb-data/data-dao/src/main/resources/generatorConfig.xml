@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!--导入属性配置-->
+    <properties resource="jdbc.properties"></properties>
+
+
+    <context id="default" targetRuntime="MyBatis3">
+
+
+        <!-- optional，旨在创建class时，对注释进行控制 -->
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <!--jdbc的数据库连接 -->
+        <jdbcConnection
+                driverClass="${driver}"
+                connectionURL="${url}"
+                userId="${username}"
+                password="${password}">
+        </jdbcConnection>
+
+
+        <!-- 非必需，类型处理器，在数据库类型和java类型之间的转换控制 -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+
+        <!-- Model模型生成器,用来生成含有主键key的类，记录类 以及查询Example类
+            targetPackage     指定生成的model生成所在的包名
+            targetProject     指定在该项目下所在的路径
+        -->
+        <!--<javaModelGenerator targetPackage="com.mmall.pojo" targetProject=".\src\main\java">-->
+        <javaModelGenerator targetPackage="com.xgb.model" targetProject="../data-model/src/main/java">
+            <!-- 是否允许子包，即targetPackage.schemaName.tableName -->
+            <property name="enableSubPackages" value="false"/>
+            <!-- 是否对model添加 构造函数 -->
+            <property name="constructorBased" value="true"/>
+            <!-- 是否对类CHAR类型的列的数据进行trim操作 -->
+            <property name="trimStrings" value="true"/>
+            <!-- 建立的Model对象是否 不可改变  即生成的Model对象不会有 setter方法，只有构造方法 -->
+            <property name="immutable" value="false"/>
+        </javaModelGenerator>
+
+        <!--mapper映射文件生成所在的目录 为每一个数据库的表生成对应的SqlMap文件 -->
+        <!--<sqlMapGenerator targetPackage="mappers" targetProject=".\src\main\resources">-->
+        <sqlMapGenerator targetPackage="com.xgb.dao" targetProject="./src/main/java">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+
+        <!-- 客户端代码，生成易于使用的针对Model对象和XML配置文件 的代码
+                type="ANNOTATEDMAPPER",生成Java Model 和基于注解的Mapper对象
+                type="MIXEDMAPPER",生成基于注解的Java Model 和相应的Mapper对象
+                type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口
+        -->
+
+        <!-- targetPackage：mapper接口dao生成的位置 -->
+        <!--<javaClientGenerator type="XMLMAPPER" targetPackage="com.mmall.dao" targetProject=".\src\main\java">-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.xgb.dao" targetProject="./src/main/java">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
+
+<!--        <table tableName="MJZZ_DICTIONARY" ></table>-->
+<!--        <table tableName="SJZD_NODE" ></table>-->
+<!--        <table tableName="LS_CYBA_ZB" ></table>-->
+<!--        <table tableName="ST_NJ_QGOTHERCASE19_SUB" ></table>-->
+<!--        <table tableName="ST_NIJIAN_REPORT13" ></table>-->
+<!--        <table tableName="MF_NIANJIAN_JBXX" ></table>-->
+<!--        <table tableName="ST_NJ_HFGX_TB" ></table>-->
+<!--        <table tableName="ST_NJ_GYHDTJ" ></table>-->
+<!--        <table tableName="ST_NJ_REPORT15" ></table>-->
+<!--        <table tableName="ST_NJ_INNER4" ></table>-->
+<!--        <table tableName="ST_DJQK_4" ></table>-->
+<!--        <table tableName="ST_NJ_REPORT11"></table>-->
+<!--        <table tableName="ST_NJ_REPORT11_SUB1"></table>-->
+<!--        <table tableName="ST_NJ_JIESHOUJIANDU"></table>-->
+<!--        <table tableName="JJH_NJ_REPORT6"></table>-->
+<!--        <table tableName="JJHNJ_REPORT4"></table>-->
+<!--        <table tableName="ST_NJ_REPORT16"></table>-->
+<!--        <table tableName="ST_NJ_REPORT16_SUB1"></table>-->
+<!--        <table tableName="ST_NJ_GJHY"></table>-->
+<!--        <table tableName="ST_NJ_REPORT16_SUB2"></table>-->
+<!--        <table tableName="ST_NJ_REPORT17_SUB1"></table>-->
+<!--        <table tableName="ST_NJ_CGFW"></table>-->
+<!--        <table tableName="ST_NJ_REPORT17_SUB2"></table>-->
+<!--        <table tableName="ST_NJ_REPROT14"></table>-->
+<!--        <table tableName="ST_NJ_REPORT14_SUB"></table>-->
+<!--        <table tableName="ST_NJ_JBGYHD"></table>-->
+<!--        <table tableName="ST_NJ_JBGYHD_SUB"></table>-->
+<!--        <table tableName="ST_NJ_APPRAISE_COST"></table>-->
+<!--        <table tableName="ST_NJ_APPRAISE_COST_INX"></table>-->
+<!--        <table tableName="ST_NJ_REPROT140"></table>-->
+<!--        <table tableName="ST_NJ_REPROT140_SUB"></table>-->
+<!--        <table tableName="ST_NJ_GYHDZC"></table>-->
+<!--        <table tableName="ST_NJ_GYHDZC_SUB"></table>-->
+<!--        <table tableName="ST_NJ_REPROT13"></table>-->
+<!--        <table tableName="ST_NJ_REPORT13_SUB"></table>-->
+<!--        <table tableName="ST_NJ_ADMINISTRAT_COST"></table>-->
+<!--        <table tableName="ST_NJ_ADMINISTRAT_COST_INX"></table>-->
+<!--        <table tableName="STNJ_SFQK_JYFW"></table>-->
+<!--        <table tableName="STNJ_SFQK_JYFW_SUB"></table>-->
+<!--        <table tableName="NJ_GWYJZ_TB"></table>-->
+<!--        <table tableName="NJ_GWYJZ_SUB"></table>-->
+<!--        <table tableName="MF_GWY_JZ_TB"></table>-->
+<!--        <table tableName="MF_GWYJZ_ZB"></table>-->
+<!--        <table tableName="ST_NJ_QGADVISE"></table>-->
+<!--        <table tableName="STNJ_YWHD_TB"></table>-->
+<!--        <table tableName="STNJ_YWHD_SUB"></table>-->
+<!--        <table tableName="ST_NJ_SERVICE_COST_INX"></table>-->
+<!--        <table tableName="ST_NJ_SERVICE_COST"></table>-->
+<!--        <table tableName="JJHNJ_GYHDMX"></table>-->
+<!--        <table tableName="JJHNJ_GYHDMX_SUB"></table>-->
+    </context>
+</generatorConfiguration>

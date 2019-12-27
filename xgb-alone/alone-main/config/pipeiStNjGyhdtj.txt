@@ -1,0 +1,148 @@
+#######################################################################################################################################
+
+
+        //ID
+        if(MyTools.isNotEmpty(stNjGyhdtj.getId())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjGyhdtj.getId());lists.add(jc);jc=null;}
+
+        //INSTANCEID
+        if(MyTools.isNotEmpty(stNjGyhdtj.getInstanceid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjGyhdtj.getInstanceid());lists.add(jc);jc=null;}
+
+        //ORGANIZATIONID
+        if(MyTools.isNotEmpty(stNjGyhdtj.getOrganizationid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjGyhdtj.getOrganizationid());lists.add(jc);jc=null;}
+
+        //STATUS
+        if(MyTools.isNotEmpty(stNjGyhdtj.getStatus())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjGyhdtj.getStatus());lists.add(jc);jc=null;}
+
+        //2012总收入
+        if(MyTools.isNotEmpty(stNjGyhdtj.getZongshouru1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("JxYOxSAW");
+            jc.setAttrValue(stNjGyhdtj.getZongshouru1());lists.add(jc);jc=null;}
+
+        //2012总支出
+        if(MyTools.isNotEmpty(stNjGyhdtj.getZongzhichu1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("FLUPuJkN");
+            jc.setAttrValue(stNjGyhdtj.getZongzhichu1());lists.add(jc);jc=null;}
+
+        //2012公益活动支出
+        if(MyTools.isNotEmpty(stNjGyhdtj.getZhichu1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("本年度总支出3");
+            jc.setAttrValue(stNjGyhdtj.getZhichu1());lists.add(jc);jc=null;}
+
+        //2012公益活动支出占上年度总收入的比例
+        if(MyTools.isNotEmpty(stNjGyhdtj.getShangnianduzhanbi1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("WepPsyZm");
+            jc.setAttrValue(stNjGyhdtj.getShangnianduzhanbi1());lists.add(jc);jc=null;}
+
+        //2012公益活动支出占本年度总收入的比例
+        if(MyTools.isNotEmpty(stNjGyhdtj.getBennianduzhanbi1())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("jPMnwOca");
+            jc.setAttrValue(stNjGyhdtj.getBennianduzhanbi1());lists.add(jc);jc=null;}
+
+        //2013总收入
+        if(MyTools.isNotEmpty(stNjGyhdtj.getZongshouru2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("XhurCGkr");
+            jc.setAttrValue(stNjGyhdtj.getZongshouru2());lists.add(jc);jc=null;}
+
+        //2013总支出
+        if(MyTools.isNotEmpty(stNjGyhdtj.getZongzhichu2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("kqYRecLo");
+            jc.setAttrValue(stNjGyhdtj.getZongzhichu2());lists.add(jc);jc=null;}
+
+        //2013公益活动支出
+        if(MyTools.isNotEmpty(stNjGyhdtj.getZhichu2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("bHNBwujD");
+            jc.setAttrValue(stNjGyhdtj.getZhichu2());lists.add(jc);jc=null;}
+
+        //2013公益活动支出占上年度总收入的比例
+        if(MyTools.isNotEmpty(stNjGyhdtj.getShangnianduzhanbi2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjGyhdtj.getShangnianduzhanbi2());lists.add(jc);jc=null;}
+
+        //2013公益活动支出占本年度总收入的比例
+        if(MyTools.isNotEmpty(stNjGyhdtj.getBennianduzhanbi2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("RoPYcNcS");
+            jc.setAttrValue(stNjGyhdtj.getBennianduzhanbi2());lists.add(jc);jc=null;}
+
+        //2014总收入
+        if(MyTools.isNotEmpty(stNjGyhdtj.getZongshouru3())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("vjfPqnFr");
+            jc.setAttrValue(stNjGyhdtj.getZongshouru3());lists.add(jc);jc=null;}
+
+        //2014总支出
+        if(MyTools.isNotEmpty(stNjGyhdtj.getZongzhichu3())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("nykphTaf");
+            jc.setAttrValue(stNjGyhdtj.getZongzhichu3());lists.add(jc);jc=null;}
+
+        //2014公益活动支出
+        if(MyTools.isNotEmpty(stNjGyhdtj.getZhichu3())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("JpCdqyuC");
+            jc.setAttrValue(stNjGyhdtj.getZhichu3());lists.add(jc);jc=null;}
+
+        //2014公益活动支出占上年度总收入的比例
+        if(MyTools.isNotEmpty(stNjGyhdtj.getShangnianduzhanbi3())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjGyhdtj.getShangnianduzhanbi3());lists.add(jc);jc=null;}
+
+        //2014公益活动支出占本年度总收入的比例
+        if(MyTools.isNotEmpty(stNjGyhdtj.getBennianduzhanbi3())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("alBnqxlH");
+            jc.setAttrValue(stNjGyhdtj.getBennianduzhanbi3());lists.add(jc);jc=null;}
+
+        //2015总收入
+        if(MyTools.isNotEmpty(stNjGyhdtj.getZongshouru4())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjGyhdtj.getZongshouru4());lists.add(jc);jc=null;}
+
+        //2015总支出
+        if(MyTools.isNotEmpty(stNjGyhdtj.getZongzhichu4())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjGyhdtj.getZongzhichu4());lists.add(jc);jc=null;}
+
+        //2015公益活动支出
+        if(MyTools.isNotEmpty(stNjGyhdtj.getZhichu4())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjGyhdtj.getZhichu4());lists.add(jc);jc=null;}
+
+        //2015公益活动支出占上年度总收入的比例
+        if(MyTools.isNotEmpty(stNjGyhdtj.getShangnianduzhanbi4())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjGyhdtj.getShangnianduzhanbi4());lists.add(jc);jc=null;}
+
+        //2015公益活动支出占本年度总收入的比例
+        if(MyTools.isNotEmpty(stNjGyhdtj.getBennianduzhanbi4())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjGyhdtj.getBennianduzhanbi4());lists.add(jc);jc=null;}
+
+

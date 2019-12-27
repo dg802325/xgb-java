@@ -1,0 +1,150 @@
+
+select
+       ''''||f.orgidentity 登记证号,
+       f.orgname 组织名称,
+       (select region.name
+          from mjzz.mjzz_dictionary region
+         where region.typename = 'REGION'
+           and f.region = region.deptid and region.status=1) 登记管理机关,
+      
+  (select S17.Name
+          from mjzz.mjzz_dictionary S17
+         where S17.Typename = 'ZGDW'
+           and S17.id = f.managerorgid) 业务主管单位,
+ t.MOJUANFEIXIAN 上年非限定性捐赠收入,
+t.MOJUANXIAN 上年限定性捐赠收入,
+t.MOJUANHEJI 上年捐赠收入合计,
+t.LEIJIJUANFEIXIAN 本年非限定性捐赠收入,
+t.LEIJIJUANXIAN 本年限定性捐赠收入,
+t.LEIJIJUANHEJI 本年捐赠收入合计,
+
+t.MOHUIFEIXIAN 上年非限定性会费收入,
+t.MOHUIXIAN 上年限定性会费收入,
+t.MOHUIHEJI 上年会费收入合计,
+t.LEIJIHUIFEIXIAN 本年非限定性会费收入,
+t.LEIJIHUIXIAN 本年限定性会费收入,
+t.LEIJIHUIHEJI 本年会费收入合计,
+
+t.MOFUWUFEIXIAN 上年非限定性提供服务收入,
+t.MOFUWUXIAN 上年限定性提供服务收入,
+t.MOFUWUHEJI 上年提供服务收入合计,
+t.LEIJIFUWUFEIXIAN 本年非限定性提供服务收入,
+t.LEIJIFUWUXIAN 本年限定性提供服务收入,
+t.LEIJIFUWUHEJI 本年提供服务收入合计,
+
+t.MOXIAOSHOUFEIXIAN 上年非限定性商品销售收入,
+t.MOXIAOSHOUXIAN 上年限定性商品销售收入,
+t.MOXIAOSHOUHEJI 上年商品销售收入合计,
+t.LEIJIXIAOSHOUFEIXIAN 本年非限定性商品销售收入,
+t.LEIJIXIAOSHOUXIAN 本年限定性商品销售收入,
+t.LEIJIXIAOSHOUHEJI 本年商品销售收入合计,
+
+t.MOBUZHUFEIXIAN 上年非限定性政府补助收入,
+t.MOBUZHUXIAN 上年限定性政府补助收入,
+t.MOBUZHUHEJI 上年政府补助收入合计,
+t.LEIJIBUZHUFEIXIAN 本年非限定性政府补助收入,
+t.LEIJIBUZHUXIAN 本年限定性政府补助收入,
+t.LEIJIBUZHUHEJI 本年政府补助收入合计,
+
+t.MOTOUZIFEIXIAN 上年非限定性投资收益,
+t.MOTOUZIXIAN 上年限定性投资收益,
+t.MOTOUZIHEJI 上年投资收益合计,
+t.LEIJITOUZIFEIXIAN 本年非限定性投资收益,
+t.LEIJITOUZIXIAN 本年限定性投资收益,
+t.LEIJITOUZIHEJI 本年投资收益合计,
+
+t.MOQITAFEIXIAN 上年非限定性其他收入,
+t.MOQITAXIAN 上年限定性其他收入,
+t.MOQITAHEJI 上年其他收入合计,
+t.LEIJIQITAFEIXIAN 本年非限定性其他收入,
+t.LEIJIQITAXIAN 本年限定性其他收入,
+t.LEIJIQITAHEJI 本年其他收入合计,
+
+t.MOHEJIFEIXIAN 上年非限定性收入合计,
+t.MOHEJIXIAN 上年限定性收入合计,
+t.MOHEJIHEJI 上年收入合计合计,
+t.LEIJIHEJIFEIXIAN 本年非限定性收入合计,
+t.LEIJIHEJIXIAN 本年限定性收入合计,
+t.LEIJIHEJIHEJI 本年收入合计合计,
+
+t.MOCHENGBENFEIXIAN 上年非限定性业务活动成本,
+t.MOCHENGBENXIAN 上年限定性业务活动成本,
+t.MOCHENGBENHEJI 上年业务活动成本合计,
+t.LEIJICHENGBENFEIXIAN 本年非限定性业务活动成本,
+t.LEIJICHENGBENXIAN 本年限定性业务活动成本,
+t.LEIJICHENGBENHEJI 本年业务活动成本合计,
+
+t.MOQIZHONGFEIXIAN1 上年非限定性人员费用,
+t.MOQIZHONGXIAN1 上年限定性人员费用,
+t.MOQIZHONGHEJI1 上年人员费用合计,
+t.LEIJIQIZHONGFEIXIAN1 本年非限定性人员费用,
+t.LEIJIQIZHONGXIAN1 本年限定性人员费用,
+t.LEIJIQIZHONGHEJI1 本年人员费用合计,
+
+t.MOQIZHONGFEIXIAN2 上年非限定性日常费用,
+t.MOQIZHONGXIAN2 上年限定性日常费用,
+t.MOQIZHONGHEJI2 上年日常费用合计,
+t.LEIJIQIZHONGFEIXIAN2 本年非限定性日常费用,
+t.LEIJIQIZHONGXIAN2 本年限定性日常费用,
+t.LEIJIQIZHONGHEJI2 本年日常费用合计,
+
+t.MOQIZHONGFEIXIAN3 上年非限定性固定资产折旧,
+t.MOQIZHONGXIAN3 上年限定性固定资产折旧,
+t.MOQIZHONGHEJI3 上年固定资产折旧合计,
+t.LEIJIQIZHONGFEIXIAN3 本年非限定性固定资产折旧,
+t.LEIJIQIZHONGXIAN3 本年限定性固定资产折旧,
+t.LEIJIQIZHONGHEJI3 本年固定资产折旧合计,
+
+t.MOQIZHONGFEIXIAN4 上年非限定性税费,
+t.MOQIZHONGXIAN4 上年限定性税费,
+t.MOQIZHONGHEJI4 上年税费合计,
+t.LEIJIQIZHONGFEIXIAN4 本年非限定性税费,
+t.LEIJIQIZHONGXIAN4 本年限定性税费,
+t.LEIJIQIZHONGHEJI4 本年税费合计,
+
+t.MOGUANLIFEIXIAN 上年非限定性管理费用,
+t.MOGUANLIXIAN 上年限定性管理费用,
+t.MOGUANLIHEJI 上年管理费用合计,
+t.LEIJIGUANLIFEIXIAN 本年非限定性管理费用,
+t.LEIJIGUANLIXIAN 本年限定性管理费用,
+t.LEIJIGUANLIHEJI 本年管理费用合计,
+
+t.MOCHOUZIFEIXIAN 上年非限定性筹资费用,
+t.MOCHOUZIXIAN 上年限定性筹资费用,
+t.MOCHOUZIHEJI 上年筹资费用合计,
+t.LEIJICHOUZIFEIXIAN 本年非限定性筹资费用,
+t.LEIJICHOUZIXIAN 本年限定性筹资费用,
+t.LEIJICHOUZIHEJI 本年筹资费用合计,
+
+t.MOQITAFEIYONGFEI 上年非限定性其他费用,
+t.MOQITAFEIYONGXIAN 上年限定性其他费用,
+t.MOQITAFEIYONGHEJI 上年其他费用合计,
+t.LEIJIQITAFEIYONGFEIXIAN 本年非限定性其他费用,
+t.LEIJIQITAFEIYONGXIAN 本年限定性其他费用,
+t.LEIJIQITAFEIYONGHEJI 本年其他费用合计,
+
+t.MOFEIYONGHEJIFEI 上年非限定性费用合计,
+t.MOFEIYONGHEJIXIAN 上年限定性费用合计,
+t.MOFEIYONGHEJIHEJI 上年费用合计合计,
+t.LEIJIFEIYONGHEJIFEI 本年非限定性费用合计,
+t.LEIJIFEIYONGHEJIXIAN 本年限定性费用合计,
+t.LEIJIFEIYONGHEJIHEJI 本年费用合计合计,
+
+t.MOZHUANFEIXIAN 净资产上年累计数非限定性,
+t.MOZHUANXIAN 净资产上年累计数限定性,
+t.MOZHUANHEJI 净资产上年累计数合计,
+t.LEIJIZHUANFEIXIAN 净资产本年累计数非限定性,
+t.LEIJIZHUANXIAN 净资产本年累计数限定性,
+t.LEIJIZHUANHEJI 净资产本年累计数合计,
+
+t.MOBIANDONGFEIXIAN 净资产变动额上年累计数非限定性,
+t.MOBIANDONGXIAN 净资产变动额上年累计数限定性,
+t.MOBIANDONGHEJI 净资产变动额上年累计数合计,
+t.LEIJIBIANDONGFEIXIAN 净资产变动额本年累计数非限定性,
+t.LEIJIBIANDONGXIAN 净资产变动额本年累计数限定性,
+t.LEIJIBIANDONGHEJI 净资产变动额本年累计数合计
+from JJHNJ_REPORT4  t, mjzz.form_consultation_case f
+ where f.instanceid=t.instanceid
+   and f.property_e = '2018'
+   and f.catalog in ('N06', 'N03')
+ order by f.region,f.instanceid

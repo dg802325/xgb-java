@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.LsCybaZbMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.LsCybaZb" >
+    <constructor >
+      <idArg column="ID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="INSTANCEID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORGANIZATIONID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATUS" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="MASTERID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="XUHAO" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="XINGMING" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUSHENGNIANYUE" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="NEIZHIWU" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="LISHI" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="JIZHIWU" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="QIANZI" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, INSTANCEID, ORGANIZATIONID, STATUS, MASTERID, XUHAO, XINGMING, CHUSHENGNIANYUE, 
+    NEIZHIWU, LISHI, JIZHIWU, QIANZI
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.LsCybaZbExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from MJZZ.LS_CYBA_ZB
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from MJZZ.LS_CYBA_ZB
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from MJZZ.LS_CYBA_ZB
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xgb.model.LsCybaZbExample" >
+    delete from MJZZ.LS_CYBA_ZB
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.LsCybaZb" >
+    insert into MJZZ.LS_CYBA_ZB (ID, INSTANCEID, ORGANIZATIONID, 
+      STATUS, MASTERID, XUHAO, 
+      XINGMING, CHUSHENGNIANYUE, NEIZHIWU, 
+      LISHI, JIZHIWU, QIANZI
+      )
+    values (#{id,jdbcType=DECIMAL}, #{instanceid,jdbcType=VARCHAR}, #{organizationid,jdbcType=VARCHAR}, 
+      #{status,jdbcType=DECIMAL}, #{masterid,jdbcType=DECIMAL}, #{xuhao,jdbcType=VARCHAR}, 
+      #{xingming,jdbcType=VARCHAR}, #{chushengnianyue,jdbcType=TIMESTAMP}, #{neizhiwu,jdbcType=VARCHAR}, 
+      #{lishi,jdbcType=VARCHAR}, #{jizhiwu,jdbcType=VARCHAR}, #{qianzi,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.LsCybaZb" >
+    insert into MJZZ.LS_CYBA_ZB
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="instanceid != null" >
+        INSTANCEID,
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="masterid != null" >
+        MASTERID,
+      </if>
+      <if test="xuhao != null" >
+        XUHAO,
+      </if>
+      <if test="xingming != null" >
+        XINGMING,
+      </if>
+      <if test="chushengnianyue != null" >
+        CHUSHENGNIANYUE,
+      </if>
+      <if test="neizhiwu != null" >
+        NEIZHIWU,
+      </if>
+      <if test="lishi != null" >
+        LISHI,
+      </if>
+      <if test="jizhiwu != null" >
+        JIZHIWU,
+      </if>
+      <if test="qianzi != null" >
+        QIANZI,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="instanceid != null" >
+        #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="masterid != null" >
+        #{masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="xuhao != null" >
+        #{xuhao,jdbcType=VARCHAR},
+      </if>
+      <if test="xingming != null" >
+        #{xingming,jdbcType=VARCHAR},
+      </if>
+      <if test="chushengnianyue != null" >
+        #{chushengnianyue,jdbcType=TIMESTAMP},
+      </if>
+      <if test="neizhiwu != null" >
+        #{neizhiwu,jdbcType=VARCHAR},
+      </if>
+      <if test="lishi != null" >
+        #{lishi,jdbcType=VARCHAR},
+      </if>
+      <if test="jizhiwu != null" >
+        #{jizhiwu,jdbcType=VARCHAR},
+      </if>
+      <if test="qianzi != null" >
+        #{qianzi,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.LsCybaZbExample" resultType="java.lang.Integer" >
+    select count(*) from MJZZ.LS_CYBA_ZB
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update MJZZ.LS_CYBA_ZB
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=DECIMAL},
+      </if>
+      <if test="record.instanceid != null" >
+        INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organizationid != null" >
+        ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=DECIMAL},
+      </if>
+      <if test="record.masterid != null" >
+        MASTERID = #{record.masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xuhao != null" >
+        XUHAO = #{record.xuhao,jdbcType=VARCHAR},
+      </if>
+      <if test="record.xingming != null" >
+        XINGMING = #{record.xingming,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chushengnianyue != null" >
+        CHUSHENGNIANYUE = #{record.chushengnianyue,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.neizhiwu != null" >
+        NEIZHIWU = #{record.neizhiwu,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lishi != null" >
+        LISHI = #{record.lishi,jdbcType=VARCHAR},
+      </if>
+      <if test="record.jizhiwu != null" >
+        JIZHIWU = #{record.jizhiwu,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qianzi != null" >
+        QIANZI = #{record.qianzi,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update MJZZ.LS_CYBA_ZB
+    set ID = #{record.id,jdbcType=DECIMAL},
+      INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=DECIMAL},
+      MASTERID = #{record.masterid,jdbcType=DECIMAL},
+      XUHAO = #{record.xuhao,jdbcType=VARCHAR},
+      XINGMING = #{record.xingming,jdbcType=VARCHAR},
+      CHUSHENGNIANYUE = #{record.chushengnianyue,jdbcType=TIMESTAMP},
+      NEIZHIWU = #{record.neizhiwu,jdbcType=VARCHAR},
+      LISHI = #{record.lishi,jdbcType=VARCHAR},
+      JIZHIWU = #{record.jizhiwu,jdbcType=VARCHAR},
+      QIANZI = #{record.qianzi,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.LsCybaZb" >
+    update MJZZ.LS_CYBA_ZB
+    <set >
+      <if test="instanceid != null" >
+        INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="masterid != null" >
+        MASTERID = #{masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="xuhao != null" >
+        XUHAO = #{xuhao,jdbcType=VARCHAR},
+      </if>
+      <if test="xingming != null" >
+        XINGMING = #{xingming,jdbcType=VARCHAR},
+      </if>
+      <if test="chushengnianyue != null" >
+        CHUSHENGNIANYUE = #{chushengnianyue,jdbcType=TIMESTAMP},
+      </if>
+      <if test="neizhiwu != null" >
+        NEIZHIWU = #{neizhiwu,jdbcType=VARCHAR},
+      </if>
+      <if test="lishi != null" >
+        LISHI = #{lishi,jdbcType=VARCHAR},
+      </if>
+      <if test="jizhiwu != null" >
+        JIZHIWU = #{jizhiwu,jdbcType=VARCHAR},
+      </if>
+      <if test="qianzi != null" >
+        QIANZI = #{qianzi,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xgb.model.LsCybaZb" >
+    update MJZZ.LS_CYBA_ZB
+    set INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=DECIMAL},
+      MASTERID = #{masterid,jdbcType=DECIMAL},
+      XUHAO = #{xuhao,jdbcType=VARCHAR},
+      XINGMING = #{xingming,jdbcType=VARCHAR},
+      CHUSHENGNIANYUE = #{chushengnianyue,jdbcType=TIMESTAMP},
+      NEIZHIWU = #{neizhiwu,jdbcType=VARCHAR},
+      LISHI = #{lishi,jdbcType=VARCHAR},
+      JIZHIWU = #{jizhiwu,jdbcType=VARCHAR},
+      QIANZI = #{qianzi,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>

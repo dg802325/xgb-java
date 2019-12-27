@@ -1,0 +1,112 @@
+#######################################################################################################################################
+
+
+        //ID
+        if(MyTools.isNotEmpty(stNjAppraiseCost.getId())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjAppraiseCost.getId());lists.add(jc);jc=null;}
+
+        //INSTANCEID
+        if(MyTools.isNotEmpty(stNjAppraiseCost.getInstanceid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjAppraiseCost.getInstanceid());lists.add(jc);jc=null;}
+
+        //ORGANIZATIONID
+        if(MyTools.isNotEmpty(stNjAppraiseCost.getOrganizationid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjAppraiseCost.getOrganizationid());lists.add(jc);jc=null;}
+
+        //STATUS
+        if(MyTools.isNotEmpty(stNjAppraiseCost.getStatus())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjAppraiseCost.getStatus());lists.add(jc);jc=null;}
+
+        //MASTERID
+        if(MyTools.isNotEmpty(stNjAppraiseCost.getMasterid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjAppraiseCost.getMasterid());lists.add(jc);jc=null;}
+
+        //序号
+        if(MyTools.isNotEmpty(stNjAppraiseCost.getXuhao())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjAppraiseCost.getXuhao());lists.add(jc);jc=null;}
+
+        //评比达标表彰项目
+        if(MyTools.isNotEmpty(stNjAppraiseCost.getBiaozhangxiangmu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjAppraiseCost.getBiaozhangxiangmu());lists.add(jc);jc=null;}
+
+        //收费标准（元）
+        if(MyTools.isNotEmpty(stNjAppraiseCost.getShoufeibiaozhu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjAppraiseCost.getShoufeibiaozhu());lists.add(jc);jc=null;}
+
+        //设立依据
+        if(MyTools.isNotEmpty(stNjAppraiseCost.getSheliyiju())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjAppraiseCost.getSheliyiju());lists.add(jc);jc=null;}
+
+        //自查清理意见
+        if(MyTools.isNotEmpty(stNjAppraiseCost.getZichaqingliyijian())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjAppraiseCost.getZichaqingliyijian());lists.add(jc);jc=null;}
+
+        //2016年度评比达标表彰收费总额（万元）
+        if(MyTools.isNotEmpty(stNjAppraiseCost.getBiaozhangshoufeizonge())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("hPXnjNBW");
+            jc.setAttrValue(stNjAppraiseCost.getBiaozhangshoufeizonge());lists.add(jc);jc=null;}
+
+        //2016年度是否存在强制会员参加评比达标表彰活动
+        if(MyTools.isNotEmpty(stNjAppraiseCost.getShifouqiangzhidabiao())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("yBmWtlQK");
+            jc.setAttrValue(stNjAppraiseCost.getShifouqiangzhidabiao());lists.add(jc);jc=null;}
+
+        //强制涉及金额（万元）
+        if(MyTools.isNotEmpty(stNjAppraiseCost.getQiangzhishejijine())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("yllllllQK");
+            jc.setAttrValue(stNjAppraiseCost.getQiangzhishejijine());lists.add(jc);jc=null;}
+
+        //2016年度自行减免会费（万元）
+        if(MyTools.isNotEmpty(stNjAppraiseCost.getZixingjianmianhuifei())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("ZbslcsCj");
+            jc.setAttrValue(stNjAppraiseCost.getZixingjianmianhuifei());lists.add(jc);jc=null;}
+
+        //2016年度自行减免会费（万元）具体情况
+        if(MyTools.isNotEmpty(stNjAppraiseCost.getJianmianhuifeijutiqingkuang())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("BfqXYbIt");
+            jc.setAttrValue(stNjAppraiseCost.getJianmianhuifeijutiqingkuang());lists.add(jc);jc=null;}
+
+        //2016年度违规行为整改，涉及金额（万元）
+        if(MyTools.isNotEmpty(stNjAppraiseCost.getZhenggaijine())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("FkmntEwW");
+            jc.setAttrValue(stNjAppraiseCost.getZhenggaijine());lists.add(jc);jc=null;}
+
+        //2016年度违规行为整改，涉及金额（万元）具体情况
+        if(MyTools.isNotEmpty(stNjAppraiseCost.getZhenggaijinejutiqingkuang())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("VlrfbWsk");
+            jc.setAttrValue(stNjAppraiseCost.getZhenggaijinejutiqingkuang());lists.add(jc);jc=null;}
+
+        //合计（万元）
+        if(MyTools.isNotEmpty(stNjAppraiseCost.getHeji())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(stNjAppraiseCost.getHeji());lists.add(jc);jc=null;}
+
+

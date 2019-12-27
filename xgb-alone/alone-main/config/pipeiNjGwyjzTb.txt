@@ -1,0 +1,46 @@
+#######################################################################################################################################
+
+
+        //ID
+        if(MyTools.isNotEmpty(njGwyjzTb.getId())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(njGwyjzTb.getId());lists.add(jc);jc=null;}
+
+        //INSTANCEID
+        if(MyTools.isNotEmpty(njGwyjzTb.getInstanceid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(njGwyjzTb.getInstanceid());lists.add(jc);jc=null;}
+
+        //ORGANIZATIONID
+        if(MyTools.isNotEmpty(njGwyjzTb.getOrganizationid())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(njGwyjzTb.getOrganizationid());lists.add(jc);jc=null;}
+
+        //STATUS
+        if(MyTools.isNotEmpty(njGwyjzTb.getStatus())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(njGwyjzTb.getStatus());lists.add(jc);jc=null;}
+
+        //单位名称
+        if(MyTools.isNotEmpty(njGwyjzTb.getDanweimingcheng())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(njGwyjzTb.getDanweimingcheng());lists.add(jc);jc=null;}
+
+        //签字
+        if(MyTools.isNotEmpty(njGwyjzTb.getQianzi())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(njGwyjzTb.getQianzi());lists.add(jc);jc=null;}
+
+        //填表时间
+        if(MyTools.isNotEmpty(njGwyjzTb.getTianbiaoshijian())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("");
+            jc.setAttrValue(njGwyjzTb.getTianbiaoshijian());lists.add(jc);jc=null;}
+
+

@@ -1,0 +1,181 @@
+#######################################################################################################################################
+
+
+        Long id = content.getId ();//ID
+        String instanceid = content.getInstanceid ();//事务号（实例ID）
+        String application = content.getApplication ();//所申请的应用名（同表单的FormApplication name），系统需要使用该字段来标示是哪个应用
+        String catalog = content.getCatalog ();//所对应的FormApplication的FormCatalog名称，即所对应的事项名称
+        String orgid = content.getOrgid ();//事项关联的机构ID
+        String orgidentity = content.getOrgidentity ();//所办事项所关联的机构（如社团或市民非）唯一标示符，一般可以采用登记证号之类的唯一 标示符。
+        String orgname = content.getOrgname ();//事项关联的机构名称
+        String proposer = content.getProposer ();//申请人名称
+        Integer proposeid = content.getProposeid ();//申请人ID
+        Integer userid = content.getUserid ();//事项咨询处理人ID
+        Integer deptid = content.getDeptid ();//咨询事项所对应的机构ID，一般只用于一个事项需要应用到不同的区县应用中
+        Date createtime = content.getCreatetime ();//事项创建时间
+        Date lastmodifytime = content.getLastmodifytime ();//事项最后修改时间
+        Date starttime = content.getStarttime ();//事项审批开始时间
+        Date endtime = content.getEndtime ();//事项审批结束时间
+        Integer createtype = content.getCreatetype ();//创建类型1：外网2：内网
+        Integer casetype = content.getCasetype ();//事项类型，保留字段，一般用于一个应用中，有不同的事项分类，例如社团业务中，有社团 、民费和基金会业务
+        Integer region = content.getRegion ();//区县ID（一般用于一个事项可以应用于多个不同区域的应用中）
+        Integer finished = content.getFinished ();//是否已经填写完毕
+        Integer casestate = content.getCasestate ();//事项办理状态 0：未填完 1：已提交内网咨询 2：咨询已经通过 3：咨询未通过 4：受理5：不受理6：补齐补正7：赋码结束8、办结结束-1允许外网修改 15：预审通过
+        String propertyA = content.getPropertyA ();//扩展属性A
+        String propertyB = content.getPropertyB ();//扩展属性B
+        String propertyC = content.getPropertyC ();//扩展属性C
+        String propertyD = content.getPropertyD ();//扩展属性D
+        String propertyE = content.getPropertyE ();//扩展属性E(分之代表机构名称)
+        Integer hasnewmsg = content.getHasnewmsg ();//当前事项是否有新消息1：有0：无
+        Integer unitType = content.getUnitType ();//基金会类型
+        Integer acceptResult = content.getAcceptResult ();//受理结果 1 准予受理，2 不予受理 3 补正补齐
+        Integer managerorgid = content.getManagerorgid ();//业务主管单位
+        Integer auditType = content.getAuditType ();//审查许可结果  1 许可，2 不予许可
+        Integer isAllowEdit = content.getIsAllowEdit ();//材料接收后是否允许外网修改0不允许，1允许
+        Integer temp = content.getTemp ();//null
+        String tempA = content.getTempA ();//null
+        String tempB = content.getTempB ();//null
+
+
+
+
+        buffer.append(id+"|");
+        buffer.append(instanceid+"|");
+        buffer.append(application+"|");
+        buffer.append(catalog+"|");
+        buffer.append(orgid+"|");
+        buffer.append(orgidentity+"|");
+        buffer.append(orgname+"|");
+        buffer.append(proposer+"|");
+        buffer.append(proposeid+"|");
+        buffer.append(userid+"|");
+        buffer.append(deptid+"|");
+        buffer.append(createtime+"|");
+        buffer.append(lastmodifytime+"|");
+        buffer.append(starttime+"|");
+        buffer.append(endtime+"|");
+        buffer.append(createtype+"|");
+        buffer.append(casetype+"|");
+        buffer.append(region+"|");
+        buffer.append(finished+"|");
+        buffer.append(casestate+"|");
+        buffer.append(propertyA+"|");
+        buffer.append(propertyB+"|");
+        buffer.append(propertyC+"|");
+        buffer.append(propertyD+"|");
+        buffer.append(propertyE+"|");
+        buffer.append(hasnewmsg+"|");
+        buffer.append(unitType+"|");
+        buffer.append(acceptResult+"|");
+        buffer.append(managerorgid+"|");
+        buffer.append(auditType+"|");
+        buffer.append(isAllowEdit+"|");
+        buffer.append(temp+"|");
+        buffer.append(tempA+"|");
+        buffer.append(tempB+"|");
+
+
+
+        if(MyTools.isNotEmpty(split[0])){
+            fcc.setId(Long.parseLong(split[0]));
+        }
+        if(MyTools.isNotEmpty(split[1])){
+            fcc.setInstanceid(split[1]);
+        }
+        if(MyTools.isNotEmpty(split[2])){
+            fcc.setApplication(split[2]);
+        }
+        if(MyTools.isNotEmpty(split[3])){
+            fcc.setCatalog(split[3]);
+        }
+        if(MyTools.isNotEmpty(split[4])){
+            fcc.setOrgid(split[4]);
+        }
+        if(MyTools.isNotEmpty(split[5])){
+            fcc.setOrgidentity(split[5]);
+        }
+        if(MyTools.isNotEmpty(split[6])){
+            fcc.setOrgname(split[6]);
+        }
+        if(MyTools.isNotEmpty(split[7])){
+            fcc.setProposer(split[7]);
+        }
+        if(MyTools.isNotEmpty(split[8])){
+            fcc.setProposeid(Integer.parseInt(split[8]));
+        }
+        if(MyTools.isNotEmpty(split[9])){
+            fcc.setUserid(Integer.parseInt(split[9]));
+        }
+        if(MyTools.isNotEmpty(split[10])){
+            fcc.setDeptid(Integer.parseInt(split[10]));
+        }
+        if(MyTools.isNotEmpty(split[11])){
+            fcc.setCreatetime(DateUtils.strToDateLong(split[11]));
+        }
+        if(MyTools.isNotEmpty(split[12])){
+            fcc.setLastmodifytime(DateUtils.strToDateLong(split[12]));
+        }
+        if(MyTools.isNotEmpty(split[13])){
+            fcc.setStarttime(DateUtils.strToDateLong(split[13]));
+        }
+        if(MyTools.isNotEmpty(split[14])){
+            fcc.setEndtime(DateUtils.strToDateLong(split[14]));
+        }
+        if(MyTools.isNotEmpty(split[15])){
+            fcc.setCreatetype(Integer.parseInt(split[15]));
+        }
+        if(MyTools.isNotEmpty(split[16])){
+            fcc.setCasetype(Integer.parseInt(split[16]));
+        }
+        if(MyTools.isNotEmpty(split[17])){
+            fcc.setRegion(Integer.parseInt(split[17]));
+        }
+        if(MyTools.isNotEmpty(split[18])){
+            fcc.setFinished(Integer.parseInt(split[18]));
+        }
+        if(MyTools.isNotEmpty(split[19])){
+            fcc.setCasestate(Integer.parseInt(split[19]));
+        }
+        if(MyTools.isNotEmpty(split[20])){
+            fcc.setPropertyA(split[20]);
+        }
+        if(MyTools.isNotEmpty(split[21])){
+            fcc.setPropertyB(split[21]);
+        }
+        if(MyTools.isNotEmpty(split[22])){
+            fcc.setPropertyC(split[22]);
+        }
+        if(MyTools.isNotEmpty(split[23])){
+            fcc.setPropertyD(split[23]);
+        }
+        if(MyTools.isNotEmpty(split[24])){
+            fcc.setPropertyE(split[24]);
+        }
+        if(MyTools.isNotEmpty(split[25])){
+            fcc.setHasnewmsg(Integer.parseInt(split[25]));
+        }
+        if(MyTools.isNotEmpty(split[26])){
+            fcc.setUnitType(Integer.parseInt(split[26]));
+        }
+        if(MyTools.isNotEmpty(split[27])){
+            fcc.setAcceptResult(Integer.parseInt(split[27]));
+        }
+        if(MyTools.isNotEmpty(split[28])){
+            fcc.setManagerorgid(Integer.parseInt(split[28]));
+        }
+        if(MyTools.isNotEmpty(split[29])){
+            fcc.setAuditType(Integer.parseInt(split[29]));
+        }
+        if(MyTools.isNotEmpty(split[30])){
+            fcc.setIsAllowEdit(Integer.parseInt(split[30]));
+        }
+        if(MyTools.isNotEmpty(split[31])){
+            fcc.setTemp(Integer.parseInt(split[31]));
+        }
+        if(MyTools.isNotEmpty(split[32])){
+            fcc.setTempA(split[32]);
+        }
+        if(MyTools.isNotEmpty(split[33])){
+            fcc.setTempB(split[33]);
+        }
+
