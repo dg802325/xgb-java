@@ -3,6 +3,7 @@ package com.xgb.utils;
 import com.xgb.model.JcContentAttr1;
 import com.xgb.model.StDjqk4;
 import com.xgb.model.StNjInner4;
+import com.xgb.util.DateUtils;
 import com.xgb.util.MyTools;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class Save204 {
         if(MyTools.isNotEmpty(stNjInner4.getHuanjiedahuishijian())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("hjhyzjsj");
-            jc.setAttrValue(stNjInner4.getHuanjiedahuishijian().toString());lists.add(jc);jc=null;}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(stNjInner4.getHuanjiedahuishijian()));lists.add(jc);jc=null;}
 
         //会员大会年次
         if(MyTools.isNotEmpty(stNjInner4.getHuiyuandahuinianci())){
@@ -34,7 +35,7 @@ public class Save204 {
         if(MyTools.isNotEmpty(stNjInner4.getHuiyuandahuishijian())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("zjycdhsj");
-            jc.setAttrValue(stNjInner4.getHuiyuandahuishijian().toString());lists.add(jc);jc=null;}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(stNjInner4.getHuiyuandahuishijian()));lists.add(jc);jc=null;}
 
         //理事会本年次
         if(MyTools.isNotEmpty(stNjInner4.getLishihuibennianci())){
@@ -45,13 +46,13 @@ public class Save204 {
         //常理事会次
         if(MyTools.isNotEmpty(stNjInner4.getChanglishihuici())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
-            jc.setAttrName("cwlsc");
+            jc.setAttrName("lshc");
             jc.setAttrValue(stNjInner4.getChanglishihuici().toString());lists.add(jc);jc=null;}
 
         //常理事会本年次
         if(MyTools.isNotEmpty(stNjInner4.getChanglishihuibennianci())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
-            jc.setAttrName("bnzkcwhc");
+            jc.setAttrName("cwlsc");
             jc.setAttrValue(stNjInner4.getChanglishihuibennianci().toString());lists.add(jc);jc=null;}
         return lists;
     }

@@ -7,7 +7,6 @@
     <!--导入属性配置-->
     <properties resource="jdbc.properties"></properties>
 
-
     <context id="default" targetRuntime="MyBatis3">
 
 
@@ -68,6 +67,7 @@
         </javaClientGenerator>
 
 
+        <table tableName="jc_config" ></table>
 <!--        <table tableName="MJZZ_DICTIONARY" ></table>-->
 <!--        <table tableName="SJZD_NODE" ></table>-->
 <!--        <table tableName="LS_CYBA_ZB" ></table>-->

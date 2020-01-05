@@ -156,8 +156,35 @@ public class Save263 {
             jc.setAttrName("LHCcEEGX");
             jc.setAttrValue(stNjInner4.getZhiyezigerenshu().toString());lists.add(jc);jc=null;}
 
+        StringBuffer stringBuffer = new StringBuffer();
+        if(MyTools.isNotEmpty(stNjInner4.getJuanzengshouju())){
+            stringBuffer.append("捐赠收据,");
+        }
+        if(MyTools.isNotEmpty(stNjInner4.getShuiwufapiao())){
+            stringBuffer.append("税务发票,");
+        }
+        if(MyTools.isNotEmpty(stNjInner4.getPiaojuzhongleiqita())){
+            stringBuffer.append("其他,");
+        }
+        if(MyTools.isNotEmpty(stringBuffer)){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("BgSaNMbc");
+            jc.setAttrValue(stringBuffer.toString());lists.add(jc);jc=null;}
 
-
+        StringBuffer stringBuffer1 = new StringBuffer();
+        if(MyTools.isNotEmpty(stNjInner4.getGuoshui())){
+            stringBuffer1.append("国税,");
+        }
+        if(MyTools.isNotEmpty(stNjInner4.getDishui())){
+            stringBuffer1.append("地税,");
+        }
+        if(MyTools.isNotEmpty(stNjInner4.getWeidengji())){
+            stringBuffer1.append("未登记,");
+        }
+        if(MyTools.isNotEmpty(stringBuffer1)){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("KAmGXyyW");
+            jc.setAttrValue(stringBuffer1.toString());lists.add(jc);jc=null;}
 
         return lists;
     }

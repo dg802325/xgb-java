@@ -7,16 +7,14 @@ import com.xgb.util.MyTools;
 import java.sql.*;
 import java.util.List;
 
-public class NewSaveJcContentAttr1Service {
+public class NewSaveJcContentAttr1Service extends BaseService {
 
     public static Integer save(List<JcContentAttr1> jcContentAttr1s){
         String sql = "insert into jc_content_attr_1(content_id,attr_name,attr_value) value(?,?,?)";
-        Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         int len = 0;
         try {
-            conn = GbaseUtils.getConnection();
             conn.setAutoCommit(false);
             //Statement.RETURN_GENERATED_KEYS:获取自动增加的id号
             for(JcContentAttr1 jcContentAttr1:jcContentAttr1s){
@@ -32,7 +30,6 @@ public class NewSaveJcContentAttr1Service {
             e.printStackTrace();
             return null;
         }finally {
-            GbaseUtils.release(conn,ps,rs);
         }
         return len;
     }

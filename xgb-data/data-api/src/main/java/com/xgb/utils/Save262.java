@@ -2,6 +2,7 @@ package com.xgb.utils;
 
 import com.xgb.model.JcContentAttr1;
 import com.xgb.model.StNjInner4;
+import com.xgb.util.DateUtils;
 import com.xgb.util.MyTools;
 
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ public class Save262 {
         if(MyTools.isNotEmpty(stNjInner4.getBiangengmingchengshijian())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("XwhXUGZO");
-            jc.setAttrValue(stNjInner4.getBiangengmingchengshijian().toString());lists.add(jc);jc=null;}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(stNjInner4.getBiangengmingchengshijian()));lists.add(jc);jc=null;}
 
         //变更业务范围
         if(MyTools.isNotEmpty(stNjInner4.getBiangengyewu())){
@@ -46,7 +47,7 @@ public class Save262 {
         if(MyTools.isNotEmpty(stNjInner4.getBiangengyewushijian())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("BzGuvkPr");
-            jc.setAttrValue(stNjInner4.getBiangengyewushijian().toString());lists.add(jc);jc=null;}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(stNjInner4.getBiangengyewushijian()));lists.add(jc);jc=null;}
 
         //变更住所
         if(MyTools.isNotEmpty(stNjInner4.getBiangengzhusuo())){
@@ -64,7 +65,7 @@ public class Save262 {
         if(MyTools.isNotEmpty(stNjInner4.getBiangengzhusuoshijian())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("abtjDAnA");
-            jc.setAttrValue(stNjInner4.getBiangengzhusuoshijian().toString());lists.add(jc);jc=null;}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(stNjInner4.getBiangengzhusuoshijian()));lists.add(jc);jc=null;}
 
         //变更资金
         if(MyTools.isNotEmpty(stNjInner4.getBiangengzijin())){
@@ -82,7 +83,7 @@ public class Save262 {
         if(MyTools.isNotEmpty(stNjInner4.getBiangengzijinshijian())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("PdYvLieh");
-            jc.setAttrValue(stNjInner4.getBiangengzijinshijian().toString());lists.add(jc);jc=null;}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(stNjInner4.getBiangengzijinshijian()));lists.add(jc);jc=null;}
 
         //变更法人
         if(MyTools.isNotEmpty(stNjInner4.getBiangengfaren())){
@@ -100,7 +101,7 @@ public class Save262 {
         if(MyTools.isNotEmpty(stNjInner4.getBiangengfarenshijian())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("CCSTFFQZ");
-            jc.setAttrValue(stNjInner4.getBiangengfarenshijian().toString());lists.add(jc);jc=null;}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(stNjInner4.getBiangengfarenshijian()));lists.add(jc);jc=null;}
 
         //变更主管单位
         if(MyTools.isNotEmpty(stNjInner4.getBiangengzhuguandanwei())){
@@ -118,7 +119,7 @@ public class Save262 {
         if(MyTools.isNotEmpty(stNjInner4.getBianzhuguandanweishijian())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("CmYYfCAC");
-            jc.setAttrValue(stNjInner4.getBianzhuguandanweishijian().toString());lists.add(jc);jc=null;}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(stNjInner4.getBianzhuguandanweishijian()));lists.add(jc);jc=null;}
 
         //修改章程
         if(MyTools.isNotEmpty(stNjInner4.getXiugaizhangcheng())){
@@ -136,7 +137,7 @@ public class Save262 {
         if(MyTools.isNotEmpty(stNjInner4.getXiugaizhangchengshijian())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("NTlAoLrx");
-            jc.setAttrValue(stNjInner4.getXiugaizhangchengshijian().toString());lists.add(jc);jc=null;}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(stNjInner4.getXiugaizhangchengshijian()));lists.add(jc);jc=null;}
 
         //变更理事
         if(MyTools.isNotEmpty(stNjInner4.getCaiwuruanjian())){
@@ -154,9 +155,7 @@ public class Save262 {
         if(MyTools.isNotEmpty(stNjInner4.getHuanjiedahuishijian())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("mTeWGANR");
-            jc.setAttrValue(stNjInner4.getHuanjiedahuishijian().toString());lists.add(jc);jc=null;}
-
-
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(stNjInner4.getHuanjiedahuishijian()));lists.add(jc);jc=null;}
 
         return lists;
     }

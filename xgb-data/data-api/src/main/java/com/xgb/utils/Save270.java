@@ -3,6 +3,7 @@ package com.xgb.utils;
 import com.xgb.model.JcContentAttr1;
 import com.xgb.model.NjGwyjzSub;
 import com.xgb.model.StNjInner4;
+import com.xgb.util.DateUtils;
 import com.xgb.util.MyTools;
 
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class Save270 {
         if(MyTools.isNotEmpty(njGwyjzSub.getChushengnianyue())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("csny");
-            jc.setAttrValue(njGwyjzSub.getChushengnianyue().toString());lists.add(jc);jc=null;}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(njGwyjzSub.getChushengnianyue()));lists.add(jc);jc=null;}
 
         //单位职务
         if(MyTools.isNotEmpty(njGwyjzSub.getDanweizhiwu())){
@@ -65,7 +66,7 @@ public class Save270 {
         if(MyTools.isNotEmpty(njGwyjzSub.getPizhunshijian())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("pzsj");
-            jc.setAttrValue(njGwyjzSub.getPizhunshijian().toString());lists.add(jc);jc=null;}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(njGwyjzSub.getPizhunshijian()));lists.add(jc);jc=null;}
 
         return lists;
     }

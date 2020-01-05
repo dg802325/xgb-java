@@ -41,13 +41,13 @@ public class Save209 {
         if(MyTools.isNotEmpty(stNjJieshoujiandu.getPinggunian())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("uhrW8FSW");
-            jc.setAttrValue(stNjJieshoujiandu.getPinggunian()+" "+stNjJieshoujiandu.getPingguyue()+" "+stNjJieshoujiandu.getPingguri());lists.add(jc);jc=null;}
+            jc.setAttrValue(stNjJieshoujiandu.getPinggunian()+"-"+stNjJieshoujiandu.getPingguyue()+"-"+stNjJieshoujiandu.getPingguri());lists.add(jc);jc=null;}
 
         //有效期致
         if(MyTools.isNotEmpty(stNjJieshoujiandu.getPinggunian())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("uhrW8FSW");
-            jc.setAttrValue(stNjJieshoujiandu.getNian2()+" "+stNjJieshoujiandu.getYue2()+" "+stNjJieshoujiandu.getRi2());lists.add(jc);jc=null;}
+            jc.setAttrValue(stNjJieshoujiandu.getNian2()+"-"+stNjJieshoujiandu.getYue2()+"-"+stNjJieshoujiandu.getRi2());lists.add(jc);jc=null;}
 
         //是否接受审计1
         if(MyTools.isNotEmpty(stNjJieshoujiandu.getRadiobutton2())){
@@ -113,7 +113,7 @@ public class Save209 {
         if(MyTools.isNotEmpty(stNjJieshoujiandu.getPinggunian())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("EXWRMuNW");
-            jc.setAttrValue(stNjJieshoujiandu.getNian3()+" "+stNjJieshoujiandu.getYue3()+" "+stNjJieshoujiandu.getRi3());lists.add(jc);jc=null;}
+            jc.setAttrValue(stNjJieshoujiandu.getNian3()+"-"+stNjJieshoujiandu.getYue3()+"-"+stNjJieshoujiandu.getRi3());lists.add(jc);jc=null;}
 
         //行政处罚实施机关
         if(MyTools.isNotEmpty(stNjJieshoujiandu.getShishijiguan())){

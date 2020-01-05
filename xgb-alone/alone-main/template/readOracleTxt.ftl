@@ -35,11 +35,10 @@ public class Read${modelName!}Service {
                 StringBuilder result = new StringBuilder();
                 //按使用readLine方法，一次读一行
                 while ((linetxt = bufferedReader.readLine()) != null) {
-                    result.append(linetxt);
+					//输出读出的所有数据（StringBuilder类型）
+					entity = getEntity(result.append(linetxt).toString());
+					lists.add(entity);
                 }
-                //输出读出的所有数据（StringBuilder类型）
-                entity = getEntity(result.toString());
-                lists.add(entity);
             } catch (Exception e) {
                 System.out.println("读取文件内容出错");
                 e.printStackTrace();

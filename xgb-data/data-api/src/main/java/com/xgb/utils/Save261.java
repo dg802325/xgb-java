@@ -3,6 +3,7 @@ package com.xgb.utils;
 import com.xgb.model.JcContentAttr1;
 import com.xgb.model.MfNianjianJbxx;
 import com.xgb.model.StNjInner4;
+import com.xgb.util.DateUtils;
 import com.xgb.util.MyTools;
 
 import java.util.ArrayList;
@@ -12,6 +13,12 @@ public class Save261 {
 
     public static List<JcContentAttr1> getEntity(Integer contentId, MfNianjianJbxx mfNianjianJbxx) {
         List<JcContentAttr1> lists = new ArrayList<>();
+
+        //行业分类
+        if(MyTools.isNotEmpty(mfNianjianJbxx.getXingyefenlei())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("hyfl");
+            jc.setAttrValue(mfNianjianJbxx.getXingyefenlei());lists.add(jc);jc=null;}
 
         //联系电话
         if(MyTools.isNotEmpty(mfNianjianJbxx.getDianhua())){
@@ -47,7 +54,7 @@ public class Save261 {
         if(MyTools.isNotEmpty(mfNianjianJbxx.getChenglishijian())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("eXrLNnsI");
-            jc.setAttrValue(mfNianjianJbxx.getChenglishijian().toString());lists.add(jc);jc=null;}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(mfNianjianJbxx.getChenglishijian()));lists.add(jc);jc=null;}
 
         //开办资金
         if(MyTools.isNotEmpty(mfNianjianJbxx.getKaibanzijin())){
@@ -71,7 +78,7 @@ public class Save261 {
         if(MyTools.isNotEmpty(mfNianjianJbxx.getZulindaoqiri())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("MlSxwhaH");
-            jc.setAttrValue(mfNianjianJbxx.getZulindaoqiri().toString());lists.add(jc);jc=null;}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(mfNianjianJbxx.getZulindaoqiri()));lists.add(jc);jc=null;}
 
         //联系电话
         if(MyTools.isNotEmpty(mfNianjianJbxx.getLianxidianhua())){
@@ -107,7 +114,7 @@ public class Save261 {
         if(MyTools.isNotEmpty(mfNianjianJbxx.getFarenshengri())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("mQRUAXGC");
-            jc.setAttrValue(mfNianjianJbxx.getFarenshengri().toString());lists.add(jc);jc=null;}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(mfNianjianJbxx.getFarenshengri()));lists.add(jc);jc=null;}
 
         //法人性别
         if(MyTools.isNotEmpty(mfNianjianJbxx.getFarenxingbie())){
@@ -138,7 +145,7 @@ public class Save261 {
         if(MyTools.isNotEmpty(mfNianjianJbxx.getDongshichangshengri())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("vhUnFNaS");
-            jc.setAttrValue(mfNianjianJbxx.getDongshichangshengri().toString());lists.add(jc);jc=null;}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(mfNianjianJbxx.getDongshichangshengri()));lists.add(jc);jc=null;}
 
         //董事长性别
         if(MyTools.isNotEmpty(mfNianjianJbxx.getDongshichangxingbie())){
@@ -198,7 +205,7 @@ public class Save261 {
         if(MyTools.isNotEmpty(mfNianjianJbxx.getFuzerenshengri())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("wGoAKllz");
-            jc.setAttrValue(mfNianjianJbxx.getFuzerenshengri().toString());lists.add(jc);jc=null;}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(mfNianjianJbxx.getFuzerenshengri()));lists.add(jc);jc=null;}
 
         //行政负责人政治面貌
         if(MyTools.isNotEmpty(mfNianjianJbxx.getFuzerenmianmao())){
@@ -463,6 +470,36 @@ public class Save261 {
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("ZhcxRWSS");
             jc.setAttrValue(mfNianjianJbxx.getBiaozhanghuodong().toString());lists.add(jc);jc=null;}
+
+        //年检结果
+        if(MyTools.isNotEmpty(mfNianjianJbxx.getTjnjjieguo2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("jlsfhg");
+            jc.setAttrValue(mfNianjianJbxx.getTjnjjieguo2().toString());lists.add(jc);jc=null;}
+
+        //年检结果
+        if(MyTools.isNotEmpty(mfNianjianJbxx.getTjnjyijian2())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("jlfsyj");
+            jc.setAttrValue(mfNianjianJbxx.getTjnjyijian2().toString());lists.add(jc);jc=null;}
+
+        //董事人数
+        if(MyTools.isNotEmpty(mfNianjianJbxx.getDongshirenshu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("FHxWAXHH");
+            jc.setAttrValue(mfNianjianJbxx.getDongshirenshu().toString());lists.add(jc);jc=null;}
+
+        //监事人数
+        if(MyTools.isNotEmpty(mfNianjianJbxx.getJianshirenshu())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("RRqEbmjm");
+            jc.setAttrValue(mfNianjianJbxx.getJianshirenshu().toString());lists.add(jc);jc=null;}
+
+        //党建情况
+        if(MyTools.isNotEmpty(mfNianjianJbxx.getDangjianqingkuang())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("yjlx");
+            jc.setAttrValue(mfNianjianJbxx.getDangjianqingkuang());lists.add(jc);jc=null;}
 
         return lists;
     }

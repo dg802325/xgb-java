@@ -1,5 +1,7 @@
 package com.xgb.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -20,6 +22,7 @@ public class MfNianjianJbxx {
 
     private String zhiyexukezhenghao;
 
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date chenglishijian;
 
     private BigDecimal kaibanzijin;
@@ -31,7 +34,7 @@ public class MfNianjianJbxx {
     private String youzhengbianma;
 
     private String zhusuolaiyuan;
-
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date zulindaoqiri;
 
     private String lianxidianhua;
@@ -107,7 +110,7 @@ public class MfNianjianJbxx {
     private String xingyefenlei;
 
     private String farenxingbie;
-
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date farenshengri;
 
     private String farenmianmao;
@@ -115,7 +118,7 @@ public class MfNianjianJbxx {
     private String farenxueli;
 
     private String dongshichangxingbie;
-
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date dongshichangshengri;
 
     private String dongshichangmianmao;
@@ -133,7 +136,7 @@ public class MfNianjianJbxx {
     private String fuzerenxingming;
 
     private String fuzerenxingbie;
-
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date fuzerenshengri;
 
     private String fuzerenmianmao;
@@ -205,9 +208,9 @@ public class MfNianjianJbxx {
     private String tjnjxingming1;
 
     private String tjnjxingming2;
-
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date tjnjshijian1;
-
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date tjnjshijian2;
 
     private Integer lingqubaochou;

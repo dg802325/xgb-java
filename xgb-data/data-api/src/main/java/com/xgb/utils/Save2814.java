@@ -14,7 +14,7 @@ public class Save2814 {
         List<JcContentAttr1> lists = new ArrayList<>();
 
         //时间
-        if(MyTools.isNotEmpty(stNjReprot140Sub.getShijian())){
+        if(MyTools.isNotEmpty(stNjReprot140Sub.getShijian())&&MyTools.isNotEmpty(stNjReprot140Sub.getZhishijian())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("qssj");
             jc.setAttrValue(stNjReprot140Sub.getQishijian().toString()+"-"+stNjReprot140Sub.getZhishijian().toString());lists.add(jc);jc=null;}

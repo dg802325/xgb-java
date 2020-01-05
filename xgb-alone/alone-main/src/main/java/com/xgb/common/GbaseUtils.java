@@ -13,7 +13,6 @@ public class GbaseUtils {
             // 报错说明要么权限定类名写错，要么没有给MySQL的驱动包！
             e.printStackTrace();
         }
-
     }
 
     /**

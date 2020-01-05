@@ -7,16 +7,14 @@ import com.xgb.util.MyTools;
 
 import java.sql.*;
 
-public class NewJcContentExtService {
+public class NewJcContentExtService extends BaseService {
 
     public static JcContentExt save(JcContentExt jcContentExt){
         String sql = "insert into jc_content_ext(content_id,title,short_title,author,origin,origin_url,description,media_path,media_type,title_color,is_bold,title_img,content_img,type_img,link,tpl_content,need_regenerate,tpl_mobile_content,toplevel_date,pigeonhole_date,release_date) value(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
-        Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         Integer id = null;
         try {
-            conn = GbaseUtils.getConnection();
             conn.setAutoCommit(false);
             //Statement.RETURN_GENERATED_KEYS:获取自动增加的id号
             ps = (PreparedStatement) conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -115,7 +113,6 @@ public class NewJcContentExtService {
             e.printStackTrace();
             return null;
         }finally {
-            GbaseUtils.release(conn,ps,rs);
         }
         return jcContentExt;
     }

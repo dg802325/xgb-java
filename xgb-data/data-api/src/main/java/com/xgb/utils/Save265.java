@@ -517,6 +517,17 @@ public class Save265 {
             jc.setAttrName("QIMOSHU42");
             jc.setAttrValue(jjhnjReport3.getQimoshu42().toString());lists.add(jc);jc=null;}
 
+        //负债和净资产总计期末数
+        if(MyTools.isNotEmpty(jjhnjReport3.getQimoshu42())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("DzywwMfv");
+            jc.setAttrValue(jjhnjReport3.getQimoshu42().toString());lists.add(jc);jc=null;}
+
+        //受托代理资产年初数
+        if(MyTools.isNotEmpty(jjhnjReport3.getNianchushu21())){
+            JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("tXkmzqmy");
+            jc.setAttrValue(jjhnjReport3.getNianchushu21().toString());lists.add(jc);jc=null;}
         return lists;
     }
 }

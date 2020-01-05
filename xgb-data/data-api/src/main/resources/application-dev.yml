@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: oracle.jdbc.driver.OracleDriver
-    url: jdbc:oracle:thin:@127.0.0.1:1521:ORCL
-    username: SYSTEM
-    password: Dg19921123
+    url: jdbc:oracle:thin:@//127.0.0.1:1521/MJZZ
+    username: MJZZ
+    password: 123456
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       filters: stat

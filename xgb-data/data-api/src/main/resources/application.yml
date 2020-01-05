@@ -27,6 +27,6 @@ mybatis:
 logging:
   level:
     root: info
-    com.xgb: trace
+#    com.xgb: trace
   path: xgb-data/data-api/logs/
   file: data-api.log

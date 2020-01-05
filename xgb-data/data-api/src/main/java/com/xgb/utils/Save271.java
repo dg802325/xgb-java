@@ -16,7 +16,7 @@ public class Save271 {
         //其他情况
         if(MyTools.isNotEmpty(stNjQgothercase19Sub.getQitaqingkuang())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
-            jc.setAttrName("");
+            jc.setAttrName("JxkJLgjj");
             jc.setAttrValue(stNjQgothercase19Sub.getQitaqingkuang());lists.add(jc);jc=null;}
 
         return lists;

@@ -3,6 +3,7 @@ package com.xgb.utils;
 import com.xgb.model.JcContentAttr1;
 import com.xgb.model.LsCybaZb;
 import com.xgb.model.StNjInner4;
+import com.xgb.util.DateUtils;
 import com.xgb.util.MyTools;
 
 import java.util.ArrayList;
@@ -17,12 +18,12 @@ public class Save269 {
         if(MyTools.isNotEmpty(lsCybaZb.getChushengnianyue())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("csny");
-            jc.setAttrValue(lsCybaZb.getChushengnianyue().toString());lists.add(jc);jc=null;}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(lsCybaZb.getChushengnianyue()));lists.add(jc);jc=null;}
 
         //内职务
         if(MyTools.isNotEmpty(lsCybaZb.getNeizhiwu())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
-            jc.setAttrName("");
+            jc.setAttrName("mfzwnzw");
             jc.setAttrValue(lsCybaZb.getNeizhiwu());lists.add(jc);jc=null;}
 
         //理事

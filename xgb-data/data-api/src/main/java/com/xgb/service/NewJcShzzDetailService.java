@@ -1,53 +1,48 @@
 package com.xgb.service;
 
 import com.xgb.common.GbaseUtils;
+import com.xgb.model.Content202Entity;
 import com.xgb.model.JcUser;
 import com.xgb.util.MyTools;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
-public class NewJcShzzDetailService {
+public class NewJcShzzDetailService extends BaseService {
 
     public static void main(String[] args) {
-        Integer integer = selectByXinYongDaima("53120000MJY089130M");
-        System.out.println(integer);
     }
 
-    public static Integer selectByXinYongDaima(String xinyongdaima){
-        String sql = "select id from jc_shzz_detail where code = ?";
-        Connection conn = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        JcUser jcUser = null;
+    public static Content202Entity selectByXinYongDaima(String xinyongdaima){
+        Content202Entity content202Entity = new Content202Entity();
         Integer userId = null;
-        try{
-            conn = GbaseUtils.getConnection();
-            ps = conn.prepareStatement(sql);
-            ps.setString(1,xinyongdaima);
-            rs = ps.executeQuery();
-            if (rs != null) {
-                jcUser = new JcUser();
-                if(MyTools.isNotEmpty(rs.next())){
-                    int jcShzzDetailId = rs.getInt(1);
-                    String sql2 = "select user_id from jc_user_attr where attr_value = ?";
-                    ps = conn.prepareStatement(sql2);
-                    ps.setString(1,jcShzzDetailId+"");
-                    rs = ps.executeQuery();
-                    if (rs != null) {
-                        jcUser = new JcUser();
-                        if (MyTools.isNotEmpty(rs.next())) {
-                            userId = rs.getInt(1);
-                        }
+        if(MyTools.isNotEmpty(xinyongdaima)){
+            content202Entity.setStxcode(xinyongdaima);
+            String sql = "select id,djjgxzqhdm,type from jc_shzz_detail where code = '"+xinyongdaima+"'";
+            Statement stmt = null;
+            ResultSet rs = null;
+            try{
+                stmt = conn.createStatement();
+                rs = stmt.executeQuery(sql);
+                if (rs.next()) {
+                    content202Entity.setContentId(rs.getInt("id")+"");
+                    content202Entity.setType(rs.getString("type"));
+                    String xzqu = rs.getString("djjgxzqhdm");
+                    String sql2 = "select user_id from jc_user_attr where attr_value = '"+content202Entity.getContentId()+"'";//查询userid
+                    rs = stmt.executeQuery(sql2);
+                    if (rs.next()) {
+                        content202Entity.setUserId(rs.getInt("user_id"));
+                    }
+                    String sql3 = "select id from jc_dict where value = '"+xzqu+"'";
+                    rs = stmt.executeQuery(sql3);
+                    if (rs.next()) {
+                        content202Entity.setShzzXzqh(rs.getInt("id")+"");
                     }
                 }
+            } catch (SQLException e) {
+                e.printStackTrace();
+                return null;
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return null;
         }
-        return userId;
+        return content202Entity;
     }
 }

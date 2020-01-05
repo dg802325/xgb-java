@@ -3,6 +3,7 @@ package com.xgb.utils;
 import com.xgb.model.JcContentAttr1;
 import com.xgb.model.StNjHfgxTb;
 import com.xgb.model.StNjInner4;
+import com.xgb.util.DateUtils;
 import com.xgb.util.MyTools;
 
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class Save220 {
         if(MyTools.isNotEmpty(stNjHfgxTb.getZhidingshijian())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("DiGkvZUL");
-            jc.setAttrValue(stNjHfgxTb.getZhidingshijian().toString());lists.add(jc);jc=null;}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(stNjHfgxTb.getZhidingshijian()));lists.add(jc);jc=null;}
 
         //按照会费标准每年度应收会费（万元）
         if(MyTools.isNotEmpty(stNjHfgxTb.getYingjiaohuifei())){

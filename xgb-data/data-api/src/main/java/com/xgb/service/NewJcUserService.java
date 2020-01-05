@@ -6,7 +6,7 @@ import com.xgb.util.MyTools;
 
 import java.sql.*;
 
-public class NewJcUserService {
+public class NewJcUserService extends BaseService {
 
     public static void main(String[] args) {
         String name = "天津上市公司协会";
@@ -17,12 +17,10 @@ public class NewJcUserService {
 
     public static JcUser selectByName(String name){
         String sql = "select * from jc_user where username = ?";
-        Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         JcUser jcUser = null;
         try{
-            conn = GbaseUtils.getConnection();
             ps = conn.prepareStatement(sql);
             ps.setString(1,name);
             rs = ps.executeQuery();

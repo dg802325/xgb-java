@@ -16,7 +16,7 @@ public class Save2197 {
         //姓名
         if(MyTools.isNotEmpty(njGwyjzSub.getXingming())){
             JcContentAttr1 jc = new JcContentAttr1();jc.setContentId(contentId);
-            jc.setAttrName("");
+            jc.setAttrName("title");
             jc.setAttrValue(njGwyjzSub.getXingming());lists.add(jc);jc=null;}
 
         //工作单位
