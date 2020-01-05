@@ -2,6 +2,8 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-alone" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-alone/alone-main" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-dao" charset="UTF-8" />
@@ -12,6 +14,14 @@
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-pay" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-data" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-data/data-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-data/data-api/config/FormConsultationCase.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-data/data-api/config/JjhnjGyhdmxSub.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-data/data-api/config/MfGwyjzZb.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/xgb-data/data-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-data/data-model" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-data/data-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-test" charset="UTF-8" />
   </component>
 </project>

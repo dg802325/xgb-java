@@ -6,19 +6,26 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="boot-dao" />
-        <module name="boot-model" />
-        <module name="boot-mybatis" />
-        <module name="xgb-test" />
+        <module name="data-service" />
         <module name="boot-message" />
+        <module name="boot-dao" />
+        <module name="boot-mybatis" />
+        <module name="boot-api" />
+        <module name="boot-oss" />
+        <module name="xgb-test" />
+        <module name="boot-model" />
+        <module name="data-model" />
         <module name="boot-service" />
+        <module name="data-dao" />
+        <module name="data-api" />
         <module name="xgb-common" />
         <module name="boot-pay" />
-        <module name="boot-oss" />
-        <module name="boot-api" />
+        <module name="alone-main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="alone-main" target="1.8" />
+      <module name="alone-util" target="1.8" />
       <module name="boot-api" target="1.8" />
       <module name="boot-dao" target="1.8" />
       <module name="boot-message" target="1.8" />
@@ -27,8 +34,14 @@
       <module name="boot-oss" target="1.8" />
       <module name="boot-pay" target="1.8" />
       <module name="boot-service" target="1.8" />
+      <module name="data-api" target="1.8" />
+      <module name="data-dao" target="1.8" />
+      <module name="data-model" target="1.8" />
+      <module name="data-service" target="1.8" />
+      <module name="xgb-alone" target="1.8" />
       <module name="xgb-boot" target="1.8" />
       <module name="xgb-common" target="1.8" />
+      <module name="xgb-data" target="1.8" />
       <module name="xgb-java" target="1.8" />
       <module name="xgb-test" target="1.8" />
     </bytecodeTargetLevel>
@@ -43,6 +56,10 @@
       <module name="boot-oss" options="-parameters" />
       <module name="boot-pay" options="-parameters" />
       <module name="boot-service" options="-parameters" />
+      <module name="data-api" options="-parameters" />
+      <module name="data-dao" options="-parameters" />
+      <module name="data-model" options="-parameters" />
+      <module name="data-service" options="-parameters" />
     </option>
   </component>
 </project>

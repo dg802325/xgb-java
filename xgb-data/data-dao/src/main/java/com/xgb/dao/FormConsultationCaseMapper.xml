@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.FormConsultationCaseMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.FormConsultationCase" >
+    <constructor >
+      <idArg column="ID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="INSTANCEID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="APPLICATION" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CATALOG" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORGID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORGIDENTITY" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORGNAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PROPOSER" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PROPOSEID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="USERID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="DEPTID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="CREATETIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="LASTMODIFYTIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="STARTTIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="ENDTIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="CREATETYPE" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="CASETYPE" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="REGION" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="FINISHED" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="CASESTATE" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="PROPERTY_A" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PROPERTY_B" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PROPERTY_C" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PROPERTY_D" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PROPERTY_E" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="HASNEWMSG" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="UNIT_TYPE" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="ACCEPT_RESULT" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="MANAGERORGID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="AUDIT_TYPE" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="IS_ALLOW_EDIT" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="TEMP" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="TEMP_A" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="TEMP_B" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, INSTANCEID, APPLICATION, CATALOG, ORGID, ORGIDENTITY, ORGNAME, PROPOSER, PROPOSEID, 
+    USERID, DEPTID, CREATETIME, LASTMODIFYTIME, STARTTIME, ENDTIME, CREATETYPE, CASETYPE, 
+    REGION, FINISHED, CASESTATE, PROPERTY_A, PROPERTY_B, PROPERTY_C, PROPERTY_D, PROPERTY_E, 
+    HASNEWMSG, UNIT_TYPE, ACCEPT_RESULT, MANAGERORGID, AUDIT_TYPE, IS_ALLOW_EDIT, TEMP, 
+    TEMP_A, TEMP_B
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.FormConsultationCaseExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from MJZZ.FORM_CONSULTATION_CASE
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from MJZZ.FORM_CONSULTATION_CASE
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from MJZZ.FORM_CONSULTATION_CASE
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xgb.model.FormConsultationCaseExample" >
+    delete from MJZZ.FORM_CONSULTATION_CASE
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.FormConsultationCase" >
+    insert into MJZZ.FORM_CONSULTATION_CASE (ID, INSTANCEID, APPLICATION, 
+      CATALOG, ORGID, ORGIDENTITY, 
+      ORGNAME, PROPOSER, PROPOSEID, 
+      USERID, DEPTID, CREATETIME, 
+      LASTMODIFYTIME, STARTTIME, ENDTIME, 
+      CREATETYPE, CASETYPE, REGION, 
+      FINISHED, CASESTATE, PROPERTY_A, 
+      PROPERTY_B, PROPERTY_C, PROPERTY_D, 
+      PROPERTY_E, HASNEWMSG, UNIT_TYPE, 
+      ACCEPT_RESULT, MANAGERORGID, AUDIT_TYPE, 
+      IS_ALLOW_EDIT, TEMP, TEMP_A, 
+      TEMP_B)
+    values (#{id,jdbcType=DECIMAL}, #{instanceid,jdbcType=VARCHAR}, #{application,jdbcType=VARCHAR}, 
+      #{catalog,jdbcType=VARCHAR}, #{orgid,jdbcType=VARCHAR}, #{orgidentity,jdbcType=VARCHAR}, 
+      #{orgname,jdbcType=VARCHAR}, #{proposer,jdbcType=VARCHAR}, #{proposeid,jdbcType=DECIMAL}, 
+      #{userid,jdbcType=DECIMAL}, #{deptid,jdbcType=DECIMAL}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{lastmodifytime,jdbcType=TIMESTAMP}, #{starttime,jdbcType=TIMESTAMP}, #{endtime,jdbcType=TIMESTAMP}, 
+      #{createtype,jdbcType=DECIMAL}, #{casetype,jdbcType=DECIMAL}, #{region,jdbcType=DECIMAL}, 
+      #{finished,jdbcType=DECIMAL}, #{casestate,jdbcType=DECIMAL}, #{propertyA,jdbcType=VARCHAR}, 
+      #{propertyB,jdbcType=VARCHAR}, #{propertyC,jdbcType=VARCHAR}, #{propertyD,jdbcType=VARCHAR}, 
+      #{propertyE,jdbcType=VARCHAR}, #{hasnewmsg,jdbcType=DECIMAL}, #{unitType,jdbcType=DECIMAL}, 
+      #{acceptResult,jdbcType=DECIMAL}, #{managerorgid,jdbcType=DECIMAL}, #{auditType,jdbcType=DECIMAL}, 
+      #{isAllowEdit,jdbcType=DECIMAL}, #{temp,jdbcType=DECIMAL}, #{tempA,jdbcType=VARCHAR}, 
+      #{tempB,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.FormConsultationCase" >
+    insert into MJZZ.FORM_CONSULTATION_CASE
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="instanceid != null" >
+        INSTANCEID,
+      </if>
+      <if test="application != null" >
+        APPLICATION,
+      </if>
+      <if test="catalog != null" >
+        CATALOG,
+      </if>
+      <if test="orgid != null" >
+        ORGID,
+      </if>
+      <if test="orgidentity != null" >
+        ORGIDENTITY,
+      </if>
+      <if test="orgname != null" >
+        ORGNAME,
+      </if>
+      <if test="proposer != null" >
+        PROPOSER,
+      </if>
+      <if test="proposeid != null" >
+        PROPOSEID,
+      </if>
+      <if test="userid != null" >
+        USERID,
+      </if>
+      <if test="deptid != null" >
+        DEPTID,
+      </if>
+      <if test="createtime != null" >
+        CREATETIME,
+      </if>
+      <if test="lastmodifytime != null" >
+        LASTMODIFYTIME,
+      </if>
+      <if test="starttime != null" >
+        STARTTIME,
+      </if>
+      <if test="endtime != null" >
+        ENDTIME,
+      </if>
+      <if test="createtype != null" >
+        CREATETYPE,
+      </if>
+      <if test="casetype != null" >
+        CASETYPE,
+      </if>
+      <if test="region != null" >
+        REGION,
+      </if>
+      <if test="finished != null" >
+        FINISHED,
+      </if>
+      <if test="casestate != null" >
+        CASESTATE,
+      </if>
+      <if test="propertyA != null" >
+        PROPERTY_A,
+      </if>
+      <if test="propertyB != null" >
+        PROPERTY_B,
+      </if>
+      <if test="propertyC != null" >
+        PROPERTY_C,
+      </if>
+      <if test="propertyD != null" >
+        PROPERTY_D,
+      </if>
+      <if test="propertyE != null" >
+        PROPERTY_E,
+      </if>
+      <if test="hasnewmsg != null" >
+        HASNEWMSG,
+      </if>
+      <if test="unitType != null" >
+        UNIT_TYPE,
+      </if>
+      <if test="acceptResult != null" >
+        ACCEPT_RESULT,
+      </if>
+      <if test="managerorgid != null" >
+        MANAGERORGID,
+      </if>
+      <if test="auditType != null" >
+        AUDIT_TYPE,
+      </if>
+      <if test="isAllowEdit != null" >
+        IS_ALLOW_EDIT,
+      </if>
+      <if test="temp != null" >
+        TEMP,
+      </if>
+      <if test="tempA != null" >
+        TEMP_A,
+      </if>
+      <if test="tempB != null" >
+        TEMP_B,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="instanceid != null" >
+        #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="application != null" >
+        #{application,jdbcType=VARCHAR},
+      </if>
+      <if test="catalog != null" >
+        #{catalog,jdbcType=VARCHAR},
+      </if>
+      <if test="orgid != null" >
+        #{orgid,jdbcType=VARCHAR},
+      </if>
+      <if test="orgidentity != null" >
+        #{orgidentity,jdbcType=VARCHAR},
+      </if>
+      <if test="orgname != null" >
+        #{orgname,jdbcType=VARCHAR},
+      </if>
+      <if test="proposer != null" >
+        #{proposer,jdbcType=VARCHAR},
+      </if>
+      <if test="proposeid != null" >
+        #{proposeid,jdbcType=DECIMAL},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=DECIMAL},
+      </if>
+      <if test="deptid != null" >
+        #{deptid,jdbcType=DECIMAL},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastmodifytime != null" >
+        #{lastmodifytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="starttime != null" >
+        #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endtime != null" >
+        #{endtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createtype != null" >
+        #{createtype,jdbcType=DECIMAL},
+      </if>
+      <if test="casetype != null" >
+        #{casetype,jdbcType=DECIMAL},
+      </if>
+      <if test="region != null" >
+        #{region,jdbcType=DECIMAL},
+      </if>
+      <if test="finished != null" >
+        #{finished,jdbcType=DECIMAL},
+      </if>
+      <if test="casestate != null" >
+        #{casestate,jdbcType=DECIMAL},
+      </if>
+      <if test="propertyA != null" >
+        #{propertyA,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyB != null" >
+        #{propertyB,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyC != null" >
+        #{propertyC,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyD != null" >
+        #{propertyD,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyE != null" >
+        #{propertyE,jdbcType=VARCHAR},
+      </if>
+      <if test="hasnewmsg != null" >
+        #{hasnewmsg,jdbcType=DECIMAL},
+      </if>
+      <if test="unitType != null" >
+        #{unitType,jdbcType=DECIMAL},
+      </if>
+      <if test="acceptResult != null" >
+        #{acceptResult,jdbcType=DECIMAL},
+      </if>
+      <if test="managerorgid != null" >
+        #{managerorgid,jdbcType=DECIMAL},
+      </if>
+      <if test="auditType != null" >
+        #{auditType,jdbcType=DECIMAL},
+      </if>
+      <if test="isAllowEdit != null" >
+        #{isAllowEdit,jdbcType=DECIMAL},
+      </if>
+      <if test="temp != null" >
+        #{temp,jdbcType=DECIMAL},
+      </if>
+      <if test="tempA != null" >
+        #{tempA,jdbcType=VARCHAR},
+      </if>
+      <if test="tempB != null" >
+        #{tempB,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.FormConsultationCaseExample" resultType="java.lang.Integer" >
+    select count(*) from MJZZ.FORM_CONSULTATION_CASE
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update MJZZ.FORM_CONSULTATION_CASE
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=DECIMAL},
+      </if>
+      <if test="record.instanceid != null" >
+        INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.application != null" >
+        APPLICATION = #{record.application,jdbcType=VARCHAR},
+      </if>
+      <if test="record.catalog != null" >
+        CATALOG = #{record.catalog,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orgid != null" >
+        ORGID = #{record.orgid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orgidentity != null" >
+        ORGIDENTITY = #{record.orgidentity,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orgname != null" >
+        ORGNAME = #{record.orgname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.proposer != null" >
+        PROPOSER = #{record.proposer,jdbcType=VARCHAR},
+      </if>
+      <if test="record.proposeid != null" >
+        PROPOSEID = #{record.proposeid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.userid != null" >
+        USERID = #{record.userid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.deptid != null" >
+        DEPTID = #{record.deptid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.createtime != null" >
+        CREATETIME = #{record.createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.lastmodifytime != null" >
+        LASTMODIFYTIME = #{record.lastmodifytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.starttime != null" >
+        STARTTIME = #{record.starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.endtime != null" >
+        ENDTIME = #{record.endtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createtype != null" >
+        CREATETYPE = #{record.createtype,jdbcType=DECIMAL},
+      </if>
+      <if test="record.casetype != null" >
+        CASETYPE = #{record.casetype,jdbcType=DECIMAL},
+      </if>
+      <if test="record.region != null" >
+        REGION = #{record.region,jdbcType=DECIMAL},
+      </if>
+      <if test="record.finished != null" >
+        FINISHED = #{record.finished,jdbcType=DECIMAL},
+      </if>
+      <if test="record.casestate != null" >
+        CASESTATE = #{record.casestate,jdbcType=DECIMAL},
+      </if>
+      <if test="record.propertyA != null" >
+        PROPERTY_A = #{record.propertyA,jdbcType=VARCHAR},
+      </if>
+      <if test="record.propertyB != null" >
+        PROPERTY_B = #{record.propertyB,jdbcType=VARCHAR},
+      </if>
+      <if test="record.propertyC != null" >
+        PROPERTY_C = #{record.propertyC,jdbcType=VARCHAR},
+      </if>
+      <if test="record.propertyD != null" >
+        PROPERTY_D = #{record.propertyD,jdbcType=VARCHAR},
+      </if>
+      <if test="record.propertyE != null" >
+        PROPERTY_E = #{record.propertyE,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hasnewmsg != null" >
+        HASNEWMSG = #{record.hasnewmsg,jdbcType=DECIMAL},
+      </if>
+      <if test="record.unitType != null" >
+        UNIT_TYPE = #{record.unitType,jdbcType=DECIMAL},
+      </if>
+      <if test="record.acceptResult != null" >
+        ACCEPT_RESULT = #{record.acceptResult,jdbcType=DECIMAL},
+      </if>
+      <if test="record.managerorgid != null" >
+        MANAGERORGID = #{record.managerorgid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.auditType != null" >
+        AUDIT_TYPE = #{record.auditType,jdbcType=DECIMAL},
+      </if>
+      <if test="record.isAllowEdit != null" >
+        IS_ALLOW_EDIT = #{record.isAllowEdit,jdbcType=DECIMAL},
+      </if>
+      <if test="record.temp != null" >
+        TEMP = #{record.temp,jdbcType=DECIMAL},
+      </if>
+      <if test="record.tempA != null" >
+        TEMP_A = #{record.tempA,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tempB != null" >
+        TEMP_B = #{record.tempB,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update MJZZ.FORM_CONSULTATION_CASE
+    set ID = #{record.id,jdbcType=DECIMAL},
+      INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      APPLICATION = #{record.application,jdbcType=VARCHAR},
+      CATALOG = #{record.catalog,jdbcType=VARCHAR},
+      ORGID = #{record.orgid,jdbcType=VARCHAR},
+      ORGIDENTITY = #{record.orgidentity,jdbcType=VARCHAR},
+      ORGNAME = #{record.orgname,jdbcType=VARCHAR},
+      PROPOSER = #{record.proposer,jdbcType=VARCHAR},
+      PROPOSEID = #{record.proposeid,jdbcType=DECIMAL},
+      USERID = #{record.userid,jdbcType=DECIMAL},
+      DEPTID = #{record.deptid,jdbcType=DECIMAL},
+      CREATETIME = #{record.createtime,jdbcType=TIMESTAMP},
+      LASTMODIFYTIME = #{record.lastmodifytime,jdbcType=TIMESTAMP},
+      STARTTIME = #{record.starttime,jdbcType=TIMESTAMP},
+      ENDTIME = #{record.endtime,jdbcType=TIMESTAMP},
+      CREATETYPE = #{record.createtype,jdbcType=DECIMAL},
+      CASETYPE = #{record.casetype,jdbcType=DECIMAL},
+      REGION = #{record.region,jdbcType=DECIMAL},
+      FINISHED = #{record.finished,jdbcType=DECIMAL},
+      CASESTATE = #{record.casestate,jdbcType=DECIMAL},
+      PROPERTY_A = #{record.propertyA,jdbcType=VARCHAR},
+      PROPERTY_B = #{record.propertyB,jdbcType=VARCHAR},
+      PROPERTY_C = #{record.propertyC,jdbcType=VARCHAR},
+      PROPERTY_D = #{record.propertyD,jdbcType=VARCHAR},
+      PROPERTY_E = #{record.propertyE,jdbcType=VARCHAR},
+      HASNEWMSG = #{record.hasnewmsg,jdbcType=DECIMAL},
+      UNIT_TYPE = #{record.unitType,jdbcType=DECIMAL},
+      ACCEPT_RESULT = #{record.acceptResult,jdbcType=DECIMAL},
+      MANAGERORGID = #{record.managerorgid,jdbcType=DECIMAL},
+      AUDIT_TYPE = #{record.auditType,jdbcType=DECIMAL},
+      IS_ALLOW_EDIT = #{record.isAllowEdit,jdbcType=DECIMAL},
+      TEMP = #{record.temp,jdbcType=DECIMAL},
+      TEMP_A = #{record.tempA,jdbcType=VARCHAR},
+      TEMP_B = #{record.tempB,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.FormConsultationCase" >
+    update MJZZ.FORM_CONSULTATION_CASE
+    <set >
+      <if test="instanceid != null" >
+        INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="application != null" >
+        APPLICATION = #{application,jdbcType=VARCHAR},
+      </if>
+      <if test="catalog != null" >
+        CATALOG = #{catalog,jdbcType=VARCHAR},
+      </if>
+      <if test="orgid != null" >
+        ORGID = #{orgid,jdbcType=VARCHAR},
+      </if>
+      <if test="orgidentity != null" >
+        ORGIDENTITY = #{orgidentity,jdbcType=VARCHAR},
+      </if>
+      <if test="orgname != null" >
+        ORGNAME = #{orgname,jdbcType=VARCHAR},
+      </if>
+      <if test="proposer != null" >
+        PROPOSER = #{proposer,jdbcType=VARCHAR},
+      </if>
+      <if test="proposeid != null" >
+        PROPOSEID = #{proposeid,jdbcType=DECIMAL},
+      </if>
+      <if test="userid != null" >
+        USERID = #{userid,jdbcType=DECIMAL},
+      </if>
+      <if test="deptid != null" >
+        DEPTID = #{deptid,jdbcType=DECIMAL},
+      </if>
+      <if test="createtime != null" >
+        CREATETIME = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastmodifytime != null" >
+        LASTMODIFYTIME = #{lastmodifytime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="starttime != null" >
+        STARTTIME = #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endtime != null" >
+        ENDTIME = #{endtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createtype != null" >
+        CREATETYPE = #{createtype,jdbcType=DECIMAL},
+      </if>
+      <if test="casetype != null" >
+        CASETYPE = #{casetype,jdbcType=DECIMAL},
+      </if>
+      <if test="region != null" >
+        REGION = #{region,jdbcType=DECIMAL},
+      </if>
+      <if test="finished != null" >
+        FINISHED = #{finished,jdbcType=DECIMAL},
+      </if>
+      <if test="casestate != null" >
+        CASESTATE = #{casestate,jdbcType=DECIMAL},
+      </if>
+      <if test="propertyA != null" >
+        PROPERTY_A = #{propertyA,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyB != null" >
+        PROPERTY_B = #{propertyB,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyC != null" >
+        PROPERTY_C = #{propertyC,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyD != null" >
+        PROPERTY_D = #{propertyD,jdbcType=VARCHAR},
+      </if>
+      <if test="propertyE != null" >
+        PROPERTY_E = #{propertyE,jdbcType=VARCHAR},
+      </if>
+      <if test="hasnewmsg != null" >
+        HASNEWMSG = #{hasnewmsg,jdbcType=DECIMAL},
+      </if>
+      <if test="unitType != null" >
+        UNIT_TYPE = #{unitType,jdbcType=DECIMAL},
+      </if>
+      <if test="acceptResult != null" >
+        ACCEPT_RESULT = #{acceptResult,jdbcType=DECIMAL},
+      </if>
+      <if test="managerorgid != null" >
+        MANAGERORGID = #{managerorgid,jdbcType=DECIMAL},
+      </if>
+      <if test="auditType != null" >
+        AUDIT_TYPE = #{auditType,jdbcType=DECIMAL},
+      </if>
+      <if test="isAllowEdit != null" >
+        IS_ALLOW_EDIT = #{isAllowEdit,jdbcType=DECIMAL},
+      </if>
+      <if test="temp != null" >
+        TEMP = #{temp,jdbcType=DECIMAL},
+      </if>
+      <if test="tempA != null" >
+        TEMP_A = #{tempA,jdbcType=VARCHAR},
+      </if>
+      <if test="tempB != null" >
+        TEMP_B = #{tempB,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xgb.model.FormConsultationCase" >
+    update MJZZ.FORM_CONSULTATION_CASE
+    set INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      APPLICATION = #{application,jdbcType=VARCHAR},
+      CATALOG = #{catalog,jdbcType=VARCHAR},
+      ORGID = #{orgid,jdbcType=VARCHAR},
+      ORGIDENTITY = #{orgidentity,jdbcType=VARCHAR},
+      ORGNAME = #{orgname,jdbcType=VARCHAR},
+      PROPOSER = #{proposer,jdbcType=VARCHAR},
+      PROPOSEID = #{proposeid,jdbcType=DECIMAL},
+      USERID = #{userid,jdbcType=DECIMAL},
+      DEPTID = #{deptid,jdbcType=DECIMAL},
+      CREATETIME = #{createtime,jdbcType=TIMESTAMP},
+      LASTMODIFYTIME = #{lastmodifytime,jdbcType=TIMESTAMP},
+      STARTTIME = #{starttime,jdbcType=TIMESTAMP},
+      ENDTIME = #{endtime,jdbcType=TIMESTAMP},
+      CREATETYPE = #{createtype,jdbcType=DECIMAL},
+      CASETYPE = #{casetype,jdbcType=DECIMAL},
+      REGION = #{region,jdbcType=DECIMAL},
+      FINISHED = #{finished,jdbcType=DECIMAL},
+      CASESTATE = #{casestate,jdbcType=DECIMAL},
+      PROPERTY_A = #{propertyA,jdbcType=VARCHAR},
+      PROPERTY_B = #{propertyB,jdbcType=VARCHAR},
+      PROPERTY_C = #{propertyC,jdbcType=VARCHAR},
+      PROPERTY_D = #{propertyD,jdbcType=VARCHAR},
+      PROPERTY_E = #{propertyE,jdbcType=VARCHAR},
+      HASNEWMSG = #{hasnewmsg,jdbcType=DECIMAL},
+      UNIT_TYPE = #{unitType,jdbcType=DECIMAL},
+      ACCEPT_RESULT = #{acceptResult,jdbcType=DECIMAL},
+      MANAGERORGID = #{managerorgid,jdbcType=DECIMAL},
+      AUDIT_TYPE = #{auditType,jdbcType=DECIMAL},
+      IS_ALLOW_EDIT = #{isAllowEdit,jdbcType=DECIMAL},
+      TEMP = #{temp,jdbcType=DECIMAL},
+      TEMP_A = #{tempA,jdbcType=VARCHAR},
+      TEMP_B = #{tempB,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>

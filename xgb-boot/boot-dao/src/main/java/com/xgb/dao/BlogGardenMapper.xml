@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.BlogGardenMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.BlogGarden" >
+    <constructor >
+      <idArg column="ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="BLOG_TAITL" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="BLOG_ABOUT" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="VOLUME" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="SUPPORT" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="OPPOSITION" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="CLASSIFICATION_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATUS" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CREATE_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="UPDATE_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CREATE_TIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="UPDATE_TIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="KEY_WORD" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, BLOG_TAITL, BLOG_ABOUT, VOLUME, SUPPORT, OPPOSITION, CLASSIFICATION_ID, STATUS,
+    CREATE_ID, UPDATE_ID, CREATE_TIME, UPDATE_TIME, KEY_WORD
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.BlogGardenExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from BLOG_GARDEN
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from BLOG_GARDEN
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from BLOG_GARDEN
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xgb.model.BlogGardenExample" >
+    delete from BLOG_GARDEN
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.BlogGarden" >
+    insert into BLOG_GARDEN (ID, BLOG_TAITL, BLOG_ABOUT,
+      VOLUME, SUPPORT, OPPOSITION,
+      CLASSIFICATION_ID, STATUS, CREATE_ID,
+      UPDATE_ID, CREATE_TIME, UPDATE_TIME,
+      KEY_WORD)
+    values (#{id,jdbcType=VARCHAR}, #{blogTaitl,jdbcType=VARCHAR}, #{blogAbout,jdbcType=VARCHAR},
+      #{volume,jdbcType=INTEGER}, #{support,jdbcType=INTEGER}, #{opposition,jdbcType=INTEGER},
+      #{classificationId,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{createId,jdbcType=VARCHAR},
+      #{updateId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP},
+      #{keyWord,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.BlogGarden" >
+    insert into BLOG_GARDEN
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="blogTaitl != null" >
+        BLOG_TAITL,
+      </if>
+      <if test="blogAbout != null" >
+        BLOG_ABOUT,
+      </if>
+      <if test="volume != null" >
+        VOLUME,
+      </if>
+      <if test="support != null" >
+        SUPPORT,
+      </if>
+      <if test="opposition != null" >
+        OPPOSITION,
+      </if>
+      <if test="classificationId != null" >
+        CLASSIFICATION_ID,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="createId != null" >
+        CREATE_ID,
+      </if>
+      <if test="updateId != null" >
+        UPDATE_ID,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME,
+      </if>
+      <if test="keyWord != null" >
+        KEY_WORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="blogTaitl != null" >
+        #{blogTaitl,jdbcType=VARCHAR},
+      </if>
+      <if test="blogAbout != null" >
+        #{blogAbout,jdbcType=VARCHAR},
+      </if>
+      <if test="volume != null" >
+        #{volume,jdbcType=INTEGER},
+      </if>
+      <if test="support != null" >
+        #{support,jdbcType=INTEGER},
+      </if>
+      <if test="opposition != null" >
+        #{opposition,jdbcType=INTEGER},
+      </if>
+      <if test="classificationId != null" >
+        #{classificationId,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createId != null" >
+        #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateId != null" >
+        #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keyWord != null" >
+        #{keyWord,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.BlogGardenExample" resultType="java.lang.Integer" >
+    select count(*) from BLOG_GARDEN
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update BLOG_GARDEN
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.blogTaitl != null" >
+        BLOG_TAITL = #{record.blogTaitl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.blogAbout != null" >
+        BLOG_ABOUT = #{record.blogAbout,jdbcType=VARCHAR},
+      </if>
+      <if test="record.volume != null" >
+        VOLUME = #{record.volume,jdbcType=INTEGER},
+      </if>
+      <if test="record.support != null" >
+        SUPPORT = #{record.support,jdbcType=INTEGER},
+      </if>
+      <if test="record.opposition != null" >
+        OPPOSITION = #{record.opposition,jdbcType=INTEGER},
+      </if>
+      <if test="record.classificationId != null" >
+        CLASSIFICATION_ID = #{record.classificationId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createId != null" >
+        CREATE_ID = #{record.createId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateId != null" >
+        UPDATE_ID = #{record.updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateTime != null" >
+        UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.keyWord != null" >
+        KEY_WORD = #{record.keyWord,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update BLOG_GARDEN
+    set ID = #{record.id,jdbcType=VARCHAR},
+      BLOG_TAITL = #{record.blogTaitl,jdbcType=VARCHAR},
+      BLOG_ABOUT = #{record.blogAbout,jdbcType=VARCHAR},
+      VOLUME = #{record.volume,jdbcType=INTEGER},
+      SUPPORT = #{record.support,jdbcType=INTEGER},
+      OPPOSITION = #{record.opposition,jdbcType=INTEGER},
+      CLASSIFICATION_ID = #{record.classificationId,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=VARCHAR},
+      CREATE_ID = #{record.createId,jdbcType=VARCHAR},
+      UPDATE_ID = #{record.updateId,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      KEY_WORD = #{record.keyWord,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.BlogGarden" >
+    update BLOG_GARDEN
+    <set >
+      <if test="blogTaitl != null" >
+        BLOG_TAITL = #{blogTaitl,jdbcType=VARCHAR},
+      </if>
+      <if test="blogAbout != null" >
+        BLOG_ABOUT = #{blogAbout,jdbcType=VARCHAR},
+      </if>
+      <if test="volume != null" >
+        VOLUME = #{volume,jdbcType=INTEGER},
+      </if>
+      <if test="support != null" >
+        SUPPORT = #{support,jdbcType=INTEGER},
+      </if>
+      <if test="opposition != null" >
+        OPPOSITION = #{opposition,jdbcType=INTEGER},
+      </if>
+      <if test="classificationId != null" >
+        CLASSIFICATION_ID = #{classificationId,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createId != null" >
+        CREATE_ID = #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateId != null" >
+        UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="keyWord != null" >
+        KEY_WORD = #{keyWord,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xgb.model.BlogGarden" >
+    update BLOG_GARDEN
+    set BLOG_TAITL = #{blogTaitl,jdbcType=VARCHAR},
+      BLOG_ABOUT = #{blogAbout,jdbcType=VARCHAR},
+      VOLUME = #{volume,jdbcType=INTEGER},
+      SUPPORT = #{support,jdbcType=INTEGER},
+      OPPOSITION = #{opposition,jdbcType=INTEGER},
+      CLASSIFICATION_ID = #{classificationId,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=VARCHAR},
+      CREATE_ID = #{createId,jdbcType=VARCHAR},
+      UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      KEY_WORD = #{keyWord,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
