@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--定义日志存放的位置-->
+    <!-- 此xml在spring-boot-x.x.x.RELEASE.jar里 -->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <!-- 开启后可以通过jmx动态控制日志级别(springboot Admin的功能) -->
+    <!--<jmxConfigurator/>-->
+
+    <!-- 控制台日志 -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <!--<filter class="ch.qos.logback.core.filter.EvaluatorFilter">-->
+            <!--<evaluator class="ch.qos.logback.classic.boolex.GEventEvaluator">-->
+                <!--<expression>-->
+                    <!--e.mdc?.get("sessionId") =~ /^JOB.*/-->
+                <!--</expression>-->
+            <!--</evaluator>-->
+            <!--<OnMismatch>NEUTRAL</OnMismatch>-->
+            <!--<OnMatch>DENY</OnMatch>-->
+        <!--</filter>-->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %-5level [%X{sessionId}] [%X{ip}] [%X{user}] [%X{opCode}]   %logger{24}:%L %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 归档日志 -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--<filter class="ch.qos.logback.core.filter.EvaluatorFilter">-->
+            <!--<evaluator class="ch.qos.logback.classic.boolex.GEventEvaluator">-->
+                <!--<expression>-->
+                    <!--e.mdc?.get("sessionId") =~ /^JOB.*/-->
+                <!--</expression>-->
+            <!--</evaluator>-->
+            <!--<OnMismatch>NEUTRAL</OnMismatch>-->
+            <!--<OnMatch>DENY</OnMatch>-->
+        <!--</filter>-->
+        <File>${LOG_PATH}${LOG_FILE}</File>
+        <encoder>
+            <pattern>%date  %-5level [%X{sessionId}] [%X{ip}] [%X{user}] [%X{opCode}] %logger{24}:%line %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- 添加.gz 历史日志会启用压缩 大大缩小日志文件所占空间 -->
+            <fileNamePattern>${LOG_PATH}daily/${LOG_FILE}.%d{yyyy-MM-dd}.gz</fileNamePattern>
+            <maxHistory>30</maxHistory><!--  保留30天日志 -->
+        </rollingPolicy>
+    </appender>
+
+    <!--<logger name="org.springframework" level="error"/>-->
+    <!--<logger name="jdbc.connection" level="OFF"/>-->
+    <!--<logger name="org.apache" level="error"/>-->
+    <!--<logger name="com.alibaba" level="error"/>-->
+    <!--<logger name="org.apache.kafka.clients.producer.ProducerConfig" level="warn"/>-->
+    <!--<logger name="com.stylefeng.guns" level="trace" additivity="false"/>-->
+    <!--<logger name="com.stylefeng.guns" level="trace"/>-->
+    <!--<logger name="com.macrolab" level="trace"/>-->
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+</configuration>
