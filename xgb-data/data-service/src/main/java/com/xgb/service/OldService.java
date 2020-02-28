@@ -124,7 +124,11 @@ public class OldService {
     @Autowired
     private MjzzDictionaryMapper mjzzDictionaryMapper;
 
+    public List<FormConsultationCase> list(){return formConsultationCaseMapper.selectByExample(new FormConsultationCaseExample());}
+
     public List<MjzzDictionary> selectByExample(MjzzDictionaryExample example){ return mjzzDictionaryMapper.selectByExample(example); }
+
+    public MjzzDictionary mjzzDictionarySelectByPrimaryKey(Long id){return mjzzDictionaryMapper.selectByPrimaryKey(id);}
 
     public List<SjzdNode> selectByExample(SjzdNodeExample example){ return sjzdNodeMapper.selectByExample(example); }
 
@@ -150,6 +154,10 @@ public class OldService {
 
     public List<MjzzUser> selectByExample(MjzzUserExample example){
         return mjzzUserMapper.selectByExample(example);
+    }
+
+    public MjzzUser selectByPrimaryKey(Long id){
+        return mjzzUserMapper.selectByPrimaryKey(id);
     }
 
     public List<JjhnjGyhdmx> selectByExample(JjhnjGyhdmxExample example){

@@ -1,0 +1,1606 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.JjhnjJgjslsjqkSubMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.JjhnjJgjslsjqkSub" >
+    <constructor >
+      <idArg column="ID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="INSTANCEID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORGANIZATIONID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATUS" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="MASTERID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="NIAN" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="YUE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="RI" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="JIE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CI" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="HUIYISHIJIAN" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="HUIYIDIDIAN" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="HUIYIZHUTI" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="RENYUANMINGDAN" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="HUIYIJUEYI" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="BEIZHU" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="XUHAO" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="CHUXILISHI1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXILISHI2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXILISHI3" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXILISHI4" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXILISHI5" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXILISHI6" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXILISHI7" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXILISHI8" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXILISHI9" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXILISHI10" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXILISHI11" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXILISHI12" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXILISHI13" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXILISHI14" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXILISHI15" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXILISHI16" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXILISHI17" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXILISHI18" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXILISHI19" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXILISHI20" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXILISHI21" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXILISHI22" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXILISHI23" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXILISHI24" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXILISHI25" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXIJIANSHI" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXIJIANSHI" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXIJIANSHI1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXIJIANSHI2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXIJIANSHI3" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXIJIANSHI4" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXIJIANSHI5" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXIJIANSHI6" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXIJIANSHI7" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXIJIANSHI8" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXIJIANSHI9" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUXIJIANSHI10" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXIJIANSHI1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXIJIANSHI2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXIJIANSHI3" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXIJIANSHI4" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXIJIANSHI5" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXIJIANSHI6" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXIJIANSHI7" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXIJIANSHI8" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXIJIANSHI9" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXIJIANSHI10" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="LISHIZONGSHU" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="JIANSHIZONGSHU" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="WEICHUXILISHI1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI3" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI4" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI5" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI6" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI7" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI8" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI9" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI10" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI11" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI12" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI13" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI14" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI15" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI16" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI17" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI18" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI19" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI20" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI21" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI22" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI23" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI24" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEICHUXILISHI25" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SHIFOUDADAO" jdbcType="DECIMAL" javaType="java.lang.Short" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, INSTANCEID, ORGANIZATIONID, STATUS, MASTERID, NIAN, YUE, RI, JIE, CI, HUIYISHIJIAN, 
+    HUIYIDIDIAN, HUIYIZHUTI, RENYUANMINGDAN, HUIYIJUEYI, BEIZHU, XUHAO, CHUXILISHI1, 
+    CHUXILISHI2, CHUXILISHI3, CHUXILISHI4, CHUXILISHI5, CHUXILISHI6, CHUXILISHI7, CHUXILISHI8, 
+    CHUXILISHI9, CHUXILISHI10, CHUXILISHI11, CHUXILISHI12, CHUXILISHI13, CHUXILISHI14, 
+    CHUXILISHI15, CHUXILISHI16, CHUXILISHI17, CHUXILISHI18, CHUXILISHI19, CHUXILISHI20, 
+    CHUXILISHI21, CHUXILISHI22, CHUXILISHI23, CHUXILISHI24, CHUXILISHI25, WEICHUXILISHI, 
+    CHUXIJIANSHI, WEICHUXIJIANSHI, CHUXIJIANSHI1, CHUXIJIANSHI2, CHUXIJIANSHI3, CHUXIJIANSHI4, 
+    CHUXIJIANSHI5, CHUXIJIANSHI6, CHUXIJIANSHI7, CHUXIJIANSHI8, CHUXIJIANSHI9, CHUXIJIANSHI10, 
+    WEICHUXIJIANSHI1, WEICHUXIJIANSHI2, WEICHUXIJIANSHI3, WEICHUXIJIANSHI4, WEICHUXIJIANSHI5, 
+    WEICHUXIJIANSHI6, WEICHUXIJIANSHI7, WEICHUXIJIANSHI8, WEICHUXIJIANSHI9, WEICHUXIJIANSHI10, 
+    LISHIZONGSHU, JIANSHIZONGSHU, WEICHUXILISHI1, WEICHUXILISHI2, WEICHUXILISHI3, WEICHUXILISHI4, 
+    WEICHUXILISHI5, WEICHUXILISHI6, WEICHUXILISHI7, WEICHUXILISHI8, WEICHUXILISHI9, WEICHUXILISHI10, 
+    WEICHUXILISHI11, WEICHUXILISHI12, WEICHUXILISHI13, WEICHUXILISHI14, WEICHUXILISHI15, 
+    WEICHUXILISHI16, WEICHUXILISHI17, WEICHUXILISHI18, WEICHUXILISHI19, WEICHUXILISHI20, 
+    WEICHUXILISHI21, WEICHUXILISHI22, WEICHUXILISHI23, WEICHUXILISHI24, WEICHUXILISHI25, 
+    SHIFOUDADAO
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.JjhnjJgjslsjqkSubExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from MJZZ_USER.JJHNJ_JGJSLSJQK_SUB
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from MJZZ_USER.JJHNJ_JGJSLSJQK_SUB
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from MJZZ_USER.JJHNJ_JGJSLSJQK_SUB
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xgb.model.JjhnjJgjslsjqkSubExample" >
+    delete from MJZZ_USER.JJHNJ_JGJSLSJQK_SUB
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.JjhnjJgjslsjqkSub" >
+    insert into JJHNJ_JGJSLSJQK_SUB (ID, INSTANCEID, ORGANIZATIONID, 
+      STATUS, MASTERID, NIAN, 
+      YUE, RI, JIE, CI, 
+      HUIYISHIJIAN, HUIYIDIDIAN, HUIYIZHUTI, 
+      RENYUANMINGDAN, HUIYIJUEYI, BEIZHU, 
+      XUHAO, CHUXILISHI1, CHUXILISHI2, 
+      CHUXILISHI3, CHUXILISHI4, CHUXILISHI5, 
+      CHUXILISHI6, CHUXILISHI7, CHUXILISHI8, 
+      CHUXILISHI9, CHUXILISHI10, CHUXILISHI11, 
+      CHUXILISHI12, CHUXILISHI13, CHUXILISHI14, 
+      CHUXILISHI15, CHUXILISHI16, CHUXILISHI17, 
+      CHUXILISHI18, CHUXILISHI19, CHUXILISHI20, 
+      CHUXILISHI21, CHUXILISHI22, CHUXILISHI23, 
+      CHUXILISHI24, CHUXILISHI25, WEICHUXILISHI, 
+      CHUXIJIANSHI, WEICHUXIJIANSHI, CHUXIJIANSHI1, 
+      CHUXIJIANSHI2, CHUXIJIANSHI3, CHUXIJIANSHI4, 
+      CHUXIJIANSHI5, CHUXIJIANSHI6, CHUXIJIANSHI7, 
+      CHUXIJIANSHI8, CHUXIJIANSHI9, CHUXIJIANSHI10, 
+      WEICHUXIJIANSHI1, WEICHUXIJIANSHI2, WEICHUXIJIANSHI3, 
+      WEICHUXIJIANSHI4, WEICHUXIJIANSHI5, WEICHUXIJIANSHI6, 
+      WEICHUXIJIANSHI7, WEICHUXIJIANSHI8, WEICHUXIJIANSHI9, 
+      WEICHUXIJIANSHI10, LISHIZONGSHU, JIANSHIZONGSHU, 
+      WEICHUXILISHI1, WEICHUXILISHI2, WEICHUXILISHI3, 
+      WEICHUXILISHI4, WEICHUXILISHI5, WEICHUXILISHI6, 
+      WEICHUXILISHI7, WEICHUXILISHI8, WEICHUXILISHI9, 
+      WEICHUXILISHI10, WEICHUXILISHI11, WEICHUXILISHI12, 
+      WEICHUXILISHI13, WEICHUXILISHI14, WEICHUXILISHI15, 
+      WEICHUXILISHI16, WEICHUXILISHI17, WEICHUXILISHI18, 
+      WEICHUXILISHI19, WEICHUXILISHI20, WEICHUXILISHI21, 
+      WEICHUXILISHI22, WEICHUXILISHI23, WEICHUXILISHI24, 
+      WEICHUXILISHI25, SHIFOUDADAO)
+    values (#{id,jdbcType=DECIMAL}, #{instanceid,jdbcType=VARCHAR}, #{organizationid,jdbcType=VARCHAR}, 
+      #{status,jdbcType=DECIMAL}, #{masterid,jdbcType=DECIMAL}, #{nian,jdbcType=VARCHAR}, 
+      #{yue,jdbcType=VARCHAR}, #{ri,jdbcType=VARCHAR}, #{jie,jdbcType=VARCHAR}, #{ci,jdbcType=VARCHAR}, 
+      #{huiyishijian,jdbcType=TIMESTAMP}, #{huiyididian,jdbcType=VARCHAR}, #{huiyizhuti,jdbcType=VARCHAR}, 
+      #{renyuanmingdan,jdbcType=VARCHAR}, #{huiyijueyi,jdbcType=VARCHAR}, #{beizhu,jdbcType=VARCHAR}, 
+      #{xuhao,jdbcType=DECIMAL}, #{chuxilishi1,jdbcType=VARCHAR}, #{chuxilishi2,jdbcType=VARCHAR}, 
+      #{chuxilishi3,jdbcType=VARCHAR}, #{chuxilishi4,jdbcType=VARCHAR}, #{chuxilishi5,jdbcType=VARCHAR}, 
+      #{chuxilishi6,jdbcType=VARCHAR}, #{chuxilishi7,jdbcType=VARCHAR}, #{chuxilishi8,jdbcType=VARCHAR}, 
+      #{chuxilishi9,jdbcType=VARCHAR}, #{chuxilishi10,jdbcType=VARCHAR}, #{chuxilishi11,jdbcType=VARCHAR}, 
+      #{chuxilishi12,jdbcType=VARCHAR}, #{chuxilishi13,jdbcType=VARCHAR}, #{chuxilishi14,jdbcType=VARCHAR}, 
+      #{chuxilishi15,jdbcType=VARCHAR}, #{chuxilishi16,jdbcType=VARCHAR}, #{chuxilishi17,jdbcType=VARCHAR}, 
+      #{chuxilishi18,jdbcType=VARCHAR}, #{chuxilishi19,jdbcType=VARCHAR}, #{chuxilishi20,jdbcType=VARCHAR}, 
+      #{chuxilishi21,jdbcType=VARCHAR}, #{chuxilishi22,jdbcType=VARCHAR}, #{chuxilishi23,jdbcType=VARCHAR}, 
+      #{chuxilishi24,jdbcType=VARCHAR}, #{chuxilishi25,jdbcType=VARCHAR}, #{weichuxilishi,jdbcType=VARCHAR}, 
+      #{chuxijianshi,jdbcType=VARCHAR}, #{weichuxijianshi,jdbcType=VARCHAR}, #{chuxijianshi1,jdbcType=VARCHAR}, 
+      #{chuxijianshi2,jdbcType=VARCHAR}, #{chuxijianshi3,jdbcType=VARCHAR}, #{chuxijianshi4,jdbcType=VARCHAR}, 
+      #{chuxijianshi5,jdbcType=VARCHAR}, #{chuxijianshi6,jdbcType=VARCHAR}, #{chuxijianshi7,jdbcType=VARCHAR}, 
+      #{chuxijianshi8,jdbcType=VARCHAR}, #{chuxijianshi9,jdbcType=VARCHAR}, #{chuxijianshi10,jdbcType=VARCHAR}, 
+      #{weichuxijianshi1,jdbcType=VARCHAR}, #{weichuxijianshi2,jdbcType=VARCHAR}, #{weichuxijianshi3,jdbcType=VARCHAR}, 
+      #{weichuxijianshi4,jdbcType=VARCHAR}, #{weichuxijianshi5,jdbcType=VARCHAR}, #{weichuxijianshi6,jdbcType=VARCHAR}, 
+      #{weichuxijianshi7,jdbcType=VARCHAR}, #{weichuxijianshi8,jdbcType=VARCHAR}, #{weichuxijianshi9,jdbcType=VARCHAR}, 
+      #{weichuxijianshi10,jdbcType=VARCHAR}, #{lishizongshu,jdbcType=DECIMAL}, #{jianshizongshu,jdbcType=DECIMAL}, 
+      #{weichuxilishi1,jdbcType=VARCHAR}, #{weichuxilishi2,jdbcType=VARCHAR}, #{weichuxilishi3,jdbcType=VARCHAR}, 
+      #{weichuxilishi4,jdbcType=VARCHAR}, #{weichuxilishi5,jdbcType=VARCHAR}, #{weichuxilishi6,jdbcType=VARCHAR}, 
+      #{weichuxilishi7,jdbcType=VARCHAR}, #{weichuxilishi8,jdbcType=VARCHAR}, #{weichuxilishi9,jdbcType=VARCHAR}, 
+      #{weichuxilishi10,jdbcType=VARCHAR}, #{weichuxilishi11,jdbcType=VARCHAR}, #{weichuxilishi12,jdbcType=VARCHAR}, 
+      #{weichuxilishi13,jdbcType=VARCHAR}, #{weichuxilishi14,jdbcType=VARCHAR}, #{weichuxilishi15,jdbcType=VARCHAR}, 
+      #{weichuxilishi16,jdbcType=VARCHAR}, #{weichuxilishi17,jdbcType=VARCHAR}, #{weichuxilishi18,jdbcType=VARCHAR}, 
+      #{weichuxilishi19,jdbcType=VARCHAR}, #{weichuxilishi20,jdbcType=VARCHAR}, #{weichuxilishi21,jdbcType=VARCHAR}, 
+      #{weichuxilishi22,jdbcType=VARCHAR}, #{weichuxilishi23,jdbcType=VARCHAR}, #{weichuxilishi24,jdbcType=VARCHAR}, 
+      #{weichuxilishi25,jdbcType=VARCHAR}, #{shifoudadao,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.JjhnjJgjslsjqkSub" >
+    insert into JJHNJ_JGJSLSJQK_SUB
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="instanceid != null" >
+        INSTANCEID,
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="masterid != null" >
+        MASTERID,
+      </if>
+      <if test="nian != null" >
+        NIAN,
+      </if>
+      <if test="yue != null" >
+        YUE,
+      </if>
+      <if test="ri != null" >
+        RI,
+      </if>
+      <if test="jie != null" >
+        JIE,
+      </if>
+      <if test="ci != null" >
+        CI,
+      </if>
+      <if test="huiyishijian != null" >
+        HUIYISHIJIAN,
+      </if>
+      <if test="huiyididian != null" >
+        HUIYIDIDIAN,
+      </if>
+      <if test="huiyizhuti != null" >
+        HUIYIZHUTI,
+      </if>
+      <if test="renyuanmingdan != null" >
+        RENYUANMINGDAN,
+      </if>
+      <if test="huiyijueyi != null" >
+        HUIYIJUEYI,
+      </if>
+      <if test="beizhu != null" >
+        BEIZHU,
+      </if>
+      <if test="xuhao != null" >
+        XUHAO,
+      </if>
+      <if test="chuxilishi1 != null" >
+        CHUXILISHI1,
+      </if>
+      <if test="chuxilishi2 != null" >
+        CHUXILISHI2,
+      </if>
+      <if test="chuxilishi3 != null" >
+        CHUXILISHI3,
+      </if>
+      <if test="chuxilishi4 != null" >
+        CHUXILISHI4,
+      </if>
+      <if test="chuxilishi5 != null" >
+        CHUXILISHI5,
+      </if>
+      <if test="chuxilishi6 != null" >
+        CHUXILISHI6,
+      </if>
+      <if test="chuxilishi7 != null" >
+        CHUXILISHI7,
+      </if>
+      <if test="chuxilishi8 != null" >
+        CHUXILISHI8,
+      </if>
+      <if test="chuxilishi9 != null" >
+        CHUXILISHI9,
+      </if>
+      <if test="chuxilishi10 != null" >
+        CHUXILISHI10,
+      </if>
+      <if test="chuxilishi11 != null" >
+        CHUXILISHI11,
+      </if>
+      <if test="chuxilishi12 != null" >
+        CHUXILISHI12,
+      </if>
+      <if test="chuxilishi13 != null" >
+        CHUXILISHI13,
+      </if>
+      <if test="chuxilishi14 != null" >
+        CHUXILISHI14,
+      </if>
+      <if test="chuxilishi15 != null" >
+        CHUXILISHI15,
+      </if>
+      <if test="chuxilishi16 != null" >
+        CHUXILISHI16,
+      </if>
+      <if test="chuxilishi17 != null" >
+        CHUXILISHI17,
+      </if>
+      <if test="chuxilishi18 != null" >
+        CHUXILISHI18,
+      </if>
+      <if test="chuxilishi19 != null" >
+        CHUXILISHI19,
+      </if>
+      <if test="chuxilishi20 != null" >
+        CHUXILISHI20,
+      </if>
+      <if test="chuxilishi21 != null" >
+        CHUXILISHI21,
+      </if>
+      <if test="chuxilishi22 != null" >
+        CHUXILISHI22,
+      </if>
+      <if test="chuxilishi23 != null" >
+        CHUXILISHI23,
+      </if>
+      <if test="chuxilishi24 != null" >
+        CHUXILISHI24,
+      </if>
+      <if test="chuxilishi25 != null" >
+        CHUXILISHI25,
+      </if>
+      <if test="weichuxilishi != null" >
+        WEICHUXILISHI,
+      </if>
+      <if test="chuxijianshi != null" >
+        CHUXIJIANSHI,
+      </if>
+      <if test="weichuxijianshi != null" >
+        WEICHUXIJIANSHI,
+      </if>
+      <if test="chuxijianshi1 != null" >
+        CHUXIJIANSHI1,
+      </if>
+      <if test="chuxijianshi2 != null" >
+        CHUXIJIANSHI2,
+      </if>
+      <if test="chuxijianshi3 != null" >
+        CHUXIJIANSHI3,
+      </if>
+      <if test="chuxijianshi4 != null" >
+        CHUXIJIANSHI4,
+      </if>
+      <if test="chuxijianshi5 != null" >
+        CHUXIJIANSHI5,
+      </if>
+      <if test="chuxijianshi6 != null" >
+        CHUXIJIANSHI6,
+      </if>
+      <if test="chuxijianshi7 != null" >
+        CHUXIJIANSHI7,
+      </if>
+      <if test="chuxijianshi8 != null" >
+        CHUXIJIANSHI8,
+      </if>
+      <if test="chuxijianshi9 != null" >
+        CHUXIJIANSHI9,
+      </if>
+      <if test="chuxijianshi10 != null" >
+        CHUXIJIANSHI10,
+      </if>
+      <if test="weichuxijianshi1 != null" >
+        WEICHUXIJIANSHI1,
+      </if>
+      <if test="weichuxijianshi2 != null" >
+        WEICHUXIJIANSHI2,
+      </if>
+      <if test="weichuxijianshi3 != null" >
+        WEICHUXIJIANSHI3,
+      </if>
+      <if test="weichuxijianshi4 != null" >
+        WEICHUXIJIANSHI4,
+      </if>
+      <if test="weichuxijianshi5 != null" >
+        WEICHUXIJIANSHI5,
+      </if>
+      <if test="weichuxijianshi6 != null" >
+        WEICHUXIJIANSHI6,
+      </if>
+      <if test="weichuxijianshi7 != null" >
+        WEICHUXIJIANSHI7,
+      </if>
+      <if test="weichuxijianshi8 != null" >
+        WEICHUXIJIANSHI8,
+      </if>
+      <if test="weichuxijianshi9 != null" >
+        WEICHUXIJIANSHI9,
+      </if>
+      <if test="weichuxijianshi10 != null" >
+        WEICHUXIJIANSHI10,
+      </if>
+      <if test="lishizongshu != null" >
+        LISHIZONGSHU,
+      </if>
+      <if test="jianshizongshu != null" >
+        JIANSHIZONGSHU,
+      </if>
+      <if test="weichuxilishi1 != null" >
+        WEICHUXILISHI1,
+      </if>
+      <if test="weichuxilishi2 != null" >
+        WEICHUXILISHI2,
+      </if>
+      <if test="weichuxilishi3 != null" >
+        WEICHUXILISHI3,
+      </if>
+      <if test="weichuxilishi4 != null" >
+        WEICHUXILISHI4,
+      </if>
+      <if test="weichuxilishi5 != null" >
+        WEICHUXILISHI5,
+      </if>
+      <if test="weichuxilishi6 != null" >
+        WEICHUXILISHI6,
+      </if>
+      <if test="weichuxilishi7 != null" >
+        WEICHUXILISHI7,
+      </if>
+      <if test="weichuxilishi8 != null" >
+        WEICHUXILISHI8,
+      </if>
+      <if test="weichuxilishi9 != null" >
+        WEICHUXILISHI9,
+      </if>
+      <if test="weichuxilishi10 != null" >
+        WEICHUXILISHI10,
+      </if>
+      <if test="weichuxilishi11 != null" >
+        WEICHUXILISHI11,
+      </if>
+      <if test="weichuxilishi12 != null" >
+        WEICHUXILISHI12,
+      </if>
+      <if test="weichuxilishi13 != null" >
+        WEICHUXILISHI13,
+      </if>
+      <if test="weichuxilishi14 != null" >
+        WEICHUXILISHI14,
+      </if>
+      <if test="weichuxilishi15 != null" >
+        WEICHUXILISHI15,
+      </if>
+      <if test="weichuxilishi16 != null" >
+        WEICHUXILISHI16,
+      </if>
+      <if test="weichuxilishi17 != null" >
+        WEICHUXILISHI17,
+      </if>
+      <if test="weichuxilishi18 != null" >
+        WEICHUXILISHI18,
+      </if>
+      <if test="weichuxilishi19 != null" >
+        WEICHUXILISHI19,
+      </if>
+      <if test="weichuxilishi20 != null" >
+        WEICHUXILISHI20,
+      </if>
+      <if test="weichuxilishi21 != null" >
+        WEICHUXILISHI21,
+      </if>
+      <if test="weichuxilishi22 != null" >
+        WEICHUXILISHI22,
+      </if>
+      <if test="weichuxilishi23 != null" >
+        WEICHUXILISHI23,
+      </if>
+      <if test="weichuxilishi24 != null" >
+        WEICHUXILISHI24,
+      </if>
+      <if test="weichuxilishi25 != null" >
+        WEICHUXILISHI25,
+      </if>
+      <if test="shifoudadao != null" >
+        SHIFOUDADAO,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="instanceid != null" >
+        #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="masterid != null" >
+        #{masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="nian != null" >
+        #{nian,jdbcType=VARCHAR},
+      </if>
+      <if test="yue != null" >
+        #{yue,jdbcType=VARCHAR},
+      </if>
+      <if test="ri != null" >
+        #{ri,jdbcType=VARCHAR},
+      </if>
+      <if test="jie != null" >
+        #{jie,jdbcType=VARCHAR},
+      </if>
+      <if test="ci != null" >
+        #{ci,jdbcType=VARCHAR},
+      </if>
+      <if test="huiyishijian != null" >
+        #{huiyishijian,jdbcType=TIMESTAMP},
+      </if>
+      <if test="huiyididian != null" >
+        #{huiyididian,jdbcType=VARCHAR},
+      </if>
+      <if test="huiyizhuti != null" >
+        #{huiyizhuti,jdbcType=VARCHAR},
+      </if>
+      <if test="renyuanmingdan != null" >
+        #{renyuanmingdan,jdbcType=VARCHAR},
+      </if>
+      <if test="huiyijueyi != null" >
+        #{huiyijueyi,jdbcType=VARCHAR},
+      </if>
+      <if test="beizhu != null" >
+        #{beizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="xuhao != null" >
+        #{xuhao,jdbcType=DECIMAL},
+      </if>
+      <if test="chuxilishi1 != null" >
+        #{chuxilishi1,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi2 != null" >
+        #{chuxilishi2,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi3 != null" >
+        #{chuxilishi3,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi4 != null" >
+        #{chuxilishi4,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi5 != null" >
+        #{chuxilishi5,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi6 != null" >
+        #{chuxilishi6,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi7 != null" >
+        #{chuxilishi7,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi8 != null" >
+        #{chuxilishi8,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi9 != null" >
+        #{chuxilishi9,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi10 != null" >
+        #{chuxilishi10,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi11 != null" >
+        #{chuxilishi11,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi12 != null" >
+        #{chuxilishi12,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi13 != null" >
+        #{chuxilishi13,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi14 != null" >
+        #{chuxilishi14,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi15 != null" >
+        #{chuxilishi15,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi16 != null" >
+        #{chuxilishi16,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi17 != null" >
+        #{chuxilishi17,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi18 != null" >
+        #{chuxilishi18,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi19 != null" >
+        #{chuxilishi19,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi20 != null" >
+        #{chuxilishi20,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi21 != null" >
+        #{chuxilishi21,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi22 != null" >
+        #{chuxilishi22,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi23 != null" >
+        #{chuxilishi23,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi24 != null" >
+        #{chuxilishi24,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi25 != null" >
+        #{chuxilishi25,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi != null" >
+        #{weichuxilishi,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxijianshi != null" >
+        #{chuxijianshi,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxijianshi != null" >
+        #{weichuxijianshi,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxijianshi1 != null" >
+        #{chuxijianshi1,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxijianshi2 != null" >
+        #{chuxijianshi2,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxijianshi3 != null" >
+        #{chuxijianshi3,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxijianshi4 != null" >
+        #{chuxijianshi4,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxijianshi5 != null" >
+        #{chuxijianshi5,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxijianshi6 != null" >
+        #{chuxijianshi6,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxijianshi7 != null" >
+        #{chuxijianshi7,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxijianshi8 != null" >
+        #{chuxijianshi8,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxijianshi9 != null" >
+        #{chuxijianshi9,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxijianshi10 != null" >
+        #{chuxijianshi10,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxijianshi1 != null" >
+        #{weichuxijianshi1,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxijianshi2 != null" >
+        #{weichuxijianshi2,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxijianshi3 != null" >
+        #{weichuxijianshi3,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxijianshi4 != null" >
+        #{weichuxijianshi4,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxijianshi5 != null" >
+        #{weichuxijianshi5,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxijianshi6 != null" >
+        #{weichuxijianshi6,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxijianshi7 != null" >
+        #{weichuxijianshi7,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxijianshi8 != null" >
+        #{weichuxijianshi8,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxijianshi9 != null" >
+        #{weichuxijianshi9,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxijianshi10 != null" >
+        #{weichuxijianshi10,jdbcType=VARCHAR},
+      </if>
+      <if test="lishizongshu != null" >
+        #{lishizongshu,jdbcType=DECIMAL},
+      </if>
+      <if test="jianshizongshu != null" >
+        #{jianshizongshu,jdbcType=DECIMAL},
+      </if>
+      <if test="weichuxilishi1 != null" >
+        #{weichuxilishi1,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi2 != null" >
+        #{weichuxilishi2,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi3 != null" >
+        #{weichuxilishi3,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi4 != null" >
+        #{weichuxilishi4,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi5 != null" >
+        #{weichuxilishi5,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi6 != null" >
+        #{weichuxilishi6,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi7 != null" >
+        #{weichuxilishi7,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi8 != null" >
+        #{weichuxilishi8,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi9 != null" >
+        #{weichuxilishi9,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi10 != null" >
+        #{weichuxilishi10,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi11 != null" >
+        #{weichuxilishi11,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi12 != null" >
+        #{weichuxilishi12,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi13 != null" >
+        #{weichuxilishi13,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi14 != null" >
+        #{weichuxilishi14,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi15 != null" >
+        #{weichuxilishi15,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi16 != null" >
+        #{weichuxilishi16,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi17 != null" >
+        #{weichuxilishi17,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi18 != null" >
+        #{weichuxilishi18,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi19 != null" >
+        #{weichuxilishi19,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi20 != null" >
+        #{weichuxilishi20,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi21 != null" >
+        #{weichuxilishi21,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi22 != null" >
+        #{weichuxilishi22,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi23 != null" >
+        #{weichuxilishi23,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi24 != null" >
+        #{weichuxilishi24,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi25 != null" >
+        #{weichuxilishi25,jdbcType=VARCHAR},
+      </if>
+      <if test="shifoudadao != null" >
+        #{shifoudadao,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.JjhnjJgjslsjqkSubExample" resultType="java.lang.Integer" >
+    select count(*) from MJZZ_USER.JJHNJ_JGJSLSJQK_SUB
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update JJHNJ_JGJSLSJQK_SUB
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=DECIMAL},
+      </if>
+      <if test="record.instanceid != null" >
+        INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organizationid != null" >
+        ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=DECIMAL},
+      </if>
+      <if test="record.masterid != null" >
+        MASTERID = #{record.masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nian != null" >
+        NIAN = #{record.nian,jdbcType=VARCHAR},
+      </if>
+      <if test="record.yue != null" >
+        YUE = #{record.yue,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ri != null" >
+        RI = #{record.ri,jdbcType=VARCHAR},
+      </if>
+      <if test="record.jie != null" >
+        JIE = #{record.jie,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ci != null" >
+        CI = #{record.ci,jdbcType=VARCHAR},
+      </if>
+      <if test="record.huiyishijian != null" >
+        HUIYISHIJIAN = #{record.huiyishijian,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.huiyididian != null" >
+        HUIYIDIDIAN = #{record.huiyididian,jdbcType=VARCHAR},
+      </if>
+      <if test="record.huiyizhuti != null" >
+        HUIYIZHUTI = #{record.huiyizhuti,jdbcType=VARCHAR},
+      </if>
+      <if test="record.renyuanmingdan != null" >
+        RENYUANMINGDAN = #{record.renyuanmingdan,jdbcType=VARCHAR},
+      </if>
+      <if test="record.huiyijueyi != null" >
+        HUIYIJUEYI = #{record.huiyijueyi,jdbcType=VARCHAR},
+      </if>
+      <if test="record.beizhu != null" >
+        BEIZHU = #{record.beizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="record.xuhao != null" >
+        XUHAO = #{record.xuhao,jdbcType=DECIMAL},
+      </if>
+      <if test="record.chuxilishi1 != null" >
+        CHUXILISHI1 = #{record.chuxilishi1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxilishi2 != null" >
+        CHUXILISHI2 = #{record.chuxilishi2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxilishi3 != null" >
+        CHUXILISHI3 = #{record.chuxilishi3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxilishi4 != null" >
+        CHUXILISHI4 = #{record.chuxilishi4,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxilishi5 != null" >
+        CHUXILISHI5 = #{record.chuxilishi5,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxilishi6 != null" >
+        CHUXILISHI6 = #{record.chuxilishi6,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxilishi7 != null" >
+        CHUXILISHI7 = #{record.chuxilishi7,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxilishi8 != null" >
+        CHUXILISHI8 = #{record.chuxilishi8,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxilishi9 != null" >
+        CHUXILISHI9 = #{record.chuxilishi9,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxilishi10 != null" >
+        CHUXILISHI10 = #{record.chuxilishi10,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxilishi11 != null" >
+        CHUXILISHI11 = #{record.chuxilishi11,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxilishi12 != null" >
+        CHUXILISHI12 = #{record.chuxilishi12,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxilishi13 != null" >
+        CHUXILISHI13 = #{record.chuxilishi13,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxilishi14 != null" >
+        CHUXILISHI14 = #{record.chuxilishi14,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxilishi15 != null" >
+        CHUXILISHI15 = #{record.chuxilishi15,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxilishi16 != null" >
+        CHUXILISHI16 = #{record.chuxilishi16,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxilishi17 != null" >
+        CHUXILISHI17 = #{record.chuxilishi17,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxilishi18 != null" >
+        CHUXILISHI18 = #{record.chuxilishi18,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxilishi19 != null" >
+        CHUXILISHI19 = #{record.chuxilishi19,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxilishi20 != null" >
+        CHUXILISHI20 = #{record.chuxilishi20,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxilishi21 != null" >
+        CHUXILISHI21 = #{record.chuxilishi21,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxilishi22 != null" >
+        CHUXILISHI22 = #{record.chuxilishi22,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxilishi23 != null" >
+        CHUXILISHI23 = #{record.chuxilishi23,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxilishi24 != null" >
+        CHUXILISHI24 = #{record.chuxilishi24,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxilishi25 != null" >
+        CHUXILISHI25 = #{record.chuxilishi25,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi != null" >
+        WEICHUXILISHI = #{record.weichuxilishi,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxijianshi != null" >
+        CHUXIJIANSHI = #{record.chuxijianshi,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxijianshi != null" >
+        WEICHUXIJIANSHI = #{record.weichuxijianshi,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxijianshi1 != null" >
+        CHUXIJIANSHI1 = #{record.chuxijianshi1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxijianshi2 != null" >
+        CHUXIJIANSHI2 = #{record.chuxijianshi2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxijianshi3 != null" >
+        CHUXIJIANSHI3 = #{record.chuxijianshi3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxijianshi4 != null" >
+        CHUXIJIANSHI4 = #{record.chuxijianshi4,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxijianshi5 != null" >
+        CHUXIJIANSHI5 = #{record.chuxijianshi5,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxijianshi6 != null" >
+        CHUXIJIANSHI6 = #{record.chuxijianshi6,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxijianshi7 != null" >
+        CHUXIJIANSHI7 = #{record.chuxijianshi7,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxijianshi8 != null" >
+        CHUXIJIANSHI8 = #{record.chuxijianshi8,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxijianshi9 != null" >
+        CHUXIJIANSHI9 = #{record.chuxijianshi9,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chuxijianshi10 != null" >
+        CHUXIJIANSHI10 = #{record.chuxijianshi10,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxijianshi1 != null" >
+        WEICHUXIJIANSHI1 = #{record.weichuxijianshi1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxijianshi2 != null" >
+        WEICHUXIJIANSHI2 = #{record.weichuxijianshi2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxijianshi3 != null" >
+        WEICHUXIJIANSHI3 = #{record.weichuxijianshi3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxijianshi4 != null" >
+        WEICHUXIJIANSHI4 = #{record.weichuxijianshi4,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxijianshi5 != null" >
+        WEICHUXIJIANSHI5 = #{record.weichuxijianshi5,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxijianshi6 != null" >
+        WEICHUXIJIANSHI6 = #{record.weichuxijianshi6,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxijianshi7 != null" >
+        WEICHUXIJIANSHI7 = #{record.weichuxijianshi7,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxijianshi8 != null" >
+        WEICHUXIJIANSHI8 = #{record.weichuxijianshi8,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxijianshi9 != null" >
+        WEICHUXIJIANSHI9 = #{record.weichuxijianshi9,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxijianshi10 != null" >
+        WEICHUXIJIANSHI10 = #{record.weichuxijianshi10,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lishizongshu != null" >
+        LISHIZONGSHU = #{record.lishizongshu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.jianshizongshu != null" >
+        JIANSHIZONGSHU = #{record.jianshizongshu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.weichuxilishi1 != null" >
+        WEICHUXILISHI1 = #{record.weichuxilishi1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi2 != null" >
+        WEICHUXILISHI2 = #{record.weichuxilishi2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi3 != null" >
+        WEICHUXILISHI3 = #{record.weichuxilishi3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi4 != null" >
+        WEICHUXILISHI4 = #{record.weichuxilishi4,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi5 != null" >
+        WEICHUXILISHI5 = #{record.weichuxilishi5,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi6 != null" >
+        WEICHUXILISHI6 = #{record.weichuxilishi6,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi7 != null" >
+        WEICHUXILISHI7 = #{record.weichuxilishi7,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi8 != null" >
+        WEICHUXILISHI8 = #{record.weichuxilishi8,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi9 != null" >
+        WEICHUXILISHI9 = #{record.weichuxilishi9,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi10 != null" >
+        WEICHUXILISHI10 = #{record.weichuxilishi10,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi11 != null" >
+        WEICHUXILISHI11 = #{record.weichuxilishi11,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi12 != null" >
+        WEICHUXILISHI12 = #{record.weichuxilishi12,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi13 != null" >
+        WEICHUXILISHI13 = #{record.weichuxilishi13,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi14 != null" >
+        WEICHUXILISHI14 = #{record.weichuxilishi14,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi15 != null" >
+        WEICHUXILISHI15 = #{record.weichuxilishi15,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi16 != null" >
+        WEICHUXILISHI16 = #{record.weichuxilishi16,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi17 != null" >
+        WEICHUXILISHI17 = #{record.weichuxilishi17,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi18 != null" >
+        WEICHUXILISHI18 = #{record.weichuxilishi18,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi19 != null" >
+        WEICHUXILISHI19 = #{record.weichuxilishi19,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi20 != null" >
+        WEICHUXILISHI20 = #{record.weichuxilishi20,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi21 != null" >
+        WEICHUXILISHI21 = #{record.weichuxilishi21,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi22 != null" >
+        WEICHUXILISHI22 = #{record.weichuxilishi22,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi23 != null" >
+        WEICHUXILISHI23 = #{record.weichuxilishi23,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi24 != null" >
+        WEICHUXILISHI24 = #{record.weichuxilishi24,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weichuxilishi25 != null" >
+        WEICHUXILISHI25 = #{record.weichuxilishi25,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shifoudadao != null" >
+        SHIFOUDADAO = #{record.shifoudadao,jdbcType=DECIMAL},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update JJHNJ_JGJSLSJQK_SUB
+    set ID = #{record.id,jdbcType=DECIMAL},
+      INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=DECIMAL},
+      MASTERID = #{record.masterid,jdbcType=DECIMAL},
+      NIAN = #{record.nian,jdbcType=VARCHAR},
+      YUE = #{record.yue,jdbcType=VARCHAR},
+      RI = #{record.ri,jdbcType=VARCHAR},
+      JIE = #{record.jie,jdbcType=VARCHAR},
+      CI = #{record.ci,jdbcType=VARCHAR},
+      HUIYISHIJIAN = #{record.huiyishijian,jdbcType=TIMESTAMP},
+      HUIYIDIDIAN = #{record.huiyididian,jdbcType=VARCHAR},
+      HUIYIZHUTI = #{record.huiyizhuti,jdbcType=VARCHAR},
+      RENYUANMINGDAN = #{record.renyuanmingdan,jdbcType=VARCHAR},
+      HUIYIJUEYI = #{record.huiyijueyi,jdbcType=VARCHAR},
+      BEIZHU = #{record.beizhu,jdbcType=VARCHAR},
+      XUHAO = #{record.xuhao,jdbcType=DECIMAL},
+      CHUXILISHI1 = #{record.chuxilishi1,jdbcType=VARCHAR},
+      CHUXILISHI2 = #{record.chuxilishi2,jdbcType=VARCHAR},
+      CHUXILISHI3 = #{record.chuxilishi3,jdbcType=VARCHAR},
+      CHUXILISHI4 = #{record.chuxilishi4,jdbcType=VARCHAR},
+      CHUXILISHI5 = #{record.chuxilishi5,jdbcType=VARCHAR},
+      CHUXILISHI6 = #{record.chuxilishi6,jdbcType=VARCHAR},
+      CHUXILISHI7 = #{record.chuxilishi7,jdbcType=VARCHAR},
+      CHUXILISHI8 = #{record.chuxilishi8,jdbcType=VARCHAR},
+      CHUXILISHI9 = #{record.chuxilishi9,jdbcType=VARCHAR},
+      CHUXILISHI10 = #{record.chuxilishi10,jdbcType=VARCHAR},
+      CHUXILISHI11 = #{record.chuxilishi11,jdbcType=VARCHAR},
+      CHUXILISHI12 = #{record.chuxilishi12,jdbcType=VARCHAR},
+      CHUXILISHI13 = #{record.chuxilishi13,jdbcType=VARCHAR},
+      CHUXILISHI14 = #{record.chuxilishi14,jdbcType=VARCHAR},
+      CHUXILISHI15 = #{record.chuxilishi15,jdbcType=VARCHAR},
+      CHUXILISHI16 = #{record.chuxilishi16,jdbcType=VARCHAR},
+      CHUXILISHI17 = #{record.chuxilishi17,jdbcType=VARCHAR},
+      CHUXILISHI18 = #{record.chuxilishi18,jdbcType=VARCHAR},
+      CHUXILISHI19 = #{record.chuxilishi19,jdbcType=VARCHAR},
+      CHUXILISHI20 = #{record.chuxilishi20,jdbcType=VARCHAR},
+      CHUXILISHI21 = #{record.chuxilishi21,jdbcType=VARCHAR},
+      CHUXILISHI22 = #{record.chuxilishi22,jdbcType=VARCHAR},
+      CHUXILISHI23 = #{record.chuxilishi23,jdbcType=VARCHAR},
+      CHUXILISHI24 = #{record.chuxilishi24,jdbcType=VARCHAR},
+      CHUXILISHI25 = #{record.chuxilishi25,jdbcType=VARCHAR},
+      WEICHUXILISHI = #{record.weichuxilishi,jdbcType=VARCHAR},
+      CHUXIJIANSHI = #{record.chuxijianshi,jdbcType=VARCHAR},
+      WEICHUXIJIANSHI = #{record.weichuxijianshi,jdbcType=VARCHAR},
+      CHUXIJIANSHI1 = #{record.chuxijianshi1,jdbcType=VARCHAR},
+      CHUXIJIANSHI2 = #{record.chuxijianshi2,jdbcType=VARCHAR},
+      CHUXIJIANSHI3 = #{record.chuxijianshi3,jdbcType=VARCHAR},
+      CHUXIJIANSHI4 = #{record.chuxijianshi4,jdbcType=VARCHAR},
+      CHUXIJIANSHI5 = #{record.chuxijianshi5,jdbcType=VARCHAR},
+      CHUXIJIANSHI6 = #{record.chuxijianshi6,jdbcType=VARCHAR},
+      CHUXIJIANSHI7 = #{record.chuxijianshi7,jdbcType=VARCHAR},
+      CHUXIJIANSHI8 = #{record.chuxijianshi8,jdbcType=VARCHAR},
+      CHUXIJIANSHI9 = #{record.chuxijianshi9,jdbcType=VARCHAR},
+      CHUXIJIANSHI10 = #{record.chuxijianshi10,jdbcType=VARCHAR},
+      WEICHUXIJIANSHI1 = #{record.weichuxijianshi1,jdbcType=VARCHAR},
+      WEICHUXIJIANSHI2 = #{record.weichuxijianshi2,jdbcType=VARCHAR},
+      WEICHUXIJIANSHI3 = #{record.weichuxijianshi3,jdbcType=VARCHAR},
+      WEICHUXIJIANSHI4 = #{record.weichuxijianshi4,jdbcType=VARCHAR},
+      WEICHUXIJIANSHI5 = #{record.weichuxijianshi5,jdbcType=VARCHAR},
+      WEICHUXIJIANSHI6 = #{record.weichuxijianshi6,jdbcType=VARCHAR},
+      WEICHUXIJIANSHI7 = #{record.weichuxijianshi7,jdbcType=VARCHAR},
+      WEICHUXIJIANSHI8 = #{record.weichuxijianshi8,jdbcType=VARCHAR},
+      WEICHUXIJIANSHI9 = #{record.weichuxijianshi9,jdbcType=VARCHAR},
+      WEICHUXIJIANSHI10 = #{record.weichuxijianshi10,jdbcType=VARCHAR},
+      LISHIZONGSHU = #{record.lishizongshu,jdbcType=DECIMAL},
+      JIANSHIZONGSHU = #{record.jianshizongshu,jdbcType=DECIMAL},
+      WEICHUXILISHI1 = #{record.weichuxilishi1,jdbcType=VARCHAR},
+      WEICHUXILISHI2 = #{record.weichuxilishi2,jdbcType=VARCHAR},
+      WEICHUXILISHI3 = #{record.weichuxilishi3,jdbcType=VARCHAR},
+      WEICHUXILISHI4 = #{record.weichuxilishi4,jdbcType=VARCHAR},
+      WEICHUXILISHI5 = #{record.weichuxilishi5,jdbcType=VARCHAR},
+      WEICHUXILISHI6 = #{record.weichuxilishi6,jdbcType=VARCHAR},
+      WEICHUXILISHI7 = #{record.weichuxilishi7,jdbcType=VARCHAR},
+      WEICHUXILISHI8 = #{record.weichuxilishi8,jdbcType=VARCHAR},
+      WEICHUXILISHI9 = #{record.weichuxilishi9,jdbcType=VARCHAR},
+      WEICHUXILISHI10 = #{record.weichuxilishi10,jdbcType=VARCHAR},
+      WEICHUXILISHI11 = #{record.weichuxilishi11,jdbcType=VARCHAR},
+      WEICHUXILISHI12 = #{record.weichuxilishi12,jdbcType=VARCHAR},
+      WEICHUXILISHI13 = #{record.weichuxilishi13,jdbcType=VARCHAR},
+      WEICHUXILISHI14 = #{record.weichuxilishi14,jdbcType=VARCHAR},
+      WEICHUXILISHI15 = #{record.weichuxilishi15,jdbcType=VARCHAR},
+      WEICHUXILISHI16 = #{record.weichuxilishi16,jdbcType=VARCHAR},
+      WEICHUXILISHI17 = #{record.weichuxilishi17,jdbcType=VARCHAR},
+      WEICHUXILISHI18 = #{record.weichuxilishi18,jdbcType=VARCHAR},
+      WEICHUXILISHI19 = #{record.weichuxilishi19,jdbcType=VARCHAR},
+      WEICHUXILISHI20 = #{record.weichuxilishi20,jdbcType=VARCHAR},
+      WEICHUXILISHI21 = #{record.weichuxilishi21,jdbcType=VARCHAR},
+      WEICHUXILISHI22 = #{record.weichuxilishi22,jdbcType=VARCHAR},
+      WEICHUXILISHI23 = #{record.weichuxilishi23,jdbcType=VARCHAR},
+      WEICHUXILISHI24 = #{record.weichuxilishi24,jdbcType=VARCHAR},
+      WEICHUXILISHI25 = #{record.weichuxilishi25,jdbcType=VARCHAR},
+      SHIFOUDADAO = #{record.shifoudadao,jdbcType=DECIMAL}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.JjhnjJgjslsjqkSub" >
+    update JJHNJ_JGJSLSJQK_SUB
+    <set >
+      <if test="instanceid != null" >
+        INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="masterid != null" >
+        MASTERID = #{masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="nian != null" >
+        NIAN = #{nian,jdbcType=VARCHAR},
+      </if>
+      <if test="yue != null" >
+        YUE = #{yue,jdbcType=VARCHAR},
+      </if>
+      <if test="ri != null" >
+        RI = #{ri,jdbcType=VARCHAR},
+      </if>
+      <if test="jie != null" >
+        JIE = #{jie,jdbcType=VARCHAR},
+      </if>
+      <if test="ci != null" >
+        CI = #{ci,jdbcType=VARCHAR},
+      </if>
+      <if test="huiyishijian != null" >
+        HUIYISHIJIAN = #{huiyishijian,jdbcType=TIMESTAMP},
+      </if>
+      <if test="huiyididian != null" >
+        HUIYIDIDIAN = #{huiyididian,jdbcType=VARCHAR},
+      </if>
+      <if test="huiyizhuti != null" >
+        HUIYIZHUTI = #{huiyizhuti,jdbcType=VARCHAR},
+      </if>
+      <if test="renyuanmingdan != null" >
+        RENYUANMINGDAN = #{renyuanmingdan,jdbcType=VARCHAR},
+      </if>
+      <if test="huiyijueyi != null" >
+        HUIYIJUEYI = #{huiyijueyi,jdbcType=VARCHAR},
+      </if>
+      <if test="beizhu != null" >
+        BEIZHU = #{beizhu,jdbcType=VARCHAR},
+      </if>
+      <if test="xuhao != null" >
+        XUHAO = #{xuhao,jdbcType=DECIMAL},
+      </if>
+      <if test="chuxilishi1 != null" >
+        CHUXILISHI1 = #{chuxilishi1,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi2 != null" >
+        CHUXILISHI2 = #{chuxilishi2,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi3 != null" >
+        CHUXILISHI3 = #{chuxilishi3,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi4 != null" >
+        CHUXILISHI4 = #{chuxilishi4,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi5 != null" >
+        CHUXILISHI5 = #{chuxilishi5,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi6 != null" >
+        CHUXILISHI6 = #{chuxilishi6,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi7 != null" >
+        CHUXILISHI7 = #{chuxilishi7,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi8 != null" >
+        CHUXILISHI8 = #{chuxilishi8,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi9 != null" >
+        CHUXILISHI9 = #{chuxilishi9,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi10 != null" >
+        CHUXILISHI10 = #{chuxilishi10,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi11 != null" >
+        CHUXILISHI11 = #{chuxilishi11,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi12 != null" >
+        CHUXILISHI12 = #{chuxilishi12,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi13 != null" >
+        CHUXILISHI13 = #{chuxilishi13,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi14 != null" >
+        CHUXILISHI14 = #{chuxilishi14,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi15 != null" >
+        CHUXILISHI15 = #{chuxilishi15,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi16 != null" >
+        CHUXILISHI16 = #{chuxilishi16,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi17 != null" >
+        CHUXILISHI17 = #{chuxilishi17,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi18 != null" >
+        CHUXILISHI18 = #{chuxilishi18,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi19 != null" >
+        CHUXILISHI19 = #{chuxilishi19,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi20 != null" >
+        CHUXILISHI20 = #{chuxilishi20,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi21 != null" >
+        CHUXILISHI21 = #{chuxilishi21,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi22 != null" >
+        CHUXILISHI22 = #{chuxilishi22,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi23 != null" >
+        CHUXILISHI23 = #{chuxilishi23,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi24 != null" >
+        CHUXILISHI24 = #{chuxilishi24,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxilishi25 != null" >
+        CHUXILISHI25 = #{chuxilishi25,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi != null" >
+        WEICHUXILISHI = #{weichuxilishi,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxijianshi != null" >
+        CHUXIJIANSHI = #{chuxijianshi,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxijianshi != null" >
+        WEICHUXIJIANSHI = #{weichuxijianshi,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxijianshi1 != null" >
+        CHUXIJIANSHI1 = #{chuxijianshi1,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxijianshi2 != null" >
+        CHUXIJIANSHI2 = #{chuxijianshi2,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxijianshi3 != null" >
+        CHUXIJIANSHI3 = #{chuxijianshi3,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxijianshi4 != null" >
+        CHUXIJIANSHI4 = #{chuxijianshi4,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxijianshi5 != null" >
+        CHUXIJIANSHI5 = #{chuxijianshi5,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxijianshi6 != null" >
+        CHUXIJIANSHI6 = #{chuxijianshi6,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxijianshi7 != null" >
+        CHUXIJIANSHI7 = #{chuxijianshi7,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxijianshi8 != null" >
+        CHUXIJIANSHI8 = #{chuxijianshi8,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxijianshi9 != null" >
+        CHUXIJIANSHI9 = #{chuxijianshi9,jdbcType=VARCHAR},
+      </if>
+      <if test="chuxijianshi10 != null" >
+        CHUXIJIANSHI10 = #{chuxijianshi10,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxijianshi1 != null" >
+        WEICHUXIJIANSHI1 = #{weichuxijianshi1,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxijianshi2 != null" >
+        WEICHUXIJIANSHI2 = #{weichuxijianshi2,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxijianshi3 != null" >
+        WEICHUXIJIANSHI3 = #{weichuxijianshi3,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxijianshi4 != null" >
+        WEICHUXIJIANSHI4 = #{weichuxijianshi4,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxijianshi5 != null" >
+        WEICHUXIJIANSHI5 = #{weichuxijianshi5,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxijianshi6 != null" >
+        WEICHUXIJIANSHI6 = #{weichuxijianshi6,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxijianshi7 != null" >
+        WEICHUXIJIANSHI7 = #{weichuxijianshi7,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxijianshi8 != null" >
+        WEICHUXIJIANSHI8 = #{weichuxijianshi8,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxijianshi9 != null" >
+        WEICHUXIJIANSHI9 = #{weichuxijianshi9,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxijianshi10 != null" >
+        WEICHUXIJIANSHI10 = #{weichuxijianshi10,jdbcType=VARCHAR},
+      </if>
+      <if test="lishizongshu != null" >
+        LISHIZONGSHU = #{lishizongshu,jdbcType=DECIMAL},
+      </if>
+      <if test="jianshizongshu != null" >
+        JIANSHIZONGSHU = #{jianshizongshu,jdbcType=DECIMAL},
+      </if>
+      <if test="weichuxilishi1 != null" >
+        WEICHUXILISHI1 = #{weichuxilishi1,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi2 != null" >
+        WEICHUXILISHI2 = #{weichuxilishi2,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi3 != null" >
+        WEICHUXILISHI3 = #{weichuxilishi3,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi4 != null" >
+        WEICHUXILISHI4 = #{weichuxilishi4,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi5 != null" >
+        WEICHUXILISHI5 = #{weichuxilishi5,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi6 != null" >
+        WEICHUXILISHI6 = #{weichuxilishi6,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi7 != null" >
+        WEICHUXILISHI7 = #{weichuxilishi7,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi8 != null" >
+        WEICHUXILISHI8 = #{weichuxilishi8,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi9 != null" >
+        WEICHUXILISHI9 = #{weichuxilishi9,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi10 != null" >
+        WEICHUXILISHI10 = #{weichuxilishi10,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi11 != null" >
+        WEICHUXILISHI11 = #{weichuxilishi11,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi12 != null" >
+        WEICHUXILISHI12 = #{weichuxilishi12,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi13 != null" >
+        WEICHUXILISHI13 = #{weichuxilishi13,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi14 != null" >
+        WEICHUXILISHI14 = #{weichuxilishi14,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi15 != null" >
+        WEICHUXILISHI15 = #{weichuxilishi15,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi16 != null" >
+        WEICHUXILISHI16 = #{weichuxilishi16,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi17 != null" >
+        WEICHUXILISHI17 = #{weichuxilishi17,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi18 != null" >
+        WEICHUXILISHI18 = #{weichuxilishi18,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi19 != null" >
+        WEICHUXILISHI19 = #{weichuxilishi19,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi20 != null" >
+        WEICHUXILISHI20 = #{weichuxilishi20,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi21 != null" >
+        WEICHUXILISHI21 = #{weichuxilishi21,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi22 != null" >
+        WEICHUXILISHI22 = #{weichuxilishi22,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi23 != null" >
+        WEICHUXILISHI23 = #{weichuxilishi23,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi24 != null" >
+        WEICHUXILISHI24 = #{weichuxilishi24,jdbcType=VARCHAR},
+      </if>
+      <if test="weichuxilishi25 != null" >
+        WEICHUXILISHI25 = #{weichuxilishi25,jdbcType=VARCHAR},
+      </if>
+      <if test="shifoudadao != null" >
+        SHIFOUDADAO = #{shifoudadao,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xgb.model.JjhnjJgjslsjqkSub" >
+    update JJHNJ_JGJSLSJQK_SUB
+    set INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=DECIMAL},
+      MASTERID = #{masterid,jdbcType=DECIMAL},
+      NIAN = #{nian,jdbcType=VARCHAR},
+      YUE = #{yue,jdbcType=VARCHAR},
+      RI = #{ri,jdbcType=VARCHAR},
+      JIE = #{jie,jdbcType=VARCHAR},
+      CI = #{ci,jdbcType=VARCHAR},
+      HUIYISHIJIAN = #{huiyishijian,jdbcType=TIMESTAMP},
+      HUIYIDIDIAN = #{huiyididian,jdbcType=VARCHAR},
+      HUIYIZHUTI = #{huiyizhuti,jdbcType=VARCHAR},
+      RENYUANMINGDAN = #{renyuanmingdan,jdbcType=VARCHAR},
+      HUIYIJUEYI = #{huiyijueyi,jdbcType=VARCHAR},
+      BEIZHU = #{beizhu,jdbcType=VARCHAR},
+      XUHAO = #{xuhao,jdbcType=DECIMAL},
+      CHUXILISHI1 = #{chuxilishi1,jdbcType=VARCHAR},
+      CHUXILISHI2 = #{chuxilishi2,jdbcType=VARCHAR},
+      CHUXILISHI3 = #{chuxilishi3,jdbcType=VARCHAR},
+      CHUXILISHI4 = #{chuxilishi4,jdbcType=VARCHAR},
+      CHUXILISHI5 = #{chuxilishi5,jdbcType=VARCHAR},
+      CHUXILISHI6 = #{chuxilishi6,jdbcType=VARCHAR},
+      CHUXILISHI7 = #{chuxilishi7,jdbcType=VARCHAR},
+      CHUXILISHI8 = #{chuxilishi8,jdbcType=VARCHAR},
+      CHUXILISHI9 = #{chuxilishi9,jdbcType=VARCHAR},
+      CHUXILISHI10 = #{chuxilishi10,jdbcType=VARCHAR},
+      CHUXILISHI11 = #{chuxilishi11,jdbcType=VARCHAR},
+      CHUXILISHI12 = #{chuxilishi12,jdbcType=VARCHAR},
+      CHUXILISHI13 = #{chuxilishi13,jdbcType=VARCHAR},
+      CHUXILISHI14 = #{chuxilishi14,jdbcType=VARCHAR},
+      CHUXILISHI15 = #{chuxilishi15,jdbcType=VARCHAR},
+      CHUXILISHI16 = #{chuxilishi16,jdbcType=VARCHAR},
+      CHUXILISHI17 = #{chuxilishi17,jdbcType=VARCHAR},
+      CHUXILISHI18 = #{chuxilishi18,jdbcType=VARCHAR},
+      CHUXILISHI19 = #{chuxilishi19,jdbcType=VARCHAR},
+      CHUXILISHI20 = #{chuxilishi20,jdbcType=VARCHAR},
+      CHUXILISHI21 = #{chuxilishi21,jdbcType=VARCHAR},
+      CHUXILISHI22 = #{chuxilishi22,jdbcType=VARCHAR},
+      CHUXILISHI23 = #{chuxilishi23,jdbcType=VARCHAR},
+      CHUXILISHI24 = #{chuxilishi24,jdbcType=VARCHAR},
+      CHUXILISHI25 = #{chuxilishi25,jdbcType=VARCHAR},
+      WEICHUXILISHI = #{weichuxilishi,jdbcType=VARCHAR},
+      CHUXIJIANSHI = #{chuxijianshi,jdbcType=VARCHAR},
+      WEICHUXIJIANSHI = #{weichuxijianshi,jdbcType=VARCHAR},
+      CHUXIJIANSHI1 = #{chuxijianshi1,jdbcType=VARCHAR},
+      CHUXIJIANSHI2 = #{chuxijianshi2,jdbcType=VARCHAR},
+      CHUXIJIANSHI3 = #{chuxijianshi3,jdbcType=VARCHAR},
+      CHUXIJIANSHI4 = #{chuxijianshi4,jdbcType=VARCHAR},
+      CHUXIJIANSHI5 = #{chuxijianshi5,jdbcType=VARCHAR},
+      CHUXIJIANSHI6 = #{chuxijianshi6,jdbcType=VARCHAR},
+      CHUXIJIANSHI7 = #{chuxijianshi7,jdbcType=VARCHAR},
+      CHUXIJIANSHI8 = #{chuxijianshi8,jdbcType=VARCHAR},
+      CHUXIJIANSHI9 = #{chuxijianshi9,jdbcType=VARCHAR},
+      CHUXIJIANSHI10 = #{chuxijianshi10,jdbcType=VARCHAR},
+      WEICHUXIJIANSHI1 = #{weichuxijianshi1,jdbcType=VARCHAR},
+      WEICHUXIJIANSHI2 = #{weichuxijianshi2,jdbcType=VARCHAR},
+      WEICHUXIJIANSHI3 = #{weichuxijianshi3,jdbcType=VARCHAR},
+      WEICHUXIJIANSHI4 = #{weichuxijianshi4,jdbcType=VARCHAR},
+      WEICHUXIJIANSHI5 = #{weichuxijianshi5,jdbcType=VARCHAR},
+      WEICHUXIJIANSHI6 = #{weichuxijianshi6,jdbcType=VARCHAR},
+      WEICHUXIJIANSHI7 = #{weichuxijianshi7,jdbcType=VARCHAR},
+      WEICHUXIJIANSHI8 = #{weichuxijianshi8,jdbcType=VARCHAR},
+      WEICHUXIJIANSHI9 = #{weichuxijianshi9,jdbcType=VARCHAR},
+      WEICHUXIJIANSHI10 = #{weichuxijianshi10,jdbcType=VARCHAR},
+      LISHIZONGSHU = #{lishizongshu,jdbcType=DECIMAL},
+      JIANSHIZONGSHU = #{jianshizongshu,jdbcType=DECIMAL},
+      WEICHUXILISHI1 = #{weichuxilishi1,jdbcType=VARCHAR},
+      WEICHUXILISHI2 = #{weichuxilishi2,jdbcType=VARCHAR},
+      WEICHUXILISHI3 = #{weichuxilishi3,jdbcType=VARCHAR},
+      WEICHUXILISHI4 = #{weichuxilishi4,jdbcType=VARCHAR},
+      WEICHUXILISHI5 = #{weichuxilishi5,jdbcType=VARCHAR},
+      WEICHUXILISHI6 = #{weichuxilishi6,jdbcType=VARCHAR},
+      WEICHUXILISHI7 = #{weichuxilishi7,jdbcType=VARCHAR},
+      WEICHUXILISHI8 = #{weichuxilishi8,jdbcType=VARCHAR},
+      WEICHUXILISHI9 = #{weichuxilishi9,jdbcType=VARCHAR},
+      WEICHUXILISHI10 = #{weichuxilishi10,jdbcType=VARCHAR},
+      WEICHUXILISHI11 = #{weichuxilishi11,jdbcType=VARCHAR},
+      WEICHUXILISHI12 = #{weichuxilishi12,jdbcType=VARCHAR},
+      WEICHUXILISHI13 = #{weichuxilishi13,jdbcType=VARCHAR},
+      WEICHUXILISHI14 = #{weichuxilishi14,jdbcType=VARCHAR},
+      WEICHUXILISHI15 = #{weichuxilishi15,jdbcType=VARCHAR},
+      WEICHUXILISHI16 = #{weichuxilishi16,jdbcType=VARCHAR},
+      WEICHUXILISHI17 = #{weichuxilishi17,jdbcType=VARCHAR},
+      WEICHUXILISHI18 = #{weichuxilishi18,jdbcType=VARCHAR},
+      WEICHUXILISHI19 = #{weichuxilishi19,jdbcType=VARCHAR},
+      WEICHUXILISHI20 = #{weichuxilishi20,jdbcType=VARCHAR},
+      WEICHUXILISHI21 = #{weichuxilishi21,jdbcType=VARCHAR},
+      WEICHUXILISHI22 = #{weichuxilishi22,jdbcType=VARCHAR},
+      WEICHUXILISHI23 = #{weichuxilishi23,jdbcType=VARCHAR},
+      WEICHUXILISHI24 = #{weichuxilishi24,jdbcType=VARCHAR},
+      WEICHUXILISHI25 = #{weichuxilishi25,jdbcType=VARCHAR},
+      SHIFOUDADAO = #{shifoudadao,jdbcType=DECIMAL}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>

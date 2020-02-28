@@ -1,0 +1,2483 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.JjhnjReport4Mapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.JjhnjReport4" >
+    <constructor >
+      <idArg column="ID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="INSTANCEID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORGANIZATIONID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATUS" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="BIANZHIDANWEI" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANDU" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MOJUANFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOJUANXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOJUANHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIJUANFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIJUANXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIJUANHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOHUIFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOHUIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOHUIHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIHUIFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIHUIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIHUIHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOFUWUFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOFUWUXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOFUWUHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIFUWUFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIFUWUXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIFUWUHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOXIAOSHOUFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOXIAOSHOUXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOXIAOSHOUHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIXIAOSHOUFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIXIAOSHOUXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIXIAOSHOUHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOBUZHUFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOBUZHUXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOBUZHUHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIBUZHUFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOTOUZIFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOTOUZIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOTOUZIHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJITOUZIFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJITOUZIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJITOUZIHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQITAFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQITAXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQITAHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQITAFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQITAXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQITAHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOHEJIFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOHEJIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOHEJIHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIHEJIFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIHEJIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIHEJIHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOCHENGBENFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOCHENGBENXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOCHENGBENHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJICHENGBENFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJICHENGBENXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJICHENGBENHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQIZHONGFEIXIAN1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQIZHONGXIAN1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQIZHONGHEJI1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQIZHONGFEIXIAN1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQIZHONGXIAN1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQIZHONGHEJI1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQIZHONGFEIXIAN2" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQIZHONGXIAN2" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQIZHONGHEJI2" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQIZHONGFEIXIAN2" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQIZHONGXIAN2" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQIZHONGHEJI2" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQIZHONGFEIXIAN3" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQIZHONGXIAN3" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQIZHONGHEJI3" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQIZHONGFEIXIAN3" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQIZHONGXIAN3" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQIZHONGHEJI3" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQIZHONGFEIXIAN4" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQIZHONGXIAN4" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQIZHONGHEJI4" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQIZHONGFEIXIAN4" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQIZHONGXIAN4" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQIZHONGHEJI4" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOGUANLIFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOGUANLIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOGUANLIHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIGUANLIFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIGUANLIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIGUANLIHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOCHOUZIFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOCHOUZIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOCHOUZIHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJICHOUZIFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJICHOUZIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJICHOUZIHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQITAFEIYONGFEI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQITAFEIYONGXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQITAFEIYONGHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQITAFEIYONGFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQITAFEIYONGXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQITAFEIYONGHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOFEIYONGHEJIFEI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOFEIYONGHEJIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOFEIYONGHEJIHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIFEIYONGHEJIFEI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIFEIYONGHEJIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIFEIYONGHEJIHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOZHUANFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOZHUANXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOZHUANHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIZHUANFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIZHUANXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIZHUANHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOBIANDONGFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOBIANDONGXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOBIANDONGHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIBIANDONGFEIXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIBIANDONGXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIBIANDONGHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIBUZHUXIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIBUZHUHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIZHONG1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="QIZHONG2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="QIZHONG3" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="QIZHONG4" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MOQIZHONGFEIXIAN5" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQIZHONGFEIXIAN6" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQIZHONGFEIXIAN7" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQIZHONGFEIXIAN8" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQIZHONGXIAN5" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQIZHONGXIAN6" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQIZHONGXIAN7" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQIZHONGXIAN8" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQIZHONGHEJI5" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQIZHONGHEJI6" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQIZHONGHEJI7" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MOQIZHONGHEJI8" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQIZHONGFEIXIAN5" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQIZHONGFEIXIAN6" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQIZHONGFEIXIAN7" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQIZHONGFEIXIAN8" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQIZHONGXIAN5" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQIZHONGXIAN6" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQIZHONGXIAN7" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQIZHONGXIAN8" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQIZHONGHEJI5" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQIZHONGHEJI6" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQIZHONGHEJI7" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LEIJIQIZHONGHEJI8" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, INSTANCEID, ORGANIZATIONID, STATUS, BIANZHIDANWEI, NIANDU, MOJUANFEIXIAN, MOJUANXIAN, 
+    MOJUANHEJI, LEIJIJUANFEIXIAN, LEIJIJUANXIAN, LEIJIJUANHEJI, MOHUIFEIXIAN, MOHUIXIAN, 
+    MOHUIHEJI, LEIJIHUIFEIXIAN, LEIJIHUIXIAN, LEIJIHUIHEJI, MOFUWUFEIXIAN, MOFUWUXIAN, 
+    MOFUWUHEJI, LEIJIFUWUFEIXIAN, LEIJIFUWUXIAN, LEIJIFUWUHEJI, MOXIAOSHOUFEIXIAN, MOXIAOSHOUXIAN, 
+    MOXIAOSHOUHEJI, LEIJIXIAOSHOUFEIXIAN, LEIJIXIAOSHOUXIAN, LEIJIXIAOSHOUHEJI, MOBUZHUFEIXIAN, 
+    MOBUZHUXIAN, MOBUZHUHEJI, LEIJIBUZHUFEIXIAN, MOTOUZIFEIXIAN, MOTOUZIXIAN, MOTOUZIHEJI, 
+    LEIJITOUZIFEIXIAN, LEIJITOUZIXIAN, LEIJITOUZIHEJI, MOQITAFEIXIAN, MOQITAXIAN, MOQITAHEJI, 
+    LEIJIQITAFEIXIAN, LEIJIQITAXIAN, LEIJIQITAHEJI, MOHEJIFEIXIAN, MOHEJIXIAN, MOHEJIHEJI, 
+    LEIJIHEJIFEIXIAN, LEIJIHEJIXIAN, LEIJIHEJIHEJI, MOCHENGBENFEIXIAN, MOCHENGBENXIAN, 
+    MOCHENGBENHEJI, LEIJICHENGBENFEIXIAN, LEIJICHENGBENXIAN, LEIJICHENGBENHEJI, MOQIZHONGFEIXIAN1, 
+    MOQIZHONGXIAN1, MOQIZHONGHEJI1, LEIJIQIZHONGFEIXIAN1, LEIJIQIZHONGXIAN1, LEIJIQIZHONGHEJI1, 
+    MOQIZHONGFEIXIAN2, MOQIZHONGXIAN2, MOQIZHONGHEJI2, LEIJIQIZHONGFEIXIAN2, LEIJIQIZHONGXIAN2, 
+    LEIJIQIZHONGHEJI2, MOQIZHONGFEIXIAN3, MOQIZHONGXIAN3, MOQIZHONGHEJI3, LEIJIQIZHONGFEIXIAN3, 
+    LEIJIQIZHONGXIAN3, LEIJIQIZHONGHEJI3, MOQIZHONGFEIXIAN4, MOQIZHONGXIAN4, MOQIZHONGHEJI4, 
+    LEIJIQIZHONGFEIXIAN4, LEIJIQIZHONGXIAN4, LEIJIQIZHONGHEJI4, MOGUANLIFEIXIAN, MOGUANLIXIAN, 
+    MOGUANLIHEJI, LEIJIGUANLIFEIXIAN, LEIJIGUANLIXIAN, LEIJIGUANLIHEJI, MOCHOUZIFEIXIAN, 
+    MOCHOUZIXIAN, MOCHOUZIHEJI, LEIJICHOUZIFEIXIAN, LEIJICHOUZIXIAN, LEIJICHOUZIHEJI, 
+    MOQITAFEIYONGFEI, MOQITAFEIYONGXIAN, MOQITAFEIYONGHEJI, LEIJIQITAFEIYONGFEIXIAN, 
+    LEIJIQITAFEIYONGXIAN, LEIJIQITAFEIYONGHEJI, MOFEIYONGHEJIFEI, MOFEIYONGHEJIXIAN, 
+    MOFEIYONGHEJIHEJI, LEIJIFEIYONGHEJIFEI, LEIJIFEIYONGHEJIXIAN, LEIJIFEIYONGHEJIHEJI, 
+    MOZHUANFEIXIAN, MOZHUANXIAN, MOZHUANHEJI, LEIJIZHUANFEIXIAN, LEIJIZHUANXIAN, LEIJIZHUANHEJI, 
+    MOBIANDONGFEIXIAN, MOBIANDONGXIAN, MOBIANDONGHEJI, LEIJIBIANDONGFEIXIAN, LEIJIBIANDONGXIAN, 
+    LEIJIBIANDONGHEJI, LEIJIBUZHUXIAN, LEIJIBUZHUHEJI, QIZHONG1, QIZHONG2, QIZHONG3, 
+    QIZHONG4, MOQIZHONGFEIXIAN5, MOQIZHONGFEIXIAN6, MOQIZHONGFEIXIAN7, MOQIZHONGFEIXIAN8, 
+    MOQIZHONGXIAN5, MOQIZHONGXIAN6, MOQIZHONGXIAN7, MOQIZHONGXIAN8, MOQIZHONGHEJI5, MOQIZHONGHEJI6, 
+    MOQIZHONGHEJI7, MOQIZHONGHEJI8, LEIJIQIZHONGFEIXIAN5, LEIJIQIZHONGFEIXIAN6, LEIJIQIZHONGFEIXIAN7, 
+    LEIJIQIZHONGFEIXIAN8, LEIJIQIZHONGXIAN5, LEIJIQIZHONGXIAN6, LEIJIQIZHONGXIAN7, LEIJIQIZHONGXIAN8, 
+    LEIJIQIZHONGHEJI5, LEIJIQIZHONGHEJI6, LEIJIQIZHONGHEJI7, LEIJIQIZHONGHEJI8
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.JjhnjReport4Example" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from MJZZ_USER.JJHNJ_REPORT4
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from MJZZ_USER.JJHNJ_REPORT4
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from MJZZ_USER.JJHNJ_REPORT4
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xgb.model.JjhnjReport4Example" >
+    delete from MJZZ_USER.JJHNJ_REPORT4
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.JjhnjReport4" >
+    insert into JJHNJ_REPORT4 (ID, INSTANCEID, ORGANIZATIONID, 
+      STATUS, BIANZHIDANWEI, NIANDU, 
+      MOJUANFEIXIAN, MOJUANXIAN, MOJUANHEJI, 
+      LEIJIJUANFEIXIAN, LEIJIJUANXIAN, LEIJIJUANHEJI, 
+      MOHUIFEIXIAN, MOHUIXIAN, MOHUIHEJI, 
+      LEIJIHUIFEIXIAN, LEIJIHUIXIAN, LEIJIHUIHEJI, 
+      MOFUWUFEIXIAN, MOFUWUXIAN, MOFUWUHEJI, 
+      LEIJIFUWUFEIXIAN, LEIJIFUWUXIAN, LEIJIFUWUHEJI, 
+      MOXIAOSHOUFEIXIAN, MOXIAOSHOUXIAN, MOXIAOSHOUHEJI, 
+      LEIJIXIAOSHOUFEIXIAN, LEIJIXIAOSHOUXIAN, 
+      LEIJIXIAOSHOUHEJI, MOBUZHUFEIXIAN, MOBUZHUXIAN, 
+      MOBUZHUHEJI, LEIJIBUZHUFEIXIAN, MOTOUZIFEIXIAN, 
+      MOTOUZIXIAN, MOTOUZIHEJI, LEIJITOUZIFEIXIAN, 
+      LEIJITOUZIXIAN, LEIJITOUZIHEJI, MOQITAFEIXIAN, 
+      MOQITAXIAN, MOQITAHEJI, LEIJIQITAFEIXIAN, 
+      LEIJIQITAXIAN, LEIJIQITAHEJI, MOHEJIFEIXIAN, 
+      MOHEJIXIAN, MOHEJIHEJI, LEIJIHEJIFEIXIAN, 
+      LEIJIHEJIXIAN, LEIJIHEJIHEJI, MOCHENGBENFEIXIAN, 
+      MOCHENGBENXIAN, MOCHENGBENHEJI, LEIJICHENGBENFEIXIAN, 
+      LEIJICHENGBENXIAN, LEIJICHENGBENHEJI, MOQIZHONGFEIXIAN1, 
+      MOQIZHONGXIAN1, MOQIZHONGHEJI1, LEIJIQIZHONGFEIXIAN1, 
+      LEIJIQIZHONGXIAN1, LEIJIQIZHONGHEJI1, MOQIZHONGFEIXIAN2, 
+      MOQIZHONGXIAN2, MOQIZHONGHEJI2, LEIJIQIZHONGFEIXIAN2, 
+      LEIJIQIZHONGXIAN2, LEIJIQIZHONGHEJI2, MOQIZHONGFEIXIAN3, 
+      MOQIZHONGXIAN3, MOQIZHONGHEJI3, LEIJIQIZHONGFEIXIAN3, 
+      LEIJIQIZHONGXIAN3, LEIJIQIZHONGHEJI3, MOQIZHONGFEIXIAN4, 
+      MOQIZHONGXIAN4, MOQIZHONGHEJI4, LEIJIQIZHONGFEIXIAN4, 
+      LEIJIQIZHONGXIAN4, LEIJIQIZHONGHEJI4, MOGUANLIFEIXIAN, 
+      MOGUANLIXIAN, MOGUANLIHEJI, LEIJIGUANLIFEIXIAN, 
+      LEIJIGUANLIXIAN, LEIJIGUANLIHEJI, MOCHOUZIFEIXIAN, 
+      MOCHOUZIXIAN, MOCHOUZIHEJI, LEIJICHOUZIFEIXIAN, 
+      LEIJICHOUZIXIAN, LEIJICHOUZIHEJI, MOQITAFEIYONGFEI, 
+      MOQITAFEIYONGXIAN, MOQITAFEIYONGHEJI, LEIJIQITAFEIYONGFEIXIAN, 
+      LEIJIQITAFEIYONGXIAN, LEIJIQITAFEIYONGHEJI, 
+      MOFEIYONGHEJIFEI, MOFEIYONGHEJIXIAN, MOFEIYONGHEJIHEJI, 
+      LEIJIFEIYONGHEJIFEI, LEIJIFEIYONGHEJIXIAN, 
+      LEIJIFEIYONGHEJIHEJI, MOZHUANFEIXIAN, MOZHUANXIAN, 
+      MOZHUANHEJI, LEIJIZHUANFEIXIAN, LEIJIZHUANXIAN, 
+      LEIJIZHUANHEJI, MOBIANDONGFEIXIAN, MOBIANDONGXIAN, 
+      MOBIANDONGHEJI, LEIJIBIANDONGFEIXIAN, LEIJIBIANDONGXIAN, 
+      LEIJIBIANDONGHEJI, LEIJIBUZHUXIAN, LEIJIBUZHUHEJI, 
+      QIZHONG1, QIZHONG2, QIZHONG3, 
+      QIZHONG4, MOQIZHONGFEIXIAN5, MOQIZHONGFEIXIAN6, 
+      MOQIZHONGFEIXIAN7, MOQIZHONGFEIXIAN8, MOQIZHONGXIAN5, 
+      MOQIZHONGXIAN6, MOQIZHONGXIAN7, MOQIZHONGXIAN8, 
+      MOQIZHONGHEJI5, MOQIZHONGHEJI6, MOQIZHONGHEJI7, 
+      MOQIZHONGHEJI8, LEIJIQIZHONGFEIXIAN5, LEIJIQIZHONGFEIXIAN6, 
+      LEIJIQIZHONGFEIXIAN7, LEIJIQIZHONGFEIXIAN8, 
+      LEIJIQIZHONGXIAN5, LEIJIQIZHONGXIAN6, LEIJIQIZHONGXIAN7, 
+      LEIJIQIZHONGXIAN8, LEIJIQIZHONGHEJI5, LEIJIQIZHONGHEJI6, 
+      LEIJIQIZHONGHEJI7, LEIJIQIZHONGHEJI8)
+    values (#{id,jdbcType=DECIMAL}, #{instanceid,jdbcType=VARCHAR}, #{organizationid,jdbcType=VARCHAR}, 
+      #{status,jdbcType=DECIMAL}, #{bianzhidanwei,jdbcType=VARCHAR}, #{niandu,jdbcType=VARCHAR}, 
+      #{mojuanfeixian,jdbcType=DECIMAL}, #{mojuanxian,jdbcType=DECIMAL}, #{mojuanheji,jdbcType=DECIMAL}, 
+      #{leijijuanfeixian,jdbcType=DECIMAL}, #{leijijuanxian,jdbcType=DECIMAL}, #{leijijuanheji,jdbcType=DECIMAL}, 
+      #{mohuifeixian,jdbcType=DECIMAL}, #{mohuixian,jdbcType=DECIMAL}, #{mohuiheji,jdbcType=DECIMAL}, 
+      #{leijihuifeixian,jdbcType=DECIMAL}, #{leijihuixian,jdbcType=DECIMAL}, #{leijihuiheji,jdbcType=DECIMAL}, 
+      #{mofuwufeixian,jdbcType=DECIMAL}, #{mofuwuxian,jdbcType=DECIMAL}, #{mofuwuheji,jdbcType=DECIMAL}, 
+      #{leijifuwufeixian,jdbcType=DECIMAL}, #{leijifuwuxian,jdbcType=DECIMAL}, #{leijifuwuheji,jdbcType=DECIMAL}, 
+      #{moxiaoshoufeixian,jdbcType=DECIMAL}, #{moxiaoshouxian,jdbcType=DECIMAL}, #{moxiaoshouheji,jdbcType=DECIMAL}, 
+      #{leijixiaoshoufeixian,jdbcType=DECIMAL}, #{leijixiaoshouxian,jdbcType=DECIMAL}, 
+      #{leijixiaoshouheji,jdbcType=DECIMAL}, #{mobuzhufeixian,jdbcType=DECIMAL}, #{mobuzhuxian,jdbcType=DECIMAL}, 
+      #{mobuzhuheji,jdbcType=DECIMAL}, #{leijibuzhufeixian,jdbcType=DECIMAL}, #{motouzifeixian,jdbcType=DECIMAL}, 
+      #{motouzixian,jdbcType=DECIMAL}, #{motouziheji,jdbcType=DECIMAL}, #{leijitouzifeixian,jdbcType=DECIMAL}, 
+      #{leijitouzixian,jdbcType=DECIMAL}, #{leijitouziheji,jdbcType=DECIMAL}, #{moqitafeixian,jdbcType=DECIMAL}, 
+      #{moqitaxian,jdbcType=DECIMAL}, #{moqitaheji,jdbcType=DECIMAL}, #{leijiqitafeixian,jdbcType=DECIMAL}, 
+      #{leijiqitaxian,jdbcType=DECIMAL}, #{leijiqitaheji,jdbcType=DECIMAL}, #{mohejifeixian,jdbcType=DECIMAL}, 
+      #{mohejixian,jdbcType=DECIMAL}, #{mohejiheji,jdbcType=DECIMAL}, #{leijihejifeixian,jdbcType=DECIMAL}, 
+      #{leijihejixian,jdbcType=DECIMAL}, #{leijihejiheji,jdbcType=DECIMAL}, #{mochengbenfeixian,jdbcType=DECIMAL}, 
+      #{mochengbenxian,jdbcType=DECIMAL}, #{mochengbenheji,jdbcType=DECIMAL}, #{leijichengbenfeixian,jdbcType=DECIMAL}, 
+      #{leijichengbenxian,jdbcType=DECIMAL}, #{leijichengbenheji,jdbcType=DECIMAL}, #{moqizhongfeixian1,jdbcType=DECIMAL}, 
+      #{moqizhongxian1,jdbcType=DECIMAL}, #{moqizhongheji1,jdbcType=DECIMAL}, #{leijiqizhongfeixian1,jdbcType=DECIMAL}, 
+      #{leijiqizhongxian1,jdbcType=DECIMAL}, #{leijiqizhongheji1,jdbcType=DECIMAL}, #{moqizhongfeixian2,jdbcType=DECIMAL}, 
+      #{moqizhongxian2,jdbcType=DECIMAL}, #{moqizhongheji2,jdbcType=DECIMAL}, #{leijiqizhongfeixian2,jdbcType=DECIMAL}, 
+      #{leijiqizhongxian2,jdbcType=DECIMAL}, #{leijiqizhongheji2,jdbcType=DECIMAL}, #{moqizhongfeixian3,jdbcType=DECIMAL}, 
+      #{moqizhongxian3,jdbcType=DECIMAL}, #{moqizhongheji3,jdbcType=DECIMAL}, #{leijiqizhongfeixian3,jdbcType=DECIMAL}, 
+      #{leijiqizhongxian3,jdbcType=DECIMAL}, #{leijiqizhongheji3,jdbcType=DECIMAL}, #{moqizhongfeixian4,jdbcType=DECIMAL}, 
+      #{moqizhongxian4,jdbcType=DECIMAL}, #{moqizhongheji4,jdbcType=DECIMAL}, #{leijiqizhongfeixian4,jdbcType=DECIMAL}, 
+      #{leijiqizhongxian4,jdbcType=DECIMAL}, #{leijiqizhongheji4,jdbcType=DECIMAL}, #{moguanlifeixian,jdbcType=DECIMAL}, 
+      #{moguanlixian,jdbcType=DECIMAL}, #{moguanliheji,jdbcType=DECIMAL}, #{leijiguanlifeixian,jdbcType=DECIMAL}, 
+      #{leijiguanlixian,jdbcType=DECIMAL}, #{leijiguanliheji,jdbcType=DECIMAL}, #{mochouzifeixian,jdbcType=DECIMAL}, 
+      #{mochouzixian,jdbcType=DECIMAL}, #{mochouziheji,jdbcType=DECIMAL}, #{leijichouzifeixian,jdbcType=DECIMAL}, 
+      #{leijichouzixian,jdbcType=DECIMAL}, #{leijichouziheji,jdbcType=DECIMAL}, #{moqitafeiyongfei,jdbcType=DECIMAL}, 
+      #{moqitafeiyongxian,jdbcType=DECIMAL}, #{moqitafeiyongheji,jdbcType=DECIMAL}, #{leijiqitafeiyongfeixian,jdbcType=DECIMAL}, 
+      #{leijiqitafeiyongxian,jdbcType=DECIMAL}, #{leijiqitafeiyongheji,jdbcType=DECIMAL}, 
+      #{mofeiyonghejifei,jdbcType=DECIMAL}, #{mofeiyonghejixian,jdbcType=DECIMAL}, #{mofeiyonghejiheji,jdbcType=DECIMAL}, 
+      #{leijifeiyonghejifei,jdbcType=DECIMAL}, #{leijifeiyonghejixian,jdbcType=DECIMAL}, 
+      #{leijifeiyonghejiheji,jdbcType=DECIMAL}, #{mozhuanfeixian,jdbcType=DECIMAL}, #{mozhuanxian,jdbcType=DECIMAL}, 
+      #{mozhuanheji,jdbcType=DECIMAL}, #{leijizhuanfeixian,jdbcType=DECIMAL}, #{leijizhuanxian,jdbcType=DECIMAL}, 
+      #{leijizhuanheji,jdbcType=DECIMAL}, #{mobiandongfeixian,jdbcType=DECIMAL}, #{mobiandongxian,jdbcType=DECIMAL}, 
+      #{mobiandongheji,jdbcType=DECIMAL}, #{leijibiandongfeixian,jdbcType=DECIMAL}, #{leijibiandongxian,jdbcType=DECIMAL}, 
+      #{leijibiandongheji,jdbcType=DECIMAL}, #{leijibuzhuxian,jdbcType=DECIMAL}, #{leijibuzhuheji,jdbcType=DECIMAL}, 
+      #{qizhong1,jdbcType=VARCHAR}, #{qizhong2,jdbcType=VARCHAR}, #{qizhong3,jdbcType=VARCHAR}, 
+      #{qizhong4,jdbcType=VARCHAR}, #{moqizhongfeixian5,jdbcType=DECIMAL}, #{moqizhongfeixian6,jdbcType=DECIMAL}, 
+      #{moqizhongfeixian7,jdbcType=DECIMAL}, #{moqizhongfeixian8,jdbcType=DECIMAL}, #{moqizhongxian5,jdbcType=DECIMAL}, 
+      #{moqizhongxian6,jdbcType=DECIMAL}, #{moqizhongxian7,jdbcType=DECIMAL}, #{moqizhongxian8,jdbcType=DECIMAL}, 
+      #{moqizhongheji5,jdbcType=DECIMAL}, #{moqizhongheji6,jdbcType=DECIMAL}, #{moqizhongheji7,jdbcType=DECIMAL}, 
+      #{moqizhongheji8,jdbcType=DECIMAL}, #{leijiqizhongfeixian5,jdbcType=DECIMAL}, #{leijiqizhongfeixian6,jdbcType=DECIMAL}, 
+      #{leijiqizhongfeixian7,jdbcType=DECIMAL}, #{leijiqizhongfeixian8,jdbcType=DECIMAL}, 
+      #{leijiqizhongxian5,jdbcType=DECIMAL}, #{leijiqizhongxian6,jdbcType=DECIMAL}, #{leijiqizhongxian7,jdbcType=DECIMAL}, 
+      #{leijiqizhongxian8,jdbcType=DECIMAL}, #{leijiqizhongheji5,jdbcType=DECIMAL}, #{leijiqizhongheji6,jdbcType=DECIMAL}, 
+      #{leijiqizhongheji7,jdbcType=DECIMAL}, #{leijiqizhongheji8,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.JjhnjReport4" >
+    insert into JJHNJ_REPORT4
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="instanceid != null" >
+        INSTANCEID,
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="bianzhidanwei != null" >
+        BIANZHIDANWEI,
+      </if>
+      <if test="niandu != null" >
+        NIANDU,
+      </if>
+      <if test="mojuanfeixian != null" >
+        MOJUANFEIXIAN,
+      </if>
+      <if test="mojuanxian != null" >
+        MOJUANXIAN,
+      </if>
+      <if test="mojuanheji != null" >
+        MOJUANHEJI,
+      </if>
+      <if test="leijijuanfeixian != null" >
+        LEIJIJUANFEIXIAN,
+      </if>
+      <if test="leijijuanxian != null" >
+        LEIJIJUANXIAN,
+      </if>
+      <if test="leijijuanheji != null" >
+        LEIJIJUANHEJI,
+      </if>
+      <if test="mohuifeixian != null" >
+        MOHUIFEIXIAN,
+      </if>
+      <if test="mohuixian != null" >
+        MOHUIXIAN,
+      </if>
+      <if test="mohuiheji != null" >
+        MOHUIHEJI,
+      </if>
+      <if test="leijihuifeixian != null" >
+        LEIJIHUIFEIXIAN,
+      </if>
+      <if test="leijihuixian != null" >
+        LEIJIHUIXIAN,
+      </if>
+      <if test="leijihuiheji != null" >
+        LEIJIHUIHEJI,
+      </if>
+      <if test="mofuwufeixian != null" >
+        MOFUWUFEIXIAN,
+      </if>
+      <if test="mofuwuxian != null" >
+        MOFUWUXIAN,
+      </if>
+      <if test="mofuwuheji != null" >
+        MOFUWUHEJI,
+      </if>
+      <if test="leijifuwufeixian != null" >
+        LEIJIFUWUFEIXIAN,
+      </if>
+      <if test="leijifuwuxian != null" >
+        LEIJIFUWUXIAN,
+      </if>
+      <if test="leijifuwuheji != null" >
+        LEIJIFUWUHEJI,
+      </if>
+      <if test="moxiaoshoufeixian != null" >
+        MOXIAOSHOUFEIXIAN,
+      </if>
+      <if test="moxiaoshouxian != null" >
+        MOXIAOSHOUXIAN,
+      </if>
+      <if test="moxiaoshouheji != null" >
+        MOXIAOSHOUHEJI,
+      </if>
+      <if test="leijixiaoshoufeixian != null" >
+        LEIJIXIAOSHOUFEIXIAN,
+      </if>
+      <if test="leijixiaoshouxian != null" >
+        LEIJIXIAOSHOUXIAN,
+      </if>
+      <if test="leijixiaoshouheji != null" >
+        LEIJIXIAOSHOUHEJI,
+      </if>
+      <if test="mobuzhufeixian != null" >
+        MOBUZHUFEIXIAN,
+      </if>
+      <if test="mobuzhuxian != null" >
+        MOBUZHUXIAN,
+      </if>
+      <if test="mobuzhuheji != null" >
+        MOBUZHUHEJI,
+      </if>
+      <if test="leijibuzhufeixian != null" >
+        LEIJIBUZHUFEIXIAN,
+      </if>
+      <if test="motouzifeixian != null" >
+        MOTOUZIFEIXIAN,
+      </if>
+      <if test="motouzixian != null" >
+        MOTOUZIXIAN,
+      </if>
+      <if test="motouziheji != null" >
+        MOTOUZIHEJI,
+      </if>
+      <if test="leijitouzifeixian != null" >
+        LEIJITOUZIFEIXIAN,
+      </if>
+      <if test="leijitouzixian != null" >
+        LEIJITOUZIXIAN,
+      </if>
+      <if test="leijitouziheji != null" >
+        LEIJITOUZIHEJI,
+      </if>
+      <if test="moqitafeixian != null" >
+        MOQITAFEIXIAN,
+      </if>
+      <if test="moqitaxian != null" >
+        MOQITAXIAN,
+      </if>
+      <if test="moqitaheji != null" >
+        MOQITAHEJI,
+      </if>
+      <if test="leijiqitafeixian != null" >
+        LEIJIQITAFEIXIAN,
+      </if>
+      <if test="leijiqitaxian != null" >
+        LEIJIQITAXIAN,
+      </if>
+      <if test="leijiqitaheji != null" >
+        LEIJIQITAHEJI,
+      </if>
+      <if test="mohejifeixian != null" >
+        MOHEJIFEIXIAN,
+      </if>
+      <if test="mohejixian != null" >
+        MOHEJIXIAN,
+      </if>
+      <if test="mohejiheji != null" >
+        MOHEJIHEJI,
+      </if>
+      <if test="leijihejifeixian != null" >
+        LEIJIHEJIFEIXIAN,
+      </if>
+      <if test="leijihejixian != null" >
+        LEIJIHEJIXIAN,
+      </if>
+      <if test="leijihejiheji != null" >
+        LEIJIHEJIHEJI,
+      </if>
+      <if test="mochengbenfeixian != null" >
+        MOCHENGBENFEIXIAN,
+      </if>
+      <if test="mochengbenxian != null" >
+        MOCHENGBENXIAN,
+      </if>
+      <if test="mochengbenheji != null" >
+        MOCHENGBENHEJI,
+      </if>
+      <if test="leijichengbenfeixian != null" >
+        LEIJICHENGBENFEIXIAN,
+      </if>
+      <if test="leijichengbenxian != null" >
+        LEIJICHENGBENXIAN,
+      </if>
+      <if test="leijichengbenheji != null" >
+        LEIJICHENGBENHEJI,
+      </if>
+      <if test="moqizhongfeixian1 != null" >
+        MOQIZHONGFEIXIAN1,
+      </if>
+      <if test="moqizhongxian1 != null" >
+        MOQIZHONGXIAN1,
+      </if>
+      <if test="moqizhongheji1 != null" >
+        MOQIZHONGHEJI1,
+      </if>
+      <if test="leijiqizhongfeixian1 != null" >
+        LEIJIQIZHONGFEIXIAN1,
+      </if>
+      <if test="leijiqizhongxian1 != null" >
+        LEIJIQIZHONGXIAN1,
+      </if>
+      <if test="leijiqizhongheji1 != null" >
+        LEIJIQIZHONGHEJI1,
+      </if>
+      <if test="moqizhongfeixian2 != null" >
+        MOQIZHONGFEIXIAN2,
+      </if>
+      <if test="moqizhongxian2 != null" >
+        MOQIZHONGXIAN2,
+      </if>
+      <if test="moqizhongheji2 != null" >
+        MOQIZHONGHEJI2,
+      </if>
+      <if test="leijiqizhongfeixian2 != null" >
+        LEIJIQIZHONGFEIXIAN2,
+      </if>
+      <if test="leijiqizhongxian2 != null" >
+        LEIJIQIZHONGXIAN2,
+      </if>
+      <if test="leijiqizhongheji2 != null" >
+        LEIJIQIZHONGHEJI2,
+      </if>
+      <if test="moqizhongfeixian3 != null" >
+        MOQIZHONGFEIXIAN3,
+      </if>
+      <if test="moqizhongxian3 != null" >
+        MOQIZHONGXIAN3,
+      </if>
+      <if test="moqizhongheji3 != null" >
+        MOQIZHONGHEJI3,
+      </if>
+      <if test="leijiqizhongfeixian3 != null" >
+        LEIJIQIZHONGFEIXIAN3,
+      </if>
+      <if test="leijiqizhongxian3 != null" >
+        LEIJIQIZHONGXIAN3,
+      </if>
+      <if test="leijiqizhongheji3 != null" >
+        LEIJIQIZHONGHEJI3,
+      </if>
+      <if test="moqizhongfeixian4 != null" >
+        MOQIZHONGFEIXIAN4,
+      </if>
+      <if test="moqizhongxian4 != null" >
+        MOQIZHONGXIAN4,
+      </if>
+      <if test="moqizhongheji4 != null" >
+        MOQIZHONGHEJI4,
+      </if>
+      <if test="leijiqizhongfeixian4 != null" >
+        LEIJIQIZHONGFEIXIAN4,
+      </if>
+      <if test="leijiqizhongxian4 != null" >
+        LEIJIQIZHONGXIAN4,
+      </if>
+      <if test="leijiqizhongheji4 != null" >
+        LEIJIQIZHONGHEJI4,
+      </if>
+      <if test="moguanlifeixian != null" >
+        MOGUANLIFEIXIAN,
+      </if>
+      <if test="moguanlixian != null" >
+        MOGUANLIXIAN,
+      </if>
+      <if test="moguanliheji != null" >
+        MOGUANLIHEJI,
+      </if>
+      <if test="leijiguanlifeixian != null" >
+        LEIJIGUANLIFEIXIAN,
+      </if>
+      <if test="leijiguanlixian != null" >
+        LEIJIGUANLIXIAN,
+      </if>
+      <if test="leijiguanliheji != null" >
+        LEIJIGUANLIHEJI,
+      </if>
+      <if test="mochouzifeixian != null" >
+        MOCHOUZIFEIXIAN,
+      </if>
+      <if test="mochouzixian != null" >
+        MOCHOUZIXIAN,
+      </if>
+      <if test="mochouziheji != null" >
+        MOCHOUZIHEJI,
+      </if>
+      <if test="leijichouzifeixian != null" >
+        LEIJICHOUZIFEIXIAN,
+      </if>
+      <if test="leijichouzixian != null" >
+        LEIJICHOUZIXIAN,
+      </if>
+      <if test="leijichouziheji != null" >
+        LEIJICHOUZIHEJI,
+      </if>
+      <if test="moqitafeiyongfei != null" >
+        MOQITAFEIYONGFEI,
+      </if>
+      <if test="moqitafeiyongxian != null" >
+        MOQITAFEIYONGXIAN,
+      </if>
+      <if test="moqitafeiyongheji != null" >
+        MOQITAFEIYONGHEJI,
+      </if>
+      <if test="leijiqitafeiyongfeixian != null" >
+        LEIJIQITAFEIYONGFEIXIAN,
+      </if>
+      <if test="leijiqitafeiyongxian != null" >
+        LEIJIQITAFEIYONGXIAN,
+      </if>
+      <if test="leijiqitafeiyongheji != null" >
+        LEIJIQITAFEIYONGHEJI,
+      </if>
+      <if test="mofeiyonghejifei != null" >
+        MOFEIYONGHEJIFEI,
+      </if>
+      <if test="mofeiyonghejixian != null" >
+        MOFEIYONGHEJIXIAN,
+      </if>
+      <if test="mofeiyonghejiheji != null" >
+        MOFEIYONGHEJIHEJI,
+      </if>
+      <if test="leijifeiyonghejifei != null" >
+        LEIJIFEIYONGHEJIFEI,
+      </if>
+      <if test="leijifeiyonghejixian != null" >
+        LEIJIFEIYONGHEJIXIAN,
+      </if>
+      <if test="leijifeiyonghejiheji != null" >
+        LEIJIFEIYONGHEJIHEJI,
+      </if>
+      <if test="mozhuanfeixian != null" >
+        MOZHUANFEIXIAN,
+      </if>
+      <if test="mozhuanxian != null" >
+        MOZHUANXIAN,
+      </if>
+      <if test="mozhuanheji != null" >
+        MOZHUANHEJI,
+      </if>
+      <if test="leijizhuanfeixian != null" >
+        LEIJIZHUANFEIXIAN,
+      </if>
+      <if test="leijizhuanxian != null" >
+        LEIJIZHUANXIAN,
+      </if>
+      <if test="leijizhuanheji != null" >
+        LEIJIZHUANHEJI,
+      </if>
+      <if test="mobiandongfeixian != null" >
+        MOBIANDONGFEIXIAN,
+      </if>
+      <if test="mobiandongxian != null" >
+        MOBIANDONGXIAN,
+      </if>
+      <if test="mobiandongheji != null" >
+        MOBIANDONGHEJI,
+      </if>
+      <if test="leijibiandongfeixian != null" >
+        LEIJIBIANDONGFEIXIAN,
+      </if>
+      <if test="leijibiandongxian != null" >
+        LEIJIBIANDONGXIAN,
+      </if>
+      <if test="leijibiandongheji != null" >
+        LEIJIBIANDONGHEJI,
+      </if>
+      <if test="leijibuzhuxian != null" >
+        LEIJIBUZHUXIAN,
+      </if>
+      <if test="leijibuzhuheji != null" >
+        LEIJIBUZHUHEJI,
+      </if>
+      <if test="qizhong1 != null" >
+        QIZHONG1,
+      </if>
+      <if test="qizhong2 != null" >
+        QIZHONG2,
+      </if>
+      <if test="qizhong3 != null" >
+        QIZHONG3,
+      </if>
+      <if test="qizhong4 != null" >
+        QIZHONG4,
+      </if>
+      <if test="moqizhongfeixian5 != null" >
+        MOQIZHONGFEIXIAN5,
+      </if>
+      <if test="moqizhongfeixian6 != null" >
+        MOQIZHONGFEIXIAN6,
+      </if>
+      <if test="moqizhongfeixian7 != null" >
+        MOQIZHONGFEIXIAN7,
+      </if>
+      <if test="moqizhongfeixian8 != null" >
+        MOQIZHONGFEIXIAN8,
+      </if>
+      <if test="moqizhongxian5 != null" >
+        MOQIZHONGXIAN5,
+      </if>
+      <if test="moqizhongxian6 != null" >
+        MOQIZHONGXIAN6,
+      </if>
+      <if test="moqizhongxian7 != null" >
+        MOQIZHONGXIAN7,
+      </if>
+      <if test="moqizhongxian8 != null" >
+        MOQIZHONGXIAN8,
+      </if>
+      <if test="moqizhongheji5 != null" >
+        MOQIZHONGHEJI5,
+      </if>
+      <if test="moqizhongheji6 != null" >
+        MOQIZHONGHEJI6,
+      </if>
+      <if test="moqizhongheji7 != null" >
+        MOQIZHONGHEJI7,
+      </if>
+      <if test="moqizhongheji8 != null" >
+        MOQIZHONGHEJI8,
+      </if>
+      <if test="leijiqizhongfeixian5 != null" >
+        LEIJIQIZHONGFEIXIAN5,
+      </if>
+      <if test="leijiqizhongfeixian6 != null" >
+        LEIJIQIZHONGFEIXIAN6,
+      </if>
+      <if test="leijiqizhongfeixian7 != null" >
+        LEIJIQIZHONGFEIXIAN7,
+      </if>
+      <if test="leijiqizhongfeixian8 != null" >
+        LEIJIQIZHONGFEIXIAN8,
+      </if>
+      <if test="leijiqizhongxian5 != null" >
+        LEIJIQIZHONGXIAN5,
+      </if>
+      <if test="leijiqizhongxian6 != null" >
+        LEIJIQIZHONGXIAN6,
+      </if>
+      <if test="leijiqizhongxian7 != null" >
+        LEIJIQIZHONGXIAN7,
+      </if>
+      <if test="leijiqizhongxian8 != null" >
+        LEIJIQIZHONGXIAN8,
+      </if>
+      <if test="leijiqizhongheji5 != null" >
+        LEIJIQIZHONGHEJI5,
+      </if>
+      <if test="leijiqizhongheji6 != null" >
+        LEIJIQIZHONGHEJI6,
+      </if>
+      <if test="leijiqizhongheji7 != null" >
+        LEIJIQIZHONGHEJI7,
+      </if>
+      <if test="leijiqizhongheji8 != null" >
+        LEIJIQIZHONGHEJI8,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="instanceid != null" >
+        #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="bianzhidanwei != null" >
+        #{bianzhidanwei,jdbcType=VARCHAR},
+      </if>
+      <if test="niandu != null" >
+        #{niandu,jdbcType=VARCHAR},
+      </if>
+      <if test="mojuanfeixian != null" >
+        #{mojuanfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mojuanxian != null" >
+        #{mojuanxian,jdbcType=DECIMAL},
+      </if>
+      <if test="mojuanheji != null" >
+        #{mojuanheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijijuanfeixian != null" >
+        #{leijijuanfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijijuanxian != null" >
+        #{leijijuanxian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijijuanheji != null" >
+        #{leijijuanheji,jdbcType=DECIMAL},
+      </if>
+      <if test="mohuifeixian != null" >
+        #{mohuifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mohuixian != null" >
+        #{mohuixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mohuiheji != null" >
+        #{mohuiheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijihuifeixian != null" >
+        #{leijihuifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijihuixian != null" >
+        #{leijihuixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijihuiheji != null" >
+        #{leijihuiheji,jdbcType=DECIMAL},
+      </if>
+      <if test="mofuwufeixian != null" >
+        #{mofuwufeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mofuwuxian != null" >
+        #{mofuwuxian,jdbcType=DECIMAL},
+      </if>
+      <if test="mofuwuheji != null" >
+        #{mofuwuheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijifuwufeixian != null" >
+        #{leijifuwufeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijifuwuxian != null" >
+        #{leijifuwuxian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijifuwuheji != null" >
+        #{leijifuwuheji,jdbcType=DECIMAL},
+      </if>
+      <if test="moxiaoshoufeixian != null" >
+        #{moxiaoshoufeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="moxiaoshouxian != null" >
+        #{moxiaoshouxian,jdbcType=DECIMAL},
+      </if>
+      <if test="moxiaoshouheji != null" >
+        #{moxiaoshouheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijixiaoshoufeixian != null" >
+        #{leijixiaoshoufeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijixiaoshouxian != null" >
+        #{leijixiaoshouxian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijixiaoshouheji != null" >
+        #{leijixiaoshouheji,jdbcType=DECIMAL},
+      </if>
+      <if test="mobuzhufeixian != null" >
+        #{mobuzhufeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mobuzhuxian != null" >
+        #{mobuzhuxian,jdbcType=DECIMAL},
+      </if>
+      <if test="mobuzhuheji != null" >
+        #{mobuzhuheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijibuzhufeixian != null" >
+        #{leijibuzhufeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="motouzifeixian != null" >
+        #{motouzifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="motouzixian != null" >
+        #{motouzixian,jdbcType=DECIMAL},
+      </if>
+      <if test="motouziheji != null" >
+        #{motouziheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijitouzifeixian != null" >
+        #{leijitouzifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijitouzixian != null" >
+        #{leijitouzixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijitouziheji != null" >
+        #{leijitouziheji,jdbcType=DECIMAL},
+      </if>
+      <if test="moqitafeixian != null" >
+        #{moqitafeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="moqitaxian != null" >
+        #{moqitaxian,jdbcType=DECIMAL},
+      </if>
+      <if test="moqitaheji != null" >
+        #{moqitaheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqitafeixian != null" >
+        #{leijiqitafeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqitaxian != null" >
+        #{leijiqitaxian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqitaheji != null" >
+        #{leijiqitaheji,jdbcType=DECIMAL},
+      </if>
+      <if test="mohejifeixian != null" >
+        #{mohejifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mohejixian != null" >
+        #{mohejixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mohejiheji != null" >
+        #{mohejiheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijihejifeixian != null" >
+        #{leijihejifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijihejixian != null" >
+        #{leijihejixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijihejiheji != null" >
+        #{leijihejiheji,jdbcType=DECIMAL},
+      </if>
+      <if test="mochengbenfeixian != null" >
+        #{mochengbenfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mochengbenxian != null" >
+        #{mochengbenxian,jdbcType=DECIMAL},
+      </if>
+      <if test="mochengbenheji != null" >
+        #{mochengbenheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijichengbenfeixian != null" >
+        #{leijichengbenfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijichengbenxian != null" >
+        #{leijichengbenxian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijichengbenheji != null" >
+        #{leijichengbenheji,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongfeixian1 != null" >
+        #{moqizhongfeixian1,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongxian1 != null" >
+        #{moqizhongxian1,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongheji1 != null" >
+        #{moqizhongheji1,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongfeixian1 != null" >
+        #{leijiqizhongfeixian1,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongxian1 != null" >
+        #{leijiqizhongxian1,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongheji1 != null" >
+        #{leijiqizhongheji1,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongfeixian2 != null" >
+        #{moqizhongfeixian2,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongxian2 != null" >
+        #{moqizhongxian2,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongheji2 != null" >
+        #{moqizhongheji2,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongfeixian2 != null" >
+        #{leijiqizhongfeixian2,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongxian2 != null" >
+        #{leijiqizhongxian2,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongheji2 != null" >
+        #{leijiqizhongheji2,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongfeixian3 != null" >
+        #{moqizhongfeixian3,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongxian3 != null" >
+        #{moqizhongxian3,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongheji3 != null" >
+        #{moqizhongheji3,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongfeixian3 != null" >
+        #{leijiqizhongfeixian3,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongxian3 != null" >
+        #{leijiqizhongxian3,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongheji3 != null" >
+        #{leijiqizhongheji3,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongfeixian4 != null" >
+        #{moqizhongfeixian4,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongxian4 != null" >
+        #{moqizhongxian4,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongheji4 != null" >
+        #{moqizhongheji4,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongfeixian4 != null" >
+        #{leijiqizhongfeixian4,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongxian4 != null" >
+        #{leijiqizhongxian4,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongheji4 != null" >
+        #{leijiqizhongheji4,jdbcType=DECIMAL},
+      </if>
+      <if test="moguanlifeixian != null" >
+        #{moguanlifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="moguanlixian != null" >
+        #{moguanlixian,jdbcType=DECIMAL},
+      </if>
+      <if test="moguanliheji != null" >
+        #{moguanliheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiguanlifeixian != null" >
+        #{leijiguanlifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiguanlixian != null" >
+        #{leijiguanlixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiguanliheji != null" >
+        #{leijiguanliheji,jdbcType=DECIMAL},
+      </if>
+      <if test="mochouzifeixian != null" >
+        #{mochouzifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mochouzixian != null" >
+        #{mochouzixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mochouziheji != null" >
+        #{mochouziheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijichouzifeixian != null" >
+        #{leijichouzifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijichouzixian != null" >
+        #{leijichouzixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijichouziheji != null" >
+        #{leijichouziheji,jdbcType=DECIMAL},
+      </if>
+      <if test="moqitafeiyongfei != null" >
+        #{moqitafeiyongfei,jdbcType=DECIMAL},
+      </if>
+      <if test="moqitafeiyongxian != null" >
+        #{moqitafeiyongxian,jdbcType=DECIMAL},
+      </if>
+      <if test="moqitafeiyongheji != null" >
+        #{moqitafeiyongheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqitafeiyongfeixian != null" >
+        #{leijiqitafeiyongfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqitafeiyongxian != null" >
+        #{leijiqitafeiyongxian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqitafeiyongheji != null" >
+        #{leijiqitafeiyongheji,jdbcType=DECIMAL},
+      </if>
+      <if test="mofeiyonghejifei != null" >
+        #{mofeiyonghejifei,jdbcType=DECIMAL},
+      </if>
+      <if test="mofeiyonghejixian != null" >
+        #{mofeiyonghejixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mofeiyonghejiheji != null" >
+        #{mofeiyonghejiheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijifeiyonghejifei != null" >
+        #{leijifeiyonghejifei,jdbcType=DECIMAL},
+      </if>
+      <if test="leijifeiyonghejixian != null" >
+        #{leijifeiyonghejixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijifeiyonghejiheji != null" >
+        #{leijifeiyonghejiheji,jdbcType=DECIMAL},
+      </if>
+      <if test="mozhuanfeixian != null" >
+        #{mozhuanfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mozhuanxian != null" >
+        #{mozhuanxian,jdbcType=DECIMAL},
+      </if>
+      <if test="mozhuanheji != null" >
+        #{mozhuanheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijizhuanfeixian != null" >
+        #{leijizhuanfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijizhuanxian != null" >
+        #{leijizhuanxian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijizhuanheji != null" >
+        #{leijizhuanheji,jdbcType=DECIMAL},
+      </if>
+      <if test="mobiandongfeixian != null" >
+        #{mobiandongfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mobiandongxian != null" >
+        #{mobiandongxian,jdbcType=DECIMAL},
+      </if>
+      <if test="mobiandongheji != null" >
+        #{mobiandongheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijibiandongfeixian != null" >
+        #{leijibiandongfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijibiandongxian != null" >
+        #{leijibiandongxian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijibiandongheji != null" >
+        #{leijibiandongheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijibuzhuxian != null" >
+        #{leijibuzhuxian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijibuzhuheji != null" >
+        #{leijibuzhuheji,jdbcType=DECIMAL},
+      </if>
+      <if test="qizhong1 != null" >
+        #{qizhong1,jdbcType=VARCHAR},
+      </if>
+      <if test="qizhong2 != null" >
+        #{qizhong2,jdbcType=VARCHAR},
+      </if>
+      <if test="qizhong3 != null" >
+        #{qizhong3,jdbcType=VARCHAR},
+      </if>
+      <if test="qizhong4 != null" >
+        #{qizhong4,jdbcType=VARCHAR},
+      </if>
+      <if test="moqizhongfeixian5 != null" >
+        #{moqizhongfeixian5,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongfeixian6 != null" >
+        #{moqizhongfeixian6,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongfeixian7 != null" >
+        #{moqizhongfeixian7,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongfeixian8 != null" >
+        #{moqizhongfeixian8,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongxian5 != null" >
+        #{moqizhongxian5,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongxian6 != null" >
+        #{moqizhongxian6,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongxian7 != null" >
+        #{moqizhongxian7,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongxian8 != null" >
+        #{moqizhongxian8,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongheji5 != null" >
+        #{moqizhongheji5,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongheji6 != null" >
+        #{moqizhongheji6,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongheji7 != null" >
+        #{moqizhongheji7,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongheji8 != null" >
+        #{moqizhongheji8,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongfeixian5 != null" >
+        #{leijiqizhongfeixian5,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongfeixian6 != null" >
+        #{leijiqizhongfeixian6,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongfeixian7 != null" >
+        #{leijiqizhongfeixian7,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongfeixian8 != null" >
+        #{leijiqizhongfeixian8,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongxian5 != null" >
+        #{leijiqizhongxian5,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongxian6 != null" >
+        #{leijiqizhongxian6,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongxian7 != null" >
+        #{leijiqizhongxian7,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongxian8 != null" >
+        #{leijiqizhongxian8,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongheji5 != null" >
+        #{leijiqizhongheji5,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongheji6 != null" >
+        #{leijiqizhongheji6,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongheji7 != null" >
+        #{leijiqizhongheji7,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongheji8 != null" >
+        #{leijiqizhongheji8,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.JjhnjReport4Example" resultType="java.lang.Integer" >
+    select count(*) from MJZZ_USER.JJHNJ_REPORT4
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update JJHNJ_REPORT4
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=DECIMAL},
+      </if>
+      <if test="record.instanceid != null" >
+        INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organizationid != null" >
+        ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=DECIMAL},
+      </if>
+      <if test="record.bianzhidanwei != null" >
+        BIANZHIDANWEI = #{record.bianzhidanwei,jdbcType=VARCHAR},
+      </if>
+      <if test="record.niandu != null" >
+        NIANDU = #{record.niandu,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mojuanfeixian != null" >
+        MOJUANFEIXIAN = #{record.mojuanfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mojuanxian != null" >
+        MOJUANXIAN = #{record.mojuanxian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mojuanheji != null" >
+        MOJUANHEJI = #{record.mojuanheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijijuanfeixian != null" >
+        LEIJIJUANFEIXIAN = #{record.leijijuanfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijijuanxian != null" >
+        LEIJIJUANXIAN = #{record.leijijuanxian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijijuanheji != null" >
+        LEIJIJUANHEJI = #{record.leijijuanheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mohuifeixian != null" >
+        MOHUIFEIXIAN = #{record.mohuifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mohuixian != null" >
+        MOHUIXIAN = #{record.mohuixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mohuiheji != null" >
+        MOHUIHEJI = #{record.mohuiheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijihuifeixian != null" >
+        LEIJIHUIFEIXIAN = #{record.leijihuifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijihuixian != null" >
+        LEIJIHUIXIAN = #{record.leijihuixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijihuiheji != null" >
+        LEIJIHUIHEJI = #{record.leijihuiheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mofuwufeixian != null" >
+        MOFUWUFEIXIAN = #{record.mofuwufeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mofuwuxian != null" >
+        MOFUWUXIAN = #{record.mofuwuxian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mofuwuheji != null" >
+        MOFUWUHEJI = #{record.mofuwuheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijifuwufeixian != null" >
+        LEIJIFUWUFEIXIAN = #{record.leijifuwufeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijifuwuxian != null" >
+        LEIJIFUWUXIAN = #{record.leijifuwuxian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijifuwuheji != null" >
+        LEIJIFUWUHEJI = #{record.leijifuwuheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moxiaoshoufeixian != null" >
+        MOXIAOSHOUFEIXIAN = #{record.moxiaoshoufeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moxiaoshouxian != null" >
+        MOXIAOSHOUXIAN = #{record.moxiaoshouxian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moxiaoshouheji != null" >
+        MOXIAOSHOUHEJI = #{record.moxiaoshouheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijixiaoshoufeixian != null" >
+        LEIJIXIAOSHOUFEIXIAN = #{record.leijixiaoshoufeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijixiaoshouxian != null" >
+        LEIJIXIAOSHOUXIAN = #{record.leijixiaoshouxian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijixiaoshouheji != null" >
+        LEIJIXIAOSHOUHEJI = #{record.leijixiaoshouheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mobuzhufeixian != null" >
+        MOBUZHUFEIXIAN = #{record.mobuzhufeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mobuzhuxian != null" >
+        MOBUZHUXIAN = #{record.mobuzhuxian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mobuzhuheji != null" >
+        MOBUZHUHEJI = #{record.mobuzhuheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijibuzhufeixian != null" >
+        LEIJIBUZHUFEIXIAN = #{record.leijibuzhufeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.motouzifeixian != null" >
+        MOTOUZIFEIXIAN = #{record.motouzifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.motouzixian != null" >
+        MOTOUZIXIAN = #{record.motouzixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.motouziheji != null" >
+        MOTOUZIHEJI = #{record.motouziheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijitouzifeixian != null" >
+        LEIJITOUZIFEIXIAN = #{record.leijitouzifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijitouzixian != null" >
+        LEIJITOUZIXIAN = #{record.leijitouzixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijitouziheji != null" >
+        LEIJITOUZIHEJI = #{record.leijitouziheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqitafeixian != null" >
+        MOQITAFEIXIAN = #{record.moqitafeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqitaxian != null" >
+        MOQITAXIAN = #{record.moqitaxian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqitaheji != null" >
+        MOQITAHEJI = #{record.moqitaheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqitafeixian != null" >
+        LEIJIQITAFEIXIAN = #{record.leijiqitafeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqitaxian != null" >
+        LEIJIQITAXIAN = #{record.leijiqitaxian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqitaheji != null" >
+        LEIJIQITAHEJI = #{record.leijiqitaheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mohejifeixian != null" >
+        MOHEJIFEIXIAN = #{record.mohejifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mohejixian != null" >
+        MOHEJIXIAN = #{record.mohejixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mohejiheji != null" >
+        MOHEJIHEJI = #{record.mohejiheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijihejifeixian != null" >
+        LEIJIHEJIFEIXIAN = #{record.leijihejifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijihejixian != null" >
+        LEIJIHEJIXIAN = #{record.leijihejixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijihejiheji != null" >
+        LEIJIHEJIHEJI = #{record.leijihejiheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mochengbenfeixian != null" >
+        MOCHENGBENFEIXIAN = #{record.mochengbenfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mochengbenxian != null" >
+        MOCHENGBENXIAN = #{record.mochengbenxian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mochengbenheji != null" >
+        MOCHENGBENHEJI = #{record.mochengbenheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijichengbenfeixian != null" >
+        LEIJICHENGBENFEIXIAN = #{record.leijichengbenfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijichengbenxian != null" >
+        LEIJICHENGBENXIAN = #{record.leijichengbenxian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijichengbenheji != null" >
+        LEIJICHENGBENHEJI = #{record.leijichengbenheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqizhongfeixian1 != null" >
+        MOQIZHONGFEIXIAN1 = #{record.moqizhongfeixian1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqizhongxian1 != null" >
+        MOQIZHONGXIAN1 = #{record.moqizhongxian1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqizhongheji1 != null" >
+        MOQIZHONGHEJI1 = #{record.moqizhongheji1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqizhongfeixian1 != null" >
+        LEIJIQIZHONGFEIXIAN1 = #{record.leijiqizhongfeixian1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqizhongxian1 != null" >
+        LEIJIQIZHONGXIAN1 = #{record.leijiqizhongxian1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqizhongheji1 != null" >
+        LEIJIQIZHONGHEJI1 = #{record.leijiqizhongheji1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqizhongfeixian2 != null" >
+        MOQIZHONGFEIXIAN2 = #{record.moqizhongfeixian2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqizhongxian2 != null" >
+        MOQIZHONGXIAN2 = #{record.moqizhongxian2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqizhongheji2 != null" >
+        MOQIZHONGHEJI2 = #{record.moqizhongheji2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqizhongfeixian2 != null" >
+        LEIJIQIZHONGFEIXIAN2 = #{record.leijiqizhongfeixian2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqizhongxian2 != null" >
+        LEIJIQIZHONGXIAN2 = #{record.leijiqizhongxian2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqizhongheji2 != null" >
+        LEIJIQIZHONGHEJI2 = #{record.leijiqizhongheji2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqizhongfeixian3 != null" >
+        MOQIZHONGFEIXIAN3 = #{record.moqizhongfeixian3,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqizhongxian3 != null" >
+        MOQIZHONGXIAN3 = #{record.moqizhongxian3,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqizhongheji3 != null" >
+        MOQIZHONGHEJI3 = #{record.moqizhongheji3,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqizhongfeixian3 != null" >
+        LEIJIQIZHONGFEIXIAN3 = #{record.leijiqizhongfeixian3,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqizhongxian3 != null" >
+        LEIJIQIZHONGXIAN3 = #{record.leijiqizhongxian3,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqizhongheji3 != null" >
+        LEIJIQIZHONGHEJI3 = #{record.leijiqizhongheji3,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqizhongfeixian4 != null" >
+        MOQIZHONGFEIXIAN4 = #{record.moqizhongfeixian4,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqizhongxian4 != null" >
+        MOQIZHONGXIAN4 = #{record.moqizhongxian4,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqizhongheji4 != null" >
+        MOQIZHONGHEJI4 = #{record.moqizhongheji4,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqizhongfeixian4 != null" >
+        LEIJIQIZHONGFEIXIAN4 = #{record.leijiqizhongfeixian4,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqizhongxian4 != null" >
+        LEIJIQIZHONGXIAN4 = #{record.leijiqizhongxian4,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqizhongheji4 != null" >
+        LEIJIQIZHONGHEJI4 = #{record.leijiqizhongheji4,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moguanlifeixian != null" >
+        MOGUANLIFEIXIAN = #{record.moguanlifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moguanlixian != null" >
+        MOGUANLIXIAN = #{record.moguanlixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moguanliheji != null" >
+        MOGUANLIHEJI = #{record.moguanliheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiguanlifeixian != null" >
+        LEIJIGUANLIFEIXIAN = #{record.leijiguanlifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiguanlixian != null" >
+        LEIJIGUANLIXIAN = #{record.leijiguanlixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiguanliheji != null" >
+        LEIJIGUANLIHEJI = #{record.leijiguanliheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mochouzifeixian != null" >
+        MOCHOUZIFEIXIAN = #{record.mochouzifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mochouzixian != null" >
+        MOCHOUZIXIAN = #{record.mochouzixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mochouziheji != null" >
+        MOCHOUZIHEJI = #{record.mochouziheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijichouzifeixian != null" >
+        LEIJICHOUZIFEIXIAN = #{record.leijichouzifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijichouzixian != null" >
+        LEIJICHOUZIXIAN = #{record.leijichouzixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijichouziheji != null" >
+        LEIJICHOUZIHEJI = #{record.leijichouziheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqitafeiyongfei != null" >
+        MOQITAFEIYONGFEI = #{record.moqitafeiyongfei,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqitafeiyongxian != null" >
+        MOQITAFEIYONGXIAN = #{record.moqitafeiyongxian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqitafeiyongheji != null" >
+        MOQITAFEIYONGHEJI = #{record.moqitafeiyongheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqitafeiyongfeixian != null" >
+        LEIJIQITAFEIYONGFEIXIAN = #{record.leijiqitafeiyongfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqitafeiyongxian != null" >
+        LEIJIQITAFEIYONGXIAN = #{record.leijiqitafeiyongxian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqitafeiyongheji != null" >
+        LEIJIQITAFEIYONGHEJI = #{record.leijiqitafeiyongheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mofeiyonghejifei != null" >
+        MOFEIYONGHEJIFEI = #{record.mofeiyonghejifei,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mofeiyonghejixian != null" >
+        MOFEIYONGHEJIXIAN = #{record.mofeiyonghejixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mofeiyonghejiheji != null" >
+        MOFEIYONGHEJIHEJI = #{record.mofeiyonghejiheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijifeiyonghejifei != null" >
+        LEIJIFEIYONGHEJIFEI = #{record.leijifeiyonghejifei,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijifeiyonghejixian != null" >
+        LEIJIFEIYONGHEJIXIAN = #{record.leijifeiyonghejixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijifeiyonghejiheji != null" >
+        LEIJIFEIYONGHEJIHEJI = #{record.leijifeiyonghejiheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mozhuanfeixian != null" >
+        MOZHUANFEIXIAN = #{record.mozhuanfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mozhuanxian != null" >
+        MOZHUANXIAN = #{record.mozhuanxian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mozhuanheji != null" >
+        MOZHUANHEJI = #{record.mozhuanheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijizhuanfeixian != null" >
+        LEIJIZHUANFEIXIAN = #{record.leijizhuanfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijizhuanxian != null" >
+        LEIJIZHUANXIAN = #{record.leijizhuanxian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijizhuanheji != null" >
+        LEIJIZHUANHEJI = #{record.leijizhuanheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mobiandongfeixian != null" >
+        MOBIANDONGFEIXIAN = #{record.mobiandongfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mobiandongxian != null" >
+        MOBIANDONGXIAN = #{record.mobiandongxian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mobiandongheji != null" >
+        MOBIANDONGHEJI = #{record.mobiandongheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijibiandongfeixian != null" >
+        LEIJIBIANDONGFEIXIAN = #{record.leijibiandongfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijibiandongxian != null" >
+        LEIJIBIANDONGXIAN = #{record.leijibiandongxian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijibiandongheji != null" >
+        LEIJIBIANDONGHEJI = #{record.leijibiandongheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijibuzhuxian != null" >
+        LEIJIBUZHUXIAN = #{record.leijibuzhuxian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijibuzhuheji != null" >
+        LEIJIBUZHUHEJI = #{record.leijibuzhuheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qizhong1 != null" >
+        QIZHONG1 = #{record.qizhong1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qizhong2 != null" >
+        QIZHONG2 = #{record.qizhong2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qizhong3 != null" >
+        QIZHONG3 = #{record.qizhong3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qizhong4 != null" >
+        QIZHONG4 = #{record.qizhong4,jdbcType=VARCHAR},
+      </if>
+      <if test="record.moqizhongfeixian5 != null" >
+        MOQIZHONGFEIXIAN5 = #{record.moqizhongfeixian5,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqizhongfeixian6 != null" >
+        MOQIZHONGFEIXIAN6 = #{record.moqizhongfeixian6,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqizhongfeixian7 != null" >
+        MOQIZHONGFEIXIAN7 = #{record.moqizhongfeixian7,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqizhongfeixian8 != null" >
+        MOQIZHONGFEIXIAN8 = #{record.moqizhongfeixian8,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqizhongxian5 != null" >
+        MOQIZHONGXIAN5 = #{record.moqizhongxian5,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqizhongxian6 != null" >
+        MOQIZHONGXIAN6 = #{record.moqizhongxian6,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqizhongxian7 != null" >
+        MOQIZHONGXIAN7 = #{record.moqizhongxian7,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqizhongxian8 != null" >
+        MOQIZHONGXIAN8 = #{record.moqizhongxian8,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqizhongheji5 != null" >
+        MOQIZHONGHEJI5 = #{record.moqizhongheji5,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqizhongheji6 != null" >
+        MOQIZHONGHEJI6 = #{record.moqizhongheji6,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqizhongheji7 != null" >
+        MOQIZHONGHEJI7 = #{record.moqizhongheji7,jdbcType=DECIMAL},
+      </if>
+      <if test="record.moqizhongheji8 != null" >
+        MOQIZHONGHEJI8 = #{record.moqizhongheji8,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqizhongfeixian5 != null" >
+        LEIJIQIZHONGFEIXIAN5 = #{record.leijiqizhongfeixian5,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqizhongfeixian6 != null" >
+        LEIJIQIZHONGFEIXIAN6 = #{record.leijiqizhongfeixian6,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqizhongfeixian7 != null" >
+        LEIJIQIZHONGFEIXIAN7 = #{record.leijiqizhongfeixian7,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqizhongfeixian8 != null" >
+        LEIJIQIZHONGFEIXIAN8 = #{record.leijiqizhongfeixian8,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqizhongxian5 != null" >
+        LEIJIQIZHONGXIAN5 = #{record.leijiqizhongxian5,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqizhongxian6 != null" >
+        LEIJIQIZHONGXIAN6 = #{record.leijiqizhongxian6,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqizhongxian7 != null" >
+        LEIJIQIZHONGXIAN7 = #{record.leijiqizhongxian7,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqizhongxian8 != null" >
+        LEIJIQIZHONGXIAN8 = #{record.leijiqizhongxian8,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqizhongheji5 != null" >
+        LEIJIQIZHONGHEJI5 = #{record.leijiqizhongheji5,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqizhongheji6 != null" >
+        LEIJIQIZHONGHEJI6 = #{record.leijiqizhongheji6,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqizhongheji7 != null" >
+        LEIJIQIZHONGHEJI7 = #{record.leijiqizhongheji7,jdbcType=DECIMAL},
+      </if>
+      <if test="record.leijiqizhongheji8 != null" >
+        LEIJIQIZHONGHEJI8 = #{record.leijiqizhongheji8,jdbcType=DECIMAL},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update JJHNJ_REPORT4
+    set ID = #{record.id,jdbcType=DECIMAL},
+      INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=DECIMAL},
+      BIANZHIDANWEI = #{record.bianzhidanwei,jdbcType=VARCHAR},
+      NIANDU = #{record.niandu,jdbcType=VARCHAR},
+      MOJUANFEIXIAN = #{record.mojuanfeixian,jdbcType=DECIMAL},
+      MOJUANXIAN = #{record.mojuanxian,jdbcType=DECIMAL},
+      MOJUANHEJI = #{record.mojuanheji,jdbcType=DECIMAL},
+      LEIJIJUANFEIXIAN = #{record.leijijuanfeixian,jdbcType=DECIMAL},
+      LEIJIJUANXIAN = #{record.leijijuanxian,jdbcType=DECIMAL},
+      LEIJIJUANHEJI = #{record.leijijuanheji,jdbcType=DECIMAL},
+      MOHUIFEIXIAN = #{record.mohuifeixian,jdbcType=DECIMAL},
+      MOHUIXIAN = #{record.mohuixian,jdbcType=DECIMAL},
+      MOHUIHEJI = #{record.mohuiheji,jdbcType=DECIMAL},
+      LEIJIHUIFEIXIAN = #{record.leijihuifeixian,jdbcType=DECIMAL},
+      LEIJIHUIXIAN = #{record.leijihuixian,jdbcType=DECIMAL},
+      LEIJIHUIHEJI = #{record.leijihuiheji,jdbcType=DECIMAL},
+      MOFUWUFEIXIAN = #{record.mofuwufeixian,jdbcType=DECIMAL},
+      MOFUWUXIAN = #{record.mofuwuxian,jdbcType=DECIMAL},
+      MOFUWUHEJI = #{record.mofuwuheji,jdbcType=DECIMAL},
+      LEIJIFUWUFEIXIAN = #{record.leijifuwufeixian,jdbcType=DECIMAL},
+      LEIJIFUWUXIAN = #{record.leijifuwuxian,jdbcType=DECIMAL},
+      LEIJIFUWUHEJI = #{record.leijifuwuheji,jdbcType=DECIMAL},
+      MOXIAOSHOUFEIXIAN = #{record.moxiaoshoufeixian,jdbcType=DECIMAL},
+      MOXIAOSHOUXIAN = #{record.moxiaoshouxian,jdbcType=DECIMAL},
+      MOXIAOSHOUHEJI = #{record.moxiaoshouheji,jdbcType=DECIMAL},
+      LEIJIXIAOSHOUFEIXIAN = #{record.leijixiaoshoufeixian,jdbcType=DECIMAL},
+      LEIJIXIAOSHOUXIAN = #{record.leijixiaoshouxian,jdbcType=DECIMAL},
+      LEIJIXIAOSHOUHEJI = #{record.leijixiaoshouheji,jdbcType=DECIMAL},
+      MOBUZHUFEIXIAN = #{record.mobuzhufeixian,jdbcType=DECIMAL},
+      MOBUZHUXIAN = #{record.mobuzhuxian,jdbcType=DECIMAL},
+      MOBUZHUHEJI = #{record.mobuzhuheji,jdbcType=DECIMAL},
+      LEIJIBUZHUFEIXIAN = #{record.leijibuzhufeixian,jdbcType=DECIMAL},
+      MOTOUZIFEIXIAN = #{record.motouzifeixian,jdbcType=DECIMAL},
+      MOTOUZIXIAN = #{record.motouzixian,jdbcType=DECIMAL},
+      MOTOUZIHEJI = #{record.motouziheji,jdbcType=DECIMAL},
+      LEIJITOUZIFEIXIAN = #{record.leijitouzifeixian,jdbcType=DECIMAL},
+      LEIJITOUZIXIAN = #{record.leijitouzixian,jdbcType=DECIMAL},
+      LEIJITOUZIHEJI = #{record.leijitouziheji,jdbcType=DECIMAL},
+      MOQITAFEIXIAN = #{record.moqitafeixian,jdbcType=DECIMAL},
+      MOQITAXIAN = #{record.moqitaxian,jdbcType=DECIMAL},
+      MOQITAHEJI = #{record.moqitaheji,jdbcType=DECIMAL},
+      LEIJIQITAFEIXIAN = #{record.leijiqitafeixian,jdbcType=DECIMAL},
+      LEIJIQITAXIAN = #{record.leijiqitaxian,jdbcType=DECIMAL},
+      LEIJIQITAHEJI = #{record.leijiqitaheji,jdbcType=DECIMAL},
+      MOHEJIFEIXIAN = #{record.mohejifeixian,jdbcType=DECIMAL},
+      MOHEJIXIAN = #{record.mohejixian,jdbcType=DECIMAL},
+      MOHEJIHEJI = #{record.mohejiheji,jdbcType=DECIMAL},
+      LEIJIHEJIFEIXIAN = #{record.leijihejifeixian,jdbcType=DECIMAL},
+      LEIJIHEJIXIAN = #{record.leijihejixian,jdbcType=DECIMAL},
+      LEIJIHEJIHEJI = #{record.leijihejiheji,jdbcType=DECIMAL},
+      MOCHENGBENFEIXIAN = #{record.mochengbenfeixian,jdbcType=DECIMAL},
+      MOCHENGBENXIAN = #{record.mochengbenxian,jdbcType=DECIMAL},
+      MOCHENGBENHEJI = #{record.mochengbenheji,jdbcType=DECIMAL},
+      LEIJICHENGBENFEIXIAN = #{record.leijichengbenfeixian,jdbcType=DECIMAL},
+      LEIJICHENGBENXIAN = #{record.leijichengbenxian,jdbcType=DECIMAL},
+      LEIJICHENGBENHEJI = #{record.leijichengbenheji,jdbcType=DECIMAL},
+      MOQIZHONGFEIXIAN1 = #{record.moqizhongfeixian1,jdbcType=DECIMAL},
+      MOQIZHONGXIAN1 = #{record.moqizhongxian1,jdbcType=DECIMAL},
+      MOQIZHONGHEJI1 = #{record.moqizhongheji1,jdbcType=DECIMAL},
+      LEIJIQIZHONGFEIXIAN1 = #{record.leijiqizhongfeixian1,jdbcType=DECIMAL},
+      LEIJIQIZHONGXIAN1 = #{record.leijiqizhongxian1,jdbcType=DECIMAL},
+      LEIJIQIZHONGHEJI1 = #{record.leijiqizhongheji1,jdbcType=DECIMAL},
+      MOQIZHONGFEIXIAN2 = #{record.moqizhongfeixian2,jdbcType=DECIMAL},
+      MOQIZHONGXIAN2 = #{record.moqizhongxian2,jdbcType=DECIMAL},
+      MOQIZHONGHEJI2 = #{record.moqizhongheji2,jdbcType=DECIMAL},
+      LEIJIQIZHONGFEIXIAN2 = #{record.leijiqizhongfeixian2,jdbcType=DECIMAL},
+      LEIJIQIZHONGXIAN2 = #{record.leijiqizhongxian2,jdbcType=DECIMAL},
+      LEIJIQIZHONGHEJI2 = #{record.leijiqizhongheji2,jdbcType=DECIMAL},
+      MOQIZHONGFEIXIAN3 = #{record.moqizhongfeixian3,jdbcType=DECIMAL},
+      MOQIZHONGXIAN3 = #{record.moqizhongxian3,jdbcType=DECIMAL},
+      MOQIZHONGHEJI3 = #{record.moqizhongheji3,jdbcType=DECIMAL},
+      LEIJIQIZHONGFEIXIAN3 = #{record.leijiqizhongfeixian3,jdbcType=DECIMAL},
+      LEIJIQIZHONGXIAN3 = #{record.leijiqizhongxian3,jdbcType=DECIMAL},
+      LEIJIQIZHONGHEJI3 = #{record.leijiqizhongheji3,jdbcType=DECIMAL},
+      MOQIZHONGFEIXIAN4 = #{record.moqizhongfeixian4,jdbcType=DECIMAL},
+      MOQIZHONGXIAN4 = #{record.moqizhongxian4,jdbcType=DECIMAL},
+      MOQIZHONGHEJI4 = #{record.moqizhongheji4,jdbcType=DECIMAL},
+      LEIJIQIZHONGFEIXIAN4 = #{record.leijiqizhongfeixian4,jdbcType=DECIMAL},
+      LEIJIQIZHONGXIAN4 = #{record.leijiqizhongxian4,jdbcType=DECIMAL},
+      LEIJIQIZHONGHEJI4 = #{record.leijiqizhongheji4,jdbcType=DECIMAL},
+      MOGUANLIFEIXIAN = #{record.moguanlifeixian,jdbcType=DECIMAL},
+      MOGUANLIXIAN = #{record.moguanlixian,jdbcType=DECIMAL},
+      MOGUANLIHEJI = #{record.moguanliheji,jdbcType=DECIMAL},
+      LEIJIGUANLIFEIXIAN = #{record.leijiguanlifeixian,jdbcType=DECIMAL},
+      LEIJIGUANLIXIAN = #{record.leijiguanlixian,jdbcType=DECIMAL},
+      LEIJIGUANLIHEJI = #{record.leijiguanliheji,jdbcType=DECIMAL},
+      MOCHOUZIFEIXIAN = #{record.mochouzifeixian,jdbcType=DECIMAL},
+      MOCHOUZIXIAN = #{record.mochouzixian,jdbcType=DECIMAL},
+      MOCHOUZIHEJI = #{record.mochouziheji,jdbcType=DECIMAL},
+      LEIJICHOUZIFEIXIAN = #{record.leijichouzifeixian,jdbcType=DECIMAL},
+      LEIJICHOUZIXIAN = #{record.leijichouzixian,jdbcType=DECIMAL},
+      LEIJICHOUZIHEJI = #{record.leijichouziheji,jdbcType=DECIMAL},
+      MOQITAFEIYONGFEI = #{record.moqitafeiyongfei,jdbcType=DECIMAL},
+      MOQITAFEIYONGXIAN = #{record.moqitafeiyongxian,jdbcType=DECIMAL},
+      MOQITAFEIYONGHEJI = #{record.moqitafeiyongheji,jdbcType=DECIMAL},
+      LEIJIQITAFEIYONGFEIXIAN = #{record.leijiqitafeiyongfeixian,jdbcType=DECIMAL},
+      LEIJIQITAFEIYONGXIAN = #{record.leijiqitafeiyongxian,jdbcType=DECIMAL},
+      LEIJIQITAFEIYONGHEJI = #{record.leijiqitafeiyongheji,jdbcType=DECIMAL},
+      MOFEIYONGHEJIFEI = #{record.mofeiyonghejifei,jdbcType=DECIMAL},
+      MOFEIYONGHEJIXIAN = #{record.mofeiyonghejixian,jdbcType=DECIMAL},
+      MOFEIYONGHEJIHEJI = #{record.mofeiyonghejiheji,jdbcType=DECIMAL},
+      LEIJIFEIYONGHEJIFEI = #{record.leijifeiyonghejifei,jdbcType=DECIMAL},
+      LEIJIFEIYONGHEJIXIAN = #{record.leijifeiyonghejixian,jdbcType=DECIMAL},
+      LEIJIFEIYONGHEJIHEJI = #{record.leijifeiyonghejiheji,jdbcType=DECIMAL},
+      MOZHUANFEIXIAN = #{record.mozhuanfeixian,jdbcType=DECIMAL},
+      MOZHUANXIAN = #{record.mozhuanxian,jdbcType=DECIMAL},
+      MOZHUANHEJI = #{record.mozhuanheji,jdbcType=DECIMAL},
+      LEIJIZHUANFEIXIAN = #{record.leijizhuanfeixian,jdbcType=DECIMAL},
+      LEIJIZHUANXIAN = #{record.leijizhuanxian,jdbcType=DECIMAL},
+      LEIJIZHUANHEJI = #{record.leijizhuanheji,jdbcType=DECIMAL},
+      MOBIANDONGFEIXIAN = #{record.mobiandongfeixian,jdbcType=DECIMAL},
+      MOBIANDONGXIAN = #{record.mobiandongxian,jdbcType=DECIMAL},
+      MOBIANDONGHEJI = #{record.mobiandongheji,jdbcType=DECIMAL},
+      LEIJIBIANDONGFEIXIAN = #{record.leijibiandongfeixian,jdbcType=DECIMAL},
+      LEIJIBIANDONGXIAN = #{record.leijibiandongxian,jdbcType=DECIMAL},
+      LEIJIBIANDONGHEJI = #{record.leijibiandongheji,jdbcType=DECIMAL},
+      LEIJIBUZHUXIAN = #{record.leijibuzhuxian,jdbcType=DECIMAL},
+      LEIJIBUZHUHEJI = #{record.leijibuzhuheji,jdbcType=DECIMAL},
+      QIZHONG1 = #{record.qizhong1,jdbcType=VARCHAR},
+      QIZHONG2 = #{record.qizhong2,jdbcType=VARCHAR},
+      QIZHONG3 = #{record.qizhong3,jdbcType=VARCHAR},
+      QIZHONG4 = #{record.qizhong4,jdbcType=VARCHAR},
+      MOQIZHONGFEIXIAN5 = #{record.moqizhongfeixian5,jdbcType=DECIMAL},
+      MOQIZHONGFEIXIAN6 = #{record.moqizhongfeixian6,jdbcType=DECIMAL},
+      MOQIZHONGFEIXIAN7 = #{record.moqizhongfeixian7,jdbcType=DECIMAL},
+      MOQIZHONGFEIXIAN8 = #{record.moqizhongfeixian8,jdbcType=DECIMAL},
+      MOQIZHONGXIAN5 = #{record.moqizhongxian5,jdbcType=DECIMAL},
+      MOQIZHONGXIAN6 = #{record.moqizhongxian6,jdbcType=DECIMAL},
+      MOQIZHONGXIAN7 = #{record.moqizhongxian7,jdbcType=DECIMAL},
+      MOQIZHONGXIAN8 = #{record.moqizhongxian8,jdbcType=DECIMAL},
+      MOQIZHONGHEJI5 = #{record.moqizhongheji5,jdbcType=DECIMAL},
+      MOQIZHONGHEJI6 = #{record.moqizhongheji6,jdbcType=DECIMAL},
+      MOQIZHONGHEJI7 = #{record.moqizhongheji7,jdbcType=DECIMAL},
+      MOQIZHONGHEJI8 = #{record.moqizhongheji8,jdbcType=DECIMAL},
+      LEIJIQIZHONGFEIXIAN5 = #{record.leijiqizhongfeixian5,jdbcType=DECIMAL},
+      LEIJIQIZHONGFEIXIAN6 = #{record.leijiqizhongfeixian6,jdbcType=DECIMAL},
+      LEIJIQIZHONGFEIXIAN7 = #{record.leijiqizhongfeixian7,jdbcType=DECIMAL},
+      LEIJIQIZHONGFEIXIAN8 = #{record.leijiqizhongfeixian8,jdbcType=DECIMAL},
+      LEIJIQIZHONGXIAN5 = #{record.leijiqizhongxian5,jdbcType=DECIMAL},
+      LEIJIQIZHONGXIAN6 = #{record.leijiqizhongxian6,jdbcType=DECIMAL},
+      LEIJIQIZHONGXIAN7 = #{record.leijiqizhongxian7,jdbcType=DECIMAL},
+      LEIJIQIZHONGXIAN8 = #{record.leijiqizhongxian8,jdbcType=DECIMAL},
+      LEIJIQIZHONGHEJI5 = #{record.leijiqizhongheji5,jdbcType=DECIMAL},
+      LEIJIQIZHONGHEJI6 = #{record.leijiqizhongheji6,jdbcType=DECIMAL},
+      LEIJIQIZHONGHEJI7 = #{record.leijiqizhongheji7,jdbcType=DECIMAL},
+      LEIJIQIZHONGHEJI8 = #{record.leijiqizhongheji8,jdbcType=DECIMAL}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.JjhnjReport4" >
+    update JJHNJ_REPORT4
+    <set >
+      <if test="instanceid != null" >
+        INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="bianzhidanwei != null" >
+        BIANZHIDANWEI = #{bianzhidanwei,jdbcType=VARCHAR},
+      </if>
+      <if test="niandu != null" >
+        NIANDU = #{niandu,jdbcType=VARCHAR},
+      </if>
+      <if test="mojuanfeixian != null" >
+        MOJUANFEIXIAN = #{mojuanfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mojuanxian != null" >
+        MOJUANXIAN = #{mojuanxian,jdbcType=DECIMAL},
+      </if>
+      <if test="mojuanheji != null" >
+        MOJUANHEJI = #{mojuanheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijijuanfeixian != null" >
+        LEIJIJUANFEIXIAN = #{leijijuanfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijijuanxian != null" >
+        LEIJIJUANXIAN = #{leijijuanxian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijijuanheji != null" >
+        LEIJIJUANHEJI = #{leijijuanheji,jdbcType=DECIMAL},
+      </if>
+      <if test="mohuifeixian != null" >
+        MOHUIFEIXIAN = #{mohuifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mohuixian != null" >
+        MOHUIXIAN = #{mohuixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mohuiheji != null" >
+        MOHUIHEJI = #{mohuiheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijihuifeixian != null" >
+        LEIJIHUIFEIXIAN = #{leijihuifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijihuixian != null" >
+        LEIJIHUIXIAN = #{leijihuixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijihuiheji != null" >
+        LEIJIHUIHEJI = #{leijihuiheji,jdbcType=DECIMAL},
+      </if>
+      <if test="mofuwufeixian != null" >
+        MOFUWUFEIXIAN = #{mofuwufeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mofuwuxian != null" >
+        MOFUWUXIAN = #{mofuwuxian,jdbcType=DECIMAL},
+      </if>
+      <if test="mofuwuheji != null" >
+        MOFUWUHEJI = #{mofuwuheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijifuwufeixian != null" >
+        LEIJIFUWUFEIXIAN = #{leijifuwufeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijifuwuxian != null" >
+        LEIJIFUWUXIAN = #{leijifuwuxian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijifuwuheji != null" >
+        LEIJIFUWUHEJI = #{leijifuwuheji,jdbcType=DECIMAL},
+      </if>
+      <if test="moxiaoshoufeixian != null" >
+        MOXIAOSHOUFEIXIAN = #{moxiaoshoufeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="moxiaoshouxian != null" >
+        MOXIAOSHOUXIAN = #{moxiaoshouxian,jdbcType=DECIMAL},
+      </if>
+      <if test="moxiaoshouheji != null" >
+        MOXIAOSHOUHEJI = #{moxiaoshouheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijixiaoshoufeixian != null" >
+        LEIJIXIAOSHOUFEIXIAN = #{leijixiaoshoufeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijixiaoshouxian != null" >
+        LEIJIXIAOSHOUXIAN = #{leijixiaoshouxian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijixiaoshouheji != null" >
+        LEIJIXIAOSHOUHEJI = #{leijixiaoshouheji,jdbcType=DECIMAL},
+      </if>
+      <if test="mobuzhufeixian != null" >
+        MOBUZHUFEIXIAN = #{mobuzhufeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mobuzhuxian != null" >
+        MOBUZHUXIAN = #{mobuzhuxian,jdbcType=DECIMAL},
+      </if>
+      <if test="mobuzhuheji != null" >
+        MOBUZHUHEJI = #{mobuzhuheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijibuzhufeixian != null" >
+        LEIJIBUZHUFEIXIAN = #{leijibuzhufeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="motouzifeixian != null" >
+        MOTOUZIFEIXIAN = #{motouzifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="motouzixian != null" >
+        MOTOUZIXIAN = #{motouzixian,jdbcType=DECIMAL},
+      </if>
+      <if test="motouziheji != null" >
+        MOTOUZIHEJI = #{motouziheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijitouzifeixian != null" >
+        LEIJITOUZIFEIXIAN = #{leijitouzifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijitouzixian != null" >
+        LEIJITOUZIXIAN = #{leijitouzixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijitouziheji != null" >
+        LEIJITOUZIHEJI = #{leijitouziheji,jdbcType=DECIMAL},
+      </if>
+      <if test="moqitafeixian != null" >
+        MOQITAFEIXIAN = #{moqitafeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="moqitaxian != null" >
+        MOQITAXIAN = #{moqitaxian,jdbcType=DECIMAL},
+      </if>
+      <if test="moqitaheji != null" >
+        MOQITAHEJI = #{moqitaheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqitafeixian != null" >
+        LEIJIQITAFEIXIAN = #{leijiqitafeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqitaxian != null" >
+        LEIJIQITAXIAN = #{leijiqitaxian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqitaheji != null" >
+        LEIJIQITAHEJI = #{leijiqitaheji,jdbcType=DECIMAL},
+      </if>
+      <if test="mohejifeixian != null" >
+        MOHEJIFEIXIAN = #{mohejifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mohejixian != null" >
+        MOHEJIXIAN = #{mohejixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mohejiheji != null" >
+        MOHEJIHEJI = #{mohejiheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijihejifeixian != null" >
+        LEIJIHEJIFEIXIAN = #{leijihejifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijihejixian != null" >
+        LEIJIHEJIXIAN = #{leijihejixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijihejiheji != null" >
+        LEIJIHEJIHEJI = #{leijihejiheji,jdbcType=DECIMAL},
+      </if>
+      <if test="mochengbenfeixian != null" >
+        MOCHENGBENFEIXIAN = #{mochengbenfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mochengbenxian != null" >
+        MOCHENGBENXIAN = #{mochengbenxian,jdbcType=DECIMAL},
+      </if>
+      <if test="mochengbenheji != null" >
+        MOCHENGBENHEJI = #{mochengbenheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijichengbenfeixian != null" >
+        LEIJICHENGBENFEIXIAN = #{leijichengbenfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijichengbenxian != null" >
+        LEIJICHENGBENXIAN = #{leijichengbenxian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijichengbenheji != null" >
+        LEIJICHENGBENHEJI = #{leijichengbenheji,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongfeixian1 != null" >
+        MOQIZHONGFEIXIAN1 = #{moqizhongfeixian1,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongxian1 != null" >
+        MOQIZHONGXIAN1 = #{moqizhongxian1,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongheji1 != null" >
+        MOQIZHONGHEJI1 = #{moqizhongheji1,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongfeixian1 != null" >
+        LEIJIQIZHONGFEIXIAN1 = #{leijiqizhongfeixian1,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongxian1 != null" >
+        LEIJIQIZHONGXIAN1 = #{leijiqizhongxian1,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongheji1 != null" >
+        LEIJIQIZHONGHEJI1 = #{leijiqizhongheji1,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongfeixian2 != null" >
+        MOQIZHONGFEIXIAN2 = #{moqizhongfeixian2,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongxian2 != null" >
+        MOQIZHONGXIAN2 = #{moqizhongxian2,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongheji2 != null" >
+        MOQIZHONGHEJI2 = #{moqizhongheji2,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongfeixian2 != null" >
+        LEIJIQIZHONGFEIXIAN2 = #{leijiqizhongfeixian2,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongxian2 != null" >
+        LEIJIQIZHONGXIAN2 = #{leijiqizhongxian2,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongheji2 != null" >
+        LEIJIQIZHONGHEJI2 = #{leijiqizhongheji2,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongfeixian3 != null" >
+        MOQIZHONGFEIXIAN3 = #{moqizhongfeixian3,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongxian3 != null" >
+        MOQIZHONGXIAN3 = #{moqizhongxian3,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongheji3 != null" >
+        MOQIZHONGHEJI3 = #{moqizhongheji3,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongfeixian3 != null" >
+        LEIJIQIZHONGFEIXIAN3 = #{leijiqizhongfeixian3,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongxian3 != null" >
+        LEIJIQIZHONGXIAN3 = #{leijiqizhongxian3,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongheji3 != null" >
+        LEIJIQIZHONGHEJI3 = #{leijiqizhongheji3,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongfeixian4 != null" >
+        MOQIZHONGFEIXIAN4 = #{moqizhongfeixian4,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongxian4 != null" >
+        MOQIZHONGXIAN4 = #{moqizhongxian4,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongheji4 != null" >
+        MOQIZHONGHEJI4 = #{moqizhongheji4,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongfeixian4 != null" >
+        LEIJIQIZHONGFEIXIAN4 = #{leijiqizhongfeixian4,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongxian4 != null" >
+        LEIJIQIZHONGXIAN4 = #{leijiqizhongxian4,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongheji4 != null" >
+        LEIJIQIZHONGHEJI4 = #{leijiqizhongheji4,jdbcType=DECIMAL},
+      </if>
+      <if test="moguanlifeixian != null" >
+        MOGUANLIFEIXIAN = #{moguanlifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="moguanlixian != null" >
+        MOGUANLIXIAN = #{moguanlixian,jdbcType=DECIMAL},
+      </if>
+      <if test="moguanliheji != null" >
+        MOGUANLIHEJI = #{moguanliheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiguanlifeixian != null" >
+        LEIJIGUANLIFEIXIAN = #{leijiguanlifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiguanlixian != null" >
+        LEIJIGUANLIXIAN = #{leijiguanlixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiguanliheji != null" >
+        LEIJIGUANLIHEJI = #{leijiguanliheji,jdbcType=DECIMAL},
+      </if>
+      <if test="mochouzifeixian != null" >
+        MOCHOUZIFEIXIAN = #{mochouzifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mochouzixian != null" >
+        MOCHOUZIXIAN = #{mochouzixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mochouziheji != null" >
+        MOCHOUZIHEJI = #{mochouziheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijichouzifeixian != null" >
+        LEIJICHOUZIFEIXIAN = #{leijichouzifeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijichouzixian != null" >
+        LEIJICHOUZIXIAN = #{leijichouzixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijichouziheji != null" >
+        LEIJICHOUZIHEJI = #{leijichouziheji,jdbcType=DECIMAL},
+      </if>
+      <if test="moqitafeiyongfei != null" >
+        MOQITAFEIYONGFEI = #{moqitafeiyongfei,jdbcType=DECIMAL},
+      </if>
+      <if test="moqitafeiyongxian != null" >
+        MOQITAFEIYONGXIAN = #{moqitafeiyongxian,jdbcType=DECIMAL},
+      </if>
+      <if test="moqitafeiyongheji != null" >
+        MOQITAFEIYONGHEJI = #{moqitafeiyongheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqitafeiyongfeixian != null" >
+        LEIJIQITAFEIYONGFEIXIAN = #{leijiqitafeiyongfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqitafeiyongxian != null" >
+        LEIJIQITAFEIYONGXIAN = #{leijiqitafeiyongxian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqitafeiyongheji != null" >
+        LEIJIQITAFEIYONGHEJI = #{leijiqitafeiyongheji,jdbcType=DECIMAL},
+      </if>
+      <if test="mofeiyonghejifei != null" >
+        MOFEIYONGHEJIFEI = #{mofeiyonghejifei,jdbcType=DECIMAL},
+      </if>
+      <if test="mofeiyonghejixian != null" >
+        MOFEIYONGHEJIXIAN = #{mofeiyonghejixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mofeiyonghejiheji != null" >
+        MOFEIYONGHEJIHEJI = #{mofeiyonghejiheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijifeiyonghejifei != null" >
+        LEIJIFEIYONGHEJIFEI = #{leijifeiyonghejifei,jdbcType=DECIMAL},
+      </if>
+      <if test="leijifeiyonghejixian != null" >
+        LEIJIFEIYONGHEJIXIAN = #{leijifeiyonghejixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijifeiyonghejiheji != null" >
+        LEIJIFEIYONGHEJIHEJI = #{leijifeiyonghejiheji,jdbcType=DECIMAL},
+      </if>
+      <if test="mozhuanfeixian != null" >
+        MOZHUANFEIXIAN = #{mozhuanfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mozhuanxian != null" >
+        MOZHUANXIAN = #{mozhuanxian,jdbcType=DECIMAL},
+      </if>
+      <if test="mozhuanheji != null" >
+        MOZHUANHEJI = #{mozhuanheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijizhuanfeixian != null" >
+        LEIJIZHUANFEIXIAN = #{leijizhuanfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijizhuanxian != null" >
+        LEIJIZHUANXIAN = #{leijizhuanxian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijizhuanheji != null" >
+        LEIJIZHUANHEJI = #{leijizhuanheji,jdbcType=DECIMAL},
+      </if>
+      <if test="mobiandongfeixian != null" >
+        MOBIANDONGFEIXIAN = #{mobiandongfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="mobiandongxian != null" >
+        MOBIANDONGXIAN = #{mobiandongxian,jdbcType=DECIMAL},
+      </if>
+      <if test="mobiandongheji != null" >
+        MOBIANDONGHEJI = #{mobiandongheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijibiandongfeixian != null" >
+        LEIJIBIANDONGFEIXIAN = #{leijibiandongfeixian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijibiandongxian != null" >
+        LEIJIBIANDONGXIAN = #{leijibiandongxian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijibiandongheji != null" >
+        LEIJIBIANDONGHEJI = #{leijibiandongheji,jdbcType=DECIMAL},
+      </if>
+      <if test="leijibuzhuxian != null" >
+        LEIJIBUZHUXIAN = #{leijibuzhuxian,jdbcType=DECIMAL},
+      </if>
+      <if test="leijibuzhuheji != null" >
+        LEIJIBUZHUHEJI = #{leijibuzhuheji,jdbcType=DECIMAL},
+      </if>
+      <if test="qizhong1 != null" >
+        QIZHONG1 = #{qizhong1,jdbcType=VARCHAR},
+      </if>
+      <if test="qizhong2 != null" >
+        QIZHONG2 = #{qizhong2,jdbcType=VARCHAR},
+      </if>
+      <if test="qizhong3 != null" >
+        QIZHONG3 = #{qizhong3,jdbcType=VARCHAR},
+      </if>
+      <if test="qizhong4 != null" >
+        QIZHONG4 = #{qizhong4,jdbcType=VARCHAR},
+      </if>
+      <if test="moqizhongfeixian5 != null" >
+        MOQIZHONGFEIXIAN5 = #{moqizhongfeixian5,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongfeixian6 != null" >
+        MOQIZHONGFEIXIAN6 = #{moqizhongfeixian6,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongfeixian7 != null" >
+        MOQIZHONGFEIXIAN7 = #{moqizhongfeixian7,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongfeixian8 != null" >
+        MOQIZHONGFEIXIAN8 = #{moqizhongfeixian8,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongxian5 != null" >
+        MOQIZHONGXIAN5 = #{moqizhongxian5,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongxian6 != null" >
+        MOQIZHONGXIAN6 = #{moqizhongxian6,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongxian7 != null" >
+        MOQIZHONGXIAN7 = #{moqizhongxian7,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongxian8 != null" >
+        MOQIZHONGXIAN8 = #{moqizhongxian8,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongheji5 != null" >
+        MOQIZHONGHEJI5 = #{moqizhongheji5,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongheji6 != null" >
+        MOQIZHONGHEJI6 = #{moqizhongheji6,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongheji7 != null" >
+        MOQIZHONGHEJI7 = #{moqizhongheji7,jdbcType=DECIMAL},
+      </if>
+      <if test="moqizhongheji8 != null" >
+        MOQIZHONGHEJI8 = #{moqizhongheji8,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongfeixian5 != null" >
+        LEIJIQIZHONGFEIXIAN5 = #{leijiqizhongfeixian5,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongfeixian6 != null" >
+        LEIJIQIZHONGFEIXIAN6 = #{leijiqizhongfeixian6,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongfeixian7 != null" >
+        LEIJIQIZHONGFEIXIAN7 = #{leijiqizhongfeixian7,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongfeixian8 != null" >
+        LEIJIQIZHONGFEIXIAN8 = #{leijiqizhongfeixian8,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongxian5 != null" >
+        LEIJIQIZHONGXIAN5 = #{leijiqizhongxian5,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongxian6 != null" >
+        LEIJIQIZHONGXIAN6 = #{leijiqizhongxian6,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongxian7 != null" >
+        LEIJIQIZHONGXIAN7 = #{leijiqizhongxian7,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongxian8 != null" >
+        LEIJIQIZHONGXIAN8 = #{leijiqizhongxian8,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongheji5 != null" >
+        LEIJIQIZHONGHEJI5 = #{leijiqizhongheji5,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongheji6 != null" >
+        LEIJIQIZHONGHEJI6 = #{leijiqizhongheji6,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongheji7 != null" >
+        LEIJIQIZHONGHEJI7 = #{leijiqizhongheji7,jdbcType=DECIMAL},
+      </if>
+      <if test="leijiqizhongheji8 != null" >
+        LEIJIQIZHONGHEJI8 = #{leijiqizhongheji8,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xgb.model.JjhnjReport4" >
+    update JJHNJ_REPORT4
+    set INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=DECIMAL},
+      BIANZHIDANWEI = #{bianzhidanwei,jdbcType=VARCHAR},
+      NIANDU = #{niandu,jdbcType=VARCHAR},
+      MOJUANFEIXIAN = #{mojuanfeixian,jdbcType=DECIMAL},
+      MOJUANXIAN = #{mojuanxian,jdbcType=DECIMAL},
+      MOJUANHEJI = #{mojuanheji,jdbcType=DECIMAL},
+      LEIJIJUANFEIXIAN = #{leijijuanfeixian,jdbcType=DECIMAL},
+      LEIJIJUANXIAN = #{leijijuanxian,jdbcType=DECIMAL},
+      LEIJIJUANHEJI = #{leijijuanheji,jdbcType=DECIMAL},
+      MOHUIFEIXIAN = #{mohuifeixian,jdbcType=DECIMAL},
+      MOHUIXIAN = #{mohuixian,jdbcType=DECIMAL},
+      MOHUIHEJI = #{mohuiheji,jdbcType=DECIMAL},
+      LEIJIHUIFEIXIAN = #{leijihuifeixian,jdbcType=DECIMAL},
+      LEIJIHUIXIAN = #{leijihuixian,jdbcType=DECIMAL},
+      LEIJIHUIHEJI = #{leijihuiheji,jdbcType=DECIMAL},
+      MOFUWUFEIXIAN = #{mofuwufeixian,jdbcType=DECIMAL},
+      MOFUWUXIAN = #{mofuwuxian,jdbcType=DECIMAL},
+      MOFUWUHEJI = #{mofuwuheji,jdbcType=DECIMAL},
+      LEIJIFUWUFEIXIAN = #{leijifuwufeixian,jdbcType=DECIMAL},
+      LEIJIFUWUXIAN = #{leijifuwuxian,jdbcType=DECIMAL},
+      LEIJIFUWUHEJI = #{leijifuwuheji,jdbcType=DECIMAL},
+      MOXIAOSHOUFEIXIAN = #{moxiaoshoufeixian,jdbcType=DECIMAL},
+      MOXIAOSHOUXIAN = #{moxiaoshouxian,jdbcType=DECIMAL},
+      MOXIAOSHOUHEJI = #{moxiaoshouheji,jdbcType=DECIMAL},
+      LEIJIXIAOSHOUFEIXIAN = #{leijixiaoshoufeixian,jdbcType=DECIMAL},
+      LEIJIXIAOSHOUXIAN = #{leijixiaoshouxian,jdbcType=DECIMAL},
+      LEIJIXIAOSHOUHEJI = #{leijixiaoshouheji,jdbcType=DECIMAL},
+      MOBUZHUFEIXIAN = #{mobuzhufeixian,jdbcType=DECIMAL},
+      MOBUZHUXIAN = #{mobuzhuxian,jdbcType=DECIMAL},
+      MOBUZHUHEJI = #{mobuzhuheji,jdbcType=DECIMAL},
+      LEIJIBUZHUFEIXIAN = #{leijibuzhufeixian,jdbcType=DECIMAL},
+      MOTOUZIFEIXIAN = #{motouzifeixian,jdbcType=DECIMAL},
+      MOTOUZIXIAN = #{motouzixian,jdbcType=DECIMAL},
+      MOTOUZIHEJI = #{motouziheji,jdbcType=DECIMAL},
+      LEIJITOUZIFEIXIAN = #{leijitouzifeixian,jdbcType=DECIMAL},
+      LEIJITOUZIXIAN = #{leijitouzixian,jdbcType=DECIMAL},
+      LEIJITOUZIHEJI = #{leijitouziheji,jdbcType=DECIMAL},
+      MOQITAFEIXIAN = #{moqitafeixian,jdbcType=DECIMAL},
+      MOQITAXIAN = #{moqitaxian,jdbcType=DECIMAL},
+      MOQITAHEJI = #{moqitaheji,jdbcType=DECIMAL},
+      LEIJIQITAFEIXIAN = #{leijiqitafeixian,jdbcType=DECIMAL},
+      LEIJIQITAXIAN = #{leijiqitaxian,jdbcType=DECIMAL},
+      LEIJIQITAHEJI = #{leijiqitaheji,jdbcType=DECIMAL},
+      MOHEJIFEIXIAN = #{mohejifeixian,jdbcType=DECIMAL},
+      MOHEJIXIAN = #{mohejixian,jdbcType=DECIMAL},
+      MOHEJIHEJI = #{mohejiheji,jdbcType=DECIMAL},
+      LEIJIHEJIFEIXIAN = #{leijihejifeixian,jdbcType=DECIMAL},
+      LEIJIHEJIXIAN = #{leijihejixian,jdbcType=DECIMAL},
+      LEIJIHEJIHEJI = #{leijihejiheji,jdbcType=DECIMAL},
+      MOCHENGBENFEIXIAN = #{mochengbenfeixian,jdbcType=DECIMAL},
+      MOCHENGBENXIAN = #{mochengbenxian,jdbcType=DECIMAL},
+      MOCHENGBENHEJI = #{mochengbenheji,jdbcType=DECIMAL},
+      LEIJICHENGBENFEIXIAN = #{leijichengbenfeixian,jdbcType=DECIMAL},
+      LEIJICHENGBENXIAN = #{leijichengbenxian,jdbcType=DECIMAL},
+      LEIJICHENGBENHEJI = #{leijichengbenheji,jdbcType=DECIMAL},
+      MOQIZHONGFEIXIAN1 = #{moqizhongfeixian1,jdbcType=DECIMAL},
+      MOQIZHONGXIAN1 = #{moqizhongxian1,jdbcType=DECIMAL},
+      MOQIZHONGHEJI1 = #{moqizhongheji1,jdbcType=DECIMAL},
+      LEIJIQIZHONGFEIXIAN1 = #{leijiqizhongfeixian1,jdbcType=DECIMAL},
+      LEIJIQIZHONGXIAN1 = #{leijiqizhongxian1,jdbcType=DECIMAL},
+      LEIJIQIZHONGHEJI1 = #{leijiqizhongheji1,jdbcType=DECIMAL},
+      MOQIZHONGFEIXIAN2 = #{moqizhongfeixian2,jdbcType=DECIMAL},
+      MOQIZHONGXIAN2 = #{moqizhongxian2,jdbcType=DECIMAL},
+      MOQIZHONGHEJI2 = #{moqizhongheji2,jdbcType=DECIMAL},
+      LEIJIQIZHONGFEIXIAN2 = #{leijiqizhongfeixian2,jdbcType=DECIMAL},
+      LEIJIQIZHONGXIAN2 = #{leijiqizhongxian2,jdbcType=DECIMAL},
+      LEIJIQIZHONGHEJI2 = #{leijiqizhongheji2,jdbcType=DECIMAL},
+      MOQIZHONGFEIXIAN3 = #{moqizhongfeixian3,jdbcType=DECIMAL},
+      MOQIZHONGXIAN3 = #{moqizhongxian3,jdbcType=DECIMAL},
+      MOQIZHONGHEJI3 = #{moqizhongheji3,jdbcType=DECIMAL},
+      LEIJIQIZHONGFEIXIAN3 = #{leijiqizhongfeixian3,jdbcType=DECIMAL},
+      LEIJIQIZHONGXIAN3 = #{leijiqizhongxian3,jdbcType=DECIMAL},
+      LEIJIQIZHONGHEJI3 = #{leijiqizhongheji3,jdbcType=DECIMAL},
+      MOQIZHONGFEIXIAN4 = #{moqizhongfeixian4,jdbcType=DECIMAL},
+      MOQIZHONGXIAN4 = #{moqizhongxian4,jdbcType=DECIMAL},
+      MOQIZHONGHEJI4 = #{moqizhongheji4,jdbcType=DECIMAL},
+      LEIJIQIZHONGFEIXIAN4 = #{leijiqizhongfeixian4,jdbcType=DECIMAL},
+      LEIJIQIZHONGXIAN4 = #{leijiqizhongxian4,jdbcType=DECIMAL},
+      LEIJIQIZHONGHEJI4 = #{leijiqizhongheji4,jdbcType=DECIMAL},
+      MOGUANLIFEIXIAN = #{moguanlifeixian,jdbcType=DECIMAL},
+      MOGUANLIXIAN = #{moguanlixian,jdbcType=DECIMAL},
+      MOGUANLIHEJI = #{moguanliheji,jdbcType=DECIMAL},
+      LEIJIGUANLIFEIXIAN = #{leijiguanlifeixian,jdbcType=DECIMAL},
+      LEIJIGUANLIXIAN = #{leijiguanlixian,jdbcType=DECIMAL},
+      LEIJIGUANLIHEJI = #{leijiguanliheji,jdbcType=DECIMAL},
+      MOCHOUZIFEIXIAN = #{mochouzifeixian,jdbcType=DECIMAL},
+      MOCHOUZIXIAN = #{mochouzixian,jdbcType=DECIMAL},
+      MOCHOUZIHEJI = #{mochouziheji,jdbcType=DECIMAL},
+      LEIJICHOUZIFEIXIAN = #{leijichouzifeixian,jdbcType=DECIMAL},
+      LEIJICHOUZIXIAN = #{leijichouzixian,jdbcType=DECIMAL},
+      LEIJICHOUZIHEJI = #{leijichouziheji,jdbcType=DECIMAL},
+      MOQITAFEIYONGFEI = #{moqitafeiyongfei,jdbcType=DECIMAL},
+      MOQITAFEIYONGXIAN = #{moqitafeiyongxian,jdbcType=DECIMAL},
+      MOQITAFEIYONGHEJI = #{moqitafeiyongheji,jdbcType=DECIMAL},
+      LEIJIQITAFEIYONGFEIXIAN = #{leijiqitafeiyongfeixian,jdbcType=DECIMAL},
+      LEIJIQITAFEIYONGXIAN = #{leijiqitafeiyongxian,jdbcType=DECIMAL},
+      LEIJIQITAFEIYONGHEJI = #{leijiqitafeiyongheji,jdbcType=DECIMAL},
+      MOFEIYONGHEJIFEI = #{mofeiyonghejifei,jdbcType=DECIMAL},
+      MOFEIYONGHEJIXIAN = #{mofeiyonghejixian,jdbcType=DECIMAL},
+      MOFEIYONGHEJIHEJI = #{mofeiyonghejiheji,jdbcType=DECIMAL},
+      LEIJIFEIYONGHEJIFEI = #{leijifeiyonghejifei,jdbcType=DECIMAL},
+      LEIJIFEIYONGHEJIXIAN = #{leijifeiyonghejixian,jdbcType=DECIMAL},
+      LEIJIFEIYONGHEJIHEJI = #{leijifeiyonghejiheji,jdbcType=DECIMAL},
+      MOZHUANFEIXIAN = #{mozhuanfeixian,jdbcType=DECIMAL},
+      MOZHUANXIAN = #{mozhuanxian,jdbcType=DECIMAL},
+      MOZHUANHEJI = #{mozhuanheji,jdbcType=DECIMAL},
+      LEIJIZHUANFEIXIAN = #{leijizhuanfeixian,jdbcType=DECIMAL},
+      LEIJIZHUANXIAN = #{leijizhuanxian,jdbcType=DECIMAL},
+      LEIJIZHUANHEJI = #{leijizhuanheji,jdbcType=DECIMAL},
+      MOBIANDONGFEIXIAN = #{mobiandongfeixian,jdbcType=DECIMAL},
+      MOBIANDONGXIAN = #{mobiandongxian,jdbcType=DECIMAL},
+      MOBIANDONGHEJI = #{mobiandongheji,jdbcType=DECIMAL},
+      LEIJIBIANDONGFEIXIAN = #{leijibiandongfeixian,jdbcType=DECIMAL},
+      LEIJIBIANDONGXIAN = #{leijibiandongxian,jdbcType=DECIMAL},
+      LEIJIBIANDONGHEJI = #{leijibiandongheji,jdbcType=DECIMAL},
+      LEIJIBUZHUXIAN = #{leijibuzhuxian,jdbcType=DECIMAL},
+      LEIJIBUZHUHEJI = #{leijibuzhuheji,jdbcType=DECIMAL},
+      QIZHONG1 = #{qizhong1,jdbcType=VARCHAR},
+      QIZHONG2 = #{qizhong2,jdbcType=VARCHAR},
+      QIZHONG3 = #{qizhong3,jdbcType=VARCHAR},
+      QIZHONG4 = #{qizhong4,jdbcType=VARCHAR},
+      MOQIZHONGFEIXIAN5 = #{moqizhongfeixian5,jdbcType=DECIMAL},
+      MOQIZHONGFEIXIAN6 = #{moqizhongfeixian6,jdbcType=DECIMAL},
+      MOQIZHONGFEIXIAN7 = #{moqizhongfeixian7,jdbcType=DECIMAL},
+      MOQIZHONGFEIXIAN8 = #{moqizhongfeixian8,jdbcType=DECIMAL},
+      MOQIZHONGXIAN5 = #{moqizhongxian5,jdbcType=DECIMAL},
+      MOQIZHONGXIAN6 = #{moqizhongxian6,jdbcType=DECIMAL},
+      MOQIZHONGXIAN7 = #{moqizhongxian7,jdbcType=DECIMAL},
+      MOQIZHONGXIAN8 = #{moqizhongxian8,jdbcType=DECIMAL},
+      MOQIZHONGHEJI5 = #{moqizhongheji5,jdbcType=DECIMAL},
+      MOQIZHONGHEJI6 = #{moqizhongheji6,jdbcType=DECIMAL},
+      MOQIZHONGHEJI7 = #{moqizhongheji7,jdbcType=DECIMAL},
+      MOQIZHONGHEJI8 = #{moqizhongheji8,jdbcType=DECIMAL},
+      LEIJIQIZHONGFEIXIAN5 = #{leijiqizhongfeixian5,jdbcType=DECIMAL},
+      LEIJIQIZHONGFEIXIAN6 = #{leijiqizhongfeixian6,jdbcType=DECIMAL},
+      LEIJIQIZHONGFEIXIAN7 = #{leijiqizhongfeixian7,jdbcType=DECIMAL},
+      LEIJIQIZHONGFEIXIAN8 = #{leijiqizhongfeixian8,jdbcType=DECIMAL},
+      LEIJIQIZHONGXIAN5 = #{leijiqizhongxian5,jdbcType=DECIMAL},
+      LEIJIQIZHONGXIAN6 = #{leijiqizhongxian6,jdbcType=DECIMAL},
+      LEIJIQIZHONGXIAN7 = #{leijiqizhongxian7,jdbcType=DECIMAL},
+      LEIJIQIZHONGXIAN8 = #{leijiqizhongxian8,jdbcType=DECIMAL},
+      LEIJIQIZHONGHEJI5 = #{leijiqizhongheji5,jdbcType=DECIMAL},
+      LEIJIQIZHONGHEJI6 = #{leijiqizhongheji6,jdbcType=DECIMAL},
+      LEIJIQIZHONGHEJI7 = #{leijiqizhongheji7,jdbcType=DECIMAL},
+      LEIJIQIZHONGHEJI8 = #{leijiqizhongheji8,jdbcType=DECIMAL}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>

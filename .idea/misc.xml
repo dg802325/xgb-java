@@ -12,9 +12,11 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/lovexgb-backend/pom.xml" />
         <option value="$PROJECT_DIR$/xgb-alone/alone-util/pom.xml" />
         <option value="$PROJECT_DIR$/xgb-cloud/pom.xml" />
         <option value="$PROJECT_DIR$/xgb-databases/pom.xml" />
+        <option value="$PROJECT_DIR$/xgb-stdata/pom.xml" />
       </set>
     </option>
   </component>

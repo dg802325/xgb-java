@@ -18,6 +18,7 @@ public class NewEntityGenerator extends GeneratorConfig {
         data.put("codeEntity",codeEntity(tableColumnInfos));
         data.put("insert",codeEntity1(tableColumnInfos,tableName));
         data.put("modelName",StringUtils.tableNameConvertUpperCamel(tableName));
+        data.put("test",test(tableColumnInfos));
         try {
             File controllerFile = new File(path  +SLASH+ StringUtils.tableNameConvertUpperCamel(tableName)+".java");
             if (!controllerFile.getParentFile().exists()) {
@@ -93,5 +94,15 @@ public class NewEntityGenerator extends GeneratorConfig {
         return stringBuilder.toString();
     }
 
+
+    public static String test(List<TableColumnInfo> tableColumnInfos){
+        StringBuilder stringBuilder = new StringBuilder();
+        int i = 0;
+        //生成基础
+        for(TableColumnInfo ti : tableColumnInfos){
+          stringBuilder.append(ti.getColumnName()).append(" as ").append(StringUtils.tableNameConvertLowerCamel(ti.getColumnName())).append(",").append("\n");
+        }
+        return stringBuilder.toString();
+    }
 
 }

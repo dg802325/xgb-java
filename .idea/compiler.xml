@@ -6,21 +6,29 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="boot-mybatis" />
         <module name="data-service" />
+        <module name="lovexgb-admin" />
+        <module name="lovexgb-model" />
         <module name="boot-message" />
         <module name="boot-dao" />
-        <module name="boot-mybatis" />
-        <module name="boot-api" />
+        <module name="jjhdate-service" />
+        <module name="boot-pay" />
         <module name="boot-oss" />
+        <module name="jjhdate-api" />
         <module name="xgb-test" />
         <module name="boot-model" />
         <module name="data-model" />
+        <module name="lovexgb-service" />
         <module name="boot-service" />
-        <module name="data-dao" />
-        <module name="data-api" />
         <module name="xgb-common" />
-        <module name="boot-pay" />
+        <module name="data-dao" />
+        <module name="jjhdate-model" />
+        <module name="data-api" />
+        <module name="boot-api" />
         <module name="alone-main" />
+        <module name="jjhdate-dao" />
+        <module name="lovexgb-dao" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -38,11 +46,22 @@
       <module name="data-dao" target="1.8" />
       <module name="data-model" target="1.8" />
       <module name="data-service" target="1.8" />
+      <module name="jjhdate-api" target="1.8" />
+      <module name="jjhdate-dao" target="1.8" />
+      <module name="jjhdate-model" target="1.8" />
+      <module name="jjhdate-service" target="1.8" />
+      <module name="lovexgb-admin" target="1.8" />
+      <module name="lovexgb-dao" target="1.8" />
+      <module name="lovexgb-model" target="1.8" />
+      <module name="lovexgb-service" target="1.8" />
       <module name="xgb-alone" target="1.8" />
       <module name="xgb-boot" target="1.8" />
       <module name="xgb-common" target="1.8" />
       <module name="xgb-data" target="1.8" />
       <module name="xgb-java" target="1.8" />
+      <module name="xgb-jjhdate" target="1.8" />
+      <module name="xgb-lovexgb" target="1.8" />
+      <module name="xgb-stdata" target="1.8" />
       <module name="xgb-test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -60,6 +79,10 @@
       <module name="data-dao" options="-parameters" />
       <module name="data-model" options="-parameters" />
       <module name="data-service" options="-parameters" />
+      <module name="jjhdate-api" options="-parameters" />
+      <module name="jjhdate-dao" options="-parameters" />
+      <module name="jjhdate-model" options="-parameters" />
+      <module name="jjhdate-service" options="-parameters" />
     </option>
   </component>
 </project>

@@ -1,8 +1,8 @@
 package com.xgb.service;
 
-import com.xgb.dao.SysPermissionMapper;
-import com.xgb.dao.SysRolePermissionMapper;
-import com.xgb.dao.SysUserRoleMapper;
+import com.xgb.dao1.SysPermissionMapper;
+import com.xgb.dao1.SysRolePermissionMapper;
+import com.xgb.dao1.SysUserRoleMapper;
 import com.xgb.model.*;
 import com.xgb.util.MyTools;
 import org.apache.ibatis.annotations.Param;

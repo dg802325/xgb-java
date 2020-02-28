@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao1.ShopAdverMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.ShopAdver" >
+    <constructor >
+      <idArg column="ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ADVER_NAME" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ADVER_LOCATION" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ADVER_IMAGE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ADVER_LINK" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ADVER_REMARK" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CREATE_TIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="CREATOR_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="UPDATE_ID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="UPDATE_TIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="STATUS" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="UP_TOP" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="START_TIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="END_TIME" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, ADVER_NAME, ADVER_LOCATION, ADVER_IMAGE, ADVER_LINK, ADVER_REMARK, CREATE_TIME, 
+    CREATOR_ID, UPDATE_ID, UPDATE_TIME, STATUS, UP_TOP, START_TIME, END_TIME
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.ShopAdverExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from SHOP_ADVER
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from SHOP_ADVER
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from SHOP_ADVER
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xgb.model.ShopAdverExample" >
+    delete from SHOP_ADVER
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.ShopAdver" >
+    insert into SHOP_ADVER (ID, ADVER_NAME, ADVER_LOCATION, 
+      ADVER_IMAGE, ADVER_LINK, ADVER_REMARK, 
+      CREATE_TIME, CREATOR_ID, UPDATE_ID, 
+      UPDATE_TIME, STATUS, UP_TOP, 
+      START_TIME, END_TIME)
+    values (#{id,jdbcType=VARCHAR}, #{adverName,jdbcType=VARCHAR}, #{adverLocation,jdbcType=VARCHAR}, 
+      #{adverImage,jdbcType=VARCHAR}, #{adverLink,jdbcType=VARCHAR}, #{adverRemark,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{creatorId,jdbcType=VARCHAR}, #{updateId,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=VARCHAR}, #{upTop,jdbcType=VARCHAR}, 
+      #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.ShopAdver" >
+    insert into SHOP_ADVER
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="adverName != null" >
+        ADVER_NAME,
+      </if>
+      <if test="adverLocation != null" >
+        ADVER_LOCATION,
+      </if>
+      <if test="adverImage != null" >
+        ADVER_IMAGE,
+      </if>
+      <if test="adverLink != null" >
+        ADVER_LINK,
+      </if>
+      <if test="adverRemark != null" >
+        ADVER_REMARK,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="creatorId != null" >
+        CREATOR_ID,
+      </if>
+      <if test="updateId != null" >
+        UPDATE_ID,
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="upTop != null" >
+        UP_TOP,
+      </if>
+      <if test="startTime != null" >
+        START_TIME,
+      </if>
+      <if test="endTime != null" >
+        END_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="adverName != null" >
+        #{adverName,jdbcType=VARCHAR},
+      </if>
+      <if test="adverLocation != null" >
+        #{adverLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="adverImage != null" >
+        #{adverImage,jdbcType=VARCHAR},
+      </if>
+      <if test="adverLink != null" >
+        #{adverLink,jdbcType=VARCHAR},
+      </if>
+      <if test="adverRemark != null" >
+        #{adverRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creatorId != null" >
+        #{creatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateId != null" >
+        #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="upTop != null" >
+        #{upTop,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null" >
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null" >
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.ShopAdverExample" resultType="java.lang.Integer" >
+    select count(*) from SHOP_ADVER
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update SHOP_ADVER
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adverName != null" >
+        ADVER_NAME = #{record.adverName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adverLocation != null" >
+        ADVER_LOCATION = #{record.adverLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adverImage != null" >
+        ADVER_IMAGE = #{record.adverImage,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adverLink != null" >
+        ADVER_LINK = #{record.adverLink,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adverRemark != null" >
+        ADVER_REMARK = #{record.adverRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.creatorId != null" >
+        CREATOR_ID = #{record.creatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateId != null" >
+        UPDATE_ID = #{record.updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateTime != null" >
+        UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.upTop != null" >
+        UP_TOP = #{record.upTop,jdbcType=VARCHAR},
+      </if>
+      <if test="record.startTime != null" >
+        START_TIME = #{record.startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.endTime != null" >
+        END_TIME = #{record.endTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update SHOP_ADVER
+    set ID = #{record.id,jdbcType=VARCHAR},
+      ADVER_NAME = #{record.adverName,jdbcType=VARCHAR},
+      ADVER_LOCATION = #{record.adverLocation,jdbcType=VARCHAR},
+      ADVER_IMAGE = #{record.adverImage,jdbcType=VARCHAR},
+      ADVER_LINK = #{record.adverLink,jdbcType=VARCHAR},
+      ADVER_REMARK = #{record.adverRemark,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      CREATOR_ID = #{record.creatorId,jdbcType=VARCHAR},
+      UPDATE_ID = #{record.updateId,jdbcType=VARCHAR},
+      UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+      STATUS = #{record.status,jdbcType=VARCHAR},
+      UP_TOP = #{record.upTop,jdbcType=VARCHAR},
+      START_TIME = #{record.startTime,jdbcType=TIMESTAMP},
+      END_TIME = #{record.endTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.ShopAdver" >
+    update SHOP_ADVER
+    <set >
+      <if test="adverName != null" >
+        ADVER_NAME = #{adverName,jdbcType=VARCHAR},
+      </if>
+      <if test="adverLocation != null" >
+        ADVER_LOCATION = #{adverLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="adverImage != null" >
+        ADVER_IMAGE = #{adverImage,jdbcType=VARCHAR},
+      </if>
+      <if test="adverLink != null" >
+        ADVER_LINK = #{adverLink,jdbcType=VARCHAR},
+      </if>
+      <if test="adverRemark != null" >
+        ADVER_REMARK = #{adverRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creatorId != null" >
+        CREATOR_ID = #{creatorId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateId != null" >
+        UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null" >
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="upTop != null" >
+        UP_TOP = #{upTop,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null" >
+        START_TIME = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null" >
+        END_TIME = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xgb.model.ShopAdver" >
+    update SHOP_ADVER
+    set ADVER_NAME = #{adverName,jdbcType=VARCHAR},
+      ADVER_LOCATION = #{adverLocation,jdbcType=VARCHAR},
+      ADVER_IMAGE = #{adverImage,jdbcType=VARCHAR},
+      ADVER_LINK = #{adverLink,jdbcType=VARCHAR},
+      ADVER_REMARK = #{adverRemark,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      CREATOR_ID = #{creatorId,jdbcType=VARCHAR},
+      UPDATE_ID = #{updateId,jdbcType=VARCHAR},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      STATUS = #{status,jdbcType=VARCHAR},
+      UP_TOP = #{upTop,jdbcType=VARCHAR},
+      START_TIME = #{startTime,jdbcType=TIMESTAMP},
+      END_TIME = #{endTime,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

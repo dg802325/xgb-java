@@ -1,6 +1,6 @@
 package com.xgb.service;
 
-import com.xgb.dao.SysOssMapper;
+import com.xgb.dao1.SysOssMapper;
 import com.xgb.model.SysOss;
 import com.xgb.model.SysOssExample;
 import org.apache.ibatis.annotations.Param;

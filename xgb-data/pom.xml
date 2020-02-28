@@ -47,7 +47,6 @@
         <spring.beans.version>5.1.7.RELEASE</spring.beans.version>
         <spring.context.version>5.1.7.RELEASE</spring.context.version>
         <spring.tx.version>5.1.5.RELEASE</spring.tx.version>
-        <spring.context.version>5.1.2.RELEASE</spring.context.version>
         <freemarker.version>2.3.28</freemarker.version>
         <fastdfs.version>1.26.1-RELEASE</fastdfs.version>
         <fastjson.version>1.2.51</fastjson.version>

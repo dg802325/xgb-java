@@ -1,12 +1,21 @@
 spring:
   profiles:
     active: dev
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
   freemarker:
-    check-template-location: false
-    servlet:
-      multipart:
-        max-file-size: 50MB
-        max-request-size: 50MB
+    allow-request-override: false
+    cache: false
+    check-template-location: true
+    charset: UTF-8
+    content-type: text/html; charset=utf-8
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: false
+    suffix: .html
+    template-loader-path: classpath:/templates
     jackson:
       date-format: yyyy-MM-dd HH:mm:ss
       time-zone: GMT+8
@@ -30,3 +39,4 @@ logging:
 #    com.xgb: trace
   path: xgb-data/data-api/logs/
   file: data-api.log
+

@@ -49,6 +49,16 @@ public class DataUtils {
         return data;
     }
 
+    /**
+     * 预置页面所需数据
+     *
+     * @return
+     */
+    public static Map<String, Object> getDataMapInit() {
+        Map<String, Object> data = new HashMap<String, Object>();
+        return data;
+    }
+
 
     public static List<TableColumnInfo> xmlDataFormat(List<TableColumnInfo> tableInformation){
         List<TableColumnInfo> tableColoms = new ArrayList<>();

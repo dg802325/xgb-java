@@ -1,9 +1,9 @@
 package com.xgb.service;
 
-import com.xgb.dao.BlogGardenResourceMapper;
+import com.xgb.dao1.BlogGardenResourceMapper;
 import com.xgb.model.BlogGarden;
 import com.xgb.model.BlogGardenExample;
-import com.xgb.dao.BlogGardenMapper;
+import com.xgb.dao1.BlogGardenMapper;
 
 import java.util.List;
 
@@ -11,7 +11,6 @@ import com.xgb.model.BlogGardenResource;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
-import org.apache.ibatis.annotations.Param;
 
 /**
 * @Auther: Mr Deng

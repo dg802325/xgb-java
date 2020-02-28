@@ -1,6 +1,6 @@
 package com.xgb.service;
 
-import com.xgb.dao.SysDictMapper;
+import com.xgb.dao1.SysDictMapper;
 import com.xgb.model.SysDict;
 import com.xgb.model.SysDictExample;
 import org.apache.ibatis.annotations.Param;

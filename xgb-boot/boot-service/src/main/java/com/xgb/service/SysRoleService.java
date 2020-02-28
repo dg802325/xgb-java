@@ -1,6 +1,6 @@
 package com.xgb.service;
 
-import com.xgb.dao.*;
+import com.xgb.dao1.*;
 import com.xgb.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,0 +1,1588 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.JjhnjReport3Mapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.JjhnjReport3" >
+    <constructor >
+      <idArg column="ID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="INSTANCEID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORGANIZATIONID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATUS" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="BIANZHIDANWEI" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANDU" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANCHUSHU1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU23" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU22" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU2" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU2" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU24" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU23" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU3" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU3" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU25" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU24" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU4" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU4" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU26" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU25" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU5" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU5" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU27" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU26" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU6" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU6" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU28" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU27" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU7" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU7" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU29" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU28" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU8" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU8" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU30" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU9" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU9" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU31" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU29" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU32" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU30" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU10" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU10" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU11" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU11" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU33" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU31" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU12" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU34" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU32" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU35" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU33" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU36" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU34" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU13" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU12" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU14" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU13" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU15" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU14" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU37" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU35" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU16" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU15" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU17" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU16" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU38" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU36" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU18" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU17" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU19" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU18" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU20" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU19" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU39" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU37" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU40" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU38" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU21" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU20" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU41" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU39" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU22" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU21" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUSHU42" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU40" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU42" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QIMOSHU41" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="YUE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="RI" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, INSTANCEID, ORGANIZATIONID, STATUS, BIANZHIDANWEI, NIANDU, NIANCHUSHU1, QIMOSHU1, 
+    NIANCHUSHU23, QIMOSHU22, NIANCHUSHU2, QIMOSHU2, NIANCHUSHU24, QIMOSHU23, NIANCHUSHU3, 
+    QIMOSHU3, NIANCHUSHU25, QIMOSHU24, NIANCHUSHU4, QIMOSHU4, NIANCHUSHU26, QIMOSHU25, 
+    NIANCHUSHU5, QIMOSHU5, NIANCHUSHU27, QIMOSHU26, NIANCHUSHU6, QIMOSHU6, NIANCHUSHU28, 
+    QIMOSHU27, NIANCHUSHU7, QIMOSHU7, NIANCHUSHU29, QIMOSHU28, NIANCHUSHU8, QIMOSHU8, 
+    NIANCHUSHU30, NIANCHUSHU9, QIMOSHU9, NIANCHUSHU31, QIMOSHU29, NIANCHUSHU32, QIMOSHU30, 
+    NIANCHUSHU10, QIMOSHU10, NIANCHUSHU11, QIMOSHU11, NIANCHUSHU33, QIMOSHU31, NIANCHUSHU12, 
+    NIANCHUSHU34, QIMOSHU32, NIANCHUSHU35, QIMOSHU33, NIANCHUSHU36, QIMOSHU34, NIANCHUSHU13, 
+    QIMOSHU12, NIANCHUSHU14, QIMOSHU13, NIANCHUSHU15, QIMOSHU14, NIANCHUSHU37, QIMOSHU35, 
+    NIANCHUSHU16, QIMOSHU15, NIANCHUSHU17, QIMOSHU16, NIANCHUSHU38, QIMOSHU36, NIANCHUSHU18, 
+    QIMOSHU17, NIANCHUSHU19, QIMOSHU18, NIANCHUSHU20, QIMOSHU19, NIANCHUSHU39, QIMOSHU37, 
+    NIANCHUSHU40, QIMOSHU38, NIANCHUSHU21, QIMOSHU20, NIANCHUSHU41, QIMOSHU39, NIANCHUSHU22, 
+    QIMOSHU21, NIANCHUSHU42, QIMOSHU40, QIMOSHU42, QIMOSHU41, YUE, RI
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.JjhnjReport3Example" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from MJZZ_USER.JJHNJ_REPORT3
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from MJZZ_USER.JJHNJ_REPORT3
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from MJZZ_USER.JJHNJ_REPORT3
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xgb.model.JjhnjReport3Example" >
+    delete from MJZZ_USER.JJHNJ_REPORT3
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.JjhnjReport3" >
+    insert into JJHNJ_REPORT3 (ID, INSTANCEID, ORGANIZATIONID, 
+      STATUS, BIANZHIDANWEI, NIANDU, 
+      NIANCHUSHU1, QIMOSHU1, NIANCHUSHU23, 
+      QIMOSHU22, NIANCHUSHU2, QIMOSHU2, 
+      NIANCHUSHU24, QIMOSHU23, NIANCHUSHU3, 
+      QIMOSHU3, NIANCHUSHU25, QIMOSHU24, 
+      NIANCHUSHU4, QIMOSHU4, NIANCHUSHU26, 
+      QIMOSHU25, NIANCHUSHU5, QIMOSHU5, 
+      NIANCHUSHU27, QIMOSHU26, NIANCHUSHU6, 
+      QIMOSHU6, NIANCHUSHU28, QIMOSHU27, 
+      NIANCHUSHU7, QIMOSHU7, NIANCHUSHU29, 
+      QIMOSHU28, NIANCHUSHU8, QIMOSHU8, 
+      NIANCHUSHU30, NIANCHUSHU9, QIMOSHU9, 
+      NIANCHUSHU31, QIMOSHU29, NIANCHUSHU32, 
+      QIMOSHU30, NIANCHUSHU10, QIMOSHU10, 
+      NIANCHUSHU11, QIMOSHU11, NIANCHUSHU33, 
+      QIMOSHU31, NIANCHUSHU12, NIANCHUSHU34, 
+      QIMOSHU32, NIANCHUSHU35, QIMOSHU33, 
+      NIANCHUSHU36, QIMOSHU34, NIANCHUSHU13, 
+      QIMOSHU12, NIANCHUSHU14, QIMOSHU13, 
+      NIANCHUSHU15, QIMOSHU14, NIANCHUSHU37, 
+      QIMOSHU35, NIANCHUSHU16, QIMOSHU15, 
+      NIANCHUSHU17, QIMOSHU16, NIANCHUSHU38, 
+      QIMOSHU36, NIANCHUSHU18, QIMOSHU17, 
+      NIANCHUSHU19, QIMOSHU18, NIANCHUSHU20, 
+      QIMOSHU19, NIANCHUSHU39, QIMOSHU37, 
+      NIANCHUSHU40, QIMOSHU38, NIANCHUSHU21, 
+      QIMOSHU20, NIANCHUSHU41, QIMOSHU39, 
+      NIANCHUSHU22, QIMOSHU21, NIANCHUSHU42, 
+      QIMOSHU40, QIMOSHU42, QIMOSHU41, 
+      YUE, RI)
+    values (#{id,jdbcType=DECIMAL}, #{instanceid,jdbcType=VARCHAR}, #{organizationid,jdbcType=VARCHAR}, 
+      #{status,jdbcType=DECIMAL}, #{bianzhidanwei,jdbcType=VARCHAR}, #{niandu,jdbcType=VARCHAR}, 
+      #{nianchushu1,jdbcType=DECIMAL}, #{qimoshu1,jdbcType=DECIMAL}, #{nianchushu23,jdbcType=DECIMAL}, 
+      #{qimoshu22,jdbcType=DECIMAL}, #{nianchushu2,jdbcType=DECIMAL}, #{qimoshu2,jdbcType=DECIMAL}, 
+      #{nianchushu24,jdbcType=DECIMAL}, #{qimoshu23,jdbcType=DECIMAL}, #{nianchushu3,jdbcType=DECIMAL}, 
+      #{qimoshu3,jdbcType=DECIMAL}, #{nianchushu25,jdbcType=DECIMAL}, #{qimoshu24,jdbcType=DECIMAL}, 
+      #{nianchushu4,jdbcType=DECIMAL}, #{qimoshu4,jdbcType=DECIMAL}, #{nianchushu26,jdbcType=DECIMAL}, 
+      #{qimoshu25,jdbcType=DECIMAL}, #{nianchushu5,jdbcType=DECIMAL}, #{qimoshu5,jdbcType=DECIMAL}, 
+      #{nianchushu27,jdbcType=DECIMAL}, #{qimoshu26,jdbcType=DECIMAL}, #{nianchushu6,jdbcType=DECIMAL}, 
+      #{qimoshu6,jdbcType=DECIMAL}, #{nianchushu28,jdbcType=DECIMAL}, #{qimoshu27,jdbcType=DECIMAL}, 
+      #{nianchushu7,jdbcType=DECIMAL}, #{qimoshu7,jdbcType=DECIMAL}, #{nianchushu29,jdbcType=DECIMAL}, 
+      #{qimoshu28,jdbcType=DECIMAL}, #{nianchushu8,jdbcType=DECIMAL}, #{qimoshu8,jdbcType=DECIMAL}, 
+      #{nianchushu30,jdbcType=DECIMAL}, #{nianchushu9,jdbcType=DECIMAL}, #{qimoshu9,jdbcType=DECIMAL}, 
+      #{nianchushu31,jdbcType=DECIMAL}, #{qimoshu29,jdbcType=DECIMAL}, #{nianchushu32,jdbcType=DECIMAL}, 
+      #{qimoshu30,jdbcType=DECIMAL}, #{nianchushu10,jdbcType=DECIMAL}, #{qimoshu10,jdbcType=DECIMAL}, 
+      #{nianchushu11,jdbcType=DECIMAL}, #{qimoshu11,jdbcType=DECIMAL}, #{nianchushu33,jdbcType=DECIMAL}, 
+      #{qimoshu31,jdbcType=DECIMAL}, #{nianchushu12,jdbcType=DECIMAL}, #{nianchushu34,jdbcType=DECIMAL}, 
+      #{qimoshu32,jdbcType=DECIMAL}, #{nianchushu35,jdbcType=DECIMAL}, #{qimoshu33,jdbcType=DECIMAL}, 
+      #{nianchushu36,jdbcType=DECIMAL}, #{qimoshu34,jdbcType=DECIMAL}, #{nianchushu13,jdbcType=DECIMAL}, 
+      #{qimoshu12,jdbcType=DECIMAL}, #{nianchushu14,jdbcType=DECIMAL}, #{qimoshu13,jdbcType=DECIMAL}, 
+      #{nianchushu15,jdbcType=DECIMAL}, #{qimoshu14,jdbcType=DECIMAL}, #{nianchushu37,jdbcType=DECIMAL}, 
+      #{qimoshu35,jdbcType=DECIMAL}, #{nianchushu16,jdbcType=DECIMAL}, #{qimoshu15,jdbcType=DECIMAL}, 
+      #{nianchushu17,jdbcType=DECIMAL}, #{qimoshu16,jdbcType=DECIMAL}, #{nianchushu38,jdbcType=DECIMAL}, 
+      #{qimoshu36,jdbcType=DECIMAL}, #{nianchushu18,jdbcType=DECIMAL}, #{qimoshu17,jdbcType=DECIMAL}, 
+      #{nianchushu19,jdbcType=DECIMAL}, #{qimoshu18,jdbcType=DECIMAL}, #{nianchushu20,jdbcType=DECIMAL}, 
+      #{qimoshu19,jdbcType=DECIMAL}, #{nianchushu39,jdbcType=DECIMAL}, #{qimoshu37,jdbcType=DECIMAL}, 
+      #{nianchushu40,jdbcType=DECIMAL}, #{qimoshu38,jdbcType=DECIMAL}, #{nianchushu21,jdbcType=DECIMAL}, 
+      #{qimoshu20,jdbcType=DECIMAL}, #{nianchushu41,jdbcType=DECIMAL}, #{qimoshu39,jdbcType=DECIMAL}, 
+      #{nianchushu22,jdbcType=DECIMAL}, #{qimoshu21,jdbcType=DECIMAL}, #{nianchushu42,jdbcType=DECIMAL}, 
+      #{qimoshu40,jdbcType=DECIMAL}, #{qimoshu42,jdbcType=DECIMAL}, #{qimoshu41,jdbcType=DECIMAL}, 
+      #{yue,jdbcType=VARCHAR}, #{ri,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.JjhnjReport3" >
+    insert into JJHNJ_REPORT3
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="instanceid != null" >
+        INSTANCEID,
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="bianzhidanwei != null" >
+        BIANZHIDANWEI,
+      </if>
+      <if test="niandu != null" >
+        NIANDU,
+      </if>
+      <if test="nianchushu1 != null" >
+        NIANCHUSHU1,
+      </if>
+      <if test="qimoshu1 != null" >
+        QIMOSHU1,
+      </if>
+      <if test="nianchushu23 != null" >
+        NIANCHUSHU23,
+      </if>
+      <if test="qimoshu22 != null" >
+        QIMOSHU22,
+      </if>
+      <if test="nianchushu2 != null" >
+        NIANCHUSHU2,
+      </if>
+      <if test="qimoshu2 != null" >
+        QIMOSHU2,
+      </if>
+      <if test="nianchushu24 != null" >
+        NIANCHUSHU24,
+      </if>
+      <if test="qimoshu23 != null" >
+        QIMOSHU23,
+      </if>
+      <if test="nianchushu3 != null" >
+        NIANCHUSHU3,
+      </if>
+      <if test="qimoshu3 != null" >
+        QIMOSHU3,
+      </if>
+      <if test="nianchushu25 != null" >
+        NIANCHUSHU25,
+      </if>
+      <if test="qimoshu24 != null" >
+        QIMOSHU24,
+      </if>
+      <if test="nianchushu4 != null" >
+        NIANCHUSHU4,
+      </if>
+      <if test="qimoshu4 != null" >
+        QIMOSHU4,
+      </if>
+      <if test="nianchushu26 != null" >
+        NIANCHUSHU26,
+      </if>
+      <if test="qimoshu25 != null" >
+        QIMOSHU25,
+      </if>
+      <if test="nianchushu5 != null" >
+        NIANCHUSHU5,
+      </if>
+      <if test="qimoshu5 != null" >
+        QIMOSHU5,
+      </if>
+      <if test="nianchushu27 != null" >
+        NIANCHUSHU27,
+      </if>
+      <if test="qimoshu26 != null" >
+        QIMOSHU26,
+      </if>
+      <if test="nianchushu6 != null" >
+        NIANCHUSHU6,
+      </if>
+      <if test="qimoshu6 != null" >
+        QIMOSHU6,
+      </if>
+      <if test="nianchushu28 != null" >
+        NIANCHUSHU28,
+      </if>
+      <if test="qimoshu27 != null" >
+        QIMOSHU27,
+      </if>
+      <if test="nianchushu7 != null" >
+        NIANCHUSHU7,
+      </if>
+      <if test="qimoshu7 != null" >
+        QIMOSHU7,
+      </if>
+      <if test="nianchushu29 != null" >
+        NIANCHUSHU29,
+      </if>
+      <if test="qimoshu28 != null" >
+        QIMOSHU28,
+      </if>
+      <if test="nianchushu8 != null" >
+        NIANCHUSHU8,
+      </if>
+      <if test="qimoshu8 != null" >
+        QIMOSHU8,
+      </if>
+      <if test="nianchushu30 != null" >
+        NIANCHUSHU30,
+      </if>
+      <if test="nianchushu9 != null" >
+        NIANCHUSHU9,
+      </if>
+      <if test="qimoshu9 != null" >
+        QIMOSHU9,
+      </if>
+      <if test="nianchushu31 != null" >
+        NIANCHUSHU31,
+      </if>
+      <if test="qimoshu29 != null" >
+        QIMOSHU29,
+      </if>
+      <if test="nianchushu32 != null" >
+        NIANCHUSHU32,
+      </if>
+      <if test="qimoshu30 != null" >
+        QIMOSHU30,
+      </if>
+      <if test="nianchushu10 != null" >
+        NIANCHUSHU10,
+      </if>
+      <if test="qimoshu10 != null" >
+        QIMOSHU10,
+      </if>
+      <if test="nianchushu11 != null" >
+        NIANCHUSHU11,
+      </if>
+      <if test="qimoshu11 != null" >
+        QIMOSHU11,
+      </if>
+      <if test="nianchushu33 != null" >
+        NIANCHUSHU33,
+      </if>
+      <if test="qimoshu31 != null" >
+        QIMOSHU31,
+      </if>
+      <if test="nianchushu12 != null" >
+        NIANCHUSHU12,
+      </if>
+      <if test="nianchushu34 != null" >
+        NIANCHUSHU34,
+      </if>
+      <if test="qimoshu32 != null" >
+        QIMOSHU32,
+      </if>
+      <if test="nianchushu35 != null" >
+        NIANCHUSHU35,
+      </if>
+      <if test="qimoshu33 != null" >
+        QIMOSHU33,
+      </if>
+      <if test="nianchushu36 != null" >
+        NIANCHUSHU36,
+      </if>
+      <if test="qimoshu34 != null" >
+        QIMOSHU34,
+      </if>
+      <if test="nianchushu13 != null" >
+        NIANCHUSHU13,
+      </if>
+      <if test="qimoshu12 != null" >
+        QIMOSHU12,
+      </if>
+      <if test="nianchushu14 != null" >
+        NIANCHUSHU14,
+      </if>
+      <if test="qimoshu13 != null" >
+        QIMOSHU13,
+      </if>
+      <if test="nianchushu15 != null" >
+        NIANCHUSHU15,
+      </if>
+      <if test="qimoshu14 != null" >
+        QIMOSHU14,
+      </if>
+      <if test="nianchushu37 != null" >
+        NIANCHUSHU37,
+      </if>
+      <if test="qimoshu35 != null" >
+        QIMOSHU35,
+      </if>
+      <if test="nianchushu16 != null" >
+        NIANCHUSHU16,
+      </if>
+      <if test="qimoshu15 != null" >
+        QIMOSHU15,
+      </if>
+      <if test="nianchushu17 != null" >
+        NIANCHUSHU17,
+      </if>
+      <if test="qimoshu16 != null" >
+        QIMOSHU16,
+      </if>
+      <if test="nianchushu38 != null" >
+        NIANCHUSHU38,
+      </if>
+      <if test="qimoshu36 != null" >
+        QIMOSHU36,
+      </if>
+      <if test="nianchushu18 != null" >
+        NIANCHUSHU18,
+      </if>
+      <if test="qimoshu17 != null" >
+        QIMOSHU17,
+      </if>
+      <if test="nianchushu19 != null" >
+        NIANCHUSHU19,
+      </if>
+      <if test="qimoshu18 != null" >
+        QIMOSHU18,
+      </if>
+      <if test="nianchushu20 != null" >
+        NIANCHUSHU20,
+      </if>
+      <if test="qimoshu19 != null" >
+        QIMOSHU19,
+      </if>
+      <if test="nianchushu39 != null" >
+        NIANCHUSHU39,
+      </if>
+      <if test="qimoshu37 != null" >
+        QIMOSHU37,
+      </if>
+      <if test="nianchushu40 != null" >
+        NIANCHUSHU40,
+      </if>
+      <if test="qimoshu38 != null" >
+        QIMOSHU38,
+      </if>
+      <if test="nianchushu21 != null" >
+        NIANCHUSHU21,
+      </if>
+      <if test="qimoshu20 != null" >
+        QIMOSHU20,
+      </if>
+      <if test="nianchushu41 != null" >
+        NIANCHUSHU41,
+      </if>
+      <if test="qimoshu39 != null" >
+        QIMOSHU39,
+      </if>
+      <if test="nianchushu22 != null" >
+        NIANCHUSHU22,
+      </if>
+      <if test="qimoshu21 != null" >
+        QIMOSHU21,
+      </if>
+      <if test="nianchushu42 != null" >
+        NIANCHUSHU42,
+      </if>
+      <if test="qimoshu40 != null" >
+        QIMOSHU40,
+      </if>
+      <if test="qimoshu42 != null" >
+        QIMOSHU42,
+      </if>
+      <if test="qimoshu41 != null" >
+        QIMOSHU41,
+      </if>
+      <if test="yue != null" >
+        YUE,
+      </if>
+      <if test="ri != null" >
+        RI,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="instanceid != null" >
+        #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="bianzhidanwei != null" >
+        #{bianzhidanwei,jdbcType=VARCHAR},
+      </if>
+      <if test="niandu != null" >
+        #{niandu,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchushu1 != null" >
+        #{nianchushu1,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu1 != null" >
+        #{qimoshu1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu23 != null" >
+        #{nianchushu23,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu22 != null" >
+        #{qimoshu22,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu2 != null" >
+        #{nianchushu2,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu2 != null" >
+        #{qimoshu2,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu24 != null" >
+        #{nianchushu24,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu23 != null" >
+        #{qimoshu23,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu3 != null" >
+        #{nianchushu3,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu3 != null" >
+        #{qimoshu3,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu25 != null" >
+        #{nianchushu25,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu24 != null" >
+        #{qimoshu24,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu4 != null" >
+        #{nianchushu4,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu4 != null" >
+        #{qimoshu4,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu26 != null" >
+        #{nianchushu26,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu25 != null" >
+        #{qimoshu25,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu5 != null" >
+        #{nianchushu5,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu5 != null" >
+        #{qimoshu5,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu27 != null" >
+        #{nianchushu27,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu26 != null" >
+        #{qimoshu26,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu6 != null" >
+        #{nianchushu6,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu6 != null" >
+        #{qimoshu6,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu28 != null" >
+        #{nianchushu28,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu27 != null" >
+        #{qimoshu27,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu7 != null" >
+        #{nianchushu7,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu7 != null" >
+        #{qimoshu7,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu29 != null" >
+        #{nianchushu29,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu28 != null" >
+        #{qimoshu28,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu8 != null" >
+        #{nianchushu8,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu8 != null" >
+        #{qimoshu8,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu30 != null" >
+        #{nianchushu30,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu9 != null" >
+        #{nianchushu9,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu9 != null" >
+        #{qimoshu9,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu31 != null" >
+        #{nianchushu31,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu29 != null" >
+        #{qimoshu29,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu32 != null" >
+        #{nianchushu32,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu30 != null" >
+        #{qimoshu30,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu10 != null" >
+        #{nianchushu10,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu10 != null" >
+        #{qimoshu10,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu11 != null" >
+        #{nianchushu11,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu11 != null" >
+        #{qimoshu11,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu33 != null" >
+        #{nianchushu33,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu31 != null" >
+        #{qimoshu31,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu12 != null" >
+        #{nianchushu12,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu34 != null" >
+        #{nianchushu34,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu32 != null" >
+        #{qimoshu32,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu35 != null" >
+        #{nianchushu35,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu33 != null" >
+        #{qimoshu33,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu36 != null" >
+        #{nianchushu36,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu34 != null" >
+        #{qimoshu34,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu13 != null" >
+        #{nianchushu13,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu12 != null" >
+        #{qimoshu12,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu14 != null" >
+        #{nianchushu14,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu13 != null" >
+        #{qimoshu13,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu15 != null" >
+        #{nianchushu15,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu14 != null" >
+        #{qimoshu14,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu37 != null" >
+        #{nianchushu37,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu35 != null" >
+        #{qimoshu35,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu16 != null" >
+        #{nianchushu16,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu15 != null" >
+        #{qimoshu15,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu17 != null" >
+        #{nianchushu17,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu16 != null" >
+        #{qimoshu16,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu38 != null" >
+        #{nianchushu38,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu36 != null" >
+        #{qimoshu36,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu18 != null" >
+        #{nianchushu18,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu17 != null" >
+        #{qimoshu17,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu19 != null" >
+        #{nianchushu19,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu18 != null" >
+        #{qimoshu18,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu20 != null" >
+        #{nianchushu20,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu19 != null" >
+        #{qimoshu19,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu39 != null" >
+        #{nianchushu39,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu37 != null" >
+        #{qimoshu37,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu40 != null" >
+        #{nianchushu40,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu38 != null" >
+        #{qimoshu38,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu21 != null" >
+        #{nianchushu21,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu20 != null" >
+        #{qimoshu20,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu41 != null" >
+        #{nianchushu41,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu39 != null" >
+        #{qimoshu39,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu22 != null" >
+        #{nianchushu22,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu21 != null" >
+        #{qimoshu21,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu42 != null" >
+        #{nianchushu42,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu40 != null" >
+        #{qimoshu40,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu42 != null" >
+        #{qimoshu42,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu41 != null" >
+        #{qimoshu41,jdbcType=DECIMAL},
+      </if>
+      <if test="yue != null" >
+        #{yue,jdbcType=VARCHAR},
+      </if>
+      <if test="ri != null" >
+        #{ri,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.JjhnjReport3Example" resultType="java.lang.Integer" >
+    select count(*) from MJZZ_USER.JJHNJ_REPORT3
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update JJHNJ_REPORT3
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=DECIMAL},
+      </if>
+      <if test="record.instanceid != null" >
+        INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organizationid != null" >
+        ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=DECIMAL},
+      </if>
+      <if test="record.bianzhidanwei != null" >
+        BIANZHIDANWEI = #{record.bianzhidanwei,jdbcType=VARCHAR},
+      </if>
+      <if test="record.niandu != null" >
+        NIANDU = #{record.niandu,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianchushu1 != null" >
+        NIANCHUSHU1 = #{record.nianchushu1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu1 != null" >
+        QIMOSHU1 = #{record.qimoshu1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu23 != null" >
+        NIANCHUSHU23 = #{record.nianchushu23,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu22 != null" >
+        QIMOSHU22 = #{record.qimoshu22,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu2 != null" >
+        NIANCHUSHU2 = #{record.nianchushu2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu2 != null" >
+        QIMOSHU2 = #{record.qimoshu2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu24 != null" >
+        NIANCHUSHU24 = #{record.nianchushu24,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu23 != null" >
+        QIMOSHU23 = #{record.qimoshu23,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu3 != null" >
+        NIANCHUSHU3 = #{record.nianchushu3,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu3 != null" >
+        QIMOSHU3 = #{record.qimoshu3,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu25 != null" >
+        NIANCHUSHU25 = #{record.nianchushu25,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu24 != null" >
+        QIMOSHU24 = #{record.qimoshu24,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu4 != null" >
+        NIANCHUSHU4 = #{record.nianchushu4,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu4 != null" >
+        QIMOSHU4 = #{record.qimoshu4,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu26 != null" >
+        NIANCHUSHU26 = #{record.nianchushu26,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu25 != null" >
+        QIMOSHU25 = #{record.qimoshu25,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu5 != null" >
+        NIANCHUSHU5 = #{record.nianchushu5,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu5 != null" >
+        QIMOSHU5 = #{record.qimoshu5,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu27 != null" >
+        NIANCHUSHU27 = #{record.nianchushu27,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu26 != null" >
+        QIMOSHU26 = #{record.qimoshu26,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu6 != null" >
+        NIANCHUSHU6 = #{record.nianchushu6,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu6 != null" >
+        QIMOSHU6 = #{record.qimoshu6,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu28 != null" >
+        NIANCHUSHU28 = #{record.nianchushu28,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu27 != null" >
+        QIMOSHU27 = #{record.qimoshu27,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu7 != null" >
+        NIANCHUSHU7 = #{record.nianchushu7,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu7 != null" >
+        QIMOSHU7 = #{record.qimoshu7,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu29 != null" >
+        NIANCHUSHU29 = #{record.nianchushu29,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu28 != null" >
+        QIMOSHU28 = #{record.qimoshu28,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu8 != null" >
+        NIANCHUSHU8 = #{record.nianchushu8,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu8 != null" >
+        QIMOSHU8 = #{record.qimoshu8,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu30 != null" >
+        NIANCHUSHU30 = #{record.nianchushu30,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu9 != null" >
+        NIANCHUSHU9 = #{record.nianchushu9,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu9 != null" >
+        QIMOSHU9 = #{record.qimoshu9,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu31 != null" >
+        NIANCHUSHU31 = #{record.nianchushu31,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu29 != null" >
+        QIMOSHU29 = #{record.qimoshu29,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu32 != null" >
+        NIANCHUSHU32 = #{record.nianchushu32,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu30 != null" >
+        QIMOSHU30 = #{record.qimoshu30,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu10 != null" >
+        NIANCHUSHU10 = #{record.nianchushu10,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu10 != null" >
+        QIMOSHU10 = #{record.qimoshu10,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu11 != null" >
+        NIANCHUSHU11 = #{record.nianchushu11,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu11 != null" >
+        QIMOSHU11 = #{record.qimoshu11,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu33 != null" >
+        NIANCHUSHU33 = #{record.nianchushu33,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu31 != null" >
+        QIMOSHU31 = #{record.qimoshu31,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu12 != null" >
+        NIANCHUSHU12 = #{record.nianchushu12,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu34 != null" >
+        NIANCHUSHU34 = #{record.nianchushu34,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu32 != null" >
+        QIMOSHU32 = #{record.qimoshu32,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu35 != null" >
+        NIANCHUSHU35 = #{record.nianchushu35,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu33 != null" >
+        QIMOSHU33 = #{record.qimoshu33,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu36 != null" >
+        NIANCHUSHU36 = #{record.nianchushu36,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu34 != null" >
+        QIMOSHU34 = #{record.qimoshu34,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu13 != null" >
+        NIANCHUSHU13 = #{record.nianchushu13,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu12 != null" >
+        QIMOSHU12 = #{record.qimoshu12,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu14 != null" >
+        NIANCHUSHU14 = #{record.nianchushu14,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu13 != null" >
+        QIMOSHU13 = #{record.qimoshu13,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu15 != null" >
+        NIANCHUSHU15 = #{record.nianchushu15,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu14 != null" >
+        QIMOSHU14 = #{record.qimoshu14,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu37 != null" >
+        NIANCHUSHU37 = #{record.nianchushu37,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu35 != null" >
+        QIMOSHU35 = #{record.qimoshu35,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu16 != null" >
+        NIANCHUSHU16 = #{record.nianchushu16,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu15 != null" >
+        QIMOSHU15 = #{record.qimoshu15,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu17 != null" >
+        NIANCHUSHU17 = #{record.nianchushu17,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu16 != null" >
+        QIMOSHU16 = #{record.qimoshu16,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu38 != null" >
+        NIANCHUSHU38 = #{record.nianchushu38,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu36 != null" >
+        QIMOSHU36 = #{record.qimoshu36,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu18 != null" >
+        NIANCHUSHU18 = #{record.nianchushu18,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu17 != null" >
+        QIMOSHU17 = #{record.qimoshu17,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu19 != null" >
+        NIANCHUSHU19 = #{record.nianchushu19,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu18 != null" >
+        QIMOSHU18 = #{record.qimoshu18,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu20 != null" >
+        NIANCHUSHU20 = #{record.nianchushu20,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu19 != null" >
+        QIMOSHU19 = #{record.qimoshu19,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu39 != null" >
+        NIANCHUSHU39 = #{record.nianchushu39,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu37 != null" >
+        QIMOSHU37 = #{record.qimoshu37,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu40 != null" >
+        NIANCHUSHU40 = #{record.nianchushu40,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu38 != null" >
+        QIMOSHU38 = #{record.qimoshu38,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu21 != null" >
+        NIANCHUSHU21 = #{record.nianchushu21,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu20 != null" >
+        QIMOSHU20 = #{record.qimoshu20,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu41 != null" >
+        NIANCHUSHU41 = #{record.nianchushu41,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu39 != null" >
+        QIMOSHU39 = #{record.qimoshu39,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu22 != null" >
+        NIANCHUSHU22 = #{record.nianchushu22,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu21 != null" >
+        QIMOSHU21 = #{record.qimoshu21,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchushu42 != null" >
+        NIANCHUSHU42 = #{record.nianchushu42,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu40 != null" >
+        QIMOSHU40 = #{record.qimoshu40,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu42 != null" >
+        QIMOSHU42 = #{record.qimoshu42,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qimoshu41 != null" >
+        QIMOSHU41 = #{record.qimoshu41,jdbcType=DECIMAL},
+      </if>
+      <if test="record.yue != null" >
+        YUE = #{record.yue,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ri != null" >
+        RI = #{record.ri,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update JJHNJ_REPORT3
+    set ID = #{record.id,jdbcType=DECIMAL},
+      INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=DECIMAL},
+      BIANZHIDANWEI = #{record.bianzhidanwei,jdbcType=VARCHAR},
+      NIANDU = #{record.niandu,jdbcType=VARCHAR},
+      NIANCHUSHU1 = #{record.nianchushu1,jdbcType=DECIMAL},
+      QIMOSHU1 = #{record.qimoshu1,jdbcType=DECIMAL},
+      NIANCHUSHU23 = #{record.nianchushu23,jdbcType=DECIMAL},
+      QIMOSHU22 = #{record.qimoshu22,jdbcType=DECIMAL},
+      NIANCHUSHU2 = #{record.nianchushu2,jdbcType=DECIMAL},
+      QIMOSHU2 = #{record.qimoshu2,jdbcType=DECIMAL},
+      NIANCHUSHU24 = #{record.nianchushu24,jdbcType=DECIMAL},
+      QIMOSHU23 = #{record.qimoshu23,jdbcType=DECIMAL},
+      NIANCHUSHU3 = #{record.nianchushu3,jdbcType=DECIMAL},
+      QIMOSHU3 = #{record.qimoshu3,jdbcType=DECIMAL},
+      NIANCHUSHU25 = #{record.nianchushu25,jdbcType=DECIMAL},
+      QIMOSHU24 = #{record.qimoshu24,jdbcType=DECIMAL},
+      NIANCHUSHU4 = #{record.nianchushu4,jdbcType=DECIMAL},
+      QIMOSHU4 = #{record.qimoshu4,jdbcType=DECIMAL},
+      NIANCHUSHU26 = #{record.nianchushu26,jdbcType=DECIMAL},
+      QIMOSHU25 = #{record.qimoshu25,jdbcType=DECIMAL},
+      NIANCHUSHU5 = #{record.nianchushu5,jdbcType=DECIMAL},
+      QIMOSHU5 = #{record.qimoshu5,jdbcType=DECIMAL},
+      NIANCHUSHU27 = #{record.nianchushu27,jdbcType=DECIMAL},
+      QIMOSHU26 = #{record.qimoshu26,jdbcType=DECIMAL},
+      NIANCHUSHU6 = #{record.nianchushu6,jdbcType=DECIMAL},
+      QIMOSHU6 = #{record.qimoshu6,jdbcType=DECIMAL},
+      NIANCHUSHU28 = #{record.nianchushu28,jdbcType=DECIMAL},
+      QIMOSHU27 = #{record.qimoshu27,jdbcType=DECIMAL},
+      NIANCHUSHU7 = #{record.nianchushu7,jdbcType=DECIMAL},
+      QIMOSHU7 = #{record.qimoshu7,jdbcType=DECIMAL},
+      NIANCHUSHU29 = #{record.nianchushu29,jdbcType=DECIMAL},
+      QIMOSHU28 = #{record.qimoshu28,jdbcType=DECIMAL},
+      NIANCHUSHU8 = #{record.nianchushu8,jdbcType=DECIMAL},
+      QIMOSHU8 = #{record.qimoshu8,jdbcType=DECIMAL},
+      NIANCHUSHU30 = #{record.nianchushu30,jdbcType=DECIMAL},
+      NIANCHUSHU9 = #{record.nianchushu9,jdbcType=DECIMAL},
+      QIMOSHU9 = #{record.qimoshu9,jdbcType=DECIMAL},
+      NIANCHUSHU31 = #{record.nianchushu31,jdbcType=DECIMAL},
+      QIMOSHU29 = #{record.qimoshu29,jdbcType=DECIMAL},
+      NIANCHUSHU32 = #{record.nianchushu32,jdbcType=DECIMAL},
+      QIMOSHU30 = #{record.qimoshu30,jdbcType=DECIMAL},
+      NIANCHUSHU10 = #{record.nianchushu10,jdbcType=DECIMAL},
+      QIMOSHU10 = #{record.qimoshu10,jdbcType=DECIMAL},
+      NIANCHUSHU11 = #{record.nianchushu11,jdbcType=DECIMAL},
+      QIMOSHU11 = #{record.qimoshu11,jdbcType=DECIMAL},
+      NIANCHUSHU33 = #{record.nianchushu33,jdbcType=DECIMAL},
+      QIMOSHU31 = #{record.qimoshu31,jdbcType=DECIMAL},
+      NIANCHUSHU12 = #{record.nianchushu12,jdbcType=DECIMAL},
+      NIANCHUSHU34 = #{record.nianchushu34,jdbcType=DECIMAL},
+      QIMOSHU32 = #{record.qimoshu32,jdbcType=DECIMAL},
+      NIANCHUSHU35 = #{record.nianchushu35,jdbcType=DECIMAL},
+      QIMOSHU33 = #{record.qimoshu33,jdbcType=DECIMAL},
+      NIANCHUSHU36 = #{record.nianchushu36,jdbcType=DECIMAL},
+      QIMOSHU34 = #{record.qimoshu34,jdbcType=DECIMAL},
+      NIANCHUSHU13 = #{record.nianchushu13,jdbcType=DECIMAL},
+      QIMOSHU12 = #{record.qimoshu12,jdbcType=DECIMAL},
+      NIANCHUSHU14 = #{record.nianchushu14,jdbcType=DECIMAL},
+      QIMOSHU13 = #{record.qimoshu13,jdbcType=DECIMAL},
+      NIANCHUSHU15 = #{record.nianchushu15,jdbcType=DECIMAL},
+      QIMOSHU14 = #{record.qimoshu14,jdbcType=DECIMAL},
+      NIANCHUSHU37 = #{record.nianchushu37,jdbcType=DECIMAL},
+      QIMOSHU35 = #{record.qimoshu35,jdbcType=DECIMAL},
+      NIANCHUSHU16 = #{record.nianchushu16,jdbcType=DECIMAL},
+      QIMOSHU15 = #{record.qimoshu15,jdbcType=DECIMAL},
+      NIANCHUSHU17 = #{record.nianchushu17,jdbcType=DECIMAL},
+      QIMOSHU16 = #{record.qimoshu16,jdbcType=DECIMAL},
+      NIANCHUSHU38 = #{record.nianchushu38,jdbcType=DECIMAL},
+      QIMOSHU36 = #{record.qimoshu36,jdbcType=DECIMAL},
+      NIANCHUSHU18 = #{record.nianchushu18,jdbcType=DECIMAL},
+      QIMOSHU17 = #{record.qimoshu17,jdbcType=DECIMAL},
+      NIANCHUSHU19 = #{record.nianchushu19,jdbcType=DECIMAL},
+      QIMOSHU18 = #{record.qimoshu18,jdbcType=DECIMAL},
+      NIANCHUSHU20 = #{record.nianchushu20,jdbcType=DECIMAL},
+      QIMOSHU19 = #{record.qimoshu19,jdbcType=DECIMAL},
+      NIANCHUSHU39 = #{record.nianchushu39,jdbcType=DECIMAL},
+      QIMOSHU37 = #{record.qimoshu37,jdbcType=DECIMAL},
+      NIANCHUSHU40 = #{record.nianchushu40,jdbcType=DECIMAL},
+      QIMOSHU38 = #{record.qimoshu38,jdbcType=DECIMAL},
+      NIANCHUSHU21 = #{record.nianchushu21,jdbcType=DECIMAL},
+      QIMOSHU20 = #{record.qimoshu20,jdbcType=DECIMAL},
+      NIANCHUSHU41 = #{record.nianchushu41,jdbcType=DECIMAL},
+      QIMOSHU39 = #{record.qimoshu39,jdbcType=DECIMAL},
+      NIANCHUSHU22 = #{record.nianchushu22,jdbcType=DECIMAL},
+      QIMOSHU21 = #{record.qimoshu21,jdbcType=DECIMAL},
+      NIANCHUSHU42 = #{record.nianchushu42,jdbcType=DECIMAL},
+      QIMOSHU40 = #{record.qimoshu40,jdbcType=DECIMAL},
+      QIMOSHU42 = #{record.qimoshu42,jdbcType=DECIMAL},
+      QIMOSHU41 = #{record.qimoshu41,jdbcType=DECIMAL},
+      YUE = #{record.yue,jdbcType=VARCHAR},
+      RI = #{record.ri,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.JjhnjReport3" >
+    update JJHNJ_REPORT3
+    <set >
+      <if test="instanceid != null" >
+        INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="bianzhidanwei != null" >
+        BIANZHIDANWEI = #{bianzhidanwei,jdbcType=VARCHAR},
+      </if>
+      <if test="niandu != null" >
+        NIANDU = #{niandu,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchushu1 != null" >
+        NIANCHUSHU1 = #{nianchushu1,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu1 != null" >
+        QIMOSHU1 = #{qimoshu1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu23 != null" >
+        NIANCHUSHU23 = #{nianchushu23,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu22 != null" >
+        QIMOSHU22 = #{qimoshu22,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu2 != null" >
+        NIANCHUSHU2 = #{nianchushu2,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu2 != null" >
+        QIMOSHU2 = #{qimoshu2,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu24 != null" >
+        NIANCHUSHU24 = #{nianchushu24,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu23 != null" >
+        QIMOSHU23 = #{qimoshu23,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu3 != null" >
+        NIANCHUSHU3 = #{nianchushu3,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu3 != null" >
+        QIMOSHU3 = #{qimoshu3,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu25 != null" >
+        NIANCHUSHU25 = #{nianchushu25,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu24 != null" >
+        QIMOSHU24 = #{qimoshu24,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu4 != null" >
+        NIANCHUSHU4 = #{nianchushu4,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu4 != null" >
+        QIMOSHU4 = #{qimoshu4,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu26 != null" >
+        NIANCHUSHU26 = #{nianchushu26,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu25 != null" >
+        QIMOSHU25 = #{qimoshu25,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu5 != null" >
+        NIANCHUSHU5 = #{nianchushu5,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu5 != null" >
+        QIMOSHU5 = #{qimoshu5,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu27 != null" >
+        NIANCHUSHU27 = #{nianchushu27,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu26 != null" >
+        QIMOSHU26 = #{qimoshu26,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu6 != null" >
+        NIANCHUSHU6 = #{nianchushu6,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu6 != null" >
+        QIMOSHU6 = #{qimoshu6,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu28 != null" >
+        NIANCHUSHU28 = #{nianchushu28,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu27 != null" >
+        QIMOSHU27 = #{qimoshu27,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu7 != null" >
+        NIANCHUSHU7 = #{nianchushu7,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu7 != null" >
+        QIMOSHU7 = #{qimoshu7,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu29 != null" >
+        NIANCHUSHU29 = #{nianchushu29,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu28 != null" >
+        QIMOSHU28 = #{qimoshu28,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu8 != null" >
+        NIANCHUSHU8 = #{nianchushu8,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu8 != null" >
+        QIMOSHU8 = #{qimoshu8,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu30 != null" >
+        NIANCHUSHU30 = #{nianchushu30,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu9 != null" >
+        NIANCHUSHU9 = #{nianchushu9,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu9 != null" >
+        QIMOSHU9 = #{qimoshu9,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu31 != null" >
+        NIANCHUSHU31 = #{nianchushu31,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu29 != null" >
+        QIMOSHU29 = #{qimoshu29,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu32 != null" >
+        NIANCHUSHU32 = #{nianchushu32,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu30 != null" >
+        QIMOSHU30 = #{qimoshu30,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu10 != null" >
+        NIANCHUSHU10 = #{nianchushu10,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu10 != null" >
+        QIMOSHU10 = #{qimoshu10,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu11 != null" >
+        NIANCHUSHU11 = #{nianchushu11,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu11 != null" >
+        QIMOSHU11 = #{qimoshu11,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu33 != null" >
+        NIANCHUSHU33 = #{nianchushu33,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu31 != null" >
+        QIMOSHU31 = #{qimoshu31,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu12 != null" >
+        NIANCHUSHU12 = #{nianchushu12,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu34 != null" >
+        NIANCHUSHU34 = #{nianchushu34,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu32 != null" >
+        QIMOSHU32 = #{qimoshu32,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu35 != null" >
+        NIANCHUSHU35 = #{nianchushu35,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu33 != null" >
+        QIMOSHU33 = #{qimoshu33,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu36 != null" >
+        NIANCHUSHU36 = #{nianchushu36,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu34 != null" >
+        QIMOSHU34 = #{qimoshu34,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu13 != null" >
+        NIANCHUSHU13 = #{nianchushu13,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu12 != null" >
+        QIMOSHU12 = #{qimoshu12,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu14 != null" >
+        NIANCHUSHU14 = #{nianchushu14,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu13 != null" >
+        QIMOSHU13 = #{qimoshu13,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu15 != null" >
+        NIANCHUSHU15 = #{nianchushu15,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu14 != null" >
+        QIMOSHU14 = #{qimoshu14,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu37 != null" >
+        NIANCHUSHU37 = #{nianchushu37,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu35 != null" >
+        QIMOSHU35 = #{qimoshu35,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu16 != null" >
+        NIANCHUSHU16 = #{nianchushu16,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu15 != null" >
+        QIMOSHU15 = #{qimoshu15,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu17 != null" >
+        NIANCHUSHU17 = #{nianchushu17,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu16 != null" >
+        QIMOSHU16 = #{qimoshu16,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu38 != null" >
+        NIANCHUSHU38 = #{nianchushu38,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu36 != null" >
+        QIMOSHU36 = #{qimoshu36,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu18 != null" >
+        NIANCHUSHU18 = #{nianchushu18,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu17 != null" >
+        QIMOSHU17 = #{qimoshu17,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu19 != null" >
+        NIANCHUSHU19 = #{nianchushu19,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu18 != null" >
+        QIMOSHU18 = #{qimoshu18,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu20 != null" >
+        NIANCHUSHU20 = #{nianchushu20,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu19 != null" >
+        QIMOSHU19 = #{qimoshu19,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu39 != null" >
+        NIANCHUSHU39 = #{nianchushu39,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu37 != null" >
+        QIMOSHU37 = #{qimoshu37,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu40 != null" >
+        NIANCHUSHU40 = #{nianchushu40,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu38 != null" >
+        QIMOSHU38 = #{qimoshu38,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu21 != null" >
+        NIANCHUSHU21 = #{nianchushu21,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu20 != null" >
+        QIMOSHU20 = #{qimoshu20,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu41 != null" >
+        NIANCHUSHU41 = #{nianchushu41,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu39 != null" >
+        QIMOSHU39 = #{qimoshu39,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu22 != null" >
+        NIANCHUSHU22 = #{nianchushu22,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu21 != null" >
+        QIMOSHU21 = #{qimoshu21,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchushu42 != null" >
+        NIANCHUSHU42 = #{nianchushu42,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu40 != null" >
+        QIMOSHU40 = #{qimoshu40,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu42 != null" >
+        QIMOSHU42 = #{qimoshu42,jdbcType=DECIMAL},
+      </if>
+      <if test="qimoshu41 != null" >
+        QIMOSHU41 = #{qimoshu41,jdbcType=DECIMAL},
+      </if>
+      <if test="yue != null" >
+        YUE = #{yue,jdbcType=VARCHAR},
+      </if>
+      <if test="ri != null" >
+        RI = #{ri,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xgb.model.JjhnjReport3" >
+    update JJHNJ_REPORT3
+    set INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=DECIMAL},
+      BIANZHIDANWEI = #{bianzhidanwei,jdbcType=VARCHAR},
+      NIANDU = #{niandu,jdbcType=VARCHAR},
+      NIANCHUSHU1 = #{nianchushu1,jdbcType=DECIMAL},
+      QIMOSHU1 = #{qimoshu1,jdbcType=DECIMAL},
+      NIANCHUSHU23 = #{nianchushu23,jdbcType=DECIMAL},
+      QIMOSHU22 = #{qimoshu22,jdbcType=DECIMAL},
+      NIANCHUSHU2 = #{nianchushu2,jdbcType=DECIMAL},
+      QIMOSHU2 = #{qimoshu2,jdbcType=DECIMAL},
+      NIANCHUSHU24 = #{nianchushu24,jdbcType=DECIMAL},
+      QIMOSHU23 = #{qimoshu23,jdbcType=DECIMAL},
+      NIANCHUSHU3 = #{nianchushu3,jdbcType=DECIMAL},
+      QIMOSHU3 = #{qimoshu3,jdbcType=DECIMAL},
+      NIANCHUSHU25 = #{nianchushu25,jdbcType=DECIMAL},
+      QIMOSHU24 = #{qimoshu24,jdbcType=DECIMAL},
+      NIANCHUSHU4 = #{nianchushu4,jdbcType=DECIMAL},
+      QIMOSHU4 = #{qimoshu4,jdbcType=DECIMAL},
+      NIANCHUSHU26 = #{nianchushu26,jdbcType=DECIMAL},
+      QIMOSHU25 = #{qimoshu25,jdbcType=DECIMAL},
+      NIANCHUSHU5 = #{nianchushu5,jdbcType=DECIMAL},
+      QIMOSHU5 = #{qimoshu5,jdbcType=DECIMAL},
+      NIANCHUSHU27 = #{nianchushu27,jdbcType=DECIMAL},
+      QIMOSHU26 = #{qimoshu26,jdbcType=DECIMAL},
+      NIANCHUSHU6 = #{nianchushu6,jdbcType=DECIMAL},
+      QIMOSHU6 = #{qimoshu6,jdbcType=DECIMAL},
+      NIANCHUSHU28 = #{nianchushu28,jdbcType=DECIMAL},
+      QIMOSHU27 = #{qimoshu27,jdbcType=DECIMAL},
+      NIANCHUSHU7 = #{nianchushu7,jdbcType=DECIMAL},
+      QIMOSHU7 = #{qimoshu7,jdbcType=DECIMAL},
+      NIANCHUSHU29 = #{nianchushu29,jdbcType=DECIMAL},
+      QIMOSHU28 = #{qimoshu28,jdbcType=DECIMAL},
+      NIANCHUSHU8 = #{nianchushu8,jdbcType=DECIMAL},
+      QIMOSHU8 = #{qimoshu8,jdbcType=DECIMAL},
+      NIANCHUSHU30 = #{nianchushu30,jdbcType=DECIMAL},
+      NIANCHUSHU9 = #{nianchushu9,jdbcType=DECIMAL},
+      QIMOSHU9 = #{qimoshu9,jdbcType=DECIMAL},
+      NIANCHUSHU31 = #{nianchushu31,jdbcType=DECIMAL},
+      QIMOSHU29 = #{qimoshu29,jdbcType=DECIMAL},
+      NIANCHUSHU32 = #{nianchushu32,jdbcType=DECIMAL},
+      QIMOSHU30 = #{qimoshu30,jdbcType=DECIMAL},
+      NIANCHUSHU10 = #{nianchushu10,jdbcType=DECIMAL},
+      QIMOSHU10 = #{qimoshu10,jdbcType=DECIMAL},
+      NIANCHUSHU11 = #{nianchushu11,jdbcType=DECIMAL},
+      QIMOSHU11 = #{qimoshu11,jdbcType=DECIMAL},
+      NIANCHUSHU33 = #{nianchushu33,jdbcType=DECIMAL},
+      QIMOSHU31 = #{qimoshu31,jdbcType=DECIMAL},
+      NIANCHUSHU12 = #{nianchushu12,jdbcType=DECIMAL},
+      NIANCHUSHU34 = #{nianchushu34,jdbcType=DECIMAL},
+      QIMOSHU32 = #{qimoshu32,jdbcType=DECIMAL},
+      NIANCHUSHU35 = #{nianchushu35,jdbcType=DECIMAL},
+      QIMOSHU33 = #{qimoshu33,jdbcType=DECIMAL},
+      NIANCHUSHU36 = #{nianchushu36,jdbcType=DECIMAL},
+      QIMOSHU34 = #{qimoshu34,jdbcType=DECIMAL},
+      NIANCHUSHU13 = #{nianchushu13,jdbcType=DECIMAL},
+      QIMOSHU12 = #{qimoshu12,jdbcType=DECIMAL},
+      NIANCHUSHU14 = #{nianchushu14,jdbcType=DECIMAL},
+      QIMOSHU13 = #{qimoshu13,jdbcType=DECIMAL},
+      NIANCHUSHU15 = #{nianchushu15,jdbcType=DECIMAL},
+      QIMOSHU14 = #{qimoshu14,jdbcType=DECIMAL},
+      NIANCHUSHU37 = #{nianchushu37,jdbcType=DECIMAL},
+      QIMOSHU35 = #{qimoshu35,jdbcType=DECIMAL},
+      NIANCHUSHU16 = #{nianchushu16,jdbcType=DECIMAL},
+      QIMOSHU15 = #{qimoshu15,jdbcType=DECIMAL},
+      NIANCHUSHU17 = #{nianchushu17,jdbcType=DECIMAL},
+      QIMOSHU16 = #{qimoshu16,jdbcType=DECIMAL},
+      NIANCHUSHU38 = #{nianchushu38,jdbcType=DECIMAL},
+      QIMOSHU36 = #{qimoshu36,jdbcType=DECIMAL},
+      NIANCHUSHU18 = #{nianchushu18,jdbcType=DECIMAL},
+      QIMOSHU17 = #{qimoshu17,jdbcType=DECIMAL},
+      NIANCHUSHU19 = #{nianchushu19,jdbcType=DECIMAL},
+      QIMOSHU18 = #{qimoshu18,jdbcType=DECIMAL},
+      NIANCHUSHU20 = #{nianchushu20,jdbcType=DECIMAL},
+      QIMOSHU19 = #{qimoshu19,jdbcType=DECIMAL},
+      NIANCHUSHU39 = #{nianchushu39,jdbcType=DECIMAL},
+      QIMOSHU37 = #{qimoshu37,jdbcType=DECIMAL},
+      NIANCHUSHU40 = #{nianchushu40,jdbcType=DECIMAL},
+      QIMOSHU38 = #{qimoshu38,jdbcType=DECIMAL},
+      NIANCHUSHU21 = #{nianchushu21,jdbcType=DECIMAL},
+      QIMOSHU20 = #{qimoshu20,jdbcType=DECIMAL},
+      NIANCHUSHU41 = #{nianchushu41,jdbcType=DECIMAL},
+      QIMOSHU39 = #{qimoshu39,jdbcType=DECIMAL},
+      NIANCHUSHU22 = #{nianchushu22,jdbcType=DECIMAL},
+      QIMOSHU21 = #{qimoshu21,jdbcType=DECIMAL},
+      NIANCHUSHU42 = #{nianchushu42,jdbcType=DECIMAL},
+      QIMOSHU40 = #{qimoshu40,jdbcType=DECIMAL},
+      QIMOSHU42 = #{qimoshu42,jdbcType=DECIMAL},
+      QIMOSHU41 = #{qimoshu41,jdbcType=DECIMAL},
+      YUE = #{yue,jdbcType=VARCHAR},
+      RI = #{ri,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>

@@ -1,8 +1,8 @@
 package com.xgb.service;
 
-import com.xgb.dao.SysDeptMapper;
-import com.xgb.dao.SysRoleMapper;
-import com.xgb.dao.SysUserRoleMapper;
+import com.xgb.dao1.SysDeptMapper;
+import com.xgb.dao1.SysRoleMapper;
+import com.xgb.dao1.SysUserRoleMapper;
 import com.xgb.model.*;
 
 import org.springframework.beans.factory.annotation.Autowired;

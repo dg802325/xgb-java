@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.LsCircsMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.LsCircs" >
+    <constructor >
+      <idArg column="ID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="INSTANCEID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORGANIZATIONID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATUS" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="MASTERID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="XUHAO" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="XINGMING" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SHENGRI" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="HUIYICISHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="ZI" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ZHI" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="JINTIE" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="XINGBIE" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="BEIANSHIJIAN" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="BAOCHOUSHIYOU" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="IFDANG" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="IFTUILI" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="ZHENGZHIMIANMAO" jdbcType="DECIMAL" javaType="java.lang.Long" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, INSTANCEID, ORGANIZATIONID, STATUS, MASTERID, XUHAO, XINGMING, SHENGRI, HUIYICISHU, 
+    ZI, ZHI, JINTIE, XINGBIE, BEIANSHIJIAN, BAOCHOUSHIYOU, IFDANG, IFTUILI, ZHENGZHIMIANMAO
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.LsCircsExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from MJZZ_USER.LS_CIRCS
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from MJZZ_USER.LS_CIRCS
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from MJZZ_USER.LS_CIRCS
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xgb.model.LsCircsExample" >
+    delete from MJZZ_USER.LS_CIRCS
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.LsCircs" >
+    insert into MJZZ_USER.LS_CIRCS (ID, INSTANCEID, ORGANIZATIONID, 
+      STATUS, MASTERID, XUHAO, 
+      XINGMING, SHENGRI, HUIYICISHU, 
+      ZI, ZHI, JINTIE, XINGBIE, 
+      BEIANSHIJIAN, BAOCHOUSHIYOU, IFDANG, 
+      IFTUILI, ZHENGZHIMIANMAO)
+    values (#{id,jdbcType=DECIMAL}, #{instanceid,jdbcType=VARCHAR}, #{organizationid,jdbcType=VARCHAR}, 
+      #{status,jdbcType=DECIMAL}, #{masterid,jdbcType=DECIMAL}, #{xuhao,jdbcType=VARCHAR}, 
+      #{xingming,jdbcType=VARCHAR}, #{shengri,jdbcType=TIMESTAMP}, #{huiyicishu,jdbcType=DECIMAL}, 
+      #{zi,jdbcType=VARCHAR}, #{zhi,jdbcType=VARCHAR}, #{jintie,jdbcType=DECIMAL}, #{xingbie,jdbcType=DECIMAL}, 
+      #{beianshijian,jdbcType=TIMESTAMP}, #{baochoushiyou,jdbcType=VARCHAR}, #{ifdang,jdbcType=VARCHAR}, 
+      #{iftuili,jdbcType=DECIMAL}, #{zhengzhimianmao,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.LsCircs" >
+    insert into MJZZ_USER.LS_CIRCS
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="instanceid != null" >
+        INSTANCEID,
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="masterid != null" >
+        MASTERID,
+      </if>
+      <if test="xuhao != null" >
+        XUHAO,
+      </if>
+      <if test="xingming != null" >
+        XINGMING,
+      </if>
+      <if test="shengri != null" >
+        SHENGRI,
+      </if>
+      <if test="huiyicishu != null" >
+        HUIYICISHU,
+      </if>
+      <if test="zi != null" >
+        ZI,
+      </if>
+      <if test="zhi != null" >
+        ZHI,
+      </if>
+      <if test="jintie != null" >
+        JINTIE,
+      </if>
+      <if test="xingbie != null" >
+        XINGBIE,
+      </if>
+      <if test="beianshijian != null" >
+        BEIANSHIJIAN,
+      </if>
+      <if test="baochoushiyou != null" >
+        BAOCHOUSHIYOU,
+      </if>
+      <if test="ifdang != null" >
+        IFDANG,
+      </if>
+      <if test="iftuili != null" >
+        IFTUILI,
+      </if>
+      <if test="zhengzhimianmao != null" >
+        ZHENGZHIMIANMAO,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="instanceid != null" >
+        #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="masterid != null" >
+        #{masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="xuhao != null" >
+        #{xuhao,jdbcType=VARCHAR},
+      </if>
+      <if test="xingming != null" >
+        #{xingming,jdbcType=VARCHAR},
+      </if>
+      <if test="shengri != null" >
+        #{shengri,jdbcType=TIMESTAMP},
+      </if>
+      <if test="huiyicishu != null" >
+        #{huiyicishu,jdbcType=DECIMAL},
+      </if>
+      <if test="zi != null" >
+        #{zi,jdbcType=VARCHAR},
+      </if>
+      <if test="zhi != null" >
+        #{zhi,jdbcType=VARCHAR},
+      </if>
+      <if test="jintie != null" >
+        #{jintie,jdbcType=DECIMAL},
+      </if>
+      <if test="xingbie != null" >
+        #{xingbie,jdbcType=DECIMAL},
+      </if>
+      <if test="beianshijian != null" >
+        #{beianshijian,jdbcType=TIMESTAMP},
+      </if>
+      <if test="baochoushiyou != null" >
+        #{baochoushiyou,jdbcType=VARCHAR},
+      </if>
+      <if test="ifdang != null" >
+        #{ifdang,jdbcType=VARCHAR},
+      </if>
+      <if test="iftuili != null" >
+        #{iftuili,jdbcType=DECIMAL},
+      </if>
+      <if test="zhengzhimianmao != null" >
+        #{zhengzhimianmao,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.LsCircsExample" resultType="java.lang.Integer" >
+    select count(*) from MJZZ_USER.LS_CIRCS
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update MJZZ_USER.LS_CIRCS
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=DECIMAL},
+      </if>
+      <if test="record.instanceid != null" >
+        INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organizationid != null" >
+        ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=DECIMAL},
+      </if>
+      <if test="record.masterid != null" >
+        MASTERID = #{record.masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xuhao != null" >
+        XUHAO = #{record.xuhao,jdbcType=VARCHAR},
+      </if>
+      <if test="record.xingming != null" >
+        XINGMING = #{record.xingming,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shengri != null" >
+        SHENGRI = #{record.shengri,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.huiyicishu != null" >
+        HUIYICISHU = #{record.huiyicishu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zi != null" >
+        ZI = #{record.zi,jdbcType=VARCHAR},
+      </if>
+      <if test="record.zhi != null" >
+        ZHI = #{record.zhi,jdbcType=VARCHAR},
+      </if>
+      <if test="record.jintie != null" >
+        JINTIE = #{record.jintie,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xingbie != null" >
+        XINGBIE = #{record.xingbie,jdbcType=DECIMAL},
+      </if>
+      <if test="record.beianshijian != null" >
+        BEIANSHIJIAN = #{record.beianshijian,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.baochoushiyou != null" >
+        BAOCHOUSHIYOU = #{record.baochoushiyou,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ifdang != null" >
+        IFDANG = #{record.ifdang,jdbcType=VARCHAR},
+      </if>
+      <if test="record.iftuili != null" >
+        IFTUILI = #{record.iftuili,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhengzhimianmao != null" >
+        ZHENGZHIMIANMAO = #{record.zhengzhimianmao,jdbcType=DECIMAL},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update MJZZ_USER.LS_CIRCS
+    set ID = #{record.id,jdbcType=DECIMAL},
+      INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=DECIMAL},
+      MASTERID = #{record.masterid,jdbcType=DECIMAL},
+      XUHAO = #{record.xuhao,jdbcType=VARCHAR},
+      XINGMING = #{record.xingming,jdbcType=VARCHAR},
+      SHENGRI = #{record.shengri,jdbcType=TIMESTAMP},
+      HUIYICISHU = #{record.huiyicishu,jdbcType=DECIMAL},
+      ZI = #{record.zi,jdbcType=VARCHAR},
+      ZHI = #{record.zhi,jdbcType=VARCHAR},
+      JINTIE = #{record.jintie,jdbcType=DECIMAL},
+      XINGBIE = #{record.xingbie,jdbcType=DECIMAL},
+      BEIANSHIJIAN = #{record.beianshijian,jdbcType=TIMESTAMP},
+      BAOCHOUSHIYOU = #{record.baochoushiyou,jdbcType=VARCHAR},
+      IFDANG = #{record.ifdang,jdbcType=VARCHAR},
+      IFTUILI = #{record.iftuili,jdbcType=DECIMAL},
+      ZHENGZHIMIANMAO = #{record.zhengzhimianmao,jdbcType=DECIMAL}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.LsCircs" >
+    update MJZZ_USER.LS_CIRCS
+    <set >
+      <if test="instanceid != null" >
+        INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="masterid != null" >
+        MASTERID = #{masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="xuhao != null" >
+        XUHAO = #{xuhao,jdbcType=VARCHAR},
+      </if>
+      <if test="xingming != null" >
+        XINGMING = #{xingming,jdbcType=VARCHAR},
+      </if>
+      <if test="shengri != null" >
+        SHENGRI = #{shengri,jdbcType=TIMESTAMP},
+      </if>
+      <if test="huiyicishu != null" >
+        HUIYICISHU = #{huiyicishu,jdbcType=DECIMAL},
+      </if>
+      <if test="zi != null" >
+        ZI = #{zi,jdbcType=VARCHAR},
+      </if>
+      <if test="zhi != null" >
+        ZHI = #{zhi,jdbcType=VARCHAR},
+      </if>
+      <if test="jintie != null" >
+        JINTIE = #{jintie,jdbcType=DECIMAL},
+      </if>
+      <if test="xingbie != null" >
+        XINGBIE = #{xingbie,jdbcType=DECIMAL},
+      </if>
+      <if test="beianshijian != null" >
+        BEIANSHIJIAN = #{beianshijian,jdbcType=TIMESTAMP},
+      </if>
+      <if test="baochoushiyou != null" >
+        BAOCHOUSHIYOU = #{baochoushiyou,jdbcType=VARCHAR},
+      </if>
+      <if test="ifdang != null" >
+        IFDANG = #{ifdang,jdbcType=VARCHAR},
+      </if>
+      <if test="iftuili != null" >
+        IFTUILI = #{iftuili,jdbcType=DECIMAL},
+      </if>
+      <if test="zhengzhimianmao != null" >
+        ZHENGZHIMIANMAO = #{zhengzhimianmao,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xgb.model.LsCircs" >
+    update MJZZ_USER.LS_CIRCS
+    set INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=DECIMAL},
+      MASTERID = #{masterid,jdbcType=DECIMAL},
+      XUHAO = #{xuhao,jdbcType=VARCHAR},
+      XINGMING = #{xingming,jdbcType=VARCHAR},
+      SHENGRI = #{shengri,jdbcType=TIMESTAMP},
+      HUIYICISHU = #{huiyicishu,jdbcType=DECIMAL},
+      ZI = #{zi,jdbcType=VARCHAR},
+      ZHI = #{zhi,jdbcType=VARCHAR},
+      JINTIE = #{jintie,jdbcType=DECIMAL},
+      XINGBIE = #{xingbie,jdbcType=DECIMAL},
+      BEIANSHIJIAN = #{beianshijian,jdbcType=TIMESTAMP},
+      BAOCHOUSHIYOU = #{baochoushiyou,jdbcType=VARCHAR},
+      IFDANG = #{ifdang,jdbcType=VARCHAR},
+      IFTUILI = #{iftuili,jdbcType=DECIMAL},
+      ZHENGZHIMIANMAO = #{zhengzhimianmao,jdbcType=DECIMAL}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>

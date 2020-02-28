@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.JjhNianjianDangjmesMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.JjhNianjianDangjmes" >
+    <constructor >
+      <idArg column="ID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="INSTANCEID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORGANIZATIONID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATUS" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="ISJIANDANG" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="DANGMINGCHENG" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DANGTYPE" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="SJDANGMINGCHENG" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DANGRENSHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="DANGSHUJIXINGMING" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SUOZAIZHIWU" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ISZHILI" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="DANGJIANLXR" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="DJLXRZHIWU" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="IPHONE" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="CHANGSUO" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="JINGFEISHUE" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="JINGFEILAIYUAN" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="DANGYUANDAHUISHU" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="ZHIWEIHUISHU" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="XIAOZUHUISHU" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="DANGKESHU" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="ISGONGHUI" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="ISTUANZUZHI" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="ISFULIAN" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="HUODONGCISHU" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="ZONGRENSHU" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="ISGONGHUI1" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="ISTUANZUZHI1" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="ISFULIAN1" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="HUODONGCISHU1" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="LLYXINGMING" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="LLYIPHONE_0" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="PAICHUDANWEI" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="HUIYUAN" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="LISHIHUI" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="CWLISHIHUI" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="BANGONGHUI" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="LLYIPHONE" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, INSTANCEID, ORGANIZATIONID, STATUS, ISJIANDANG, DANGMINGCHENG, DANGTYPE, SJDANGMINGCHENG, 
+    DANGRENSHU, DANGSHUJIXINGMING, SUOZAIZHIWU, ISZHILI, DANGJIANLXR, DJLXRZHIWU, IPHONE, 
+    CHANGSUO, JINGFEISHUE, JINGFEILAIYUAN, DANGYUANDAHUISHU, ZHIWEIHUISHU, XIAOZUHUISHU, 
+    DANGKESHU, ISGONGHUI, ISTUANZUZHI, ISFULIAN, HUODONGCISHU, ZONGRENSHU, ISGONGHUI1, 
+    ISTUANZUZHI1, ISFULIAN1, HUODONGCISHU1, LLYXINGMING, LLYIPHONE_0, PAICHUDANWEI, HUIYUAN, 
+    LISHIHUI, CWLISHIHUI, BANGONGHUI, LLYIPHONE
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.JjhNianjianDangjmesExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from MJZZ_USER.JJH_NIANJIAN_DANGJMES
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from MJZZ_USER.JJH_NIANJIAN_DANGJMES
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from MJZZ_USER.JJH_NIANJIAN_DANGJMES
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xgb.model.JjhNianjianDangjmesExample" >
+    delete from MJZZ_USER.JJH_NIANJIAN_DANGJMES
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.JjhNianjianDangjmes" >
+    insert into JJH_NIANJIAN_DANGJMES (ID, INSTANCEID, ORGANIZATIONID, 
+      STATUS, ISJIANDANG, DANGMINGCHENG, 
+      DANGTYPE, SJDANGMINGCHENG, DANGRENSHU, 
+      DANGSHUJIXINGMING, SUOZAIZHIWU, ISZHILI, 
+      DANGJIANLXR, DJLXRZHIWU, IPHONE, 
+      CHANGSUO, JINGFEISHUE, JINGFEILAIYUAN, 
+      DANGYUANDAHUISHU, ZHIWEIHUISHU, XIAOZUHUISHU, 
+      DANGKESHU, ISGONGHUI, ISTUANZUZHI, 
+      ISFULIAN, HUODONGCISHU, ZONGRENSHU, 
+      ISGONGHUI1, ISTUANZUZHI1, ISFULIAN1, 
+      HUODONGCISHU1, LLYXINGMING, LLYIPHONE_0, 
+      PAICHUDANWEI, HUIYUAN, LISHIHUI, 
+      CWLISHIHUI, BANGONGHUI, LLYIPHONE
+      )
+    values (#{id,jdbcType=DECIMAL}, #{instanceid,jdbcType=VARCHAR}, #{organizationid,jdbcType=VARCHAR}, 
+      #{status,jdbcType=DECIMAL}, #{isjiandang,jdbcType=DECIMAL}, #{dangmingcheng,jdbcType=VARCHAR}, 
+      #{dangtype,jdbcType=DECIMAL}, #{sjdangmingcheng,jdbcType=VARCHAR}, #{dangrenshu,jdbcType=DECIMAL}, 
+      #{dangshujixingming,jdbcType=VARCHAR}, #{suozaizhiwu,jdbcType=VARCHAR}, #{iszhili,jdbcType=DECIMAL}, 
+      #{dangjianlxr,jdbcType=VARCHAR}, #{djlxrzhiwu,jdbcType=VARCHAR}, #{iphone,jdbcType=DECIMAL}, 
+      #{changsuo,jdbcType=DECIMAL}, #{jingfeishue,jdbcType=DECIMAL}, #{jingfeilaiyuan,jdbcType=DECIMAL}, 
+      #{dangyuandahuishu,jdbcType=DECIMAL}, #{zhiweihuishu,jdbcType=DECIMAL}, #{xiaozuhuishu,jdbcType=DECIMAL}, 
+      #{dangkeshu,jdbcType=DECIMAL}, #{isgonghui,jdbcType=DECIMAL}, #{istuanzuzhi,jdbcType=DECIMAL}, 
+      #{isfulian,jdbcType=DECIMAL}, #{huodongcishu,jdbcType=DECIMAL}, #{zongrenshu,jdbcType=DECIMAL}, 
+      #{isgonghui1,jdbcType=DECIMAL}, #{istuanzuzhi1,jdbcType=DECIMAL}, #{isfulian1,jdbcType=DECIMAL}, 
+      #{huodongcishu1,jdbcType=DECIMAL}, #{llyxingming,jdbcType=VARCHAR}, #{llyiphone0,jdbcType=DECIMAL}, 
+      #{paichudanwei,jdbcType=VARCHAR}, #{huiyuan,jdbcType=OTHER}, #{lishihui,jdbcType=OTHER}, 
+      #{cwlishihui,jdbcType=OTHER}, #{bangonghui,jdbcType=OTHER}, #{llyiphone,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.JjhNianjianDangjmes" >
+    insert into JJH_NIANJIAN_DANGJMES
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="instanceid != null" >
+        INSTANCEID,
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="isjiandang != null" >
+        ISJIANDANG,
+      </if>
+      <if test="dangmingcheng != null" >
+        DANGMINGCHENG,
+      </if>
+      <if test="dangtype != null" >
+        DANGTYPE,
+      </if>
+      <if test="sjdangmingcheng != null" >
+        SJDANGMINGCHENG,
+      </if>
+      <if test="dangrenshu != null" >
+        DANGRENSHU,
+      </if>
+      <if test="dangshujixingming != null" >
+        DANGSHUJIXINGMING,
+      </if>
+      <if test="suozaizhiwu != null" >
+        SUOZAIZHIWU,
+      </if>
+      <if test="iszhili != null" >
+        ISZHILI,
+      </if>
+      <if test="dangjianlxr != null" >
+        DANGJIANLXR,
+      </if>
+      <if test="djlxrzhiwu != null" >
+        DJLXRZHIWU,
+      </if>
+      <if test="iphone != null" >
+        IPHONE,
+      </if>
+      <if test="changsuo != null" >
+        CHANGSUO,
+      </if>
+      <if test="jingfeishue != null" >
+        JINGFEISHUE,
+      </if>
+      <if test="jingfeilaiyuan != null" >
+        JINGFEILAIYUAN,
+      </if>
+      <if test="dangyuandahuishu != null" >
+        DANGYUANDAHUISHU,
+      </if>
+      <if test="zhiweihuishu != null" >
+        ZHIWEIHUISHU,
+      </if>
+      <if test="xiaozuhuishu != null" >
+        XIAOZUHUISHU,
+      </if>
+      <if test="dangkeshu != null" >
+        DANGKESHU,
+      </if>
+      <if test="isgonghui != null" >
+        ISGONGHUI,
+      </if>
+      <if test="istuanzuzhi != null" >
+        ISTUANZUZHI,
+      </if>
+      <if test="isfulian != null" >
+        ISFULIAN,
+      </if>
+      <if test="huodongcishu != null" >
+        HUODONGCISHU,
+      </if>
+      <if test="zongrenshu != null" >
+        ZONGRENSHU,
+      </if>
+      <if test="isgonghui1 != null" >
+        ISGONGHUI1,
+      </if>
+      <if test="istuanzuzhi1 != null" >
+        ISTUANZUZHI1,
+      </if>
+      <if test="isfulian1 != null" >
+        ISFULIAN1,
+      </if>
+      <if test="huodongcishu1 != null" >
+        HUODONGCISHU1,
+      </if>
+      <if test="llyxingming != null" >
+        LLYXINGMING,
+      </if>
+      <if test="llyiphone0 != null" >
+        LLYIPHONE_0,
+      </if>
+      <if test="paichudanwei != null" >
+        PAICHUDANWEI,
+      </if>
+      <if test="huiyuan != null" >
+        HUIYUAN,
+      </if>
+      <if test="lishihui != null" >
+        LISHIHUI,
+      </if>
+      <if test="cwlishihui != null" >
+        CWLISHIHUI,
+      </if>
+      <if test="bangonghui != null" >
+        BANGONGHUI,
+      </if>
+      <if test="llyiphone != null" >
+        LLYIPHONE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="instanceid != null" >
+        #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="isjiandang != null" >
+        #{isjiandang,jdbcType=DECIMAL},
+      </if>
+      <if test="dangmingcheng != null" >
+        #{dangmingcheng,jdbcType=VARCHAR},
+      </if>
+      <if test="dangtype != null" >
+        #{dangtype,jdbcType=DECIMAL},
+      </if>
+      <if test="sjdangmingcheng != null" >
+        #{sjdangmingcheng,jdbcType=VARCHAR},
+      </if>
+      <if test="dangrenshu != null" >
+        #{dangrenshu,jdbcType=DECIMAL},
+      </if>
+      <if test="dangshujixingming != null" >
+        #{dangshujixingming,jdbcType=VARCHAR},
+      </if>
+      <if test="suozaizhiwu != null" >
+        #{suozaizhiwu,jdbcType=VARCHAR},
+      </if>
+      <if test="iszhili != null" >
+        #{iszhili,jdbcType=DECIMAL},
+      </if>
+      <if test="dangjianlxr != null" >
+        #{dangjianlxr,jdbcType=VARCHAR},
+      </if>
+      <if test="djlxrzhiwu != null" >
+        #{djlxrzhiwu,jdbcType=VARCHAR},
+      </if>
+      <if test="iphone != null" >
+        #{iphone,jdbcType=DECIMAL},
+      </if>
+      <if test="changsuo != null" >
+        #{changsuo,jdbcType=DECIMAL},
+      </if>
+      <if test="jingfeishue != null" >
+        #{jingfeishue,jdbcType=DECIMAL},
+      </if>
+      <if test="jingfeilaiyuan != null" >
+        #{jingfeilaiyuan,jdbcType=DECIMAL},
+      </if>
+      <if test="dangyuandahuishu != null" >
+        #{dangyuandahuishu,jdbcType=DECIMAL},
+      </if>
+      <if test="zhiweihuishu != null" >
+        #{zhiweihuishu,jdbcType=DECIMAL},
+      </if>
+      <if test="xiaozuhuishu != null" >
+        #{xiaozuhuishu,jdbcType=DECIMAL},
+      </if>
+      <if test="dangkeshu != null" >
+        #{dangkeshu,jdbcType=DECIMAL},
+      </if>
+      <if test="isgonghui != null" >
+        #{isgonghui,jdbcType=DECIMAL},
+      </if>
+      <if test="istuanzuzhi != null" >
+        #{istuanzuzhi,jdbcType=DECIMAL},
+      </if>
+      <if test="isfulian != null" >
+        #{isfulian,jdbcType=DECIMAL},
+      </if>
+      <if test="huodongcishu != null" >
+        #{huodongcishu,jdbcType=DECIMAL},
+      </if>
+      <if test="zongrenshu != null" >
+        #{zongrenshu,jdbcType=DECIMAL},
+      </if>
+      <if test="isgonghui1 != null" >
+        #{isgonghui1,jdbcType=DECIMAL},
+      </if>
+      <if test="istuanzuzhi1 != null" >
+        #{istuanzuzhi1,jdbcType=DECIMAL},
+      </if>
+      <if test="isfulian1 != null" >
+        #{isfulian1,jdbcType=DECIMAL},
+      </if>
+      <if test="huodongcishu1 != null" >
+        #{huodongcishu1,jdbcType=DECIMAL},
+      </if>
+      <if test="llyxingming != null" >
+        #{llyxingming,jdbcType=VARCHAR},
+      </if>
+      <if test="llyiphone0 != null" >
+        #{llyiphone0,jdbcType=DECIMAL},
+      </if>
+      <if test="paichudanwei != null" >
+        #{paichudanwei,jdbcType=VARCHAR},
+      </if>
+      <if test="huiyuan != null" >
+        #{huiyuan,jdbcType=OTHER},
+      </if>
+      <if test="lishihui != null" >
+        #{lishihui,jdbcType=OTHER},
+      </if>
+      <if test="cwlishihui != null" >
+        #{cwlishihui,jdbcType=OTHER},
+      </if>
+      <if test="bangonghui != null" >
+        #{bangonghui,jdbcType=OTHER},
+      </if>
+      <if test="llyiphone != null" >
+        #{llyiphone,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.JjhNianjianDangjmesExample" resultType="java.lang.Integer" >
+    select count(*) from MJZZ_USER.JJH_NIANJIAN_DANGJMES
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update JJH_NIANJIAN_DANGJMES
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=DECIMAL},
+      </if>
+      <if test="record.instanceid != null" >
+        INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organizationid != null" >
+        ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=DECIMAL},
+      </if>
+      <if test="record.isjiandang != null" >
+        ISJIANDANG = #{record.isjiandang,jdbcType=DECIMAL},
+      </if>
+      <if test="record.dangmingcheng != null" >
+        DANGMINGCHENG = #{record.dangmingcheng,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dangtype != null" >
+        DANGTYPE = #{record.dangtype,jdbcType=DECIMAL},
+      </if>
+      <if test="record.sjdangmingcheng != null" >
+        SJDANGMINGCHENG = #{record.sjdangmingcheng,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dangrenshu != null" >
+        DANGRENSHU = #{record.dangrenshu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.dangshujixingming != null" >
+        DANGSHUJIXINGMING = #{record.dangshujixingming,jdbcType=VARCHAR},
+      </if>
+      <if test="record.suozaizhiwu != null" >
+        SUOZAIZHIWU = #{record.suozaizhiwu,jdbcType=VARCHAR},
+      </if>
+      <if test="record.iszhili != null" >
+        ISZHILI = #{record.iszhili,jdbcType=DECIMAL},
+      </if>
+      <if test="record.dangjianlxr != null" >
+        DANGJIANLXR = #{record.dangjianlxr,jdbcType=VARCHAR},
+      </if>
+      <if test="record.djlxrzhiwu != null" >
+        DJLXRZHIWU = #{record.djlxrzhiwu,jdbcType=VARCHAR},
+      </if>
+      <if test="record.iphone != null" >
+        IPHONE = #{record.iphone,jdbcType=DECIMAL},
+      </if>
+      <if test="record.changsuo != null" >
+        CHANGSUO = #{record.changsuo,jdbcType=DECIMAL},
+      </if>
+      <if test="record.jingfeishue != null" >
+        JINGFEISHUE = #{record.jingfeishue,jdbcType=DECIMAL},
+      </if>
+      <if test="record.jingfeilaiyuan != null" >
+        JINGFEILAIYUAN = #{record.jingfeilaiyuan,jdbcType=DECIMAL},
+      </if>
+      <if test="record.dangyuandahuishu != null" >
+        DANGYUANDAHUISHU = #{record.dangyuandahuishu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhiweihuishu != null" >
+        ZHIWEIHUISHU = #{record.zhiweihuishu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xiaozuhuishu != null" >
+        XIAOZUHUISHU = #{record.xiaozuhuishu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.dangkeshu != null" >
+        DANGKESHU = #{record.dangkeshu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.isgonghui != null" >
+        ISGONGHUI = #{record.isgonghui,jdbcType=DECIMAL},
+      </if>
+      <if test="record.istuanzuzhi != null" >
+        ISTUANZUZHI = #{record.istuanzuzhi,jdbcType=DECIMAL},
+      </if>
+      <if test="record.isfulian != null" >
+        ISFULIAN = #{record.isfulian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.huodongcishu != null" >
+        HUODONGCISHU = #{record.huodongcishu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zongrenshu != null" >
+        ZONGRENSHU = #{record.zongrenshu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.isgonghui1 != null" >
+        ISGONGHUI1 = #{record.isgonghui1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.istuanzuzhi1 != null" >
+        ISTUANZUZHI1 = #{record.istuanzuzhi1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.isfulian1 != null" >
+        ISFULIAN1 = #{record.isfulian1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.huodongcishu1 != null" >
+        HUODONGCISHU1 = #{record.huodongcishu1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.llyxingming != null" >
+        LLYXINGMING = #{record.llyxingming,jdbcType=VARCHAR},
+      </if>
+      <if test="record.llyiphone0 != null" >
+        LLYIPHONE_0 = #{record.llyiphone0,jdbcType=DECIMAL},
+      </if>
+      <if test="record.paichudanwei != null" >
+        PAICHUDANWEI = #{record.paichudanwei,jdbcType=VARCHAR},
+      </if>
+      <if test="record.huiyuan != null" >
+        HUIYUAN = #{record.huiyuan,jdbcType=OTHER},
+      </if>
+      <if test="record.lishihui != null" >
+        LISHIHUI = #{record.lishihui,jdbcType=OTHER},
+      </if>
+      <if test="record.cwlishihui != null" >
+        CWLISHIHUI = #{record.cwlishihui,jdbcType=OTHER},
+      </if>
+      <if test="record.bangonghui != null" >
+        BANGONGHUI = #{record.bangonghui,jdbcType=OTHER},
+      </if>
+      <if test="record.llyiphone != null" >
+        LLYIPHONE = #{record.llyiphone,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update JJH_NIANJIAN_DANGJMES
+    set ID = #{record.id,jdbcType=DECIMAL},
+      INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=DECIMAL},
+      ISJIANDANG = #{record.isjiandang,jdbcType=DECIMAL},
+      DANGMINGCHENG = #{record.dangmingcheng,jdbcType=VARCHAR},
+      DANGTYPE = #{record.dangtype,jdbcType=DECIMAL},
+      SJDANGMINGCHENG = #{record.sjdangmingcheng,jdbcType=VARCHAR},
+      DANGRENSHU = #{record.dangrenshu,jdbcType=DECIMAL},
+      DANGSHUJIXINGMING = #{record.dangshujixingming,jdbcType=VARCHAR},
+      SUOZAIZHIWU = #{record.suozaizhiwu,jdbcType=VARCHAR},
+      ISZHILI = #{record.iszhili,jdbcType=DECIMAL},
+      DANGJIANLXR = #{record.dangjianlxr,jdbcType=VARCHAR},
+      DJLXRZHIWU = #{record.djlxrzhiwu,jdbcType=VARCHAR},
+      IPHONE = #{record.iphone,jdbcType=DECIMAL},
+      CHANGSUO = #{record.changsuo,jdbcType=DECIMAL},
+      JINGFEISHUE = #{record.jingfeishue,jdbcType=DECIMAL},
+      JINGFEILAIYUAN = #{record.jingfeilaiyuan,jdbcType=DECIMAL},
+      DANGYUANDAHUISHU = #{record.dangyuandahuishu,jdbcType=DECIMAL},
+      ZHIWEIHUISHU = #{record.zhiweihuishu,jdbcType=DECIMAL},
+      XIAOZUHUISHU = #{record.xiaozuhuishu,jdbcType=DECIMAL},
+      DANGKESHU = #{record.dangkeshu,jdbcType=DECIMAL},
+      ISGONGHUI = #{record.isgonghui,jdbcType=DECIMAL},
+      ISTUANZUZHI = #{record.istuanzuzhi,jdbcType=DECIMAL},
+      ISFULIAN = #{record.isfulian,jdbcType=DECIMAL},
+      HUODONGCISHU = #{record.huodongcishu,jdbcType=DECIMAL},
+      ZONGRENSHU = #{record.zongrenshu,jdbcType=DECIMAL},
+      ISGONGHUI1 = #{record.isgonghui1,jdbcType=DECIMAL},
+      ISTUANZUZHI1 = #{record.istuanzuzhi1,jdbcType=DECIMAL},
+      ISFULIAN1 = #{record.isfulian1,jdbcType=DECIMAL},
+      HUODONGCISHU1 = #{record.huodongcishu1,jdbcType=DECIMAL},
+      LLYXINGMING = #{record.llyxingming,jdbcType=VARCHAR},
+      LLYIPHONE_0 = #{record.llyiphone0,jdbcType=DECIMAL},
+      PAICHUDANWEI = #{record.paichudanwei,jdbcType=VARCHAR},
+      HUIYUAN = #{record.huiyuan,jdbcType=OTHER},
+      LISHIHUI = #{record.lishihui,jdbcType=OTHER},
+      CWLISHIHUI = #{record.cwlishihui,jdbcType=OTHER},
+      BANGONGHUI = #{record.bangonghui,jdbcType=OTHER},
+      LLYIPHONE = #{record.llyiphone,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.JjhNianjianDangjmes" >
+    update JJH_NIANJIAN_DANGJMES
+    <set >
+      <if test="instanceid != null" >
+        INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="isjiandang != null" >
+        ISJIANDANG = #{isjiandang,jdbcType=DECIMAL},
+      </if>
+      <if test="dangmingcheng != null" >
+        DANGMINGCHENG = #{dangmingcheng,jdbcType=VARCHAR},
+      </if>
+      <if test="dangtype != null" >
+        DANGTYPE = #{dangtype,jdbcType=DECIMAL},
+      </if>
+      <if test="sjdangmingcheng != null" >
+        SJDANGMINGCHENG = #{sjdangmingcheng,jdbcType=VARCHAR},
+      </if>
+      <if test="dangrenshu != null" >
+        DANGRENSHU = #{dangrenshu,jdbcType=DECIMAL},
+      </if>
+      <if test="dangshujixingming != null" >
+        DANGSHUJIXINGMING = #{dangshujixingming,jdbcType=VARCHAR},
+      </if>
+      <if test="suozaizhiwu != null" >
+        SUOZAIZHIWU = #{suozaizhiwu,jdbcType=VARCHAR},
+      </if>
+      <if test="iszhili != null" >
+        ISZHILI = #{iszhili,jdbcType=DECIMAL},
+      </if>
+      <if test="dangjianlxr != null" >
+        DANGJIANLXR = #{dangjianlxr,jdbcType=VARCHAR},
+      </if>
+      <if test="djlxrzhiwu != null" >
+        DJLXRZHIWU = #{djlxrzhiwu,jdbcType=VARCHAR},
+      </if>
+      <if test="iphone != null" >
+        IPHONE = #{iphone,jdbcType=DECIMAL},
+      </if>
+      <if test="changsuo != null" >
+        CHANGSUO = #{changsuo,jdbcType=DECIMAL},
+      </if>
+      <if test="jingfeishue != null" >
+        JINGFEISHUE = #{jingfeishue,jdbcType=DECIMAL},
+      </if>
+      <if test="jingfeilaiyuan != null" >
+        JINGFEILAIYUAN = #{jingfeilaiyuan,jdbcType=DECIMAL},
+      </if>
+      <if test="dangyuandahuishu != null" >
+        DANGYUANDAHUISHU = #{dangyuandahuishu,jdbcType=DECIMAL},
+      </if>
+      <if test="zhiweihuishu != null" >
+        ZHIWEIHUISHU = #{zhiweihuishu,jdbcType=DECIMAL},
+      </if>
+      <if test="xiaozuhuishu != null" >
+        XIAOZUHUISHU = #{xiaozuhuishu,jdbcType=DECIMAL},
+      </if>
+      <if test="dangkeshu != null" >
+        DANGKESHU = #{dangkeshu,jdbcType=DECIMAL},
+      </if>
+      <if test="isgonghui != null" >
+        ISGONGHUI = #{isgonghui,jdbcType=DECIMAL},
+      </if>
+      <if test="istuanzuzhi != null" >
+        ISTUANZUZHI = #{istuanzuzhi,jdbcType=DECIMAL},
+      </if>
+      <if test="isfulian != null" >
+        ISFULIAN = #{isfulian,jdbcType=DECIMAL},
+      </if>
+      <if test="huodongcishu != null" >
+        HUODONGCISHU = #{huodongcishu,jdbcType=DECIMAL},
+      </if>
+      <if test="zongrenshu != null" >
+        ZONGRENSHU = #{zongrenshu,jdbcType=DECIMAL},
+      </if>
+      <if test="isgonghui1 != null" >
+        ISGONGHUI1 = #{isgonghui1,jdbcType=DECIMAL},
+      </if>
+      <if test="istuanzuzhi1 != null" >
+        ISTUANZUZHI1 = #{istuanzuzhi1,jdbcType=DECIMAL},
+      </if>
+      <if test="isfulian1 != null" >
+        ISFULIAN1 = #{isfulian1,jdbcType=DECIMAL},
+      </if>
+      <if test="huodongcishu1 != null" >
+        HUODONGCISHU1 = #{huodongcishu1,jdbcType=DECIMAL},
+      </if>
+      <if test="llyxingming != null" >
+        LLYXINGMING = #{llyxingming,jdbcType=VARCHAR},
+      </if>
+      <if test="llyiphone0 != null" >
+        LLYIPHONE_0 = #{llyiphone0,jdbcType=DECIMAL},
+      </if>
+      <if test="paichudanwei != null" >
+        PAICHUDANWEI = #{paichudanwei,jdbcType=VARCHAR},
+      </if>
+      <if test="huiyuan != null" >
+        HUIYUAN = #{huiyuan,jdbcType=OTHER},
+      </if>
+      <if test="lishihui != null" >
+        LISHIHUI = #{lishihui,jdbcType=OTHER},
+      </if>
+      <if test="cwlishihui != null" >
+        CWLISHIHUI = #{cwlishihui,jdbcType=OTHER},
+      </if>
+      <if test="bangonghui != null" >
+        BANGONGHUI = #{bangonghui,jdbcType=OTHER},
+      </if>
+      <if test="llyiphone != null" >
+        LLYIPHONE = #{llyiphone,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xgb.model.JjhNianjianDangjmes" >
+    update JJH_NIANJIAN_DANGJMES
+    set INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=DECIMAL},
+      ISJIANDANG = #{isjiandang,jdbcType=DECIMAL},
+      DANGMINGCHENG = #{dangmingcheng,jdbcType=VARCHAR},
+      DANGTYPE = #{dangtype,jdbcType=DECIMAL},
+      SJDANGMINGCHENG = #{sjdangmingcheng,jdbcType=VARCHAR},
+      DANGRENSHU = #{dangrenshu,jdbcType=DECIMAL},
+      DANGSHUJIXINGMING = #{dangshujixingming,jdbcType=VARCHAR},
+      SUOZAIZHIWU = #{suozaizhiwu,jdbcType=VARCHAR},
+      ISZHILI = #{iszhili,jdbcType=DECIMAL},
+      DANGJIANLXR = #{dangjianlxr,jdbcType=VARCHAR},
+      DJLXRZHIWU = #{djlxrzhiwu,jdbcType=VARCHAR},
+      IPHONE = #{iphone,jdbcType=DECIMAL},
+      CHANGSUO = #{changsuo,jdbcType=DECIMAL},
+      JINGFEISHUE = #{jingfeishue,jdbcType=DECIMAL},
+      JINGFEILAIYUAN = #{jingfeilaiyuan,jdbcType=DECIMAL},
+      DANGYUANDAHUISHU = #{dangyuandahuishu,jdbcType=DECIMAL},
+      ZHIWEIHUISHU = #{zhiweihuishu,jdbcType=DECIMAL},
+      XIAOZUHUISHU = #{xiaozuhuishu,jdbcType=DECIMAL},
+      DANGKESHU = #{dangkeshu,jdbcType=DECIMAL},
+      ISGONGHUI = #{isgonghui,jdbcType=DECIMAL},
+      ISTUANZUZHI = #{istuanzuzhi,jdbcType=DECIMAL},
+      ISFULIAN = #{isfulian,jdbcType=DECIMAL},
+      HUODONGCISHU = #{huodongcishu,jdbcType=DECIMAL},
+      ZONGRENSHU = #{zongrenshu,jdbcType=DECIMAL},
+      ISGONGHUI1 = #{isgonghui1,jdbcType=DECIMAL},
+      ISTUANZUZHI1 = #{istuanzuzhi1,jdbcType=DECIMAL},
+      ISFULIAN1 = #{isfulian1,jdbcType=DECIMAL},
+      HUODONGCISHU1 = #{huodongcishu1,jdbcType=DECIMAL},
+      LLYXINGMING = #{llyxingming,jdbcType=VARCHAR},
+      LLYIPHONE_0 = #{llyiphone0,jdbcType=DECIMAL},
+      PAICHUDANWEI = #{paichudanwei,jdbcType=VARCHAR},
+      HUIYUAN = #{huiyuan,jdbcType=OTHER},
+      LISHIHUI = #{lishihui,jdbcType=OTHER},
+      CWLISHIHUI = #{cwlishihui,jdbcType=OTHER},
+      BANGONGHUI = #{bangonghui,jdbcType=OTHER},
+      LLYIPHONE = #{llyiphone,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>

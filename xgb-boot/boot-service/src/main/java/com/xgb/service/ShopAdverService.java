@@ -2,14 +2,13 @@ package com.xgb.service;
 
 import com.xgb.model.ShopAdver;
 import com.xgb.model.ShopAdverExample;
-import com.xgb.dao.ShopAdverMapper;
+import com.xgb.dao1.ShopAdverMapper;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
-import org.apache.ibatis.annotations.Param;
 
 /**
 * @Auther: xgb

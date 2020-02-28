@@ -11,6 +11,12 @@ public class test {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         int weekYear = calendar.getWeekYear();
+
+
+
+
+
+
         System.out.println(weekYear);
     }
 }

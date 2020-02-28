@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.JjhnjYewhddaejzpageSubMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.JjhnjYewhddaejzpageSub" >
+    <constructor >
+      <idArg column="ID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="INSTANCEID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORGANIZATIONID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATUS" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="MASTERID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="JUANZENGREN" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="BENNIANJUANZENGE" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="YONGTU" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="JUANKUAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="JUANKUANYONGTU" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="JUANWU" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="JUANWUYONGTU" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, INSTANCEID, ORGANIZATIONID, STATUS, MASTERID, JUANZENGREN, BENNIANJUANZENGE, 
+    YONGTU, JUANKUAN, JUANKUANYONGTU, JUANWU, JUANWUYONGTU
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.JjhnjYewhddaejzpageSubExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from MJZZ_USER.JJHNJ_YEWHDDAEJZPAGE_SUB
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from MJZZ_USER.JJHNJ_YEWHDDAEJZPAGE_SUB
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from MJZZ_USER.JJHNJ_YEWHDDAEJZPAGE_SUB
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xgb.model.JjhnjYewhddaejzpageSubExample" >
+    delete from MJZZ_USER.JJHNJ_YEWHDDAEJZPAGE_SUB
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.JjhnjYewhddaejzpageSub" >
+    insert into JJHNJ_YEWHDDAEJZPAGE_SUB (ID, INSTANCEID, ORGANIZATIONID, 
+      STATUS, MASTERID, JUANZENGREN, 
+      BENNIANJUANZENGE, YONGTU, JUANKUAN, 
+      JUANKUANYONGTU, JUANWU, JUANWUYONGTU
+      )
+    values (#{id,jdbcType=DECIMAL}, #{instanceid,jdbcType=VARCHAR}, #{organizationid,jdbcType=VARCHAR}, 
+      #{status,jdbcType=DECIMAL}, #{masterid,jdbcType=DECIMAL}, #{juanzengren,jdbcType=VARCHAR}, 
+      #{bennianjuanzenge,jdbcType=VARCHAR}, #{yongtu,jdbcType=VARCHAR}, #{juankuan,jdbcType=DECIMAL}, 
+      #{juankuanyongtu,jdbcType=VARCHAR}, #{juanwu,jdbcType=DECIMAL}, #{juanwuyongtu,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.JjhnjYewhddaejzpageSub" >
+    insert into JJHNJ_YEWHDDAEJZPAGE_SUB
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="instanceid != null" >
+        INSTANCEID,
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="masterid != null" >
+        MASTERID,
+      </if>
+      <if test="juanzengren != null" >
+        JUANZENGREN,
+      </if>
+      <if test="bennianjuanzenge != null" >
+        BENNIANJUANZENGE,
+      </if>
+      <if test="yongtu != null" >
+        YONGTU,
+      </if>
+      <if test="juankuan != null" >
+        JUANKUAN,
+      </if>
+      <if test="juankuanyongtu != null" >
+        JUANKUANYONGTU,
+      </if>
+      <if test="juanwu != null" >
+        JUANWU,
+      </if>
+      <if test="juanwuyongtu != null" >
+        JUANWUYONGTU,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="instanceid != null" >
+        #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="masterid != null" >
+        #{masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="juanzengren != null" >
+        #{juanzengren,jdbcType=VARCHAR},
+      </if>
+      <if test="bennianjuanzenge != null" >
+        #{bennianjuanzenge,jdbcType=VARCHAR},
+      </if>
+      <if test="yongtu != null" >
+        #{yongtu,jdbcType=VARCHAR},
+      </if>
+      <if test="juankuan != null" >
+        #{juankuan,jdbcType=DECIMAL},
+      </if>
+      <if test="juankuanyongtu != null" >
+        #{juankuanyongtu,jdbcType=VARCHAR},
+      </if>
+      <if test="juanwu != null" >
+        #{juanwu,jdbcType=DECIMAL},
+      </if>
+      <if test="juanwuyongtu != null" >
+        #{juanwuyongtu,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.JjhnjYewhddaejzpageSubExample" resultType="java.lang.Integer" >
+    select count(*) from MJZZ_USER.JJHNJ_YEWHDDAEJZPAGE_SUB
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update JJHNJ_YEWHDDAEJZPAGE_SUB
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=DECIMAL},
+      </if>
+      <if test="record.instanceid != null" >
+        INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organizationid != null" >
+        ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=DECIMAL},
+      </if>
+      <if test="record.masterid != null" >
+        MASTERID = #{record.masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.juanzengren != null" >
+        JUANZENGREN = #{record.juanzengren,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bennianjuanzenge != null" >
+        BENNIANJUANZENGE = #{record.bennianjuanzenge,jdbcType=VARCHAR},
+      </if>
+      <if test="record.yongtu != null" >
+        YONGTU = #{record.yongtu,jdbcType=VARCHAR},
+      </if>
+      <if test="record.juankuan != null" >
+        JUANKUAN = #{record.juankuan,jdbcType=DECIMAL},
+      </if>
+      <if test="record.juankuanyongtu != null" >
+        JUANKUANYONGTU = #{record.juankuanyongtu,jdbcType=VARCHAR},
+      </if>
+      <if test="record.juanwu != null" >
+        JUANWU = #{record.juanwu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.juanwuyongtu != null" >
+        JUANWUYONGTU = #{record.juanwuyongtu,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update JJHNJ_YEWHDDAEJZPAGE_SUB
+    set ID = #{record.id,jdbcType=DECIMAL},
+      INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=DECIMAL},
+      MASTERID = #{record.masterid,jdbcType=DECIMAL},
+      JUANZENGREN = #{record.juanzengren,jdbcType=VARCHAR},
+      BENNIANJUANZENGE = #{record.bennianjuanzenge,jdbcType=VARCHAR},
+      YONGTU = #{record.yongtu,jdbcType=VARCHAR},
+      JUANKUAN = #{record.juankuan,jdbcType=DECIMAL},
+      JUANKUANYONGTU = #{record.juankuanyongtu,jdbcType=VARCHAR},
+      JUANWU = #{record.juanwu,jdbcType=DECIMAL},
+      JUANWUYONGTU = #{record.juanwuyongtu,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.JjhnjYewhddaejzpageSub" >
+    update JJHNJ_YEWHDDAEJZPAGE_SUB
+    <set >
+      <if test="instanceid != null" >
+        INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="masterid != null" >
+        MASTERID = #{masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="juanzengren != null" >
+        JUANZENGREN = #{juanzengren,jdbcType=VARCHAR},
+      </if>
+      <if test="bennianjuanzenge != null" >
+        BENNIANJUANZENGE = #{bennianjuanzenge,jdbcType=VARCHAR},
+      </if>
+      <if test="yongtu != null" >
+        YONGTU = #{yongtu,jdbcType=VARCHAR},
+      </if>
+      <if test="juankuan != null" >
+        JUANKUAN = #{juankuan,jdbcType=DECIMAL},
+      </if>
+      <if test="juankuanyongtu != null" >
+        JUANKUANYONGTU = #{juankuanyongtu,jdbcType=VARCHAR},
+      </if>
+      <if test="juanwu != null" >
+        JUANWU = #{juanwu,jdbcType=DECIMAL},
+      </if>
+      <if test="juanwuyongtu != null" >
+        JUANWUYONGTU = #{juanwuyongtu,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xgb.model.JjhnjYewhddaejzpageSub" >
+    update JJHNJ_YEWHDDAEJZPAGE_SUB
+    set INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=DECIMAL},
+      MASTERID = #{masterid,jdbcType=DECIMAL},
+      JUANZENGREN = #{juanzengren,jdbcType=VARCHAR},
+      BENNIANJUANZENGE = #{bennianjuanzenge,jdbcType=VARCHAR},
+      YONGTU = #{yongtu,jdbcType=VARCHAR},
+      JUANKUAN = #{juankuan,jdbcType=DECIMAL},
+      JUANKUANYONGTU = #{juankuanyongtu,jdbcType=VARCHAR},
+      JUANWU = #{juanwu,jdbcType=DECIMAL},
+      JUANWUYONGTU = #{juanwuyongtu,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>

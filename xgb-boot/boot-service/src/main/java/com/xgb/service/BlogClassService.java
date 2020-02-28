@@ -2,14 +2,13 @@ package com.xgb.service;
 
 import com.xgb.model.BlogClass;
 import com.xgb.model.BlogClassExample;
-import com.xgb.dao.BlogClassMapper;
+import com.xgb.dao1.BlogClassMapper;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
-import org.apache.ibatis.annotations.Param;
 
 /**
 * @Auther: Mr Deng

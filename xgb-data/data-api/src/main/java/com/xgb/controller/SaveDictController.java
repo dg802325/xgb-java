@@ -35,6 +35,7 @@ public class SaveDictController {
                 System.out.println("删除失败type=" + i.getNodeTypename());
             }
         });
+        System.out.println("删除完成");
         return "成功";
     }
 
@@ -76,7 +77,8 @@ public class SaveDictController {
 
     public Integer deleteDict(String noteType){
         if(MyTools.isNotEmpty(noteType)){
-            String sql = "delete from jc_dict where description = ?";
+//            String sql = "delete from jc_dict where parent_id is not null and description = ? ";
+            String sql = "delete from jc_dict where description = ? and parent_id is null";
             PreparedStatement ps = null;
             ResultSet rs = null;
             try {

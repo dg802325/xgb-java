@@ -2,7 +2,7 @@ package com.xgb.service;
 
 import com.xgb.model.ChinaBankCode;
 import com.xgb.model.ChinaBankCodeExample;
-import com.xgb.dao.ChinaBankCodeMapper;
+import com.xgb.dao1.ChinaBankCodeMapper;
 
 import java.util.List;
 
@@ -10,7 +10,6 @@ import com.xgb.util.MyTools;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
-import org.apache.ibatis.annotations.Param;
 
 /**
 * @Auther: xgb

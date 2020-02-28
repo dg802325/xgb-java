@@ -1,6 +1,6 @@
 package com.xgb.service;
 
-import com.xgb.dao.SysLogMapper;
+import com.xgb.dao1.SysLogMapper;
 import com.xgb.model.SysLog;
 import com.xgb.model.SysLogExample;
 import org.apache.ibatis.annotations.Param;

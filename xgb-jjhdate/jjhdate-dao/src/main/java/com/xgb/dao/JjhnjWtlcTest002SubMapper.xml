@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.JjhnjWtlcTest002SubMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.JjhnjWtlcTest002Sub" >
+    <constructor >
+      <idArg column="ID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="INSTANCEID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORGANIZATIONID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATUS" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="MASTERID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="SHOUTUOREN" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="FAREN" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WEITUOJINE" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="WEITUOQIXIAN" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="BAOCHOU" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SHIJISHOUYI" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SHOUHUIJINE" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ISZIZHI" jdbcType="DECIMAL" javaType="java.lang.Short" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, INSTANCEID, ORGANIZATIONID, STATUS, MASTERID, SHOUTUOREN, FAREN, WEITUOJINE, 
+    WEITUOQIXIAN, BAOCHOU, SHIJISHOUYI, SHOUHUIJINE, ISZIZHI
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.JjhnjWtlcTest002SubExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from JJHNJ_WTLC_TEST_002_SUB
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from JJHNJ_WTLC_TEST_002_SUB
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from JJHNJ_WTLC_TEST_002_SUB
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xgb.model.JjhnjWtlcTest002SubExample" >
+    delete from JJHNJ_WTLC_TEST_002_SUB
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.JjhnjWtlcTest002Sub" >
+    insert into JJHNJ_WTLC_TEST_002_SUB (ID, INSTANCEID, ORGANIZATIONID, 
+      STATUS, MASTERID, SHOUTUOREN, 
+      FAREN, WEITUOJINE, WEITUOQIXIAN, 
+      BAOCHOU, SHIJISHOUYI, SHOUHUIJINE, 
+      ISZIZHI)
+    values (#{id,jdbcType=DECIMAL}, #{instanceid,jdbcType=VARCHAR}, #{organizationid,jdbcType=VARCHAR}, 
+      #{status,jdbcType=DECIMAL}, #{masterid,jdbcType=DECIMAL}, #{shoutuoren,jdbcType=VARCHAR}, 
+      #{faren,jdbcType=VARCHAR}, #{weituojine,jdbcType=DECIMAL}, #{weituoqixian,jdbcType=VARCHAR}, 
+      #{baochou,jdbcType=VARCHAR}, #{shijishouyi,jdbcType=VARCHAR}, #{shouhuijine,jdbcType=DECIMAL}, 
+      #{iszizhi,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.JjhnjWtlcTest002Sub" >
+    insert into JJHNJ_WTLC_TEST_002_SUB
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="instanceid != null" >
+        INSTANCEID,
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="masterid != null" >
+        MASTERID,
+      </if>
+      <if test="shoutuoren != null" >
+        SHOUTUOREN,
+      </if>
+      <if test="faren != null" >
+        FAREN,
+      </if>
+      <if test="weituojine != null" >
+        WEITUOJINE,
+      </if>
+      <if test="weituoqixian != null" >
+        WEITUOQIXIAN,
+      </if>
+      <if test="baochou != null" >
+        BAOCHOU,
+      </if>
+      <if test="shijishouyi != null" >
+        SHIJISHOUYI,
+      </if>
+      <if test="shouhuijine != null" >
+        SHOUHUIJINE,
+      </if>
+      <if test="iszizhi != null" >
+        ISZIZHI,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="instanceid != null" >
+        #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="masterid != null" >
+        #{masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="shoutuoren != null" >
+        #{shoutuoren,jdbcType=VARCHAR},
+      </if>
+      <if test="faren != null" >
+        #{faren,jdbcType=VARCHAR},
+      </if>
+      <if test="weituojine != null" >
+        #{weituojine,jdbcType=DECIMAL},
+      </if>
+      <if test="weituoqixian != null" >
+        #{weituoqixian,jdbcType=VARCHAR},
+      </if>
+      <if test="baochou != null" >
+        #{baochou,jdbcType=VARCHAR},
+      </if>
+      <if test="shijishouyi != null" >
+        #{shijishouyi,jdbcType=VARCHAR},
+      </if>
+      <if test="shouhuijine != null" >
+        #{shouhuijine,jdbcType=DECIMAL},
+      </if>
+      <if test="iszizhi != null" >
+        #{iszizhi,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.JjhnjWtlcTest002SubExample" resultType="java.lang.Integer" >
+    select count(*) from JJHNJ_WTLC_TEST_002_SUB
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update JJHNJ_WTLC_TEST_002_SUB
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=DECIMAL},
+      </if>
+      <if test="record.instanceid != null" >
+        INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organizationid != null" >
+        ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=DECIMAL},
+      </if>
+      <if test="record.masterid != null" >
+        MASTERID = #{record.masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.shoutuoren != null" >
+        SHOUTUOREN = #{record.shoutuoren,jdbcType=VARCHAR},
+      </if>
+      <if test="record.faren != null" >
+        FAREN = #{record.faren,jdbcType=VARCHAR},
+      </if>
+      <if test="record.weituojine != null" >
+        WEITUOJINE = #{record.weituojine,jdbcType=DECIMAL},
+      </if>
+      <if test="record.weituoqixian != null" >
+        WEITUOQIXIAN = #{record.weituoqixian,jdbcType=VARCHAR},
+      </if>
+      <if test="record.baochou != null" >
+        BAOCHOU = #{record.baochou,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shijishouyi != null" >
+        SHIJISHOUYI = #{record.shijishouyi,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shouhuijine != null" >
+        SHOUHUIJINE = #{record.shouhuijine,jdbcType=DECIMAL},
+      </if>
+      <if test="record.iszizhi != null" >
+        ISZIZHI = #{record.iszizhi,jdbcType=DECIMAL},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update JJHNJ_WTLC_TEST_002_SUB
+    set ID = #{record.id,jdbcType=DECIMAL},
+      INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=DECIMAL},
+      MASTERID = #{record.masterid,jdbcType=DECIMAL},
+      SHOUTUOREN = #{record.shoutuoren,jdbcType=VARCHAR},
+      FAREN = #{record.faren,jdbcType=VARCHAR},
+      WEITUOJINE = #{record.weituojine,jdbcType=DECIMAL},
+      WEITUOQIXIAN = #{record.weituoqixian,jdbcType=VARCHAR},
+      BAOCHOU = #{record.baochou,jdbcType=VARCHAR},
+      SHIJISHOUYI = #{record.shijishouyi,jdbcType=VARCHAR},
+      SHOUHUIJINE = #{record.shouhuijine,jdbcType=DECIMAL},
+      ISZIZHI = #{record.iszizhi,jdbcType=DECIMAL}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.JjhnjWtlcTest002Sub" >
+    update JJHNJ_WTLC_TEST_002_SUB
+    <set >
+      <if test="instanceid != null" >
+        INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="masterid != null" >
+        MASTERID = #{masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="shoutuoren != null" >
+        SHOUTUOREN = #{shoutuoren,jdbcType=VARCHAR},
+      </if>
+      <if test="faren != null" >
+        FAREN = #{faren,jdbcType=VARCHAR},
+      </if>
+      <if test="weituojine != null" >
+        WEITUOJINE = #{weituojine,jdbcType=DECIMAL},
+      </if>
+      <if test="weituoqixian != null" >
+        WEITUOQIXIAN = #{weituoqixian,jdbcType=VARCHAR},
+      </if>
+      <if test="baochou != null" >
+        BAOCHOU = #{baochou,jdbcType=VARCHAR},
+      </if>
+      <if test="shijishouyi != null" >
+        SHIJISHOUYI = #{shijishouyi,jdbcType=VARCHAR},
+      </if>
+      <if test="shouhuijine != null" >
+        SHOUHUIJINE = #{shouhuijine,jdbcType=DECIMAL},
+      </if>
+      <if test="iszizhi != null" >
+        ISZIZHI = #{iszizhi,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xgb.model.JjhnjWtlcTest002Sub" >
+    update JJHNJ_WTLC_TEST_002_SUB
+    set INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=DECIMAL},
+      MASTERID = #{masterid,jdbcType=DECIMAL},
+      SHOUTUOREN = #{shoutuoren,jdbcType=VARCHAR},
+      FAREN = #{faren,jdbcType=VARCHAR},
+      WEITUOJINE = #{weituojine,jdbcType=DECIMAL},
+      WEITUOQIXIAN = #{weituoqixian,jdbcType=VARCHAR},
+      BAOCHOU = #{baochou,jdbcType=VARCHAR},
+      SHIJISHOUYI = #{shijishouyi,jdbcType=VARCHAR},
+      SHOUHUIJINE = #{shouhuijine,jdbcType=DECIMAL},
+      ISZIZHI = #{iszizhi,jdbcType=DECIMAL}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>

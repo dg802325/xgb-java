@@ -5,7 +5,13 @@ public class Constant {
 
 
     public static final String GBASE_DRIVER = "com.gbase.jdbc.Driver";
-    public static final String GBASE_URL = "jdbc:gbase://123.56.112.54:5258/tjfrk_db?useUnicode=true&characterEncoding=utf-8";
+    public static final String GBASE_URL = "jdbc:gbase://123.56.112.54:5258/tjfrk_devdb?useUnicode=true&characterEncoding=utf-8";
     public static final String GBASE_USERNAME = "sysdba";
     public static final String GBASE_PASSWORD = "tjfrk1357";
+
+//    public static final String GBASE_DRIVER = "com.gbase.jdbc.Driver";
+//    public static final String GBASE_URL = "jdbc:gbase://10.160.20.13:5258/tjfrk_db?useUnicode=true&characterEncoding=utf-8";
+//    public static final String GBASE_USERNAME = "sysdba";
+//    public static final String GBASE_PASSWORD = "pTjfrk@1357";
+
 }

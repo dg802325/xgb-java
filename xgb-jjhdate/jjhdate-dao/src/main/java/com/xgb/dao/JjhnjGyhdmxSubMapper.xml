@@ -1,0 +1,1149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.JjhnjGyhdmxSubMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.JjhnjGyhdmxSub" >
+    <constructor >
+      <idArg column="ID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="INSTANCEID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORGANIZATIONID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATUS" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="MASTERID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="XUHAO" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="XIANGMUMINGCHENG" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SHOURU" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZHICHU" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZI" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ZHI" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="JIANSHU" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MS" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="R1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="R2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="R3" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="R4" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="R5" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="R6" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="R7" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="R8" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="R9" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="FWLY" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S3" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S4" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S5" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S6" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S7" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S8" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S9" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S10" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S11" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S12" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S13" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S14" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S15" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S16" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S17" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S18" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S19" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S20" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S21" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S22" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S23" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S24" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S25" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S26" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S27" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S28" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S29" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S30" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S31" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S32" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S33" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S34" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S35" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S36" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S37" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="S38" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ISKAIZHANJUANMU" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ISZHUANXIANGSHENJI" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MJDATE" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="ISZIZHUHUODONG" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, INSTANCEID, ORGANIZATIONID, STATUS, MASTERID, XUHAO, XIANGMUMINGCHENG, SHOURU, 
+    ZHICHU, ZI, ZHI, JIANSHU, MS, R1, R2, R3, R4, R5, R6, R7, R8, R9, FWLY, S1, S2, S3, 
+    S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17, S18, S19, S20, S21, 
+    S22, S23, S24, S25, S26, S27, S28, S29, S30, S31, S32, S33, S34, S35, S36, S37, S38, 
+    ISKAIZHANJUANMU, ISZHUANXIANGSHENJI, MJDATE, ISZIZHUHUODONG
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.JjhnjGyhdmxSubExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from MJZZ_USER.JJHNJ_GYHDMX_SUB
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from MJZZ_USER.JJHNJ_GYHDMX_SUB
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from MJZZ_USER.JJHNJ_GYHDMX_SUB
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xgb.model.JjhnjGyhdmxSubExample" >
+    delete from MJZZ_USER.JJHNJ_GYHDMX_SUB
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.JjhnjGyhdmxSub" >
+    insert into MJZZ_USER.JJHNJ_GYHDMX_SUB (ID, INSTANCEID, ORGANIZATIONID, 
+      STATUS, MASTERID, XUHAO, 
+      XIANGMUMINGCHENG, SHOURU, ZHICHU, 
+      ZI, ZHI, JIANSHU, MS, 
+      R1, R2, R3, R4, 
+      R5, R6, R7, R8, 
+      R9, FWLY, S1, S2, 
+      S3, S4, S5, S6, 
+      S7, S8, S9, S10, 
+      S11, S12, S13, S14, 
+      S15, S16, S17, S18, 
+      S19, S20, S21, S22, 
+      S23, S24, S25, S26, 
+      S27, S28, S29, S30, 
+      S31, S32, S33, S34, 
+      S35, S36, S37, S38, 
+      ISKAIZHANJUANMU, ISZHUANXIANGSHENJI, MJDATE, 
+      ISZIZHUHUODONG)
+    values (#{id,jdbcType=DECIMAL}, #{instanceid,jdbcType=VARCHAR}, #{organizationid,jdbcType=VARCHAR}, 
+      #{status,jdbcType=DECIMAL}, #{masterid,jdbcType=DECIMAL}, #{xuhao,jdbcType=VARCHAR}, 
+      #{xiangmumingcheng,jdbcType=VARCHAR}, #{shouru,jdbcType=DECIMAL}, #{zhichu,jdbcType=DECIMAL}, 
+      #{zi,jdbcType=VARCHAR}, #{zhi,jdbcType=VARCHAR}, #{jianshu,jdbcType=VARCHAR}, #{ms,jdbcType=VARCHAR}, 
+      #{r1,jdbcType=VARCHAR}, #{r2,jdbcType=VARCHAR}, #{r3,jdbcType=VARCHAR}, #{r4,jdbcType=VARCHAR}, 
+      #{r5,jdbcType=VARCHAR}, #{r6,jdbcType=VARCHAR}, #{r7,jdbcType=VARCHAR}, #{r8,jdbcType=VARCHAR}, 
+      #{r9,jdbcType=VARCHAR}, #{fwly,jdbcType=VARCHAR}, #{s1,jdbcType=VARCHAR}, #{s2,jdbcType=VARCHAR}, 
+      #{s3,jdbcType=VARCHAR}, #{s4,jdbcType=VARCHAR}, #{s5,jdbcType=VARCHAR}, #{s6,jdbcType=VARCHAR}, 
+      #{s7,jdbcType=VARCHAR}, #{s8,jdbcType=VARCHAR}, #{s9,jdbcType=VARCHAR}, #{s10,jdbcType=VARCHAR}, 
+      #{s11,jdbcType=VARCHAR}, #{s12,jdbcType=VARCHAR}, #{s13,jdbcType=VARCHAR}, #{s14,jdbcType=VARCHAR}, 
+      #{s15,jdbcType=VARCHAR}, #{s16,jdbcType=VARCHAR}, #{s17,jdbcType=VARCHAR}, #{s18,jdbcType=VARCHAR}, 
+      #{s19,jdbcType=VARCHAR}, #{s20,jdbcType=VARCHAR}, #{s21,jdbcType=VARCHAR}, #{s22,jdbcType=VARCHAR}, 
+      #{s23,jdbcType=VARCHAR}, #{s24,jdbcType=VARCHAR}, #{s25,jdbcType=VARCHAR}, #{s26,jdbcType=VARCHAR}, 
+      #{s27,jdbcType=VARCHAR}, #{s28,jdbcType=VARCHAR}, #{s29,jdbcType=VARCHAR}, #{s30,jdbcType=VARCHAR}, 
+      #{s31,jdbcType=VARCHAR}, #{s32,jdbcType=VARCHAR}, #{s33,jdbcType=VARCHAR}, #{s34,jdbcType=VARCHAR}, 
+      #{s35,jdbcType=VARCHAR}, #{s36,jdbcType=VARCHAR}, #{s37,jdbcType=VARCHAR}, #{s38,jdbcType=VARCHAR}, 
+      #{iskaizhanjuanmu,jdbcType=VARCHAR}, #{iszhuanxiangshenji,jdbcType=VARCHAR}, #{mjdate,jdbcType=TIMESTAMP}, 
+      #{iszizhuhuodong,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.JjhnjGyhdmxSub" >
+    insert into MJZZ_USER.JJHNJ_GYHDMX_SUB
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="instanceid != null" >
+        INSTANCEID,
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="masterid != null" >
+        MASTERID,
+      </if>
+      <if test="xuhao != null" >
+        XUHAO,
+      </if>
+      <if test="xiangmumingcheng != null" >
+        XIANGMUMINGCHENG,
+      </if>
+      <if test="shouru != null" >
+        SHOURU,
+      </if>
+      <if test="zhichu != null" >
+        ZHICHU,
+      </if>
+      <if test="zi != null" >
+        ZI,
+      </if>
+      <if test="zhi != null" >
+        ZHI,
+      </if>
+      <if test="jianshu != null" >
+        JIANSHU,
+      </if>
+      <if test="ms != null" >
+        MS,
+      </if>
+      <if test="r1 != null" >
+        R1,
+      </if>
+      <if test="r2 != null" >
+        R2,
+      </if>
+      <if test="r3 != null" >
+        R3,
+      </if>
+      <if test="r4 != null" >
+        R4,
+      </if>
+      <if test="r5 != null" >
+        R5,
+      </if>
+      <if test="r6 != null" >
+        R6,
+      </if>
+      <if test="r7 != null" >
+        R7,
+      </if>
+      <if test="r8 != null" >
+        R8,
+      </if>
+      <if test="r9 != null" >
+        R9,
+      </if>
+      <if test="fwly != null" >
+        FWLY,
+      </if>
+      <if test="s1 != null" >
+        S1,
+      </if>
+      <if test="s2 != null" >
+        S2,
+      </if>
+      <if test="s3 != null" >
+        S3,
+      </if>
+      <if test="s4 != null" >
+        S4,
+      </if>
+      <if test="s5 != null" >
+        S5,
+      </if>
+      <if test="s6 != null" >
+        S6,
+      </if>
+      <if test="s7 != null" >
+        S7,
+      </if>
+      <if test="s8 != null" >
+        S8,
+      </if>
+      <if test="s9 != null" >
+        S9,
+      </if>
+      <if test="s10 != null" >
+        S10,
+      </if>
+      <if test="s11 != null" >
+        S11,
+      </if>
+      <if test="s12 != null" >
+        S12,
+      </if>
+      <if test="s13 != null" >
+        S13,
+      </if>
+      <if test="s14 != null" >
+        S14,
+      </if>
+      <if test="s15 != null" >
+        S15,
+      </if>
+      <if test="s16 != null" >
+        S16,
+      </if>
+      <if test="s17 != null" >
+        S17,
+      </if>
+      <if test="s18 != null" >
+        S18,
+      </if>
+      <if test="s19 != null" >
+        S19,
+      </if>
+      <if test="s20 != null" >
+        S20,
+      </if>
+      <if test="s21 != null" >
+        S21,
+      </if>
+      <if test="s22 != null" >
+        S22,
+      </if>
+      <if test="s23 != null" >
+        S23,
+      </if>
+      <if test="s24 != null" >
+        S24,
+      </if>
+      <if test="s25 != null" >
+        S25,
+      </if>
+      <if test="s26 != null" >
+        S26,
+      </if>
+      <if test="s27 != null" >
+        S27,
+      </if>
+      <if test="s28 != null" >
+        S28,
+      </if>
+      <if test="s29 != null" >
+        S29,
+      </if>
+      <if test="s30 != null" >
+        S30,
+      </if>
+      <if test="s31 != null" >
+        S31,
+      </if>
+      <if test="s32 != null" >
+        S32,
+      </if>
+      <if test="s33 != null" >
+        S33,
+      </if>
+      <if test="s34 != null" >
+        S34,
+      </if>
+      <if test="s35 != null" >
+        S35,
+      </if>
+      <if test="s36 != null" >
+        S36,
+      </if>
+      <if test="s37 != null" >
+        S37,
+      </if>
+      <if test="s38 != null" >
+        S38,
+      </if>
+      <if test="iskaizhanjuanmu != null" >
+        ISKAIZHANJUANMU,
+      </if>
+      <if test="iszhuanxiangshenji != null" >
+        ISZHUANXIANGSHENJI,
+      </if>
+      <if test="mjdate != null" >
+        MJDATE,
+      </if>
+      <if test="iszizhuhuodong != null" >
+        ISZIZHUHUODONG,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="instanceid != null" >
+        #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="masterid != null" >
+        #{masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="xuhao != null" >
+        #{xuhao,jdbcType=VARCHAR},
+      </if>
+      <if test="xiangmumingcheng != null" >
+        #{xiangmumingcheng,jdbcType=VARCHAR},
+      </if>
+      <if test="shouru != null" >
+        #{shouru,jdbcType=DECIMAL},
+      </if>
+      <if test="zhichu != null" >
+        #{zhichu,jdbcType=DECIMAL},
+      </if>
+      <if test="zi != null" >
+        #{zi,jdbcType=VARCHAR},
+      </if>
+      <if test="zhi != null" >
+        #{zhi,jdbcType=VARCHAR},
+      </if>
+      <if test="jianshu != null" >
+        #{jianshu,jdbcType=VARCHAR},
+      </if>
+      <if test="ms != null" >
+        #{ms,jdbcType=VARCHAR},
+      </if>
+      <if test="r1 != null" >
+        #{r1,jdbcType=VARCHAR},
+      </if>
+      <if test="r2 != null" >
+        #{r2,jdbcType=VARCHAR},
+      </if>
+      <if test="r3 != null" >
+        #{r3,jdbcType=VARCHAR},
+      </if>
+      <if test="r4 != null" >
+        #{r4,jdbcType=VARCHAR},
+      </if>
+      <if test="r5 != null" >
+        #{r5,jdbcType=VARCHAR},
+      </if>
+      <if test="r6 != null" >
+        #{r6,jdbcType=VARCHAR},
+      </if>
+      <if test="r7 != null" >
+        #{r7,jdbcType=VARCHAR},
+      </if>
+      <if test="r8 != null" >
+        #{r8,jdbcType=VARCHAR},
+      </if>
+      <if test="r9 != null" >
+        #{r9,jdbcType=VARCHAR},
+      </if>
+      <if test="fwly != null" >
+        #{fwly,jdbcType=VARCHAR},
+      </if>
+      <if test="s1 != null" >
+        #{s1,jdbcType=VARCHAR},
+      </if>
+      <if test="s2 != null" >
+        #{s2,jdbcType=VARCHAR},
+      </if>
+      <if test="s3 != null" >
+        #{s3,jdbcType=VARCHAR},
+      </if>
+      <if test="s4 != null" >
+        #{s4,jdbcType=VARCHAR},
+      </if>
+      <if test="s5 != null" >
+        #{s5,jdbcType=VARCHAR},
+      </if>
+      <if test="s6 != null" >
+        #{s6,jdbcType=VARCHAR},
+      </if>
+      <if test="s7 != null" >
+        #{s7,jdbcType=VARCHAR},
+      </if>
+      <if test="s8 != null" >
+        #{s8,jdbcType=VARCHAR},
+      </if>
+      <if test="s9 != null" >
+        #{s9,jdbcType=VARCHAR},
+      </if>
+      <if test="s10 != null" >
+        #{s10,jdbcType=VARCHAR},
+      </if>
+      <if test="s11 != null" >
+        #{s11,jdbcType=VARCHAR},
+      </if>
+      <if test="s12 != null" >
+        #{s12,jdbcType=VARCHAR},
+      </if>
+      <if test="s13 != null" >
+        #{s13,jdbcType=VARCHAR},
+      </if>
+      <if test="s14 != null" >
+        #{s14,jdbcType=VARCHAR},
+      </if>
+      <if test="s15 != null" >
+        #{s15,jdbcType=VARCHAR},
+      </if>
+      <if test="s16 != null" >
+        #{s16,jdbcType=VARCHAR},
+      </if>
+      <if test="s17 != null" >
+        #{s17,jdbcType=VARCHAR},
+      </if>
+      <if test="s18 != null" >
+        #{s18,jdbcType=VARCHAR},
+      </if>
+      <if test="s19 != null" >
+        #{s19,jdbcType=VARCHAR},
+      </if>
+      <if test="s20 != null" >
+        #{s20,jdbcType=VARCHAR},
+      </if>
+      <if test="s21 != null" >
+        #{s21,jdbcType=VARCHAR},
+      </if>
+      <if test="s22 != null" >
+        #{s22,jdbcType=VARCHAR},
+      </if>
+      <if test="s23 != null" >
+        #{s23,jdbcType=VARCHAR},
+      </if>
+      <if test="s24 != null" >
+        #{s24,jdbcType=VARCHAR},
+      </if>
+      <if test="s25 != null" >
+        #{s25,jdbcType=VARCHAR},
+      </if>
+      <if test="s26 != null" >
+        #{s26,jdbcType=VARCHAR},
+      </if>
+      <if test="s27 != null" >
+        #{s27,jdbcType=VARCHAR},
+      </if>
+      <if test="s28 != null" >
+        #{s28,jdbcType=VARCHAR},
+      </if>
+      <if test="s29 != null" >
+        #{s29,jdbcType=VARCHAR},
+      </if>
+      <if test="s30 != null" >
+        #{s30,jdbcType=VARCHAR},
+      </if>
+      <if test="s31 != null" >
+        #{s31,jdbcType=VARCHAR},
+      </if>
+      <if test="s32 != null" >
+        #{s32,jdbcType=VARCHAR},
+      </if>
+      <if test="s33 != null" >
+        #{s33,jdbcType=VARCHAR},
+      </if>
+      <if test="s34 != null" >
+        #{s34,jdbcType=VARCHAR},
+      </if>
+      <if test="s35 != null" >
+        #{s35,jdbcType=VARCHAR},
+      </if>
+      <if test="s36 != null" >
+        #{s36,jdbcType=VARCHAR},
+      </if>
+      <if test="s37 != null" >
+        #{s37,jdbcType=VARCHAR},
+      </if>
+      <if test="s38 != null" >
+        #{s38,jdbcType=VARCHAR},
+      </if>
+      <if test="iskaizhanjuanmu != null" >
+        #{iskaizhanjuanmu,jdbcType=VARCHAR},
+      </if>
+      <if test="iszhuanxiangshenji != null" >
+        #{iszhuanxiangshenji,jdbcType=VARCHAR},
+      </if>
+      <if test="mjdate != null" >
+        #{mjdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="iszizhuhuodong != null" >
+        #{iszizhuhuodong,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.JjhnjGyhdmxSubExample" resultType="java.lang.Integer" >
+    select count(*) from MJZZ_USER.JJHNJ_GYHDMX_SUB
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update MJZZ_USER.JJHNJ_GYHDMX_SUB
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=DECIMAL},
+      </if>
+      <if test="record.instanceid != null" >
+        INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organizationid != null" >
+        ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=DECIMAL},
+      </if>
+      <if test="record.masterid != null" >
+        MASTERID = #{record.masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xuhao != null" >
+        XUHAO = #{record.xuhao,jdbcType=VARCHAR},
+      </if>
+      <if test="record.xiangmumingcheng != null" >
+        XIANGMUMINGCHENG = #{record.xiangmumingcheng,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shouru != null" >
+        SHOURU = #{record.shouru,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhichu != null" >
+        ZHICHU = #{record.zhichu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zi != null" >
+        ZI = #{record.zi,jdbcType=VARCHAR},
+      </if>
+      <if test="record.zhi != null" >
+        ZHI = #{record.zhi,jdbcType=VARCHAR},
+      </if>
+      <if test="record.jianshu != null" >
+        JIANSHU = #{record.jianshu,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ms != null" >
+        MS = #{record.ms,jdbcType=VARCHAR},
+      </if>
+      <if test="record.r1 != null" >
+        R1 = #{record.r1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.r2 != null" >
+        R2 = #{record.r2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.r3 != null" >
+        R3 = #{record.r3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.r4 != null" >
+        R4 = #{record.r4,jdbcType=VARCHAR},
+      </if>
+      <if test="record.r5 != null" >
+        R5 = #{record.r5,jdbcType=VARCHAR},
+      </if>
+      <if test="record.r6 != null" >
+        R6 = #{record.r6,jdbcType=VARCHAR},
+      </if>
+      <if test="record.r7 != null" >
+        R7 = #{record.r7,jdbcType=VARCHAR},
+      </if>
+      <if test="record.r8 != null" >
+        R8 = #{record.r8,jdbcType=VARCHAR},
+      </if>
+      <if test="record.r9 != null" >
+        R9 = #{record.r9,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fwly != null" >
+        FWLY = #{record.fwly,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s1 != null" >
+        S1 = #{record.s1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s2 != null" >
+        S2 = #{record.s2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s3 != null" >
+        S3 = #{record.s3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s4 != null" >
+        S4 = #{record.s4,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s5 != null" >
+        S5 = #{record.s5,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s6 != null" >
+        S6 = #{record.s6,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s7 != null" >
+        S7 = #{record.s7,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s8 != null" >
+        S8 = #{record.s8,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s9 != null" >
+        S9 = #{record.s9,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s10 != null" >
+        S10 = #{record.s10,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s11 != null" >
+        S11 = #{record.s11,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s12 != null" >
+        S12 = #{record.s12,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s13 != null" >
+        S13 = #{record.s13,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s14 != null" >
+        S14 = #{record.s14,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s15 != null" >
+        S15 = #{record.s15,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s16 != null" >
+        S16 = #{record.s16,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s17 != null" >
+        S17 = #{record.s17,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s18 != null" >
+        S18 = #{record.s18,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s19 != null" >
+        S19 = #{record.s19,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s20 != null" >
+        S20 = #{record.s20,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s21 != null" >
+        S21 = #{record.s21,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s22 != null" >
+        S22 = #{record.s22,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s23 != null" >
+        S23 = #{record.s23,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s24 != null" >
+        S24 = #{record.s24,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s25 != null" >
+        S25 = #{record.s25,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s26 != null" >
+        S26 = #{record.s26,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s27 != null" >
+        S27 = #{record.s27,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s28 != null" >
+        S28 = #{record.s28,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s29 != null" >
+        S29 = #{record.s29,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s30 != null" >
+        S30 = #{record.s30,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s31 != null" >
+        S31 = #{record.s31,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s32 != null" >
+        S32 = #{record.s32,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s33 != null" >
+        S33 = #{record.s33,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s34 != null" >
+        S34 = #{record.s34,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s35 != null" >
+        S35 = #{record.s35,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s36 != null" >
+        S36 = #{record.s36,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s37 != null" >
+        S37 = #{record.s37,jdbcType=VARCHAR},
+      </if>
+      <if test="record.s38 != null" >
+        S38 = #{record.s38,jdbcType=VARCHAR},
+      </if>
+      <if test="record.iskaizhanjuanmu != null" >
+        ISKAIZHANJUANMU = #{record.iskaizhanjuanmu,jdbcType=VARCHAR},
+      </if>
+      <if test="record.iszhuanxiangshenji != null" >
+        ISZHUANXIANGSHENJI = #{record.iszhuanxiangshenji,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mjdate != null" >
+        MJDATE = #{record.mjdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.iszizhuhuodong != null" >
+        ISZIZHUHUODONG = #{record.iszizhuhuodong,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update MJZZ_USER.JJHNJ_GYHDMX_SUB
+    set ID = #{record.id,jdbcType=DECIMAL},
+      INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=DECIMAL},
+      MASTERID = #{record.masterid,jdbcType=DECIMAL},
+      XUHAO = #{record.xuhao,jdbcType=VARCHAR},
+      XIANGMUMINGCHENG = #{record.xiangmumingcheng,jdbcType=VARCHAR},
+      SHOURU = #{record.shouru,jdbcType=DECIMAL},
+      ZHICHU = #{record.zhichu,jdbcType=DECIMAL},
+      ZI = #{record.zi,jdbcType=VARCHAR},
+      ZHI = #{record.zhi,jdbcType=VARCHAR},
+      JIANSHU = #{record.jianshu,jdbcType=VARCHAR},
+      MS = #{record.ms,jdbcType=VARCHAR},
+      R1 = #{record.r1,jdbcType=VARCHAR},
+      R2 = #{record.r2,jdbcType=VARCHAR},
+      R3 = #{record.r3,jdbcType=VARCHAR},
+      R4 = #{record.r4,jdbcType=VARCHAR},
+      R5 = #{record.r5,jdbcType=VARCHAR},
+      R6 = #{record.r6,jdbcType=VARCHAR},
+      R7 = #{record.r7,jdbcType=VARCHAR},
+      R8 = #{record.r8,jdbcType=VARCHAR},
+      R9 = #{record.r9,jdbcType=VARCHAR},
+      FWLY = #{record.fwly,jdbcType=VARCHAR},
+      S1 = #{record.s1,jdbcType=VARCHAR},
+      S2 = #{record.s2,jdbcType=VARCHAR},
+      S3 = #{record.s3,jdbcType=VARCHAR},
+      S4 = #{record.s4,jdbcType=VARCHAR},
+      S5 = #{record.s5,jdbcType=VARCHAR},
+      S6 = #{record.s6,jdbcType=VARCHAR},
+      S7 = #{record.s7,jdbcType=VARCHAR},
+      S8 = #{record.s8,jdbcType=VARCHAR},
+      S9 = #{record.s9,jdbcType=VARCHAR},
+      S10 = #{record.s10,jdbcType=VARCHAR},
+      S11 = #{record.s11,jdbcType=VARCHAR},
+      S12 = #{record.s12,jdbcType=VARCHAR},
+      S13 = #{record.s13,jdbcType=VARCHAR},
+      S14 = #{record.s14,jdbcType=VARCHAR},
+      S15 = #{record.s15,jdbcType=VARCHAR},
+      S16 = #{record.s16,jdbcType=VARCHAR},
+      S17 = #{record.s17,jdbcType=VARCHAR},
+      S18 = #{record.s18,jdbcType=VARCHAR},
+      S19 = #{record.s19,jdbcType=VARCHAR},
+      S20 = #{record.s20,jdbcType=VARCHAR},
+      S21 = #{record.s21,jdbcType=VARCHAR},
+      S22 = #{record.s22,jdbcType=VARCHAR},
+      S23 = #{record.s23,jdbcType=VARCHAR},
+      S24 = #{record.s24,jdbcType=VARCHAR},
+      S25 = #{record.s25,jdbcType=VARCHAR},
+      S26 = #{record.s26,jdbcType=VARCHAR},
+      S27 = #{record.s27,jdbcType=VARCHAR},
+      S28 = #{record.s28,jdbcType=VARCHAR},
+      S29 = #{record.s29,jdbcType=VARCHAR},
+      S30 = #{record.s30,jdbcType=VARCHAR},
+      S31 = #{record.s31,jdbcType=VARCHAR},
+      S32 = #{record.s32,jdbcType=VARCHAR},
+      S33 = #{record.s33,jdbcType=VARCHAR},
+      S34 = #{record.s34,jdbcType=VARCHAR},
+      S35 = #{record.s35,jdbcType=VARCHAR},
+      S36 = #{record.s36,jdbcType=VARCHAR},
+      S37 = #{record.s37,jdbcType=VARCHAR},
+      S38 = #{record.s38,jdbcType=VARCHAR},
+      ISKAIZHANJUANMU = #{record.iskaizhanjuanmu,jdbcType=VARCHAR},
+      ISZHUANXIANGSHENJI = #{record.iszhuanxiangshenji,jdbcType=VARCHAR},
+      MJDATE = #{record.mjdate,jdbcType=TIMESTAMP},
+      ISZIZHUHUODONG = #{record.iszizhuhuodong,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.JjhnjGyhdmxSub" >
+    update MJZZ_USER.JJHNJ_GYHDMX_SUB
+    <set >
+      <if test="instanceid != null" >
+        INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="masterid != null" >
+        MASTERID = #{masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="xuhao != null" >
+        XUHAO = #{xuhao,jdbcType=VARCHAR},
+      </if>
+      <if test="xiangmumingcheng != null" >
+        XIANGMUMINGCHENG = #{xiangmumingcheng,jdbcType=VARCHAR},
+      </if>
+      <if test="shouru != null" >
+        SHOURU = #{shouru,jdbcType=DECIMAL},
+      </if>
+      <if test="zhichu != null" >
+        ZHICHU = #{zhichu,jdbcType=DECIMAL},
+      </if>
+      <if test="zi != null" >
+        ZI = #{zi,jdbcType=VARCHAR},
+      </if>
+      <if test="zhi != null" >
+        ZHI = #{zhi,jdbcType=VARCHAR},
+      </if>
+      <if test="jianshu != null" >
+        JIANSHU = #{jianshu,jdbcType=VARCHAR},
+      </if>
+      <if test="ms != null" >
+        MS = #{ms,jdbcType=VARCHAR},
+      </if>
+      <if test="r1 != null" >
+        R1 = #{r1,jdbcType=VARCHAR},
+      </if>
+      <if test="r2 != null" >
+        R2 = #{r2,jdbcType=VARCHAR},
+      </if>
+      <if test="r3 != null" >
+        R3 = #{r3,jdbcType=VARCHAR},
+      </if>
+      <if test="r4 != null" >
+        R4 = #{r4,jdbcType=VARCHAR},
+      </if>
+      <if test="r5 != null" >
+        R5 = #{r5,jdbcType=VARCHAR},
+      </if>
+      <if test="r6 != null" >
+        R6 = #{r6,jdbcType=VARCHAR},
+      </if>
+      <if test="r7 != null" >
+        R7 = #{r7,jdbcType=VARCHAR},
+      </if>
+      <if test="r8 != null" >
+        R8 = #{r8,jdbcType=VARCHAR},
+      </if>
+      <if test="r9 != null" >
+        R9 = #{r9,jdbcType=VARCHAR},
+      </if>
+      <if test="fwly != null" >
+        FWLY = #{fwly,jdbcType=VARCHAR},
+      </if>
+      <if test="s1 != null" >
+        S1 = #{s1,jdbcType=VARCHAR},
+      </if>
+      <if test="s2 != null" >
+        S2 = #{s2,jdbcType=VARCHAR},
+      </if>
+      <if test="s3 != null" >
+        S3 = #{s3,jdbcType=VARCHAR},
+      </if>
+      <if test="s4 != null" >
+        S4 = #{s4,jdbcType=VARCHAR},
+      </if>
+      <if test="s5 != null" >
+        S5 = #{s5,jdbcType=VARCHAR},
+      </if>
+      <if test="s6 != null" >
+        S6 = #{s6,jdbcType=VARCHAR},
+      </if>
+      <if test="s7 != null" >
+        S7 = #{s7,jdbcType=VARCHAR},
+      </if>
+      <if test="s8 != null" >
+        S8 = #{s8,jdbcType=VARCHAR},
+      </if>
+      <if test="s9 != null" >
+        S9 = #{s9,jdbcType=VARCHAR},
+      </if>
+      <if test="s10 != null" >
+        S10 = #{s10,jdbcType=VARCHAR},
+      </if>
+      <if test="s11 != null" >
+        S11 = #{s11,jdbcType=VARCHAR},
+      </if>
+      <if test="s12 != null" >
+        S12 = #{s12,jdbcType=VARCHAR},
+      </if>
+      <if test="s13 != null" >
+        S13 = #{s13,jdbcType=VARCHAR},
+      </if>
+      <if test="s14 != null" >
+        S14 = #{s14,jdbcType=VARCHAR},
+      </if>
+      <if test="s15 != null" >
+        S15 = #{s15,jdbcType=VARCHAR},
+      </if>
+      <if test="s16 != null" >
+        S16 = #{s16,jdbcType=VARCHAR},
+      </if>
+      <if test="s17 != null" >
+        S17 = #{s17,jdbcType=VARCHAR},
+      </if>
+      <if test="s18 != null" >
+        S18 = #{s18,jdbcType=VARCHAR},
+      </if>
+      <if test="s19 != null" >
+        S19 = #{s19,jdbcType=VARCHAR},
+      </if>
+      <if test="s20 != null" >
+        S20 = #{s20,jdbcType=VARCHAR},
+      </if>
+      <if test="s21 != null" >
+        S21 = #{s21,jdbcType=VARCHAR},
+      </if>
+      <if test="s22 != null" >
+        S22 = #{s22,jdbcType=VARCHAR},
+      </if>
+      <if test="s23 != null" >
+        S23 = #{s23,jdbcType=VARCHAR},
+      </if>
+      <if test="s24 != null" >
+        S24 = #{s24,jdbcType=VARCHAR},
+      </if>
+      <if test="s25 != null" >
+        S25 = #{s25,jdbcType=VARCHAR},
+      </if>
+      <if test="s26 != null" >
+        S26 = #{s26,jdbcType=VARCHAR},
+      </if>
+      <if test="s27 != null" >
+        S27 = #{s27,jdbcType=VARCHAR},
+      </if>
+      <if test="s28 != null" >
+        S28 = #{s28,jdbcType=VARCHAR},
+      </if>
+      <if test="s29 != null" >
+        S29 = #{s29,jdbcType=VARCHAR},
+      </if>
+      <if test="s30 != null" >
+        S30 = #{s30,jdbcType=VARCHAR},
+      </if>
+      <if test="s31 != null" >
+        S31 = #{s31,jdbcType=VARCHAR},
+      </if>
+      <if test="s32 != null" >
+        S32 = #{s32,jdbcType=VARCHAR},
+      </if>
+      <if test="s33 != null" >
+        S33 = #{s33,jdbcType=VARCHAR},
+      </if>
+      <if test="s34 != null" >
+        S34 = #{s34,jdbcType=VARCHAR},
+      </if>
+      <if test="s35 != null" >
+        S35 = #{s35,jdbcType=VARCHAR},
+      </if>
+      <if test="s36 != null" >
+        S36 = #{s36,jdbcType=VARCHAR},
+      </if>
+      <if test="s37 != null" >
+        S37 = #{s37,jdbcType=VARCHAR},
+      </if>
+      <if test="s38 != null" >
+        S38 = #{s38,jdbcType=VARCHAR},
+      </if>
+      <if test="iskaizhanjuanmu != null" >
+        ISKAIZHANJUANMU = #{iskaizhanjuanmu,jdbcType=VARCHAR},
+      </if>
+      <if test="iszhuanxiangshenji != null" >
+        ISZHUANXIANGSHENJI = #{iszhuanxiangshenji,jdbcType=VARCHAR},
+      </if>
+      <if test="mjdate != null" >
+        MJDATE = #{mjdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="iszizhuhuodong != null" >
+        ISZIZHUHUODONG = #{iszizhuhuodong,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xgb.model.JjhnjGyhdmxSub" >
+    update MJZZ_USER.JJHNJ_GYHDMX_SUB
+    set INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=DECIMAL},
+      MASTERID = #{masterid,jdbcType=DECIMAL},
+      XUHAO = #{xuhao,jdbcType=VARCHAR},
+      XIANGMUMINGCHENG = #{xiangmumingcheng,jdbcType=VARCHAR},
+      SHOURU = #{shouru,jdbcType=DECIMAL},
+      ZHICHU = #{zhichu,jdbcType=DECIMAL},
+      ZI = #{zi,jdbcType=VARCHAR},
+      ZHI = #{zhi,jdbcType=VARCHAR},
+      JIANSHU = #{jianshu,jdbcType=VARCHAR},
+      MS = #{ms,jdbcType=VARCHAR},
+      R1 = #{r1,jdbcType=VARCHAR},
+      R2 = #{r2,jdbcType=VARCHAR},
+      R3 = #{r3,jdbcType=VARCHAR},
+      R4 = #{r4,jdbcType=VARCHAR},
+      R5 = #{r5,jdbcType=VARCHAR},
+      R6 = #{r6,jdbcType=VARCHAR},
+      R7 = #{r7,jdbcType=VARCHAR},
+      R8 = #{r8,jdbcType=VARCHAR},
+      R9 = #{r9,jdbcType=VARCHAR},
+      FWLY = #{fwly,jdbcType=VARCHAR},
+      S1 = #{s1,jdbcType=VARCHAR},
+      S2 = #{s2,jdbcType=VARCHAR},
+      S3 = #{s3,jdbcType=VARCHAR},
+      S4 = #{s4,jdbcType=VARCHAR},
+      S5 = #{s5,jdbcType=VARCHAR},
+      S6 = #{s6,jdbcType=VARCHAR},
+      S7 = #{s7,jdbcType=VARCHAR},
+      S8 = #{s8,jdbcType=VARCHAR},
+      S9 = #{s9,jdbcType=VARCHAR},
+      S10 = #{s10,jdbcType=VARCHAR},
+      S11 = #{s11,jdbcType=VARCHAR},
+      S12 = #{s12,jdbcType=VARCHAR},
+      S13 = #{s13,jdbcType=VARCHAR},
+      S14 = #{s14,jdbcType=VARCHAR},
+      S15 = #{s15,jdbcType=VARCHAR},
+      S16 = #{s16,jdbcType=VARCHAR},
+      S17 = #{s17,jdbcType=VARCHAR},
+      S18 = #{s18,jdbcType=VARCHAR},
+      S19 = #{s19,jdbcType=VARCHAR},
+      S20 = #{s20,jdbcType=VARCHAR},
+      S21 = #{s21,jdbcType=VARCHAR},
+      S22 = #{s22,jdbcType=VARCHAR},
+      S23 = #{s23,jdbcType=VARCHAR},
+      S24 = #{s24,jdbcType=VARCHAR},
+      S25 = #{s25,jdbcType=VARCHAR},
+      S26 = #{s26,jdbcType=VARCHAR},
+      S27 = #{s27,jdbcType=VARCHAR},
+      S28 = #{s28,jdbcType=VARCHAR},
+      S29 = #{s29,jdbcType=VARCHAR},
+      S30 = #{s30,jdbcType=VARCHAR},
+      S31 = #{s31,jdbcType=VARCHAR},
+      S32 = #{s32,jdbcType=VARCHAR},
+      S33 = #{s33,jdbcType=VARCHAR},
+      S34 = #{s34,jdbcType=VARCHAR},
+      S35 = #{s35,jdbcType=VARCHAR},
+      S36 = #{s36,jdbcType=VARCHAR},
+      S37 = #{s37,jdbcType=VARCHAR},
+      S38 = #{s38,jdbcType=VARCHAR},
+      ISKAIZHANJUANMU = #{iskaizhanjuanmu,jdbcType=VARCHAR},
+      ISZHUANXIANGSHENJI = #{iszhuanxiangshenji,jdbcType=VARCHAR},
+      MJDATE = #{mjdate,jdbcType=TIMESTAMP},
+      ISZIZHUHUODONG = #{iszizhuhuodong,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>

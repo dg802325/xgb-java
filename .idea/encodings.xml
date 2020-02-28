@@ -4,24 +4,55 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-alone" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-alone/alone-main" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-alone/alone-main/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-alone/alone-main/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-boot/boot-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-boot/boot-dao/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-message" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-boot/boot-message/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-model" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-boot/boot-model/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-mybatis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-boot/boot-mybatis/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-oss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-boot/boot-oss/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-pay" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-boot/boot-pay/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-boot/boot-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-data" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-data/data-api" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/xgb-data/data-api/config/FormConsultationCase.txt" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/xgb-data/data-api/config/JjhnjGyhdmxSub.txt" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/xgb-data/data-api/config/MfGwyjzZb.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/xgb-data/data-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-data/data-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-data/data-dao/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-data/data-model" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-data/data-model/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-data/data-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-data/data-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-jjhdate" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-jjhdate/jjhdate-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-jjhdate/jjhdate-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-jjhdate/jjhdate-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-jjhdate/jjhdate-dao/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-jjhdate/jjhdate-model" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-jjhdate/jjhdate-model/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-jjhdate/jjhdate-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-jjhdate/jjhdate-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-lovexgb/lovexgb-admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-lovexgb/lovexgb-admin/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-lovexgb/lovexgb-dao/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-lovexgb/lovexgb-dao/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-lovexgb/lovexgb-model/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-lovexgb/lovexgb-model/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-lovexgb/lovexgb-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-lovexgb/lovexgb-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-test/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-test/src/main/resources" charset="UTF-8" />
   </component>
 </project>

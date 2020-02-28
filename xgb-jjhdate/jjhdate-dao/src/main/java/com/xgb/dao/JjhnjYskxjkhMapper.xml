@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.JjhnjYskxjkhMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.JjhnjYskxjkh" >
+    <constructor >
+      <idArg column="ID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="INSTANCEID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORGANIZATIONID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATUS" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="NIANCHUYUE1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUHUAIZHANG1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUJIAZHI1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOYUE1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOHUAIZHANG1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOJIAZHI1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUYUE2" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUHUAIZHANG2" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUJIAZHI2" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOYUE2" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOHUAIZHANG2" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOJIAZHI2" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUYUE3" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUHUAIZHANG3" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUJIAZHI3" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOYUE3" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOHUAIZHANG3" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOJIAZHI3" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUYUE4" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUHUAIZHANG4" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUJIAZHI4" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOYUE4" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOHUAIZHANG4" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOJIAZHI4" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUYUEHEJI1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUHUAIZHANGHEJI1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUJIAZHIHEJI1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOYUEHEJI1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOHUAIZHANGHEJI1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOJIAZHIHEJI1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUYUEHEJI2" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUBILI1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANMOYUEHEJI2" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOBILI1" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, INSTANCEID, ORGANIZATIONID, STATUS, NIANCHUYUE1, NIANCHUHUAIZHANG1, NIANCHUJIAZHI1, 
+    NIANMOYUE1, NIANMOHUAIZHANG1, NIANMOJIAZHI1, NIANCHUYUE2, NIANCHUHUAIZHANG2, NIANCHUJIAZHI2, 
+    NIANMOYUE2, NIANMOHUAIZHANG2, NIANMOJIAZHI2, NIANCHUYUE3, NIANCHUHUAIZHANG3, NIANCHUJIAZHI3, 
+    NIANMOYUE3, NIANMOHUAIZHANG3, NIANMOJIAZHI3, NIANCHUYUE4, NIANCHUHUAIZHANG4, NIANCHUJIAZHI4, 
+    NIANMOYUE4, NIANMOHUAIZHANG4, NIANMOJIAZHI4, NIANCHUYUEHEJI1, NIANCHUHUAIZHANGHEJI1, 
+    NIANCHUJIAZHIHEJI1, NIANMOYUEHEJI1, NIANMOHUAIZHANGHEJI1, NIANMOJIAZHIHEJI1, NIANCHUYUEHEJI2, 
+    NIANCHUBILI1, NIANMOYUEHEJI2, NIANMOBILI1
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.JjhnjYskxjkhExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from MJZZ_USER.JJHNJ_YSKXJKH
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from MJZZ_USER.JJHNJ_YSKXJKH
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from MJZZ_USER.JJHNJ_YSKXJKH
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xgb.model.JjhnjYskxjkhExample" >
+    delete from MJZZ_USER.JJHNJ_YSKXJKH
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.JjhnjYskxjkh" >
+    insert into JJHNJ_YSKXJKH (ID, INSTANCEID, ORGANIZATIONID, 
+      STATUS, NIANCHUYUE1, NIANCHUHUAIZHANG1, 
+      NIANCHUJIAZHI1, NIANMOYUE1, NIANMOHUAIZHANG1, 
+      NIANMOJIAZHI1, NIANCHUYUE2, NIANCHUHUAIZHANG2, 
+      NIANCHUJIAZHI2, NIANMOYUE2, NIANMOHUAIZHANG2, 
+      NIANMOJIAZHI2, NIANCHUYUE3, NIANCHUHUAIZHANG3, 
+      NIANCHUJIAZHI3, NIANMOYUE3, NIANMOHUAIZHANG3, 
+      NIANMOJIAZHI3, NIANCHUYUE4, NIANCHUHUAIZHANG4, 
+      NIANCHUJIAZHI4, NIANMOYUE4, NIANMOHUAIZHANG4, 
+      NIANMOJIAZHI4, NIANCHUYUEHEJI1, NIANCHUHUAIZHANGHEJI1, 
+      NIANCHUJIAZHIHEJI1, NIANMOYUEHEJI1, NIANMOHUAIZHANGHEJI1, 
+      NIANMOJIAZHIHEJI1, NIANCHUYUEHEJI2, NIANCHUBILI1, 
+      NIANMOYUEHEJI2, NIANMOBILI1)
+    values (#{id,jdbcType=DECIMAL}, #{instanceid,jdbcType=VARCHAR}, #{organizationid,jdbcType=VARCHAR}, 
+      #{status,jdbcType=DECIMAL}, #{nianchuyue1,jdbcType=DECIMAL}, #{nianchuhuaizhang1,jdbcType=DECIMAL}, 
+      #{nianchujiazhi1,jdbcType=DECIMAL}, #{nianmoyue1,jdbcType=DECIMAL}, #{nianmohuaizhang1,jdbcType=DECIMAL}, 
+      #{nianmojiazhi1,jdbcType=DECIMAL}, #{nianchuyue2,jdbcType=DECIMAL}, #{nianchuhuaizhang2,jdbcType=DECIMAL}, 
+      #{nianchujiazhi2,jdbcType=DECIMAL}, #{nianmoyue2,jdbcType=DECIMAL}, #{nianmohuaizhang2,jdbcType=DECIMAL}, 
+      #{nianmojiazhi2,jdbcType=DECIMAL}, #{nianchuyue3,jdbcType=DECIMAL}, #{nianchuhuaizhang3,jdbcType=DECIMAL}, 
+      #{nianchujiazhi3,jdbcType=DECIMAL}, #{nianmoyue3,jdbcType=DECIMAL}, #{nianmohuaizhang3,jdbcType=DECIMAL}, 
+      #{nianmojiazhi3,jdbcType=DECIMAL}, #{nianchuyue4,jdbcType=DECIMAL}, #{nianchuhuaizhang4,jdbcType=DECIMAL}, 
+      #{nianchujiazhi4,jdbcType=DECIMAL}, #{nianmoyue4,jdbcType=DECIMAL}, #{nianmohuaizhang4,jdbcType=DECIMAL}, 
+      #{nianmojiazhi4,jdbcType=DECIMAL}, #{nianchuyueheji1,jdbcType=DECIMAL}, #{nianchuhuaizhangheji1,jdbcType=DECIMAL}, 
+      #{nianchujiazhiheji1,jdbcType=DECIMAL}, #{nianmoyueheji1,jdbcType=DECIMAL}, #{nianmohuaizhangheji1,jdbcType=DECIMAL}, 
+      #{nianmojiazhiheji1,jdbcType=DECIMAL}, #{nianchuyueheji2,jdbcType=DECIMAL}, #{nianchubili1,jdbcType=VARCHAR}, 
+      #{nianmoyueheji2,jdbcType=DECIMAL}, #{nianmobili1,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.JjhnjYskxjkh" >
+    insert into JJHNJ_YSKXJKH
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="instanceid != null" >
+        INSTANCEID,
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="nianchuyue1 != null" >
+        NIANCHUYUE1,
+      </if>
+      <if test="nianchuhuaizhang1 != null" >
+        NIANCHUHUAIZHANG1,
+      </if>
+      <if test="nianchujiazhi1 != null" >
+        NIANCHUJIAZHI1,
+      </if>
+      <if test="nianmoyue1 != null" >
+        NIANMOYUE1,
+      </if>
+      <if test="nianmohuaizhang1 != null" >
+        NIANMOHUAIZHANG1,
+      </if>
+      <if test="nianmojiazhi1 != null" >
+        NIANMOJIAZHI1,
+      </if>
+      <if test="nianchuyue2 != null" >
+        NIANCHUYUE2,
+      </if>
+      <if test="nianchuhuaizhang2 != null" >
+        NIANCHUHUAIZHANG2,
+      </if>
+      <if test="nianchujiazhi2 != null" >
+        NIANCHUJIAZHI2,
+      </if>
+      <if test="nianmoyue2 != null" >
+        NIANMOYUE2,
+      </if>
+      <if test="nianmohuaizhang2 != null" >
+        NIANMOHUAIZHANG2,
+      </if>
+      <if test="nianmojiazhi2 != null" >
+        NIANMOJIAZHI2,
+      </if>
+      <if test="nianchuyue3 != null" >
+        NIANCHUYUE3,
+      </if>
+      <if test="nianchuhuaizhang3 != null" >
+        NIANCHUHUAIZHANG3,
+      </if>
+      <if test="nianchujiazhi3 != null" >
+        NIANCHUJIAZHI3,
+      </if>
+      <if test="nianmoyue3 != null" >
+        NIANMOYUE3,
+      </if>
+      <if test="nianmohuaizhang3 != null" >
+        NIANMOHUAIZHANG3,
+      </if>
+      <if test="nianmojiazhi3 != null" >
+        NIANMOJIAZHI3,
+      </if>
+      <if test="nianchuyue4 != null" >
+        NIANCHUYUE4,
+      </if>
+      <if test="nianchuhuaizhang4 != null" >
+        NIANCHUHUAIZHANG4,
+      </if>
+      <if test="nianchujiazhi4 != null" >
+        NIANCHUJIAZHI4,
+      </if>
+      <if test="nianmoyue4 != null" >
+        NIANMOYUE4,
+      </if>
+      <if test="nianmohuaizhang4 != null" >
+        NIANMOHUAIZHANG4,
+      </if>
+      <if test="nianmojiazhi4 != null" >
+        NIANMOJIAZHI4,
+      </if>
+      <if test="nianchuyueheji1 != null" >
+        NIANCHUYUEHEJI1,
+      </if>
+      <if test="nianchuhuaizhangheji1 != null" >
+        NIANCHUHUAIZHANGHEJI1,
+      </if>
+      <if test="nianchujiazhiheji1 != null" >
+        NIANCHUJIAZHIHEJI1,
+      </if>
+      <if test="nianmoyueheji1 != null" >
+        NIANMOYUEHEJI1,
+      </if>
+      <if test="nianmohuaizhangheji1 != null" >
+        NIANMOHUAIZHANGHEJI1,
+      </if>
+      <if test="nianmojiazhiheji1 != null" >
+        NIANMOJIAZHIHEJI1,
+      </if>
+      <if test="nianchuyueheji2 != null" >
+        NIANCHUYUEHEJI2,
+      </if>
+      <if test="nianchubili1 != null" >
+        NIANCHUBILI1,
+      </if>
+      <if test="nianmoyueheji2 != null" >
+        NIANMOYUEHEJI2,
+      </if>
+      <if test="nianmobili1 != null" >
+        NIANMOBILI1,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="instanceid != null" >
+        #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchuyue1 != null" >
+        #{nianchuyue1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchuhuaizhang1 != null" >
+        #{nianchuhuaizhang1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchujiazhi1 != null" >
+        #{nianchujiazhi1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmoyue1 != null" >
+        #{nianmoyue1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmohuaizhang1 != null" >
+        #{nianmohuaizhang1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmojiazhi1 != null" >
+        #{nianmojiazhi1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchuyue2 != null" >
+        #{nianchuyue2,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchuhuaizhang2 != null" >
+        #{nianchuhuaizhang2,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchujiazhi2 != null" >
+        #{nianchujiazhi2,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmoyue2 != null" >
+        #{nianmoyue2,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmohuaizhang2 != null" >
+        #{nianmohuaizhang2,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmojiazhi2 != null" >
+        #{nianmojiazhi2,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchuyue3 != null" >
+        #{nianchuyue3,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchuhuaizhang3 != null" >
+        #{nianchuhuaizhang3,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchujiazhi3 != null" >
+        #{nianchujiazhi3,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmoyue3 != null" >
+        #{nianmoyue3,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmohuaizhang3 != null" >
+        #{nianmohuaizhang3,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmojiazhi3 != null" >
+        #{nianmojiazhi3,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchuyue4 != null" >
+        #{nianchuyue4,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchuhuaizhang4 != null" >
+        #{nianchuhuaizhang4,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchujiazhi4 != null" >
+        #{nianchujiazhi4,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmoyue4 != null" >
+        #{nianmoyue4,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmohuaizhang4 != null" >
+        #{nianmohuaizhang4,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmojiazhi4 != null" >
+        #{nianmojiazhi4,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchuyueheji1 != null" >
+        #{nianchuyueheji1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchuhuaizhangheji1 != null" >
+        #{nianchuhuaizhangheji1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchujiazhiheji1 != null" >
+        #{nianchujiazhiheji1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmoyueheji1 != null" >
+        #{nianmoyueheji1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmohuaizhangheji1 != null" >
+        #{nianmohuaizhangheji1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmojiazhiheji1 != null" >
+        #{nianmojiazhiheji1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchuyueheji2 != null" >
+        #{nianchuyueheji2,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili1 != null" >
+        #{nianchubili1,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyueheji2 != null" >
+        #{nianmoyueheji2,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili1 != null" >
+        #{nianmobili1,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.JjhnjYskxjkhExample" resultType="java.lang.Integer" >
+    select count(*) from MJZZ_USER.JJHNJ_YSKXJKH
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update JJHNJ_YSKXJKH
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=DECIMAL},
+      </if>
+      <if test="record.instanceid != null" >
+        INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organizationid != null" >
+        ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchuyue1 != null" >
+        NIANCHUYUE1 = #{record.nianchuyue1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchuhuaizhang1 != null" >
+        NIANCHUHUAIZHANG1 = #{record.nianchuhuaizhang1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchujiazhi1 != null" >
+        NIANCHUJIAZHI1 = #{record.nianchujiazhi1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmoyue1 != null" >
+        NIANMOYUE1 = #{record.nianmoyue1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmohuaizhang1 != null" >
+        NIANMOHUAIZHANG1 = #{record.nianmohuaizhang1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmojiazhi1 != null" >
+        NIANMOJIAZHI1 = #{record.nianmojiazhi1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchuyue2 != null" >
+        NIANCHUYUE2 = #{record.nianchuyue2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchuhuaizhang2 != null" >
+        NIANCHUHUAIZHANG2 = #{record.nianchuhuaizhang2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchujiazhi2 != null" >
+        NIANCHUJIAZHI2 = #{record.nianchujiazhi2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmoyue2 != null" >
+        NIANMOYUE2 = #{record.nianmoyue2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmohuaizhang2 != null" >
+        NIANMOHUAIZHANG2 = #{record.nianmohuaizhang2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmojiazhi2 != null" >
+        NIANMOJIAZHI2 = #{record.nianmojiazhi2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchuyue3 != null" >
+        NIANCHUYUE3 = #{record.nianchuyue3,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchuhuaizhang3 != null" >
+        NIANCHUHUAIZHANG3 = #{record.nianchuhuaizhang3,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchujiazhi3 != null" >
+        NIANCHUJIAZHI3 = #{record.nianchujiazhi3,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmoyue3 != null" >
+        NIANMOYUE3 = #{record.nianmoyue3,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmohuaizhang3 != null" >
+        NIANMOHUAIZHANG3 = #{record.nianmohuaizhang3,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmojiazhi3 != null" >
+        NIANMOJIAZHI3 = #{record.nianmojiazhi3,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchuyue4 != null" >
+        NIANCHUYUE4 = #{record.nianchuyue4,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchuhuaizhang4 != null" >
+        NIANCHUHUAIZHANG4 = #{record.nianchuhuaizhang4,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchujiazhi4 != null" >
+        NIANCHUJIAZHI4 = #{record.nianchujiazhi4,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmoyue4 != null" >
+        NIANMOYUE4 = #{record.nianmoyue4,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmohuaizhang4 != null" >
+        NIANMOHUAIZHANG4 = #{record.nianmohuaizhang4,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmojiazhi4 != null" >
+        NIANMOJIAZHI4 = #{record.nianmojiazhi4,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchuyueheji1 != null" >
+        NIANCHUYUEHEJI1 = #{record.nianchuyueheji1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchuhuaizhangheji1 != null" >
+        NIANCHUHUAIZHANGHEJI1 = #{record.nianchuhuaizhangheji1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchujiazhiheji1 != null" >
+        NIANCHUJIAZHIHEJI1 = #{record.nianchujiazhiheji1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmoyueheji1 != null" >
+        NIANMOYUEHEJI1 = #{record.nianmoyueheji1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmohuaizhangheji1 != null" >
+        NIANMOHUAIZHANGHEJI1 = #{record.nianmohuaizhangheji1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmojiazhiheji1 != null" >
+        NIANMOJIAZHIHEJI1 = #{record.nianmojiazhiheji1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchuyueheji2 != null" >
+        NIANCHUYUEHEJI2 = #{record.nianchuyueheji2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchubili1 != null" >
+        NIANCHUBILI1 = #{record.nianchubili1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianmoyueheji2 != null" >
+        NIANMOYUEHEJI2 = #{record.nianmoyueheji2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmobili1 != null" >
+        NIANMOBILI1 = #{record.nianmobili1,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update JJHNJ_YSKXJKH
+    set ID = #{record.id,jdbcType=DECIMAL},
+      INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=DECIMAL},
+      NIANCHUYUE1 = #{record.nianchuyue1,jdbcType=DECIMAL},
+      NIANCHUHUAIZHANG1 = #{record.nianchuhuaizhang1,jdbcType=DECIMAL},
+      NIANCHUJIAZHI1 = #{record.nianchujiazhi1,jdbcType=DECIMAL},
+      NIANMOYUE1 = #{record.nianmoyue1,jdbcType=DECIMAL},
+      NIANMOHUAIZHANG1 = #{record.nianmohuaizhang1,jdbcType=DECIMAL},
+      NIANMOJIAZHI1 = #{record.nianmojiazhi1,jdbcType=DECIMAL},
+      NIANCHUYUE2 = #{record.nianchuyue2,jdbcType=DECIMAL},
+      NIANCHUHUAIZHANG2 = #{record.nianchuhuaizhang2,jdbcType=DECIMAL},
+      NIANCHUJIAZHI2 = #{record.nianchujiazhi2,jdbcType=DECIMAL},
+      NIANMOYUE2 = #{record.nianmoyue2,jdbcType=DECIMAL},
+      NIANMOHUAIZHANG2 = #{record.nianmohuaizhang2,jdbcType=DECIMAL},
+      NIANMOJIAZHI2 = #{record.nianmojiazhi2,jdbcType=DECIMAL},
+      NIANCHUYUE3 = #{record.nianchuyue3,jdbcType=DECIMAL},
+      NIANCHUHUAIZHANG3 = #{record.nianchuhuaizhang3,jdbcType=DECIMAL},
+      NIANCHUJIAZHI3 = #{record.nianchujiazhi3,jdbcType=DECIMAL},
+      NIANMOYUE3 = #{record.nianmoyue3,jdbcType=DECIMAL},
+      NIANMOHUAIZHANG3 = #{record.nianmohuaizhang3,jdbcType=DECIMAL},
+      NIANMOJIAZHI3 = #{record.nianmojiazhi3,jdbcType=DECIMAL},
+      NIANCHUYUE4 = #{record.nianchuyue4,jdbcType=DECIMAL},
+      NIANCHUHUAIZHANG4 = #{record.nianchuhuaizhang4,jdbcType=DECIMAL},
+      NIANCHUJIAZHI4 = #{record.nianchujiazhi4,jdbcType=DECIMAL},
+      NIANMOYUE4 = #{record.nianmoyue4,jdbcType=DECIMAL},
+      NIANMOHUAIZHANG4 = #{record.nianmohuaizhang4,jdbcType=DECIMAL},
+      NIANMOJIAZHI4 = #{record.nianmojiazhi4,jdbcType=DECIMAL},
+      NIANCHUYUEHEJI1 = #{record.nianchuyueheji1,jdbcType=DECIMAL},
+      NIANCHUHUAIZHANGHEJI1 = #{record.nianchuhuaizhangheji1,jdbcType=DECIMAL},
+      NIANCHUJIAZHIHEJI1 = #{record.nianchujiazhiheji1,jdbcType=DECIMAL},
+      NIANMOYUEHEJI1 = #{record.nianmoyueheji1,jdbcType=DECIMAL},
+      NIANMOHUAIZHANGHEJI1 = #{record.nianmohuaizhangheji1,jdbcType=DECIMAL},
+      NIANMOJIAZHIHEJI1 = #{record.nianmojiazhiheji1,jdbcType=DECIMAL},
+      NIANCHUYUEHEJI2 = #{record.nianchuyueheji2,jdbcType=DECIMAL},
+      NIANCHUBILI1 = #{record.nianchubili1,jdbcType=VARCHAR},
+      NIANMOYUEHEJI2 = #{record.nianmoyueheji2,jdbcType=DECIMAL},
+      NIANMOBILI1 = #{record.nianmobili1,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.JjhnjYskxjkh" >
+    update JJHNJ_YSKXJKH
+    <set >
+      <if test="instanceid != null" >
+        INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchuyue1 != null" >
+        NIANCHUYUE1 = #{nianchuyue1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchuhuaizhang1 != null" >
+        NIANCHUHUAIZHANG1 = #{nianchuhuaizhang1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchujiazhi1 != null" >
+        NIANCHUJIAZHI1 = #{nianchujiazhi1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmoyue1 != null" >
+        NIANMOYUE1 = #{nianmoyue1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmohuaizhang1 != null" >
+        NIANMOHUAIZHANG1 = #{nianmohuaizhang1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmojiazhi1 != null" >
+        NIANMOJIAZHI1 = #{nianmojiazhi1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchuyue2 != null" >
+        NIANCHUYUE2 = #{nianchuyue2,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchuhuaizhang2 != null" >
+        NIANCHUHUAIZHANG2 = #{nianchuhuaizhang2,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchujiazhi2 != null" >
+        NIANCHUJIAZHI2 = #{nianchujiazhi2,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmoyue2 != null" >
+        NIANMOYUE2 = #{nianmoyue2,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmohuaizhang2 != null" >
+        NIANMOHUAIZHANG2 = #{nianmohuaizhang2,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmojiazhi2 != null" >
+        NIANMOJIAZHI2 = #{nianmojiazhi2,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchuyue3 != null" >
+        NIANCHUYUE3 = #{nianchuyue3,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchuhuaizhang3 != null" >
+        NIANCHUHUAIZHANG3 = #{nianchuhuaizhang3,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchujiazhi3 != null" >
+        NIANCHUJIAZHI3 = #{nianchujiazhi3,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmoyue3 != null" >
+        NIANMOYUE3 = #{nianmoyue3,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmohuaizhang3 != null" >
+        NIANMOHUAIZHANG3 = #{nianmohuaizhang3,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmojiazhi3 != null" >
+        NIANMOJIAZHI3 = #{nianmojiazhi3,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchuyue4 != null" >
+        NIANCHUYUE4 = #{nianchuyue4,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchuhuaizhang4 != null" >
+        NIANCHUHUAIZHANG4 = #{nianchuhuaizhang4,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchujiazhi4 != null" >
+        NIANCHUJIAZHI4 = #{nianchujiazhi4,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmoyue4 != null" >
+        NIANMOYUE4 = #{nianmoyue4,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmohuaizhang4 != null" >
+        NIANMOHUAIZHANG4 = #{nianmohuaizhang4,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmojiazhi4 != null" >
+        NIANMOJIAZHI4 = #{nianmojiazhi4,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchuyueheji1 != null" >
+        NIANCHUYUEHEJI1 = #{nianchuyueheji1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchuhuaizhangheji1 != null" >
+        NIANCHUHUAIZHANGHEJI1 = #{nianchuhuaizhangheji1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchujiazhiheji1 != null" >
+        NIANCHUJIAZHIHEJI1 = #{nianchujiazhiheji1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmoyueheji1 != null" >
+        NIANMOYUEHEJI1 = #{nianmoyueheji1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmohuaizhangheji1 != null" >
+        NIANMOHUAIZHANGHEJI1 = #{nianmohuaizhangheji1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmojiazhiheji1 != null" >
+        NIANMOJIAZHIHEJI1 = #{nianmojiazhiheji1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchuyueheji2 != null" >
+        NIANCHUYUEHEJI2 = #{nianchuyueheji2,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili1 != null" >
+        NIANCHUBILI1 = #{nianchubili1,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyueheji2 != null" >
+        NIANMOYUEHEJI2 = #{nianmoyueheji2,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili1 != null" >
+        NIANMOBILI1 = #{nianmobili1,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xgb.model.JjhnjYskxjkh" >
+    update JJHNJ_YSKXJKH
+    set INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=DECIMAL},
+      NIANCHUYUE1 = #{nianchuyue1,jdbcType=DECIMAL},
+      NIANCHUHUAIZHANG1 = #{nianchuhuaizhang1,jdbcType=DECIMAL},
+      NIANCHUJIAZHI1 = #{nianchujiazhi1,jdbcType=DECIMAL},
+      NIANMOYUE1 = #{nianmoyue1,jdbcType=DECIMAL},
+      NIANMOHUAIZHANG1 = #{nianmohuaizhang1,jdbcType=DECIMAL},
+      NIANMOJIAZHI1 = #{nianmojiazhi1,jdbcType=DECIMAL},
+      NIANCHUYUE2 = #{nianchuyue2,jdbcType=DECIMAL},
+      NIANCHUHUAIZHANG2 = #{nianchuhuaizhang2,jdbcType=DECIMAL},
+      NIANCHUJIAZHI2 = #{nianchujiazhi2,jdbcType=DECIMAL},
+      NIANMOYUE2 = #{nianmoyue2,jdbcType=DECIMAL},
+      NIANMOHUAIZHANG2 = #{nianmohuaizhang2,jdbcType=DECIMAL},
+      NIANMOJIAZHI2 = #{nianmojiazhi2,jdbcType=DECIMAL},
+      NIANCHUYUE3 = #{nianchuyue3,jdbcType=DECIMAL},
+      NIANCHUHUAIZHANG3 = #{nianchuhuaizhang3,jdbcType=DECIMAL},
+      NIANCHUJIAZHI3 = #{nianchujiazhi3,jdbcType=DECIMAL},
+      NIANMOYUE3 = #{nianmoyue3,jdbcType=DECIMAL},
+      NIANMOHUAIZHANG3 = #{nianmohuaizhang3,jdbcType=DECIMAL},
+      NIANMOJIAZHI3 = #{nianmojiazhi3,jdbcType=DECIMAL},
+      NIANCHUYUE4 = #{nianchuyue4,jdbcType=DECIMAL},
+      NIANCHUHUAIZHANG4 = #{nianchuhuaizhang4,jdbcType=DECIMAL},
+      NIANCHUJIAZHI4 = #{nianchujiazhi4,jdbcType=DECIMAL},
+      NIANMOYUE4 = #{nianmoyue4,jdbcType=DECIMAL},
+      NIANMOHUAIZHANG4 = #{nianmohuaizhang4,jdbcType=DECIMAL},
+      NIANMOJIAZHI4 = #{nianmojiazhi4,jdbcType=DECIMAL},
+      NIANCHUYUEHEJI1 = #{nianchuyueheji1,jdbcType=DECIMAL},
+      NIANCHUHUAIZHANGHEJI1 = #{nianchuhuaizhangheji1,jdbcType=DECIMAL},
+      NIANCHUJIAZHIHEJI1 = #{nianchujiazhiheji1,jdbcType=DECIMAL},
+      NIANMOYUEHEJI1 = #{nianmoyueheji1,jdbcType=DECIMAL},
+      NIANMOHUAIZHANGHEJI1 = #{nianmohuaizhangheji1,jdbcType=DECIMAL},
+      NIANMOJIAZHIHEJI1 = #{nianmojiazhiheji1,jdbcType=DECIMAL},
+      NIANCHUYUEHEJI2 = #{nianchuyueheji2,jdbcType=DECIMAL},
+      NIANCHUBILI1 = #{nianchubili1,jdbcType=VARCHAR},
+      NIANMOYUEHEJI2 = #{nianmoyueheji2,jdbcType=DECIMAL},
+      NIANMOBILI1 = #{nianmobili1,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>

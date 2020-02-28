@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.JjhNjCsxtMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.JjhNjCsxt" >
+    <constructor >
+      <arg column="ID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="INSTANCEID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORGANIZATIONID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATUS" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="MASTERID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="XUHAO" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="MINGCHENG" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="WIETUO" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="YONGTU" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="GONGTONGSHOUTUOFANG" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="XINTUOTAIWUYUE" jdbcType="DECIMAL" javaType="java.lang.Long" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, INSTANCEID, ORGANIZATIONID, STATUS, MASTERID, XUHAO, MINGCHENG, WIETUO, YONGTU, 
+    GONGTONGSHOUTUOFANG, XINTUOTAIWUYUE
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.JjhNjCsxtExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from JJH_NJ_CSXT
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.xgb.model.JjhNjCsxtExample" >
+    delete from JJH_NJ_CSXT
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.JjhNjCsxt" >
+    insert into JJH_NJ_CSXT (ID, INSTANCEID, ORGANIZATIONID, 
+      STATUS, MASTERID, XUHAO, 
+      MINGCHENG, WIETUO, YONGTU, 
+      GONGTONGSHOUTUOFANG, XINTUOTAIWUYUE)
+    values (#{id,jdbcType=DECIMAL}, #{instanceid,jdbcType=VARCHAR}, #{organizationid,jdbcType=VARCHAR}, 
+      #{status,jdbcType=DECIMAL}, #{masterid,jdbcType=DECIMAL}, #{xuhao,jdbcType=VARCHAR}, 
+      #{mingcheng,jdbcType=VARCHAR}, #{wietuo,jdbcType=VARCHAR}, #{yongtu,jdbcType=VARCHAR}, 
+      #{gongtongshoutuofang,jdbcType=VARCHAR}, #{xintuotaiwuyue,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.JjhNjCsxt" >
+    insert into JJH_NJ_CSXT
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="instanceid != null" >
+        INSTANCEID,
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="masterid != null" >
+        MASTERID,
+      </if>
+      <if test="xuhao != null" >
+        XUHAO,
+      </if>
+      <if test="mingcheng != null" >
+        MINGCHENG,
+      </if>
+      <if test="wietuo != null" >
+        WIETUO,
+      </if>
+      <if test="yongtu != null" >
+        YONGTU,
+      </if>
+      <if test="gongtongshoutuofang != null" >
+        GONGTONGSHOUTUOFANG,
+      </if>
+      <if test="xintuotaiwuyue != null" >
+        XINTUOTAIWUYUE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="instanceid != null" >
+        #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="masterid != null" >
+        #{masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="xuhao != null" >
+        #{xuhao,jdbcType=VARCHAR},
+      </if>
+      <if test="mingcheng != null" >
+        #{mingcheng,jdbcType=VARCHAR},
+      </if>
+      <if test="wietuo != null" >
+        #{wietuo,jdbcType=VARCHAR},
+      </if>
+      <if test="yongtu != null" >
+        #{yongtu,jdbcType=VARCHAR},
+      </if>
+      <if test="gongtongshoutuofang != null" >
+        #{gongtongshoutuofang,jdbcType=VARCHAR},
+      </if>
+      <if test="xintuotaiwuyue != null" >
+        #{xintuotaiwuyue,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.JjhNjCsxtExample" resultType="java.lang.Integer" >
+    select count(*) from JJH_NJ_CSXT
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update JJH_NJ_CSXT
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=DECIMAL},
+      </if>
+      <if test="record.instanceid != null" >
+        INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organizationid != null" >
+        ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=DECIMAL},
+      </if>
+      <if test="record.masterid != null" >
+        MASTERID = #{record.masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xuhao != null" >
+        XUHAO = #{record.xuhao,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mingcheng != null" >
+        MINGCHENG = #{record.mingcheng,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wietuo != null" >
+        WIETUO = #{record.wietuo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.yongtu != null" >
+        YONGTU = #{record.yongtu,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gongtongshoutuofang != null" >
+        GONGTONGSHOUTUOFANG = #{record.gongtongshoutuofang,jdbcType=VARCHAR},
+      </if>
+      <if test="record.xintuotaiwuyue != null" >
+        XINTUOTAIWUYUE = #{record.xintuotaiwuyue,jdbcType=DECIMAL},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update JJH_NJ_CSXT
+    set ID = #{record.id,jdbcType=DECIMAL},
+      INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=DECIMAL},
+      MASTERID = #{record.masterid,jdbcType=DECIMAL},
+      XUHAO = #{record.xuhao,jdbcType=VARCHAR},
+      MINGCHENG = #{record.mingcheng,jdbcType=VARCHAR},
+      WIETUO = #{record.wietuo,jdbcType=VARCHAR},
+      YONGTU = #{record.yongtu,jdbcType=VARCHAR},
+      GONGTONGSHOUTUOFANG = #{record.gongtongshoutuofang,jdbcType=VARCHAR},
+      XINTUOTAIWUYUE = #{record.xintuotaiwuyue,jdbcType=DECIMAL}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

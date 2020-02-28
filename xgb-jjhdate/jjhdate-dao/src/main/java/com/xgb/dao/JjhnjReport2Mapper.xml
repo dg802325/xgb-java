@@ -1,0 +1,1433 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.JjhnjReport2Mapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.JjhnjReport2" >
+    <constructor >
+      <idArg column="ID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="INSTANCEID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORGANIZATIONID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATUS" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="XIANJIN1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZHEHE1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="HEJI1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="XIANJIN2" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZHEHE2" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="HEJI2" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="XIANJIN3" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZHEHE3" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="HEJI3" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="XIANJIN4" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZHEHE4" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="HEJI4" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="XIANJIN5" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZHEHE5" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="HEJI5" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="XIANJIN6" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZHEHE6" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="HEJI6" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="XIANJIN7" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZHEHE7" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="HEJI7" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="XIANJIN8" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZHEHE8" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="HEJI8" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="HUODONGXIANGSHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="YANXUXIANGSHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="XIANJIN9" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZHEHE9" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="HEJI9" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="XIANJIN10" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZHEHE10" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="HEJI10" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="XIANJIN11" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZHEHE11" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="HEJI11" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="XIANJIN12" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZHEHE12" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="HEJI12" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="XIANJIN13" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZHEHE13" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="HEJI13" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="XIANJIN14" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZHEHE14" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="HEJI14" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="XIANJIN15" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZHEHE15" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="HEJI15" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZONGSHOURU" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZONGZHICHU" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="GONGYIZHICHU" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="FULIZHICHU" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="XINGZHENGZHICHU" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="GONGYIBILI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="FULIBILI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="GONGJI" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="SHOURUHEJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="HOUZONGSHOURU" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="HOUGONGYIZHICHU" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="HOUGONGYIBILI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QITAZHICHU" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LIANGNIANGONGYIBILI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="SANNIANGONGYIBILI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZONGSHOURUSHANGNIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZONGSHOURUQIANNIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="FULIZHICHUSHANGNIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="GONGYIZHICHUQIANNIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="GONGYIZHICHUSHANGNIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="XINGZHENGZHICHUSHANGNIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="XINGZHENGZHICHUQIANNIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="FULIZHICHUQIANNIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="LIANGNIANFULIBILI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="SANNIANFULIBILI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZONGZHICHUQIANNIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZONGZHICHUSHANGNIAN" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="IFCHARITY" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="IFCOLLECT" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="CS_FLAG" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="MJ_FLAG" jdbcType="DECIMAL" javaType="java.lang.Short" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, INSTANCEID, ORGANIZATIONID, STATUS, XIANJIN1, ZHEHE1, HEJI1, XIANJIN2, ZHEHE2, 
+    HEJI2, XIANJIN3, ZHEHE3, HEJI3, XIANJIN4, ZHEHE4, HEJI4, XIANJIN5, ZHEHE5, HEJI5, 
+    XIANJIN6, ZHEHE6, HEJI6, XIANJIN7, ZHEHE7, HEJI7, XIANJIN8, ZHEHE8, HEJI8, HUODONGXIANGSHU, 
+    YANXUXIANGSHU, XIANJIN9, ZHEHE9, HEJI9, XIANJIN10, ZHEHE10, HEJI10, XIANJIN11, ZHEHE11, 
+    HEJI11, XIANJIN12, ZHEHE12, HEJI12, XIANJIN13, ZHEHE13, HEJI13, XIANJIN14, ZHEHE14, 
+    HEJI14, XIANJIN15, ZHEHE15, HEJI15, ZONGSHOURU, ZONGZHICHU, GONGYIZHICHU, FULIZHICHU, 
+    XINGZHENGZHICHU, GONGYIBILI, FULIBILI, GONGJI, SHOURUHEJI, HOUZONGSHOURU, HOUGONGYIZHICHU, 
+    HOUGONGYIBILI, QITAZHICHU, LIANGNIANGONGYIBILI, SANNIANGONGYIBILI, ZONGSHOURUSHANGNIAN, 
+    ZONGSHOURUQIANNIAN, FULIZHICHUSHANGNIAN, GONGYIZHICHUQIANNIAN, GONGYIZHICHUSHANGNIAN, 
+    XINGZHENGZHICHUSHANGNIAN, XINGZHENGZHICHUQIANNIAN, FULIZHICHUQIANNIAN, LIANGNIANFULIBILI, 
+    SANNIANFULIBILI, ZONGZHICHUQIANNIAN, ZONGZHICHUSHANGNIAN, IFCHARITY, IFCOLLECT, CS_FLAG, 
+    MJ_FLAG
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.JjhnjReport2Example" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from MJZZ_USER.JJHNJ_REPORT2
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from MJZZ_USER.JJHNJ_REPORT2
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from MJZZ_USER.JJHNJ_REPORT2
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xgb.model.JjhnjReport2Example" >
+    delete from MJZZ_USER.JJHNJ_REPORT2
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.JjhnjReport2" >
+    insert into JJHNJ_REPORT2 (ID, INSTANCEID, ORGANIZATIONID, 
+      STATUS, XIANJIN1, ZHEHE1, 
+      HEJI1, XIANJIN2, ZHEHE2, 
+      HEJI2, XIANJIN3, ZHEHE3, 
+      HEJI3, XIANJIN4, ZHEHE4, 
+      HEJI4, XIANJIN5, ZHEHE5, 
+      HEJI5, XIANJIN6, ZHEHE6, 
+      HEJI6, XIANJIN7, ZHEHE7, 
+      HEJI7, XIANJIN8, ZHEHE8, 
+      HEJI8, HUODONGXIANGSHU, YANXUXIANGSHU, 
+      XIANJIN9, ZHEHE9, HEJI9, 
+      XIANJIN10, ZHEHE10, HEJI10, 
+      XIANJIN11, ZHEHE11, HEJI11, 
+      XIANJIN12, ZHEHE12, HEJI12, 
+      XIANJIN13, ZHEHE13, HEJI13, 
+      XIANJIN14, ZHEHE14, HEJI14, 
+      XIANJIN15, ZHEHE15, HEJI15, 
+      ZONGSHOURU, ZONGZHICHU, GONGYIZHICHU, 
+      FULIZHICHU, XINGZHENGZHICHU, GONGYIBILI, 
+      FULIBILI, GONGJI, SHOURUHEJI, 
+      HOUZONGSHOURU, HOUGONGYIZHICHU, HOUGONGYIBILI, 
+      QITAZHICHU, LIANGNIANGONGYIBILI, SANNIANGONGYIBILI, 
+      ZONGSHOURUSHANGNIAN, ZONGSHOURUQIANNIAN, 
+      FULIZHICHUSHANGNIAN, GONGYIZHICHUQIANNIAN, 
+      GONGYIZHICHUSHANGNIAN, XINGZHENGZHICHUSHANGNIAN, 
+      XINGZHENGZHICHUQIANNIAN, FULIZHICHUQIANNIAN, 
+      LIANGNIANFULIBILI, SANNIANFULIBILI, ZONGZHICHUQIANNIAN, 
+      ZONGZHICHUSHANGNIAN, IFCHARITY, IFCOLLECT, 
+      CS_FLAG, MJ_FLAG)
+    values (#{id,jdbcType=DECIMAL}, #{instanceid,jdbcType=VARCHAR}, #{organizationid,jdbcType=VARCHAR}, 
+      #{status,jdbcType=DECIMAL}, #{xianjin1,jdbcType=DECIMAL}, #{zhehe1,jdbcType=DECIMAL}, 
+      #{heji1,jdbcType=DECIMAL}, #{xianjin2,jdbcType=DECIMAL}, #{zhehe2,jdbcType=DECIMAL}, 
+      #{heji2,jdbcType=DECIMAL}, #{xianjin3,jdbcType=DECIMAL}, #{zhehe3,jdbcType=DECIMAL}, 
+      #{heji3,jdbcType=DECIMAL}, #{xianjin4,jdbcType=DECIMAL}, #{zhehe4,jdbcType=DECIMAL}, 
+      #{heji4,jdbcType=DECIMAL}, #{xianjin5,jdbcType=DECIMAL}, #{zhehe5,jdbcType=DECIMAL}, 
+      #{heji5,jdbcType=DECIMAL}, #{xianjin6,jdbcType=DECIMAL}, #{zhehe6,jdbcType=DECIMAL}, 
+      #{heji6,jdbcType=DECIMAL}, #{xianjin7,jdbcType=DECIMAL}, #{zhehe7,jdbcType=DECIMAL}, 
+      #{heji7,jdbcType=DECIMAL}, #{xianjin8,jdbcType=DECIMAL}, #{zhehe8,jdbcType=DECIMAL}, 
+      #{heji8,jdbcType=DECIMAL}, #{huodongxiangshu,jdbcType=DECIMAL}, #{yanxuxiangshu,jdbcType=DECIMAL}, 
+      #{xianjin9,jdbcType=DECIMAL}, #{zhehe9,jdbcType=DECIMAL}, #{heji9,jdbcType=DECIMAL}, 
+      #{xianjin10,jdbcType=DECIMAL}, #{zhehe10,jdbcType=DECIMAL}, #{heji10,jdbcType=DECIMAL}, 
+      #{xianjin11,jdbcType=DECIMAL}, #{zhehe11,jdbcType=DECIMAL}, #{heji11,jdbcType=DECIMAL}, 
+      #{xianjin12,jdbcType=DECIMAL}, #{zhehe12,jdbcType=DECIMAL}, #{heji12,jdbcType=DECIMAL}, 
+      #{xianjin13,jdbcType=DECIMAL}, #{zhehe13,jdbcType=DECIMAL}, #{heji13,jdbcType=DECIMAL}, 
+      #{xianjin14,jdbcType=DECIMAL}, #{zhehe14,jdbcType=DECIMAL}, #{heji14,jdbcType=DECIMAL}, 
+      #{xianjin15,jdbcType=DECIMAL}, #{zhehe15,jdbcType=DECIMAL}, #{heji15,jdbcType=DECIMAL}, 
+      #{zongshouru,jdbcType=DECIMAL}, #{zongzhichu,jdbcType=DECIMAL}, #{gongyizhichu,jdbcType=DECIMAL}, 
+      #{fulizhichu,jdbcType=DECIMAL}, #{xingzhengzhichu,jdbcType=DECIMAL}, #{gongyibili,jdbcType=DECIMAL}, 
+      #{fulibili,jdbcType=DECIMAL}, #{gongji,jdbcType=DECIMAL}, #{shouruheji,jdbcType=DECIMAL}, 
+      #{houzongshouru,jdbcType=DECIMAL}, #{hougongyizhichu,jdbcType=DECIMAL}, #{hougongyibili,jdbcType=DECIMAL}, 
+      #{qitazhichu,jdbcType=DECIMAL}, #{liangniangongyibili,jdbcType=DECIMAL}, #{sanniangongyibili,jdbcType=DECIMAL}, 
+      #{zongshourushangnian,jdbcType=DECIMAL}, #{zongshouruqiannian,jdbcType=DECIMAL}, 
+      #{fulizhichushangnian,jdbcType=DECIMAL}, #{gongyizhichuqiannian,jdbcType=DECIMAL}, 
+      #{gongyizhichushangnian,jdbcType=DECIMAL}, #{xingzhengzhichushangnian,jdbcType=DECIMAL}, 
+      #{xingzhengzhichuqiannian,jdbcType=DECIMAL}, #{fulizhichuqiannian,jdbcType=DECIMAL}, 
+      #{liangnianfulibili,jdbcType=DECIMAL}, #{sannianfulibili,jdbcType=DECIMAL}, #{zongzhichuqiannian,jdbcType=DECIMAL}, 
+      #{zongzhichushangnian,jdbcType=DECIMAL}, #{ifcharity,jdbcType=DECIMAL}, #{ifcollect,jdbcType=DECIMAL}, 
+      #{csFlag,jdbcType=DECIMAL}, #{mjFlag,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.JjhnjReport2" >
+    insert into JJHNJ_REPORT2
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="instanceid != null" >
+        INSTANCEID,
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="xianjin1 != null" >
+        XIANJIN1,
+      </if>
+      <if test="zhehe1 != null" >
+        ZHEHE1,
+      </if>
+      <if test="heji1 != null" >
+        HEJI1,
+      </if>
+      <if test="xianjin2 != null" >
+        XIANJIN2,
+      </if>
+      <if test="zhehe2 != null" >
+        ZHEHE2,
+      </if>
+      <if test="heji2 != null" >
+        HEJI2,
+      </if>
+      <if test="xianjin3 != null" >
+        XIANJIN3,
+      </if>
+      <if test="zhehe3 != null" >
+        ZHEHE3,
+      </if>
+      <if test="heji3 != null" >
+        HEJI3,
+      </if>
+      <if test="xianjin4 != null" >
+        XIANJIN4,
+      </if>
+      <if test="zhehe4 != null" >
+        ZHEHE4,
+      </if>
+      <if test="heji4 != null" >
+        HEJI4,
+      </if>
+      <if test="xianjin5 != null" >
+        XIANJIN5,
+      </if>
+      <if test="zhehe5 != null" >
+        ZHEHE5,
+      </if>
+      <if test="heji5 != null" >
+        HEJI5,
+      </if>
+      <if test="xianjin6 != null" >
+        XIANJIN6,
+      </if>
+      <if test="zhehe6 != null" >
+        ZHEHE6,
+      </if>
+      <if test="heji6 != null" >
+        HEJI6,
+      </if>
+      <if test="xianjin7 != null" >
+        XIANJIN7,
+      </if>
+      <if test="zhehe7 != null" >
+        ZHEHE7,
+      </if>
+      <if test="heji7 != null" >
+        HEJI7,
+      </if>
+      <if test="xianjin8 != null" >
+        XIANJIN8,
+      </if>
+      <if test="zhehe8 != null" >
+        ZHEHE8,
+      </if>
+      <if test="heji8 != null" >
+        HEJI8,
+      </if>
+      <if test="huodongxiangshu != null" >
+        HUODONGXIANGSHU,
+      </if>
+      <if test="yanxuxiangshu != null" >
+        YANXUXIANGSHU,
+      </if>
+      <if test="xianjin9 != null" >
+        XIANJIN9,
+      </if>
+      <if test="zhehe9 != null" >
+        ZHEHE9,
+      </if>
+      <if test="heji9 != null" >
+        HEJI9,
+      </if>
+      <if test="xianjin10 != null" >
+        XIANJIN10,
+      </if>
+      <if test="zhehe10 != null" >
+        ZHEHE10,
+      </if>
+      <if test="heji10 != null" >
+        HEJI10,
+      </if>
+      <if test="xianjin11 != null" >
+        XIANJIN11,
+      </if>
+      <if test="zhehe11 != null" >
+        ZHEHE11,
+      </if>
+      <if test="heji11 != null" >
+        HEJI11,
+      </if>
+      <if test="xianjin12 != null" >
+        XIANJIN12,
+      </if>
+      <if test="zhehe12 != null" >
+        ZHEHE12,
+      </if>
+      <if test="heji12 != null" >
+        HEJI12,
+      </if>
+      <if test="xianjin13 != null" >
+        XIANJIN13,
+      </if>
+      <if test="zhehe13 != null" >
+        ZHEHE13,
+      </if>
+      <if test="heji13 != null" >
+        HEJI13,
+      </if>
+      <if test="xianjin14 != null" >
+        XIANJIN14,
+      </if>
+      <if test="zhehe14 != null" >
+        ZHEHE14,
+      </if>
+      <if test="heji14 != null" >
+        HEJI14,
+      </if>
+      <if test="xianjin15 != null" >
+        XIANJIN15,
+      </if>
+      <if test="zhehe15 != null" >
+        ZHEHE15,
+      </if>
+      <if test="heji15 != null" >
+        HEJI15,
+      </if>
+      <if test="zongshouru != null" >
+        ZONGSHOURU,
+      </if>
+      <if test="zongzhichu != null" >
+        ZONGZHICHU,
+      </if>
+      <if test="gongyizhichu != null" >
+        GONGYIZHICHU,
+      </if>
+      <if test="fulizhichu != null" >
+        FULIZHICHU,
+      </if>
+      <if test="xingzhengzhichu != null" >
+        XINGZHENGZHICHU,
+      </if>
+      <if test="gongyibili != null" >
+        GONGYIBILI,
+      </if>
+      <if test="fulibili != null" >
+        FULIBILI,
+      </if>
+      <if test="gongji != null" >
+        GONGJI,
+      </if>
+      <if test="shouruheji != null" >
+        SHOURUHEJI,
+      </if>
+      <if test="houzongshouru != null" >
+        HOUZONGSHOURU,
+      </if>
+      <if test="hougongyizhichu != null" >
+        HOUGONGYIZHICHU,
+      </if>
+      <if test="hougongyibili != null" >
+        HOUGONGYIBILI,
+      </if>
+      <if test="qitazhichu != null" >
+        QITAZHICHU,
+      </if>
+      <if test="liangniangongyibili != null" >
+        LIANGNIANGONGYIBILI,
+      </if>
+      <if test="sanniangongyibili != null" >
+        SANNIANGONGYIBILI,
+      </if>
+      <if test="zongshourushangnian != null" >
+        ZONGSHOURUSHANGNIAN,
+      </if>
+      <if test="zongshouruqiannian != null" >
+        ZONGSHOURUQIANNIAN,
+      </if>
+      <if test="fulizhichushangnian != null" >
+        FULIZHICHUSHANGNIAN,
+      </if>
+      <if test="gongyizhichuqiannian != null" >
+        GONGYIZHICHUQIANNIAN,
+      </if>
+      <if test="gongyizhichushangnian != null" >
+        GONGYIZHICHUSHANGNIAN,
+      </if>
+      <if test="xingzhengzhichushangnian != null" >
+        XINGZHENGZHICHUSHANGNIAN,
+      </if>
+      <if test="xingzhengzhichuqiannian != null" >
+        XINGZHENGZHICHUQIANNIAN,
+      </if>
+      <if test="fulizhichuqiannian != null" >
+        FULIZHICHUQIANNIAN,
+      </if>
+      <if test="liangnianfulibili != null" >
+        LIANGNIANFULIBILI,
+      </if>
+      <if test="sannianfulibili != null" >
+        SANNIANFULIBILI,
+      </if>
+      <if test="zongzhichuqiannian != null" >
+        ZONGZHICHUQIANNIAN,
+      </if>
+      <if test="zongzhichushangnian != null" >
+        ZONGZHICHUSHANGNIAN,
+      </if>
+      <if test="ifcharity != null" >
+        IFCHARITY,
+      </if>
+      <if test="ifcollect != null" >
+        IFCOLLECT,
+      </if>
+      <if test="csFlag != null" >
+        CS_FLAG,
+      </if>
+      <if test="mjFlag != null" >
+        MJ_FLAG,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="instanceid != null" >
+        #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin1 != null" >
+        #{xianjin1,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe1 != null" >
+        #{zhehe1,jdbcType=DECIMAL},
+      </if>
+      <if test="heji1 != null" >
+        #{heji1,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin2 != null" >
+        #{xianjin2,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe2 != null" >
+        #{zhehe2,jdbcType=DECIMAL},
+      </if>
+      <if test="heji2 != null" >
+        #{heji2,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin3 != null" >
+        #{xianjin3,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe3 != null" >
+        #{zhehe3,jdbcType=DECIMAL},
+      </if>
+      <if test="heji3 != null" >
+        #{heji3,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin4 != null" >
+        #{xianjin4,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe4 != null" >
+        #{zhehe4,jdbcType=DECIMAL},
+      </if>
+      <if test="heji4 != null" >
+        #{heji4,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin5 != null" >
+        #{xianjin5,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe5 != null" >
+        #{zhehe5,jdbcType=DECIMAL},
+      </if>
+      <if test="heji5 != null" >
+        #{heji5,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin6 != null" >
+        #{xianjin6,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe6 != null" >
+        #{zhehe6,jdbcType=DECIMAL},
+      </if>
+      <if test="heji6 != null" >
+        #{heji6,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin7 != null" >
+        #{xianjin7,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe7 != null" >
+        #{zhehe7,jdbcType=DECIMAL},
+      </if>
+      <if test="heji7 != null" >
+        #{heji7,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin8 != null" >
+        #{xianjin8,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe8 != null" >
+        #{zhehe8,jdbcType=DECIMAL},
+      </if>
+      <if test="heji8 != null" >
+        #{heji8,jdbcType=DECIMAL},
+      </if>
+      <if test="huodongxiangshu != null" >
+        #{huodongxiangshu,jdbcType=DECIMAL},
+      </if>
+      <if test="yanxuxiangshu != null" >
+        #{yanxuxiangshu,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin9 != null" >
+        #{xianjin9,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe9 != null" >
+        #{zhehe9,jdbcType=DECIMAL},
+      </if>
+      <if test="heji9 != null" >
+        #{heji9,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin10 != null" >
+        #{xianjin10,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe10 != null" >
+        #{zhehe10,jdbcType=DECIMAL},
+      </if>
+      <if test="heji10 != null" >
+        #{heji10,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin11 != null" >
+        #{xianjin11,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe11 != null" >
+        #{zhehe11,jdbcType=DECIMAL},
+      </if>
+      <if test="heji11 != null" >
+        #{heji11,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin12 != null" >
+        #{xianjin12,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe12 != null" >
+        #{zhehe12,jdbcType=DECIMAL},
+      </if>
+      <if test="heji12 != null" >
+        #{heji12,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin13 != null" >
+        #{xianjin13,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe13 != null" >
+        #{zhehe13,jdbcType=DECIMAL},
+      </if>
+      <if test="heji13 != null" >
+        #{heji13,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin14 != null" >
+        #{xianjin14,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe14 != null" >
+        #{zhehe14,jdbcType=DECIMAL},
+      </if>
+      <if test="heji14 != null" >
+        #{heji14,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin15 != null" >
+        #{xianjin15,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe15 != null" >
+        #{zhehe15,jdbcType=DECIMAL},
+      </if>
+      <if test="heji15 != null" >
+        #{heji15,jdbcType=DECIMAL},
+      </if>
+      <if test="zongshouru != null" >
+        #{zongshouru,jdbcType=DECIMAL},
+      </if>
+      <if test="zongzhichu != null" >
+        #{zongzhichu,jdbcType=DECIMAL},
+      </if>
+      <if test="gongyizhichu != null" >
+        #{gongyizhichu,jdbcType=DECIMAL},
+      </if>
+      <if test="fulizhichu != null" >
+        #{fulizhichu,jdbcType=DECIMAL},
+      </if>
+      <if test="xingzhengzhichu != null" >
+        #{xingzhengzhichu,jdbcType=DECIMAL},
+      </if>
+      <if test="gongyibili != null" >
+        #{gongyibili,jdbcType=DECIMAL},
+      </if>
+      <if test="fulibili != null" >
+        #{fulibili,jdbcType=DECIMAL},
+      </if>
+      <if test="gongji != null" >
+        #{gongji,jdbcType=DECIMAL},
+      </if>
+      <if test="shouruheji != null" >
+        #{shouruheji,jdbcType=DECIMAL},
+      </if>
+      <if test="houzongshouru != null" >
+        #{houzongshouru,jdbcType=DECIMAL},
+      </if>
+      <if test="hougongyizhichu != null" >
+        #{hougongyizhichu,jdbcType=DECIMAL},
+      </if>
+      <if test="hougongyibili != null" >
+        #{hougongyibili,jdbcType=DECIMAL},
+      </if>
+      <if test="qitazhichu != null" >
+        #{qitazhichu,jdbcType=DECIMAL},
+      </if>
+      <if test="liangniangongyibili != null" >
+        #{liangniangongyibili,jdbcType=DECIMAL},
+      </if>
+      <if test="sanniangongyibili != null" >
+        #{sanniangongyibili,jdbcType=DECIMAL},
+      </if>
+      <if test="zongshourushangnian != null" >
+        #{zongshourushangnian,jdbcType=DECIMAL},
+      </if>
+      <if test="zongshouruqiannian != null" >
+        #{zongshouruqiannian,jdbcType=DECIMAL},
+      </if>
+      <if test="fulizhichushangnian != null" >
+        #{fulizhichushangnian,jdbcType=DECIMAL},
+      </if>
+      <if test="gongyizhichuqiannian != null" >
+        #{gongyizhichuqiannian,jdbcType=DECIMAL},
+      </if>
+      <if test="gongyizhichushangnian != null" >
+        #{gongyizhichushangnian,jdbcType=DECIMAL},
+      </if>
+      <if test="xingzhengzhichushangnian != null" >
+        #{xingzhengzhichushangnian,jdbcType=DECIMAL},
+      </if>
+      <if test="xingzhengzhichuqiannian != null" >
+        #{xingzhengzhichuqiannian,jdbcType=DECIMAL},
+      </if>
+      <if test="fulizhichuqiannian != null" >
+        #{fulizhichuqiannian,jdbcType=DECIMAL},
+      </if>
+      <if test="liangnianfulibili != null" >
+        #{liangnianfulibili,jdbcType=DECIMAL},
+      </if>
+      <if test="sannianfulibili != null" >
+        #{sannianfulibili,jdbcType=DECIMAL},
+      </if>
+      <if test="zongzhichuqiannian != null" >
+        #{zongzhichuqiannian,jdbcType=DECIMAL},
+      </if>
+      <if test="zongzhichushangnian != null" >
+        #{zongzhichushangnian,jdbcType=DECIMAL},
+      </if>
+      <if test="ifcharity != null" >
+        #{ifcharity,jdbcType=DECIMAL},
+      </if>
+      <if test="ifcollect != null" >
+        #{ifcollect,jdbcType=DECIMAL},
+      </if>
+      <if test="csFlag != null" >
+        #{csFlag,jdbcType=DECIMAL},
+      </if>
+      <if test="mjFlag != null" >
+        #{mjFlag,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.JjhnjReport2Example" resultType="java.lang.Integer" >
+    select count(*) from MJZZ_USER.JJHNJ_REPORT2
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update JJHNJ_REPORT2
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=DECIMAL},
+      </if>
+      <if test="record.instanceid != null" >
+        INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organizationid != null" >
+        ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xianjin1 != null" >
+        XIANJIN1 = #{record.xianjin1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhehe1 != null" >
+        ZHEHE1 = #{record.zhehe1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.heji1 != null" >
+        HEJI1 = #{record.heji1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xianjin2 != null" >
+        XIANJIN2 = #{record.xianjin2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhehe2 != null" >
+        ZHEHE2 = #{record.zhehe2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.heji2 != null" >
+        HEJI2 = #{record.heji2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xianjin3 != null" >
+        XIANJIN3 = #{record.xianjin3,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhehe3 != null" >
+        ZHEHE3 = #{record.zhehe3,jdbcType=DECIMAL},
+      </if>
+      <if test="record.heji3 != null" >
+        HEJI3 = #{record.heji3,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xianjin4 != null" >
+        XIANJIN4 = #{record.xianjin4,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhehe4 != null" >
+        ZHEHE4 = #{record.zhehe4,jdbcType=DECIMAL},
+      </if>
+      <if test="record.heji4 != null" >
+        HEJI4 = #{record.heji4,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xianjin5 != null" >
+        XIANJIN5 = #{record.xianjin5,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhehe5 != null" >
+        ZHEHE5 = #{record.zhehe5,jdbcType=DECIMAL},
+      </if>
+      <if test="record.heji5 != null" >
+        HEJI5 = #{record.heji5,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xianjin6 != null" >
+        XIANJIN6 = #{record.xianjin6,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhehe6 != null" >
+        ZHEHE6 = #{record.zhehe6,jdbcType=DECIMAL},
+      </if>
+      <if test="record.heji6 != null" >
+        HEJI6 = #{record.heji6,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xianjin7 != null" >
+        XIANJIN7 = #{record.xianjin7,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhehe7 != null" >
+        ZHEHE7 = #{record.zhehe7,jdbcType=DECIMAL},
+      </if>
+      <if test="record.heji7 != null" >
+        HEJI7 = #{record.heji7,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xianjin8 != null" >
+        XIANJIN8 = #{record.xianjin8,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhehe8 != null" >
+        ZHEHE8 = #{record.zhehe8,jdbcType=DECIMAL},
+      </if>
+      <if test="record.heji8 != null" >
+        HEJI8 = #{record.heji8,jdbcType=DECIMAL},
+      </if>
+      <if test="record.huodongxiangshu != null" >
+        HUODONGXIANGSHU = #{record.huodongxiangshu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.yanxuxiangshu != null" >
+        YANXUXIANGSHU = #{record.yanxuxiangshu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xianjin9 != null" >
+        XIANJIN9 = #{record.xianjin9,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhehe9 != null" >
+        ZHEHE9 = #{record.zhehe9,jdbcType=DECIMAL},
+      </if>
+      <if test="record.heji9 != null" >
+        HEJI9 = #{record.heji9,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xianjin10 != null" >
+        XIANJIN10 = #{record.xianjin10,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhehe10 != null" >
+        ZHEHE10 = #{record.zhehe10,jdbcType=DECIMAL},
+      </if>
+      <if test="record.heji10 != null" >
+        HEJI10 = #{record.heji10,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xianjin11 != null" >
+        XIANJIN11 = #{record.xianjin11,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhehe11 != null" >
+        ZHEHE11 = #{record.zhehe11,jdbcType=DECIMAL},
+      </if>
+      <if test="record.heji11 != null" >
+        HEJI11 = #{record.heji11,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xianjin12 != null" >
+        XIANJIN12 = #{record.xianjin12,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhehe12 != null" >
+        ZHEHE12 = #{record.zhehe12,jdbcType=DECIMAL},
+      </if>
+      <if test="record.heji12 != null" >
+        HEJI12 = #{record.heji12,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xianjin13 != null" >
+        XIANJIN13 = #{record.xianjin13,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhehe13 != null" >
+        ZHEHE13 = #{record.zhehe13,jdbcType=DECIMAL},
+      </if>
+      <if test="record.heji13 != null" >
+        HEJI13 = #{record.heji13,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xianjin14 != null" >
+        XIANJIN14 = #{record.xianjin14,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhehe14 != null" >
+        ZHEHE14 = #{record.zhehe14,jdbcType=DECIMAL},
+      </if>
+      <if test="record.heji14 != null" >
+        HEJI14 = #{record.heji14,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xianjin15 != null" >
+        XIANJIN15 = #{record.xianjin15,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhehe15 != null" >
+        ZHEHE15 = #{record.zhehe15,jdbcType=DECIMAL},
+      </if>
+      <if test="record.heji15 != null" >
+        HEJI15 = #{record.heji15,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zongshouru != null" >
+        ZONGSHOURU = #{record.zongshouru,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zongzhichu != null" >
+        ZONGZHICHU = #{record.zongzhichu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.gongyizhichu != null" >
+        GONGYIZHICHU = #{record.gongyizhichu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.fulizhichu != null" >
+        FULIZHICHU = #{record.fulizhichu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xingzhengzhichu != null" >
+        XINGZHENGZHICHU = #{record.xingzhengzhichu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.gongyibili != null" >
+        GONGYIBILI = #{record.gongyibili,jdbcType=DECIMAL},
+      </if>
+      <if test="record.fulibili != null" >
+        FULIBILI = #{record.fulibili,jdbcType=DECIMAL},
+      </if>
+      <if test="record.gongji != null" >
+        GONGJI = #{record.gongji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.shouruheji != null" >
+        SHOURUHEJI = #{record.shouruheji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.houzongshouru != null" >
+        HOUZONGSHOURU = #{record.houzongshouru,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hougongyizhichu != null" >
+        HOUGONGYIZHICHU = #{record.hougongyizhichu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hougongyibili != null" >
+        HOUGONGYIBILI = #{record.hougongyibili,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qitazhichu != null" >
+        QITAZHICHU = #{record.qitazhichu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.liangniangongyibili != null" >
+        LIANGNIANGONGYIBILI = #{record.liangniangongyibili,jdbcType=DECIMAL},
+      </if>
+      <if test="record.sanniangongyibili != null" >
+        SANNIANGONGYIBILI = #{record.sanniangongyibili,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zongshourushangnian != null" >
+        ZONGSHOURUSHANGNIAN = #{record.zongshourushangnian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zongshouruqiannian != null" >
+        ZONGSHOURUQIANNIAN = #{record.zongshouruqiannian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.fulizhichushangnian != null" >
+        FULIZHICHUSHANGNIAN = #{record.fulizhichushangnian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.gongyizhichuqiannian != null" >
+        GONGYIZHICHUQIANNIAN = #{record.gongyizhichuqiannian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.gongyizhichushangnian != null" >
+        GONGYIZHICHUSHANGNIAN = #{record.gongyizhichushangnian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xingzhengzhichushangnian != null" >
+        XINGZHENGZHICHUSHANGNIAN = #{record.xingzhengzhichushangnian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xingzhengzhichuqiannian != null" >
+        XINGZHENGZHICHUQIANNIAN = #{record.xingzhengzhichuqiannian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.fulizhichuqiannian != null" >
+        FULIZHICHUQIANNIAN = #{record.fulizhichuqiannian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.liangnianfulibili != null" >
+        LIANGNIANFULIBILI = #{record.liangnianfulibili,jdbcType=DECIMAL},
+      </if>
+      <if test="record.sannianfulibili != null" >
+        SANNIANFULIBILI = #{record.sannianfulibili,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zongzhichuqiannian != null" >
+        ZONGZHICHUQIANNIAN = #{record.zongzhichuqiannian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zongzhichushangnian != null" >
+        ZONGZHICHUSHANGNIAN = #{record.zongzhichushangnian,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ifcharity != null" >
+        IFCHARITY = #{record.ifcharity,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ifcollect != null" >
+        IFCOLLECT = #{record.ifcollect,jdbcType=DECIMAL},
+      </if>
+      <if test="record.csFlag != null" >
+        CS_FLAG = #{record.csFlag,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mjFlag != null" >
+        MJ_FLAG = #{record.mjFlag,jdbcType=DECIMAL},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update JJHNJ_REPORT2
+    set ID = #{record.id,jdbcType=DECIMAL},
+      INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=DECIMAL},
+      XIANJIN1 = #{record.xianjin1,jdbcType=DECIMAL},
+      ZHEHE1 = #{record.zhehe1,jdbcType=DECIMAL},
+      HEJI1 = #{record.heji1,jdbcType=DECIMAL},
+      XIANJIN2 = #{record.xianjin2,jdbcType=DECIMAL},
+      ZHEHE2 = #{record.zhehe2,jdbcType=DECIMAL},
+      HEJI2 = #{record.heji2,jdbcType=DECIMAL},
+      XIANJIN3 = #{record.xianjin3,jdbcType=DECIMAL},
+      ZHEHE3 = #{record.zhehe3,jdbcType=DECIMAL},
+      HEJI3 = #{record.heji3,jdbcType=DECIMAL},
+      XIANJIN4 = #{record.xianjin4,jdbcType=DECIMAL},
+      ZHEHE4 = #{record.zhehe4,jdbcType=DECIMAL},
+      HEJI4 = #{record.heji4,jdbcType=DECIMAL},
+      XIANJIN5 = #{record.xianjin5,jdbcType=DECIMAL},
+      ZHEHE5 = #{record.zhehe5,jdbcType=DECIMAL},
+      HEJI5 = #{record.heji5,jdbcType=DECIMAL},
+      XIANJIN6 = #{record.xianjin6,jdbcType=DECIMAL},
+      ZHEHE6 = #{record.zhehe6,jdbcType=DECIMAL},
+      HEJI6 = #{record.heji6,jdbcType=DECIMAL},
+      XIANJIN7 = #{record.xianjin7,jdbcType=DECIMAL},
+      ZHEHE7 = #{record.zhehe7,jdbcType=DECIMAL},
+      HEJI7 = #{record.heji7,jdbcType=DECIMAL},
+      XIANJIN8 = #{record.xianjin8,jdbcType=DECIMAL},
+      ZHEHE8 = #{record.zhehe8,jdbcType=DECIMAL},
+      HEJI8 = #{record.heji8,jdbcType=DECIMAL},
+      HUODONGXIANGSHU = #{record.huodongxiangshu,jdbcType=DECIMAL},
+      YANXUXIANGSHU = #{record.yanxuxiangshu,jdbcType=DECIMAL},
+      XIANJIN9 = #{record.xianjin9,jdbcType=DECIMAL},
+      ZHEHE9 = #{record.zhehe9,jdbcType=DECIMAL},
+      HEJI9 = #{record.heji9,jdbcType=DECIMAL},
+      XIANJIN10 = #{record.xianjin10,jdbcType=DECIMAL},
+      ZHEHE10 = #{record.zhehe10,jdbcType=DECIMAL},
+      HEJI10 = #{record.heji10,jdbcType=DECIMAL},
+      XIANJIN11 = #{record.xianjin11,jdbcType=DECIMAL},
+      ZHEHE11 = #{record.zhehe11,jdbcType=DECIMAL},
+      HEJI11 = #{record.heji11,jdbcType=DECIMAL},
+      XIANJIN12 = #{record.xianjin12,jdbcType=DECIMAL},
+      ZHEHE12 = #{record.zhehe12,jdbcType=DECIMAL},
+      HEJI12 = #{record.heji12,jdbcType=DECIMAL},
+      XIANJIN13 = #{record.xianjin13,jdbcType=DECIMAL},
+      ZHEHE13 = #{record.zhehe13,jdbcType=DECIMAL},
+      HEJI13 = #{record.heji13,jdbcType=DECIMAL},
+      XIANJIN14 = #{record.xianjin14,jdbcType=DECIMAL},
+      ZHEHE14 = #{record.zhehe14,jdbcType=DECIMAL},
+      HEJI14 = #{record.heji14,jdbcType=DECIMAL},
+      XIANJIN15 = #{record.xianjin15,jdbcType=DECIMAL},
+      ZHEHE15 = #{record.zhehe15,jdbcType=DECIMAL},
+      HEJI15 = #{record.heji15,jdbcType=DECIMAL},
+      ZONGSHOURU = #{record.zongshouru,jdbcType=DECIMAL},
+      ZONGZHICHU = #{record.zongzhichu,jdbcType=DECIMAL},
+      GONGYIZHICHU = #{record.gongyizhichu,jdbcType=DECIMAL},
+      FULIZHICHU = #{record.fulizhichu,jdbcType=DECIMAL},
+      XINGZHENGZHICHU = #{record.xingzhengzhichu,jdbcType=DECIMAL},
+      GONGYIBILI = #{record.gongyibili,jdbcType=DECIMAL},
+      FULIBILI = #{record.fulibili,jdbcType=DECIMAL},
+      GONGJI = #{record.gongji,jdbcType=DECIMAL},
+      SHOURUHEJI = #{record.shouruheji,jdbcType=DECIMAL},
+      HOUZONGSHOURU = #{record.houzongshouru,jdbcType=DECIMAL},
+      HOUGONGYIZHICHU = #{record.hougongyizhichu,jdbcType=DECIMAL},
+      HOUGONGYIBILI = #{record.hougongyibili,jdbcType=DECIMAL},
+      QITAZHICHU = #{record.qitazhichu,jdbcType=DECIMAL},
+      LIANGNIANGONGYIBILI = #{record.liangniangongyibili,jdbcType=DECIMAL},
+      SANNIANGONGYIBILI = #{record.sanniangongyibili,jdbcType=DECIMAL},
+      ZONGSHOURUSHANGNIAN = #{record.zongshourushangnian,jdbcType=DECIMAL},
+      ZONGSHOURUQIANNIAN = #{record.zongshouruqiannian,jdbcType=DECIMAL},
+      FULIZHICHUSHANGNIAN = #{record.fulizhichushangnian,jdbcType=DECIMAL},
+      GONGYIZHICHUQIANNIAN = #{record.gongyizhichuqiannian,jdbcType=DECIMAL},
+      GONGYIZHICHUSHANGNIAN = #{record.gongyizhichushangnian,jdbcType=DECIMAL},
+      XINGZHENGZHICHUSHANGNIAN = #{record.xingzhengzhichushangnian,jdbcType=DECIMAL},
+      XINGZHENGZHICHUQIANNIAN = #{record.xingzhengzhichuqiannian,jdbcType=DECIMAL},
+      FULIZHICHUQIANNIAN = #{record.fulizhichuqiannian,jdbcType=DECIMAL},
+      LIANGNIANFULIBILI = #{record.liangnianfulibili,jdbcType=DECIMAL},
+      SANNIANFULIBILI = #{record.sannianfulibili,jdbcType=DECIMAL},
+      ZONGZHICHUQIANNIAN = #{record.zongzhichuqiannian,jdbcType=DECIMAL},
+      ZONGZHICHUSHANGNIAN = #{record.zongzhichushangnian,jdbcType=DECIMAL},
+      IFCHARITY = #{record.ifcharity,jdbcType=DECIMAL},
+      IFCOLLECT = #{record.ifcollect,jdbcType=DECIMAL},
+      CS_FLAG = #{record.csFlag,jdbcType=DECIMAL},
+      MJ_FLAG = #{record.mjFlag,jdbcType=DECIMAL}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.JjhnjReport2" >
+    update JJHNJ_REPORT2
+    <set >
+      <if test="instanceid != null" >
+        INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin1 != null" >
+        XIANJIN1 = #{xianjin1,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe1 != null" >
+        ZHEHE1 = #{zhehe1,jdbcType=DECIMAL},
+      </if>
+      <if test="heji1 != null" >
+        HEJI1 = #{heji1,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin2 != null" >
+        XIANJIN2 = #{xianjin2,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe2 != null" >
+        ZHEHE2 = #{zhehe2,jdbcType=DECIMAL},
+      </if>
+      <if test="heji2 != null" >
+        HEJI2 = #{heji2,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin3 != null" >
+        XIANJIN3 = #{xianjin3,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe3 != null" >
+        ZHEHE3 = #{zhehe3,jdbcType=DECIMAL},
+      </if>
+      <if test="heji3 != null" >
+        HEJI3 = #{heji3,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin4 != null" >
+        XIANJIN4 = #{xianjin4,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe4 != null" >
+        ZHEHE4 = #{zhehe4,jdbcType=DECIMAL},
+      </if>
+      <if test="heji4 != null" >
+        HEJI4 = #{heji4,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin5 != null" >
+        XIANJIN5 = #{xianjin5,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe5 != null" >
+        ZHEHE5 = #{zhehe5,jdbcType=DECIMAL},
+      </if>
+      <if test="heji5 != null" >
+        HEJI5 = #{heji5,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin6 != null" >
+        XIANJIN6 = #{xianjin6,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe6 != null" >
+        ZHEHE6 = #{zhehe6,jdbcType=DECIMAL},
+      </if>
+      <if test="heji6 != null" >
+        HEJI6 = #{heji6,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin7 != null" >
+        XIANJIN7 = #{xianjin7,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe7 != null" >
+        ZHEHE7 = #{zhehe7,jdbcType=DECIMAL},
+      </if>
+      <if test="heji7 != null" >
+        HEJI7 = #{heji7,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin8 != null" >
+        XIANJIN8 = #{xianjin8,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe8 != null" >
+        ZHEHE8 = #{zhehe8,jdbcType=DECIMAL},
+      </if>
+      <if test="heji8 != null" >
+        HEJI8 = #{heji8,jdbcType=DECIMAL},
+      </if>
+      <if test="huodongxiangshu != null" >
+        HUODONGXIANGSHU = #{huodongxiangshu,jdbcType=DECIMAL},
+      </if>
+      <if test="yanxuxiangshu != null" >
+        YANXUXIANGSHU = #{yanxuxiangshu,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin9 != null" >
+        XIANJIN9 = #{xianjin9,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe9 != null" >
+        ZHEHE9 = #{zhehe9,jdbcType=DECIMAL},
+      </if>
+      <if test="heji9 != null" >
+        HEJI9 = #{heji9,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin10 != null" >
+        XIANJIN10 = #{xianjin10,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe10 != null" >
+        ZHEHE10 = #{zhehe10,jdbcType=DECIMAL},
+      </if>
+      <if test="heji10 != null" >
+        HEJI10 = #{heji10,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin11 != null" >
+        XIANJIN11 = #{xianjin11,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe11 != null" >
+        ZHEHE11 = #{zhehe11,jdbcType=DECIMAL},
+      </if>
+      <if test="heji11 != null" >
+        HEJI11 = #{heji11,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin12 != null" >
+        XIANJIN12 = #{xianjin12,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe12 != null" >
+        ZHEHE12 = #{zhehe12,jdbcType=DECIMAL},
+      </if>
+      <if test="heji12 != null" >
+        HEJI12 = #{heji12,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin13 != null" >
+        XIANJIN13 = #{xianjin13,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe13 != null" >
+        ZHEHE13 = #{zhehe13,jdbcType=DECIMAL},
+      </if>
+      <if test="heji13 != null" >
+        HEJI13 = #{heji13,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin14 != null" >
+        XIANJIN14 = #{xianjin14,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe14 != null" >
+        ZHEHE14 = #{zhehe14,jdbcType=DECIMAL},
+      </if>
+      <if test="heji14 != null" >
+        HEJI14 = #{heji14,jdbcType=DECIMAL},
+      </if>
+      <if test="xianjin15 != null" >
+        XIANJIN15 = #{xianjin15,jdbcType=DECIMAL},
+      </if>
+      <if test="zhehe15 != null" >
+        ZHEHE15 = #{zhehe15,jdbcType=DECIMAL},
+      </if>
+      <if test="heji15 != null" >
+        HEJI15 = #{heji15,jdbcType=DECIMAL},
+      </if>
+      <if test="zongshouru != null" >
+        ZONGSHOURU = #{zongshouru,jdbcType=DECIMAL},
+      </if>
+      <if test="zongzhichu != null" >
+        ZONGZHICHU = #{zongzhichu,jdbcType=DECIMAL},
+      </if>
+      <if test="gongyizhichu != null" >
+        GONGYIZHICHU = #{gongyizhichu,jdbcType=DECIMAL},
+      </if>
+      <if test="fulizhichu != null" >
+        FULIZHICHU = #{fulizhichu,jdbcType=DECIMAL},
+      </if>
+      <if test="xingzhengzhichu != null" >
+        XINGZHENGZHICHU = #{xingzhengzhichu,jdbcType=DECIMAL},
+      </if>
+      <if test="gongyibili != null" >
+        GONGYIBILI = #{gongyibili,jdbcType=DECIMAL},
+      </if>
+      <if test="fulibili != null" >
+        FULIBILI = #{fulibili,jdbcType=DECIMAL},
+      </if>
+      <if test="gongji != null" >
+        GONGJI = #{gongji,jdbcType=DECIMAL},
+      </if>
+      <if test="shouruheji != null" >
+        SHOURUHEJI = #{shouruheji,jdbcType=DECIMAL},
+      </if>
+      <if test="houzongshouru != null" >
+        HOUZONGSHOURU = #{houzongshouru,jdbcType=DECIMAL},
+      </if>
+      <if test="hougongyizhichu != null" >
+        HOUGONGYIZHICHU = #{hougongyizhichu,jdbcType=DECIMAL},
+      </if>
+      <if test="hougongyibili != null" >
+        HOUGONGYIBILI = #{hougongyibili,jdbcType=DECIMAL},
+      </if>
+      <if test="qitazhichu != null" >
+        QITAZHICHU = #{qitazhichu,jdbcType=DECIMAL},
+      </if>
+      <if test="liangniangongyibili != null" >
+        LIANGNIANGONGYIBILI = #{liangniangongyibili,jdbcType=DECIMAL},
+      </if>
+      <if test="sanniangongyibili != null" >
+        SANNIANGONGYIBILI = #{sanniangongyibili,jdbcType=DECIMAL},
+      </if>
+      <if test="zongshourushangnian != null" >
+        ZONGSHOURUSHANGNIAN = #{zongshourushangnian,jdbcType=DECIMAL},
+      </if>
+      <if test="zongshouruqiannian != null" >
+        ZONGSHOURUQIANNIAN = #{zongshouruqiannian,jdbcType=DECIMAL},
+      </if>
+      <if test="fulizhichushangnian != null" >
+        FULIZHICHUSHANGNIAN = #{fulizhichushangnian,jdbcType=DECIMAL},
+      </if>
+      <if test="gongyizhichuqiannian != null" >
+        GONGYIZHICHUQIANNIAN = #{gongyizhichuqiannian,jdbcType=DECIMAL},
+      </if>
+      <if test="gongyizhichushangnian != null" >
+        GONGYIZHICHUSHANGNIAN = #{gongyizhichushangnian,jdbcType=DECIMAL},
+      </if>
+      <if test="xingzhengzhichushangnian != null" >
+        XINGZHENGZHICHUSHANGNIAN = #{xingzhengzhichushangnian,jdbcType=DECIMAL},
+      </if>
+      <if test="xingzhengzhichuqiannian != null" >
+        XINGZHENGZHICHUQIANNIAN = #{xingzhengzhichuqiannian,jdbcType=DECIMAL},
+      </if>
+      <if test="fulizhichuqiannian != null" >
+        FULIZHICHUQIANNIAN = #{fulizhichuqiannian,jdbcType=DECIMAL},
+      </if>
+      <if test="liangnianfulibili != null" >
+        LIANGNIANFULIBILI = #{liangnianfulibili,jdbcType=DECIMAL},
+      </if>
+      <if test="sannianfulibili != null" >
+        SANNIANFULIBILI = #{sannianfulibili,jdbcType=DECIMAL},
+      </if>
+      <if test="zongzhichuqiannian != null" >
+        ZONGZHICHUQIANNIAN = #{zongzhichuqiannian,jdbcType=DECIMAL},
+      </if>
+      <if test="zongzhichushangnian != null" >
+        ZONGZHICHUSHANGNIAN = #{zongzhichushangnian,jdbcType=DECIMAL},
+      </if>
+      <if test="ifcharity != null" >
+        IFCHARITY = #{ifcharity,jdbcType=DECIMAL},
+      </if>
+      <if test="ifcollect != null" >
+        IFCOLLECT = #{ifcollect,jdbcType=DECIMAL},
+      </if>
+      <if test="csFlag != null" >
+        CS_FLAG = #{csFlag,jdbcType=DECIMAL},
+      </if>
+      <if test="mjFlag != null" >
+        MJ_FLAG = #{mjFlag,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xgb.model.JjhnjReport2" >
+    update JJHNJ_REPORT2
+    set INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=DECIMAL},
+      XIANJIN1 = #{xianjin1,jdbcType=DECIMAL},
+      ZHEHE1 = #{zhehe1,jdbcType=DECIMAL},
+      HEJI1 = #{heji1,jdbcType=DECIMAL},
+      XIANJIN2 = #{xianjin2,jdbcType=DECIMAL},
+      ZHEHE2 = #{zhehe2,jdbcType=DECIMAL},
+      HEJI2 = #{heji2,jdbcType=DECIMAL},
+      XIANJIN3 = #{xianjin3,jdbcType=DECIMAL},
+      ZHEHE3 = #{zhehe3,jdbcType=DECIMAL},
+      HEJI3 = #{heji3,jdbcType=DECIMAL},
+      XIANJIN4 = #{xianjin4,jdbcType=DECIMAL},
+      ZHEHE4 = #{zhehe4,jdbcType=DECIMAL},
+      HEJI4 = #{heji4,jdbcType=DECIMAL},
+      XIANJIN5 = #{xianjin5,jdbcType=DECIMAL},
+      ZHEHE5 = #{zhehe5,jdbcType=DECIMAL},
+      HEJI5 = #{heji5,jdbcType=DECIMAL},
+      XIANJIN6 = #{xianjin6,jdbcType=DECIMAL},
+      ZHEHE6 = #{zhehe6,jdbcType=DECIMAL},
+      HEJI6 = #{heji6,jdbcType=DECIMAL},
+      XIANJIN7 = #{xianjin7,jdbcType=DECIMAL},
+      ZHEHE7 = #{zhehe7,jdbcType=DECIMAL},
+      HEJI7 = #{heji7,jdbcType=DECIMAL},
+      XIANJIN8 = #{xianjin8,jdbcType=DECIMAL},
+      ZHEHE8 = #{zhehe8,jdbcType=DECIMAL},
+      HEJI8 = #{heji8,jdbcType=DECIMAL},
+      HUODONGXIANGSHU = #{huodongxiangshu,jdbcType=DECIMAL},
+      YANXUXIANGSHU = #{yanxuxiangshu,jdbcType=DECIMAL},
+      XIANJIN9 = #{xianjin9,jdbcType=DECIMAL},
+      ZHEHE9 = #{zhehe9,jdbcType=DECIMAL},
+      HEJI9 = #{heji9,jdbcType=DECIMAL},
+      XIANJIN10 = #{xianjin10,jdbcType=DECIMAL},
+      ZHEHE10 = #{zhehe10,jdbcType=DECIMAL},
+      HEJI10 = #{heji10,jdbcType=DECIMAL},
+      XIANJIN11 = #{xianjin11,jdbcType=DECIMAL},
+      ZHEHE11 = #{zhehe11,jdbcType=DECIMAL},
+      HEJI11 = #{heji11,jdbcType=DECIMAL},
+      XIANJIN12 = #{xianjin12,jdbcType=DECIMAL},
+      ZHEHE12 = #{zhehe12,jdbcType=DECIMAL},
+      HEJI12 = #{heji12,jdbcType=DECIMAL},
+      XIANJIN13 = #{xianjin13,jdbcType=DECIMAL},
+      ZHEHE13 = #{zhehe13,jdbcType=DECIMAL},
+      HEJI13 = #{heji13,jdbcType=DECIMAL},
+      XIANJIN14 = #{xianjin14,jdbcType=DECIMAL},
+      ZHEHE14 = #{zhehe14,jdbcType=DECIMAL},
+      HEJI14 = #{heji14,jdbcType=DECIMAL},
+      XIANJIN15 = #{xianjin15,jdbcType=DECIMAL},
+      ZHEHE15 = #{zhehe15,jdbcType=DECIMAL},
+      HEJI15 = #{heji15,jdbcType=DECIMAL},
+      ZONGSHOURU = #{zongshouru,jdbcType=DECIMAL},
+      ZONGZHICHU = #{zongzhichu,jdbcType=DECIMAL},
+      GONGYIZHICHU = #{gongyizhichu,jdbcType=DECIMAL},
+      FULIZHICHU = #{fulizhichu,jdbcType=DECIMAL},
+      XINGZHENGZHICHU = #{xingzhengzhichu,jdbcType=DECIMAL},
+      GONGYIBILI = #{gongyibili,jdbcType=DECIMAL},
+      FULIBILI = #{fulibili,jdbcType=DECIMAL},
+      GONGJI = #{gongji,jdbcType=DECIMAL},
+      SHOURUHEJI = #{shouruheji,jdbcType=DECIMAL},
+      HOUZONGSHOURU = #{houzongshouru,jdbcType=DECIMAL},
+      HOUGONGYIZHICHU = #{hougongyizhichu,jdbcType=DECIMAL},
+      HOUGONGYIBILI = #{hougongyibili,jdbcType=DECIMAL},
+      QITAZHICHU = #{qitazhichu,jdbcType=DECIMAL},
+      LIANGNIANGONGYIBILI = #{liangniangongyibili,jdbcType=DECIMAL},
+      SANNIANGONGYIBILI = #{sanniangongyibili,jdbcType=DECIMAL},
+      ZONGSHOURUSHANGNIAN = #{zongshourushangnian,jdbcType=DECIMAL},
+      ZONGSHOURUQIANNIAN = #{zongshouruqiannian,jdbcType=DECIMAL},
+      FULIZHICHUSHANGNIAN = #{fulizhichushangnian,jdbcType=DECIMAL},
+      GONGYIZHICHUQIANNIAN = #{gongyizhichuqiannian,jdbcType=DECIMAL},
+      GONGYIZHICHUSHANGNIAN = #{gongyizhichushangnian,jdbcType=DECIMAL},
+      XINGZHENGZHICHUSHANGNIAN = #{xingzhengzhichushangnian,jdbcType=DECIMAL},
+      XINGZHENGZHICHUQIANNIAN = #{xingzhengzhichuqiannian,jdbcType=DECIMAL},
+      FULIZHICHUQIANNIAN = #{fulizhichuqiannian,jdbcType=DECIMAL},
+      LIANGNIANFULIBILI = #{liangnianfulibili,jdbcType=DECIMAL},
+      SANNIANFULIBILI = #{sannianfulibili,jdbcType=DECIMAL},
+      ZONGZHICHUQIANNIAN = #{zongzhichuqiannian,jdbcType=DECIMAL},
+      ZONGZHICHUSHANGNIAN = #{zongzhichushangnian,jdbcType=DECIMAL},
+      IFCHARITY = #{ifcharity,jdbcType=DECIMAL},
+      IFCOLLECT = #{ifcollect,jdbcType=DECIMAL},
+      CS_FLAG = #{csFlag,jdbcType=DECIMAL},
+      MJ_FLAG = #{mjFlag,jdbcType=DECIMAL}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>

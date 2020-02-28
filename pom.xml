@@ -21,6 +21,8 @@
         <module>xgb-test</module>
         <module>xgb-data</module>
         <module>xgb-alone</module>
+        <module>xgb-jjhdate</module>
+        <module>xgb-lovexgb</module>
     </modules>
     <dependencies>
         <!-- 引入依赖-->

@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.SNianjianBranchMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.SNianjianBranch" >
+    <constructor >
+      <arg column="ID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="INSTANCEID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORGANIZATIONID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATUS" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="FENZHISHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="XINSHEFENZHISHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="BANLIXINSHEFENZHISHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="ZHUXIAOFENZHISHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="BANLIZHUXIAOFENZHISHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="DAIBIAOSHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="XINSHEDAIBIAOSHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="BANLIXINSHEDAIBIAOSHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="ZHUXIAODAIBIAOSHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="BANLIZHUXIAODAIBIAOSHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="JIJINSHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="XINSHEJIJINSHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="BANLIXINSHEJIJINSHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="ZHUXIAOJIJINSHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="BANLIZHUXIAOJIJINSHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="BANSHISHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="XINSHEBANSHISHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="BANLIXINSHEBANSHISHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="ZHUXIAOBANSHISHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="BANLIZHUXIAOBANSHISHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="SHITISHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="XINSHESHITISHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="ZHUXIAOSHITISHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="BANLIXINSHESHITISHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="BANLIZHUXIAOSHITISHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="NEISHESHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="XINSHENEISHESHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+      <arg column="ZHUXIAONEISHESHU" jdbcType="DECIMAL" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, INSTANCEID, ORGANIZATIONID, STATUS, FENZHISHU, XINSHEFENZHISHU, BANLIXINSHEFENZHISHU, 
+    ZHUXIAOFENZHISHU, BANLIZHUXIAOFENZHISHU, DAIBIAOSHU, XINSHEDAIBIAOSHU, BANLIXINSHEDAIBIAOSHU, 
+    ZHUXIAODAIBIAOSHU, BANLIZHUXIAODAIBIAOSHU, JIJINSHU, XINSHEJIJINSHU, BANLIXINSHEJIJINSHU, 
+    ZHUXIAOJIJINSHU, BANLIZHUXIAOJIJINSHU, BANSHISHU, XINSHEBANSHISHU, BANLIXINSHEBANSHISHU, 
+    ZHUXIAOBANSHISHU, BANLIZHUXIAOBANSHISHU, SHITISHU, XINSHESHITISHU, ZHUXIAOSHITISHU, 
+    BANLIXINSHESHITISHU, BANLIZHUXIAOSHITISHU, NEISHESHU, XINSHENEISHESHU, ZHUXIAONEISHESHU
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.SNianjianBranchExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from MJZZ_USER.S_NIANJIAN_BRANCH
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.xgb.model.SNianjianBranchExample" >
+    delete from MJZZ_USER.S_NIANJIAN_BRANCH
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.SNianjianBranch" >
+    insert into MJZZ_USER.S_NIANJIAN_BRANCH (ID, INSTANCEID, ORGANIZATIONID, 
+      STATUS, FENZHISHU, XINSHEFENZHISHU, 
+      BANLIXINSHEFENZHISHU, ZHUXIAOFENZHISHU, 
+      BANLIZHUXIAOFENZHISHU, DAIBIAOSHU, XINSHEDAIBIAOSHU, 
+      BANLIXINSHEDAIBIAOSHU, ZHUXIAODAIBIAOSHU, 
+      BANLIZHUXIAODAIBIAOSHU, JIJINSHU, XINSHEJIJINSHU, 
+      BANLIXINSHEJIJINSHU, ZHUXIAOJIJINSHU, BANLIZHUXIAOJIJINSHU, 
+      BANSHISHU, XINSHEBANSHISHU, BANLIXINSHEBANSHISHU, 
+      ZHUXIAOBANSHISHU, BANLIZHUXIAOBANSHISHU, 
+      SHITISHU, XINSHESHITISHU, ZHUXIAOSHITISHU, 
+      BANLIXINSHESHITISHU, BANLIZHUXIAOSHITISHU, 
+      NEISHESHU, XINSHENEISHESHU, ZHUXIAONEISHESHU
+      )
+    values (#{id,jdbcType=DECIMAL}, #{instanceid,jdbcType=VARCHAR}, #{organizationid,jdbcType=VARCHAR}, 
+      #{status,jdbcType=DECIMAL}, #{fenzhishu,jdbcType=DECIMAL}, #{xinshefenzhishu,jdbcType=DECIMAL}, 
+      #{banlixinshefenzhishu,jdbcType=DECIMAL}, #{zhuxiaofenzhishu,jdbcType=DECIMAL}, 
+      #{banlizhuxiaofenzhishu,jdbcType=DECIMAL}, #{daibiaoshu,jdbcType=DECIMAL}, #{xinshedaibiaoshu,jdbcType=DECIMAL}, 
+      #{banlixinshedaibiaoshu,jdbcType=DECIMAL}, #{zhuxiaodaibiaoshu,jdbcType=DECIMAL}, 
+      #{banlizhuxiaodaibiaoshu,jdbcType=DECIMAL}, #{jijinshu,jdbcType=DECIMAL}, #{xinshejijinshu,jdbcType=DECIMAL}, 
+      #{banlixinshejijinshu,jdbcType=DECIMAL}, #{zhuxiaojijinshu,jdbcType=DECIMAL}, #{banlizhuxiaojijinshu,jdbcType=DECIMAL}, 
+      #{banshishu,jdbcType=DECIMAL}, #{xinshebanshishu,jdbcType=DECIMAL}, #{banlixinshebanshishu,jdbcType=DECIMAL}, 
+      #{zhuxiaobanshishu,jdbcType=DECIMAL}, #{banlizhuxiaobanshishu,jdbcType=DECIMAL}, 
+      #{shitishu,jdbcType=DECIMAL}, #{xinsheshitishu,jdbcType=DECIMAL}, #{zhuxiaoshitishu,jdbcType=DECIMAL}, 
+      #{banlixinsheshitishu,jdbcType=DECIMAL}, #{banlizhuxiaoshitishu,jdbcType=DECIMAL}, 
+      #{neisheshu,jdbcType=DECIMAL}, #{xinsheneisheshu,jdbcType=DECIMAL}, #{zhuxiaoneisheshu,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.SNianjianBranch" >
+    insert into MJZZ_USER.S_NIANJIAN_BRANCH
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="instanceid != null" >
+        INSTANCEID,
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="fenzhishu != null" >
+        FENZHISHU,
+      </if>
+      <if test="xinshefenzhishu != null" >
+        XINSHEFENZHISHU,
+      </if>
+      <if test="banlixinshefenzhishu != null" >
+        BANLIXINSHEFENZHISHU,
+      </if>
+      <if test="zhuxiaofenzhishu != null" >
+        ZHUXIAOFENZHISHU,
+      </if>
+      <if test="banlizhuxiaofenzhishu != null" >
+        BANLIZHUXIAOFENZHISHU,
+      </if>
+      <if test="daibiaoshu != null" >
+        DAIBIAOSHU,
+      </if>
+      <if test="xinshedaibiaoshu != null" >
+        XINSHEDAIBIAOSHU,
+      </if>
+      <if test="banlixinshedaibiaoshu != null" >
+        BANLIXINSHEDAIBIAOSHU,
+      </if>
+      <if test="zhuxiaodaibiaoshu != null" >
+        ZHUXIAODAIBIAOSHU,
+      </if>
+      <if test="banlizhuxiaodaibiaoshu != null" >
+        BANLIZHUXIAODAIBIAOSHU,
+      </if>
+      <if test="jijinshu != null" >
+        JIJINSHU,
+      </if>
+      <if test="xinshejijinshu != null" >
+        XINSHEJIJINSHU,
+      </if>
+      <if test="banlixinshejijinshu != null" >
+        BANLIXINSHEJIJINSHU,
+      </if>
+      <if test="zhuxiaojijinshu != null" >
+        ZHUXIAOJIJINSHU,
+      </if>
+      <if test="banlizhuxiaojijinshu != null" >
+        BANLIZHUXIAOJIJINSHU,
+      </if>
+      <if test="banshishu != null" >
+        BANSHISHU,
+      </if>
+      <if test="xinshebanshishu != null" >
+        XINSHEBANSHISHU,
+      </if>
+      <if test="banlixinshebanshishu != null" >
+        BANLIXINSHEBANSHISHU,
+      </if>
+      <if test="zhuxiaobanshishu != null" >
+        ZHUXIAOBANSHISHU,
+      </if>
+      <if test="banlizhuxiaobanshishu != null" >
+        BANLIZHUXIAOBANSHISHU,
+      </if>
+      <if test="shitishu != null" >
+        SHITISHU,
+      </if>
+      <if test="xinsheshitishu != null" >
+        XINSHESHITISHU,
+      </if>
+      <if test="zhuxiaoshitishu != null" >
+        ZHUXIAOSHITISHU,
+      </if>
+      <if test="banlixinsheshitishu != null" >
+        BANLIXINSHESHITISHU,
+      </if>
+      <if test="banlizhuxiaoshitishu != null" >
+        BANLIZHUXIAOSHITISHU,
+      </if>
+      <if test="neisheshu != null" >
+        NEISHESHU,
+      </if>
+      <if test="xinsheneisheshu != null" >
+        XINSHENEISHESHU,
+      </if>
+      <if test="zhuxiaoneisheshu != null" >
+        ZHUXIAONEISHESHU,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="instanceid != null" >
+        #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="fenzhishu != null" >
+        #{fenzhishu,jdbcType=DECIMAL},
+      </if>
+      <if test="xinshefenzhishu != null" >
+        #{xinshefenzhishu,jdbcType=DECIMAL},
+      </if>
+      <if test="banlixinshefenzhishu != null" >
+        #{banlixinshefenzhishu,jdbcType=DECIMAL},
+      </if>
+      <if test="zhuxiaofenzhishu != null" >
+        #{zhuxiaofenzhishu,jdbcType=DECIMAL},
+      </if>
+      <if test="banlizhuxiaofenzhishu != null" >
+        #{banlizhuxiaofenzhishu,jdbcType=DECIMAL},
+      </if>
+      <if test="daibiaoshu != null" >
+        #{daibiaoshu,jdbcType=DECIMAL},
+      </if>
+      <if test="xinshedaibiaoshu != null" >
+        #{xinshedaibiaoshu,jdbcType=DECIMAL},
+      </if>
+      <if test="banlixinshedaibiaoshu != null" >
+        #{banlixinshedaibiaoshu,jdbcType=DECIMAL},
+      </if>
+      <if test="zhuxiaodaibiaoshu != null" >
+        #{zhuxiaodaibiaoshu,jdbcType=DECIMAL},
+      </if>
+      <if test="banlizhuxiaodaibiaoshu != null" >
+        #{banlizhuxiaodaibiaoshu,jdbcType=DECIMAL},
+      </if>
+      <if test="jijinshu != null" >
+        #{jijinshu,jdbcType=DECIMAL},
+      </if>
+      <if test="xinshejijinshu != null" >
+        #{xinshejijinshu,jdbcType=DECIMAL},
+      </if>
+      <if test="banlixinshejijinshu != null" >
+        #{banlixinshejijinshu,jdbcType=DECIMAL},
+      </if>
+      <if test="zhuxiaojijinshu != null" >
+        #{zhuxiaojijinshu,jdbcType=DECIMAL},
+      </if>
+      <if test="banlizhuxiaojijinshu != null" >
+        #{banlizhuxiaojijinshu,jdbcType=DECIMAL},
+      </if>
+      <if test="banshishu != null" >
+        #{banshishu,jdbcType=DECIMAL},
+      </if>
+      <if test="xinshebanshishu != null" >
+        #{xinshebanshishu,jdbcType=DECIMAL},
+      </if>
+      <if test="banlixinshebanshishu != null" >
+        #{banlixinshebanshishu,jdbcType=DECIMAL},
+      </if>
+      <if test="zhuxiaobanshishu != null" >
+        #{zhuxiaobanshishu,jdbcType=DECIMAL},
+      </if>
+      <if test="banlizhuxiaobanshishu != null" >
+        #{banlizhuxiaobanshishu,jdbcType=DECIMAL},
+      </if>
+      <if test="shitishu != null" >
+        #{shitishu,jdbcType=DECIMAL},
+      </if>
+      <if test="xinsheshitishu != null" >
+        #{xinsheshitishu,jdbcType=DECIMAL},
+      </if>
+      <if test="zhuxiaoshitishu != null" >
+        #{zhuxiaoshitishu,jdbcType=DECIMAL},
+      </if>
+      <if test="banlixinsheshitishu != null" >
+        #{banlixinsheshitishu,jdbcType=DECIMAL},
+      </if>
+      <if test="banlizhuxiaoshitishu != null" >
+        #{banlizhuxiaoshitishu,jdbcType=DECIMAL},
+      </if>
+      <if test="neisheshu != null" >
+        #{neisheshu,jdbcType=DECIMAL},
+      </if>
+      <if test="xinsheneisheshu != null" >
+        #{xinsheneisheshu,jdbcType=DECIMAL},
+      </if>
+      <if test="zhuxiaoneisheshu != null" >
+        #{zhuxiaoneisheshu,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.SNianjianBranchExample" resultType="java.lang.Integer" >
+    select count(*) from MJZZ_USER.S_NIANJIAN_BRANCH
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update MJZZ_USER.S_NIANJIAN_BRANCH
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=DECIMAL},
+      </if>
+      <if test="record.instanceid != null" >
+        INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organizationid != null" >
+        ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=DECIMAL},
+      </if>
+      <if test="record.fenzhishu != null" >
+        FENZHISHU = #{record.fenzhishu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xinshefenzhishu != null" >
+        XINSHEFENZHISHU = #{record.xinshefenzhishu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.banlixinshefenzhishu != null" >
+        BANLIXINSHEFENZHISHU = #{record.banlixinshefenzhishu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhuxiaofenzhishu != null" >
+        ZHUXIAOFENZHISHU = #{record.zhuxiaofenzhishu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.banlizhuxiaofenzhishu != null" >
+        BANLIZHUXIAOFENZHISHU = #{record.banlizhuxiaofenzhishu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.daibiaoshu != null" >
+        DAIBIAOSHU = #{record.daibiaoshu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xinshedaibiaoshu != null" >
+        XINSHEDAIBIAOSHU = #{record.xinshedaibiaoshu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.banlixinshedaibiaoshu != null" >
+        BANLIXINSHEDAIBIAOSHU = #{record.banlixinshedaibiaoshu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhuxiaodaibiaoshu != null" >
+        ZHUXIAODAIBIAOSHU = #{record.zhuxiaodaibiaoshu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.banlizhuxiaodaibiaoshu != null" >
+        BANLIZHUXIAODAIBIAOSHU = #{record.banlizhuxiaodaibiaoshu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.jijinshu != null" >
+        JIJINSHU = #{record.jijinshu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xinshejijinshu != null" >
+        XINSHEJIJINSHU = #{record.xinshejijinshu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.banlixinshejijinshu != null" >
+        BANLIXINSHEJIJINSHU = #{record.banlixinshejijinshu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhuxiaojijinshu != null" >
+        ZHUXIAOJIJINSHU = #{record.zhuxiaojijinshu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.banlizhuxiaojijinshu != null" >
+        BANLIZHUXIAOJIJINSHU = #{record.banlizhuxiaojijinshu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.banshishu != null" >
+        BANSHISHU = #{record.banshishu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xinshebanshishu != null" >
+        XINSHEBANSHISHU = #{record.xinshebanshishu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.banlixinshebanshishu != null" >
+        BANLIXINSHEBANSHISHU = #{record.banlixinshebanshishu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhuxiaobanshishu != null" >
+        ZHUXIAOBANSHISHU = #{record.zhuxiaobanshishu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.banlizhuxiaobanshishu != null" >
+        BANLIZHUXIAOBANSHISHU = #{record.banlizhuxiaobanshishu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.shitishu != null" >
+        SHITISHU = #{record.shitishu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xinsheshitishu != null" >
+        XINSHESHITISHU = #{record.xinsheshitishu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhuxiaoshitishu != null" >
+        ZHUXIAOSHITISHU = #{record.zhuxiaoshitishu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.banlixinsheshitishu != null" >
+        BANLIXINSHESHITISHU = #{record.banlixinsheshitishu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.banlizhuxiaoshitishu != null" >
+        BANLIZHUXIAOSHITISHU = #{record.banlizhuxiaoshitishu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.neisheshu != null" >
+        NEISHESHU = #{record.neisheshu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xinsheneisheshu != null" >
+        XINSHENEISHESHU = #{record.xinsheneisheshu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhuxiaoneisheshu != null" >
+        ZHUXIAONEISHESHU = #{record.zhuxiaoneisheshu,jdbcType=DECIMAL},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update MJZZ_USER.S_NIANJIAN_BRANCH
+    set ID = #{record.id,jdbcType=DECIMAL},
+      INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=DECIMAL},
+      FENZHISHU = #{record.fenzhishu,jdbcType=DECIMAL},
+      XINSHEFENZHISHU = #{record.xinshefenzhishu,jdbcType=DECIMAL},
+      BANLIXINSHEFENZHISHU = #{record.banlixinshefenzhishu,jdbcType=DECIMAL},
+      ZHUXIAOFENZHISHU = #{record.zhuxiaofenzhishu,jdbcType=DECIMAL},
+      BANLIZHUXIAOFENZHISHU = #{record.banlizhuxiaofenzhishu,jdbcType=DECIMAL},
+      DAIBIAOSHU = #{record.daibiaoshu,jdbcType=DECIMAL},
+      XINSHEDAIBIAOSHU = #{record.xinshedaibiaoshu,jdbcType=DECIMAL},
+      BANLIXINSHEDAIBIAOSHU = #{record.banlixinshedaibiaoshu,jdbcType=DECIMAL},
+      ZHUXIAODAIBIAOSHU = #{record.zhuxiaodaibiaoshu,jdbcType=DECIMAL},
+      BANLIZHUXIAODAIBIAOSHU = #{record.banlizhuxiaodaibiaoshu,jdbcType=DECIMAL},
+      JIJINSHU = #{record.jijinshu,jdbcType=DECIMAL},
+      XINSHEJIJINSHU = #{record.xinshejijinshu,jdbcType=DECIMAL},
+      BANLIXINSHEJIJINSHU = #{record.banlixinshejijinshu,jdbcType=DECIMAL},
+      ZHUXIAOJIJINSHU = #{record.zhuxiaojijinshu,jdbcType=DECIMAL},
+      BANLIZHUXIAOJIJINSHU = #{record.banlizhuxiaojijinshu,jdbcType=DECIMAL},
+      BANSHISHU = #{record.banshishu,jdbcType=DECIMAL},
+      XINSHEBANSHISHU = #{record.xinshebanshishu,jdbcType=DECIMAL},
+      BANLIXINSHEBANSHISHU = #{record.banlixinshebanshishu,jdbcType=DECIMAL},
+      ZHUXIAOBANSHISHU = #{record.zhuxiaobanshishu,jdbcType=DECIMAL},
+      BANLIZHUXIAOBANSHISHU = #{record.banlizhuxiaobanshishu,jdbcType=DECIMAL},
+      SHITISHU = #{record.shitishu,jdbcType=DECIMAL},
+      XINSHESHITISHU = #{record.xinsheshitishu,jdbcType=DECIMAL},
+      ZHUXIAOSHITISHU = #{record.zhuxiaoshitishu,jdbcType=DECIMAL},
+      BANLIXINSHESHITISHU = #{record.banlixinsheshitishu,jdbcType=DECIMAL},
+      BANLIZHUXIAOSHITISHU = #{record.banlizhuxiaoshitishu,jdbcType=DECIMAL},
+      NEISHESHU = #{record.neisheshu,jdbcType=DECIMAL},
+      XINSHENEISHESHU = #{record.xinsheneisheshu,jdbcType=DECIMAL},
+      ZHUXIAONEISHESHU = #{record.zhuxiaoneisheshu,jdbcType=DECIMAL}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

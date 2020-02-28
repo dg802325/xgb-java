@@ -17,6 +17,6 @@ public class ${modelName!} {
     ${codeEntity!}
 }
 
-<#if insert??>
-${insert!}
+<#if test??>
+    ${test!}
 </#if>

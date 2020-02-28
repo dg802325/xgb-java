@@ -1,6 +1,6 @@
 package com.xgb.service;
 
-import com.xgb.dao.SysConfigMapper;
+import com.xgb.dao1.SysConfigMapper;
 import com.xgb.model.SysConfig;
 import com.xgb.model.SysConfigExample;
 import org.apache.ibatis.annotations.Param;

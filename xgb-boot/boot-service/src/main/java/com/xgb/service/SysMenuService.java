@@ -1,6 +1,6 @@
 package com.xgb.service;
 
-import com.xgb.dao.*;
+import com.xgb.dao1.*;
 import com.xgb.model.*;
 import com.xgb.util.MyTools;
 import org.apache.ibatis.annotations.Param;

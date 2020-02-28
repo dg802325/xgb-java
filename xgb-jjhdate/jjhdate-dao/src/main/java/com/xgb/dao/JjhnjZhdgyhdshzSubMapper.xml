@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.JjhnjZhdgyhdshzSubMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.JjhnjZhdgyhdshzSub" >
+    <constructor >
+      <arg column="ID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="INSTANCEID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORGANIZATIONID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATUS" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="MASTERID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="XIANGMUMINGCHENG" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SHOURU" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZHIJIEKUANWU" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="XIANGMURENYUANGONGZI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="BANGONGFEIYONG" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZICHANSHIYONGFEIYONG" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="XUANCHUANFEIYONG" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="CHALVFEI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="QITAFEIYONG" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="XIAOJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="ZONGJI" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, INSTANCEID, ORGANIZATIONID, STATUS, MASTERID, XIANGMUMINGCHENG, SHOURU, ZHIJIEKUANWU, 
+    XIANGMURENYUANGONGZI, BANGONGFEIYONG, ZICHANSHIYONGFEIYONG, XUANCHUANFEIYONG, CHALVFEI, 
+    QITAFEIYONG, XIAOJI, ZONGJI
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.JjhnjZhdgyhdshzSubExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from MJZZ_USER.JJHNJ_ZHDGYHDSHZ_SUB
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.xgb.model.JjhnjZhdgyhdshzSubExample" >
+    delete from MJZZ_USER.JJHNJ_ZHDGYHDSHZ_SUB
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.JjhnjZhdgyhdshzSub" >
+    insert into MJZZ_USER.JJHNJ_ZHDGYHDSHZ_SUB (ID, INSTANCEID, ORGANIZATIONID, 
+      STATUS, MASTERID, XIANGMUMINGCHENG, 
+      SHOURU, ZHIJIEKUANWU, XIANGMURENYUANGONGZI, 
+      BANGONGFEIYONG, ZICHANSHIYONGFEIYONG, XUANCHUANFEIYONG, 
+      CHALVFEI, QITAFEIYONG, XIAOJI, 
+      ZONGJI)
+    values (#{id,jdbcType=DECIMAL}, #{instanceid,jdbcType=VARCHAR}, #{organizationid,jdbcType=VARCHAR}, 
+      #{status,jdbcType=DECIMAL}, #{masterid,jdbcType=DECIMAL}, #{xiangmumingcheng,jdbcType=VARCHAR}, 
+      #{shouru,jdbcType=DECIMAL}, #{zhijiekuanwu,jdbcType=DECIMAL}, #{xiangmurenyuangongzi,jdbcType=DECIMAL}, 
+      #{bangongfeiyong,jdbcType=DECIMAL}, #{zichanshiyongfeiyong,jdbcType=DECIMAL}, #{xuanchuanfeiyong,jdbcType=DECIMAL}, 
+      #{chalvfei,jdbcType=DECIMAL}, #{qitafeiyong,jdbcType=DECIMAL}, #{xiaoji,jdbcType=DECIMAL}, 
+      #{zongji,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.JjhnjZhdgyhdshzSub" >
+    insert into MJZZ_USER.JJHNJ_ZHDGYHDSHZ_SUB
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="instanceid != null" >
+        INSTANCEID,
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="masterid != null" >
+        MASTERID,
+      </if>
+      <if test="xiangmumingcheng != null" >
+        XIANGMUMINGCHENG,
+      </if>
+      <if test="shouru != null" >
+        SHOURU,
+      </if>
+      <if test="zhijiekuanwu != null" >
+        ZHIJIEKUANWU,
+      </if>
+      <if test="xiangmurenyuangongzi != null" >
+        XIANGMURENYUANGONGZI,
+      </if>
+      <if test="bangongfeiyong != null" >
+        BANGONGFEIYONG,
+      </if>
+      <if test="zichanshiyongfeiyong != null" >
+        ZICHANSHIYONGFEIYONG,
+      </if>
+      <if test="xuanchuanfeiyong != null" >
+        XUANCHUANFEIYONG,
+      </if>
+      <if test="chalvfei != null" >
+        CHALVFEI,
+      </if>
+      <if test="qitafeiyong != null" >
+        QITAFEIYONG,
+      </if>
+      <if test="xiaoji != null" >
+        XIAOJI,
+      </if>
+      <if test="zongji != null" >
+        ZONGJI,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="instanceid != null" >
+        #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="masterid != null" >
+        #{masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="xiangmumingcheng != null" >
+        #{xiangmumingcheng,jdbcType=VARCHAR},
+      </if>
+      <if test="shouru != null" >
+        #{shouru,jdbcType=DECIMAL},
+      </if>
+      <if test="zhijiekuanwu != null" >
+        #{zhijiekuanwu,jdbcType=DECIMAL},
+      </if>
+      <if test="xiangmurenyuangongzi != null" >
+        #{xiangmurenyuangongzi,jdbcType=DECIMAL},
+      </if>
+      <if test="bangongfeiyong != null" >
+        #{bangongfeiyong,jdbcType=DECIMAL},
+      </if>
+      <if test="zichanshiyongfeiyong != null" >
+        #{zichanshiyongfeiyong,jdbcType=DECIMAL},
+      </if>
+      <if test="xuanchuanfeiyong != null" >
+        #{xuanchuanfeiyong,jdbcType=DECIMAL},
+      </if>
+      <if test="chalvfei != null" >
+        #{chalvfei,jdbcType=DECIMAL},
+      </if>
+      <if test="qitafeiyong != null" >
+        #{qitafeiyong,jdbcType=DECIMAL},
+      </if>
+      <if test="xiaoji != null" >
+        #{xiaoji,jdbcType=DECIMAL},
+      </if>
+      <if test="zongji != null" >
+        #{zongji,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.JjhnjZhdgyhdshzSubExample" resultType="java.lang.Integer" >
+    select count(*) from MJZZ_USER.JJHNJ_ZHDGYHDSHZ_SUB
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update MJZZ_USER.JJHNJ_ZHDGYHDSHZ_SUB
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=DECIMAL},
+      </if>
+      <if test="record.instanceid != null" >
+        INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organizationid != null" >
+        ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=DECIMAL},
+      </if>
+      <if test="record.masterid != null" >
+        MASTERID = #{record.masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xiangmumingcheng != null" >
+        XIANGMUMINGCHENG = #{record.xiangmumingcheng,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shouru != null" >
+        SHOURU = #{record.shouru,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhijiekuanwu != null" >
+        ZHIJIEKUANWU = #{record.zhijiekuanwu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xiangmurenyuangongzi != null" >
+        XIANGMURENYUANGONGZI = #{record.xiangmurenyuangongzi,jdbcType=DECIMAL},
+      </if>
+      <if test="record.bangongfeiyong != null" >
+        BANGONGFEIYONG = #{record.bangongfeiyong,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zichanshiyongfeiyong != null" >
+        ZICHANSHIYONGFEIYONG = #{record.zichanshiyongfeiyong,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xuanchuanfeiyong != null" >
+        XUANCHUANFEIYONG = #{record.xuanchuanfeiyong,jdbcType=DECIMAL},
+      </if>
+      <if test="record.chalvfei != null" >
+        CHALVFEI = #{record.chalvfei,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qitafeiyong != null" >
+        QITAFEIYONG = #{record.qitafeiyong,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xiaoji != null" >
+        XIAOJI = #{record.xiaoji,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zongji != null" >
+        ZONGJI = #{record.zongji,jdbcType=DECIMAL},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update MJZZ_USER.JJHNJ_ZHDGYHDSHZ_SUB
+    set ID = #{record.id,jdbcType=DECIMAL},
+      INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=DECIMAL},
+      MASTERID = #{record.masterid,jdbcType=DECIMAL},
+      XIANGMUMINGCHENG = #{record.xiangmumingcheng,jdbcType=VARCHAR},
+      SHOURU = #{record.shouru,jdbcType=DECIMAL},
+      ZHIJIEKUANWU = #{record.zhijiekuanwu,jdbcType=DECIMAL},
+      XIANGMURENYUANGONGZI = #{record.xiangmurenyuangongzi,jdbcType=DECIMAL},
+      BANGONGFEIYONG = #{record.bangongfeiyong,jdbcType=DECIMAL},
+      ZICHANSHIYONGFEIYONG = #{record.zichanshiyongfeiyong,jdbcType=DECIMAL},
+      XUANCHUANFEIYONG = #{record.xuanchuanfeiyong,jdbcType=DECIMAL},
+      CHALVFEI = #{record.chalvfei,jdbcType=DECIMAL},
+      QITAFEIYONG = #{record.qitafeiyong,jdbcType=DECIMAL},
+      XIAOJI = #{record.xiaoji,jdbcType=DECIMAL},
+      ZONGJI = #{record.zongji,jdbcType=DECIMAL}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

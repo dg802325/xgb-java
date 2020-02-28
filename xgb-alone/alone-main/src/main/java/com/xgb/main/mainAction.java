@@ -25,11 +25,11 @@ public class mainAction extends DbBase {
         List<TableColumnInfo> lists = new ArrayList<TableColumnInfo>();
         Connection connection = null;
         //连接数据库
-        String tableName = "jc_workflow_step";//表名  一个
+        String tableName = "FORM_CONSULTATION_CASE";//表名  一个
 //        String[] tableNames = {"ST_DJQK_4","ST_NJ_REPORT11","ST_NJ_REPORT11_SUB1","ST_NJ_JIESHOUJIANDU","ST_NJ_JIESHOUJIANDU","JJH_NJ_REPORT6","JJHNJ_REPORT4","ST_NJ_REPORT16","ST_NJ_REPORT16_SUB1","ST_NJ_GJHY","ST_NJ_REPORT16_SUB2","ST_NJ_REPORT17_SUB1","ST_NJ_CGFW","ST_NJ_REPORT17_SUB2","ST_NJ_REPROT14","ST_NJ_REPORT14_SUB","ST_NJ_JBGYHD","ST_NJ_JBGYHD_SUB","ST_NJ_APPRAISE_COST","ST_NJ_APPRAISE_COST_INX","ST_NJ_REPROT140","ST_NJ_REPROT140_SUB","ST_NJ_GYHDZC","ST_NJ_GYHDZC_SUB","ST_NJ_REPROT13","ST_NJ_REPORT13_SUB","ST_NJ_ADMINISTRAT_COST","ST_NJ_ADMINISTRAT_COST_INX","STNJ_SFQK_JYFW","STNJ_SFQK_JYFW_SUB","NJ_GWYJZ_TB","NJ_GWYJZ_SUB","MF_GWY_JZ_TB","MF_GWYJZ_ZB","ST_NJ_QGADVISE","STNJ_YWHD_TB","STNJ_YWHD_SUB","ST_NJ_SERVICE_COST_INX","ST_NJ_SERVICE_COST","JJHNJ_GYHDMX","JJHNJ_GYHDMX_SUB"};
 //        for(String tableName:tableNames){
-                    String type = "G"; //Gbase 数据库
-//            String type = "O"; // Oracle数据库
+//                    String type = "G"; //Gbase 数据库
+            String type = "O"; // Oracle数据库
             if("G".equals(type)){
                 connection = JDBCUtils.getConnection(GBASE_DRIVER,GBASE_URL, GBASE_USERNAME,GBASE_PASSWORD);//Gbase
             }else if("O".equals(type)){

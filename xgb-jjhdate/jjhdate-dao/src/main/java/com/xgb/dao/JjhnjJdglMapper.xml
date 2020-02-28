@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.JjhnjJdglMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.JjhnjJdgl" >
+    <constructor >
+      <idArg column="ID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="INSTANCEID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORGANIZATIONID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATUS" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="QIANSANNIANJIEGUO" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="QIANERNIANJIEGUO" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SHANGNIANJIEGUO" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PINGGUDENGJI" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PINGGUZI" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PINGGUZHI" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="SHIFOUCHUFA" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUFAZHONGLEI1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUFAJIGUAN1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUFASHIJIAN1" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="WEIFAXINGWEI1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUFAZHONGLEI2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUFAJIGUAN2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUFASHIJIAN2" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="WEIFAXINGWEI2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUFAZHONGLEI3" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUFAJIGUAN3" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUFASHIJIAN3" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="WEIFAXINGWEI3" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUFAZHONGLEI4" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUFAJIGUAN4" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUFASHIJIAN4" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="WEIFAXINGWEI4" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUFAZHONGLEI5" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUFAJIGUAN5" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUFASHIJIAN5" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="WEIFAXINGWEI5" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUFAZHONGLEI6" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUFAJIGUAN6" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUFASHIJIAN6" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="WEIFAXINGWEI6" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUFAZHONGLEI7" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUFAJIGUAN7" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="CHUFASHIJIAN7" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="WEIFAXINGWEI7" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, INSTANCEID, ORGANIZATIONID, STATUS, QIANSANNIANJIEGUO, QIANERNIANJIEGUO, SHANGNIANJIEGUO, 
+    PINGGUDENGJI, PINGGUZI, PINGGUZHI, SHIFOUCHUFA, CHUFAZHONGLEI1, CHUFAJIGUAN1, CHUFASHIJIAN1, 
+    WEIFAXINGWEI1, CHUFAZHONGLEI2, CHUFAJIGUAN2, CHUFASHIJIAN2, WEIFAXINGWEI2, CHUFAZHONGLEI3, 
+    CHUFAJIGUAN3, CHUFASHIJIAN3, WEIFAXINGWEI3, CHUFAZHONGLEI4, CHUFAJIGUAN4, CHUFASHIJIAN4, 
+    WEIFAXINGWEI4, CHUFAZHONGLEI5, CHUFAJIGUAN5, CHUFASHIJIAN5, WEIFAXINGWEI5, CHUFAZHONGLEI6, 
+    CHUFAJIGUAN6, CHUFASHIJIAN6, WEIFAXINGWEI6, CHUFAZHONGLEI7, CHUFAJIGUAN7, CHUFASHIJIAN7, 
+    WEIFAXINGWEI7
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.JjhnjJdglExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from MJZZ_USER.JJHNJ_JDGL
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from MJZZ_USER.JJHNJ_JDGL
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from MJZZ_USER.JJHNJ_JDGL
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xgb.model.JjhnjJdglExample" >
+    delete from MJZZ_USER.JJHNJ_JDGL
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.JjhnjJdgl" >
+    insert into JJHNJ_JDGL (ID, INSTANCEID, ORGANIZATIONID, 
+      STATUS, QIANSANNIANJIEGUO, QIANERNIANJIEGUO, 
+      SHANGNIANJIEGUO, PINGGUDENGJI, PINGGUZI, 
+      PINGGUZHI, SHIFOUCHUFA, CHUFAZHONGLEI1, 
+      CHUFAJIGUAN1, CHUFASHIJIAN1, WEIFAXINGWEI1, 
+      CHUFAZHONGLEI2, CHUFAJIGUAN2, CHUFASHIJIAN2, 
+      WEIFAXINGWEI2, CHUFAZHONGLEI3, CHUFAJIGUAN3, 
+      CHUFASHIJIAN3, WEIFAXINGWEI3, CHUFAZHONGLEI4, 
+      CHUFAJIGUAN4, CHUFASHIJIAN4, WEIFAXINGWEI4, 
+      CHUFAZHONGLEI5, CHUFAJIGUAN5, CHUFASHIJIAN5, 
+      WEIFAXINGWEI5, CHUFAZHONGLEI6, CHUFAJIGUAN6, 
+      CHUFASHIJIAN6, WEIFAXINGWEI6, CHUFAZHONGLEI7, 
+      CHUFAJIGUAN7, CHUFASHIJIAN7, WEIFAXINGWEI7
+      )
+    values (#{id,jdbcType=DECIMAL}, #{instanceid,jdbcType=VARCHAR}, #{organizationid,jdbcType=VARCHAR}, 
+      #{status,jdbcType=DECIMAL}, #{qiansannianjieguo,jdbcType=VARCHAR}, #{qianernianjieguo,jdbcType=VARCHAR}, 
+      #{shangnianjieguo,jdbcType=VARCHAR}, #{pinggudengji,jdbcType=VARCHAR}, #{pingguzi,jdbcType=VARCHAR}, 
+      #{pingguzhi,jdbcType=VARCHAR}, #{shifouchufa,jdbcType=VARCHAR}, #{chufazhonglei1,jdbcType=VARCHAR}, 
+      #{chufajiguan1,jdbcType=VARCHAR}, #{chufashijian1,jdbcType=TIMESTAMP}, #{weifaxingwei1,jdbcType=VARCHAR}, 
+      #{chufazhonglei2,jdbcType=VARCHAR}, #{chufajiguan2,jdbcType=VARCHAR}, #{chufashijian2,jdbcType=TIMESTAMP}, 
+      #{weifaxingwei2,jdbcType=VARCHAR}, #{chufazhonglei3,jdbcType=VARCHAR}, #{chufajiguan3,jdbcType=VARCHAR}, 
+      #{chufashijian3,jdbcType=TIMESTAMP}, #{weifaxingwei3,jdbcType=VARCHAR}, #{chufazhonglei4,jdbcType=VARCHAR}, 
+      #{chufajiguan4,jdbcType=VARCHAR}, #{chufashijian4,jdbcType=TIMESTAMP}, #{weifaxingwei4,jdbcType=VARCHAR}, 
+      #{chufazhonglei5,jdbcType=VARCHAR}, #{chufajiguan5,jdbcType=VARCHAR}, #{chufashijian5,jdbcType=TIMESTAMP}, 
+      #{weifaxingwei5,jdbcType=VARCHAR}, #{chufazhonglei6,jdbcType=VARCHAR}, #{chufajiguan6,jdbcType=VARCHAR}, 
+      #{chufashijian6,jdbcType=TIMESTAMP}, #{weifaxingwei6,jdbcType=VARCHAR}, #{chufazhonglei7,jdbcType=VARCHAR}, 
+      #{chufajiguan7,jdbcType=VARCHAR}, #{chufashijian7,jdbcType=TIMESTAMP}, #{weifaxingwei7,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.JjhnjJdgl" >
+    insert into JJHNJ_JDGL
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="instanceid != null" >
+        INSTANCEID,
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="qiansannianjieguo != null" >
+        QIANSANNIANJIEGUO,
+      </if>
+      <if test="qianernianjieguo != null" >
+        QIANERNIANJIEGUO,
+      </if>
+      <if test="shangnianjieguo != null" >
+        SHANGNIANJIEGUO,
+      </if>
+      <if test="pinggudengji != null" >
+        PINGGUDENGJI,
+      </if>
+      <if test="pingguzi != null" >
+        PINGGUZI,
+      </if>
+      <if test="pingguzhi != null" >
+        PINGGUZHI,
+      </if>
+      <if test="shifouchufa != null" >
+        SHIFOUCHUFA,
+      </if>
+      <if test="chufazhonglei1 != null" >
+        CHUFAZHONGLEI1,
+      </if>
+      <if test="chufajiguan1 != null" >
+        CHUFAJIGUAN1,
+      </if>
+      <if test="chufashijian1 != null" >
+        CHUFASHIJIAN1,
+      </if>
+      <if test="weifaxingwei1 != null" >
+        WEIFAXINGWEI1,
+      </if>
+      <if test="chufazhonglei2 != null" >
+        CHUFAZHONGLEI2,
+      </if>
+      <if test="chufajiguan2 != null" >
+        CHUFAJIGUAN2,
+      </if>
+      <if test="chufashijian2 != null" >
+        CHUFASHIJIAN2,
+      </if>
+      <if test="weifaxingwei2 != null" >
+        WEIFAXINGWEI2,
+      </if>
+      <if test="chufazhonglei3 != null" >
+        CHUFAZHONGLEI3,
+      </if>
+      <if test="chufajiguan3 != null" >
+        CHUFAJIGUAN3,
+      </if>
+      <if test="chufashijian3 != null" >
+        CHUFASHIJIAN3,
+      </if>
+      <if test="weifaxingwei3 != null" >
+        WEIFAXINGWEI3,
+      </if>
+      <if test="chufazhonglei4 != null" >
+        CHUFAZHONGLEI4,
+      </if>
+      <if test="chufajiguan4 != null" >
+        CHUFAJIGUAN4,
+      </if>
+      <if test="chufashijian4 != null" >
+        CHUFASHIJIAN4,
+      </if>
+      <if test="weifaxingwei4 != null" >
+        WEIFAXINGWEI4,
+      </if>
+      <if test="chufazhonglei5 != null" >
+        CHUFAZHONGLEI5,
+      </if>
+      <if test="chufajiguan5 != null" >
+        CHUFAJIGUAN5,
+      </if>
+      <if test="chufashijian5 != null" >
+        CHUFASHIJIAN5,
+      </if>
+      <if test="weifaxingwei5 != null" >
+        WEIFAXINGWEI5,
+      </if>
+      <if test="chufazhonglei6 != null" >
+        CHUFAZHONGLEI6,
+      </if>
+      <if test="chufajiguan6 != null" >
+        CHUFAJIGUAN6,
+      </if>
+      <if test="chufashijian6 != null" >
+        CHUFASHIJIAN6,
+      </if>
+      <if test="weifaxingwei6 != null" >
+        WEIFAXINGWEI6,
+      </if>
+      <if test="chufazhonglei7 != null" >
+        CHUFAZHONGLEI7,
+      </if>
+      <if test="chufajiguan7 != null" >
+        CHUFAJIGUAN7,
+      </if>
+      <if test="chufashijian7 != null" >
+        CHUFASHIJIAN7,
+      </if>
+      <if test="weifaxingwei7 != null" >
+        WEIFAXINGWEI7,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="instanceid != null" >
+        #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="qiansannianjieguo != null" >
+        #{qiansannianjieguo,jdbcType=VARCHAR},
+      </if>
+      <if test="qianernianjieguo != null" >
+        #{qianernianjieguo,jdbcType=VARCHAR},
+      </if>
+      <if test="shangnianjieguo != null" >
+        #{shangnianjieguo,jdbcType=VARCHAR},
+      </if>
+      <if test="pinggudengji != null" >
+        #{pinggudengji,jdbcType=VARCHAR},
+      </if>
+      <if test="pingguzi != null" >
+        #{pingguzi,jdbcType=VARCHAR},
+      </if>
+      <if test="pingguzhi != null" >
+        #{pingguzhi,jdbcType=VARCHAR},
+      </if>
+      <if test="shifouchufa != null" >
+        #{shifouchufa,jdbcType=VARCHAR},
+      </if>
+      <if test="chufazhonglei1 != null" >
+        #{chufazhonglei1,jdbcType=VARCHAR},
+      </if>
+      <if test="chufajiguan1 != null" >
+        #{chufajiguan1,jdbcType=VARCHAR},
+      </if>
+      <if test="chufashijian1 != null" >
+        #{chufashijian1,jdbcType=TIMESTAMP},
+      </if>
+      <if test="weifaxingwei1 != null" >
+        #{weifaxingwei1,jdbcType=VARCHAR},
+      </if>
+      <if test="chufazhonglei2 != null" >
+        #{chufazhonglei2,jdbcType=VARCHAR},
+      </if>
+      <if test="chufajiguan2 != null" >
+        #{chufajiguan2,jdbcType=VARCHAR},
+      </if>
+      <if test="chufashijian2 != null" >
+        #{chufashijian2,jdbcType=TIMESTAMP},
+      </if>
+      <if test="weifaxingwei2 != null" >
+        #{weifaxingwei2,jdbcType=VARCHAR},
+      </if>
+      <if test="chufazhonglei3 != null" >
+        #{chufazhonglei3,jdbcType=VARCHAR},
+      </if>
+      <if test="chufajiguan3 != null" >
+        #{chufajiguan3,jdbcType=VARCHAR},
+      </if>
+      <if test="chufashijian3 != null" >
+        #{chufashijian3,jdbcType=TIMESTAMP},
+      </if>
+      <if test="weifaxingwei3 != null" >
+        #{weifaxingwei3,jdbcType=VARCHAR},
+      </if>
+      <if test="chufazhonglei4 != null" >
+        #{chufazhonglei4,jdbcType=VARCHAR},
+      </if>
+      <if test="chufajiguan4 != null" >
+        #{chufajiguan4,jdbcType=VARCHAR},
+      </if>
+      <if test="chufashijian4 != null" >
+        #{chufashijian4,jdbcType=TIMESTAMP},
+      </if>
+      <if test="weifaxingwei4 != null" >
+        #{weifaxingwei4,jdbcType=VARCHAR},
+      </if>
+      <if test="chufazhonglei5 != null" >
+        #{chufazhonglei5,jdbcType=VARCHAR},
+      </if>
+      <if test="chufajiguan5 != null" >
+        #{chufajiguan5,jdbcType=VARCHAR},
+      </if>
+      <if test="chufashijian5 != null" >
+        #{chufashijian5,jdbcType=TIMESTAMP},
+      </if>
+      <if test="weifaxingwei5 != null" >
+        #{weifaxingwei5,jdbcType=VARCHAR},
+      </if>
+      <if test="chufazhonglei6 != null" >
+        #{chufazhonglei6,jdbcType=VARCHAR},
+      </if>
+      <if test="chufajiguan6 != null" >
+        #{chufajiguan6,jdbcType=VARCHAR},
+      </if>
+      <if test="chufashijian6 != null" >
+        #{chufashijian6,jdbcType=TIMESTAMP},
+      </if>
+      <if test="weifaxingwei6 != null" >
+        #{weifaxingwei6,jdbcType=VARCHAR},
+      </if>
+      <if test="chufazhonglei7 != null" >
+        #{chufazhonglei7,jdbcType=VARCHAR},
+      </if>
+      <if test="chufajiguan7 != null" >
+        #{chufajiguan7,jdbcType=VARCHAR},
+      </if>
+      <if test="chufashijian7 != null" >
+        #{chufashijian7,jdbcType=TIMESTAMP},
+      </if>
+      <if test="weifaxingwei7 != null" >
+        #{weifaxingwei7,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.JjhnjJdglExample" resultType="java.lang.Integer" >
+    select count(*) from MJZZ_USER.JJHNJ_JDGL
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update JJHNJ_JDGL
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=DECIMAL},
+      </if>
+      <if test="record.instanceid != null" >
+        INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organizationid != null" >
+        ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=DECIMAL},
+      </if>
+      <if test="record.qiansannianjieguo != null" >
+        QIANSANNIANJIEGUO = #{record.qiansannianjieguo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qianernianjieguo != null" >
+        QIANERNIANJIEGUO = #{record.qianernianjieguo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shangnianjieguo != null" >
+        SHANGNIANJIEGUO = #{record.shangnianjieguo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pinggudengji != null" >
+        PINGGUDENGJI = #{record.pinggudengji,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pingguzi != null" >
+        PINGGUZI = #{record.pingguzi,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pingguzhi != null" >
+        PINGGUZHI = #{record.pingguzhi,jdbcType=VARCHAR},
+      </if>
+      <if test="record.shifouchufa != null" >
+        SHIFOUCHUFA = #{record.shifouchufa,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chufazhonglei1 != null" >
+        CHUFAZHONGLEI1 = #{record.chufazhonglei1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chufajiguan1 != null" >
+        CHUFAJIGUAN1 = #{record.chufajiguan1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chufashijian1 != null" >
+        CHUFASHIJIAN1 = #{record.chufashijian1,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.weifaxingwei1 != null" >
+        WEIFAXINGWEI1 = #{record.weifaxingwei1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chufazhonglei2 != null" >
+        CHUFAZHONGLEI2 = #{record.chufazhonglei2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chufajiguan2 != null" >
+        CHUFAJIGUAN2 = #{record.chufajiguan2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chufashijian2 != null" >
+        CHUFASHIJIAN2 = #{record.chufashijian2,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.weifaxingwei2 != null" >
+        WEIFAXINGWEI2 = #{record.weifaxingwei2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chufazhonglei3 != null" >
+        CHUFAZHONGLEI3 = #{record.chufazhonglei3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chufajiguan3 != null" >
+        CHUFAJIGUAN3 = #{record.chufajiguan3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chufashijian3 != null" >
+        CHUFASHIJIAN3 = #{record.chufashijian3,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.weifaxingwei3 != null" >
+        WEIFAXINGWEI3 = #{record.weifaxingwei3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chufazhonglei4 != null" >
+        CHUFAZHONGLEI4 = #{record.chufazhonglei4,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chufajiguan4 != null" >
+        CHUFAJIGUAN4 = #{record.chufajiguan4,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chufashijian4 != null" >
+        CHUFASHIJIAN4 = #{record.chufashijian4,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.weifaxingwei4 != null" >
+        WEIFAXINGWEI4 = #{record.weifaxingwei4,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chufazhonglei5 != null" >
+        CHUFAZHONGLEI5 = #{record.chufazhonglei5,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chufajiguan5 != null" >
+        CHUFAJIGUAN5 = #{record.chufajiguan5,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chufashijian5 != null" >
+        CHUFASHIJIAN5 = #{record.chufashijian5,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.weifaxingwei5 != null" >
+        WEIFAXINGWEI5 = #{record.weifaxingwei5,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chufazhonglei6 != null" >
+        CHUFAZHONGLEI6 = #{record.chufazhonglei6,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chufajiguan6 != null" >
+        CHUFAJIGUAN6 = #{record.chufajiguan6,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chufashijian6 != null" >
+        CHUFASHIJIAN6 = #{record.chufashijian6,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.weifaxingwei6 != null" >
+        WEIFAXINGWEI6 = #{record.weifaxingwei6,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chufazhonglei7 != null" >
+        CHUFAZHONGLEI7 = #{record.chufazhonglei7,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chufajiguan7 != null" >
+        CHUFAJIGUAN7 = #{record.chufajiguan7,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chufashijian7 != null" >
+        CHUFASHIJIAN7 = #{record.chufashijian7,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.weifaxingwei7 != null" >
+        WEIFAXINGWEI7 = #{record.weifaxingwei7,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update JJHNJ_JDGL
+    set ID = #{record.id,jdbcType=DECIMAL},
+      INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=DECIMAL},
+      QIANSANNIANJIEGUO = #{record.qiansannianjieguo,jdbcType=VARCHAR},
+      QIANERNIANJIEGUO = #{record.qianernianjieguo,jdbcType=VARCHAR},
+      SHANGNIANJIEGUO = #{record.shangnianjieguo,jdbcType=VARCHAR},
+      PINGGUDENGJI = #{record.pinggudengji,jdbcType=VARCHAR},
+      PINGGUZI = #{record.pingguzi,jdbcType=VARCHAR},
+      PINGGUZHI = #{record.pingguzhi,jdbcType=VARCHAR},
+      SHIFOUCHUFA = #{record.shifouchufa,jdbcType=VARCHAR},
+      CHUFAZHONGLEI1 = #{record.chufazhonglei1,jdbcType=VARCHAR},
+      CHUFAJIGUAN1 = #{record.chufajiguan1,jdbcType=VARCHAR},
+      CHUFASHIJIAN1 = #{record.chufashijian1,jdbcType=TIMESTAMP},
+      WEIFAXINGWEI1 = #{record.weifaxingwei1,jdbcType=VARCHAR},
+      CHUFAZHONGLEI2 = #{record.chufazhonglei2,jdbcType=VARCHAR},
+      CHUFAJIGUAN2 = #{record.chufajiguan2,jdbcType=VARCHAR},
+      CHUFASHIJIAN2 = #{record.chufashijian2,jdbcType=TIMESTAMP},
+      WEIFAXINGWEI2 = #{record.weifaxingwei2,jdbcType=VARCHAR},
+      CHUFAZHONGLEI3 = #{record.chufazhonglei3,jdbcType=VARCHAR},
+      CHUFAJIGUAN3 = #{record.chufajiguan3,jdbcType=VARCHAR},
+      CHUFASHIJIAN3 = #{record.chufashijian3,jdbcType=TIMESTAMP},
+      WEIFAXINGWEI3 = #{record.weifaxingwei3,jdbcType=VARCHAR},
+      CHUFAZHONGLEI4 = #{record.chufazhonglei4,jdbcType=VARCHAR},
+      CHUFAJIGUAN4 = #{record.chufajiguan4,jdbcType=VARCHAR},
+      CHUFASHIJIAN4 = #{record.chufashijian4,jdbcType=TIMESTAMP},
+      WEIFAXINGWEI4 = #{record.weifaxingwei4,jdbcType=VARCHAR},
+      CHUFAZHONGLEI5 = #{record.chufazhonglei5,jdbcType=VARCHAR},
+      CHUFAJIGUAN5 = #{record.chufajiguan5,jdbcType=VARCHAR},
+      CHUFASHIJIAN5 = #{record.chufashijian5,jdbcType=TIMESTAMP},
+      WEIFAXINGWEI5 = #{record.weifaxingwei5,jdbcType=VARCHAR},
+      CHUFAZHONGLEI6 = #{record.chufazhonglei6,jdbcType=VARCHAR},
+      CHUFAJIGUAN6 = #{record.chufajiguan6,jdbcType=VARCHAR},
+      CHUFASHIJIAN6 = #{record.chufashijian6,jdbcType=TIMESTAMP},
+      WEIFAXINGWEI6 = #{record.weifaxingwei6,jdbcType=VARCHAR},
+      CHUFAZHONGLEI7 = #{record.chufazhonglei7,jdbcType=VARCHAR},
+      CHUFAJIGUAN7 = #{record.chufajiguan7,jdbcType=VARCHAR},
+      CHUFASHIJIAN7 = #{record.chufashijian7,jdbcType=TIMESTAMP},
+      WEIFAXINGWEI7 = #{record.weifaxingwei7,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.JjhnjJdgl" >
+    update JJHNJ_JDGL
+    <set >
+      <if test="instanceid != null" >
+        INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="qiansannianjieguo != null" >
+        QIANSANNIANJIEGUO = #{qiansannianjieguo,jdbcType=VARCHAR},
+      </if>
+      <if test="qianernianjieguo != null" >
+        QIANERNIANJIEGUO = #{qianernianjieguo,jdbcType=VARCHAR},
+      </if>
+      <if test="shangnianjieguo != null" >
+        SHANGNIANJIEGUO = #{shangnianjieguo,jdbcType=VARCHAR},
+      </if>
+      <if test="pinggudengji != null" >
+        PINGGUDENGJI = #{pinggudengji,jdbcType=VARCHAR},
+      </if>
+      <if test="pingguzi != null" >
+        PINGGUZI = #{pingguzi,jdbcType=VARCHAR},
+      </if>
+      <if test="pingguzhi != null" >
+        PINGGUZHI = #{pingguzhi,jdbcType=VARCHAR},
+      </if>
+      <if test="shifouchufa != null" >
+        SHIFOUCHUFA = #{shifouchufa,jdbcType=VARCHAR},
+      </if>
+      <if test="chufazhonglei1 != null" >
+        CHUFAZHONGLEI1 = #{chufazhonglei1,jdbcType=VARCHAR},
+      </if>
+      <if test="chufajiguan1 != null" >
+        CHUFAJIGUAN1 = #{chufajiguan1,jdbcType=VARCHAR},
+      </if>
+      <if test="chufashijian1 != null" >
+        CHUFASHIJIAN1 = #{chufashijian1,jdbcType=TIMESTAMP},
+      </if>
+      <if test="weifaxingwei1 != null" >
+        WEIFAXINGWEI1 = #{weifaxingwei1,jdbcType=VARCHAR},
+      </if>
+      <if test="chufazhonglei2 != null" >
+        CHUFAZHONGLEI2 = #{chufazhonglei2,jdbcType=VARCHAR},
+      </if>
+      <if test="chufajiguan2 != null" >
+        CHUFAJIGUAN2 = #{chufajiguan2,jdbcType=VARCHAR},
+      </if>
+      <if test="chufashijian2 != null" >
+        CHUFASHIJIAN2 = #{chufashijian2,jdbcType=TIMESTAMP},
+      </if>
+      <if test="weifaxingwei2 != null" >
+        WEIFAXINGWEI2 = #{weifaxingwei2,jdbcType=VARCHAR},
+      </if>
+      <if test="chufazhonglei3 != null" >
+        CHUFAZHONGLEI3 = #{chufazhonglei3,jdbcType=VARCHAR},
+      </if>
+      <if test="chufajiguan3 != null" >
+        CHUFAJIGUAN3 = #{chufajiguan3,jdbcType=VARCHAR},
+      </if>
+      <if test="chufashijian3 != null" >
+        CHUFASHIJIAN3 = #{chufashijian3,jdbcType=TIMESTAMP},
+      </if>
+      <if test="weifaxingwei3 != null" >
+        WEIFAXINGWEI3 = #{weifaxingwei3,jdbcType=VARCHAR},
+      </if>
+      <if test="chufazhonglei4 != null" >
+        CHUFAZHONGLEI4 = #{chufazhonglei4,jdbcType=VARCHAR},
+      </if>
+      <if test="chufajiguan4 != null" >
+        CHUFAJIGUAN4 = #{chufajiguan4,jdbcType=VARCHAR},
+      </if>
+      <if test="chufashijian4 != null" >
+        CHUFASHIJIAN4 = #{chufashijian4,jdbcType=TIMESTAMP},
+      </if>
+      <if test="weifaxingwei4 != null" >
+        WEIFAXINGWEI4 = #{weifaxingwei4,jdbcType=VARCHAR},
+      </if>
+      <if test="chufazhonglei5 != null" >
+        CHUFAZHONGLEI5 = #{chufazhonglei5,jdbcType=VARCHAR},
+      </if>
+      <if test="chufajiguan5 != null" >
+        CHUFAJIGUAN5 = #{chufajiguan5,jdbcType=VARCHAR},
+      </if>
+      <if test="chufashijian5 != null" >
+        CHUFASHIJIAN5 = #{chufashijian5,jdbcType=TIMESTAMP},
+      </if>
+      <if test="weifaxingwei5 != null" >
+        WEIFAXINGWEI5 = #{weifaxingwei5,jdbcType=VARCHAR},
+      </if>
+      <if test="chufazhonglei6 != null" >
+        CHUFAZHONGLEI6 = #{chufazhonglei6,jdbcType=VARCHAR},
+      </if>
+      <if test="chufajiguan6 != null" >
+        CHUFAJIGUAN6 = #{chufajiguan6,jdbcType=VARCHAR},
+      </if>
+      <if test="chufashijian6 != null" >
+        CHUFASHIJIAN6 = #{chufashijian6,jdbcType=TIMESTAMP},
+      </if>
+      <if test="weifaxingwei6 != null" >
+        WEIFAXINGWEI6 = #{weifaxingwei6,jdbcType=VARCHAR},
+      </if>
+      <if test="chufazhonglei7 != null" >
+        CHUFAZHONGLEI7 = #{chufazhonglei7,jdbcType=VARCHAR},
+      </if>
+      <if test="chufajiguan7 != null" >
+        CHUFAJIGUAN7 = #{chufajiguan7,jdbcType=VARCHAR},
+      </if>
+      <if test="chufashijian7 != null" >
+        CHUFASHIJIAN7 = #{chufashijian7,jdbcType=TIMESTAMP},
+      </if>
+      <if test="weifaxingwei7 != null" >
+        WEIFAXINGWEI7 = #{weifaxingwei7,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xgb.model.JjhnjJdgl" >
+    update JJHNJ_JDGL
+    set INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=DECIMAL},
+      QIANSANNIANJIEGUO = #{qiansannianjieguo,jdbcType=VARCHAR},
+      QIANERNIANJIEGUO = #{qianernianjieguo,jdbcType=VARCHAR},
+      SHANGNIANJIEGUO = #{shangnianjieguo,jdbcType=VARCHAR},
+      PINGGUDENGJI = #{pinggudengji,jdbcType=VARCHAR},
+      PINGGUZI = #{pingguzi,jdbcType=VARCHAR},
+      PINGGUZHI = #{pingguzhi,jdbcType=VARCHAR},
+      SHIFOUCHUFA = #{shifouchufa,jdbcType=VARCHAR},
+      CHUFAZHONGLEI1 = #{chufazhonglei1,jdbcType=VARCHAR},
+      CHUFAJIGUAN1 = #{chufajiguan1,jdbcType=VARCHAR},
+      CHUFASHIJIAN1 = #{chufashijian1,jdbcType=TIMESTAMP},
+      WEIFAXINGWEI1 = #{weifaxingwei1,jdbcType=VARCHAR},
+      CHUFAZHONGLEI2 = #{chufazhonglei2,jdbcType=VARCHAR},
+      CHUFAJIGUAN2 = #{chufajiguan2,jdbcType=VARCHAR},
+      CHUFASHIJIAN2 = #{chufashijian2,jdbcType=TIMESTAMP},
+      WEIFAXINGWEI2 = #{weifaxingwei2,jdbcType=VARCHAR},
+      CHUFAZHONGLEI3 = #{chufazhonglei3,jdbcType=VARCHAR},
+      CHUFAJIGUAN3 = #{chufajiguan3,jdbcType=VARCHAR},
+      CHUFASHIJIAN3 = #{chufashijian3,jdbcType=TIMESTAMP},
+      WEIFAXINGWEI3 = #{weifaxingwei3,jdbcType=VARCHAR},
+      CHUFAZHONGLEI4 = #{chufazhonglei4,jdbcType=VARCHAR},
+      CHUFAJIGUAN4 = #{chufajiguan4,jdbcType=VARCHAR},
+      CHUFASHIJIAN4 = #{chufashijian4,jdbcType=TIMESTAMP},
+      WEIFAXINGWEI4 = #{weifaxingwei4,jdbcType=VARCHAR},
+      CHUFAZHONGLEI5 = #{chufazhonglei5,jdbcType=VARCHAR},
+      CHUFAJIGUAN5 = #{chufajiguan5,jdbcType=VARCHAR},
+      CHUFASHIJIAN5 = #{chufashijian5,jdbcType=TIMESTAMP},
+      WEIFAXINGWEI5 = #{weifaxingwei5,jdbcType=VARCHAR},
+      CHUFAZHONGLEI6 = #{chufazhonglei6,jdbcType=VARCHAR},
+      CHUFAJIGUAN6 = #{chufajiguan6,jdbcType=VARCHAR},
+      CHUFASHIJIAN6 = #{chufashijian6,jdbcType=TIMESTAMP},
+      WEIFAXINGWEI6 = #{weifaxingwei6,jdbcType=VARCHAR},
+      CHUFAZHONGLEI7 = #{chufazhonglei7,jdbcType=VARCHAR},
+      CHUFAJIGUAN7 = #{chufajiguan7,jdbcType=VARCHAR},
+      CHUFASHIJIAN7 = #{chufashijian7,jdbcType=TIMESTAMP},
+      WEIFAXINGWEI7 = #{weifaxingwei7,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>

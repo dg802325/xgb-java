@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.JjhnjYzhdqkSubMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.JjhnjYzhdqkSub" >
+    <constructor >
+      <arg column="ID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="INSTANCEID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORGANIZATIONID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATUS" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="MASTERID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="XIANGMUMINGCHENG" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="XIANGMUZHICHU" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="MINSHENGBAOZHANG" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="FUPINJIKUN" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="QITA" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="XIANGMUNEIRONG" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="XUHAO" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="LASA" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="RIKAZE" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="CHANGDUDIQU" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="SHANNANDIQU" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="NAQUDIQU" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="ALIDIQU" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="LINZHIDIQU" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="QINGHAIZANGQU" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="SICHUANZANGQU" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="YUNNANZANGQU" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="GANSUZANGQU" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="SHIFOUYUANZANG" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="XIANGMUDIDIAN" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PINKUNHU" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="PINKUNREN" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="JIAOYUFUPIN" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="JIANKANGFUPIN" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="CHANYEFUPIN" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="JICHUSHESHI" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="ZHIJIEJIUZHU" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="ZHIYUANFUPIN" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="YIDIBANQIAN" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="SHENG" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="SHI" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="XIAN" jdbcType="OTHER" javaType="java.lang.Object" />
+      <arg column="XIANEXT" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, INSTANCEID, ORGANIZATIONID, STATUS, MASTERID, XIANGMUMINGCHENG, XIANGMUZHICHU, 
+    MINSHENGBAOZHANG, FUPINJIKUN, QITA, XIANGMUNEIRONG, XUHAO, LASA, RIKAZE, CHANGDUDIQU, 
+    SHANNANDIQU, NAQUDIQU, ALIDIQU, LINZHIDIQU, QINGHAIZANGQU, SICHUANZANGQU, YUNNANZANGQU, 
+    GANSUZANGQU, SHIFOUYUANZANG, XIANGMUDIDIAN, PINKUNHU, PINKUNREN, JIAOYUFUPIN, JIANKANGFUPIN, 
+    CHANYEFUPIN, JICHUSHESHI, ZHIJIEJIUZHU, ZHIYUANFUPIN, YIDIBANQIAN, SHENG, SHI, XIAN, 
+    XIANEXT
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.JjhnjYzhdqkSubExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from MJZZ_USER.JJHNJ_YZHDQK_SUB
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.xgb.model.JjhnjYzhdqkSubExample" >
+    delete from MJZZ_USER.JJHNJ_YZHDQK_SUB
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.JjhnjYzhdqkSub" >
+    insert into MJZZ_USER.JJHNJ_YZHDQK_SUB (ID, INSTANCEID, ORGANIZATIONID, 
+      STATUS, MASTERID, XIANGMUMINGCHENG, 
+      XIANGMUZHICHU, MINSHENGBAOZHANG, FUPINJIKUN, 
+      QITA, XIANGMUNEIRONG, XUHAO, 
+      LASA, RIKAZE, CHANGDUDIQU, 
+      SHANNANDIQU, NAQUDIQU, ALIDIQU, 
+      LINZHIDIQU, QINGHAIZANGQU, SICHUANZANGQU, 
+      YUNNANZANGQU, GANSUZANGQU, SHIFOUYUANZANG, 
+      XIANGMUDIDIAN, PINKUNHU, PINKUNREN, 
+      JIAOYUFUPIN, JIANKANGFUPIN, CHANYEFUPIN, 
+      JICHUSHESHI, ZHIJIEJIUZHU, ZHIYUANFUPIN, 
+      YIDIBANQIAN, SHENG, SHI, 
+      XIAN, XIANEXT)
+    values (#{id,jdbcType=DECIMAL}, #{instanceid,jdbcType=VARCHAR}, #{organizationid,jdbcType=VARCHAR}, 
+      #{status,jdbcType=DECIMAL}, #{masterid,jdbcType=DECIMAL}, #{xiangmumingcheng,jdbcType=VARCHAR}, 
+      #{xiangmuzhichu,jdbcType=DECIMAL}, #{minshengbaozhang,jdbcType=OTHER}, #{fupinjikun,jdbcType=OTHER}, 
+      #{qita,jdbcType=OTHER}, #{xiangmuneirong,jdbcType=VARCHAR}, #{xuhao,jdbcType=DECIMAL}, 
+      #{lasa,jdbcType=OTHER}, #{rikaze,jdbcType=OTHER}, #{changdudiqu,jdbcType=OTHER}, 
+      #{shannandiqu,jdbcType=OTHER}, #{naqudiqu,jdbcType=OTHER}, #{alidiqu,jdbcType=OTHER}, 
+      #{linzhidiqu,jdbcType=OTHER}, #{qinghaizangqu,jdbcType=OTHER}, #{sichuanzangqu,jdbcType=OTHER}, 
+      #{yunnanzangqu,jdbcType=OTHER}, #{gansuzangqu,jdbcType=OTHER}, #{shifouyuanzang,jdbcType=DECIMAL}, 
+      #{xiangmudidian,jdbcType=VARCHAR}, #{pinkunhu,jdbcType=VARCHAR}, #{pinkunren,jdbcType=DECIMAL}, 
+      #{jiaoyufupin,jdbcType=OTHER}, #{jiankangfupin,jdbcType=OTHER}, #{chanyefupin,jdbcType=OTHER}, 
+      #{jichusheshi,jdbcType=OTHER}, #{zhijiejiuzhu,jdbcType=OTHER}, #{zhiyuanfupin,jdbcType=OTHER}, 
+      #{yidibanqian,jdbcType=OTHER}, #{sheng,jdbcType=OTHER}, #{shi,jdbcType=OTHER}, 
+      #{xian,jdbcType=OTHER}, #{xianext,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.JjhnjYzhdqkSub" >
+    insert into MJZZ_USER.JJHNJ_YZHDQK_SUB
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="instanceid != null" >
+        INSTANCEID,
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="masterid != null" >
+        MASTERID,
+      </if>
+      <if test="xiangmumingcheng != null" >
+        XIANGMUMINGCHENG,
+      </if>
+      <if test="xiangmuzhichu != null" >
+        XIANGMUZHICHU,
+      </if>
+      <if test="minshengbaozhang != null" >
+        MINSHENGBAOZHANG,
+      </if>
+      <if test="fupinjikun != null" >
+        FUPINJIKUN,
+      </if>
+      <if test="qita != null" >
+        QITA,
+      </if>
+      <if test="xiangmuneirong != null" >
+        XIANGMUNEIRONG,
+      </if>
+      <if test="xuhao != null" >
+        XUHAO,
+      </if>
+      <if test="lasa != null" >
+        LASA,
+      </if>
+      <if test="rikaze != null" >
+        RIKAZE,
+      </if>
+      <if test="changdudiqu != null" >
+        CHANGDUDIQU,
+      </if>
+      <if test="shannandiqu != null" >
+        SHANNANDIQU,
+      </if>
+      <if test="naqudiqu != null" >
+        NAQUDIQU,
+      </if>
+      <if test="alidiqu != null" >
+        ALIDIQU,
+      </if>
+      <if test="linzhidiqu != null" >
+        LINZHIDIQU,
+      </if>
+      <if test="qinghaizangqu != null" >
+        QINGHAIZANGQU,
+      </if>
+      <if test="sichuanzangqu != null" >
+        SICHUANZANGQU,
+      </if>
+      <if test="yunnanzangqu != null" >
+        YUNNANZANGQU,
+      </if>
+      <if test="gansuzangqu != null" >
+        GANSUZANGQU,
+      </if>
+      <if test="shifouyuanzang != null" >
+        SHIFOUYUANZANG,
+      </if>
+      <if test="xiangmudidian != null" >
+        XIANGMUDIDIAN,
+      </if>
+      <if test="pinkunhu != null" >
+        PINKUNHU,
+      </if>
+      <if test="pinkunren != null" >
+        PINKUNREN,
+      </if>
+      <if test="jiaoyufupin != null" >
+        JIAOYUFUPIN,
+      </if>
+      <if test="jiankangfupin != null" >
+        JIANKANGFUPIN,
+      </if>
+      <if test="chanyefupin != null" >
+        CHANYEFUPIN,
+      </if>
+      <if test="jichusheshi != null" >
+        JICHUSHESHI,
+      </if>
+      <if test="zhijiejiuzhu != null" >
+        ZHIJIEJIUZHU,
+      </if>
+      <if test="zhiyuanfupin != null" >
+        ZHIYUANFUPIN,
+      </if>
+      <if test="yidibanqian != null" >
+        YIDIBANQIAN,
+      </if>
+      <if test="sheng != null" >
+        SHENG,
+      </if>
+      <if test="shi != null" >
+        SHI,
+      </if>
+      <if test="xian != null" >
+        XIAN,
+      </if>
+      <if test="xianext != null" >
+        XIANEXT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="instanceid != null" >
+        #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="masterid != null" >
+        #{masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="xiangmumingcheng != null" >
+        #{xiangmumingcheng,jdbcType=VARCHAR},
+      </if>
+      <if test="xiangmuzhichu != null" >
+        #{xiangmuzhichu,jdbcType=DECIMAL},
+      </if>
+      <if test="minshengbaozhang != null" >
+        #{minshengbaozhang,jdbcType=OTHER},
+      </if>
+      <if test="fupinjikun != null" >
+        #{fupinjikun,jdbcType=OTHER},
+      </if>
+      <if test="qita != null" >
+        #{qita,jdbcType=OTHER},
+      </if>
+      <if test="xiangmuneirong != null" >
+        #{xiangmuneirong,jdbcType=VARCHAR},
+      </if>
+      <if test="xuhao != null" >
+        #{xuhao,jdbcType=DECIMAL},
+      </if>
+      <if test="lasa != null" >
+        #{lasa,jdbcType=OTHER},
+      </if>
+      <if test="rikaze != null" >
+        #{rikaze,jdbcType=OTHER},
+      </if>
+      <if test="changdudiqu != null" >
+        #{changdudiqu,jdbcType=OTHER},
+      </if>
+      <if test="shannandiqu != null" >
+        #{shannandiqu,jdbcType=OTHER},
+      </if>
+      <if test="naqudiqu != null" >
+        #{naqudiqu,jdbcType=OTHER},
+      </if>
+      <if test="alidiqu != null" >
+        #{alidiqu,jdbcType=OTHER},
+      </if>
+      <if test="linzhidiqu != null" >
+        #{linzhidiqu,jdbcType=OTHER},
+      </if>
+      <if test="qinghaizangqu != null" >
+        #{qinghaizangqu,jdbcType=OTHER},
+      </if>
+      <if test="sichuanzangqu != null" >
+        #{sichuanzangqu,jdbcType=OTHER},
+      </if>
+      <if test="yunnanzangqu != null" >
+        #{yunnanzangqu,jdbcType=OTHER},
+      </if>
+      <if test="gansuzangqu != null" >
+        #{gansuzangqu,jdbcType=OTHER},
+      </if>
+      <if test="shifouyuanzang != null" >
+        #{shifouyuanzang,jdbcType=DECIMAL},
+      </if>
+      <if test="xiangmudidian != null" >
+        #{xiangmudidian,jdbcType=VARCHAR},
+      </if>
+      <if test="pinkunhu != null" >
+        #{pinkunhu,jdbcType=VARCHAR},
+      </if>
+      <if test="pinkunren != null" >
+        #{pinkunren,jdbcType=DECIMAL},
+      </if>
+      <if test="jiaoyufupin != null" >
+        #{jiaoyufupin,jdbcType=OTHER},
+      </if>
+      <if test="jiankangfupin != null" >
+        #{jiankangfupin,jdbcType=OTHER},
+      </if>
+      <if test="chanyefupin != null" >
+        #{chanyefupin,jdbcType=OTHER},
+      </if>
+      <if test="jichusheshi != null" >
+        #{jichusheshi,jdbcType=OTHER},
+      </if>
+      <if test="zhijiejiuzhu != null" >
+        #{zhijiejiuzhu,jdbcType=OTHER},
+      </if>
+      <if test="zhiyuanfupin != null" >
+        #{zhiyuanfupin,jdbcType=OTHER},
+      </if>
+      <if test="yidibanqian != null" >
+        #{yidibanqian,jdbcType=OTHER},
+      </if>
+      <if test="sheng != null" >
+        #{sheng,jdbcType=OTHER},
+      </if>
+      <if test="shi != null" >
+        #{shi,jdbcType=OTHER},
+      </if>
+      <if test="xian != null" >
+        #{xian,jdbcType=OTHER},
+      </if>
+      <if test="xianext != null" >
+        #{xianext,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.JjhnjYzhdqkSubExample" resultType="java.lang.Integer" >
+    select count(*) from MJZZ_USER.JJHNJ_YZHDQK_SUB
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update MJZZ_USER.JJHNJ_YZHDQK_SUB
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=DECIMAL},
+      </if>
+      <if test="record.instanceid != null" >
+        INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organizationid != null" >
+        ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=DECIMAL},
+      </if>
+      <if test="record.masterid != null" >
+        MASTERID = #{record.masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xiangmumingcheng != null" >
+        XIANGMUMINGCHENG = #{record.xiangmumingcheng,jdbcType=VARCHAR},
+      </if>
+      <if test="record.xiangmuzhichu != null" >
+        XIANGMUZHICHU = #{record.xiangmuzhichu,jdbcType=DECIMAL},
+      </if>
+      <if test="record.minshengbaozhang != null" >
+        MINSHENGBAOZHANG = #{record.minshengbaozhang,jdbcType=OTHER},
+      </if>
+      <if test="record.fupinjikun != null" >
+        FUPINJIKUN = #{record.fupinjikun,jdbcType=OTHER},
+      </if>
+      <if test="record.qita != null" >
+        QITA = #{record.qita,jdbcType=OTHER},
+      </if>
+      <if test="record.xiangmuneirong != null" >
+        XIANGMUNEIRONG = #{record.xiangmuneirong,jdbcType=VARCHAR},
+      </if>
+      <if test="record.xuhao != null" >
+        XUHAO = #{record.xuhao,jdbcType=DECIMAL},
+      </if>
+      <if test="record.lasa != null" >
+        LASA = #{record.lasa,jdbcType=OTHER},
+      </if>
+      <if test="record.rikaze != null" >
+        RIKAZE = #{record.rikaze,jdbcType=OTHER},
+      </if>
+      <if test="record.changdudiqu != null" >
+        CHANGDUDIQU = #{record.changdudiqu,jdbcType=OTHER},
+      </if>
+      <if test="record.shannandiqu != null" >
+        SHANNANDIQU = #{record.shannandiqu,jdbcType=OTHER},
+      </if>
+      <if test="record.naqudiqu != null" >
+        NAQUDIQU = #{record.naqudiqu,jdbcType=OTHER},
+      </if>
+      <if test="record.alidiqu != null" >
+        ALIDIQU = #{record.alidiqu,jdbcType=OTHER},
+      </if>
+      <if test="record.linzhidiqu != null" >
+        LINZHIDIQU = #{record.linzhidiqu,jdbcType=OTHER},
+      </if>
+      <if test="record.qinghaizangqu != null" >
+        QINGHAIZANGQU = #{record.qinghaizangqu,jdbcType=OTHER},
+      </if>
+      <if test="record.sichuanzangqu != null" >
+        SICHUANZANGQU = #{record.sichuanzangqu,jdbcType=OTHER},
+      </if>
+      <if test="record.yunnanzangqu != null" >
+        YUNNANZANGQU = #{record.yunnanzangqu,jdbcType=OTHER},
+      </if>
+      <if test="record.gansuzangqu != null" >
+        GANSUZANGQU = #{record.gansuzangqu,jdbcType=OTHER},
+      </if>
+      <if test="record.shifouyuanzang != null" >
+        SHIFOUYUANZANG = #{record.shifouyuanzang,jdbcType=DECIMAL},
+      </if>
+      <if test="record.xiangmudidian != null" >
+        XIANGMUDIDIAN = #{record.xiangmudidian,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pinkunhu != null" >
+        PINKUNHU = #{record.pinkunhu,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pinkunren != null" >
+        PINKUNREN = #{record.pinkunren,jdbcType=DECIMAL},
+      </if>
+      <if test="record.jiaoyufupin != null" >
+        JIAOYUFUPIN = #{record.jiaoyufupin,jdbcType=OTHER},
+      </if>
+      <if test="record.jiankangfupin != null" >
+        JIANKANGFUPIN = #{record.jiankangfupin,jdbcType=OTHER},
+      </if>
+      <if test="record.chanyefupin != null" >
+        CHANYEFUPIN = #{record.chanyefupin,jdbcType=OTHER},
+      </if>
+      <if test="record.jichusheshi != null" >
+        JICHUSHESHI = #{record.jichusheshi,jdbcType=OTHER},
+      </if>
+      <if test="record.zhijiejiuzhu != null" >
+        ZHIJIEJIUZHU = #{record.zhijiejiuzhu,jdbcType=OTHER},
+      </if>
+      <if test="record.zhiyuanfupin != null" >
+        ZHIYUANFUPIN = #{record.zhiyuanfupin,jdbcType=OTHER},
+      </if>
+      <if test="record.yidibanqian != null" >
+        YIDIBANQIAN = #{record.yidibanqian,jdbcType=OTHER},
+      </if>
+      <if test="record.sheng != null" >
+        SHENG = #{record.sheng,jdbcType=OTHER},
+      </if>
+      <if test="record.shi != null" >
+        SHI = #{record.shi,jdbcType=OTHER},
+      </if>
+      <if test="record.xian != null" >
+        XIAN = #{record.xian,jdbcType=OTHER},
+      </if>
+      <if test="record.xianext != null" >
+        XIANEXT = #{record.xianext,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update MJZZ_USER.JJHNJ_YZHDQK_SUB
+    set ID = #{record.id,jdbcType=DECIMAL},
+      INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=DECIMAL},
+      MASTERID = #{record.masterid,jdbcType=DECIMAL},
+      XIANGMUMINGCHENG = #{record.xiangmumingcheng,jdbcType=VARCHAR},
+      XIANGMUZHICHU = #{record.xiangmuzhichu,jdbcType=DECIMAL},
+      MINSHENGBAOZHANG = #{record.minshengbaozhang,jdbcType=OTHER},
+      FUPINJIKUN = #{record.fupinjikun,jdbcType=OTHER},
+      QITA = #{record.qita,jdbcType=OTHER},
+      XIANGMUNEIRONG = #{record.xiangmuneirong,jdbcType=VARCHAR},
+      XUHAO = #{record.xuhao,jdbcType=DECIMAL},
+      LASA = #{record.lasa,jdbcType=OTHER},
+      RIKAZE = #{record.rikaze,jdbcType=OTHER},
+      CHANGDUDIQU = #{record.changdudiqu,jdbcType=OTHER},
+      SHANNANDIQU = #{record.shannandiqu,jdbcType=OTHER},
+      NAQUDIQU = #{record.naqudiqu,jdbcType=OTHER},
+      ALIDIQU = #{record.alidiqu,jdbcType=OTHER},
+      LINZHIDIQU = #{record.linzhidiqu,jdbcType=OTHER},
+      QINGHAIZANGQU = #{record.qinghaizangqu,jdbcType=OTHER},
+      SICHUANZANGQU = #{record.sichuanzangqu,jdbcType=OTHER},
+      YUNNANZANGQU = #{record.yunnanzangqu,jdbcType=OTHER},
+      GANSUZANGQU = #{record.gansuzangqu,jdbcType=OTHER},
+      SHIFOUYUANZANG = #{record.shifouyuanzang,jdbcType=DECIMAL},
+      XIANGMUDIDIAN = #{record.xiangmudidian,jdbcType=VARCHAR},
+      PINKUNHU = #{record.pinkunhu,jdbcType=VARCHAR},
+      PINKUNREN = #{record.pinkunren,jdbcType=DECIMAL},
+      JIAOYUFUPIN = #{record.jiaoyufupin,jdbcType=OTHER},
+      JIANKANGFUPIN = #{record.jiankangfupin,jdbcType=OTHER},
+      CHANYEFUPIN = #{record.chanyefupin,jdbcType=OTHER},
+      JICHUSHESHI = #{record.jichusheshi,jdbcType=OTHER},
+      ZHIJIEJIUZHU = #{record.zhijiejiuzhu,jdbcType=OTHER},
+      ZHIYUANFUPIN = #{record.zhiyuanfupin,jdbcType=OTHER},
+      YIDIBANQIAN = #{record.yidibanqian,jdbcType=OTHER},
+      SHENG = #{record.sheng,jdbcType=OTHER},
+      SHI = #{record.shi,jdbcType=OTHER},
+      XIAN = #{record.xian,jdbcType=OTHER},
+      XIANEXT = #{record.xianext,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

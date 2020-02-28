@@ -4,7 +4,7 @@ public class DbBase {
 
     //Oracle数据库连接
     public static final String ORACLE_DRIVER = "oracle.jdbc.driver.OracleDriver";
-    public static final String ORACLE_URL = "jdbc:oracle:thin:@127.0.0.1:1521:ORCL";
+    public static final String ORACLE_URL = "jdbc:oracle:thin:@127.0.0.1:1521:MJZZ";
     public static final String ORACLE_USERNAME = "SYSTEM";
     public static final String ORACLE_PASSWORD = "Dg19921123";
 

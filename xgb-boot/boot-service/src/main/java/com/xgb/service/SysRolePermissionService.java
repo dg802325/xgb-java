@@ -1,7 +1,7 @@
 package com.xgb.service;
 
-import com.xgb.dao.SysPermissionMapper;
-import com.xgb.dao.SysRolePermissionMapper;
+import com.xgb.dao1.SysPermissionMapper;
+import com.xgb.dao1.SysRolePermissionMapper;
 import com.xgb.model.SysPermission;
 import com.xgb.model.SysPermissionExample;
 import com.xgb.model.SysRolePermission;

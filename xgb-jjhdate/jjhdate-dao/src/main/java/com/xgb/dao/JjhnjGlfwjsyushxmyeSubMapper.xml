@@ -1,0 +1,1242 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xgb.dao.JjhnjGlfwjsyushxmyeSubMapper" >
+  <resultMap id="BaseResultMap" type="com.xgb.model.JjhnjGlfwjsyushxmyeSub" >
+    <constructor >
+      <idArg column="ID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="INSTANCEID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="ORGANIZATIONID" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="STATUS" jdbcType="DECIMAL" javaType="java.lang.Short" />
+      <arg column="MASTERID" jdbcType="DECIMAL" javaType="java.lang.Long" />
+      <arg column="MINGCHENG" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANCHUYUE1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUBILI1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANMOYUE1" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOBILI1" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANCHUYUE2" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUBILI2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANMOYUE2" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOBILI2" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANCHUYUE3" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUBILI3" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANMOYUE3" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOBILI3" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANCHUYUE4" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUBILI4" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANMOYUE4" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOBILI4" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANCHUYUE5" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUBILI5" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANMOYUE5" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOBILI5" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANCHUYUE6" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUBILI6" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANMOYUE6" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOBILI6" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANCHUYUE7" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUBILI7" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANMOYUE7" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOBILI7" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANCHUYUE8" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUBILI8" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANMOYUE8" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOBILI8" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANCHUYUE9" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUBILI9" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANMOYUE9" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOBILI9" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANCHUYUE10" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUBILI10" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANMOYUE10" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOBILI10" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANCHUYUE11" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUBILI11" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANMOYUE11" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOBILI11" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANCHUYUE12" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUBILI12" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANMOYUE12" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOBILI12" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANCHUYUE13" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUBILI13" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANMOYUE13" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOBILI13" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANCHUYUE14" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUBILI14" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANMOYUE14" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOBILI14" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANCHUYUE15" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUBILI15" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANMOYUE15" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOBILI15" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANCHUHEJIYUE" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANCHUHEJIBILI" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="NIANMOHEJIYUE" jdbcType="DECIMAL" javaType="java.math.BigDecimal" />
+      <arg column="NIANMOHEJIBILI" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, INSTANCEID, ORGANIZATIONID, STATUS, MASTERID, MINGCHENG, NIANCHUYUE1, NIANCHUBILI1, 
+    NIANMOYUE1, NIANMOBILI1, NIANCHUYUE2, NIANCHUBILI2, NIANMOYUE2, NIANMOBILI2, NIANCHUYUE3, 
+    NIANCHUBILI3, NIANMOYUE3, NIANMOBILI3, NIANCHUYUE4, NIANCHUBILI4, NIANMOYUE4, NIANMOBILI4, 
+    NIANCHUYUE5, NIANCHUBILI5, NIANMOYUE5, NIANMOBILI5, NIANCHUYUE6, NIANCHUBILI6, NIANMOYUE6, 
+    NIANMOBILI6, NIANCHUYUE7, NIANCHUBILI7, NIANMOYUE7, NIANMOBILI7, NIANCHUYUE8, NIANCHUBILI8, 
+    NIANMOYUE8, NIANMOBILI8, NIANCHUYUE9, NIANCHUBILI9, NIANMOYUE9, NIANMOBILI9, NIANCHUYUE10, 
+    NIANCHUBILI10, NIANMOYUE10, NIANMOBILI10, NIANCHUYUE11, NIANCHUBILI11, NIANMOYUE11, 
+    NIANMOBILI11, NIANCHUYUE12, NIANCHUBILI12, NIANMOYUE12, NIANMOBILI12, NIANCHUYUE13, 
+    NIANCHUBILI13, NIANMOYUE13, NIANMOBILI13, NIANCHUYUE14, NIANCHUBILI14, NIANMOYUE14, 
+    NIANMOBILI14, NIANCHUYUE15, NIANCHUBILI15, NIANMOYUE15, NIANMOBILI15, NIANCHUHEJIYUE, 
+    NIANCHUHEJIBILI, NIANMOHEJIYUE, NIANMOHEJIBILI
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xgb.model.JjhnjGlfwjsyushxmyeSubExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from JJHNJ_GLFWJSYUSHXMYE_SUB
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from JJHNJ_GLFWJSYUSHXMYE_SUB
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from JJHNJ_GLFWJSYUSHXMYE_SUB
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.xgb.model.JjhnjGlfwjsyushxmyeSubExample" >
+    delete from JJHNJ_GLFWJSYUSHXMYE_SUB
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.xgb.model.JjhnjGlfwjsyushxmyeSub" >
+    insert into JJHNJ_GLFWJSYUSHXMYE_SUB (ID, INSTANCEID, ORGANIZATIONID, 
+      STATUS, MASTERID, MINGCHENG, 
+      NIANCHUYUE1, NIANCHUBILI1, NIANMOYUE1, 
+      NIANMOBILI1, NIANCHUYUE2, NIANCHUBILI2, 
+      NIANMOYUE2, NIANMOBILI2, NIANCHUYUE3, 
+      NIANCHUBILI3, NIANMOYUE3, NIANMOBILI3, 
+      NIANCHUYUE4, NIANCHUBILI4, NIANMOYUE4, 
+      NIANMOBILI4, NIANCHUYUE5, NIANCHUBILI5, 
+      NIANMOYUE5, NIANMOBILI5, NIANCHUYUE6, 
+      NIANCHUBILI6, NIANMOYUE6, NIANMOBILI6, 
+      NIANCHUYUE7, NIANCHUBILI7, NIANMOYUE7, 
+      NIANMOBILI7, NIANCHUYUE8, NIANCHUBILI8, 
+      NIANMOYUE8, NIANMOBILI8, NIANCHUYUE9, 
+      NIANCHUBILI9, NIANMOYUE9, NIANMOBILI9, 
+      NIANCHUYUE10, NIANCHUBILI10, NIANMOYUE10, 
+      NIANMOBILI10, NIANCHUYUE11, NIANCHUBILI11, 
+      NIANMOYUE11, NIANMOBILI11, NIANCHUYUE12, 
+      NIANCHUBILI12, NIANMOYUE12, NIANMOBILI12, 
+      NIANCHUYUE13, NIANCHUBILI13, NIANMOYUE13, 
+      NIANMOBILI13, NIANCHUYUE14, NIANCHUBILI14, 
+      NIANMOYUE14, NIANMOBILI14, NIANCHUYUE15, 
+      NIANCHUBILI15, NIANMOYUE15, NIANMOBILI15, 
+      NIANCHUHEJIYUE, NIANCHUHEJIBILI, NIANMOHEJIYUE, 
+      NIANMOHEJIBILI)
+    values (#{id,jdbcType=DECIMAL}, #{instanceid,jdbcType=VARCHAR}, #{organizationid,jdbcType=VARCHAR}, 
+      #{status,jdbcType=DECIMAL}, #{masterid,jdbcType=DECIMAL}, #{mingcheng,jdbcType=VARCHAR}, 
+      #{nianchuyue1,jdbcType=DECIMAL}, #{nianchubili1,jdbcType=VARCHAR}, #{nianmoyue1,jdbcType=DECIMAL}, 
+      #{nianmobili1,jdbcType=VARCHAR}, #{nianchuyue2,jdbcType=DECIMAL}, #{nianchubili2,jdbcType=VARCHAR}, 
+      #{nianmoyue2,jdbcType=DECIMAL}, #{nianmobili2,jdbcType=VARCHAR}, #{nianchuyue3,jdbcType=DECIMAL}, 
+      #{nianchubili3,jdbcType=VARCHAR}, #{nianmoyue3,jdbcType=DECIMAL}, #{nianmobili3,jdbcType=VARCHAR}, 
+      #{nianchuyue4,jdbcType=DECIMAL}, #{nianchubili4,jdbcType=VARCHAR}, #{nianmoyue4,jdbcType=DECIMAL}, 
+      #{nianmobili4,jdbcType=VARCHAR}, #{nianchuyue5,jdbcType=DECIMAL}, #{nianchubili5,jdbcType=VARCHAR}, 
+      #{nianmoyue5,jdbcType=DECIMAL}, #{nianmobili5,jdbcType=VARCHAR}, #{nianchuyue6,jdbcType=DECIMAL}, 
+      #{nianchubili6,jdbcType=VARCHAR}, #{nianmoyue6,jdbcType=DECIMAL}, #{nianmobili6,jdbcType=VARCHAR}, 
+      #{nianchuyue7,jdbcType=DECIMAL}, #{nianchubili7,jdbcType=VARCHAR}, #{nianmoyue7,jdbcType=DECIMAL}, 
+      #{nianmobili7,jdbcType=VARCHAR}, #{nianchuyue8,jdbcType=DECIMAL}, #{nianchubili8,jdbcType=VARCHAR}, 
+      #{nianmoyue8,jdbcType=DECIMAL}, #{nianmobili8,jdbcType=VARCHAR}, #{nianchuyue9,jdbcType=DECIMAL}, 
+      #{nianchubili9,jdbcType=VARCHAR}, #{nianmoyue9,jdbcType=DECIMAL}, #{nianmobili9,jdbcType=VARCHAR}, 
+      #{nianchuyue10,jdbcType=DECIMAL}, #{nianchubili10,jdbcType=VARCHAR}, #{nianmoyue10,jdbcType=DECIMAL}, 
+      #{nianmobili10,jdbcType=VARCHAR}, #{nianchuyue11,jdbcType=DECIMAL}, #{nianchubili11,jdbcType=VARCHAR}, 
+      #{nianmoyue11,jdbcType=DECIMAL}, #{nianmobili11,jdbcType=VARCHAR}, #{nianchuyue12,jdbcType=DECIMAL}, 
+      #{nianchubili12,jdbcType=VARCHAR}, #{nianmoyue12,jdbcType=DECIMAL}, #{nianmobili12,jdbcType=VARCHAR}, 
+      #{nianchuyue13,jdbcType=DECIMAL}, #{nianchubili13,jdbcType=VARCHAR}, #{nianmoyue13,jdbcType=DECIMAL}, 
+      #{nianmobili13,jdbcType=VARCHAR}, #{nianchuyue14,jdbcType=DECIMAL}, #{nianchubili14,jdbcType=VARCHAR}, 
+      #{nianmoyue14,jdbcType=DECIMAL}, #{nianmobili14,jdbcType=VARCHAR}, #{nianchuyue15,jdbcType=DECIMAL}, 
+      #{nianchubili15,jdbcType=VARCHAR}, #{nianmoyue15,jdbcType=DECIMAL}, #{nianmobili15,jdbcType=VARCHAR}, 
+      #{nianchuhejiyue,jdbcType=DECIMAL}, #{nianchuhejibili,jdbcType=VARCHAR}, #{nianmohejiyue,jdbcType=DECIMAL}, 
+      #{nianmohejibili,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xgb.model.JjhnjGlfwjsyushxmyeSub" >
+    insert into JJHNJ_GLFWJSYUSHXMYE_SUB
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="instanceid != null" >
+        INSTANCEID,
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="masterid != null" >
+        MASTERID,
+      </if>
+      <if test="mingcheng != null" >
+        MINGCHENG,
+      </if>
+      <if test="nianchuyue1 != null" >
+        NIANCHUYUE1,
+      </if>
+      <if test="nianchubili1 != null" >
+        NIANCHUBILI1,
+      </if>
+      <if test="nianmoyue1 != null" >
+        NIANMOYUE1,
+      </if>
+      <if test="nianmobili1 != null" >
+        NIANMOBILI1,
+      </if>
+      <if test="nianchuyue2 != null" >
+        NIANCHUYUE2,
+      </if>
+      <if test="nianchubili2 != null" >
+        NIANCHUBILI2,
+      </if>
+      <if test="nianmoyue2 != null" >
+        NIANMOYUE2,
+      </if>
+      <if test="nianmobili2 != null" >
+        NIANMOBILI2,
+      </if>
+      <if test="nianchuyue3 != null" >
+        NIANCHUYUE3,
+      </if>
+      <if test="nianchubili3 != null" >
+        NIANCHUBILI3,
+      </if>
+      <if test="nianmoyue3 != null" >
+        NIANMOYUE3,
+      </if>
+      <if test="nianmobili3 != null" >
+        NIANMOBILI3,
+      </if>
+      <if test="nianchuyue4 != null" >
+        NIANCHUYUE4,
+      </if>
+      <if test="nianchubili4 != null" >
+        NIANCHUBILI4,
+      </if>
+      <if test="nianmoyue4 != null" >
+        NIANMOYUE4,
+      </if>
+      <if test="nianmobili4 != null" >
+        NIANMOBILI4,
+      </if>
+      <if test="nianchuyue5 != null" >
+        NIANCHUYUE5,
+      </if>
+      <if test="nianchubili5 != null" >
+        NIANCHUBILI5,
+      </if>
+      <if test="nianmoyue5 != null" >
+        NIANMOYUE5,
+      </if>
+      <if test="nianmobili5 != null" >
+        NIANMOBILI5,
+      </if>
+      <if test="nianchuyue6 != null" >
+        NIANCHUYUE6,
+      </if>
+      <if test="nianchubili6 != null" >
+        NIANCHUBILI6,
+      </if>
+      <if test="nianmoyue6 != null" >
+        NIANMOYUE6,
+      </if>
+      <if test="nianmobili6 != null" >
+        NIANMOBILI6,
+      </if>
+      <if test="nianchuyue7 != null" >
+        NIANCHUYUE7,
+      </if>
+      <if test="nianchubili7 != null" >
+        NIANCHUBILI7,
+      </if>
+      <if test="nianmoyue7 != null" >
+        NIANMOYUE7,
+      </if>
+      <if test="nianmobili7 != null" >
+        NIANMOBILI7,
+      </if>
+      <if test="nianchuyue8 != null" >
+        NIANCHUYUE8,
+      </if>
+      <if test="nianchubili8 != null" >
+        NIANCHUBILI8,
+      </if>
+      <if test="nianmoyue8 != null" >
+        NIANMOYUE8,
+      </if>
+      <if test="nianmobili8 != null" >
+        NIANMOBILI8,
+      </if>
+      <if test="nianchuyue9 != null" >
+        NIANCHUYUE9,
+      </if>
+      <if test="nianchubili9 != null" >
+        NIANCHUBILI9,
+      </if>
+      <if test="nianmoyue9 != null" >
+        NIANMOYUE9,
+      </if>
+      <if test="nianmobili9 != null" >
+        NIANMOBILI9,
+      </if>
+      <if test="nianchuyue10 != null" >
+        NIANCHUYUE10,
+      </if>
+      <if test="nianchubili10 != null" >
+        NIANCHUBILI10,
+      </if>
+      <if test="nianmoyue10 != null" >
+        NIANMOYUE10,
+      </if>
+      <if test="nianmobili10 != null" >
+        NIANMOBILI10,
+      </if>
+      <if test="nianchuyue11 != null" >
+        NIANCHUYUE11,
+      </if>
+      <if test="nianchubili11 != null" >
+        NIANCHUBILI11,
+      </if>
+      <if test="nianmoyue11 != null" >
+        NIANMOYUE11,
+      </if>
+      <if test="nianmobili11 != null" >
+        NIANMOBILI11,
+      </if>
+      <if test="nianchuyue12 != null" >
+        NIANCHUYUE12,
+      </if>
+      <if test="nianchubili12 != null" >
+        NIANCHUBILI12,
+      </if>
+      <if test="nianmoyue12 != null" >
+        NIANMOYUE12,
+      </if>
+      <if test="nianmobili12 != null" >
+        NIANMOBILI12,
+      </if>
+      <if test="nianchuyue13 != null" >
+        NIANCHUYUE13,
+      </if>
+      <if test="nianchubili13 != null" >
+        NIANCHUBILI13,
+      </if>
+      <if test="nianmoyue13 != null" >
+        NIANMOYUE13,
+      </if>
+      <if test="nianmobili13 != null" >
+        NIANMOBILI13,
+      </if>
+      <if test="nianchuyue14 != null" >
+        NIANCHUYUE14,
+      </if>
+      <if test="nianchubili14 != null" >
+        NIANCHUBILI14,
+      </if>
+      <if test="nianmoyue14 != null" >
+        NIANMOYUE14,
+      </if>
+      <if test="nianmobili14 != null" >
+        NIANMOBILI14,
+      </if>
+      <if test="nianchuyue15 != null" >
+        NIANCHUYUE15,
+      </if>
+      <if test="nianchubili15 != null" >
+        NIANCHUBILI15,
+      </if>
+      <if test="nianmoyue15 != null" >
+        NIANMOYUE15,
+      </if>
+      <if test="nianmobili15 != null" >
+        NIANMOBILI15,
+      </if>
+      <if test="nianchuhejiyue != null" >
+        NIANCHUHEJIYUE,
+      </if>
+      <if test="nianchuhejibili != null" >
+        NIANCHUHEJIBILI,
+      </if>
+      <if test="nianmohejiyue != null" >
+        NIANMOHEJIYUE,
+      </if>
+      <if test="nianmohejibili != null" >
+        NIANMOHEJIBILI,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="instanceid != null" >
+        #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="masterid != null" >
+        #{masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="mingcheng != null" >
+        #{mingcheng,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue1 != null" >
+        #{nianchuyue1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili1 != null" >
+        #{nianchubili1,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue1 != null" >
+        #{nianmoyue1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili1 != null" >
+        #{nianmobili1,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue2 != null" >
+        #{nianchuyue2,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili2 != null" >
+        #{nianchubili2,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue2 != null" >
+        #{nianmoyue2,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili2 != null" >
+        #{nianmobili2,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue3 != null" >
+        #{nianchuyue3,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili3 != null" >
+        #{nianchubili3,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue3 != null" >
+        #{nianmoyue3,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili3 != null" >
+        #{nianmobili3,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue4 != null" >
+        #{nianchuyue4,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili4 != null" >
+        #{nianchubili4,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue4 != null" >
+        #{nianmoyue4,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili4 != null" >
+        #{nianmobili4,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue5 != null" >
+        #{nianchuyue5,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili5 != null" >
+        #{nianchubili5,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue5 != null" >
+        #{nianmoyue5,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili5 != null" >
+        #{nianmobili5,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue6 != null" >
+        #{nianchuyue6,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili6 != null" >
+        #{nianchubili6,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue6 != null" >
+        #{nianmoyue6,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili6 != null" >
+        #{nianmobili6,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue7 != null" >
+        #{nianchuyue7,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili7 != null" >
+        #{nianchubili7,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue7 != null" >
+        #{nianmoyue7,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili7 != null" >
+        #{nianmobili7,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue8 != null" >
+        #{nianchuyue8,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili8 != null" >
+        #{nianchubili8,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue8 != null" >
+        #{nianmoyue8,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili8 != null" >
+        #{nianmobili8,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue9 != null" >
+        #{nianchuyue9,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili9 != null" >
+        #{nianchubili9,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue9 != null" >
+        #{nianmoyue9,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili9 != null" >
+        #{nianmobili9,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue10 != null" >
+        #{nianchuyue10,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili10 != null" >
+        #{nianchubili10,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue10 != null" >
+        #{nianmoyue10,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili10 != null" >
+        #{nianmobili10,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue11 != null" >
+        #{nianchuyue11,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili11 != null" >
+        #{nianchubili11,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue11 != null" >
+        #{nianmoyue11,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili11 != null" >
+        #{nianmobili11,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue12 != null" >
+        #{nianchuyue12,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili12 != null" >
+        #{nianchubili12,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue12 != null" >
+        #{nianmoyue12,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili12 != null" >
+        #{nianmobili12,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue13 != null" >
+        #{nianchuyue13,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili13 != null" >
+        #{nianchubili13,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue13 != null" >
+        #{nianmoyue13,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili13 != null" >
+        #{nianmobili13,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue14 != null" >
+        #{nianchuyue14,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili14 != null" >
+        #{nianchubili14,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue14 != null" >
+        #{nianmoyue14,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili14 != null" >
+        #{nianmobili14,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue15 != null" >
+        #{nianchuyue15,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili15 != null" >
+        #{nianchubili15,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue15 != null" >
+        #{nianmoyue15,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili15 != null" >
+        #{nianmobili15,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuhejiyue != null" >
+        #{nianchuhejiyue,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchuhejibili != null" >
+        #{nianchuhejibili,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmohejiyue != null" >
+        #{nianmohejiyue,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmohejibili != null" >
+        #{nianmohejibili,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.xgb.model.JjhnjGlfwjsyushxmyeSubExample" resultType="java.lang.Integer" >
+    select count(*) from JJHNJ_GLFWJSYUSHXMYE_SUB
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update JJHNJ_GLFWJSYUSHXMYE_SUB
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=DECIMAL},
+      </if>
+      <if test="record.instanceid != null" >
+        INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.organizationid != null" >
+        ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=DECIMAL},
+      </if>
+      <if test="record.masterid != null" >
+        MASTERID = #{record.masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mingcheng != null" >
+        MINGCHENG = #{record.mingcheng,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianchuyue1 != null" >
+        NIANCHUYUE1 = #{record.nianchuyue1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchubili1 != null" >
+        NIANCHUBILI1 = #{record.nianchubili1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianmoyue1 != null" >
+        NIANMOYUE1 = #{record.nianmoyue1,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmobili1 != null" >
+        NIANMOBILI1 = #{record.nianmobili1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianchuyue2 != null" >
+        NIANCHUYUE2 = #{record.nianchuyue2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchubili2 != null" >
+        NIANCHUBILI2 = #{record.nianchubili2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianmoyue2 != null" >
+        NIANMOYUE2 = #{record.nianmoyue2,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmobili2 != null" >
+        NIANMOBILI2 = #{record.nianmobili2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianchuyue3 != null" >
+        NIANCHUYUE3 = #{record.nianchuyue3,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchubili3 != null" >
+        NIANCHUBILI3 = #{record.nianchubili3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianmoyue3 != null" >
+        NIANMOYUE3 = #{record.nianmoyue3,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmobili3 != null" >
+        NIANMOBILI3 = #{record.nianmobili3,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianchuyue4 != null" >
+        NIANCHUYUE4 = #{record.nianchuyue4,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchubili4 != null" >
+        NIANCHUBILI4 = #{record.nianchubili4,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianmoyue4 != null" >
+        NIANMOYUE4 = #{record.nianmoyue4,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmobili4 != null" >
+        NIANMOBILI4 = #{record.nianmobili4,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianchuyue5 != null" >
+        NIANCHUYUE5 = #{record.nianchuyue5,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchubili5 != null" >
+        NIANCHUBILI5 = #{record.nianchubili5,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianmoyue5 != null" >
+        NIANMOYUE5 = #{record.nianmoyue5,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmobili5 != null" >
+        NIANMOBILI5 = #{record.nianmobili5,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianchuyue6 != null" >
+        NIANCHUYUE6 = #{record.nianchuyue6,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchubili6 != null" >
+        NIANCHUBILI6 = #{record.nianchubili6,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianmoyue6 != null" >
+        NIANMOYUE6 = #{record.nianmoyue6,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmobili6 != null" >
+        NIANMOBILI6 = #{record.nianmobili6,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianchuyue7 != null" >
+        NIANCHUYUE7 = #{record.nianchuyue7,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchubili7 != null" >
+        NIANCHUBILI7 = #{record.nianchubili7,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianmoyue7 != null" >
+        NIANMOYUE7 = #{record.nianmoyue7,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmobili7 != null" >
+        NIANMOBILI7 = #{record.nianmobili7,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianchuyue8 != null" >
+        NIANCHUYUE8 = #{record.nianchuyue8,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchubili8 != null" >
+        NIANCHUBILI8 = #{record.nianchubili8,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianmoyue8 != null" >
+        NIANMOYUE8 = #{record.nianmoyue8,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmobili8 != null" >
+        NIANMOBILI8 = #{record.nianmobili8,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianchuyue9 != null" >
+        NIANCHUYUE9 = #{record.nianchuyue9,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchubili9 != null" >
+        NIANCHUBILI9 = #{record.nianchubili9,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianmoyue9 != null" >
+        NIANMOYUE9 = #{record.nianmoyue9,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmobili9 != null" >
+        NIANMOBILI9 = #{record.nianmobili9,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianchuyue10 != null" >
+        NIANCHUYUE10 = #{record.nianchuyue10,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchubili10 != null" >
+        NIANCHUBILI10 = #{record.nianchubili10,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianmoyue10 != null" >
+        NIANMOYUE10 = #{record.nianmoyue10,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmobili10 != null" >
+        NIANMOBILI10 = #{record.nianmobili10,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianchuyue11 != null" >
+        NIANCHUYUE11 = #{record.nianchuyue11,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchubili11 != null" >
+        NIANCHUBILI11 = #{record.nianchubili11,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianmoyue11 != null" >
+        NIANMOYUE11 = #{record.nianmoyue11,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmobili11 != null" >
+        NIANMOBILI11 = #{record.nianmobili11,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianchuyue12 != null" >
+        NIANCHUYUE12 = #{record.nianchuyue12,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchubili12 != null" >
+        NIANCHUBILI12 = #{record.nianchubili12,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianmoyue12 != null" >
+        NIANMOYUE12 = #{record.nianmoyue12,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmobili12 != null" >
+        NIANMOBILI12 = #{record.nianmobili12,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianchuyue13 != null" >
+        NIANCHUYUE13 = #{record.nianchuyue13,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchubili13 != null" >
+        NIANCHUBILI13 = #{record.nianchubili13,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianmoyue13 != null" >
+        NIANMOYUE13 = #{record.nianmoyue13,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmobili13 != null" >
+        NIANMOBILI13 = #{record.nianmobili13,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianchuyue14 != null" >
+        NIANCHUYUE14 = #{record.nianchuyue14,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchubili14 != null" >
+        NIANCHUBILI14 = #{record.nianchubili14,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianmoyue14 != null" >
+        NIANMOYUE14 = #{record.nianmoyue14,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmobili14 != null" >
+        NIANMOBILI14 = #{record.nianmobili14,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianchuyue15 != null" >
+        NIANCHUYUE15 = #{record.nianchuyue15,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchubili15 != null" >
+        NIANCHUBILI15 = #{record.nianchubili15,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianmoyue15 != null" >
+        NIANMOYUE15 = #{record.nianmoyue15,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmobili15 != null" >
+        NIANMOBILI15 = #{record.nianmobili15,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianchuhejiyue != null" >
+        NIANCHUHEJIYUE = #{record.nianchuhejiyue,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianchuhejibili != null" >
+        NIANCHUHEJIBILI = #{record.nianchuhejibili,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nianmohejiyue != null" >
+        NIANMOHEJIYUE = #{record.nianmohejiyue,jdbcType=DECIMAL},
+      </if>
+      <if test="record.nianmohejibili != null" >
+        NIANMOHEJIBILI = #{record.nianmohejibili,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update JJHNJ_GLFWJSYUSHXMYE_SUB
+    set ID = #{record.id,jdbcType=DECIMAL},
+      INSTANCEID = #{record.instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{record.organizationid,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=DECIMAL},
+      MASTERID = #{record.masterid,jdbcType=DECIMAL},
+      MINGCHENG = #{record.mingcheng,jdbcType=VARCHAR},
+      NIANCHUYUE1 = #{record.nianchuyue1,jdbcType=DECIMAL},
+      NIANCHUBILI1 = #{record.nianchubili1,jdbcType=VARCHAR},
+      NIANMOYUE1 = #{record.nianmoyue1,jdbcType=DECIMAL},
+      NIANMOBILI1 = #{record.nianmobili1,jdbcType=VARCHAR},
+      NIANCHUYUE2 = #{record.nianchuyue2,jdbcType=DECIMAL},
+      NIANCHUBILI2 = #{record.nianchubili2,jdbcType=VARCHAR},
+      NIANMOYUE2 = #{record.nianmoyue2,jdbcType=DECIMAL},
+      NIANMOBILI2 = #{record.nianmobili2,jdbcType=VARCHAR},
+      NIANCHUYUE3 = #{record.nianchuyue3,jdbcType=DECIMAL},
+      NIANCHUBILI3 = #{record.nianchubili3,jdbcType=VARCHAR},
+      NIANMOYUE3 = #{record.nianmoyue3,jdbcType=DECIMAL},
+      NIANMOBILI3 = #{record.nianmobili3,jdbcType=VARCHAR},
+      NIANCHUYUE4 = #{record.nianchuyue4,jdbcType=DECIMAL},
+      NIANCHUBILI4 = #{record.nianchubili4,jdbcType=VARCHAR},
+      NIANMOYUE4 = #{record.nianmoyue4,jdbcType=DECIMAL},
+      NIANMOBILI4 = #{record.nianmobili4,jdbcType=VARCHAR},
+      NIANCHUYUE5 = #{record.nianchuyue5,jdbcType=DECIMAL},
+      NIANCHUBILI5 = #{record.nianchubili5,jdbcType=VARCHAR},
+      NIANMOYUE5 = #{record.nianmoyue5,jdbcType=DECIMAL},
+      NIANMOBILI5 = #{record.nianmobili5,jdbcType=VARCHAR},
+      NIANCHUYUE6 = #{record.nianchuyue6,jdbcType=DECIMAL},
+      NIANCHUBILI6 = #{record.nianchubili6,jdbcType=VARCHAR},
+      NIANMOYUE6 = #{record.nianmoyue6,jdbcType=DECIMAL},
+      NIANMOBILI6 = #{record.nianmobili6,jdbcType=VARCHAR},
+      NIANCHUYUE7 = #{record.nianchuyue7,jdbcType=DECIMAL},
+      NIANCHUBILI7 = #{record.nianchubili7,jdbcType=VARCHAR},
+      NIANMOYUE7 = #{record.nianmoyue7,jdbcType=DECIMAL},
+      NIANMOBILI7 = #{record.nianmobili7,jdbcType=VARCHAR},
+      NIANCHUYUE8 = #{record.nianchuyue8,jdbcType=DECIMAL},
+      NIANCHUBILI8 = #{record.nianchubili8,jdbcType=VARCHAR},
+      NIANMOYUE8 = #{record.nianmoyue8,jdbcType=DECIMAL},
+      NIANMOBILI8 = #{record.nianmobili8,jdbcType=VARCHAR},
+      NIANCHUYUE9 = #{record.nianchuyue9,jdbcType=DECIMAL},
+      NIANCHUBILI9 = #{record.nianchubili9,jdbcType=VARCHAR},
+      NIANMOYUE9 = #{record.nianmoyue9,jdbcType=DECIMAL},
+      NIANMOBILI9 = #{record.nianmobili9,jdbcType=VARCHAR},
+      NIANCHUYUE10 = #{record.nianchuyue10,jdbcType=DECIMAL},
+      NIANCHUBILI10 = #{record.nianchubili10,jdbcType=VARCHAR},
+      NIANMOYUE10 = #{record.nianmoyue10,jdbcType=DECIMAL},
+      NIANMOBILI10 = #{record.nianmobili10,jdbcType=VARCHAR},
+      NIANCHUYUE11 = #{record.nianchuyue11,jdbcType=DECIMAL},
+      NIANCHUBILI11 = #{record.nianchubili11,jdbcType=VARCHAR},
+      NIANMOYUE11 = #{record.nianmoyue11,jdbcType=DECIMAL},
+      NIANMOBILI11 = #{record.nianmobili11,jdbcType=VARCHAR},
+      NIANCHUYUE12 = #{record.nianchuyue12,jdbcType=DECIMAL},
+      NIANCHUBILI12 = #{record.nianchubili12,jdbcType=VARCHAR},
+      NIANMOYUE12 = #{record.nianmoyue12,jdbcType=DECIMAL},
+      NIANMOBILI12 = #{record.nianmobili12,jdbcType=VARCHAR},
+      NIANCHUYUE13 = #{record.nianchuyue13,jdbcType=DECIMAL},
+      NIANCHUBILI13 = #{record.nianchubili13,jdbcType=VARCHAR},
+      NIANMOYUE13 = #{record.nianmoyue13,jdbcType=DECIMAL},
+      NIANMOBILI13 = #{record.nianmobili13,jdbcType=VARCHAR},
+      NIANCHUYUE14 = #{record.nianchuyue14,jdbcType=DECIMAL},
+      NIANCHUBILI14 = #{record.nianchubili14,jdbcType=VARCHAR},
+      NIANMOYUE14 = #{record.nianmoyue14,jdbcType=DECIMAL},
+      NIANMOBILI14 = #{record.nianmobili14,jdbcType=VARCHAR},
+      NIANCHUYUE15 = #{record.nianchuyue15,jdbcType=DECIMAL},
+      NIANCHUBILI15 = #{record.nianchubili15,jdbcType=VARCHAR},
+      NIANMOYUE15 = #{record.nianmoyue15,jdbcType=DECIMAL},
+      NIANMOBILI15 = #{record.nianmobili15,jdbcType=VARCHAR},
+      NIANCHUHEJIYUE = #{record.nianchuhejiyue,jdbcType=DECIMAL},
+      NIANCHUHEJIBILI = #{record.nianchuhejibili,jdbcType=VARCHAR},
+      NIANMOHEJIYUE = #{record.nianmohejiyue,jdbcType=DECIMAL},
+      NIANMOHEJIBILI = #{record.nianmohejibili,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xgb.model.JjhnjGlfwjsyushxmyeSub" >
+    update JJHNJ_GLFWJSYUSHXMYE_SUB
+    <set >
+      <if test="instanceid != null" >
+        INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationid != null" >
+        ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=DECIMAL},
+      </if>
+      <if test="masterid != null" >
+        MASTERID = #{masterid,jdbcType=DECIMAL},
+      </if>
+      <if test="mingcheng != null" >
+        MINGCHENG = #{mingcheng,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue1 != null" >
+        NIANCHUYUE1 = #{nianchuyue1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili1 != null" >
+        NIANCHUBILI1 = #{nianchubili1,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue1 != null" >
+        NIANMOYUE1 = #{nianmoyue1,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili1 != null" >
+        NIANMOBILI1 = #{nianmobili1,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue2 != null" >
+        NIANCHUYUE2 = #{nianchuyue2,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili2 != null" >
+        NIANCHUBILI2 = #{nianchubili2,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue2 != null" >
+        NIANMOYUE2 = #{nianmoyue2,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili2 != null" >
+        NIANMOBILI2 = #{nianmobili2,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue3 != null" >
+        NIANCHUYUE3 = #{nianchuyue3,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili3 != null" >
+        NIANCHUBILI3 = #{nianchubili3,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue3 != null" >
+        NIANMOYUE3 = #{nianmoyue3,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili3 != null" >
+        NIANMOBILI3 = #{nianmobili3,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue4 != null" >
+        NIANCHUYUE4 = #{nianchuyue4,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili4 != null" >
+        NIANCHUBILI4 = #{nianchubili4,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue4 != null" >
+        NIANMOYUE4 = #{nianmoyue4,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili4 != null" >
+        NIANMOBILI4 = #{nianmobili4,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue5 != null" >
+        NIANCHUYUE5 = #{nianchuyue5,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili5 != null" >
+        NIANCHUBILI5 = #{nianchubili5,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue5 != null" >
+        NIANMOYUE5 = #{nianmoyue5,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili5 != null" >
+        NIANMOBILI5 = #{nianmobili5,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue6 != null" >
+        NIANCHUYUE6 = #{nianchuyue6,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili6 != null" >
+        NIANCHUBILI6 = #{nianchubili6,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue6 != null" >
+        NIANMOYUE6 = #{nianmoyue6,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili6 != null" >
+        NIANMOBILI6 = #{nianmobili6,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue7 != null" >
+        NIANCHUYUE7 = #{nianchuyue7,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili7 != null" >
+        NIANCHUBILI7 = #{nianchubili7,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue7 != null" >
+        NIANMOYUE7 = #{nianmoyue7,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili7 != null" >
+        NIANMOBILI7 = #{nianmobili7,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue8 != null" >
+        NIANCHUYUE8 = #{nianchuyue8,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili8 != null" >
+        NIANCHUBILI8 = #{nianchubili8,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue8 != null" >
+        NIANMOYUE8 = #{nianmoyue8,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili8 != null" >
+        NIANMOBILI8 = #{nianmobili8,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue9 != null" >
+        NIANCHUYUE9 = #{nianchuyue9,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili9 != null" >
+        NIANCHUBILI9 = #{nianchubili9,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue9 != null" >
+        NIANMOYUE9 = #{nianmoyue9,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili9 != null" >
+        NIANMOBILI9 = #{nianmobili9,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue10 != null" >
+        NIANCHUYUE10 = #{nianchuyue10,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili10 != null" >
+        NIANCHUBILI10 = #{nianchubili10,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue10 != null" >
+        NIANMOYUE10 = #{nianmoyue10,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili10 != null" >
+        NIANMOBILI10 = #{nianmobili10,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue11 != null" >
+        NIANCHUYUE11 = #{nianchuyue11,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili11 != null" >
+        NIANCHUBILI11 = #{nianchubili11,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue11 != null" >
+        NIANMOYUE11 = #{nianmoyue11,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili11 != null" >
+        NIANMOBILI11 = #{nianmobili11,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue12 != null" >
+        NIANCHUYUE12 = #{nianchuyue12,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili12 != null" >
+        NIANCHUBILI12 = #{nianchubili12,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue12 != null" >
+        NIANMOYUE12 = #{nianmoyue12,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili12 != null" >
+        NIANMOBILI12 = #{nianmobili12,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue13 != null" >
+        NIANCHUYUE13 = #{nianchuyue13,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili13 != null" >
+        NIANCHUBILI13 = #{nianchubili13,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue13 != null" >
+        NIANMOYUE13 = #{nianmoyue13,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili13 != null" >
+        NIANMOBILI13 = #{nianmobili13,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue14 != null" >
+        NIANCHUYUE14 = #{nianchuyue14,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili14 != null" >
+        NIANCHUBILI14 = #{nianchubili14,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue14 != null" >
+        NIANMOYUE14 = #{nianmoyue14,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili14 != null" >
+        NIANMOBILI14 = #{nianmobili14,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuyue15 != null" >
+        NIANCHUYUE15 = #{nianchuyue15,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchubili15 != null" >
+        NIANCHUBILI15 = #{nianchubili15,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmoyue15 != null" >
+        NIANMOYUE15 = #{nianmoyue15,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmobili15 != null" >
+        NIANMOBILI15 = #{nianmobili15,jdbcType=VARCHAR},
+      </if>
+      <if test="nianchuhejiyue != null" >
+        NIANCHUHEJIYUE = #{nianchuhejiyue,jdbcType=DECIMAL},
+      </if>
+      <if test="nianchuhejibili != null" >
+        NIANCHUHEJIBILI = #{nianchuhejibili,jdbcType=VARCHAR},
+      </if>
+      <if test="nianmohejiyue != null" >
+        NIANMOHEJIYUE = #{nianmohejiyue,jdbcType=DECIMAL},
+      </if>
+      <if test="nianmohejibili != null" >
+        NIANMOHEJIBILI = #{nianmohejibili,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xgb.model.JjhnjGlfwjsyushxmyeSub" >
+    update JJHNJ_GLFWJSYUSHXMYE_SUB
+    set INSTANCEID = #{instanceid,jdbcType=VARCHAR},
+      ORGANIZATIONID = #{organizationid,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=DECIMAL},
+      MASTERID = #{masterid,jdbcType=DECIMAL},
+      MINGCHENG = #{mingcheng,jdbcType=VARCHAR},
+      NIANCHUYUE1 = #{nianchuyue1,jdbcType=DECIMAL},
+      NIANCHUBILI1 = #{nianchubili1,jdbcType=VARCHAR},
+      NIANMOYUE1 = #{nianmoyue1,jdbcType=DECIMAL},
+      NIANMOBILI1 = #{nianmobili1,jdbcType=VARCHAR},
+      NIANCHUYUE2 = #{nianchuyue2,jdbcType=DECIMAL},
+      NIANCHUBILI2 = #{nianchubili2,jdbcType=VARCHAR},
+      NIANMOYUE2 = #{nianmoyue2,jdbcType=DECIMAL},
+      NIANMOBILI2 = #{nianmobili2,jdbcType=VARCHAR},
+      NIANCHUYUE3 = #{nianchuyue3,jdbcType=DECIMAL},
+      NIANCHUBILI3 = #{nianchubili3,jdbcType=VARCHAR},
+      NIANMOYUE3 = #{nianmoyue3,jdbcType=DECIMAL},
+      NIANMOBILI3 = #{nianmobili3,jdbcType=VARCHAR},
+      NIANCHUYUE4 = #{nianchuyue4,jdbcType=DECIMAL},
+      NIANCHUBILI4 = #{nianchubili4,jdbcType=VARCHAR},
+      NIANMOYUE4 = #{nianmoyue4,jdbcType=DECIMAL},
+      NIANMOBILI4 = #{nianmobili4,jdbcType=VARCHAR},
+      NIANCHUYUE5 = #{nianchuyue5,jdbcType=DECIMAL},
+      NIANCHUBILI5 = #{nianchubili5,jdbcType=VARCHAR},
+      NIANMOYUE5 = #{nianmoyue5,jdbcType=DECIMAL},
+      NIANMOBILI5 = #{nianmobili5,jdbcType=VARCHAR},
+      NIANCHUYUE6 = #{nianchuyue6,jdbcType=DECIMAL},
+      NIANCHUBILI6 = #{nianchubili6,jdbcType=VARCHAR},
+      NIANMOYUE6 = #{nianmoyue6,jdbcType=DECIMAL},
+      NIANMOBILI6 = #{nianmobili6,jdbcType=VARCHAR},
+      NIANCHUYUE7 = #{nianchuyue7,jdbcType=DECIMAL},
+      NIANCHUBILI7 = #{nianchubili7,jdbcType=VARCHAR},
+      NIANMOYUE7 = #{nianmoyue7,jdbcType=DECIMAL},
+      NIANMOBILI7 = #{nianmobili7,jdbcType=VARCHAR},
+      NIANCHUYUE8 = #{nianchuyue8,jdbcType=DECIMAL},
+      NIANCHUBILI8 = #{nianchubili8,jdbcType=VARCHAR},
+      NIANMOYUE8 = #{nianmoyue8,jdbcType=DECIMAL},
+      NIANMOBILI8 = #{nianmobili8,jdbcType=VARCHAR},
+      NIANCHUYUE9 = #{nianchuyue9,jdbcType=DECIMAL},
+      NIANCHUBILI9 = #{nianchubili9,jdbcType=VARCHAR},
+      NIANMOYUE9 = #{nianmoyue9,jdbcType=DECIMAL},
+      NIANMOBILI9 = #{nianmobili9,jdbcType=VARCHAR},
+      NIANCHUYUE10 = #{nianchuyue10,jdbcType=DECIMAL},
+      NIANCHUBILI10 = #{nianchubili10,jdbcType=VARCHAR},
+      NIANMOYUE10 = #{nianmoyue10,jdbcType=DECIMAL},
+      NIANMOBILI10 = #{nianmobili10,jdbcType=VARCHAR},
+      NIANCHUYUE11 = #{nianchuyue11,jdbcType=DECIMAL},
+      NIANCHUBILI11 = #{nianchubili11,jdbcType=VARCHAR},
+      NIANMOYUE11 = #{nianmoyue11,jdbcType=DECIMAL},
+      NIANMOBILI11 = #{nianmobili11,jdbcType=VARCHAR},
+      NIANCHUYUE12 = #{nianchuyue12,jdbcType=DECIMAL},
+      NIANCHUBILI12 = #{nianchubili12,jdbcType=VARCHAR},
+      NIANMOYUE12 = #{nianmoyue12,jdbcType=DECIMAL},
+      NIANMOBILI12 = #{nianmobili12,jdbcType=VARCHAR},
+      NIANCHUYUE13 = #{nianchuyue13,jdbcType=DECIMAL},
+      NIANCHUBILI13 = #{nianchubili13,jdbcType=VARCHAR},
+      NIANMOYUE13 = #{nianmoyue13,jdbcType=DECIMAL},
+      NIANMOBILI13 = #{nianmobili13,jdbcType=VARCHAR},
+      NIANCHUYUE14 = #{nianchuyue14,jdbcType=DECIMAL},
+      NIANCHUBILI14 = #{nianchubili14,jdbcType=VARCHAR},
+      NIANMOYUE14 = #{nianmoyue14,jdbcType=DECIMAL},
+      NIANMOBILI14 = #{nianmobili14,jdbcType=VARCHAR},
+      NIANCHUYUE15 = #{nianchuyue15,jdbcType=DECIMAL},
+      NIANCHUBILI15 = #{nianchubili15,jdbcType=VARCHAR},
+      NIANMOYUE15 = #{nianmoyue15,jdbcType=DECIMAL},
+      NIANMOBILI15 = #{nianmobili15,jdbcType=VARCHAR},
+      NIANCHUHEJIYUE = #{nianchuhejiyue,jdbcType=DECIMAL},
+      NIANCHUHEJIBILI = #{nianchuhejibili,jdbcType=VARCHAR},
+      NIANMOHEJIYUE = #{nianmohejiyue,jdbcType=DECIMAL},
+      NIANMOHEJIBILI = #{nianmohejibili,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>
