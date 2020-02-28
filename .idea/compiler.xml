@@ -83,6 +83,10 @@
       <module name="jjhdate-dao" options="-parameters" />
       <module name="jjhdate-model" options="-parameters" />
       <module name="jjhdate-service" options="-parameters" />
+      <module name="lovexgb-admin" options="-parameters" />
+      <module name="lovexgb-dao" options="-parameters" />
+      <module name="lovexgb-model" options="-parameters" />
+      <module name="lovexgb-service" options="-parameters" />
     </option>
   </component>
 </project>

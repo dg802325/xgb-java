@@ -13,7 +13,7 @@
 ### IntelliJ IDEA ###
 .idea
 *.class
-.gitignore
+*.gitignore
 *.iws
 *.iml
 *.log
@@ -116,3 +116,4 @@ xgb-test/target/generated-sources/
 /xgb-data/data-api/src/main/java/com/xgb/utils/St/Save2814.java
 /xgb-data/data-api/src/main/java/com/xgb/utils/Save200Entity.java
 /xgb-data/data-api/pom.xml
+/xgb-alone/alone-main/config/
