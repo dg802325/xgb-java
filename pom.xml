@@ -23,6 +23,7 @@
         <module>xgb-alone</module>
         <module>xgb-jjhdate</module>
         <module>xgb-lovexgb</module>
+        <module>xgb-electron</module>
     </modules>
     <dependencies>
         <!-- 引入依赖-->

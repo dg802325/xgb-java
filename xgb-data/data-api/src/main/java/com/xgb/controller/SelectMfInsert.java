@@ -56,10 +56,23 @@ public class SelectMfInsert {
            }else if("5".equals(s)){
                xnjsjy++;
                //如果新年检系统有，修改年检字段值
-               JcContentAttr1 jcContentAttr1 = insertMfzhusuo(formConsultationCase);
-               inserts.add(jcContentAttr1);
                JcContentAttr1 jcContentAttr11 = updateMfzhusuo(formConsultationCase);
-               updates.add(jcContentAttr11);
+
+               JcContentAttr1 jcContentAttr1 = updateMfZzmm(formConsultationCase);
+
+               NewContent newContent = SelectJcContentService.selectAttrIsNull(jcContentAttr11);
+               if(MyTools.isEmpty(newContent)){
+                   inserts.add(jcContentAttr11);
+               }else {
+                   updates.add(jcContentAttr11);
+               }
+               NewContent newContent1 = SelectJcContentService.selectAttrIsNull(jcContentAttr1);
+               if(MyTools.isEmpty(newContent1)){
+                   inserts.add(jcContentAttr1);
+               }else {
+                   updates.add(jcContentAttr1);
+               }
+
            }else{
 
            }
@@ -77,24 +90,6 @@ public class SelectMfInsert {
         return "导入完成";
     }
 
-    public JcContentAttr1 insertMfzhusuo(FormConsultationCase formConsultationCase){
-        //获得旧系统流程唯一id
-        String instanceid = formConsultationCase.getInstanceid();
-        //查询就年检字段值
-        //查询社会组织的机构代码
-        MfNianjianJbxxExample mfNianjianJbxxExample = new MfNianjianJbxxExample();
-        mfNianjianJbxxExample.createCriteria().andInstanceidEqualTo(instanceid);
-        List<MfNianjianJbxx> mfNianjianJbxxes = oldService.selectByExample(mfNianjianJbxxExample);
-        String zhusuo = mfNianjianJbxxes.get(0).getZhusuoxiangxi();
-        String code = mfNianjianJbxxes.get(0).getZuzhijigoudaima();
-        Content202Entity content202Entity = NewJcShzzDetailService.selectByXinYongDaima(code);
-        NewContent newContent = SelectJcContentService.selectMfJcContent(content202Entity);
-        JcContentAttr1 jcContentAttr1 = new JcContentAttr1();
-        jcContentAttr1.setContentId(Integer.parseInt(newContent.getId()));
-        jcContentAttr1.setAttrName("bgdz");
-        jcContentAttr1.setAttrValue("天津市"+zhusuo);
-        return jcContentAttr1;
-    }
     public JcContentAttr1 updateMfzhusuo(FormConsultationCase formConsultationCase){
         //获得旧系统流程唯一id
         String instanceid = formConsultationCase.getInstanceid();
@@ -106,6 +101,9 @@ public class SelectMfInsert {
         Integer quantidangyuan = mfNianjianJbxxes.get(0).getQuantidangyuan();
         String code = mfNianjianJbxxes.get(0).getZuzhijigoudaima();
         Content202Entity content202Entity = NewJcShzzDetailService.selectByXinYongDaima(code);
+        if(MyTools.isEmpty(content202Entity)){
+            content202Entity = NewJcShzzDetailService.selectByXintitle(formConsultationCase.getOrgname());
+        }
         NewContent newContent = SelectJcContentService.selectMfJcContent(content202Entity);
         JcContentAttr1 jcContentAttr1 = new JcContentAttr1();
         jcContentAttr1.setContentId(Integer.parseInt(newContent.getId()));
@@ -114,6 +112,27 @@ public class SelectMfInsert {
         return jcContentAttr1;
     }
 
+    public JcContentAttr1 updateMfZzmm(FormConsultationCase formConsultationCase){
+        //获得旧系统流程唯一id
+        String instanceid = formConsultationCase.getInstanceid();
+        //查询就年检字段值
+        //查询社会组织的机构代码
+        MfNianjianJbxxExample mfNianjianJbxxExample = new MfNianjianJbxxExample();
+        mfNianjianJbxxExample.createCriteria().andInstanceidEqualTo(instanceid);
+        List<MfNianjianJbxx> mfNianjianJbxxes = oldService.selectByExample(mfNianjianJbxxExample);
+        String zzmm = mfNianjianJbxxes.get(0).getFarenmianmao();
+        String code = mfNianjianJbxxes.get(0).getZuzhijigoudaima();
+        Content202Entity content202Entity = NewJcShzzDetailService.selectByXinYongDaima(code);
+        if(MyTools.isEmpty(content202Entity)){
+            content202Entity = NewJcShzzDetailService.selectByXintitle(formConsultationCase.getOrgname());
+        }
+        NewContent newContent = SelectJcContentService.selectMfJcContent(content202Entity);
+        JcContentAttr1 jcContentAttr1 = new JcContentAttr1();
+        jcContentAttr1.setContentId(Integer.parseInt(newContent.getId()));
+        jcContentAttr1.setAttrName("zzmm");
+        jcContentAttr1.setAttrValue(zzmm+"");
+        return jcContentAttr1;
+    }
 
     public String selectMfW(FormConsultationCase formConsultationCase) {
         //获得旧系统流程唯一id
@@ -135,7 +154,10 @@ public class SelectMfInsert {
         //查询新系统的基础信息
         Content202Entity content202Entity = NewJcShzzDetailService.selectByXinYongDaima(code);
         if (MyTools.isEmpty(content202Entity)) {
-            return "3";
+            content202Entity = NewJcShzzDetailService.selectByXintitle(formConsultationCase.getOrgname());
+            if (MyTools.isEmpty(content202Entity)) {
+                return "3";
+            }
         }
         //查询新系统中是否存在2018年的年检数据
         NewContent newContent = SelectJcContentService.selectMfJcContent(content202Entity);
@@ -143,307 +165,6 @@ public class SelectMfInsert {
             return "4";
         }
         return "5";
-    }
-
-
-
-    public List<JcContentAttr1> saveMf(FormConsultationCase formConsultationCase){
-        //获得旧系统流程唯一id
-        String instanceid = formConsultationCase.getInstanceid();
-        MfNianjianJbxxExample mfNianjianJbxxExample = new MfNianjianJbxxExample();
-        mfNianjianJbxxExample.createCriteria().andInstanceidEqualTo(instanceid);
-        List<MfNianjianJbxx> mfNianjianJbxxes = oldService.selectByExample(mfNianjianJbxxExample);
-        if(MyTools.isNotEmpty(mfNianjianJbxxes)){
-            if(MyTools.isNotEmpty(mfNianjianJbxxes.get(0).getZuzhijigoudaima())){
-                Content202Entity content202Entity = NewJcShzzDetailService.selectByXinYongDaima(mfNianjianJbxxes.get(0).getZuzhijigoudaima());
-                    Integer userId = content202Entity.getUserId();
-                    if(MyTools.isNotEmpty(userId)){
-                        //存261表
-                        JcContent jcContent261 = saveJcContent(userId, 261,formConsultationCase.getCreatetime(),null); //插入jcContent表
-                        //判断261是否储存成功
-                        if(MyTools.isNotEmpty(jcContent261)){
-                            JcContentExt jcContentExt = saveJcContentExt(jcContent261, formConsultationCase.getOrgname());
-                            if(MyTools.isNotEmpty(jcContentExt)){
-                                save202Entity(jcContent261.getContentId(),content202Entity);
-                                save261(instanceid,jcContent261.getContentId());
-                                System.out.println("jcContent261表插入成功 id为：" + jcContent261.getContentId());
-                            }
-                        }else {
-                            System.out.println("jcContent表存储失败");
-                        }
-                        if(MyTools.isNotEmpty(jcContent261)){
-                            //存262表
-                            JcContent jcContent262 = saveJcContent(userId, 262, formConsultationCase.getCreatetime(), jcContent261.getContentId());
-                            //判断202是否储存成功
-                            if(MyTools.isNotEmpty(jcContent262)){
-                                JcContentExt jcContentExt = saveJcContentExt(jcContent262, formConsultationCase.getOrgname());
-                                if(MyTools.isNotEmpty(jcContentExt)){
-                                    save262(instanceid,jcContent262.getContentId());
-                                    System.out.println("jcContent262表插入成功 id为：" + jcContent262.getContentId());
-                                }
-                            }else {
-                                System.out.println("jcContent表存储失败");
-                            }
-
-                            //存263表
-                            JcContent jcContent263 = saveJcContent(userId, 263, formConsultationCase.getCreatetime(), jcContent261.getContentId());
-                            //判断263是否储存成功
-                            if(MyTools.isNotEmpty(jcContent263)){
-                                JcContentExt jcContentExt = saveJcContentExt(jcContent263, formConsultationCase.getOrgname());
-                                if(MyTools.isNotEmpty(jcContentExt)){
-                                    save263(instanceid,jcContent263.getContentId());
-                                    System.out.println("jcContent263表插入成功 id为：" + jcContent263.getContentId());
-                                }
-                            }else {
-                                System.out.println("jcContent表存储失败");
-                            }
-
-                            //存264表
-                            JcContent jcContent264 = saveJcContent(userId, 264, formConsultationCase.getCreatetime(), jcContent261.getContentId());
-                            //判断264是否储存成功
-                            if(MyTools.isNotEmpty(jcContent264)){
-                                JcContentExt jcContentExt = saveJcContentExt(jcContent264, formConsultationCase.getOrgname());
-                                if(MyTools.isNotEmpty(jcContentExt)){
-                                    save264(instanceid,jcContent264.getContentId());
-                                    System.out.println("jcContent264表插入成功 id为：" + jcContent264.getContentId());
-                                }
-                            }else {
-                                System.out.println("jcContent表存储失败");
-                            }
-
-                            //存265表
-                            JcContent jcContent265 = saveJcContent(userId, 265, formConsultationCase.getCreatetime(), jcContent261.getContentId());
-                            //判断264是否储存成功
-                            if(MyTools.isNotEmpty(jcContent265)){
-                                JcContentExt jcContentExt = saveJcContentExt(jcContent265, formConsultationCase.getOrgname());
-                                if(MyTools.isNotEmpty(jcContentExt)){
-                                    save265(instanceid,jcContent265.getContentId());
-                                    System.out.println("jcContent265表插入成功 id为：" + jcContent265.getContentId());
-                                }
-                            }else {
-                                System.out.println("jcContent表存储失败");
-                            }
-
-                            //存266表
-                            JcContent jcContent266 = saveJcContent(userId, 266, formConsultationCase.getCreatetime(), jcContent261.getContentId());
-                            //判断264是否储存成功
-                            if(MyTools.isNotEmpty(jcContent266)){
-                                JcContentExt jcContentExt = saveJcContentExt(jcContent266, formConsultationCase.getOrgname());
-                                if(MyTools.isNotEmpty(jcContentExt)){
-                                    save266(instanceid,jcContent266.getContentId());
-                                    System.out.println("jcContent266表插入成功 id为：" + jcContent266.getContentId());
-                                }
-                            }else {
-                                System.out.println("jcContent表存储失败");
-                            }
-
-                            //存267表
-                            JcContent jcContent267 = saveJcContent(userId, 267, formConsultationCase.getCreatetime(), jcContent261.getContentId());
-                            //判断264是否储存成功
-                            if(MyTools.isNotEmpty(jcContent267)){
-                                JcContentExt jcContentExt = saveJcContentExt(jcContent267, formConsultationCase.getOrgname());
-                                if(MyTools.isNotEmpty(jcContentExt)){
-                                    save267(instanceid,jcContent267.getContentId());
-                                    System.out.println("jcContent267表插入成功 id为：" + jcContent267.getContentId());
-                                }
-                            }else {
-                                System.out.println("jcContent表存储失败");
-                            }
-
-                            //存268表
-                            JcContent jcContent268 = saveJcContent(userId, 268, formConsultationCase.getCreatetime(), jcContent261.getContentId());
-                            //判断264是否储存成功
-                            if(MyTools.isNotEmpty(jcContent268)){
-                                JcContentExt jcContentExt = saveJcContentExt(jcContent268, formConsultationCase.getOrgname());
-                                if(MyTools.isNotEmpty(jcContentExt)){
-                                    save268(instanceid,jcContent268.getContentId());
-                                    System.out.println("jcContent268表插入成功 id为：" + jcContent268.getContentId());
-                                }
-                            }else {
-                                System.out.println("jcContent表存储失败");
-                            }
-
-                            //存269表
-                            save269(userId,formConsultationCase,jcContent261.getContentId());
-
-                            //存270表
-                            save270(userId,formConsultationCase,jcContent261.getContentId());
-
-                            //存271表
-                            JcContent jcContent271 = saveJcContent(userId, 271, formConsultationCase.getCreatetime(), jcContent261.getContentId());
-                            //判断264是否储存成功
-                            if(MyTools.isNotEmpty(jcContent271)){
-                                JcContentExt jcContentExt = saveJcContentExt(jcContent271, formConsultationCase.getOrgname());
-                                if(MyTools.isNotEmpty(jcContentExt)){
-                                    save271(instanceid,jcContent271.getContentId());
-                                    System.out.println("jcContent271表插入成功 id为：" + jcContent271.getContentId());
-                                }
-                            }else {
-                                System.out.println("jcContent表存储失败");
-                            }
-                            //存流程表
-                            saveWorkflow(jcContent261,null,formConsultationCase.getLastmodifytime());
-                        }
-                }else {
-                    logger.info("---没有信用统一代码---组织机构名称："+formConsultationCase.getOrgname());
-                }
-            }
-
-        }
-        return null;
-    }
-
-    public List<JcContentAttr1> save202Entity(Integer jcContentId,Content202Entity content202Entity){
-        return Save200Entity.getEntity(jcContentId, content202Entity);//获得202模板所需要的数据
-    }
-
-
-    public List<JcContentAttr1> save261(String instanceid,Integer jcContentId){
-        MfNianjianJbxxExample example = new MfNianjianJbxxExample();
-        example.createCriteria().andInstanceidEqualTo(instanceid);
-        List<MfNianjianJbxx> lists = oldService.selectByExample(example);
-        if(MyTools.isNotEmpty(lists)){//判断匹配是否成功
-            return Save261.getEntity(jcContentId, lists.get(0));//获得261模板所需要的数据
-        }else {
-            System.out.println("未找到261模板对应的信息");return new ArrayList<JcContentAttr1>();
-        }
-    }
-
-
-    public List<JcContentAttr1> save262(String instanceid,Integer jcContentId){
-        StNjInner4Example example = new StNjInner4Example();
-        example.createCriteria().andInstanceidEqualTo(instanceid);
-        List<StNjInner4> lists = oldService.selectByExample(example);
-        if(MyTools.isNotEmpty(lists)){//判断匹配是否成功
-            return Save262.getEntity(jcContentId, lists.get(0));//获得261模板所需要的数据
-        }else {
-            System.out.println("未找到262模板对应的信息");return new ArrayList<JcContentAttr1>();
-        }
-    }
-
-    public List<JcContentAttr1> save263(String instanceid,Integer jcContentId){
-        StNjInner4Example example = new StNjInner4Example();
-        example.createCriteria().andInstanceidEqualTo(instanceid);
-        List<StNjInner4> lists = oldService.selectByExample(example);
-        if(MyTools.isNotEmpty(lists)){//判断匹配是否成功
-            return Save263.getEntity(jcContentId, lists.get(0));//获得261模板所需要的数据
-        }else {
-            System.out.println("未找到263模板对应的信息");return new ArrayList<JcContentAttr1>();
-        }
-    }
-
-    public List<JcContentAttr1> save264(String instanceid,Integer jcContentId){
-        StNjJieshoujianduExample example = new StNjJieshoujianduExample();
-        example.createCriteria().andInstanceidEqualTo(instanceid);
-        List<StNjJieshoujiandu> lists = oldService.selectByExample(example);
-        if(MyTools.isNotEmpty(lists)){//判断匹配是否成功
-            return Save264.getEntity(jcContentId, lists.get(0));//获得261模板所需要的数据
-        }else {
-            System.out.println("未找到264模板对应的信息");return new ArrayList<JcContentAttr1>();
-        }
-    }
-
-    public List<JcContentAttr1> save265(String instanceid,Integer jcContentId){
-        JjhnjReport3Example example = new JjhnjReport3Example();
-        example.createCriteria().andInstanceidEqualTo(instanceid);
-        List<JjhnjReport3> lists = oldService.selectByExample(example);
-        if(MyTools.isNotEmpty(lists)){//判断匹配是否成功
-            return Save265.getEntity(jcContentId, lists.get(0));//获得261模板所需要的数据
-        }else {
-            System.out.println("未找到265模板对应的信息");return new ArrayList<JcContentAttr1>();
-        }
-    }
-
-    public List<JcContentAttr1> save266(String instanceid,Integer jcContentId){
-        JjhnjReport4Example example = new JjhnjReport4Example();
-        example.createCriteria().andInstanceidEqualTo(instanceid);
-        List<JjhnjReport4> lists = oldService.selectByExample(example);
-        if(MyTools.isNotEmpty(lists)){//判断匹配是否成功
-            return Save266.getEntity(jcContentId, lists.get(0));//获得261模板所需要的数据
-        }else {
-            System.out.println("未找到266模板对应的信息");return new ArrayList<JcContentAttr1>();
-        }
-    }
-
-    public List<JcContentAttr1> save267(String instanceid,Integer jcContentId){
-        JjhNjReport6Example example = new JjhNjReport6Example();
-        example.createCriteria().andInstanceidEqualTo(instanceid);
-        List<JjhNjReport6> lists = oldService.selectByExample(example);
-        if(MyTools.isNotEmpty(lists)){//判断匹配是否成功
-            return Save267.getEntity(jcContentId, lists.get(0));//获得261模板所需要的数据
-        }else {
-            System.out.println("未找到267模板对应的信息");return new ArrayList<JcContentAttr1>();
-        }
-    }
-
-    public List<JcContentAttr1> save268(String instanceid,Integer jcContentId){
-        StNijianReport13Example example = new StNijianReport13Example();
-        example.createCriteria().andInstanceidEqualTo(instanceid);
-        List<StNijianReport13> lists = oldService.selectByExample(example);
-        if(MyTools.isNotEmpty(lists)){//判断匹配是否成功
-            return Save268.getEntity(jcContentId, lists.get(0));//获得261模板所需要的数据
-        }else {
-            System.out.println("未找到268模板对应的信息");return new ArrayList<JcContentAttr1>();
-        }
-    }
-
-    public List<JcContentAttr1> save269(Integer userId,FormConsultationCase formConsultationCase,Integer jcContentId){
-        LsCybaZbExample example = new LsCybaZbExample();
-        example.createCriteria().andInstanceidEqualTo(formConsultationCase.getInstanceid());
-        List<LsCybaZb> lists = oldService.selectByExample(example);
-        List<JcContentAttr1> jcContentAttr1s = new ArrayList<>();
-        if(MyTools.isNotEmpty(lists)){//判断匹配是否成功
-            for (LsCybaZb list : lists) {
-                JcContent jcContent269 = saveJcContent(userId, 269, formConsultationCase.getCreatetime(), jcContentId);
-                //判断264是否储存成功
-                if(MyTools.isNotEmpty(jcContent269)){
-                    JcContentExt jcContentExt = saveJcContentExt(jcContent269, list.getXingming());
-                    if(MyTools.isNotEmpty(jcContentExt)){
-                        jcContentAttr1s.addAll(Save269.getEntity(jcContent269.getContentId(), list));//获得261模板所需要的数据
-                    }
-                }else {
-                    System.out.println("jcContent表存储失败");
-                }
-            }
-        }else {
-            System.out.println("未找到269模板对应的信息");
-        }
-        return jcContentAttr1s;
-    }
-
-    public List<JcContentAttr1> save270(Integer userId,FormConsultationCase formConsultationCase,Integer jcContentId){
-        NjGwyjzSubExample example = new NjGwyjzSubExample();
-        example.createCriteria().andInstanceidEqualTo(formConsultationCase.getInstanceid());
-        List<NjGwyjzSub> lists = oldService.selectByExample(example);
-        List<JcContentAttr1> jcContentAttr1s = new ArrayList<>();
-        if(MyTools.isNotEmpty(lists)){//判断匹配是否成功
-            for (NjGwyjzSub list : lists) {
-                JcContent jcContent270 = saveJcContent(userId, 270, formConsultationCase.getCreatetime(), jcContentId);
-                //判断264是否储存成功
-                if(MyTools.isNotEmpty(jcContent270)){
-                    JcContentExt jcContentExt = saveJcContentExt(jcContent270, list.getXingming());
-                    if(MyTools.isNotEmpty(jcContentExt)){
-                        jcContentAttr1s.addAll(Save270.getEntity(jcContent270.getContentId(), list));//获得261模板所需要的数据
-                    }
-                }else {
-                    System.out.println("jcContent表存储失败");
-                }
-            }
-        }else {
-            System.out.println("未找到270模板对应的信息");
-        }
-        return jcContentAttr1s;
-    }
-
-    public List<JcContentAttr1> save271(String instanceid,Integer jcContentId){
-        StNjQgothercase19SubExample example = new StNjQgothercase19SubExample();
-        example.createCriteria().andInstanceidEqualTo(instanceid);
-        List<StNjQgothercase19Sub> lists = oldService.selectByExample(example);
-        if(MyTools.isNotEmpty(lists)){//判断匹配是否成功
-            return Save271.getEntity(jcContentId, lists.get(0));//获得261模板所需要的数据
-        }else {
-            System.out.println("未找到271模板对应的信息");return new ArrayList<JcContentAttr1>();
-        }
     }
 
     //存jcContent

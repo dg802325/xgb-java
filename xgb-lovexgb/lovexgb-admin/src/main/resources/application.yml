@@ -1,35 +1,6 @@
-spring:
-  profiles:
-    active: dev
-  freemarker:
-    allow-request-override: true
-      allow-session-override: true
-      cache: false
-      check-template-location: true
-      charset: UTF-8
-      content-type: text/html;
-      expose-request-attributes: true
-      expose-session-attributes: true
-      expose-spring-macro-helpers: true
-      template-loader-path: classpath:/templates/,classpath:/static/,classpath:/public/
-      prefix:
-      suffix: .html
-      request-context-attribute: request
-      settings:
-        template_update_delay: 0
-        url_escaping_charset: UTF-8
-        locale: UTF-8
-        datetime_format: yyyy-MM-dd HH:mm:ss
-        date_format: yyyy-MM-dd
-        time_format: HH:mm:ss
-        template_exception_handler: html_debug
-        # 数字格式化，无小数点
-        number_format: '0.#'
-        # 设置freemarker标签 0,1,2 0=自动识别，默认1
-        tag_syntax: 'auto_detect'
 ###设置服务器启动Ip
 server:
-  port: 9999
+  port: 10010
   compression:
     enabled: true
     min-response-size: 1024
@@ -38,6 +9,35 @@ server:
     max-http-post-size: 20971520
   token:
     time: 86400
+spring:
+  profiles:
+    active: dev
+  freemarker:
+    allow-request-override: true
+    allow-session-override: true
+    cache: false
+    check-template-location: true
+    charset: UTF-8
+    content-type: text/html;
+    expose-request-attributes: true
+    expose-session-attributes: true
+    expose-spring-macro-helpers: true
+    template-loader-path: classpath:/templates/,classpath:/static/,classpath:/public/
+    prefix: classpath:/templates/
+    suffix: .html
+    request-context-attribute: request
+    settings:
+      template_update_delay: 0
+      url_escaping_charset: UTF-8
+      locale: UTF-8
+      datetime_format: yyyy-MM-dd HH:mm:ss
+      date_format: yyyy-MM-dd
+      time_format: HH:mm:ss
+      template_exception_handler: html_debug
+      # 数字格式化，无小数点
+      number_format: '0.#'
+      # 设置freemarker标签 0,1,2 0=自动识别，默认1
+      tag_syntax: 'auto_detect'
 mybatis:
   type-aliases-package: com.xgb.model
   config-location: classpath:mybatis-com.xgb.config.xml
@@ -45,4 +45,4 @@ logging:
   level:
     root: info
     level.com.hatchet: trace
-    path: xgb-boot/boot-api/logs/boot-api.log
+    path: xgb-lovexgb/lovexgb-admin/logs/boot-api.log

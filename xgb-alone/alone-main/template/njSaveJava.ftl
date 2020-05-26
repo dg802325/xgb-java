@@ -1,6 +1,6 @@
 package ${modelPackage!};
 
-import com.xgb.model.JcContentAttr1;
+import com.xgb.main.JcContentAttr1;
 import com.xgb.model.${modelName!};
 import com.xgb.util.MyTools;
 

@@ -15,6 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/xgb-data/data-dao/data-dao.iml" filepath="$PROJECT_DIR$/xgb-data/data-dao/data-dao.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-data/data-model/data-model.iml" filepath="$PROJECT_DIR$/xgb-data/data-model/data-model.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-data/data-service/data-service.iml" filepath="$PROJECT_DIR$/xgb-data/data-service/data-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xgb-electron/electron-api/electron-api.iml" filepath="$PROJECT_DIR$/xgb-electron/electron-api/electron-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-jjhdate/jjhdate-api/jjhdate-api.iml" filepath="$PROJECT_DIR$/xgb-jjhdate/jjhdate-api/jjhdate-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-jjhdate/jjhdate-dao/jjhdate-dao.iml" filepath="$PROJECT_DIR$/xgb-jjhdate/jjhdate-dao/jjhdate-dao.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-jjhdate/jjhdate-model/jjhdate-model.iml" filepath="$PROJECT_DIR$/xgb-jjhdate/jjhdate-model/jjhdate-model.iml" />
@@ -27,6 +28,7 @@
       <module fileurl="file://$PROJECT_DIR$/xgb-boot/xgb-boot.iml" filepath="$PROJECT_DIR$/xgb-boot/xgb-boot.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-common/xgb-common.iml" filepath="$PROJECT_DIR$/xgb-common/xgb-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-data/xgb-data.iml" filepath="$PROJECT_DIR$/xgb-data/xgb-data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xgb-electron/xgb-electron.iml" filepath="$PROJECT_DIR$/xgb-electron/xgb-electron.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/xgb-java.iml" filepath="$PROJECT_DIR$/.idea/xgb-java.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-jjhdate/xgb-jjhdate.iml" filepath="$PROJECT_DIR$/xgb-jjhdate/xgb-jjhdate.iml" />
       <module fileurl="file://$PROJECT_DIR$/xgb-lovexgb/xgb-lovexgb.iml" filepath="$PROJECT_DIR$/xgb-lovexgb/xgb-lovexgb.iml" />

@@ -31,7 +31,7 @@ public class saveStController {
         //按年查询数据
         FormConsultationCaseExample formConsultationCaseExample = new FormConsultationCaseExample();
         FormConsultationCaseExample.Criteria criteria = formConsultationCaseExample.createCriteria();
-        criteria.andPropertyEEqualTo("2018").andCasetypeEqualTo((short)1);//筛选条件
+        criteria.andPropertyEEqualTo("2017").andCasetypeEqualTo((short)1);//筛选条件
         List<FormConsultationCase> stNianjianList = oldService.selectByExample(formConsultationCaseExample);
         //筛选是社团的年检数据
         System.out.println(stNianjianList.size());
@@ -45,27 +45,39 @@ public class saveStController {
     public String saveSt(FormConsultationCase formConsultationCase) {
         //获得旧系统流程唯一id
         String instanceid = formConsultationCase.getInstanceid();
+        if(MyTools.isEmpty(instanceid)){
+            return "缺失流程id--------"+formConsultationCase.getOrgname();
+        }
         //机构代码
         String code = "";
         //查询社会组织的机构代码
         StNjReport3Example stNjReport3Example = new StNjReport3Example();
         stNjReport3Example.createCriteria().andInstanceidEqualTo(instanceid);
         List<StNjReport3> stNjReport3s = oldService.selectByExample(stNjReport3Example);
+        Content202Entity content202Entity = null;
         if(stNjReport3s.size()>0){
             code = stNjReport3s.get(0).getJigoudaima();
+            //查询新系统的基础信息
+            if(MyTools.isNotEmpty(code)){
+                content202Entity = NewJcShzzDetailService.selectByXinYongDaima(code);
+                if (MyTools.isEmpty(content202Entity)) {
+                    content202Entity = NewJcShzzDetailService.selectByXintitle(formConsultationCase.getOrgname());
+                    if (MyTools.isEmpty(content202Entity)) {
+                        return "与新系统匹配不上--------" + formConsultationCase.getOrgname();
+                    }
+                }
+            }else {
+                content202Entity = NewJcShzzDetailService.selectByXintitle(formConsultationCase.getOrgname());
+                if (MyTools.isEmpty(content202Entity)) {
+                    return "与没有机构代码+新系统匹配不上--------" + formConsultationCase.getOrgname();
+                }
+            }
         }else {
-            return "没有机构代码";
-        }
-        if(MyTools.isEmpty(instanceid)){
-            return "缺失流程id--------"+formConsultationCase.getOrgname();
-        }
-        //查询新系统的基础信息
-        Content202Entity content202Entity = NewJcShzzDetailService.selectByXinYongDaima(code);
-        if (MyTools.isEmpty(content202Entity)) {
-            return "与新系统匹配不上--------" + formConsultationCase.getOrgname();
+            return "不存在数据";
         }
         NewContent newContent = SelectJcContentService.selectJcContent(content202Entity);
         if(MyTools.isNotEmpty(newContent)){
+            updateJcContentAttr1(formConsultationCase,content202Entity);
             return "新系统已存在";
         }
         Integer userId = content202Entity.getUserId();
@@ -124,6 +136,15 @@ public class saveStController {
         //插入220JcContent表
         JcContent jcContent220 = saveJcContent(userId,220,formConsultationCase.getCreatetime(),parentId);
         saveJcContentExt(jcContent220,formConsultationCase.getOrgname());
+        //插入275JcContent表
+        JcContent jcContent275 = saveJcContent(userId,275,formConsultationCase.getCreatetime(),parentId);
+        saveJcContentExt(jcContent275,formConsultationCase.getOrgname());
+        //插入276JcContent表
+        JcContent jcContent276 = saveJcContent(userId,276,formConsultationCase.getCreatetime(),parentId);
+        saveJcContentExt(jcContent276,formConsultationCase.getOrgname());
+        //插入279JcContent表
+        JcContent jcContent279 = saveJcContent(userId,279,formConsultationCase.getCreatetime(),parentId);
+        saveJcContentExt(jcContent279,formConsultationCase.getOrgname());
         //整合一个流程所有的字段
         List<JcContentAttr1> jcContentAttr1s = new ArrayList<>();
         //获得202基础信息
@@ -158,6 +179,8 @@ public class saveStController {
         jcContentAttr1s.addAll(save216(instanceid,jcContent216.getContentId()));
         //获得217信息
         jcContentAttr1s.addAll(save217(instanceid,jcContent217.getContentId()));
+        //获得279信息
+        jcContentAttr1s.addAll(save279(instanceid,jcContent279.getContentId()));
         //获得218信息
         jcContentAttr1s.addAll(save218(instanceid,jcContent218.getContentId()));
         //获得219信息
@@ -206,6 +229,166 @@ public class saveStController {
         System.out.println("jc_content_attr_1插入-"+jcContentAttr1s.size());
         NewSaveJcContentAttr1Service.save(jcContentAttr1s);
         return ""+parentId;
+    }
+
+    public String updateJcContentAttr1(FormConsultationCase formConsultationCase,Content202Entity content202Entity){
+        //获得旧系统流程唯一id
+        String instanceid = formConsultationCase.getInstanceid();
+        List<JcContentAttr1> jcContentAttr1s = new ArrayList<>();
+        List<JcContentAttr1> jcContentAttr12 = new ArrayList<>();
+        NewContent newContent = SelectJcContentService.selectJcContent(content202Entity);
+        //获得202
+        StNjReport3Example example = new StNjReport3Example();
+        example.createCriteria().andInstanceidEqualTo(instanceid);
+        List<StNjReport3> lists = oldService.selectByExample(example);
+        String hangyeguanlibumen = lists.get(0).getHangyebumen();
+        String dangjianbumen = lists.get(0).getDangjianbumen();
+        String wangzhi = lists.get(0).getWangzhi();
+        String lianxidianhua2 = lists.get(0).getLianxidianhua2();
+        String zhusuoxiangxi = lists.get(0).getZhusuoxiangxi();
+        JcContentAttr1 jcContentAttr1 = new JcContentAttr1();
+        jcContentAttr1.setContentId(Integer.parseInt(newContent.getId()));
+        jcContentAttr1.setAttrName("hyglbm");
+        jcContentAttr1.setAttrValue(hangyeguanlibumen);
+        jcContentAttr1s.add(jcContentAttr1);
+
+        JcContentAttr1 jcContentAttr2 = new JcContentAttr1();
+        jcContentAttr2.setContentId(Integer.parseInt(newContent.getId()));
+        jcContentAttr2.setAttrName("djglbm");
+        jcContentAttr2.setAttrValue(dangjianbumen);
+        jcContentAttr1s.add(jcContentAttr2);
+
+        JcContentAttr1 jcContentAttr8 = new JcContentAttr1();
+        jcContentAttr8.setContentId(Integer.parseInt(newContent.getId()));
+        jcContentAttr8.setAttrName("bangdz");
+        jcContentAttr8.setAttrValue("天津市"+zhusuoxiangxi);
+        jcContentAttr1s.add(jcContentAttr8);
+
+        JcContentAttr1 jcContentAttr3 = new JcContentAttr1();
+        jcContentAttr3.setContentId(Integer.parseInt(newContent.getId()));
+        jcContentAttr3.setAttrName("weburl");
+        jcContentAttr3.setAttrValue(wangzhi);
+        jcContentAttr1s.add(jcContentAttr3);
+
+        JcContentAttr1 jcContentAttr4 = new JcContentAttr1();
+        jcContentAttr4.setContentId(Integer.parseInt(newContent.getId()));
+        jcContentAttr4.setAttrName("lisphone");
+        jcContentAttr4.setAttrValue(lianxidianhua2);
+        jcContentAttr1s.add(jcContentAttr4);
+
+        NewContent newContent204 = SelectJcContentService.selectZiJcContent(204, Integer.parseInt(newContent.getId()));
+        if(MyTools.isNotEmpty(newContent204)){
+            StNjInner4Example example204 = new StNjInner4Example();
+            example204.createCriteria().andInstanceidEqualTo(instanceid);
+            List<StNjInner4> lists204 = oldService.selectByExample(example204);
+            if (lists204.size()>0) {
+                Integer lishihuici = lists204.get(0).getLishihuici();
+                Integer changlishihuibennianci = lists204.get(0).getChanglishihuibennianci();
+                JcContentAttr1 jcContentAttr5 = new JcContentAttr1();
+                jcContentAttr5.setContentId(Integer.parseInt(newContent204.getId()));
+                jcContentAttr5.setAttrName("lshc");
+                jcContentAttr5.setAttrValue(lishihuici.toString());
+                jcContentAttr12.add(jcContentAttr5);
+
+                JcContentAttr1 jcContentAttr6 = new JcContentAttr1();
+                jcContentAttr6.setContentId(Integer.parseInt(newContent204.getId()));
+                jcContentAttr6.setAttrName("bnzkcwhc");
+                jcContentAttr6.setAttrValue(changlishihuibennianci.toString());
+                jcContentAttr1s.add(jcContentAttr6);
+            }
+        }
+
+        //
+        NewContent newContent207 = SelectJcContentService.selectZiJcContent(207, Integer.parseInt(newContent.getId()));
+        if(MyTools.isNotEmpty(newContent207)){
+            StDjqk4Example example3 = new StDjqk4Example();
+            example3.createCriteria().andInstanceidEqualTo(instanceid);
+            List<StDjqk4> lists207 = oldService.selectByExample(example3);
+            if(lists207.size()>0){
+                StDjqk4 stDjqk4 = lists207.get(0);
+                StringBuffer stringBuffer3 = new StringBuffer();
+                if(MyTools.isNotEmpty(stDjqk4.getS12())){
+                    stringBuffer3.append("经登记管理机关核准的章程,");
+                }
+                if(MyTools.isNotEmpty(stDjqk4.getS13())){
+                    stringBuffer3.append("登记事项,");
+                }
+                if(MyTools.isNotEmpty(stDjqk4.getS14())){
+                    stringBuffer3.append("组织机构,");
+                }
+                if(MyTools.isNotEmpty(stDjqk4.getS15())){
+                    stringBuffer3.append("监事及名誉职务名单,");
+                }
+                if(MyTools.isNotEmpty(stDjqk4.getS16())){
+                    stringBuffer3.append("年度工作总结,");
+                }
+                if(MyTools.isNotEmpty(stDjqk4.getS17())){
+                    stringBuffer3.append("委托和购买服务事项,");
+                }
+                if(MyTools.isNotEmpty(stDjqk4.getS18())){
+                    stringBuffer3.append("收费许可证收费服务项目,");
+                }
+                if(MyTools.isNotEmpty(stDjqk4.getS19())){
+                    stringBuffer3.append("依法举办的经济实体的基本信息,");
+                }
+                if(MyTools.isNotEmpty(stDjqk4.getS20())){
+                    stringBuffer3.append("按照国家有关规定开展的评比达标表彰活动,");
+                }
+                if(MyTools.isNotEmpty(stDjqk4.getS21())){
+                    stringBuffer3.append("接受公益性捐赠资助及其使用情况,");
+                }
+                if(MyTools.isNotEmpty(stDjqk4.getS22())){
+                    stringBuffer3.append("行政法规规定应予公开的其他事项,");
+                }
+
+                JcContentAttr1 jcContentAttr7 = new JcContentAttr1();
+                jcContentAttr7.setContentId(Integer.parseInt(newContent207.getId()));
+                jcContentAttr7.setAttrName("mxhygknr");
+                jcContentAttr7.setAttrValue(stringBuffer3.toString());
+                jcContentAttr1s.add(jcContentAttr7);
+            }
+        }
+
+
+        NewContent newContent209 = SelectJcContentService.selectZiJcContent(209, Integer.parseInt(newContent.getId()));
+        if(MyTools.isNotEmpty(newContent209)){
+            StNjJieshoujianduExample example4 = new StNjJieshoujianduExample();
+            example4.createCriteria().andInstanceidEqualTo(instanceid);
+            List<StNjJieshoujiandu> lists209 = oldService.selectByExample(example4);
+            if (lists209.size()>0) {
+                StNjJieshoujiandu stNjJieshoujiandu = lists209.get(0);
+                JcContentAttr1 jc = null;
+                if(MyTools.isNotEmpty(stNjJieshoujiandu.getShuiqiankouchu())){
+                    jc = new JcContentAttr1();jc.setContentId(Integer.parseInt(newContent209.getId()));
+                    jc.setAttrName("ookaiXbk");
+                    jc.setAttrValue(stNjJieshoujiandu.getShuiqiankouchu());jcContentAttr1s.add(jc);}
+
+                //扣除年
+                if(MyTools.isNotEmpty(stNjJieshoujiandu.getKouchunian())){
+                    jc = new JcContentAttr1();jc.setContentId(Integer.parseInt(newContent209.getId()));
+                    jc.setAttrName("hdsj1");
+                    jc.setAttrValue(stNjJieshoujiandu.getKouchunian());jcContentAttr1s.add(jc);}
+
+                //免税资格
+                if(MyTools.isNotEmpty(stNjJieshoujiandu.getMianshuizige())){
+                    jc = new JcContentAttr1();jc.setContentId(Integer.parseInt(newContent209.getId()));
+                    jc.setAttrName("JwjVgzUz");
+                    jc.setAttrValue(stNjJieshoujiandu.getMianshuizige());jcContentAttr1s.add(jc);}
+
+                //免税年
+                if(MyTools.isNotEmpty(stNjJieshoujiandu.getMianshuinian())){
+                    jc = new JcContentAttr1();jc.setContentId(Integer.parseInt(newContent209.getId()));
+                    jc.setAttrName("hdsj2");
+                    jc.setAttrValue(stNjJieshoujiandu.getMianshuinian());jcContentAttr1s.add(jc);}
+            }
+        }
+
+
+
+        Integer save = NewSaveJcContentAttr1Service.save(jcContentAttr1s); //新增
+        Integer update = NewSaveJcContentAttr1Service.update(jcContentAttr12); //更新
+
+        return "";
     }
 
 
@@ -661,6 +844,17 @@ public class saveStController {
         List<StNjAdministratCostInx> lists = oldService.selectByExample(example);
         if(MyTools.isNotEmpty(lists)){//判断匹配是否成功
             return Save217.getEntity(jcContentId, lists.get(0));//获得202模板所需要的数据
+        }else {
+            System.out.println("未找到217模板对应的信息");return new ArrayList<JcContentAttr1>();
+        }
+    }
+
+    public List<JcContentAttr1> save279(String instanceid,Integer jcContentId){
+        StNjAdministratCostInxExample example = new StNjAdministratCostInxExample();
+        example.createCriteria().andInstanceidEqualTo(instanceid);
+        List<StNjAdministratCostInx> lists = oldService.selectByExample(example);
+        if(MyTools.isNotEmpty(lists)){//判断匹配是否成功
+            return Save279.getEntity(jcContentId, lists.get(0));//获得202模板所需要的数据
         }else {
             System.out.println("未找到217模板对应的信息");return new ArrayList<JcContentAttr1>();
         }

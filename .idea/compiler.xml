@@ -14,26 +14,26 @@
         <module name="boot-dao" />
         <module name="jjhdate-service" />
         <module name="boot-pay" />
+        <module name="data-api" />
         <module name="boot-oss" />
+        <module name="alone-main" />
         <module name="jjhdate-api" />
         <module name="xgb-test" />
         <module name="boot-model" />
-        <module name="data-model" />
         <module name="lovexgb-service" />
         <module name="boot-service" />
-        <module name="xgb-common" />
+        <module name="electron-api" />
         <module name="data-dao" />
         <module name="jjhdate-model" />
-        <module name="data-api" />
+        <module name="xgb-common" />
         <module name="boot-api" />
-        <module name="alone-main" />
+        <module name="data-model" />
         <module name="jjhdate-dao" />
         <module name="lovexgb-dao" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="alone-main" target="1.8" />
-      <module name="alone-util" target="1.8" />
       <module name="boot-api" target="1.8" />
       <module name="boot-dao" target="1.8" />
       <module name="boot-message" target="1.8" />
@@ -46,6 +46,8 @@
       <module name="data-dao" target="1.8" />
       <module name="data-model" target="1.8" />
       <module name="data-service" target="1.8" />
+      <module name="electron-api" target="1.8" />
+      <module name="electron-ui" target="1.8" />
       <module name="jjhdate-api" target="1.8" />
       <module name="jjhdate-dao" target="1.8" />
       <module name="jjhdate-model" target="1.8" />
@@ -58,10 +60,10 @@
       <module name="xgb-boot" target="1.8" />
       <module name="xgb-common" target="1.8" />
       <module name="xgb-data" target="1.8" />
+      <module name="xgb-electron" target="1.8" />
       <module name="xgb-java" target="1.8" />
       <module name="xgb-jjhdate" target="1.8" />
       <module name="xgb-lovexgb" target="1.8" />
-      <module name="xgb-stdata" target="1.8" />
       <module name="xgb-test" target="1.8" />
     </bytecodeTargetLevel>
   </component>

@@ -38,6 +38,12 @@ public class Save204 {
             jc.setAttrName("zjycdhsj");
             jc.setAttrValue(DateUtils.dateToyyyyMMdd(stNjInner4.getHuiyuandahuishijian()));lists.add(jc);}
 
+        //理事会次
+        if(MyTools.isNotEmpty(stNjInner4.getLishihuici())){
+            jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("lshc");
+            jc.setAttrValue(stNjInner4.getLishihuici().toString());lists.add(jc);}
+
         //理事会本年次
         if(MyTools.isNotEmpty(stNjInner4.getLishihuibennianci())){
             jc = new JcContentAttr1();jc.setContentId(contentId);
@@ -47,14 +53,15 @@ public class Save204 {
         //常理事会次
         if(MyTools.isNotEmpty(stNjInner4.getChanglishihuici())){
             jc = new JcContentAttr1();jc.setContentId(contentId);
-            jc.setAttrName("lshc");
+            jc.setAttrName("cwlsc");
             jc.setAttrValue(stNjInner4.getChanglishihuici().toString());lists.add(jc);}
 
         //常理事会本年次
         if(MyTools.isNotEmpty(stNjInner4.getChanglishihuibennianci())){
             jc = new JcContentAttr1();jc.setContentId(contentId);
-            jc.setAttrName("cwlsc");
+            jc.setAttrName("bnzkcwhc");
             jc.setAttrValue(stNjInner4.getChanglishihuibennianci().toString());lists.add(jc);}
+
 
         jc=null;
         return lists;

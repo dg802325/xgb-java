@@ -14,6 +14,13 @@ public class Save261 {
     public static List<JcContentAttr1> getEntity(Integer contentId, MfNianjianJbxx mfNianjianJbxx) {
         List<JcContentAttr1> lists = new ArrayList<>();
         JcContentAttr1 jc = null;
+
+        //办公地址
+        if(MyTools.isNotEmpty(mfNianjianJbxx.getZhusuoxiangxi())){
+            jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("bgdz");
+            jc.setAttrValue("天津市"+mfNianjianJbxx.getZhusuoxiangxi());lists.add(jc);}
+
         //行业分类
         if(MyTools.isNotEmpty(mfNianjianJbxx.getXingyefenlei())){
             jc = new JcContentAttr1();jc.setContentId(contentId);
@@ -315,10 +322,10 @@ public class Save261 {
             jc.setAttrValue(mfNianjianJbxx.getQuantibenke().toString());lists.add(jc);}
 
         //全体工作人员党员人数
-        if(MyTools.isNotEmpty(mfNianjianJbxx.getQitazuzhi())){
+        if(MyTools.isNotEmpty(mfNianjianJbxx.getQuantidangyuan())){
             jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("OSdcZLMa");
-            jc.setAttrValue(mfNianjianJbxx.getQitazuzhi());lists.add(jc);}
+            jc.setAttrValue(mfNianjianJbxx.getQuantidangyuan().toString());lists.add(jc);}
 
         //专职人员数
         if(MyTools.isNotEmpty(mfNianjianJbxx.getZhuanzhirenyuanshu())){

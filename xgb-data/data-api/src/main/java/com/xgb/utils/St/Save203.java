@@ -3,6 +3,7 @@ package com.xgb.utils.St;
 import com.xgb.model.JcContentAttr1;
 import com.xgb.model.StNjInner4;
 import com.xgb.model.StNjReport3;
+import com.xgb.util.DateUtils;
 import com.xgb.util.MyTools;
 
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ public class Save203 {
         if(MyTools.isNotEmpty(stNjInner4.getBiangengmingchengshijian())){
             jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("bgmcpzsj");
-            jc.setAttrValue(stNjInner4.getBiangengmingchengshijian().toString());lists.add(jc);}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(stNjInner4.getBiangengmingchengshijian()));lists.add(jc);}
 
         //变更活动地域
         if(MyTools.isNotEmpty(stNjInner4.getBiangengdiyu())){
@@ -47,7 +48,7 @@ public class Save203 {
         if(MyTools.isNotEmpty(stNjInner4.getBiangengdiyushijian())){
             jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("bghddypzsj");
-            jc.setAttrValue(stNjInner4.getBiangengdiyushijian().toString());lists.add(jc);}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(stNjInner4.getBiangengdiyushijian()));lists.add(jc);}
 
         //变更业务范围
         if(MyTools.isNotEmpty(stNjInner4.getBiangengyewu())){
@@ -65,7 +66,7 @@ public class Save203 {
         if(MyTools.isNotEmpty(stNjInner4.getBiangengyewushijian())){
             jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("bgywfwpzsj");
-            jc.setAttrValue(stNjInner4.getBiangengyewushijian().toString());lists.add(jc);}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(stNjInner4.getBiangengyewushijian()));lists.add(jc);}
 
         //变更住所
         if(MyTools.isNotEmpty(stNjInner4.getBiangengzhusuo())){
@@ -83,7 +84,7 @@ public class Save203 {
         if(MyTools.isNotEmpty(stNjInner4.getBiangengzhusuoshijian())){
             jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("bgzspzsj");
-            jc.setAttrValue(stNjInner4.getBiangengzhusuoshijian().toString());lists.add(jc);}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(stNjInner4.getBiangengzhusuoshijian()));lists.add(jc);}
 
         //变更资金
         if(MyTools.isNotEmpty(stNjInner4.getBiangengzijin())){
@@ -101,7 +102,7 @@ public class Save203 {
         if(MyTools.isNotEmpty(stNjInner4.getBiangengzijinshijian())){
             jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("bgzczjpzsj");
-            jc.setAttrValue(stNjInner4.getBiangengzijinshijian().toString());lists.add(jc);}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(stNjInner4.getBiangengzijinshijian()));lists.add(jc);}
 
         //变更法人
         if(MyTools.isNotEmpty(stNjInner4.getBiangengfaren())){
@@ -119,7 +120,7 @@ public class Save203 {
         if(MyTools.isNotEmpty(stNjInner4.getBiangengfarenshijian())){
             jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("bgfddbpzsj");
-            jc.setAttrValue(stNjInner4.getBiangengfarenshijian().toString());lists.add(jc);}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(stNjInner4.getBiangengfarenshijian()));lists.add(jc);}
 
         //变更主管单位
         if(MyTools.isNotEmpty(stNjInner4.getBiangengzhuguandanwei())){
@@ -137,7 +138,7 @@ public class Save203 {
         if(MyTools.isNotEmpty(stNjInner4.getBianzhuguandanweishijian())){
             jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("bgywzgdwpzsj");
-            jc.setAttrValue(stNjInner4.getBianzhuguandanweishijian().toString());lists.add(jc);}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(stNjInner4.getBianzhuguandanweishijian()));lists.add(jc);}
 
         //修改章程
         if(MyTools.isNotEmpty(stNjInner4.getXiugaizhangcheng())){
@@ -155,7 +156,7 @@ public class Save203 {
         if(MyTools.isNotEmpty(stNjInner4.getXiugaizhangchengshijian())){
             jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("xgzcpzsj");
-            jc.setAttrValue(stNjInner4.getXiugaizhangchengshijian().toString());lists.add(jc);}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(stNjInner4.getXiugaizhangchengshijian()));lists.add(jc);}
 
         //负责人变更
         if(MyTools.isNotEmpty(stNjInner4.getFuzerenbiangeng())){
@@ -173,7 +174,7 @@ public class Save203 {
         if(MyTools.isNotEmpty(stNjInner4.getFuzerenbianshijian())){
             jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("fzrbgbapzsj");
-            jc.setAttrValue(stNjInner4.getFuzerenbianshijian().toString());lists.add(jc);}
+            jc.setAttrValue(DateUtils.dateToyyyyMMdd(stNjInner4.getFuzerenbianshijian()));lists.add(jc);}
 
         jc = null;
         return lists;

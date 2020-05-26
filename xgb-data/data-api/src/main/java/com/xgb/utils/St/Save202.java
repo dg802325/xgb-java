@@ -13,11 +13,35 @@ public class Save202 {
     public static List<JcContentAttr1> getEntity(Integer contentId, StNjReport3 stNjReport3) {
         List<JcContentAttr1> lists = new ArrayList<>();
         JcContentAttr1 jc = null;
-        //业务范围
+        //
         if(MyTools.isNotEmpty(stNjReport3.getDengjizhenghao())){
             jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("guanliType");
             jc.setAttrValue(stNjReport3.getDengjizhenghao());lists.add(jc);}
+
+        //行业管理部门
+        if(MyTools.isNotEmpty(stNjReport3.getHangyebumen())){
+            jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("hyglbm");
+            jc.setAttrValue(stNjReport3.getHangyebumen());lists.add(jc);}
+
+        //党建管理部门
+        if(MyTools.isNotEmpty(stNjReport3.getDangjianbumen())){
+            jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("djglbm");
+            jc.setAttrValue(stNjReport3.getDangjianbumen());lists.add(jc);}
+
+        //网址
+        if(MyTools.isNotEmpty(stNjReport3.getWangzhi())){
+            jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("weburl");
+            jc.setAttrValue(stNjReport3.getWangzhi());lists.add(jc);}
+
+        //理事长联系电话
+        if(MyTools.isNotEmpty(stNjReport3.getLianxidianhua2())){
+            jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("lisphone");
+            jc.setAttrValue(stNjReport3.getLianxidianhua2());lists.add(jc);}
 
         //业务范围
         if(MyTools.isNotEmpty(stNjReport3.getYewufanwei())){
@@ -32,10 +56,10 @@ public class Save202 {
             jc.setAttrValue(DateUtils.dateToyyyyMMdd(stNjReport3.getChenglishijian()));lists.add(jc);}
 
         //办公地址
-        if(MyTools.isNotEmpty(stNjReport3.getZhusuo())){
+        if(MyTools.isNotEmpty(stNjReport3.getZhusuoxiangxi())){
             jc = new JcContentAttr1();jc.setContentId(contentId);
             jc.setAttrName("bangdz");
-            jc.setAttrValue(stNjReport3.getZhusuo());lists.add(jc);}
+            jc.setAttrValue("天津市"+stNjReport3.getZhusuoxiangxi());lists.add(jc);}
 
 
         //注册资金
@@ -191,7 +215,7 @@ public class Save202 {
         //秘书长任职日期
         if(MyTools.isNotEmpty(stNjReport3.getRenzhiriqi2())){
             jc = new JcContentAttr1();jc.setContentId(contentId);
-            jc.setAttrName("mszchsrq");
+            jc.setAttrName("mszrenzrq");
             jc.setAttrValue(DateUtils.dateToyyyyMMdd(stNjReport3.getRenzhiriqi2()));lists.add(jc);}
 
         //秘书长职务

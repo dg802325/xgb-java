@@ -39,4 +39,8 @@ public class DataApplication {
         sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath:com/xgb/dao/*.xml"));
         return sqlSessionFactoryBean.getObject();
     }
+
+
+
+
 }

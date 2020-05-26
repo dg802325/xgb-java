@@ -40,4 +40,36 @@ public class NewJcShzzDetailService extends BaseService {
         }
         return null;
     }
+
+    public static Content202Entity selectByXintitle(String title){
+        Content202Entity content202Entity = new Content202Entity();
+        Integer userId = null;
+        if(MyTools.isNotEmpty(title)){
+
+            String sql = "select id,xzqh,type,zgmc,code from jc_shzz_detail where title = '"+title+"'";
+            Statement stmt = null;
+            ResultSet rs = null;
+            try{
+                stmt = conn.createStatement();
+                rs = stmt.executeQuery(sql);
+                if (rs.next()) {
+                    content202Entity.setContentId(rs.getInt("id")+"");
+                    content202Entity.setType(rs.getString("type"));
+                    content202Entity.setShzzZgmc(rs.getString("zgmc"));
+                    content202Entity.setShzzXzqh(rs.getString("xzqh"));
+                    content202Entity.setStxcode(rs.getString("code"));
+                    String sql2 = "select user_id from jc_user_attr where attr_value = '"+content202Entity.getContentId()+"'";//查询userid
+                    rs = stmt.executeQuery(sql2);
+                    if (rs.next()) {
+                        content202Entity.setUserId(rs.getInt("user_id"));
+                    }
+                    return content202Entity;
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+                return null;
+            }
+        }
+        return null;
+    }
 }

@@ -117,3 +117,16 @@ xgb-test/target/generated-sources/
 /xgb-data/data-api/src/main/java/com/xgb/utils/Save200Entity.java
 /xgb-data/data-api/pom.xml
 /xgb-alone/alone-main/config/
+/xgb-data/data-dao/target/classes/
+/xgb-data/data-dao/target/maven-archiver/
+/xgb-data/data-dao/target/
+/xgb-data/data-api/target/
+/xgb-data/data-model/target/
+/xgb-data/data-service/target/
+/xgb-jjhdate/jjhdate-api/target/classes/
+/xgb-jjhdate/jjhdate-dao/target/classes/
+/xgb-jjhdate/jjhdate-model/target/
+/xgb-data/data-api/logs/daily/
+/xgb-lovexgb/lovexgb-admin/target/classes/
+/xgb-lovexgb/lovexgb-dao/target/classes/
+/xgb-test/target/

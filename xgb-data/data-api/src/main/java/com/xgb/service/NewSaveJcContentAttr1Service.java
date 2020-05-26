@@ -16,16 +16,17 @@ public class NewSaveJcContentAttr1Service extends BaseService {
         int len = 0;
         try {
             conn.setAutoCommit(false);
-            //Statement.RETURN_GENERATED_KEYS:获取自动增加的id号
+            ps = (PreparedStatement) conn.prepareStatement(sql);
             for(JcContentAttr1 jcContentAttr1:jcContentAttr1s){
-                ps = (PreparedStatement) conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
                 ps.setInt(1,jcContentAttr1.getContentId());
                 ps.setString(2,jcContentAttr1.getAttrName());
                 ps.setString(3,jcContentAttr1.getAttrValue());
-                ps.executeUpdate();
+                ps.addBatch();
                 len++;
             }
+            ps.executeBatch();
             conn.commit();
+            ps.clearBatch();
         } catch (SQLException e) {
             e.printStackTrace();
             return null;

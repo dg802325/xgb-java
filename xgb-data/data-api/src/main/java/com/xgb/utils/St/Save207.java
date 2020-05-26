@@ -114,6 +114,46 @@ public class Save207 {
             jc.setAttrName("hyqtfsnr");
             jc.setAttrValue(stDjqk4.getQitafangshi2().toString());lists.add(jc);}
 
+        StringBuffer stringBuffer3 = new StringBuffer();
+        if(MyTools.isNotEmpty(stDjqk4.getS12())){
+            stringBuffer3.append("经登记管理机关核准的章程,");
+        }
+        if(MyTools.isNotEmpty(stDjqk4.getS13())){
+            stringBuffer3.append("登记事项,");
+        }
+        if(MyTools.isNotEmpty(stDjqk4.getS14())){
+            stringBuffer3.append("组织机构,");
+        }
+        if(MyTools.isNotEmpty(stDjqk4.getS15())){
+            stringBuffer3.append("监事及名誉职务名单,");
+        }
+        if(MyTools.isNotEmpty(stDjqk4.getS16())){
+            stringBuffer3.append("年度工作总结,");
+        }
+        if(MyTools.isNotEmpty(stDjqk4.getS17())){
+            stringBuffer3.append("委托和购买服务事项,");
+        }
+        if(MyTools.isNotEmpty(stDjqk4.getS18())){
+            stringBuffer3.append("收费许可证收费服务项目,");
+        }
+        if(MyTools.isNotEmpty(stDjqk4.getS19())){
+            stringBuffer3.append("依法举办的经济实体的基本信息,");
+        }
+        if(MyTools.isNotEmpty(stDjqk4.getS20())){
+            stringBuffer3.append("按照国家有关规定开展的评比达标表彰活动,");
+        }
+        if(MyTools.isNotEmpty(stDjqk4.getS21())){
+            stringBuffer3.append("接受公益性捐赠资助及其使用情况,");
+        }
+        if(MyTools.isNotEmpty(stDjqk4.getS22())){
+            stringBuffer3.append("行政法规规定应予公开的其他事项,");
+        }
+        //其他方式2
+        if(MyTools.isNotEmpty(stringBuffer3)){
+            jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("mxhygknr");
+            jc.setAttrValue(stringBuffer3.toString());lists.add(jc);}
+
         jc= null;
 
         return lists;

@@ -11,7 +11,7 @@ public class DbBase {
 
     //Gbase数据库连接
     public static final String GBASE_DRIVER = "com.gbase.jdbc.Driver";
-    public static final String GBASE_URL = "jdbc:gbase://123.56.112.54:5258/tjfrk_db";
+    public static final String GBASE_URL = "jdbc:gbase://123.56.112.54:5258/tjfrk_devdb";
     public static final String GBASE_USERNAME = "sysdba";
     public static final String GBASE_PASSWORD = "tjfrk1357";
 }

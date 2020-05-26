@@ -14,6 +14,30 @@ public class Save209 {
         List<JcContentAttr1> lists = new ArrayList<>();
         JcContentAttr1 jc = null;
 
+        //税前扣除
+        if(MyTools.isNotEmpty(stNjJieshoujiandu.getShuiqiankouchu())){
+            jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("ookaiXbk");
+            jc.setAttrValue(stNjJieshoujiandu.getShuiqiankouchu());lists.add(jc);}
+
+        //扣除年
+        if(MyTools.isNotEmpty(stNjJieshoujiandu.getKouchunian())){
+            jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("hdsj1");
+            jc.setAttrValue(stNjJieshoujiandu.getKouchunian());lists.add(jc);}
+
+        //免税资格
+        if(MyTools.isNotEmpty(stNjJieshoujiandu.getMianshuizige())){
+            jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("JwjVgzUz");
+            jc.setAttrValue(stNjJieshoujiandu.getMianshuizige());lists.add(jc);}
+
+        //免税年
+        if(MyTools.isNotEmpty(stNjJieshoujiandu.getMianshuinian())){
+            jc = new JcContentAttr1();jc.setContentId(contentId);
+            jc.setAttrName("hdsj2");
+            jc.setAttrValue(stNjJieshoujiandu.getMianshuinian());lists.add(jc);}
+
         //整改措施1
         if(MyTools.isNotEmpty(stNjJieshoujiandu.getZhenggai1())){
             jc = new JcContentAttr1();jc.setContentId(contentId);

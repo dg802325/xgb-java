@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-alone" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-alone/alone-main" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-alone/alone-main/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/xgb-alone/alone-main/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-boot/boot-api/src/main/java" charset="UTF-8" />
@@ -34,6 +33,8 @@
     <file url="file://$PROJECT_DIR$/xgb-data/data-model/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-data/data-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-data/data-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-electron" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xgb-electron/electron-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-jjhdate" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-jjhdate/jjhdate-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-jjhdate/jjhdate-api/src/main/java" charset="UTF-8" />
@@ -52,12 +53,10 @@
     <file url="file://$PROJECT_DIR$/xgb-lovexgb/lovexgb-dao/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-lovexgb/lovexgb-model" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-lovexgb/lovexgb-model/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/xgb-lovexgb/lovexgb-model/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-lovexgb/lovexgb-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-lovexgb/lovexgb-service/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/xgb-lovexgb/lovexgb-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-test" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xgb-test/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/xgb-test/src/main/resources" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
